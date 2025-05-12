@@ -1,7 +1,7 @@
 import { ReactNode } from "react";
 import Head from "next/head";
 
-// Metadata for SEO (Move to layout.tsx if needed)
+// Metadata for SEO
 export const metadata = {
   title: "Emergency Roofing Contractor Available 24/7 in Brooklyn, NY",
   description:
@@ -66,13 +66,14 @@ export default function ContactLayout({ children }: { children: ReactNode }) {
   return (
     <>
       <Head>
-        <meta name="test-meta" content="test" />
-        <link
-          rel="canonical"
-          href="https://www.sasroofingwaterproofing.com/aboutus"
-        />
+        {/* Title for SEO */}
+        <title>{metadata.title}</title>
+
+        {/* Meta Tags for SEO */}
         <meta name="description" content={metadata.description} />
         <meta name="keywords" content={metadata.keywords} />
+
+        {/* OpenGraph meta tags */}
         <meta property="og:title" content={metadata.openGraph.title} />
         <meta
           property="og:description"
@@ -85,6 +86,14 @@ export default function ContactLayout({ children }: { children: ReactNode }) {
           content={metadata.openGraph.images[0].alt}
         />
         <meta property="og:type" content={metadata.openGraph.type} />
+
+        {/* Canonical Link */}
+        <link
+          rel="canonical"
+          href="https://www.sasroofingwaterproofing.com/aboutus"
+        />
+
+        {/* Structured Data Schema */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -93,7 +102,7 @@ export default function ContactLayout({ children }: { children: ReactNode }) {
         />
       </Head>
 
-      {/* No extra content like Header or Footer here */}
+      {/* Content of the page */}
       {children}
     </>
   );

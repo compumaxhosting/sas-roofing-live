@@ -1,5 +1,5 @@
 import React from "react";
-import Head from "next/head";
+import Head from "next/head"; // Import the next/head component for modifying the <head> section
 import AboutCompany from "@/components/AboutCompany";
 import BackToTop from "@/components/BackToTop";
 import BreadCrum2 from "@/components/BreadCrum2";
@@ -15,7 +15,7 @@ const Page = () => {
 
   return (
     <>
-      {/* Add canonical link in Head */}
+      {/* Add canonical link here */}
       <Head>
         <link
           rel="canonical"
