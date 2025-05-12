@@ -70,15 +70,30 @@ export default function ContactLayout({ children }: { children: ReactNode }) {
           rel="canonical"
           href="https://www.sasroofingwaterproofing.com/aboutus"
         />
+        <meta name="description" content={metadata.description} />
+        <meta name="keywords" content={metadata.keywords} />
+        <meta property="og:title" content={metadata.openGraph.title} />
+        <meta
+          property="og:description"
+          content={metadata.openGraph.description}
+        />
+        <meta property="og:url" content={metadata.openGraph.url} />
+        <meta property="og:image" content={metadata.openGraph.images[0].url} />
+        <meta
+          property="og:image:alt"
+          content={metadata.openGraph.images[0].alt}
+        />
+        <meta property="og:type" content={metadata.openGraph.type} />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(schemaData),
+          }}
+        />
       </Head>
 
       {/* No extra content like Header or Footer here */}
       {children}
-
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }}
-      />
     </>
   );
 }
