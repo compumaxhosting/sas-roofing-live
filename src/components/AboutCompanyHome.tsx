@@ -85,7 +85,7 @@ export default function AboutCompany() {
                 For over twelve years, SAS Roofing & Waterproofing has proudly
                 served{" "}
                 <Link
-                  href="https://www.wikidata.org/wiki/Q11299"
+                  href="https://www.wikidata.org/wiki/Q18419"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -93,19 +93,27 @@ export default function AboutCompany() {
                 </Link>
                 ,{" "}
                 <Link
-                  href="https://www.wikidata.org/wiki/Q60"
+                  href="https://www.wikidata.org/wiki/Q11299"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
                   Manhattan
                 </Link>
-                , and{" "}
+                ,{" "}
                 <Link
-                  href="https://www.wikidata.org/wiki/Q18419"
+                  href="https://www.wikidata.org/wiki/Q18424"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
                   Queens
+                </Link>{" "}
+                and{" "}
+                <Link
+                  href="https://www.wikidata.org/wiki/Q18426"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  The Bronx
                 </Link>{" "}
                 with top-tier roofing, waterproofing, and masonry solutions.
               </p>

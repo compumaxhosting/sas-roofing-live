@@ -1,7 +1,50 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
+  async redirects() {
+    return [
+      {
+        source: "/index.html",
+        destination: "/",
+        permanent: true,
+      },
+      {
+        source: "/aboutus.html",
+        destination: "/aboutus",
+        permanent: true,
+      },
+      {
+        source: "/projects.html",
+        destination: "/projects",
+        permanent: true,
+      },
+      {
+        source: "/reviews.html",
+        destination: "/reviews",
+        permanent: true,
+      },
+      {
+        source: "/contact-us.html",
+        destination: "/contact-us",
+        permanent: true,
+      },
+      {
+        source: "/masonry-services-brooklyn-ny.html",
+        destination: "/masonry-services-brooklyn-ny",
+        permanent: true,
+      },
+      {
+        source: "/roofing-contractors-brooklyn.html",
+        destination: "/roofing-contractors-brooklyn",
+        permanent: true,
+      },
+      {
+        source: "/masonry-services-brooklyn-ny.html",
+        destination: "/masonry-services-brooklyn-ny",
+        permanent: true,
+      },
+    ];
+  },
 };
 
 export default nextConfig;

@@ -21,11 +21,11 @@ export default function Footer() {
   ];
   const navLinks = [
     { label: "HOME", path: "/" },
-    { label: "ABOUT US", path: "/about" },
+    { label: "ABOUT US", path: "/aboutus" },
     { label: "PROJECTS", path: "/projects" },
     { label: "REVIEWS", path: "/reviews" },
     { label: "SERVICES", path: "/services" },
-    { label: "CONTACT", path: "/contact" },
+    { label: "CONTACT", path: "/contact-us" },
   ];
   const socialIcons = [
     {

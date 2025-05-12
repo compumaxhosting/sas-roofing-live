@@ -94,17 +94,21 @@ export default function ServicesSlider({ swiperRef }: Props) {
             return (
               <SwiperSlide key={i}>
                 <div
-                  className="relative h-[380px] flex items-end bg-cover bg-center"
+                  className="relative h-[380px] flex items-end bg-cover bg-center bg-no-repeat"
                   style={{ backgroundImage: `url(${image})` }}
                 >
                   <div className="flex w-full items-end">
                     <div className="w-[70%] bg-[#f5f5f5] shadow-md p-4 min-h-[120px] sm:min-h-[140px] md:min-h-[150px] flex flex-col">
-                      <h3 className="text-[#003269] text-sm md:text-base lg:text-lg font-bold tracking-wide font-inter">
-                        {title}
-                      </h3>
-                      <p className="text-sm text-gray-600 mt-1 leading-snug line-clamp-3 font-bevietnam">
-                        {description}
-                      </p>
+                      <Link href={link}>
+                        <h3 className="text-[#003269] text-sm md:text-base lg:text-lg font-bold tracking-wide font-inter hover:underline">
+                          {title}
+                        </h3>
+                      </Link>
+                      <Link href={link}>
+                        <p className="text-sm text-gray-600 mt-1 leading-snug line-clamp-3 font-bevietnam hover:text-[#003269]">
+                          {description}
+                        </p>
+                      </Link>
                     </div>
                     <Link
                       href={link}
