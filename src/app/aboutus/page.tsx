@@ -1,5 +1,3 @@
-import React from "react";
-import Head from "next/head"; // Import the next/head component for modifying the <head> section
 import AboutCompany from "@/components/AboutCompany";
 import BackToTop from "@/components/BackToTop";
 import BreadCrum2 from "@/components/BreadCrum2";
@@ -9,21 +7,12 @@ import Footer from "@/components/Footer";
 import FooterTopCTA from "@/components/FooterTopCTA";
 import Navbar from "@/components/Navbar/Navbar";
 import StickyNavbar from "@/components/StickyNavbar";
+import React from "react";
 
-const Page = () => {
+const page = () => {
   const mvalue = [0, 0, 0];
-
   return (
     <>
-      {/* Add canonical link here */}
-      <Head>
-        <link
-          rel="canonical"
-          href="https://www.sasroofingwaterproofing.com/aboutus"
-        />
-      </Head>
-
-      {/* Main layout components */}
       <Navbar />
       <ContactBar />
       <StickyNavbar />
@@ -41,4 +30,4 @@ const Page = () => {
   );
 };
 
-export default Page;
+export default page;

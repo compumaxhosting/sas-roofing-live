@@ -1,5 +1,4 @@
 import { ReactNode } from "react";
-import Head from "next/head";
 
 // Metadata for SEO
 export const metadata = {
@@ -25,19 +24,33 @@ export const metadata = {
   },
 };
 
-// Schema Markup (Best moved to a separate component)
+// Schema Markup (JSON-LD)
 const schemaData = {
   "@context": "https://schema.org",
   "@type": "Organization",
   name: "SAS Roofing and Waterproofing",
   url: "https://www.sasroofingwaterproofing.com/",
-  logo: "https://www.sasroofingwaterproofing.com/assets/images/resources/Logo-SAS.png",
+  logo: "https://www.sasroofingwaterproofing.com/Logo-SAS.png",
+  description:
+    "SAS Roofing and Waterproofing offers high-quality roofing, waterproofing, and restoration services. Serving residential and commercial clients in City Name and surrounding areas.",
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: "123 Main St",
+    addressLocality: "City Name",
+    addressRegion: "State/Province",
+    postalCode: "12345",
+    addressCountry: "US",
+  },
   contactPoint: {
     "@type": "ContactPoint",
     telephone: "+1-123-456-7890",
     contactType: "Customer Service",
     areaServed: "US",
     availableLanguage: "English",
+  },
+  serviceArea: {
+    "@type": "Place",
+    name: "City Name, State/Province",
   },
   sameAs: [
     "https://www.instagram.com/SASRoofingWaterproofing",
@@ -46,64 +59,16 @@ const schemaData = {
     "https://twitter.com/SASRoofing",
     "https://www.linkedin.com/company/sasroofingwaterproofing",
   ],
-  address: {
-    "@type": "PostalAddress",
-    streetAddress: "123 Main St",
-    addressLocality: "Brooklyn",
-    addressRegion: "NY",
-    postalCode: "11201",
-    addressCountry: "US",
-  },
-  serviceArea: {
-    "@type": "Place",
-    name: "Brooklyn, Manhattan, Queens",
-  },
-  description:
-    "SAS Roofing and Waterproofing offers high-quality roofing, waterproofing, and restoration services. Serving residential and commercial clients across Brooklyn, Manhattan, and Queens.",
 };
 
 export default function ContactLayout({ children }: { children: ReactNode }) {
   return (
     <>
-      <Head>
-        {/* Title for SEO */}
-        <title>{metadata.title}</title>
-
-        {/* Meta Tags for SEO */}
-        <meta name="description" content={metadata.description} />
-        <meta name="keywords" content={metadata.keywords} />
-
-        {/* OpenGraph meta tags */}
-        <meta property="og:title" content={metadata.openGraph.title} />
-        <meta
-          property="og:description"
-          content={metadata.openGraph.description}
-        />
-        <meta property="og:url" content={metadata.openGraph.url} />
-        <meta property="og:image" content={metadata.openGraph.images[0].url} />
-        <meta
-          property="og:image:alt"
-          content={metadata.openGraph.images[0].alt}
-        />
-        <meta property="og:type" content={metadata.openGraph.type} />
-
-        {/* Canonical Link */}
-        <link
-          rel="canonical"
-          href="https://www.sasroofingwaterproofing.com/aboutus"
-        />
-
-        {/* Structured Data Schema */}
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify(schemaData),
-          }}
-        />
-      </Head>
-
-      {/* Content of the page */}
       {children}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }}
+      />
     </>
   );
 }
