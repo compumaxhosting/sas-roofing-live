@@ -1,4 +1,5 @@
 import { ReactNode } from "react";
+import Head from "next/head";
 
 // Metadata for SEO (Move to layout.tsx if needed)
 export const metadata = {
@@ -64,8 +65,16 @@ const schemaData = {
 export default function ContactLayout({ children }: { children: ReactNode }) {
   return (
     <>
+      <Head>
+        <link
+          rel="canonical"
+          href="https://www.sasroofingwaterproofing.com/aboutus"
+        />
+      </Head>
+
       {/* No extra content like Header or Footer here */}
       {children}
+
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }}
