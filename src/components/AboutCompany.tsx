@@ -97,11 +97,42 @@ export default function AboutCompany() {
               {/* Description Paragraph */}
               <p className="text-gray-700 text-sm leading-relaxed mb-8 font-bevietnam">
                 For over twelve years, SAS Roofing & Waterproofing has proudly
-                served Brooklyn, Manhattan, and Queens with top-tier roofing,
-                waterproofing, and masonry solutions. Roofing isn’t just our
-                job—it’s our legacy. Every roof we install, every leak we seal,
-                and every brick we lay reflects our unwavering commitment to
-                quality and craftsmanship.
+                served{" "}
+                <Link
+                  href="https://www.wikidata.org/wiki/Q18419"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Brooklyn
+                </Link>
+                ,{" "}
+                <Link
+                  href="https://www.wikidata.org/wiki/Q11299"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Manhattan
+                </Link>
+                ,{" "}
+                <Link
+                  href="https://www.wikidata.org/wiki/Q18424"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Queens
+                </Link>{" "}
+                and{" "}
+                <Link
+                  href="https://www.wikidata.org/wiki/Q18426"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  The Bronx
+                </Link>{" "}
+                with top-tier roofing, waterproofing, and masonry solutions.
+                Roofing isn’t just our job—it’s our legacy. Every roof we
+                install, every leak we seal, and every brick we lay reflects our
+                unwavering commitment to quality and craftsmanship.
               </p>
 
               {/* ✅ Certified Company Block */}
