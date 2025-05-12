@@ -1,5 +1,6 @@
-import Head from "next/head";
+import { ReactNode } from "react";
 
+// Metadata for SEO (Move to layout.tsx if needed)
 export const metadata = {
   title: "Emergency Roofing Contractor Available 24/7 in Brooklyn, NY",
   description:
@@ -14,6 +15,8 @@ export const metadata = {
     images: [
       {
         url: "https://www.sasroofingwaterproofing.com/assets/images/resources/Logo-SAS.png",
+        width: 1200,
+        height: 630,
         alt: "SAS Roofing & Waterproofing",
       },
     ],
@@ -21,7 +24,8 @@ export const metadata = {
   },
 };
 
-const jsonLdSchema = {
+// Schema Markup (Best moved to a separate component)
+const schemaData = {
   "@context": "https://schema.org",
   "@type": "Organization",
   name: "SAS Roofing and Waterproofing",
@@ -57,37 +61,15 @@ const jsonLdSchema = {
     "SAS Roofing and Waterproofing offers high-quality roofing, waterproofing, and restoration services. Serving residential and commercial clients across Brooklyn, Manhattan, and Queens.",
 };
 
-export default function ContactLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function ContactLayout({ children }: { children: ReactNode }) {
   return (
     <>
-      <Head>
-        <title>{metadata.title}</title>
-        <meta name="description" content={metadata.description} />
-        <meta name="keywords" content={metadata.keywords} />
-        <meta property="og:title" content={metadata.openGraph.title} />
-        <meta
-          property="og:description"
-          content={metadata.openGraph.description}
-        />
-        <meta property="og:url" content={metadata.openGraph.url} />
-        <meta property="og:image" content={metadata.openGraph.images[0].url} />
-        <meta
-          property="og:image:alt"
-          content={metadata.openGraph.images[0].alt}
-        />
-        <meta property="og:type" content={metadata.openGraph.type} />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify(jsonLdSchema),
-          }}
-        />
-      </Head>
-      <div>{children}</div>
+      {/* No extra content like Header or Footer here */}
+      {children}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }}
+      />
     </>
   );
 }
