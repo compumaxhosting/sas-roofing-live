@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Inter, Be_Vietnam_Pro } from "next/font/google";
 import "./globals.css";
-import Head from "next/head";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -47,31 +46,33 @@ export const metadata: Metadata = {
   },
 };
 
-const jsonLdSchema = {
+const schemaData = {
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
   name: "SAS Roofing & Waterproofing",
-  url: "https://www.sasroofingwaterproofing.com/",
-  logo: "https://www.sasroofingwaterproofing.com/assets/images/resources/Logo-SAS.png",
   image: "https://www.sasroofingwaterproofing.com/og-image.jpg",
-  description:
-    "Expert roofing, waterproofing, and masonry services in Brooklyn, Queens, and Manhattan.",
+  "@id": "https://www.sasroofingwaterproofing.com",
+  url: "https://www.sasroofingwaterproofing.com",
+  telephone: "+1-718-500-3312",
   address: {
     "@type": "PostalAddress",
-    streetAddress: "123 Main St",
+    streetAddress: "2515 Avenue O",
     addressLocality: "Brooklyn",
     addressRegion: "NY",
-    postalCode: "11201",
+    postalCode: "11210",
     addressCountry: "US",
   },
-  telephone: "+1-347-221-6549",
-  areaServed: ["Brooklyn", "Manhattan", "Queens"],
+  geo: {
+    "@type": "GeoCoordinates",
+    latitude: 40.6183,
+    longitude: -73.9566,
+  },
   sameAs: [
-    "https://www.instagram.com/SASRoofingWaterproofing",
-    "https://www.facebook.com/SASRoofingWaterproofing",
-    "https://twitter.com/SASRoofing",
-    "https://www.linkedin.com/company/sasroofingwaterproofing",
+    "https://www.facebook.com/SASRoofingNYC",
+    "https://www.instagram.com/sasroofingnyc",
   ],
+  priceRange: "$$",
+  openingHours: "Mo,Tu,We,Th,Fr 08:00-18:00",
 };
 
 export default function RootLayout({
@@ -81,15 +82,15 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={`${inter.variable} ${bevietnam.variable}`}>
-      <Head>
-        <meta charSet="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
+      <head>
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdSchema) }}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }}
         />
-      </Head>
-      <body>{children}</body>
+      </head>
+      <body className={`${inter.variable} ${bevietnam.variable}`}>
+        {children}
+      </body>
     </html>
   );
 }
