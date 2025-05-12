@@ -38,7 +38,7 @@ export default function AboutCompany() {
             />
             <div className="absolute top-4 right-10 bg-white bg-opacity-90 px-4 py-3 rounded-md text-[#003269] shadow-md flex items-center gap-2">
               <span className="text-3xl sm:text-4xl md:text-7xl font-extrabold text-[#003269] font-inter">
-                15+
+                30+
               </span>
               <div className="leading-tight text-left text-base sm:text-xl font-extrabold uppercase font-inter">
                 <div>Years</div>
