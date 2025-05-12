@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter, Be_Vietnam_Pro } from "next/font/google";
 import "./globals.css";
+import Head from "next/head";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -46,6 +47,33 @@ export const metadata: Metadata = {
   },
 };
 
+const jsonLdSchema = {
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  name: "SAS Roofing & Waterproofing",
+  url: "https://www.sasroofingwaterproofing.com/",
+  logo: "https://www.sasroofingwaterproofing.com/assets/images/resources/Logo-SAS.png",
+  image: "https://www.sasroofingwaterproofing.com/og-image.jpg",
+  description:
+    "Expert roofing, waterproofing, and masonry services in Brooklyn, Queens, and Manhattan.",
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: "123 Main St",
+    addressLocality: "Brooklyn",
+    addressRegion: "NY",
+    postalCode: "11201",
+    addressCountry: "US",
+  },
+  telephone: "+1-347-221-6549",
+  areaServed: ["Brooklyn", "Manhattan", "Queens"],
+  sameAs: [
+    "https://www.instagram.com/SASRoofingWaterproofing",
+    "https://www.facebook.com/SASRoofingWaterproofing",
+    "https://twitter.com/SASRoofing",
+    "https://www.linkedin.com/company/sasroofingwaterproofing",
+  ],
+};
+
 export default function RootLayout({
   children,
 }: {
@@ -53,9 +81,15 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={`${inter.variable} ${bevietnam.variable}`}>
-      <body className={`${inter.variable} ${bevietnam.variable}`}>
-        {children}
-      </body>
+      <Head>
+        <meta charSet="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdSchema) }}
+        />
+      </Head>
+      <body>{children}</body>
     </html>
   );
 }
