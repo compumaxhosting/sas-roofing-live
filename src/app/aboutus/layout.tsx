@@ -26,7 +26,7 @@ const jsonLdSchema = {
   "@type": "Organization",
   name: "SAS Roofing and Waterproofing",
   url: "https://www.sasroofingwaterproofing.com/",
-  logo: "https://www.sasroofingwaterproofing.com/Logo-SAS.png",
+  logo: "https://www.sasroofingwaterproofing.com/assets/images/resources/Logo-SAS.png",
   contactPoint: {
     "@type": "ContactPoint",
     telephone: "+1-123-456-7890",
@@ -44,17 +44,17 @@ const jsonLdSchema = {
   address: {
     "@type": "PostalAddress",
     streetAddress: "123 Main St",
-    addressLocality: "City Name",
-    addressRegion: "State/Province",
-    postalCode: "12345",
+    addressLocality: "Brooklyn",
+    addressRegion: "NY",
+    postalCode: "11201",
     addressCountry: "US",
   },
   serviceArea: {
     "@type": "Place",
-    name: "City Name, State/Province",
+    name: "Brooklyn, Manhattan, Queens",
   },
   description:
-    "SAS Roofing and Waterproofing offers high-quality roofing, waterproofing, and restoration services. Serving residential and commercial clients in City Name and surrounding areas.",
+    "SAS Roofing and Waterproofing offers high-quality roofing, waterproofing, and restoration services. Serving residential and commercial clients across Brooklyn, Manhattan, and Queens.",
 };
 
 export default function ContactLayout({
@@ -82,7 +82,9 @@ export default function ContactLayout({
         <meta property="og:type" content={metadata.openGraph.type} />
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdSchema) }}
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(jsonLdSchema),
+          }}
         />
       </Head>
       <div>{children}</div>
