@@ -1,3 +1,5 @@
+import Head from "next/head";
+
 export const metadata = {
   title: "Emergency Roofing Contractor Available 24/7 in Brooklyn, NY",
   description:
@@ -19,15 +21,71 @@ export const metadata = {
   },
 };
 
+const jsonLdSchema = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  name: "SAS Roofing and Waterproofing",
+  url: "https://www.sasroofingwaterproofing.com/",
+  logo: "https://www.sasroofingwaterproofing.com/Logo-SAS.png",
+  contactPoint: {
+    "@type": "ContactPoint",
+    telephone: "+1-123-456-7890",
+    contactType: "Customer Service",
+    areaServed: "US",
+    availableLanguage: "English",
+  },
+  sameAs: [
+    "https://www.instagram.com/SASRoofingWaterproofing",
+    "https://www.yelp.com/biz/sas-roofing-waterproofing",
+    "https://www.facebook.com/SASRoofingWaterproofing",
+    "https://twitter.com/SASRoofing",
+    "https://www.linkedin.com/company/sasroofingwaterproofing",
+  ],
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: "123 Main St",
+    addressLocality: "City Name",
+    addressRegion: "State/Province",
+    postalCode: "12345",
+    addressCountry: "US",
+  },
+  serviceArea: {
+    "@type": "Place",
+    name: "City Name, State/Province",
+  },
+  description:
+    "SAS Roofing and Waterproofing offers high-quality roofing, waterproofing, and restoration services. Serving residential and commercial clients in City Name and surrounding areas.",
+};
+
 export default function ContactLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
   return (
-    <div>
-      {/* Optional: Add a wrapper div or styling here */}
-      {children}
-    </div>
+    <>
+      <Head>
+        <title>{metadata.title}</title>
+        <meta name="description" content={metadata.description} />
+        <meta name="keywords" content={metadata.keywords} />
+        <meta property="og:title" content={metadata.openGraph.title} />
+        <meta
+          property="og:description"
+          content={metadata.openGraph.description}
+        />
+        <meta property="og:url" content={metadata.openGraph.url} />
+        <meta property="og:image" content={metadata.openGraph.images[0].url} />
+        <meta
+          property="og:image:alt"
+          content={metadata.openGraph.images[0].alt}
+        />
+        <meta property="og:type" content={metadata.openGraph.type} />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdSchema) }}
+        />
+      </Head>
+      <div>{children}</div>
+    </>
   );
 }
