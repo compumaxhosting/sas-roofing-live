@@ -207,7 +207,7 @@ export default function NavLinks({
                     className="w-full px-6 py-4 text-left flex justify-between items-center font-semibold hover:bg-white hover:text-black transition-colors"
                     onClick={() => setSidebarServicesOpen((prev) => !prev)}
                   >
-                    {label}
+                    <Link href="/services">{label} </Link>
                     <span
                       className={`transform transition-transform duration-200 ${
                         sidebarServicesOpen ? "rotate-180" : ""

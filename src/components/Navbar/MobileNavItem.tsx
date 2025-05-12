@@ -35,7 +35,7 @@ const toggleSubmenu = () => setServicesOpen((prev) => !prev);
           aria-expanded={servicesOpen}
           aria-controls={`services-menu-${item.name}`}
         >
-          {item.name}
+          <Link href={item.href}>{item.name}</Link>
           <span
             className={`transform transition-transform duration-200 ${
               servicesOpen ? "rotate-180" : ""
