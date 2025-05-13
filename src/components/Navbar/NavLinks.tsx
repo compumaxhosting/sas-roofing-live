@@ -59,7 +59,7 @@ export default function NavLinks({
       className={`flex gap-4 text-sm font-semibold text-[#003269] items-stretch h-full w-full justify-end ${inter.className}`}
     >
       {/* Desktop Links */}
-      <div className="hidden xl:flex gap-6 items-center">
+      <div className="hidden xl:flex gap-6 items-center ">
         {navItems.map(({ label, path, subItems }) =>
           subItems ? (
             <div
