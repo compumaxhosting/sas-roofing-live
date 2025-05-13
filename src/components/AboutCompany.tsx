@@ -32,9 +32,9 @@ export default function AboutCompany() {
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6, ease: "easeOut" }}
             viewport={{ once: true }}
-            className="relative w-full max-w-sm mx-auto xl:mx-0 md:max-w-md lg:max-w-lg xl:max-w-xl flex-shrink-0 xl:self-start aspect-[5/5] shadow-lg rounded-md"
+            className="relative w-full max-w-sm mx-auto xl:mx-0 md:max-w-md lg:max-w-lg xl:max-w-xl flex-shrink-0 xl:self-start aspect-[5/5] shadow-lg"
           >
-            <div className="relative w-full h-full border-2 border-[#e63a27] rounded-sm overflow-hidden">
+            <div className="relative w-full h-full border-2 border-[#e63a27] overflow-hidden shadow-lg">
               <Image
                 src="/aboutimg.jpg"
                 alt="SAS Roofing & Waterproofing team working"
@@ -43,7 +43,7 @@ export default function AboutCompany() {
               />
               <div className="absolute top-4 right-10 bg-white bg-opacity-90 px-4 py-3 rounded-md text-[#003269] shadow-md flex items-center gap-2">
                 <span className="text-3xl sm:text-4xl md:text-7xl font-extrabold font-inter">
-                  15+
+                  30+
                 </span>
                 <div className="leading-tight text-left text-base sm:text-xl font-extrabold uppercase font-inter">
                   <div>Years</div>
