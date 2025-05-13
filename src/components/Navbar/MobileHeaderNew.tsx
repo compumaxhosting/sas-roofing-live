@@ -9,10 +9,7 @@ export default function MobileHeaderNew() {
   const [isOpen, setIsOpen] = useState(false);
   const [hasMounted, setHasMounted] = useState(false);
 
-  useEffect(() => {
-    setHasMounted(true);
-  }, []);
-
+  useEffect(() => setHasMounted(true), []);
   useEffect(() => {
     document.body.style.overflow = isOpen ? "hidden" : "";
     return () => {
@@ -24,21 +21,34 @@ export default function MobileHeaderNew() {
 
   return (
     <>
-      <div className="relative flex justify-between items-center h-[122px] w-full md:hidden bg-[#e63a27] font-inter">
-        <Link href="/" className="flex items-center">
+      <div className="relative flex h-[122px] w-full md:hidden bg-[#e63a27] font-inter overflow-hidden">
+        {/* Blue Slanted Section */}
+        <div
+          className="absolute top-0 left-0 h-full blue-diagonal bg-[#003269] z-0"
+          style={{
+            clipPath: "polygon(0 0, 100% 0, 65% 100%, 0% 100%)",
+          }}
+        />
+
+        {/* Logo Positioned Over Diagonal Center */}
+        <Link
+          href="/"
+          className="absolute top-1/2 logo-container transform -translate-x-1/2 -translate-y-1/2 z-10 w-45 h-45 sm:w-50 sm:h-50"
+        >
           <Image
-            src="/MobileLogo.webp"
+            src="/Logo.png"
+            fill
             alt="Logo"
-            width={200}
-            height={80}
-            className="object-contain h-full w-auto"
+            className="object-contain drop-shadow-md"
             priority
           />
         </Link>
+
+        {/* Menu Button */}
         <button
           onClick={() => setIsOpen(true)}
           aria-label="Open menu"
-          className="bg-[#e63a27] w-12 h-12 flex items-center justify-center rounded-md"
+          className="absolute top-1/2 right-4 transform -translate-y-1/2 z-10 w-12 h-12 flex items-center justify-center"
         >
           <Image
             src="/menu4.webp"
@@ -50,6 +60,7 @@ export default function MobileHeaderNew() {
           />
         </button>
       </div>
+
       <MobileDrawer isOpen={isOpen} setIsOpen={setIsOpen} />
     </>
   );

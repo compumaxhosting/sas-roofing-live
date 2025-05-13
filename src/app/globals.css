@@ -296,3 +296,50 @@ body{
   position: relative; /* so it's pushed below */
 }
 
+/* Responsive overrides */
+@media (max-width: 320px) {
+  .blue-diagonal {
+    width: 39% !important;
+  }
+
+  .logo-container {
+    left: 33%  !important;
+  }
+}
+@media (max-width: 424px) {
+  .blue-diagonal {
+    width: 39% !important;
+  }
+
+  .logo-container {
+    left: 33%  !important;
+  }
+}
+@media (min-width: 425px) {
+  .blue-diagonal {
+    width: 28% !important;
+  }
+
+  .logo-container {
+    left: 10%  !important;
+  }
+}
+
+@media (max-width: 640px) {
+  .blue-diagonal {
+    width: 25% !important;
+  }
+
+  .logo-container {
+    left: 18% !important;
+  }
+}
+@media (min-width: 641px) {
+  .blue-diagonal {
+    width: 25% !important;
+  }
+
+  .logo-container {
+    left: 18% !important;
+  }
+}

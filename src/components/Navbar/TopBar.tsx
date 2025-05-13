@@ -2,20 +2,12 @@
 
 import Link from "next/link";
 import { FaPhoneAlt, FaEnvelope, FaFacebookF, FaHome } from "react-icons/fa";
-import { Be_Vietnam_Pro } from "next/font/google";
-
-const beVietnamPro = Be_Vietnam_Pro({
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
-});
 
 export default function TopBar() {
   return (
-    <div
-      className={`bg-[#003269] text-white px-6 text-[15px] h-[50px] ${beVietnamPro.className}`}
-    >
+    <div className="bg-[#003269] text-white px-6 text-[15px] h-[52px] font-bevietnam">
       <div className="flex justify-between items-center h-full">
-        <div className="w-[373px] h-full bg-[#00254c] [clip-path:polygon(0_0,90%_0,100%_100%,0%_100%)]" />
+        <div className="w-[436px] h-full bg-[#00254c] [clip-path:polygon(0_0,90%_0,100%_100%,0%_100%)]" />
 
         <div className="flex items-center h-full">
           <div className="hidden xl:flex items-center pr-4 divide-x divide-white/30">
