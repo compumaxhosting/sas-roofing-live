@@ -11,7 +11,7 @@ const slides = [
   {
     title: "Protect Your Home With SAS Roofing",
     description:
-      "Changed......",
+      "SAS Roofing is your source for high-quality roofing of any type",
     buttonText: "Read More",
     image: "/slider1.jpg",
   },
