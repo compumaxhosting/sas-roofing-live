@@ -33,7 +33,7 @@ export default function MobileHeaderNew() {
         {/* Logo Positioned Over Diagonal Center */}
         <Link
           href="/"
-          className="absolute top-1/2 logo-container transform -translate-x-1/2 -translate-y-1/2 z-10 w-56 h-56 sm:w-60 sm:h-60"
+          className="absolute top-1/2 logo-container transform -translate-x-1/2 -translate-y-1/2 z-10 w-55 h-55 sm:w-60 sm:h-60"
         >
           <Image
             src="/Logo.png"
