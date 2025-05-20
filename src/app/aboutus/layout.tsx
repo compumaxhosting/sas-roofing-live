@@ -6,7 +6,7 @@ export const metadata = {
   description:
     "SAS Roofing & Waterproofing – Your 24/7 roofing and waterproofing contractor serving Brooklyn, Manhattan, and Queens. We offer emergency roof repair, leak repair, and flat roof services anytime.",
   keywords:
-    "24/7 roofing contractor Brooklyn, emergency roof repair Manhattan, waterproofing services Queens NY, licensed roofer Brooklyn NY, flat roof waterproofing Manhattan, roof leak repair Queens, commercial roofing contractor NYC, residential roof repair Brooklyn, basement waterproofing Queens, 24/7 emergency roofing NYC.",
+    "24/7 roofing contractor Brooklyn, emergency roof repair Manhattan, waterproofing services Queens NY, licensed roofer Brooklyn NY, flat roof waterproofing Manhattan, roof leak repair Queens, commercial roofing contractor NYC, residential roof repair Brooklyn, basement waterproofing Queens, 24/7 emergency roofing NYC",
   openGraph: {
     title: "Emergency Roofing Contractor Available 24/7 in Brooklyn, NY",
     description:
