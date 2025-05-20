@@ -2,17 +2,18 @@ import { ReactNode } from "react";
 
 // Metadata for SEO
 export const metadata = {
-  title: "Expert Roofing Contractors in Brooklyn | Roof Repair & Installation",
+  title:
+    "Masonry Services in Brooklyn, Queens & Manhattan | sasroofingwaterproofing.com",
   description:
-    "Looking for reliable roofing contractors in Brooklyn? SAS Roofing & Waterproofing offers expert roof repair, roof installation, and commercial roofing services in Brooklyn, Queens, and Manhattan. Affordable and high-quality solutions for all your roofing needs.",
+    "Need professional masonry services in Brooklyn? SAS Roofing & Waterproofing specializes in high-quality brickwork, stone masonry, and concrete masonry across Brooklyn, Queens, and Manhattan. We offer masonry repair, custom designs, and residential masonry services. Reach out to the top masonry contractors for trusted and durable solutions today.",
   keywords:
-    "Best Roof Repair Brooklyn, Brooklyn Roof Installation, Commercial Roofing Brooklyn, Residential Roofing Brooklyn, Roof Replacement Queens, Roof Repair Manhattan, Affordable Roofing Manhattan, Flat Roofs Brooklyn, Roofing Contractors in Queens",
+    "Masonry Services Brooklyn, Brickwork Contractors Brooklyn, Stone Masonry Brooklyn, Masonry Repair Queens, Masonry Construction Manhattan, Best Masonry Contractors Brooklyn, Brick Masonry Manhattan, Concrete Masonry Brooklyn, Custom Masonry in Queens, Residential Masonry Services Manhattan",
   openGraph: {
     title:
-      "Expert Roofing Contractors in Brooklyn | Roof Repair & Installation",
+      "Masonry Services in Brooklyn, Queens & Manhattan | sasroofingwaterproofing.com",
     description:
-      "Looking for reliable roofing contractors in Brooklyn? SAS Roofing & Waterproofing offers expert roof repair, roof installation, and commercial roofing services in Brooklyn, Queens, and Manhattan. Affordable and high-quality solutions for all your roofing needs.",
-    url: "https://www.sasroofingwaterproofing.com/roofing-contractors-brooklyn",
+      "Need professional masonry services in Brooklyn? SAS Roofing & Waterproofing specializes in high-quality brickwork, stone masonry, and concrete masonry across Brooklyn, Queens, and Manhattan. We offer masonry repair, custom designs, and residential masonry services. Reach out to the top masonry contractors for trusted and durable solutions today.",
+    url: "https://www.sasroofingwaterproofing.com/masonry-services-brooklyn-ny",
     images: [
       {
         url: "https://www.sasroofingwaterproofing.com/assets/images/resources/Logo-SAS.png",

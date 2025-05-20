@@ -12,7 +12,7 @@ export const metadata = {
       "Expert Roofing Contractors in Brooklyn | Roof Repair & Installation",
     description:
       "Looking for reliable roofing contractors in Brooklyn? SAS Roofing & Waterproofing offers expert roof repair, roof installation, and commercial roofing services in Brooklyn, Queens, and Manhattan. Affordable and high-quality solutions for all your roofing needs.",
-    url: "https://www.sasroofingwaterproofing.com/roofing-contractors-brooklyn",
+    url: "https://www.sasroofingwaterproofing.com/masonry-services-brooklyn-ny",
     images: [
       {
         url: "https://www.sasroofingwaterproofing.com/assets/images/resources/Logo-SAS.png",
