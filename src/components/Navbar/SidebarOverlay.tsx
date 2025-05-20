@@ -101,7 +101,7 @@ export default function SidebarOverlay({ onClose }: { onClose: () => void }) {
               type="submit"
               className="border border-[#e63a27] text-[#e63a27] font-semibold text-sm md:text-base py-3 hover:bg-[#e63a27] hover:text-white transition form-hover-button font-bevietnam"
             >
-              SUBMIT NOW
+              Book My Consultation
             </button>
           </form>
         </section>

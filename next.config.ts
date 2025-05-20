@@ -43,6 +43,11 @@ const nextConfig: NextConfig = {
         destination: "/masonry-services-brooklyn-ny",
         permanent: true,
       },
+      {
+        source: "/waterproofing-contractors-NY.html",
+        destination: "/waterproofing-contractors-NY",
+        permanent: true,
+      },
     ];
   },
 };

@@ -95,7 +95,7 @@ export default function ServiceAndFaqSection() {
             type="submit"
             className="border border-[#e63a27] text-[#e63a27] py-3 px-3 font-semibold rounded-md hover:bg-[#e63a27] hover:text-white transition hover-button"
           >
-            SUBMIT NOW
+            Book My Consultation
           </button>
         </motion.form>
 

@@ -16,15 +16,16 @@ const bevietnam = Be_Vietnam_Pro({
 
 export const metadata: Metadata = {
   title:
-    "Trusted Roofing, Waterproofing & Masonry Services in Brooklyn, New York",
+    "Trusted Roofing, Waterproofing & Masonry Services in Brooklyn,New York",
   description:
     "SAS Roofing & Waterproofing offers expert roofing, waterproofing, and masonry services in Brooklyn, Manhattan, and Queens. Call for quality construction solutions today!",
   keywords:
-    "Roofing Contractors in Queens, Roofing Contractors Brooklyn, Roofing Contractors Manhattan, Waterproofing Services in Brooklyn, Masonry Services in Brooklyn, Roof Repair Manhattan, Roof Installation Brooklyn, Commercial Roofing in NYC, Foundation Waterproofing Manhattan",
+    "roofing contractor Brooklyn, waterproofing service Brooklyn, masonry contractor Brooklyn, roofing contractor Manhattan, waterproofing service Manhattan, masonry contractor Manhattan, roofing contractor Queens, waterproofing service Queens, masonry contractor Queens, construction company Brooklyn",
   openGraph: {
-    title: "Expert Roofing, Waterproofing & Masonry in Brooklyn & NYC",
+    title:
+      "Trusted Roofing, Waterproofing & Masonry Services in Brooklyn,New York",
     description:
-      "SAS Roofing Waterproofing provides expert roofing, waterproofing, and masonry services in Brooklyn, Manhattan, and Queens.",
+      "SAS Roofing & Waterproofing offers expert roofing, waterproofing, and masonry services in Brooklyn, Manhattan, and Queens. Call for quality construction solutions today!",
     url: "https://www.sasroofingwaterproofing.com/",
     images: [
       {
