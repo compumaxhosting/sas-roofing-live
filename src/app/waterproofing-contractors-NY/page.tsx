@@ -29,13 +29,14 @@ const page = () => {
     <>
       <Navbar />
       <StickyNavbar />
+
       <ContactBar />
       <BreadCrum2
         breadcrumbItems={[]}
         pageTitle={"BEST WATERPROOFING SERVICES"}
         imageSrc={"/breadcrumb-19.jpg"}
       />
-      <WaterpRoofing />
+ <WaterpRoofing />
       <motion.div
         initial="hidden"
         whileInView="visible"

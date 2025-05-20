@@ -57,10 +57,10 @@ const schemaData = {
   telephone: "+1-718-500-3312",
   address: {
     "@type": "PostalAddress",
-    streetAddress: "2515 Avenue O",
+    streetAddress: "552 Rugby Rd",
     addressLocality: "Brooklyn",
     addressRegion: "NY",
-    postalCode: "11210",
+    postalCode: "11230",
     addressCountry: "US",
   },
   geo: {

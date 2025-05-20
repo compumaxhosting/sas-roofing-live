@@ -35,10 +35,10 @@ const schemaData = {
     "SAS Roofing and Waterproofing offers high-quality roofing, waterproofing, and restoration services. Serving residential and commercial clients in City Name and surrounding areas.",
   address: {
     "@type": "PostalAddress",
-    streetAddress: "123 Main St",
-    addressLocality: "City Name",
-    addressRegion: "State/Province",
-    postalCode: "12345",
+    streetAddress: "552 Rugby Rd",
+    addressLocality: "Brooklyn",
+    addressRegion: "NY",
+    postalCode: "11230",
     addressCountry: "US",
   },
   contactPoint: {

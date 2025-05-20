@@ -37,10 +37,10 @@ const schemaData = {
     "SAS Roofing & Waterproofing showcases a range of completed roofing and waterproofing projects across Brooklyn, Manhattan, and Queens.",
   address: {
     "@type": "PostalAddress",
-    streetAddress: "123 Main St",
+    streetAddress: "552 Rugby Rd",
     addressLocality: "Brooklyn",
     addressRegion: "NY",
-    postalCode: "11201",
+    postalCode: "11230",
     addressCountry: "US",
   },
   telephone: "+1-347-221-6549",
