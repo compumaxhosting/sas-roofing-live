@@ -36,7 +36,7 @@ const page = () => {
         pageTitle={"BEST WATERPROOFING SERVICES"}
         imageSrc={"/breadcrumb-19.jpg"}
       />
- <WaterpRoofing />
+      <WaterpRoofing />
       <motion.div
         initial="hidden"
         whileInView="visible"
