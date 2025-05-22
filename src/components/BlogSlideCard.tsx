@@ -2,7 +2,7 @@ import Link from "next/link";
 import { FiExternalLink, FiHeart, FiFolder, FiShare2 } from "react-icons/fi";
 
 interface Slide {
-  slug: string;
+  link: string;
   title: string;
   description: string;
   date: string;
@@ -16,7 +16,7 @@ export default function BlogSlideCard({ slide }: { slide: Slide }) {
     <div className="relative w-full h-[400px] rounded-sm shadow-md overflow-hidden flex flex-col font-inter">
       {/* Background image with overlay */}
       <Link
-        href={`/blog/${slide.slug}`}
+        href={`/blog/${slide.link}`}
         className="relative flex-1 overflow-hidden"
       >
           <div
@@ -46,7 +46,7 @@ export default function BlogSlideCard({ slide }: { slide: Slide }) {
       {/* Footer Actions */}
       <div className="bg-white px-4 py-3 flex justify-between items-center border border-gray-400 text-sm">
         <Link
-          href={`/blog/${slide.slug}`}
+          href={`/blog/${slide.link}`}
           rel="noopener noreferrer"
           className="flex items-center gap-1 font-bold text-[#003269] text-sm"
         >
