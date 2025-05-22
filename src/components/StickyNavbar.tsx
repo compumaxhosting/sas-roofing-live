@@ -22,6 +22,7 @@ const navItems = [
   { label: "PROJECTS", path: "/projects" },
   { label: "TESTIMONIALS", path: "/reviews" },
   { label: "CONTACT US", path: "/contact-us" },
+  { label: "BLOG", path: "/blog" },
 ];
 
 export default function StickyNavbar() {

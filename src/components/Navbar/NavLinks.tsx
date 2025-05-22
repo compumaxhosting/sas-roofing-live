@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useRef } from "react";
+import { usePathname } from "next/navigation"; // ✅ add this
 import Link from "next/link";
 import Image from "next/image";
 import { FaFacebookF, FaHome } from "react-icons/fa";
@@ -25,12 +26,14 @@ const navItems = [
   { label: "PROJECTS", path: "/projects" },
   { label: "TESTIMONIALS", path: "/reviews" },
   { label: "CONTACT US", path: "/contact-us" },
+  { label: "BLOG", path: "/blog" },
 ];
 
 const inter = Inter({
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"],
 });
+
 
 export default function NavLinks({
   setSidebarOpen,
@@ -54,14 +57,20 @@ export default function NavLinks({
     }, 300); // delay in ms before hiding
   };
 
+  const pathname = usePathname(); // ✅ get current path
+
   return (
     <ul
       className={`flex gap-4 text-sm font-semibold text-[#003269] items-stretch h-full w-full justify-end ${inter.className}`}
     >
       {/* Desktop Links */}
       <div className="hidden xl:flex gap-6 items-center ">
-        {navItems.map(({ label, path, subItems }) =>
-          subItems ? (
+        {navItems.map(({ label, path, subItems }) => {
+          const isActive =
+            pathname === path ||
+            (subItems && subItems.some((sub) => pathname === sub.path));
+
+          return subItems ? (
             <div
               key={label}
               className="relative"
@@ -70,7 +79,9 @@ export default function NavLinks({
             >
               <Link
                 href={path}
-                className="px-2 hover:text-[#e63a27] flex items-center gap-1"
+                className={`px-2 flex items-center gap-1 hover:text-[#e63a27] ${
+                  isActive ? "text-[#e63a27]" : ""
+                }`}
               >
                 {label}
                 <span
@@ -92,7 +103,9 @@ export default function NavLinks({
                   <Link
                     key={subLabel}
                     href={subPath}
-                    className="block px-5 py-4 text-[#003269] hover:bg-[#e63a27] hover:text-white text-sm"
+                    className={`block px-5 py-4 text-[#003269] hover:bg-[#e63a27] hover:text-white text-sm ${
+                      pathname === subPath ? "bg-[#e63a27] text-white" : ""
+                    }`}
                   >
                     {subLabel}
                   </Link>
@@ -100,11 +113,17 @@ export default function NavLinks({
               </div>
             </div>
           ) : (
-            <Link key={label} href={path} className="px-2 hover:text-[#e63a27]">
+            <Link
+              key={label}
+              href={path}
+              className={`px-2 hover:text-[#e63a27] ${
+                pathname === path ? "text-[#e63a27]" : ""
+              }`}
+            >
               {label}
             </Link>
-          )
-        )}
+          );
+        })}
       </div>
 
       {/* Mobile Menu Toggle */}
@@ -198,16 +217,25 @@ export default function NavLinks({
 
           <nav className="flex flex-col mt-4">
             {navItems.map(({ label, path, subItems }) => {
+              const isSubItemActive = subItems?.some(
+                (sub) => sub.path === pathname
+              );
+              const isActive = pathname === path || isSubItemActive;
+
               return subItems ? (
                 <div
                   key={label}
                   className="border-t border-white/20 last:border-b"
                 >
                   <button
-                    className="w-full px-6 py-4 text-left flex justify-between items-center font-semibold hover:bg-white hover:text-black transition-colors"
+                    className={`w-full px-6 py-4 text-left flex justify-between items-center font-semibold transition-colors ${
+                      isActive
+                        ? "text-[#e63a27]"
+                        : "hover:bg-white hover:text-black"
+                    }`}
                     onClick={() => setSidebarServicesOpen((prev) => !prev)}
                   >
-                    <Link href="/services">{label} </Link>
+                    <Link href="/services">{label}</Link>
                     <span
                       className={`transform transition-transform duration-200 ${
                         sidebarServicesOpen ? "rotate-180" : ""
@@ -225,7 +253,11 @@ export default function NavLinks({
                       <Link
                         key={subLabel}
                         href={subPath}
-                        className="block px-8 py-3 hover:bg-white hover:text-black transition-colors"
+                        className={`block px-8 py-3 transition-colors ${
+                          pathname === subPath
+                            ? "text-[#e63a27]"
+                            : "hover:bg-white hover:text-black"
+                        }`}
                         onClick={() => setIsOpen(false)}
                       >
                         {subLabel}
@@ -237,7 +269,11 @@ export default function NavLinks({
                 <Link
                   key={label}
                   href={path}
-                  className="border-t border-white/20 last:border-b px-6 py-4 hover:bg-white hover:text-black transition-colors"
+                  className={`border-t border-white/20 last:border-b px-6 py-4 transition-colors ${
+                    pathname === path
+                      ? "text-[#e63a27]"
+                      : "hover:bg-white hover:text-black"
+                  }`}
                   onClick={() => setIsOpen(false)}
                 >
                   {label}

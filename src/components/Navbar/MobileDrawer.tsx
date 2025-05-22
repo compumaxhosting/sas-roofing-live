@@ -5,6 +5,8 @@ import Image from "next/image";
 import Link from "next/link";
 import { FaFacebookF, FaHome } from "react-icons/fa";
 import MobileNavItem from "./MobileNavItem";
+import { usePathname } from "next/navigation";
+
 
 interface Props {
   isOpen: boolean;
@@ -13,6 +15,7 @@ interface Props {
 
 export default function MobileDrawer({ isOpen, setIsOpen }: Props) {
   const [servicesOpen, setServicesOpen] = useState(false);
+  const pathname = usePathname(); // ← GET CURRENT PATH
 
   const navItems = [
     { name: "HOME", href: "/" },
@@ -32,6 +35,7 @@ export default function MobileDrawer({ isOpen, setIsOpen }: Props) {
     { name: "PROJECTS", href: "/projects" },
     { name: "TESTIMONIALS", href: "/reviews" },
     { name: "CONTACT US", href: "/contact-us" },
+    { name: "BLOG", href: "/blog" },
   ];
 
   const socialLinks = [
@@ -98,6 +102,7 @@ export default function MobileDrawer({ isOpen, setIsOpen }: Props) {
               setIsOpen={setIsOpen}
               servicesOpen={servicesOpen}
               setServicesOpen={setServicesOpen}
+              pathname={pathname} // ← Pass current path
             />
           ))}
         </nav>
