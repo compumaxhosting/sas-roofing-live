@@ -12,7 +12,7 @@ const fadeUp = {
   },
 };
 
-export default function RoofingServices() {
+export default function BlogPage() {
   return (
     <section className="px-6 py-12 md:px-16 bg-white text-[#003269] flex flex-col items-center">
       <div className="w-full xl:max-w-7xl xl:px-0">
@@ -24,13 +24,6 @@ export default function RoofingServices() {
           variants={fadeUp}
           className="mb-8"
         >
-          {/* <h2 className="text-xl md:text-2xl font-bold font-inter mb-3">
-            Blog Title:
-          </h2>
-          <h2 className="text-lg md:text-xl font-semibold font-inter mb-6">
-            Why SAS Roofing & Waterproofing Is Brooklyn’s Most Trusted Roofing
-            Expert
-          </h2> */}
           <h1 className="text-3xl md:text-4xl font-bold font-inter mb-2">
             SAS Roofing & Waterproofing: Brooklyn’s Trusted Roofing Experts
           </h1>

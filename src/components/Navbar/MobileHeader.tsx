@@ -83,6 +83,7 @@ export default function MobileHeader({
               { name: "PROJECTS", href: "/projects" },
               { name: "REVIEWS", href: "/reviews" },
               { name: "CONTACT US", href: "/contact-us" },
+              { name: "BLOG", href: "/blog" },
             ].map((item) => (
               <li
                 key={item.name}

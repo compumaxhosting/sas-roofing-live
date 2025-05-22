@@ -1,8 +1,8 @@
 "use client";
 
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { Dispatch, SetStateAction } from "react";
-
 
 interface NavItem {
   name: string;
@@ -16,6 +16,7 @@ interface Props {
   setIsOpen: Dispatch<SetStateAction<boolean>>;
   servicesOpen: boolean;
   setServicesOpen: Dispatch<SetStateAction<boolean>>;
+  pathname: string; // ← Add this line
 }
 
 export default function MobileNavItem({
@@ -24,14 +25,23 @@ export default function MobileNavItem({
   servicesOpen,
   setServicesOpen,
 }: Props) {
-const toggleSubmenu = () => setServicesOpen((prev) => !prev);
+  const pathname = usePathname();
+
+  const isSubItemActive = item.subItems?.some((sub) => sub.href === pathname);
+  const isActive = pathname === item.href || isSubItemActive;
+
+  const toggleSubmenu = () => setServicesOpen((prev) => !prev);
 
   if (item.subItems) {
     return (
       <div className="border-t border-white/20 last:border-b font-inter">
         <button
           onClick={toggleSubmenu}
-          className="w-full px-6 py-4 text-left flex justify-between items-center font-semibold hover:bg-white hover:text-black transition-colors font-inter"
+          className={`w-full px-6 py-4 text-left flex justify-between items-center font-semibold transition-colors font-inter ${
+            isActive
+              ? "bg-white text-[#e63a27]"
+              : "hover:bg-white hover:text-black"
+          }`}
           aria-expanded={servicesOpen}
           aria-controls={`services-menu-${item.name}`}
         >
@@ -55,7 +65,11 @@ const toggleSubmenu = () => setServicesOpen((prev) => !prev);
               key={name}
               href={href}
               onClick={() => setIsOpen(false)}
-              className="block px-8 py-3 hover:bg-white hover:text-black transition-colors font-inter"
+              className={`block px-8 py-3 transition-colors font-inter ${
+                pathname === href
+                  ? "bg-white text-[#e63a27]"
+                  : "hover:bg-white hover:text-black"
+              }`}
             >
               {name}
             </Link>
@@ -69,7 +83,11 @@ const toggleSubmenu = () => setServicesOpen((prev) => !prev);
     <Link
       href={item.href}
       onClick={() => setIsOpen(false)}
-      className="block px-6 py-4 border-t border-white/20 last:border-b hover:bg-white hover:text-black transition-colors"
+      className={`block px-6 py-4 border-t border-white/20 last:border-b transition-colors ${
+        pathname === item.href
+          ? "text-[#e63a27]"
+          : "hover:bg-white hover:text-black"
+      }`}
     >
       {item.name}
     </Link>

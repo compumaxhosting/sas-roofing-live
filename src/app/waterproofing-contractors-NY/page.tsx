@@ -29,7 +29,6 @@ const page = () => {
     <>
       <Navbar />
       <StickyNavbar />
-
       <ContactBar />
       <BreadCrum2
         breadcrumbItems={[]}
@@ -44,7 +43,7 @@ const page = () => {
         variants={fadeUp}
         className="" // No specific class needed here usually
       >
-        <ServicesSlider swiperRef={swiperRef} />
+      <ServicesSlider swiperRef={swiperRef} />
       </motion.div>
       <FooterTopCTA />
       <Footer />

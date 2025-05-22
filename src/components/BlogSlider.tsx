@@ -22,18 +22,21 @@ const slides = [
     description: "ROOF LEAKS",
     date: "13 JUNE",
     image: "/services1.jpg",
+    slug: "Why-SAS-Roofing-and-Waterproofing-Is-Brooklyns-Most-Trusted-Roofing-Expert",
   },
   {
     title: "Foundation Wall Repair And Waterproofing",
     description: "MAINTENANCE",
     date: "13 JUNE",
     image: "/services2.jpg",
+    slug: "Why-SAS-Roofing-and-Waterproofing-Is-Brooklyns-Most-Trusted-Roofing-Expert",
   },
   {
     title: "How To Weather Proof Your Roof This Winter?",
     description: "TIPS & TRICKS",
     date: "11 JUNE",
     image: "/services3.jpg",
+    slug: "Why-SAS-Roofing-and-Waterproofing-Is-Brooklyns-Most-Trusted-Roofing-Expert",
   },
 ];
 
