@@ -16,6 +16,7 @@ interface Props {
   setIsOpen: Dispatch<SetStateAction<boolean>>;
   servicesOpen: boolean;
   setServicesOpen: Dispatch<SetStateAction<boolean>>;
+  pathname: string; // ✅ Add this line if it’s missing
 }
 
 export default function MobileNavItem({
