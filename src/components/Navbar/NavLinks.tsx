@@ -68,6 +68,7 @@ export default function NavLinks({
         {navItems.map(({ label, path, subItems }) => {
           const isActive =
             pathname === path ||
+            pathname.startsWith(path + "/") ||
             (subItems && subItems.some((sub) => pathname === sub.path));
 
           return subItems ? (
@@ -117,7 +118,9 @@ export default function NavLinks({
               key={label}
               href={path}
               className={`px-2 hover:text-[#e63a27] ${
-                pathname === path ? "text-[#e63a27]" : ""
+                pathname === path || pathname.startsWith(path + "/")
+                  ? "text-[#e63a27]"
+                  : ""
               }`}
             >
               {label}
@@ -270,7 +273,7 @@ export default function NavLinks({
                   key={label}
                   href={path}
                   className={`border-t border-white/20 last:border-b px-6 py-4 transition-colors ${
-                    pathname === path
+                    pathname === path || pathname.startsWith(path + "/")
                       ? "text-[#e63a27]"
                       : "hover:bg-white hover:text-black"
                   }`}
