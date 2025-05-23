@@ -26,7 +26,7 @@ const slides = [
     description: `Upgrade your home with a new shingle roof and natural light! Learn how replacing worn shingles and adding a skylight can improve energy efficiency, enhance interior brightness, and boost curb appeal...`,
     date: "13 JUNE",
     image: "/leakage_roof.jpg",
-    link: "/",
+    link: "/", // This should redirect to home
   },
   {
     title: "Foundation Wall Repair And Waterproofing",
