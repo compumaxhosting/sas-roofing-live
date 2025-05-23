@@ -16,18 +16,21 @@ export default function BlogPage() {
   return (
     <section className="px-6 py-12 md:px-16 bg-white text-[#003269] flex flex-col items-center">
       <div className="w-full xl:max-w-7xl xl:px-0">
-        {/* Header */}
         <motion.div
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.2 }}
           variants={fadeUp}
-          className="mb-8"
+          className="mb-5"
         >
-          <h1 className="text-3xl md:text-4xl font-bold font-inter mb-2">
+          <h4 className="text-3xl md:text-4xl font-bold font-inter mb-7">
+            Why SAS Roofing & Waterproofing Is Brooklyn’s Most Trusted
+            Roofing Expert ?
+          </h4>
+          <h4 className="text-xl md:text-3xl font-semibold font-inter mb-2">
             SAS Roofing & Waterproofing: Brooklyn’s Trusted Roofing Experts
-          </h1>
-          <p className="text-sm md:text-lg text-gray-700 font-bevietnam">
+          </h4>
+          <p className="text-sm md:text-base text-gray-700 font-bevietnam">
             With over 30+ years of dedicated service in Brooklyn, Manhattan,
             Queens, and The Bronx, SAS Roofing & Waterproofing has become
             synonymous with quality, reliability, and excellence in roofing,

@@ -16,7 +16,7 @@ interface Props {
   setIsOpen: Dispatch<SetStateAction<boolean>>;
   servicesOpen: boolean;
   setServicesOpen: Dispatch<SetStateAction<boolean>>;
-  pathname: string; // ← Add this line
+  pathname: string; // ✅ Add this line if it’s missing
 }
 
 export default function MobileNavItem({
@@ -27,8 +27,13 @@ export default function MobileNavItem({
 }: Props) {
   const pathname = usePathname();
 
-  const isSubItemActive = item.subItems?.some((sub) => sub.href === pathname);
-  const isActive = pathname === item.href || isSubItemActive;
+  const isSubItemActive = item.subItems?.some(
+    (sub) => pathname === sub.href || pathname.startsWith(sub.href + "/")
+  );
+  const isActive =
+    pathname === item.href ||
+    pathname.startsWith(item.href + "/") ||
+    isSubItemActive;
 
   const toggleSubmenu = () => setServicesOpen((prev) => !prev);
 
@@ -66,7 +71,7 @@ export default function MobileNavItem({
               href={href}
               onClick={() => setIsOpen(false)}
               className={`block px-8 py-3 transition-colors font-inter ${
-                pathname === href
+                pathname === href || pathname.startsWith(href + "/")
                   ? "bg-white text-[#e63a27]"
                   : "hover:bg-white hover:text-black"
               }`}
@@ -84,7 +89,7 @@ export default function MobileNavItem({
       href={item.href}
       onClick={() => setIsOpen(false)}
       className={`block px-6 py-4 border-t border-white/20 last:border-b transition-colors ${
-        pathname === item.href
+        pathname === item.href || pathname.startsWith(item.href + "/")
           ? "text-[#e63a27]"
           : "hover:bg-white hover:text-black"
       }`}
