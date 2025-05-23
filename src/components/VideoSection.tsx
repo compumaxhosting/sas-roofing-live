@@ -70,11 +70,11 @@ const VideoSection = ({ margin }: Props) => {
 
               <ul className="space-y-2">
                 <li>
-                  <SiTicktick className="inline mr-2 font-bevietnam" /> Roof of
+                  <SiTicktick className="inline mr-2 font-bevietnam"/> Roof of
                   the Year
                 </li>
                 <li>
-                  <SiTicktick className="inline mr-2 font-bevietnam" /> Fully
+                  <SiTicktick className="inline mr-2 font-bevietnam"/> Fully
                   supported metal
                 </li>
                 <li>

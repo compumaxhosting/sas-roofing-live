@@ -18,25 +18,48 @@ interface Props {
 
 const slides = [
   {
-    title: "Replacing Shingle Roof. And Installing Skylight.",
+    title:
+      "Why SAS Roofing and Waterproofing Is Brooklyn's Most Trusted Roofing Expert?",
+    description: "Trusted Roofing Expert",
+    date: "13 JUNE",
+    image: "/roofing.jpg",
+    link: "Why-SAS-Roofing-and-Waterproofing-Is-Brooklyns-Most-Trusted-Roofing-Expert",
+  },
+  {
+    title: "Replacing Shingle Roof And Installing Skylight",
     description: "ROOF LEAKS",
     date: "13 JUNE",
     image: "/services1.jpg",
-    link: "/Why-SAS-Roofing-and-Waterproofing-Is-Brooklyns-Most-Trusted-Roofing-Expert",
+    link: "/",
   },
   {
     title: "Foundation Wall Repair And Waterproofing",
     description: "MAINTENANCE",
     date: "13 JUNE",
     image: "/services2.jpg",
-    link: "/Why-SAS-Roofing-and-Waterproofing-Is-Brooklyns-Most-Trusted-Roofing-Expert",
+    link: "/",
   },
   {
     title: "How To Weather Proof Your Roof This Winter?",
     description: "TIPS & TRICKS",
     date: "11 JUNE",
     image: "/services3.jpg",
-    link: "/Why-SAS-Roofing-and-Waterproofing-Is-Brooklyns-Most-Trusted-Roofing-Expert",
+    link: "/",
+  },
+  {
+    title:
+      "Expert Masonry Services Across Brooklyn, Manhattan & Queens: Quality You Can Trust",
+    description: "THE MASON’S MARK",
+    date: "11 JUNE",
+    image: "/masonry.jpg",
+    link: "/",
+  },
+  {
+    title: "Roofing Excellence Across New York’s Core Boroughs",
+    description: "ROOFTOP RELIABILITY",
+    date: "11 JUNE",
+    image: "/roofing1.jpg",
+    link: "/",
   },
 ];
 
