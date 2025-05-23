@@ -43,7 +43,6 @@ export default function BlogSlideNew({ slide }: { slide: Slide }) {
     }
   };
 
-  // Determine correct href
   const href = slide.link === "/" ? "/" : `/blog/${slide.link}`;
 
   return (

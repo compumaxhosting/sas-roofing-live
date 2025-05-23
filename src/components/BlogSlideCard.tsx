@@ -48,7 +48,6 @@ export default function BlogSlideCard({ slide }: { slide: Slide }) {
 
   return (
     <div className="relative w-full h-[430px] rounded-sm shadow-md overflow-hidden flex flex-col font-inter">
-      {/* Background Image */}
       <Link
         href={`/blog/${slide.link}`}
         className="relative flex-1 overflow-hidden"
