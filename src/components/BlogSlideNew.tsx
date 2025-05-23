@@ -4,6 +4,8 @@ import Link from "next/link";
 import Image from "next/image";
 import { FiHeart, FiShare2 } from "react-icons/fi";
 import { AiFillHeart } from "react-icons/ai";
+import { motion } from "framer-motion";
+
 
 interface Slide {
   shortTitle: string;
@@ -43,11 +45,16 @@ export default function BlogSlideNew({ slide }: { slide: Slide }) {
     }
   };
 
-  // Determine correct href
   const href = slide.link === "/" ? "/" : `/blog/${slide.link}`;
 
   return (
-    <section className="lg:w-[400px]">
+    <motion.section
+      className="lg:w-[400px]"
+      initial={{ opacity: 0, y: 40 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6, ease: "easeOut" }}
+      viewport={{ once: true, amount: 0.2 }}
+    >
       <div className="h-[515px] flex flex-col justify-between rounded-md shadow-2xl overflow-hidden font-inter border border-blue-300 bg-white mt-3">
         {/* Image Section */}
         <div className="relative w-full h-60">
@@ -104,6 +111,6 @@ export default function BlogSlideNew({ slide }: { slide: Slide }) {
           </div>
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 }

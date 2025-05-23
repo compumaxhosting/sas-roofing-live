@@ -16,7 +16,6 @@ export default function BlogPage() {
   return (
     <section className="px-6 py-12 md:px-16 bg-white text-[#003269] flex flex-col items-center">
       <div className="w-full xl:max-w-7xl xl:px-0">
-        {/* Header */}
         <motion.div
           initial="hidden"
           whileInView="visible"

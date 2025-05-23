@@ -57,7 +57,7 @@ const slides = [
   {
     title: "Roofing Excellence Across New York’s Core Boroughs",
     description: "ROOFTOP RELIABILITY",
-    date: "17 JULY",
+    date: "16 JULY",
     image: "/roofing1.jpg",
     link: "/",
   },
