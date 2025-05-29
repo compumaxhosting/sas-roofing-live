@@ -65,7 +65,7 @@ const OurProjects: React.FC<OurProjectsProps> = ({ gallery }) => {
         {/* Button */}
         <Link
           href="/projects"
-          className="group self-start md:self-auto border-4 border-[#003269] p-2 inline-block focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-[#003269]"
+          className="group self-start md:self-auto border-4 border-[#003269] p-2 inline-block focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-[#003269]" // Added focus styles
           aria-label="View all completed projects" // More descriptive aria-label
         >
           <div className="border border-[#e63a27] px-5 py-3 text-xs sm:text-sm md:text-base lg:text-lg font-bold text-[#e63a27] uppercase whitespace-nowrap hover-button font-inter">

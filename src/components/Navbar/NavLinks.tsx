@@ -96,7 +96,7 @@ export default function NavLinks({
                   // Role="presentation" hides this purely visual element from screen readers.
                   // The aria-expanded attribute on the Link already conveys the dropdown state.
                   role="presentation"
-                  aria-hidden="true"
+                  aria-hidden="true" // Explicitly hide the arrow for screen readers
                 >
                   ▼
                 </span>

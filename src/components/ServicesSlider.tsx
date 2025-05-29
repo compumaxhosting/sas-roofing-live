@@ -79,7 +79,7 @@ export default function ServicesSlider({ swiperRef }: Props) {
     <div
       className="flex flex-col items-center px-4 sm:px-6 mb-5"
       role="region" // Designates a perceivable section of content
-      aria-roledescription="carousel"
+      aria-roledescription="carousel" // Customizes the role to "carousel"
       aria-label="Our Services Carousel" // Provides an accessible name for the carousel
     >
       <div className="w-10/12 overflow-hidden">

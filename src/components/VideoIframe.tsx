@@ -7,7 +7,7 @@ interface VideoIframeProps {
   title?: string;
   autoplay?: boolean;
 }
-//Video Section
+//Video
 const VideoIframe: React.FC<VideoIframeProps> = ({
   videoId = "Z4gunD5Wbi8",
   title = "Video",

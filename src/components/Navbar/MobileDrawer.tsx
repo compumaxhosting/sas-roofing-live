@@ -7,6 +7,7 @@ import { FaFacebookF, FaHome } from "react-icons/fa"; // Assuming FaHome is for 
 import MobileNavItem from "./MobileNavItem"; // Ensure this path is correct
 import { usePathname } from "next/navigation";
 
+
 interface Props {
   isOpen: boolean;
   setIsOpen: Dispatch<SetStateAction<boolean>>;
@@ -92,16 +93,11 @@ export default function MobileDrawer({ isOpen, setIsOpen }: Props) {
           className="absolute top-3 right-3 bg-[#e63a27] text-white w-6 h-6 rounded-full flex items-center justify-center"
         >
           {/* Using a character for the close icon, ensure it's accessible */}
-          <span aria-hidden="true">✕</span>{" "}
-          {/* Hide character from screen readers, label on button */}
+          <span aria-hidden="true">✕</span> {/* Hide character from screen readers, label on button */}
         </button>
 
         {/* Company Logo Link */}
-        <Link
-          href="/"
-          className="flex justify-center p-4"
-          aria-label="Go to home page"
-        >
+        <Link href="/" className="flex justify-center p-4" aria-label="Go to home page">
           <Image
             src="/Logo.png"
             alt="SAS Roofing & Waterproofing Company Logo" // More descriptive alt text
@@ -113,9 +109,7 @@ export default function MobileDrawer({ isOpen, setIsOpen }: Props) {
         </Link>
 
         {/* Navigation Links */}
-        <nav className="mt-4 font-inter" aria-label="Mobile Navigation">
-          {" "}
-          {/* Added ARIA label for nav */}
+        <nav className="mt-4 font-inter" aria-label="Mobile Navigation"> {/* Added ARIA label for nav */}
           {navItems.map((item) => (
             <MobileNavItem
               key={item.name}
@@ -130,12 +124,7 @@ export default function MobileDrawer({ isOpen, setIsOpen }: Props) {
         </nav>
 
         {/* Social Media Links */}
-        <div
-          className="mt-auto flex justify-center gap-4 py-6"
-          role="contentinfo"
-        >
-          {" "}
-          {/* role="contentinfo" for footer-like content */}
+        <div className="mt-auto flex justify-center gap-4 py-6" role="contentinfo"> {/* role="contentinfo" for footer-like content */}
           {socialLinks.map(({ href, icon, label }, i) => (
             <Link
               key={i}

@@ -595,7 +595,7 @@ export default function BlogPage() {
               </li>
             </ul>
             <Link
-              href="/"
+              href="/" //goes to home page 
               className="inline-block mt-4 bg-[#e63a27] text-white px-5 py-2 rounded hover:bg-[#c72d1d] transition"
               aria-label="Visit SAS Roofing & Waterproofing homepage"
             >

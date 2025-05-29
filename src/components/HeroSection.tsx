@@ -186,6 +186,7 @@ export default function HeroSection() {
             transition={textTransition}
             className="max-w-3xl space-y-6 pt-6 md:ml-14 xl:ml-46"
             // The content is implicitly part of the slide's aria-label and aria-live region.
+            // No additional aria-label needed here to avoid redundancy.
           >
             <h2 className="text-5xl md:text-6xl lg:text-8xl font-bold leading-tight pointer-events-none font-inter">
               {" "}

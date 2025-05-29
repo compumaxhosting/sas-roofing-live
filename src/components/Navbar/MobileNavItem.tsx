@@ -50,7 +50,7 @@ export default function MobileNavItem({
               ? "bg-white text-[#e63a27]"
               : "hover:bg-white hover:text-black"
           }`}
-          aria-expanded={servicesOpen} // Indicates whether the controlled region is expanded or collapsed
+          aria-expanded={servicesOpen}
           aria-controls={`services-menu-${item.name
             .replace(/\s+/g, "-")
             .toLowerCase()}`} // Link to the ID of the sub-menu div

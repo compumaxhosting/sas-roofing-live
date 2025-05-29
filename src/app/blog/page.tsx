@@ -7,7 +7,7 @@ import FooterTopCTA from "@/components/FooterTopCTA";
 import Navbar from "@/components/Navbar/Navbar";
 import StickyNavbar from "@/components/StickyNavbar";
 import React from "react";
-
+//page
 const slides = [
   {
     title:

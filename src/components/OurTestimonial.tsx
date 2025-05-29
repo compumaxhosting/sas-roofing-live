@@ -43,7 +43,7 @@ const TestimonialSkeleton = () => (
 
 const ReviewSlider = dynamic(() => import("./ReviewSlider"), {
   ssr: false,
-  loading: () => <TestimonialSkeleton />,
+  loading: () => <TestimonialSkeleton />, // Use the skeleton loader as the loading fallback
 });
 
 const fadeUp = {

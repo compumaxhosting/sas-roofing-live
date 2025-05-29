@@ -20,7 +20,7 @@ const contactItems = [
   },
   {
     href: "mailto:sascon09@yahoo.com?subject=Website Inquiry&body=Hi%20SAS%20Team%2C%0A%0AI%20would%20like%20to%20know%20more%20about...",
-    label: "Send email to SAS Roofing support",
+    label: "Send email to SAS Roofing support", // More specific label
     icon: <Mail size={24} aria-hidden="true" />, // Added aria-hidden
     text: "Email",
   },

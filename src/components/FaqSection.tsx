@@ -90,6 +90,7 @@ export default function FaqSection() {
         aria-label="Frequently Asked Questions list"
       >
         {" "}
+        {/* Optional: Label the overall list of FAQs */}
         {faqs.map((faq, index) => {
           const isOpen = openIndex === index;
 

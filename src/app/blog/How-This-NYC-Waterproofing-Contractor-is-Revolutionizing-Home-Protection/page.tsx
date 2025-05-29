@@ -8,7 +8,7 @@ import Navbar from "@/components/Navbar/Navbar";
 import StickyNavbar from "@/components/StickyNavbar";
 import React from "react";
 
-//blogPage
+
 const page = () => {
   return (
     <>

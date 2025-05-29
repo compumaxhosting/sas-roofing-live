@@ -40,7 +40,7 @@ export default function FooterTopCTA() {
         <motion.span
           className="hidden lg:inline-block w-px h-[80px] bg-white/30"
           {...fadeUp(0.1)}
-          aria-hidden="true"
+          aria-hidden="true" // Hide decorative element
         />
 
         {/* Text Content */}

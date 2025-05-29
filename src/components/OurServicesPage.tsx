@@ -57,7 +57,7 @@ export default function OurServicesPage({ margin }: Props) {
 
           <Link
             href="/services"
-            className="group border-4 border-[#003269] p-2 inline-block flex-shrink-0 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-[#003269]"
+            className="group border-4 border-[#003269] p-2 inline-block flex-shrink-0 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-[#003269]" // Added focus styles
             aria-label="View all our services" // More descriptive aria-label
           >
             <div className="border border-[#e63a27] px-5 py-3 text-xs sm:text-sm md:text-base lg:text-lg font-bold text-[#e63a27] uppercase whitespace-nowrap hover-button font-inter">

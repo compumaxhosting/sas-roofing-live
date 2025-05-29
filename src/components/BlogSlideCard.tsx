@@ -40,6 +40,7 @@ export default function BlogSlideCard({ slide }: { slide: Slide }) {
         setIsSharing(false);
       }
     } else {
+      // Fallback for browsers that don't support Web Share API
       // You could implement a custom share modal here or copy the URL to clipboard.
       alert(
         "Sharing is not supported in this browser. You can manually copy the link."

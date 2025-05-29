@@ -72,7 +72,7 @@ export default function MobileHeaderNew() {
             width={28}
             height={28}
             className="object-contain"
-            priority // Prioritize loading of the menu icon
+            priority
             aria-hidden="true" // Hide the image from screen readers as the button has an aria-label
           />
         </button>

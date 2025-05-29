@@ -1,5 +1,6 @@
 import { ReactNode } from "react";
 
+// Metadata for SEO
 export const metadata = {
   title:
     "How This NYC Waterproofing Contractor is Revolutionizing Home Protection",

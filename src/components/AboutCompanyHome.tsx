@@ -240,7 +240,7 @@ export default function AboutCompany() {
           </div>
 
           <Link
-            href="/contact-us"
+            href="/contact-us"//goes to contact us page
             className="inline-block border-4 border-[#003269] p-2 self-start group mt-4"
             aria-label="Get a Free Quote or Contact Us"
           >

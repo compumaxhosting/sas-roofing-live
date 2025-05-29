@@ -130,3 +130,19 @@ const Features = ({ margin }: Props) => (
 );
 
 export default Features;
+
+// Add this class to your global CSS or a utility file if not already present
+// For Tailwind CSS, you might add it to your `tailwind.config.js` or a global CSS file.
+/*
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+*/
