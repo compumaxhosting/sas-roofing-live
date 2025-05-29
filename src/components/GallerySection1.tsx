@@ -1,7 +1,7 @@
 "use client";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
-import { useEffect, useState, useCallback, useRef } from "react"; // Import useRef
+import { useEffect, useState, useCallback } from "react";
 
 const images = [
   "/gallery1.jpg",
@@ -17,6 +17,7 @@ const fadeUp = {
   animate: { opacity: 1, y: 0 },
   transition: { duration: 0.6, ease: "easeOut" },
 };
+
 
 function GalleryItem({
   src,
@@ -42,37 +43,21 @@ function GalleryItem({
       whileInView={fadeUp.animate}
       transition={fadeUp.transition}
       viewport={{ once: true }}
-      // Add role="group" if these items are truly a collection
-      // aria-label could describe the item's context if not clear from alt text
     >
       <Image
         src={src}
-        alt={alt} // Already good alt text!
+        alt={alt}
         width={width}
         height={height}
         className="object-cover w-full h-full"
       />
       <div className="absolute inset-0 bg-[#003269]/60 opacity-0 group-hover:opacity-100 transition duration-500 flex flex-col items-center justify-center text-white">
-        <span
-          className="text-lg sm:text-xl font-semibold mb-2"
-          aria-hidden="true"
-        >
-          {title}
-        </span>{" "}
-        {/* Hide title text from screen readers to avoid redundancy if button is labeled */}
+        <span className="text-lg sm:text-xl font-semibold mb-2">{title}</span>
         <button
           onClick={() => onZoom(index)}
-          className="w-10 h-10 bg-transparent border border-white flex items-center justify-center hover:bg-[#e63a27] hover:border-[#e63a27] transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-white" // Added focus styles
-          aria-label={`View larger version of ${alt}`} // Explicit label for zoom button
+          className="w-10 h-10 bg-transparent border border-white flex items-center justify-center hover:bg-[#e63a27] hover:border-[#e63a27] transition-colors"
         >
-          <Image
-            src="/search.png"
-            alt=""
-            width={20}
-            height={20}
-            aria-hidden="true"
-          />{" "}
-          {/* Icon is decorative, hide from screen readers */}
+          <Image src="/search.png" alt="Zoom" width={20} height={20} />
         </button>
       </div>
     </motion.div>
@@ -92,15 +77,6 @@ function Modal({
   onNext: () => void;
   onPrev: () => void;
 }) {
-  const modalRef = useRef<HTMLDivElement>(null); // Ref to manage focus within the modal
-
-  useEffect(() => {
-    if (open) {
-      // Focus the modal container when it opens for better accessibility
-      modalRef.current?.focus();
-    }
-  }, [open]);
-
   return (
     <AnimatePresence>
       {open && (
@@ -109,25 +85,18 @@ function Modal({
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
-          role="dialog" // Identifies the modal as a dialog
-          aria-modal="true" // Indicates that the dialog is modal and blocks content behind it
-          aria-label={`Image ${index + 1} of ${images.length} in gallery`} // Label for the modal itself
-          tabIndex={-1} // Makes the modal div programmatically focusable
-          ref={modalRef} // Assign ref to the modal div
         >
           <button
-            className="absolute top-4 right-4 text-white text-3xl z-10 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-white" // Added focus styles
+            className="absolute top-4 right-4 text-white text-3xl z-10"
             onClick={onClose}
-            aria-label="Close image gallery" // Explicit label for close button
           >
             &times;
           </button>
 
-          {/* Hide arrows on small screens, and add aria-labels */}
+          {/* Hide arrows on small screens */}
           <button
-            className="absolute left-4 text-white text-4xl hidden md:block z-10 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-white" // Added focus styles
+            className="absolute left-4 text-white text-4xl hidden md:block z-10"
             onClick={onPrev}
-            aria-label="Previous image" // Explicit label for previous button
           >
             &#8592;
           </button>
@@ -143,12 +112,10 @@ function Modal({
                 onPrev();
               }
             }}
-            aria-live="polite" // Announces changes to screen readers (e.g., when image changes)
-            // No direct aria-label needed here as the image alt text handles it
           >
             <Image
               src={images[index]}
-              alt={`Gallery image ${index + 1} of ${images.length}`} // More specific alt text for zoomed image
+              alt={`Zoomed ${index}`}
               width={1200}
               height={1200}
               className="object-contain max-h-[80vh]"
@@ -156,9 +123,8 @@ function Modal({
           </motion.div>
 
           <button
-            className="absolute right-4 text-white text-4xl hidden md:block z-10 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-white" // Added focus styles
+            className="absolute right-4 text-white text-4xl hidden md:block z-10"
             onClick={onNext}
-            aria-label="Next image" // Explicit label for next button
           >
             &#8594;
           </button>
@@ -168,11 +134,11 @@ function Modal({
   );
 }
 
+
 export default function GallerySection() {
   const [modalOpen, setModalOpen] = useState(false);
   const [currentIndex, setCurrentIndex] = useState(0);
-
-  // Manages body overflow to prevent scrolling when modal is open
+  
   useEffect(() => {
     if (modalOpen) {
       document.body.style.overflow = "hidden";
@@ -199,32 +165,19 @@ export default function GallerySection() {
     []
   );
 
-  // Keyboard navigation for modal
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
       if (!modalOpen) return;
-      if (e.key === "Escape") {
-        setModalOpen(false);
-      } else if (e.key === "ArrowRight") {
-        handleNext();
-      } else if (e.key === "ArrowLeft") {
-        handlePrev();
-      }
+      if (e.key === "Escape") setModalOpen(false);
+      if (e.key === "ArrowRight") handleNext();
+      if (e.key === "ArrowLeft") handlePrev();
     };
-    window.addEventListener("keydown", handleKeyDown as EventListener); // Type assertion for EventListener
-    return () =>
-      window.removeEventListener("keydown", handleKeyDown as EventListener);
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
   }, [modalOpen, handleNext, handlePrev]);
 
   return (
-    <section
-      className="py-10 px-4 sm:px-6 lg:px-12 w-full"
-      aria-label="Our Project Gallery"
-    >
-      {" "}
-      {/* Section label */}
-      <h2 className="sr-only">Our Project Gallery</h2>{" "}
-      {/* Visually hidden heading for semantic structure */}
+    <section className="py-10 px-4 sm:px-6 lg:px-12 w-full">
       {/* Desktop Layout */}
       <div className="hidden xl:flex flex-col items-center gap-8 w-full">
         <div className="flex justify-center gap-6 w-full">
@@ -254,6 +207,7 @@ export default function GallerySection() {
           ))}
         </div>
       </div>
+
       {/* Mobile Layout */}
       <div className="flex xl:hidden flex-wrap justify-center gap-4">
         {images.map((img, idx) => (
@@ -267,35 +221,25 @@ export default function GallerySection() {
           >
             <Image
               src={img}
-              alt={`Gallery image ${idx + 1}`} // Alt text for mobile view
+              alt={`Gallery image ${idx + 1}`}
               fill
               className="object-cover w-full h-full"
             />
             <div className="absolute inset-0 bg-[#003269]/60 opacity-0 group-hover:opacity-100 transition duration-500 flex flex-col items-center justify-center text-white">
-              <span
-                className="text-lg sm:text-xl font-semibold mb-2 font-inter"
-                aria-hidden="true"
-              >
+              <span className="text-lg sm:text-xl font-semibold mb-2 font-inter">
                 SAS Roofing
               </span>
               <button
                 onClick={() => handleZoom(idx)}
-                className="w-10 h-10 bg-transparent border border-white flex items-center justify-center hover:bg-[#e63a27] hover:border-[#e63a27] transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-white" // Added focus styles
-                aria-label={`View larger version of gallery image ${idx + 1}`} // Explicit label for mobile zoom button
+                className="w-10 h-10 bg-transparent border border-white flex items-center justify-center hover:bg-[#e63a27] hover:border-[#e63a27] transition-colors"
               >
-                <Image
-                  src="/search.png"
-                  alt=""
-                  width={20}
-                  height={20}
-                  aria-hidden="true"
-                />{" "}
-                {/* Hide decorative icon */}
+                <Image src="/search.png" alt="Zoom" width={20} height={20} />
               </button>
             </div>
           </motion.div>
         ))}
       </div>
+
       <Modal
         open={modalOpen}
         index={currentIndex}

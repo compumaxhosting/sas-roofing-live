@@ -12,9 +12,11 @@ interface NavItem {
 
 interface Props {
   item: NavItem;
+  isOpen: boolean;
   setIsOpen: Dispatch<SetStateAction<boolean>>;
   servicesOpen: boolean;
   setServicesOpen: Dispatch<SetStateAction<boolean>>;
+  pathname: string; // ✅ Add this line if it’s missing
 }
 
 export default function MobileNavItem({
@@ -38,12 +40,6 @@ export default function MobileNavItem({
   if (item.subItems) {
     return (
       <div className="border-t border-white/20 last:border-b font-inter">
-        {/*
-          When subItems exist, the primary interaction is to toggle the submenu.
-          The 'button' element is appropriate for this.
-          The 'item.href' might still be a valid page, but it's often more intuitive
-          for the parent in a nested menu to just be a toggle.
-        */}
         <button
           onClick={toggleSubmenu}
           className={`w-full px-6 py-4 text-left flex justify-between items-center font-semibold transition-colors font-inter ${
@@ -52,28 +48,22 @@ export default function MobileNavItem({
               : "hover:bg-white hover:text-black"
           }`}
           aria-expanded={servicesOpen}
-          aria-controls={`services-menu-${item.name.replace(/\s+/g, "-")}`}
-          aria-label={`Toggle ${item.name} submenu`}
+          aria-controls={`services-menu-${item.name}`}
         >
-          {item.name} {/* The text of the toggle button */}
+          <Link href={item.href}>{item.name}</Link>
           <span
             className={`transform transition-transform duration-200 ${
               servicesOpen ? "rotate-180" : ""
             }`}
-            aria-hidden="true"
           >
             ▼
           </span>
         </button>
-
         <div
-          id={`services-menu-${item.name.replace(/\s+/g, "-")}`}
+          id={`services-menu-${item.name}`}
           className={`bg-[#00244d] text-sm overflow-hidden transition-all duration-300 ease-in-out font-inter ${
             servicesOpen ? "max-h-96" : "max-h-0"
           }`}
-          role="region"
-          aria-label={`${item.name} sub-navigation`}
-          aria-live={servicesOpen ? "polite" : "off"}
         >
           {item.subItems.map(({ name, href }) => (
             <Link
@@ -85,11 +75,6 @@ export default function MobileNavItem({
                   ? "bg-white text-[#e63a27]"
                   : "hover:bg-white hover:text-black"
               }`}
-              aria-current={
-                pathname === href || pathname.startsWith(href + "/")
-                  ? "page"
-                  : undefined
-              }
             >
               {name}
             </Link>
@@ -99,7 +84,6 @@ export default function MobileNavItem({
     );
   }
 
-  // Regular menu item (no sub-items), this remains unchanged
   return (
     <Link
       href={item.href}
@@ -109,11 +93,6 @@ export default function MobileNavItem({
           ? "text-[#e63a27]"
           : "hover:bg-white hover:text-black"
       }`}
-      aria-current={
-        pathname === item.href || pathname.startsWith(item.href + "/")
-          ? "page"
-          : undefined
-      }
     >
       {item.name}
     </Link>

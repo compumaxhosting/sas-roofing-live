@@ -18,6 +18,7 @@ export default function BlogSlideCard({ slide }: { slide: Slide }) {
   const [likeCount, setLikeCount] = useState(10);
   const [isSharing, setIsSharing] = useState(false);
 
+
   const handleLike = () => {
     setLiked(!liked);
     setLikeCount((prev) => (liked ? prev - 1 : prev + 1));
@@ -40,41 +41,27 @@ export default function BlogSlideCard({ slide }: { slide: Slide }) {
         setIsSharing(false);
       }
     } else {
-      // Fallback for browsers that don't support Web Share API
-      // You could implement a custom share modal here or copy the URL to clipboard.
-      alert(
-        "Sharing is not supported in this browser. You can manually copy the link."
-      );
-      console.log(
-        `Share link for "${slide.title}": ${window.location.origin}/blog/${slide.link}`
-      );
+      alert("Sharing is not supported in this browser.");
     }
   };
+  
 
   return (
     <div className="relative w-full h-[430px] rounded-sm shadow-md overflow-hidden flex flex-col font-inter">
       <Link
         href={`/blog/${slide.link}`}
         className="relative flex-1 overflow-hidden"
-        // Added aria-label for the main card link
-        aria-label={`Read more about ${slide.title}`}
       >
         <div
           className="absolute inset-0 bg-center bg-cover transition-transform duration-700 hover:scale-105"
           style={{ backgroundImage: `url(${slide.image})` }}
-          // Added alt text for the background image for accessibility
-          role="img"
-          aria-label={`Image for ${slide.title}`}
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/60 to-transparent" />
 
         {/* Title & Description */}
         <div className="absolute bottom-4 left-4 right-4 flex flex-col gap-1 text-left text-white">
           <div className="flex items-center gap-2 text-[#e63a27] text-xs font-semibold uppercase tracking-wide">
-            <FiFolder className="w-4 h-4" aria-hidden="true" />{" "}
-            {/* Icon is decorative */}
-            <span className="sr-only">Category: </span>{" "}
-            {/* Screen reader only text for category */}
+            <FiFolder className="w-4 h-4" />
             {slide.description}
           </div>
           <div className="font-bold text-base sm:text-lg md:text-xl leading-tight drop-shadow-md">
@@ -88,11 +75,8 @@ export default function BlogSlideCard({ slide }: { slide: Slide }) {
         <Link
           href={`/blog/${slide.link}`}
           className="flex items-center gap-1 font-bold text-[#003269] text-sm"
-          // Added aria-label for the "MORE DETAILS" link
-          aria-label={`View full details of ${slide.title}`}
         >
-          <FiExternalLink className="w-4 h-4" aria-hidden="true" />{" "}
-          {/* Icon is decorative */}
+          <FiExternalLink className="w-4 h-4" />
           MORE DETAILS
         </Link>
 
@@ -101,20 +85,11 @@ export default function BlogSlideCard({ slide }: { slide: Slide }) {
           <button
             onClick={handleLike}
             className="flex items-center gap-1 text-[#e63a27]"
-            // Added dynamic aria-label for the like button
-            aria-label={
-              liked
-                ? `Unlike this post. Current likes: ${likeCount}`
-                : `Like this post. Current likes: ${likeCount}`
-            }
           >
             {liked ? (
-              <AiFillHeart className="w-5 h-5" aria-hidden="true" /> // Icon is decorative
+              <AiFillHeart className="w-5 h-5" />
             ) : (
-              <FiHeart
-                className="w-5 h-5 hover:text-[#e63a27]"
-                aria-hidden="true"
-              /> // Icon is decorative
+              <FiHeart className="w-5 h-5 hover:text-[#e63a27]" />
             )}
             <span>{likeCount}</span>
           </button>
@@ -123,14 +98,8 @@ export default function BlogSlideCard({ slide }: { slide: Slide }) {
           <button
             onClick={handleShare}
             className="hover:text-[#e63a27] transition-colors"
-            // Added aria-label for the share button
-            aria-label={`Share ${slide.title}`}
-            disabled={isSharing} // Disable button while sharing
           >
-            <FiShare2 className="w-4 h-4" aria-hidden="true" />{" "}
-            {/* Icon is decorative */}
-            <span className="sr-only">Share</span>{" "}
-            {/* Screen reader only text for share button if icon only */}
+            <FiShare2 className="w-4 h-4" />
           </button>
         </div>
       </div>
