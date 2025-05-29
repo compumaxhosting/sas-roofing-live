@@ -12,7 +12,7 @@ interface BreadCrumProps {
   pageTitle: string;
   imageSrc: string;
 }
-
+//updated for narrator
 const BreadCrum2: React.FC<BreadCrumProps> = ({
   breadcrumbItems,
   pageTitle,

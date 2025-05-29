@@ -70,7 +70,7 @@ export default function Footer() {
       label: "Google Maps",
     },
   ];
-
+  //updated for narrator
   return (
     <footer className="bg-[#003269] text-white text-sm sm:text-[15px]">
       <motion.h2

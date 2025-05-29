@@ -24,7 +24,7 @@ const contactItems = [
     text: "Email",
   },
 ];
-
+//updated for narrator
 const ContactBar: React.FC = () => (
   <nav
     role="navigation"

@@ -9,6 +9,7 @@ const BlogSlider = dynamic(() => import("@/components/BlogSlider"), {
   ssr: false,
 });
 
+//updated for narrator
 export default function Blog() {
   const swiperRef = useRef<SwiperType | null>(null);
 

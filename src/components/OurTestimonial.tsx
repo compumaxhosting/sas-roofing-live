@@ -3,6 +3,44 @@
 import dynamic from "next/dynamic";
 import { motion } from "framer-motion";
 
+// Skeleton loader component for the testimonials
+const TestimonialSkeleton = () => (
+  <div
+    className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-8"
+    role="status" // Indicates that this section is a status message
+    aria-live="polite" // Announces changes politely to screen readers
+    aria-atomic="true" // Announces the entire content of the region
+  >
+    {Array.from({ length: 3 }).map(
+      (
+        _,
+        i // Render 3 skeleton cards
+      ) => (
+        <div
+          key={i}
+          className="bg-white p-6 rounded-lg shadow-md animate-pulse"
+        >
+          <div className="h-4 bg-gray-200 rounded w-3/4 mb-4"></div>{" "}
+          {/* Placeholder for title */}
+          <div className="h-4 bg-gray-200 rounded mb-2"></div>
+          <div className="h-4 bg-gray-200 rounded w-5/6 mb-2"></div>
+          <div className="h-4 bg-gray-200 rounded w-2/3"></div>
+          <div className="flex items-center mt-6">
+            <div className="h-10 w-10 rounded-full bg-gray-300 mr-3"></div>{" "}
+            {/* Placeholder for avatar */}
+            <div>
+              <div className="h-4 bg-gray-200 rounded w-24 mb-1"></div>{" "}
+              {/* Placeholder for name */}
+              <div className="h-3 bg-gray-200 rounded w-16"></div>{" "}
+              {/* Placeholder for role/date */}
+            </div>
+          </div>
+        </div>
+      )
+    )}
+  </div>
+);
+
 const ReviewSlider = dynamic(() => import("./ReviewSlider"), {
   ssr: false,
 });

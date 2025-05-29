@@ -10,7 +10,7 @@ export default function FooterTopCTA() {
     animate: { opacity: 1, y: 0 },
     transition: { duration: 0.6, ease: "easeOut", delay },
   });
-
+  //updated for narrator
   return (
     <div className="bg-[#00254c] text-white px-4 py-10 sm:px-6 md:px-12">
       <div className="flex flex-col lg:flex-row items-center justify-center gap-4 lg:gap-8 text-center lg:text-left">
