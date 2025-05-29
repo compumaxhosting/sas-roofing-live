@@ -38,7 +38,7 @@ export default function ServiceAndFaqSection() {
     },
     []
   );
-
+  //updated for narrator
   return (
     <section
       className="relative w-full lg:h-[100vh] md:pt-5 pb-24 bg-[#f9f9f9] overflow-hidden md:border-t md:border-black/40 mb-10 md:mb-15 shadow-2xl"

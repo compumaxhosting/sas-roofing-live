@@ -7,6 +7,7 @@ import { FaFacebookF, FaHome } from "react-icons/fa"; // Assuming FaHome is for 
 import MobileNavItem from "./MobileNavItem"; // Ensure this path is correct
 import { usePathname } from "next/navigation";
 
+//updated for narrator
 
 interface Props {
   isOpen: boolean;

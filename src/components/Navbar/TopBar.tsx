@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { FaPhoneAlt, FaEnvelope, FaFacebookF, FaHome } from "react-icons/fa";
 
+//updated for narrator
 export default function TopBar() {
   return (
     <div

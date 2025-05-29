@@ -12,6 +12,7 @@ const BlogSlider = dynamic(() => import("@/components/BlogSlider"), {
   loading: () => <div className="text-center py-10">Loading blog posts...</div>, // Optional: Add a loading state
 });
 
+//updated for narrator
 export default function Blog() {
   const swiperRef = useRef<SwiperType | null>(null);
 

@@ -146,7 +146,7 @@ const GalleryCard = ({
   onZoom: () => void;
 }) => {
   const aspectClass = getAspectClass(src);
-
+  //updated for narrator
   return (
     <motion.div
       className="relative group overflow-hidden shadow-lg"

@@ -1,6 +1,6 @@
 import { ReactNode } from "react";
 
-// Metadata for SEO
+
 export const metadata = {
   title:
     "Why SAS Roofing & Waterproofing Is Brooklyn’s Most Trusted Roofing Expert",

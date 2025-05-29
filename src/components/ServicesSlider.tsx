@@ -73,7 +73,7 @@ export default function ServicesSlider({ swiperRef }: Props) {
       swiper.autoplay?.start();
     }, 2000); // Resume autoplay after 2 seconds of inactivity
   };
-
+  //updated for narrator
   return (
     // Main container for the carousel, defines its role and label for screen readers
     <div

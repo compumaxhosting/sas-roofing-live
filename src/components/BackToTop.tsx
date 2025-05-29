@@ -29,7 +29,7 @@ const BackToTop = () => {
       window.scrollTo({ top: 0, behavior: "smooth" });
     }
   };
-
+  //updated for narrator
   return (
     <AnimatePresence>
       {isVisible && (

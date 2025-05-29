@@ -66,7 +66,7 @@ const reviews: Review[] = [
     image: "/avatar.png",
   },
 ];
-
+//updated for narrator
 const ReviewSlider = () => {
   const [selectedReview, setSelectedReview] = useState<Review | null>(null);
   const modalRef = useRef<HTMLDivElement>(null);

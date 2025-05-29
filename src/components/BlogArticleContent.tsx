@@ -12,6 +12,7 @@ const fadeUp = {
   },
 };
 
+//updated for narrator
 export default function BlogPage() {
   return (
     // Main section for the blog content, identified by aria-labelledby for screen readers.

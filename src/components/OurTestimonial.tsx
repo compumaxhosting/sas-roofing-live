@@ -40,7 +40,7 @@ const TestimonialSkeleton = () => (
     )}
   </div>
 );
-
+//updated for narrator
 const ReviewSlider = dynamic(() => import("./ReviewSlider"), {
   ssr: false,
   loading: () => <TestimonialSkeleton />, // Use the skeleton loader as the loading fallback

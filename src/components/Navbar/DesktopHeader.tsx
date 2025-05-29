@@ -5,6 +5,7 @@ import NavLinks from "./NavLinks";
 import TopBar from "./TopBar";
 import Link from "next/link";
 
+//updated for narrator
 export default function DesktopHeader({
   setSidebarOpen,
 }: {

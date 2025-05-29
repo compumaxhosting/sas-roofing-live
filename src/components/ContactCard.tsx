@@ -31,7 +31,7 @@ interface ContactCardProps {
   cardShadowStyle: CSSProperties;
   iconTab: string;
 }
-
+//updated for narrator
 const ContactCard: React.FC<ContactCardProps> = ({
   item,
   index,

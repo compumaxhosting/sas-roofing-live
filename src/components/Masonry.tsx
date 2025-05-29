@@ -11,7 +11,7 @@ const fadeUp = {
     transition: { duration: 0.6, ease: "easeOut" },
   },
 };
-
+//updated for narrator
 export default function RoofingServices() {
   const services = [
     {

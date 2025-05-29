@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { Dispatch, SetStateAction } from "react";
 
+//updated for narrator
 interface NavItem {
   name: string;
   href: string;

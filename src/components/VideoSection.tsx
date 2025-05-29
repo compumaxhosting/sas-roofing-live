@@ -47,14 +47,8 @@ const VideoSection = ({ margin }: Props) => {
     setIsOpen(false);
   }, []);
 
-  // Ensure `mb-` utility class is applied correctly.
-  // TailwindCSS expects full class names in string literals for JIT compilation.
-  // You might need to adjust your Tailwind config if `mb-${margin[1]}` isn't working as expected.
-  // A safer approach for dynamic classes is to concatenate: `mb-${margin[1]}px` if using arbitrary values,
-  // or use a predefined array of classes like `mb-0`, `mb-8`, etc.
-  // For demonstration, let's assume `margin` contains values like 0, 8, 16, etc.
   const marginBottomClass = `mb-${margin[1]}`;
-
+  //updated for narrator
   return (
     <div>
       <section
