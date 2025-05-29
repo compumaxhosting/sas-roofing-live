@@ -86,7 +86,7 @@ export default function MobileDrawer({ isOpen, setIsOpen }: Props) {
         <Link href="/" className="flex justify-center p-4">
           <Image
             src="/Logo.png"
-            alt="Company_Logo"
+            alt="Company Logo"
             width={260}
             height={130}
             className="object-contain cursor-pointer"
