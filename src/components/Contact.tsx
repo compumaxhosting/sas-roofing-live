@@ -2,6 +2,7 @@
 import { Mail, MapPin, Phone } from "lucide-react";
 import dynamic from "next/dynamic";
 
+// Dynamically import ContactCard - assuming ContactCard.tsx exists
 const ContactCard = dynamic(() => import("./ContactCard"), { ssr: false });
 
 const Contact = () => {
@@ -48,7 +49,14 @@ const Contact = () => {
   ];
 
   return (
-    <section className="flex flex-col lg:flex-row justify-center items-start gap-8 px-4 py-10 my-16 bg-white">
+    <section
+      className="flex flex-col lg:flex-row justify-center items-start gap-8 px-4 py-10 my-16 bg-white"
+      aria-labelledby="contact-section-title" // Added aria-labelledby for the section
+    >
+      {/* Visually hidden heading for screen readers to provide context for the section */}
+      <h2 id="contact-section-title" className="sr-only">
+        Contact Information
+      </h2>
       {contactItems.map((item, index) => (
         <ContactCard
           key={index}
