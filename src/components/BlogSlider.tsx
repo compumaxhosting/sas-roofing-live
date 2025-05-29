@@ -93,7 +93,7 @@ export default function BlogSlider({ swiperRef }: Props) {
 
   const navBtnClass =
     "w-10 h-10 rounded-full border-2 border-[#003269] text-[#003269] flex items-center justify-center focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-[#ef4423] transition";
-
+  //updated for narrator
   return (
     <div className="w-full px-4 sm:px-6 max-w-screen-xl mx-auto">
       <Swiper

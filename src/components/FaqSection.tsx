@@ -64,7 +64,7 @@ export default function FaqSection() {
       toggleOpen(index);
     }
   };
-
+  //updated for narrator
   return (
     <div className="pt-8 pb-4 text-left bg-[#f9f9f9] md:px-5 md:ml-5">
       <div className="flex items-center gap-2 mb-2">

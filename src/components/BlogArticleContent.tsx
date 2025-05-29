@@ -12,6 +12,7 @@ const fadeUp = {
   },
 };
 
+//updated for narrator
 export default function BlogPage() {
   return (
     <section className="px-6 py-12 md:px-16 bg-white text-[#003269] flex flex-col items-center">

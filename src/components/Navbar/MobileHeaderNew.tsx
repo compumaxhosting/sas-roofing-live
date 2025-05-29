@@ -4,6 +4,8 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import MobileDrawer from "./MobileDrawer";
+import MobileDrawer from "./MobileDrawer"; // Ensure this path is correct
+//updated for narrator
 
 export default function MobileHeaderNew() {
   const [isOpen, setIsOpen] = useState(false);

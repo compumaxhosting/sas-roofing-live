@@ -46,6 +46,7 @@ export default function BlogSlideCard({ slide }: { slide: Slide }) {
   };
   
 
+  //updated for narrator
   return (
     <div className="relative w-full h-[430px] rounded-sm shadow-md overflow-hidden flex flex-col font-inter">
       <Link

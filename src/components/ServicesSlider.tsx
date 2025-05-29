@@ -65,7 +65,7 @@ export default function ServicesSlider({ swiperRef }: Props) {
     clearTimeout(autoplayTimeout.current!);
     autoplayTimeout.current = setTimeout(() => swiper.autoplay?.start(), 2000);
   };
-
+  //updated for narrator
   return (
     <div className="flex flex-col items-center px-4 sm:px-6 mb-5">
       <div className="w-10/12 overflow-hidden">

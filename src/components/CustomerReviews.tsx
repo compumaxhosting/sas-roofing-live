@@ -45,7 +45,7 @@ const reviewLogos = [
     href: "https://www.bbb.org/us/ny/brooklyn/profile/roofing-contractors/sas-contracting-co-inc-0121-161078/#sealclick",
   },
 ];
-
+//updated for narrator
 export default function CustomerReviews() {
   return (
     <section className="bg-[#f9f9f9] py-10 px-4">

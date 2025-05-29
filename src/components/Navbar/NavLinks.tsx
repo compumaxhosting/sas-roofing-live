@@ -7,6 +7,7 @@ import Image from "next/image";
 import { FaFacebookF, FaHome } from "react-icons/fa";
 import { Inter } from "next/font/google";
 
+//updated for narrator
 
 const navItems = [
   { label: "HOME", path: "/" },

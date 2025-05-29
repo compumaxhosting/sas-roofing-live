@@ -10,7 +10,34 @@ const fadeUp = {
 };
 
 export default function ServiceAndFaqSection() {
-  const handleSubmit = (e: React.FormEvent) => e.preventDefault();
+  const [phoneNumber, setPhoneNumber] = useState("");
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    console.log("Form submitted!");
+    console.log("Name:", (e.target as HTMLFormElement).name.valueOf);
+    console.log("Email:", (e.target as HTMLFormElement).email.value);
+    console.log("Phone Number:", phoneNumber);
+    console.log("Service:", (e.target as HTMLFormElement).service.value);
+    console.log("Message:", (e.target as HTMLFormElement).message.value);
+
+    (e.target as HTMLFormElement).reset();
+    setPhoneNumber("");
+  };
+
+  const handlePhoneNumberChange = useCallback(
+    (e: React.ChangeEvent<HTMLInputElement>) => {
+      // Allow only digits
+      const value = e.target.value.replace(/\D/g, "");
+
+      // Limit to a range between 10 and 15 digits
+      if (value.length <= 15) {
+        // Max length is 15
+        setPhoneNumber(value);
+      }
+    },
+    []
+  );
 
   return (
     <section className="relative w-full lg:h-[100vh] md:pt-5 pb-24 bg-[#f9f9f9] overflow-hidden md:border-t md:border-black/40 mb-10 md:mb-15 shadow-2xl">
