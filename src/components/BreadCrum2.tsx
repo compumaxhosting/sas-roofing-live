@@ -48,7 +48,6 @@ const BreadCrum2: React.FC<BreadCrumProps> = ({
                         ? "font-semibold pointer-events-none" // Add pointer-events-none for current page to make it non-interactive
                         : "hover:underline"
                     }
-                    // Crucial for accessibility: informs screen readers this is the current page
                     aria-current={isLast ? "page" : undefined}
                     // Add aria-label for clarity, especially if the link text is short
                     aria-label={

@@ -15,7 +15,6 @@ export default function DesktopHeader({
       className="relative z-50 hidden md:block"
       aria-label="Desktop Header"
     >
-      {/* Logo Section with clip-path */}
       <Link
         href="/"
         className="absolute left-0 top-0 h-full w-[410px] bg-[#003269] z-10 flex items-center justify-center [clip-path:polygon(0_0,100%_0,84%_100%,0%_100%)]"

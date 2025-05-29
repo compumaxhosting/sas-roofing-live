@@ -118,7 +118,7 @@ export default function ServiceAndFaqSection() {
                 placeholder="Phone Number"
                 value={phoneNumber}
                 onChange={handlePhoneNumberChange}
-                maxLength={15} // Max length is 15
+                maxLength={15}
                 // The pattern attribute is adjusted for the 10-15 digit range
                 pattern="[0-9]{10,15}" // Requires between 10 and 15 digits
                 title="Please enter between 10 and 15 digits"

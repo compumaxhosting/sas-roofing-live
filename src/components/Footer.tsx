@@ -68,7 +68,7 @@ export default function Footer() {
     {
       src: "bbb",
       path: "https://www.bbb.org/us/ny/brooklyn/profile/roofing-contractors/sas-contracting-co-inc-0121-161078/#sealclick",
-      label: "Better Business Bureau", // Full name
+      label: "Better Business Bureau",
     },
     {
       src: "google_my_business",

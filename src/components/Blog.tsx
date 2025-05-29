@@ -2,7 +2,7 @@
 
 import dynamic from "next/dynamic";
 import { useRef } from "react";
-import type { Swiper as SwiperType } from "swiper"; // Assuming SwiperType is correctly imported from 'swiper'
+import type { Swiper as SwiperType } from "swiper";
 import { motion } from "framer-motion";
 
 // Dynamic import for client-side only component

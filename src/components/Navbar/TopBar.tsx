@@ -21,7 +21,7 @@ export default function TopBar() {
           <div className="hidden xl:flex items-center pr-4 divide-x divide-white/30">
             <Link
               href="tel:+13472216549"
-              aria-label="Call SAS Roofing Company at 3 4 7 2 2 1 6 5 4 9" // More specific aria-label for phone number
+              aria-label="Call SAS Roofing Company at 3 4 7 2 2 1 6 5 4 9" 
               className="flex items-center text-base gap-2 pr-4 hover:text-[#e63a27] transition-colors"
             >
               <FaPhoneAlt

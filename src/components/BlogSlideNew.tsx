@@ -44,7 +44,6 @@ export default function BlogSlideNew({ slide }: { slide: Slide }) {
       alert(
         "Sharing is not supported in this browser. You can manually copy the link."
       );
-      // console.log(`Share link for "${slide.title}": ${shareUrl}`); // Log for debugging
     }
   };
 

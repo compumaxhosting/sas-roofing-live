@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect, useCallback } from "react"; // Added useCallback
+import React, { useState, useEffect, useCallback } from "react";
 import { GoArrowUp } from "react-icons/go";
 import { AnimatePresence, motion } from "framer-motion";
 

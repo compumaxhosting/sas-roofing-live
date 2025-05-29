@@ -6,8 +6,6 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import { FaCertificate, FaLightbulb, FaHome } from "react-icons/fa";
 
-// REMOVED FeatureItem component as it's no longer used.
-
 export default function AboutCompany() {
   const [showMore, setShowMore] = useState(false);
 
@@ -242,7 +240,7 @@ export default function AboutCompany() {
           </div>
 
           <Link
-            href="/contact"
+            href="/contact-us"
             className="inline-block border-4 border-[#003269] p-2 self-start group mt-4"
             aria-label="Get a Free Quote or Contact Us"
           >

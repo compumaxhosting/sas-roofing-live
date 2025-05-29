@@ -114,7 +114,7 @@ export default function RoofingServices() {
                   Manhattan, and Queens. Visit{" "}
                   <Link
                     href={linkHref || "/"} // Use linkHref from data, fallback to "/"
-                    className="text-[#e63a27] hover:text-[#003269] focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-[#e63a27]" // Added focus styles
+                    className="text-[#e63a27] hover:text-[#003269] focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-[#e63a27]" 
                   >
                     {linkText || "SAS Roofing & Waterproofing"}{" "}
                     {/* Use linkText from data */}

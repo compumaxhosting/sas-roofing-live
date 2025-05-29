@@ -158,7 +158,7 @@ const GalleryCard = ({
       <div className={`relative ${aspectClass}`}>
         <Image
           src={src}
-          alt={alt} // Already good alt text!
+          alt={alt}
           fill
           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
           className="object-cover"

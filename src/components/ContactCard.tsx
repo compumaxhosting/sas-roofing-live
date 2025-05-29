@@ -43,7 +43,6 @@ const ContactCard: React.FC<ContactCardProps> = ({
   const renderContent = (contentString: string) => {
     const lines = contentString.split("\n");
     return lines.map((line, idx) => {
-      // Check for phone numbers: (XXX) XXX-XXXX, XXX-XXX-XXXX, or XXX.XXX.XXXX
       const phoneMatch = line.match(
         /(OFFICE|CELL):\s*(\(?\d{3}\)?[-.\s]?\d{3}[-.\s]?\d{4})/
       );

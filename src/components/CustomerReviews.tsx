@@ -27,7 +27,7 @@ const reviewLogos = [
   {
     alt: "Google",
     src: "/reviews/google.png",
-    href: "https://www.google.com/maps/place/SAS+Roofing+&+Waterproofing/@40.6359752,-73.9646363,17z/data=!3m1!4b1!4m8!3m7!1s0x89c25b2dd928663d:0x5527086c2d45f8d8!8m2!3d40.6359752!4d-73.9646363!9m1!1b1!16s/g/11bbw_w0v0?entry=ttu", // REMINDER: Verify this Google Maps URL is correct
+    href: "https://www.google.com/maps/place/SAS+Roofing+&+Waterproofing/@40.6359752,-73.9646363,17z/data=!3m1!4b1!4m8!3m7!1s0x89c25b2dd928663d:0x5527086c2d45f8d8!8m2!3d40.6359752!4d-73.9646363!9m1!1b1!16s/g/11bbw_w0v0?entry=ttu",
   },
   {
     alt: "X",

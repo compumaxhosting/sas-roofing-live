@@ -14,7 +14,11 @@ const fadeUp = {
 
 export default function BlogPage() {
   return (
-    <section className="px-6 py-12 md:px-16 bg-white text-[#003269] flex flex-col items-center">
+    // Main section for the blog content, identified by aria-labelledby for screen readers.
+    <section
+      className="px-6 py-12 md:px-16 bg-white text-[#003269] flex flex-col items-center"
+      aria-labelledby="main-blog-post-heading"
+    >
       <div className="w-full xl:max-w-7xl xl:px-0">
         <motion.div
           initial="hidden"
@@ -23,10 +27,15 @@ export default function BlogPage() {
           variants={fadeUp}
           className="mb-5"
         >
-          <h4 className="text-3xl md:text-4xl font-bold font-inter mb-7">
+          {/* Main heading of the blog post */}
+          <h4
+            id="main-blog-post-heading" // ID to be referenced by aria-labelledby of the section
+            className="text-3xl md:text-4xl font-bold font-inter mb-7"
+          >
             Why SAS Roofing & Waterproofing Is Brooklyn’s Most Trusted Roofing
             Expert ?
           </h4>
+          {/* Subheading */}
           <h4 className="text-xl md:text-3xl font-semibold font-inter mb-2">
             SAS Roofing & Waterproofing: Brooklyn’s Trusted Roofing Experts
           </h4>
@@ -38,7 +47,7 @@ export default function BlogPage() {
           </p>
         </motion.div>
 
-        {/* Core Services */}
+        {/* Core Services Section */}
         <motion.div
           initial="hidden"
           whileInView="visible"
@@ -66,6 +75,8 @@ export default function BlogPage() {
               }
               className="text-xl md:text-2xl font-bold"
               aria-label="Learn more about our Roofing Solutions"
+              target="_blank" // Open in new tab
+              rel="noopener noreferrer" // Security best practice for target="_blank"
             >
               Roofing Solutions
             </Link>
@@ -73,7 +84,10 @@ export default function BlogPage() {
               From minor repairs to complete installations, we handle all types
               of roofing projects with precision and care. Our expertise covers:
             </p>
-            <ul className="list-disc pl-5 text-gray-700">
+            <ul
+              className="list-disc pl-5 text-gray-700"
+              aria-label="Types of roofing projects"
+            >
               <li>Flat and pitched roofs</li>
               <li>Shingle and metal roofing</li>
               <li>Emergency leak repairs</li>
@@ -94,6 +108,8 @@ export default function BlogPage() {
               }
               className="text-xl md:text-2xl font-bold"
               aria-label="Learn more about our Advanced Waterproofing services"
+              target="_blank" // Open in new tab
+              rel="noopener noreferrer" // Security best practice
             >
               Advanced Waterproofing
             </Link>
@@ -101,7 +117,10 @@ export default function BlogPage() {
               Utilizing high-quality single-ply membrane systems, we protect
               your property from water damage, mold, and structural issues.
             </p>
-            <ul className="list-disc pl-5 text-gray-700">
+            <ul
+              className="list-disc pl-5 text-gray-700"
+              aria-label="Types of waterproofing services"
+            >
               <li>Basement and foundation sealing</li>
               <li>Roof and terrace waterproofing</li>
               <li>Bathroom and kitchen leak prevention</li>
@@ -122,13 +141,18 @@ export default function BlogPage() {
               }
               className="text-xl md:text-2xl font-bold"
               aria-label="Learn more about our Expert Masonry Work"
+              target="_blank" // Open in new tab
+              rel="noopener noreferrer" // Security best practice
             >
               Expert Masonry Work
             </Link>
             <p className="text-gray-700 text-base font-bevietnam mt-4">
               Our skilled masons deliver exceptional craftsmanship in:
             </p>
-            <ul className="list-disc pl-5 text-gray-700">
+            <ul
+              className="list-disc pl-5 text-gray-700"
+              aria-label="Types of masonry services"
+            >
               <li>Brickwork and stonework</li>
               <li>Paving and cement work</li>
               <li>Structural repairs and restorations</li>
@@ -146,7 +170,10 @@ export default function BlogPage() {
             <h3 className="text-xl md:text-2xl font-bold">
               Why Choose SAS Roofing & Waterproofing?
             </h3>
-            <ul className="list-disc pl-5 text-gray-700">
+            <ul
+              className="list-disc pl-5 text-gray-700"
+              aria-label="Reasons to choose SAS Roofing & Waterproofing"
+            >
               <li>Certified Excellence: Licensed under #2050416-DCA</li>
               <li>
                 Experienced Professionals: 30+ years of hands-on experience
@@ -175,7 +202,7 @@ export default function BlogPage() {
               services. Contact us for a free consultation and tailored
               solutions.
             </p>
-            <ul className="text-gray-700">
+            <ul className="text-gray-700" aria-label="Contact information">
               <li>
                 <strong>Phone:</strong>{" "}
                 <a

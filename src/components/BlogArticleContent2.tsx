@@ -14,7 +14,11 @@ const fadeUp = {
 
 export default function BlogPage() {
   return (
-    <section className="px-6 py-12 md:px-16 bg-white text-[#003269] flex flex-col items-center">
+    // Main section for the blog content, identified by aria-labelledby for screen readers.
+    <section
+      className="px-6 py-12 md:px-16 bg-white text-[#003269] flex flex-col items-center"
+      aria-labelledby="main-blog-post-heading"
+    >
       <div className="w-full xl:max-w-7xl xl:px-0">
         <motion.div
           initial="hidden"
@@ -23,10 +27,15 @@ export default function BlogPage() {
           variants={fadeUp}
           className="mb-5"
         >
-          <h4 className="text-3xl md:text-4xl font-bold font-inter mb-7">
+          {/* Main heading of the blog post */}
+          <h4
+            id="main-blog-post-heading" // ID to be referenced by aria-labelledby of the section
+            className="text-3xl md:text-4xl font-bold font-inter mb-7"
+          >
             How This NYC Waterproofing Contractor is Revolutionizing Home
             Protection
           </h4>
+          {/* Subheading */}
           <h4 className="text-xl md:text-3xl font-semibold font-inter mb-2">
             Leading the Charge in Residential and Commercial Waterproofing
             Services
@@ -41,6 +50,8 @@ export default function BlogPage() {
               }
               className="text-[#003269] hover:underline"
               aria-label="Find expert waterproofing contractors in NYC"
+              target="_blank" // Added for external link
+              rel="noopener noreferrer" // Added for external link security
             >
               waterproofing contractors NYC
             </Link>{" "}
@@ -48,15 +59,21 @@ export default function BlogPage() {
           </p>
         </motion.div>
 
-        {/* Core Services */}
+        {/* Core Services Section */}
         <motion.div
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.1 }}
           variants={fadeUp}
           className="space-y-2"
+          aria-labelledby="our-services-heading" // Link to the heading below
         >
-          <h3 className="text-3xl md:text-4xl font-bold mb-5">Our Services</h3>
+          <h3
+            id="our-services-heading"
+            className="text-3xl md:text-4xl font-bold mb-5"
+          >
+            Our Services
+          </h3>
         </motion.div>
 
         <div className="grid gap-12">
@@ -67,8 +84,12 @@ export default function BlogPage() {
             viewport={{ once: true, amount: 0.1 }}
             variants={fadeUp}
             className="space-y-3"
+            aria-labelledby="basement-waterproofing-heading" // Link to the heading below
           >
-            <h4 className="text-xl md:text-2xl font-bold">
+            <h4
+              id="basement-waterproofing-heading"
+              className="text-xl md:text-2xl font-bold"
+            >
               Basement Waterproofing Brooklyn: The First Line of Defense
             </h4>
             <p className="text-gray-700 text-base font-bevietnam mt-4">
@@ -87,8 +108,12 @@ export default function BlogPage() {
             viewport={{ once: true, amount: 0.1 }}
             variants={fadeUp}
             className="space-y-3"
+            aria-labelledby="roof-leak-repair-heading" // Link to the heading below
           >
-            <h4 className="text-xl md:text-2xl font-bold">
+            <h4
+              id="roof-leak-repair-heading"
+              className="text-xl md:text-2xl font-bold"
+            >
               Roof Leak Repair Manhattan: Stop the Drip Before It Destroys
             </h4>
             <p className="text-gray-700 text-base font-bevietnam mt-4">
@@ -107,8 +132,12 @@ export default function BlogPage() {
             viewport={{ once: true, amount: 0.1 }}
             variants={fadeUp}
             className="space-y-3"
+            aria-labelledby="foundation-sealing-heading" // Link to the heading below
           >
-            <h4 className="text-xl md:text-2xl font-bold">
+            <h4
+              id="foundation-sealing-heading"
+              className="text-xl md:text-2xl font-bold"
+            >
               Foundation Sealing Queens: Building Strength from Below
             </h4>
             <p className="text-gray-700 text-base font-bevietnam mt-4">
@@ -126,8 +155,12 @@ export default function BlogPage() {
             viewport={{ once: true, amount: 0.1 }}
             variants={fadeUp}
             className="space-y-3"
+            aria-labelledby="exterior-waterproofing-heading" // Link to the heading below
           >
-            <h4 className="text-xl md:text-2xl font-bold">
+            <h4
+              id="exterior-waterproofing-heading"
+              className="text-xl md:text-2xl font-bold"
+            >
               Exterior Waterproofing Brooklyn: Guarding Your Outer Walls
             </h4>
             <p className="text-gray-700 text-base font-bevietnam mt-4">
@@ -146,8 +179,12 @@ export default function BlogPage() {
             viewport={{ once: true, amount: 0.1 }}
             variants={fadeUp}
             className="space-y-3"
+            aria-labelledby="interior-waterproofing-heading" // Link to the heading below
           >
-            <h4 className="text-xl md:text-2xl font-bold">
+            <h4
+              id="interior-waterproofing-heading"
+              className="text-xl md:text-2xl font-bold"
+            >
               Interior Waterproofing Manhattan: A Smart Indoor Strategy
             </h4>
             <p className="text-gray-700 text-base font-bevietnam mt-4">
@@ -165,8 +202,12 @@ export default function BlogPage() {
             viewport={{ once: true, amount: 0.1 }}
             variants={fadeUp}
             className="space-y-3"
+            aria-labelledby="crawl-space-waterproofing-heading" // Link to the heading below
           >
-            <h4 className="text-xl md:text-2xl font-bold">
+            <h4
+              id="crawl-space-waterproofing-heading"
+              className="text-xl md:text-2xl font-bold"
+            >
               Crawl Space Waterproofing Queens: Protect What’s Hidden
             </h4>
             <p className="text-gray-700 text-base font-bevietnam mt-4">
@@ -184,8 +225,12 @@ export default function BlogPage() {
             viewport={{ once: true, amount: 0.1 }}
             variants={fadeUp}
             className="space-y-3"
+            aria-labelledby="brick-waterproofing-heading" // Link to the heading below
           >
-            <h4 className="text-xl md:text-2xl font-bold">
+            <h4
+              id="brick-waterproofing-heading"
+              className="text-xl md:text-2xl font-bold"
+            >
               Brick Waterproofing Queens: Preserving Classic NYC Exteriors
             </h4>
             <p className="text-gray-700 text-base font-bevietnam mt-4">
@@ -202,8 +247,12 @@ export default function BlogPage() {
             viewport={{ once: true, amount: 0.1 }}
             variants={fadeUp}
             className="space-y-3"
+            aria-labelledby="roof-membrane-heading" // Link to the heading below
           >
-            <h4 className="text-xl md:text-2xl font-bold">
+            <h4
+              id="roof-membrane-heading"
+              className="text-xl md:text-2xl font-bold"
+            >
               Roof Membrane Installation: A Modern Solution for Flat Roofs
             </h4>
             <p className="text-gray-700 text-base font-bevietnam mt-4">
@@ -221,8 +270,12 @@ export default function BlogPage() {
             viewport={{ once: true, amount: 0.1 }}
             variants={fadeUp}
             className="space-y-3"
+            aria-labelledby="waterproof-coating-heading" // Link to the heading below
           >
-            <h4 className="text-xl md:text-2xl font-bold">
+            <h4
+              id="waterproof-coating-heading"
+              className="text-xl md:text-2xl font-bold"
+            >
               Waterproof Coating Services: Stronger, Safer Surfaces
             </h4>
             <p className="text-gray-700 text-base font-bevietnam mt-4">
@@ -239,8 +292,12 @@ export default function BlogPage() {
             viewport={{ once: true, amount: 0.1 }}
             variants={fadeUp}
             className="space-y-3"
+            aria-labelledby="waterproofing-inspection-heading" // Link to the heading below
           >
-            <h4 className="text-xl md:text-2xl font-bold">
+            <h4
+              id="waterproofing-inspection-heading"
+              className="text-xl md:text-2xl font-bold"
+            >
               Waterproofing Inspection NYC: Know Before It’s Too Late
             </h4>
             <p className="text-gray-700 text-base font-bevietnam mt-4">
@@ -258,8 +315,12 @@ export default function BlogPage() {
             viewport={{ once: true, amount: 0.1 }}
             variants={fadeUp}
             className="space-y-3"
+            aria-labelledby="leak-detection-heading" // Link to the heading below
           >
-            <h4 className="text-xl md:text-2xl font-bold">
+            <h4
+              id="leak-detection-heading"
+              className="text-xl md:text-2xl font-bold"
+            >
               Leak Detection Brooklyn: Fast Action, Less Damage
             </h4>
             <p className="text-gray-700 text-base font-bevietnam mt-4">
@@ -276,8 +337,12 @@ export default function BlogPage() {
             viewport={{ once: true, amount: 0.1 }}
             variants={fadeUp}
             className="space-y-3"
+            aria-labelledby="waterproofing-maintenance-heading" // Link to the heading below
           >
-            <h4 className="text-xl md:text-2xl font-bold">
+            <h4
+              id="waterproofing-maintenance-heading"
+              className="text-xl md:text-2xl font-bold"
+            >
               Waterproofing Maintenance Queens: Stay Ahead of Damage
             </h4>
             <p className="text-gray-700 text-base font-bevietnam mt-4">
@@ -294,8 +359,12 @@ export default function BlogPage() {
             viewport={{ once: true, amount: 0.1 }}
             variants={fadeUp}
             className="space-y-3"
+            aria-labelledby="mold-prevention-heading" // Link to the heading below
           >
-            <h4 className="text-xl md:text-2xl font-bold">
+            <h4
+              id="mold-prevention-heading"
+              className="text-xl md:text-2xl font-bold"
+            >
               Mold Prevention Waterproofing: Health Starts at Home
             </h4>
             <p className="text-gray-700 text-base font-bevietnam mt-4">
@@ -312,8 +381,12 @@ export default function BlogPage() {
             viewport={{ once: true, amount: 0.1 }}
             variants={fadeUp}
             className="space-y-3"
+            aria-labelledby="waterproofing-restoration-heading" // Link to the heading below
           >
-            <h4 className="text-xl md:text-2xl font-bold">
+            <h4
+              id="waterproofing-restoration-heading"
+              className="text-xl md:text-2xl font-bold"
+            >
               Waterproofing Restoration Services: Reviving Older Properties
             </h4>
             <p className="text-gray-700 text-base font-bevietnam mt-4">
@@ -331,8 +404,12 @@ export default function BlogPage() {
             viewport={{ once: true, amount: 0.1 }}
             variants={fadeUp}
             className="space-y-3"
+            aria-labelledby="basement-moisture-control-heading" // Link to the heading below
           >
-            <h4 className="text-xl md:text-2xl font-bold">
+            <h4
+              id="basement-moisture-control-heading"
+              className="text-xl md:text-2xl font-bold"
+            >
               Basement Moisture Control: Dry Spaces Matter
             </h4>
             <p className="text-gray-700 text-base font-bevietnam mt-4">
@@ -350,8 +427,12 @@ export default function BlogPage() {
             viewport={{ once: true, amount: 0.1 }}
             variants={fadeUp}
             className="space-y-3"
+            aria-labelledby="emergency-waterproofing-heading" // Link to the heading below
           >
-            <h4 className="text-xl md:text-2xl font-bold">
+            <h4
+              id="emergency-waterproofing-heading"
+              className="text-xl md:text-2xl font-bold"
+            >
               Emergency Waterproofing NYC: When Time Is Critical
             </h4>
             <p className="text-gray-700 text-base font-bevietnam mt-4">
@@ -369,8 +450,12 @@ export default function BlogPage() {
             viewport={{ once: true, amount: 0.1 }}
             variants={fadeUp}
             className="space-y-3"
+            aria-labelledby="industrial-waterproofing-heading" // Link to the heading below
           >
-            <h4 className="text-xl md:text-2xl font-bold">
+            <h4
+              id="industrial-waterproofing-heading"
+              className="text-xl md:text-2xl font-bold"
+            >
               Industrial Waterproofing Services: Built for Bigger Jobs
             </h4>
             <p className="text-gray-700 text-base font-bevietnam mt-4">
@@ -388,8 +473,12 @@ export default function BlogPage() {
             viewport={{ once: true, amount: 0.1 }}
             variants={fadeUp}
             className="space-y-3"
+            aria-labelledby="deck-waterproofing-heading" // Link to the heading below
           >
-            <h4 className="text-xl md:text-2xl font-bold">
+            <h4
+              id="deck-waterproofing-heading"
+              className="text-xl md:text-2xl font-bold"
+            >
               Deck Waterproofing Contractors: Outdoor Living, Protected
             </h4>
             <p className="text-gray-700 text-base font-bevietnam mt-4">
@@ -406,8 +495,12 @@ export default function BlogPage() {
             viewport={{ once: true, amount: 0.1 }}
             variants={fadeUp}
             className="space-y-3"
+            aria-labelledby="concrete-waterproofing-heading" // Link to the heading below
           >
-            <h4 className="text-xl md:text-2xl font-bold">
+            <h4
+              id="concrete-waterproofing-heading"
+              className="text-xl md:text-2xl font-bold"
+            >
               Concrete Waterproofing Manhattan: Tough Protection for Tough
               Surfaces
             </h4>
@@ -426,8 +519,12 @@ export default function BlogPage() {
             viewport={{ once: true, amount: 0.1 }}
             variants={fadeUp}
             className="space-y-3"
+            aria-labelledby="future-waterproofing-heading" // Link to the heading below
           >
-            <h3 className="text-xl md:text-2xl font-bold">
+            <h3
+              id="future-waterproofing-heading"
+              className="text-xl md:text-2xl font-bold"
+            >
               The Future of Waterproofing in NYC
             </h3>
             <p className="text-gray-700 text-base font-bevietnam">
@@ -459,8 +556,12 @@ export default function BlogPage() {
             viewport={{ once: true, amount: 0.1 }}
             variants={fadeUp}
             className="space-y-3"
+            aria-labelledby="free-estimate-heading" // Link to the heading below
           >
-            <h3 className="text-2xl md:text-3xl font-bold text-[#e63a27]">
+            <h3
+              id="free-estimate-heading"
+              className="text-2xl md:text-3xl font-bold text-[#e63a27]"
+            >
               Get a Free Estimate Today
             </h3>
             <p className="text-gray-700 text-base font-bevietnam">
@@ -468,7 +569,7 @@ export default function BlogPage() {
               services. Contact us for a free consultation and tailored
               solutions.
             </p>
-            <ul className="text-gray-700">
+            <ul className="text-gray-700" aria-label="Contact information">
               <li>
                 <strong>Phone:</strong>{" "}
                 <a

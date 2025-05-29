@@ -139,7 +139,6 @@ const VideoSection = ({ margin }: Props) => {
                 <span className="font-inter text-sm">
                   FLAT ROOF INSTALLATION
                 </span>{" "}
-                {/* Moved text into span */}
               </button>
             </motion.div>
           </div>

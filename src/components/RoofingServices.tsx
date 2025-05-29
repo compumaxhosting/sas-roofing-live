@@ -17,7 +17,7 @@ export default function RoofingServices() {
     {
       title: "Top Roofing Services in Brooklyn",
       desc: "We offer comprehensive roofing services in Brooklyn, including roof repair and roof installation. Our team specializes in flat roofs in Brooklyn, ensuring durability and protection against harsh weather.",
-      isLink: false, // Explicitly define isLink for consistency
+      isLink: false,
     },
     {
       title: "Residential & Commercial Roofing Brooklyn",

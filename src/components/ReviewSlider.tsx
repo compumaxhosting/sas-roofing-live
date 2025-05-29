@@ -300,7 +300,7 @@ const ReviewSlider = () => {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: 30 }}
               transition={{ duration: 0.4, ease: "easeOut" }}
-              tabIndex={-1} // Make the modal content focusable if it's the focus trap root
+              tabIndex={-1}
             >
               <h2 id="review-modal-title" className="sr-only">
                 Full Review by {selectedReview.name}

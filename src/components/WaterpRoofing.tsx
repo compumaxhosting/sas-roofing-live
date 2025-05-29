@@ -22,7 +22,7 @@ export default function RoofingServices() {
     {
       title: "Foundation Waterproofing Manhattan",
       desc: "Protect your foundation with our foundation waterproofing services in Manhattan. We seal cracks and provide long-lasting solutions to keep your property secure.",
-      link: "/waterproofing-contractors-NY", // Added explicit link for consistency
+      link: "/waterproofing-contractors-NY",
     },
     {
       title: "Waterproofing Experts in Queens",

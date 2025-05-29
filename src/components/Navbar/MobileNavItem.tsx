@@ -1,7 +1,6 @@
 "use client";
 
 import Link from "next/link";
-import { usePathname } from "next/navigation";
 import { Dispatch, SetStateAction } from "react";
 
 interface NavItem {
@@ -12,9 +11,11 @@ interface NavItem {
 
 interface Props {
   item: NavItem;
+  isOpen: boolean; // Keep this prop as it's passed from MobileDrawer
   setIsOpen: Dispatch<SetStateAction<boolean>>;
   servicesOpen: boolean;
   setServicesOpen: Dispatch<SetStateAction<boolean>>;
+  pathname: string; // Ensure this is always present in the Props interface
 }
 
 export default function MobileNavItem({
@@ -22,9 +23,8 @@ export default function MobileNavItem({
   setIsOpen,
   servicesOpen,
   setServicesOpen,
+  pathname,
 }: Props) {
-  const pathname = usePathname();
-
   const isSubItemActive = item.subItems?.some(
     (sub) => pathname === sub.href || pathname.startsWith(sub.href + "/")
   );
@@ -39,10 +39,9 @@ export default function MobileNavItem({
     return (
       <div className="border-t border-white/20 last:border-b font-inter">
         {/*
-          When subItems exist, the primary interaction is to toggle the submenu.
-          The 'button' element is appropriate for this.
-          The 'item.href' might still be a valid page, but it's often more intuitive
-          for the parent in a nested menu to just be a toggle.
+          For items with sub-menus, the button's primary role is to toggle the sub-menu.
+          Nesting a <Link> inside a <button> is an accessibility violation.
+          The button's aria-label should clearly describe its toggle action.
         */}
         <button
           onClick={toggleSubmenu}
@@ -51,35 +50,37 @@ export default function MobileNavItem({
               ? "bg-white text-[#e63a27]"
               : "hover:bg-white hover:text-black"
           }`}
-          aria-expanded={servicesOpen}
-          aria-controls={`services-menu-${item.name.replace(/\s+/g, "-")}`}
-          aria-label={`Toggle ${item.name} submenu`}
+          aria-expanded={servicesOpen} // Indicates whether the controlled region is expanded or collapsed
+          aria-controls={`services-menu-${item.name
+            .replace(/\s+/g, "-")
+            .toLowerCase()}`} // Link to the ID of the sub-menu div
+          aria-label={`Toggle ${item.name} submenu`} // Clear label for screen readers
         >
           {item.name} {/* The text of the toggle button */}
           <span
             className={`transform transition-transform duration-200 ${
               servicesOpen ? "rotate-180" : ""
             }`}
-            aria-hidden="true"
+            aria-hidden="true" // Hide the decorative arrow from screen readers
           >
             ▼
           </span>
         </button>
 
         <div
-          id={`services-menu-${item.name.replace(/\s+/g, "-")}`}
+          id={`services-menu-${item.name.replace(/\s+/g, "-").toLowerCase()}`} // ID must match aria-controls
           className={`bg-[#00244d] text-sm overflow-hidden transition-all duration-300 ease-in-out font-inter ${
             servicesOpen ? "max-h-96" : "max-h-0"
           }`}
-          role="region"
-          aria-label={`${item.name} sub-navigation`}
-          aria-live={servicesOpen ? "polite" : "off"}
+          role="region" // Identifies this as a perceivable section of content
+          aria-label={`${item.name} sub-navigation`} // Label for the sub-navigation region
+          aria-live={servicesOpen ? "polite" : "off"} // Announce changes when the submenu opens (polite)
         >
           {item.subItems.map(({ name, href }) => (
             <Link
               key={name}
               href={href}
-              onClick={() => setIsOpen(false)}
+              onClick={() => setIsOpen(false)} // Close the entire mobile drawer on sub-item click
               className={`block px-8 py-3 transition-colors font-inter ${
                 pathname === href || pathname.startsWith(href + "/")
                   ? "bg-white text-[#e63a27]"
@@ -87,7 +88,7 @@ export default function MobileNavItem({
               }`}
               aria-current={
                 pathname === href || pathname.startsWith(href + "/")
-                  ? "page"
+                  ? "page" // Indicate the current page for screen readers
                   : undefined
               }
             >
@@ -99,19 +100,20 @@ export default function MobileNavItem({
     );
   }
 
-  // Regular menu item (no sub-items), this remains unchanged
+  // Regular menu item (no sub-items)
   return (
     <Link
       href={item.href}
-      onClick={() => setIsOpen(false)}
-      className={`block px-6 py-4 border-t border-white/20 last:border-b transition-colors ${
+      onClick={() => setIsOpen(false)} // Close the entire mobile drawer on item click
+      className={`block px-6 py-4 border-t border-white/20 last:border-b font-semibold transition-colors font-inter ${
+        // Added font-semibold and font-inter for consistency
         pathname === item.href || pathname.startsWith(item.href + "/")
-          ? "text-[#e63a27]"
+          ? "bg-white text-[#e63a27]" // Adjusted active state colors for consistency
           : "hover:bg-white hover:text-black"
       }`}
       aria-current={
         pathname === item.href || pathname.startsWith(item.href + "/")
-          ? "page"
+          ? "page" // Indicate the current page for screen readers
           : undefined
       }
     >

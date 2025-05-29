@@ -190,8 +190,7 @@ export default function SidebarOverlay({ onClose }: { onClose: () => void }) {
               required
               className="p-3 text-sm md:text-base text-black bg-white outline-none focus:ring-2 focus:ring-[#e63a27] focus:outline-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-[#e63a27]"
             />
-
-            {/* Phone Number Input Field - Removed the extra div wrapper */}
+            
             <label htmlFor="phone-input" className="sr-only">
               Phone Number
             </label>

@@ -47,7 +47,7 @@ function GalleryItem({
     >
       <Image
         src={src}
-        alt={alt} // Already good alt text!
+        alt={alt}
         width={width}
         height={height}
         className="object-cover w-full h-full"

@@ -6,7 +6,7 @@ import { FaCertificate, FaLightbulb, FaHome } from "react-icons/fa";
 import { motion } from "framer-motion";
 import Link from "next/link";
 
-// Renamed for clarity: IconWithLabel, as it takes an icon component and a label.
+
 const IconWithLabel = ({
   icon: Icon,
   label,

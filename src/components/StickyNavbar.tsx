@@ -208,7 +208,7 @@ export default function StickyNavbar() {
                 tabIndex={-1}
               >
                 {subItems.map(({ label: subLabel, path: subPath }) => {
-                  const isSubActive = pathname.startsWith(subPath); // Use startsWith for sub-paths
+                  const isSubActive = pathname.startsWith(subPath);
                   const subLinkClasses = `block px-5 py-4 text-[#003269] hover:bg-[#e63a27] hover:text-white text-sm font-inter focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-[#e63a27] ${
                     isSubActive ? "text-white bg-[#e63a27]" : "" // Apply active color to sub-items
                   }`;
