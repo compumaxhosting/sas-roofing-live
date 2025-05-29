@@ -6,7 +6,6 @@ import { FiHeart, FiShare2 } from "react-icons/fi";
 import { AiFillHeart } from "react-icons/ai";
 import { motion } from "framer-motion";
 
-
 interface Slide {
   shortTitle: string;
   link: string;
@@ -41,7 +40,11 @@ export default function BlogSlideNew({ slide }: { slide: Slide }) {
         })
         .catch((error) => console.error("Error sharing", error));
     } else {
-      alert("Sharing is not supported in this browser.");
+      // Fallback for browsers that don't support Web Share API
+      alert(
+        "Sharing is not supported in this browser. You can manually copy the link."
+      );
+      // console.log(`Share link for "${slide.title}": ${shareUrl}`); // Log for debugging
     }
   };
 
@@ -60,12 +63,15 @@ export default function BlogSlideNew({ slide }: { slide: Slide }) {
         <div className="relative w-full h-60">
           <Image
             src={slide.image}
-            alt={slide.title}
+            alt={slide.title} // `alt` attribute is crucial for `Image` components
             layout="fill"
             objectFit="cover"
             className="rounded-t-md"
           />
-          <div className="absolute top-2 left-2 bg-[#e63a27] text-white text-xs px-2 py-1 rounded">
+          <div
+            className="absolute top-2 left-2 bg-[#e63a27] text-white text-xs px-2 py-1 rounded"
+            aria-label={`Category: ${slide.shortTitle}`}
+          >
             {slide.shortTitle}
           </div>
         </div>
@@ -75,19 +81,30 @@ export default function BlogSlideNew({ slide }: { slide: Slide }) {
           <button
             onClick={handleLike}
             className="flex items-center gap-1 text-[#e63a27]"
+            aria-label={
+              liked
+                ? `Unlike this post. Current likes: ${likes}`
+                : `Like this post. Current likes: ${likes}`
+            }
           >
             {liked ? (
-              <AiFillHeart className="w-5 h-5" />
+              <AiFillHeart className="w-5 h-5" aria-hidden="true" />
             ) : (
-              <FiHeart className="w-5 h-5 hover:text-[#e63a27]" />
+              <FiHeart
+                className="w-5 h-5 hover:text-[#e63a27]"
+                aria-hidden="true"
+              />
             )}
             <span>{likes}</span>
           </button>
           <button
             onClick={handleShare}
             className="hover:text-[#e63a27] transition-colors"
+            aria-label={`Share the blog post: ${slide.title}`}
           >
-            <FiShare2 className="w-5 h-5" />
+            <FiShare2 className="w-5 h-5" aria-hidden="true" />
+            <span className="sr-only">Share</span>{" "}
+            {/* Added for clearer announcement on some screen readers */}
           </button>
         </div>
 
@@ -105,6 +122,7 @@ export default function BlogSlideNew({ slide }: { slide: Slide }) {
             <Link
               href={href}
               className="inline-block bg-[#003269] text-white text-sm font-semibold px-4 py-2 rounded hover:bg-[#00254c] transition-colors"
+              aria-label={`Read more about ${slide.title}`}
             >
               Read More
             </Link>

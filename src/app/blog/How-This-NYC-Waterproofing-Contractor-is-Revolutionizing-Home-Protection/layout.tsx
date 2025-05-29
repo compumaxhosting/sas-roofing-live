@@ -3,14 +3,14 @@ import { ReactNode } from "react";
 // Metadata for SEO
 export const metadata = {
   title:
-    "Why SAS Roofing & Waterproofing Is Brooklyn’s Most Trusted Roofing Expert",
+    "How This NYC Waterproofing Contractor is Revolutionizing Home Protection",
   description:
     "Discover why SAS Roofing & Waterproofing is the go-to expert for reliable roofing services in Brooklyn. Quality craftsmanship, affordable pricing, and local trust.",
   keywords:
     "Brooklyn roofing expert, trusted roofing contractor Brooklyn, SAS Roofing and Waterproofing, best roofer in Brooklyn, waterproofing services Brooklyn, local Brooklyn roofer, affordable roofing Brooklyn, roofing repair Brooklyn NY, top-rated roofing Brooklyn, commercial roofing Brooklyn",
   openGraph: {
     title:
-      "Why SAS Roofing & Waterproofing Is Brooklyn’s Most Trusted Roofing Expert",
+      "How This NYC Waterproofing Contractor is Revolutionizing Home Protection",
     description:
       "Discover why SAS Roofing & Waterproofing is the go-to expert for reliable roofing services in Brooklyn. Quality craftsmanship, affordable pricing, and local trust.",
     url: "https://www.sasroofingwaterproofing.com/blog.html",
@@ -57,7 +57,7 @@ const schemaData = {
   ],
 };
 
-export default function Blog1Layout({ children }: { children: ReactNode }) {
+export default function Blog2Layout({ children }: { children: ReactNode }) {
   return (
     <>
       {children}
