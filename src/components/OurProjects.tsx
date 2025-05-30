@@ -30,7 +30,6 @@ const OurProjects: React.FC<OurProjectsProps> = ({ gallery }) => {
     // Fallback or handle other gallery values as needed
     return null;
   }, [gallery]);
-  //updated for narrator
   return (
     <main
       className="px-4 sm:px-6 lg:px-12 py-8 bg-[#f9f9f9] mb-10 md:mb-15 shadow-2xl"

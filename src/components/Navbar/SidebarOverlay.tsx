@@ -14,7 +14,6 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import Link from "next/link";
 
-//updated for narrator
 
 export default function SidebarOverlay({ onClose }: { onClose: () => void }) {
   const [form, setForm] = useState({

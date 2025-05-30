@@ -25,7 +25,6 @@ const contactItems = [
     text: "Email",
   },
 ];
-//updated for narrator
 const ContactBar: React.FC = () => (
   <nav
     role="navigation" // This is already good, explicitly defining navigation landmark

@@ -16,7 +16,6 @@ const VideoIframe: React.FC<VideoIframeProps> = ({
   const videoUrl = `https://www.youtube.com/embed/${videoId}?autoplay=${
     autoplay ? 1 : 0
   }&rel=0&modestbranding=1`;
-  //updated for narrator
   return (
     <div className="relative w-full pb-[56.25%] h-0 overflow-hidden rounded-lg">
       <iframe

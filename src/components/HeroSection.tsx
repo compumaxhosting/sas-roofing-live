@@ -134,7 +134,6 @@ export default function HeroSection() {
     duration: 0.6,
     ease: "easeOut",
   };
-  //updated for narrator
   return (
     <section
       className="relative w-full min-h-[530px] lg:min-h-[670px] overflow-hidden bg-neutral-800"

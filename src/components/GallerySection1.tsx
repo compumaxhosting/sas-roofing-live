@@ -35,7 +35,6 @@ function GalleryItem({
   onZoom: (idx: number) => void;
   title?: string;
 }) {
-  //updated for narrator
   return (
     <motion.div
       className={`w-[${width}px] h-[${height}px] shadow-md overflow-hidden relative group`}

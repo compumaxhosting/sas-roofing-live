@@ -6,7 +6,6 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import { FaCertificate, FaLightbulb, FaHome } from "react-icons/fa";
 
-//updated for narrator
 export default function AboutCompany() {
   const [showMore, setShowMore] = useState(false);
 

@@ -25,7 +25,6 @@ const navItems = [
   { label: "CONTACT US", path: "/contact-us" },
   { label: "BLOG", path: "/blog" },
 ];
-//updated for narrator
 export default function StickyNavbar() {
   const [showSticky, setShowSticky] = useState(false);
   const [isServicesOpen, setIsServicesOpen] = useState(false);

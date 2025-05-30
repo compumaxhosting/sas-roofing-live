@@ -10,7 +10,6 @@ import MobileHeaderNew from "./MobileHeaderNew";
 export default function Navbar() {
   const [sidebarOpen, setSidebarOpen] = useState(false);
 
-  //updated for narrator
 
   return (
     <>

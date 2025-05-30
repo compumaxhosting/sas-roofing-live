@@ -52,6 +52,7 @@ const fadeUpVariant = {
   }),
 };
 
+//update for narrator users
 const Features = ({ margin }: Props) => (
   <div
     // Consider adding a role="region" and aria-labelledby if this div is a significant landmark,

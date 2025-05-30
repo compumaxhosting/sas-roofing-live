@@ -24,7 +24,6 @@ const IconWithLabel = ({
   </div>
 );
 
-//updated for narrator
 export default function AboutCompany() {
   return (
     <div className="m-2 mb-5 md:m-0 md:mb-10 shadow-xl">

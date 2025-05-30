@@ -7,7 +7,6 @@ import Image from "next/image";
 import { FaFacebookF, FaHome } from "react-icons/fa"; // Added FaEnvelope as it was mentioned in previous context
 import { Inter } from "next/font/google";
 
-//updated for narrator
 
 const navItems = [
   { label: "HOME", path: "/" },

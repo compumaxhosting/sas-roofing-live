@@ -40,7 +40,6 @@ export default function RoofingServices() {
       link: "/", // Specify the link for the CTA
     },
   ];
-  //updated for narrator
   return (
     <section
       className="px-6 py-12 md:px-16 bg-white text-[#003269] lg:mx-30"

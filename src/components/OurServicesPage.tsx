@@ -21,7 +21,6 @@ export default function OurServicesPage({ margin }: Props) {
       transition: { duration: 0.6, ease: "easeOut" },
     },
   };
-  //updated for narrator
   return (
     <main
       className={`

@@ -49,7 +49,6 @@ export default function BlogSlideNew({ slide }: { slide: Slide }) {
   };
 
   const href = slide.link === "/" ? "/" : `/blog/${slide.link}`;
-  //updated for narrator
   return (
     <motion.section
       className="lg:w-[400px]"

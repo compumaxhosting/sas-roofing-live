@@ -48,7 +48,6 @@ const VideoSection = ({ margin }: Props) => {
   }, []);
 
   const marginBottomClass = `mb-${margin[1]}`;
-  //updated for narrator
   return (
     <div>
       <section

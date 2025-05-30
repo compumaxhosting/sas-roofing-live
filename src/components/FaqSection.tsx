@@ -65,7 +65,6 @@ export default function FaqSection() {
       toggleOpen(index);
     }
   };
-  //updated for narrator
   return (
     <section // Use <section> for semantic grouping of related content
       className="pt-8 pb-4 text-left bg-[#f9f9f9] md:px-5 md:ml-5"

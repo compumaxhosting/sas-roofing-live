@@ -76,7 +76,6 @@ export default function Footer() {
       label: "Google Maps Profile", // More explicit label
     },
   ];
-  //updated for narrator
   return (
     <footer
       className="bg-[#003269] text-white text-sm sm:text-[15px]"
