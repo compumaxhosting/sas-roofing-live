@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 import Link from "next/link";
 
 const fadeUp = {
@@ -21,21 +22,38 @@ export default function BlogPage() {
           whileInView="visible"
           viewport={{ once: true, amount: 0.2 }}
           variants={fadeUp}
-          className="mb-5"
+          className="mb-10 w-full flex flex-col lg:flex-row items-center gap-8"
         >
-          <h4 className="text-3xl md:text-4xl font-bold font-inter mb-7">
-            Why SAS Roofing & Waterproofing Is Brooklyn’s Most Trusted
-            Roofing Expert ?
-          </h4>
-          <h4 className="text-xl md:text-3xl font-semibold font-inter mb-2">
-            SAS Roofing & Waterproofing: Brooklyn’s Trusted Roofing Experts
-          </h4>
-          <p className="text-sm md:text-base text-gray-700 font-bevietnam">
-            With over 30+ years of dedicated service in Brooklyn, Manhattan,
-            Queens, and The Bronx, SAS Roofing & Waterproofing has become
-            synonymous with quality, reliability, and excellence in roofing,
-            waterproofing, and masonry services.
-          </p>
+          {/* Image on the left */}
+          <div className="w-full lg:w-1/2">
+            <Image
+              src="/roofing.jpg"
+              alt="Roofing Experts"
+              width={600}
+              height={400}
+              className="rounded-xl shadow-lg mb-6 w-full h-auto"
+            />
+          </div>
+
+          {/* Text on the right */}
+          <div className="w-full lg:w-1/2">
+            <h1
+              id="main-blog-post-heading"
+              className="text-3xl md:text-4xl font-bold font-inter mb-7"
+            >
+              Why SAS Roofing & Waterproofing Is Brooklyn’s Most Trusted
+              Roofing Expert?
+            </h1>
+            <h2 className="text-xl md:text-3xl font-semibold font-inter mb-2">
+              SAS Roofing & Waterproofing: Brooklyn’s Trusted Roofing Experts
+            </h2>
+            <p className="text-sm md:text-base text-gray-700 font-bevietnam">
+              With over 30+ years of dedicated service in Brooklyn, Manhattan,
+              Queens, and The Bronx, SAS Roofing & Waterproofing has become
+              synonymous with quality, reliability, and excellence in roofing,
+              waterproofing, and masonry services.
+            </p>
+          </div>
         </motion.div>
 
         {/* Core Services */}
@@ -180,15 +198,6 @@ export default function BlogPage() {
                   className="text-[#003269] hover:underline"
                 >
                   (347) 221-6549
-                </a>
-              </li>
-              <li>
-                <strong>Email:</strong>{" "}
-                <a
-                  href="mailto:sascon09@yahoo.com"
-                  className="text-[#003269] hover:underline"
-                >
-                  sascon09@yahoo.com
                 </a>
               </li>
               <li>

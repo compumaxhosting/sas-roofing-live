@@ -169,7 +169,7 @@ export default function NavLinks({
 
       {/* Sidebar Trigger (hover effect) */}
       <div
-        className="hidden md:flex items-center w-8 h-8 cursor-pointer relative mt-5"
+        className="hidden md:flex items-center w-8 h-8 cursor-pointer relative mt-6"
         onClick={() => setSidebarOpen(true)}
       >
         <Image

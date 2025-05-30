@@ -1,11 +1,10 @@
 "use client";
 import { useState } from "react";
-import Link from "next/link";
+import { useRouter } from "next/navigation";
 import Image from "next/image";
 import { FiHeart, FiShare2 } from "react-icons/fi";
 import { AiFillHeart } from "react-icons/ai";
 import { motion } from "framer-motion";
-
 
 interface Slide {
   shortTitle: string;
@@ -19,15 +18,19 @@ interface Slide {
 export default function BlogSlideNew({ slide }: { slide: Slide }) {
   const [liked, setLiked] = useState(false);
   const [likes, setLikes] = useState(10);
+  const router = useRouter();
 
-  const handleLike = () => {
+  const href = slide.link === "/" ? "/" : `/blog/${slide.link}`;
+
+  const handleLike = (e: React.MouseEvent) => {
+    e.stopPropagation();
     setLiked(!liked);
     setLikes(liked ? likes - 1 : likes + 1);
   };
 
-  const handleShare = () => {
+  const handleShare = (e: React.MouseEvent) => {
+    e.stopPropagation();
     if (navigator.share) {
-      // Construct share URL
       const shareUrl =
         slide.link === "/"
           ? window.location.origin
@@ -45,7 +48,9 @@ export default function BlogSlideNew({ slide }: { slide: Slide }) {
     }
   };
 
-  const href = slide.link === "/" ? "/" : `/blog/${slide.link}`;
+  const handleCardClick = () => {
+    router.push(href);
+  };
 
   return (
     <motion.section
@@ -55,7 +60,15 @@ export default function BlogSlideNew({ slide }: { slide: Slide }) {
       transition={{ duration: 0.6, ease: "easeOut" }}
       viewport={{ once: true, amount: 0.2 }}
     >
-      <div className="h-[515px] flex flex-col justify-between rounded-md shadow-2xl overflow-hidden font-inter border border-blue-300 bg-white mt-3">
+      <div
+        onClick={handleCardClick}
+        role="link"
+        tabIndex={0}
+        onKeyDown={(e) => {
+          if (e.key === "Enter" || e.key === " ") handleCardClick();
+        }}
+        className="cursor-pointer h-[515px] flex flex-col justify-between rounded-md shadow-2xl overflow-hidden font-inter border border-blue-300 bg-white mt-3"
+      >
         {/* Image Section */}
         <div className="relative w-full h-60">
           <Image
@@ -71,7 +84,10 @@ export default function BlogSlideNew({ slide }: { slide: Slide }) {
         </div>
 
         {/* Like & Share */}
-        <div className="flex justify-between items-center px-4 py-2 text-gray-600">
+        <div
+          className="flex justify-between items-center px-4 py-2 text-gray-600"
+          onClick={(e) => e.stopPropagation()}
+        >
           <button
             onClick={handleLike}
             className="flex items-center gap-1 text-[#e63a27]"
@@ -102,12 +118,9 @@ export default function BlogSlideNew({ slide }: { slide: Slide }) {
             </p>
           </div>
           <div className="mt-4 text-center">
-            <Link
-              href={href}
-              className="inline-block bg-[#003269] text-white text-sm font-semibold px-4 py-2 rounded hover:bg-[#00254c] transition-colors"
-            >
+            <span className="inline-block bg-[#003269] text-white text-sm font-semibold px-4 py-2 rounded hover:bg-[#00254c] transition-colors">
               Read More
-            </Link>
+            </span>
           </div>
         </div>
       </div>

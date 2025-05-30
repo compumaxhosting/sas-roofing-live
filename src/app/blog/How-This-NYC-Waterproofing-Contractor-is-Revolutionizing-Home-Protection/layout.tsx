@@ -2,17 +2,15 @@ import { ReactNode } from "react";
 
 // Metadata for SEO
 export const metadata = {
-  title:
-    "Why SAS Roofing & Waterproofing Is Brooklyn’s Most Trusted Roofing Expert",
+  title: "NYC Waterproofing Contractor Protecting Your Home",
   description:
-    "Discover why SAS Roofing & Waterproofing is the go-to expert for reliable roofing services in Brooklyn. Quality craftsmanship, affordable pricing, and local trust.",
+    "Discover how this NYC waterproofing contractor revolutionizes home protection with advanced solutions for lasting defense against water damage.",
   keywords:
-    "Brooklyn roofing expert, trusted roofing contractor Brooklyn, SAS Roofing and Waterproofing, best roofer in Brooklyn, waterproofing services Brooklyn, local Brooklyn roofer, affordable roofing Brooklyn, roofing repair Brooklyn NY, top-rated roofing Brooklyn, commercial roofing Brooklyn",
+    "NYC waterproofing contractor, home waterproofing NYC, waterproofing services NYC, basement waterproofing NYC, roof waterproofing NYC, exterior waterproofing NYC, waterproofing company NYC, professional waterproofing NYC, water damage prevention NYC, NYC home protection services",
   openGraph: {
-    title:
-      "Why SAS Roofing & Waterproofing Is Brooklyn’s Most Trusted Roofing Expert",
+    title: "NYC Waterproofing Contractor Protecting Your Home",
     description:
-      "Discover why SAS Roofing & Waterproofing is the go-to expert for reliable roofing services in Brooklyn. Quality craftsmanship, affordable pricing, and local trust.",
+      "Discover how this NYC waterproofing contractor revolutionizes home protection with advanced solutions for lasting defense against water damage.",
     url: "https://www.sasroofingwaterproofing.com/blog.html",
     images: [
       {

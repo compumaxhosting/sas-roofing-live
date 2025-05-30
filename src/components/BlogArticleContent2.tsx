@@ -1,7 +1,9 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 import Link from "next/link";
+import { useEffect, useState } from "react";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 40 },
@@ -13,6 +15,13 @@ const fadeUp = {
 };
 
 export default function BlogPage() {
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  if (!mounted) return null; // or a loader/spinner
   return (
     // Main section for the blog content, identified by aria-labelledby for screen readers.
     <section
@@ -25,38 +34,48 @@ export default function BlogPage() {
           whileInView="visible"
           viewport={{ once: true, amount: 0.2 }}
           variants={fadeUp}
-          className="mb-5"
+          className="mb-12 w-full flex flex-col lg:flex-row items-center gap-8"
         >
-          {/* Main heading of the blog post */}
-          <h1 // Changed to h1 as this is the primary heading for the page content
-            id="main-blog-post-heading" // ID to be referenced by aria-labelledby of the section
-            className="text-3xl md:text-4xl font-bold font-inter mb-7"
-          >
-            How This NYC Waterproofing Contractor is Revolutionizing Home
-            Protection
-          </h1>
-          {/* Subheading - Changed to h2 as it's a subheading to the h1 */}
-          <h2 className="text-xl md:text-3xl font-semibold font-inter mb-2">
-            Leading the Charge in Residential and Commercial Waterproofing
-            Services
-          </h2>
-          <p className="text-sm md:text-base text-gray-700 font-bevietnam">
-            In a city where the weather can turn on a dime, protecting your
-            property is more than a necessity—it’s a priority. Homeowners and
-            business owners alike are turning to expert{" "}
-            <Link
-              href={
-                "https://www.sasroofingwaterproofing.com/waterproofing-contractors-NY"
-              }
-              className="text-[#003269] hover:underline"
-              aria-label="Learn more about expert waterproofing contractors in NYC" // Improved aria-label for clarity
-              target="_blank" // Added for external link
-              rel="noopener noreferrer" // Added for external link security
+          {/* Image on the left */}
+          <div className="w-full lg:w-1/2">
+            <Image
+              src="/blogImage.jpg"
+              alt="Waterproofing Contractor NYC"
+              width={600}
+              height={400}
+              className="rounded-xl shadow-lg"
+            />
+          </div>
+
+          {/* Text on the right */}
+          <div className="w-full lg:w-1/2">
+            <h1
+              id="main-blog-post-heading"
+              className="text-3xl md:text-4xl font-bold font-inter mb-7"
             >
-              waterproofing contractors NYC
-            </Link>{" "}
-            to ensure their buildings remain safe, dry, and mold-free.
-          </p>
+              How This NYC Waterproofing Contractor is Revolutionizing Home
+              Protection
+            </h1>
+            <h2 className="text-xl md:text-3xl font-semibold font-inter mb-2">
+              Leading the Charge in Residential and Commercial Waterproofing
+              Services
+            </h2>
+            <p className="text-sm md:text-base text-gray-700 font-bevietnam">
+              In a city where the weather can turn on a dime, protecting your
+              property is more than a necessity—it’s a priority. Homeowners and
+              business owners alike are turning to expert{" "}
+              <Link
+                href="https://www.sasroofingwaterproofing.com/waterproofing-contractors-NY"
+                className="text-[#003269] hover:underline"
+                aria-label="Learn more about expert waterproofing contractors in NYC"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                waterproofing contractors NYC
+              </Link>{" "}
+              to ensure their buildings remain safe, dry, and mold-free.
+            </p>
+          </div>
         </motion.div>
 
         {/* Core Services Section */}
@@ -574,23 +593,13 @@ export default function BlogPage() {
             <ul className="text-gray-700" aria-label="Contact information">
               <li>
                 <strong>Phone:</strong>{" "}
-                <a
+                <Link
                   href="tel:3472216549"
                   className="text-[#003269] hover:underline"
                   aria-label="Call SAS Roofing and Waterproofing at 3 4 7. 2 2 1. 6 5 4 9" // Spelling out numbers for better screen reader pronunciation
                 >
                   (347) 221-6549
-                </a>
-              </li>
-              <li>
-                <strong>Email:</strong>{" "}
-                <a
-                  href="mailto:sascon09@yahoo.com"
-                  className="text-[#003269] hover:underline"
-                  aria-label="Email SAS Roofing and Waterproofing at sascon09@yahoo.com"
-                >
-                  sascon09@yahoo.com
-                </a>
+                </Link>
               </li>
               <li>
                 <address aria-label="Our address">
