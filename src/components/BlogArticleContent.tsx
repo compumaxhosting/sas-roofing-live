@@ -12,6 +12,7 @@ const fadeUp = {
   },
 };
 
+//updated for narrator
 export default function BlogPage() {
   return (
     // Main section for the blog content, identified by aria-labelledby for screen readers.
@@ -27,11 +28,7 @@ export default function BlogPage() {
           variants={fadeUp}
           className="mb-5"
         >
-          {/* Main heading of the blog post */}
-          <h4
-            id="main-blog-post-heading" // ID to be referenced by aria-labelledby of the section
-            className="text-3xl md:text-4xl font-bold font-inter mb-7"
-          >
+          <h4 className="text-3xl md:text-4xl font-bold font-inter mb-7">
             Why SAS Roofing & Waterproofing Is Brooklyn’s Most Trusted Roofing
             Expert ?
           </h4>
@@ -75,8 +72,6 @@ export default function BlogPage() {
               }
               className="text-xl md:text-2xl font-bold"
               aria-label="Learn more about our Roofing Solutions"
-              target="_blank" // Open in new tab
-              rel="noopener noreferrer" // Security best practice for target="_blank"
             >
               Roofing Solutions
             </Link>
@@ -108,8 +103,6 @@ export default function BlogPage() {
               }
               className="text-xl md:text-2xl font-bold"
               aria-label="Learn more about our Advanced Waterproofing services"
-              target="_blank" // Open in new tab
-              rel="noopener noreferrer" // Security best practice
             >
               Advanced Waterproofing
             </Link>
@@ -141,8 +134,6 @@ export default function BlogPage() {
               }
               className="text-xl md:text-2xl font-bold"
               aria-label="Learn more about our Expert Masonry Work"
-              target="_blank" // Open in new tab
-              rel="noopener noreferrer" // Security best practice
             >
               Expert Masonry Work
             </Link>
@@ -208,7 +199,6 @@ export default function BlogPage() {
                 <a
                   href="tel:3472216549"
                   className="text-[#003269] hover:underline"
-                  aria-label="Call SAS Roofing & Waterproofing at 347-221-6549"
                 >
                   (347) 221-6549
                 </a>
@@ -218,7 +208,6 @@ export default function BlogPage() {
                 <a
                   href="mailto:sascon09@yahoo.com"
                   className="text-[#003269] hover:underline"
-                  aria-label="Email SAS Roofing & Waterproofing at sascon09@yahoo.com"
                 >
                   sascon09@yahoo.com
                 </a>
@@ -230,7 +219,6 @@ export default function BlogPage() {
             <Link
               href="/"//goes to home page 
               className="inline-block mt-4 bg-[#e63a27] text-white px-5 py-2 rounded hover:bg-[#c72d1d] transition"
-              aria-label="Visit SAS Roofing & Waterproofing homepage"
             >
               Visit SAS Roofing & Waterproofing
             </Link>

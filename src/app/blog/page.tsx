@@ -11,21 +11,12 @@ import React from "react";
 const slides = [
   {
     title:
-      "How This NYC Waterproofing Contractor is Revolutionizing Home Protection",
-    shortTitle: "NYC Waterproofing Innovator",
-    description: `Discover how a leading NYC waterproofing contractor is transforming home protection with innovative techniques and comprehensive services, ensuring long-lasting safety and dryness for properties across the city...`,
-    date: "29 May",
-    image: "/blogImage.jpg",
-    link: "How-This-NYC-Waterproofing-Contractor-is-Revolutionizing-Home-Protection",
-  },
-  {
-    title:
       "Why SAS Roofing and Waterproofing Is Brooklyn's Most Trusted Roofing Expert?",
     shortTitle: "Trusted Roofing Expert",
     description: `Trusted by New Yorkers for over 30 years, SAS Roofing &
     Waterproofing is known for dependable service, certified
     expertise, and lasting results...`,
-    date: "21 May",
+    date: "13 JUNE",
     image: "/roofing.jpg",
     link: "Why-SAS-Roofing-and-Waterproofing-Is-Brooklyns-Most-Trusted-Roofing-Expert",
   },

@@ -7,6 +7,7 @@ import { FaFacebookF, FaHome } from "react-icons/fa"; // Assuming FaHome is for 
 import MobileNavItem from "./MobileNavItem"; // Ensure this path is correct
 import { usePathname } from "next/navigation";
 
+//updated for narrator
 
 interface Props {
   isOpen: boolean;
@@ -100,7 +101,7 @@ export default function MobileDrawer({ isOpen, setIsOpen }: Props) {
         <Link href="/" className="flex justify-center p-4" aria-label="Go to home page">
           <Image
             src="/Logo.png"
-            alt="SAS Roofing & Waterproofing Company Logo" // More descriptive alt text
+            alt="Company_Logo"
             width={260}
             height={130}
             className="object-contain cursor-pointer"

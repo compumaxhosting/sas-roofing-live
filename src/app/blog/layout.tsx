@@ -1,6 +1,6 @@
 import { ReactNode } from "react";
 
-//metadata
+// Metadata for SEO
 export const metadata = {
   title:
     "Why SAS Roofing & Waterproofing Is Brooklyn’s Most Trusted Roofing Expert",
@@ -13,7 +13,7 @@ export const metadata = {
       "Why SAS Roofing & Waterproofing Is Brooklyn’s Most Trusted Roofing Expert",
     description:
       "Discover why SAS Roofing & Waterproofing is the go-to expert for reliable roofing services in Brooklyn. Quality craftsmanship, affordable pricing, and local trust.",
-    url: "https://www.sasroofingwaterproofing.com/blog.html",
+    url: "https://www.sasroofingwaterproofing.com/projects.html",
     images: [
       {
         url: "https://www.sasroofingwaterproofing.com/assets/images/resources/Logo-SAS.png",
@@ -57,7 +57,7 @@ const schemaData = {
   ],
 };
 
-export default function Blog1Layout({ children }: { children: ReactNode }) {
+export default function ProjectsLayout({ children }: { children: ReactNode }) {
   return (
     <>
       {children}

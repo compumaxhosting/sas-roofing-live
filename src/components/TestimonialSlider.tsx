@@ -65,6 +65,7 @@ const testimonials = [
     avatar: "/user.png",
   },
 ];
+
 export default function TestimonialSlider() {
   const swiperRef = useRef<SwiperType | null>(null);
 

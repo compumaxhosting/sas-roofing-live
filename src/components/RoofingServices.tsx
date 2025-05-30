@@ -17,33 +17,26 @@ export default function RoofingServices() {
     {
       title: "Top Roofing Services in Brooklyn",
       desc: "We offer comprehensive roofing services in Brooklyn, including roof repair and roof installation. Our team specializes in flat roofs in Brooklyn, ensuring durability and protection against harsh weather.",
-      isLink: false, // Explicitly define isLink for consistency
     },
     {
       title: "Residential & Commercial Roofing Brooklyn",
       desc: "From residential roofing to commercial roofing in Brooklyn, we handle everything from minor repairs to large installations, ensuring your property stays safe and secure.",
-      isLink: false,
     },
     {
       title: "Roof Repair and Replacement Across NYC",
       desc: "Whether you need roof repair in Manhattan, roof repair in Queens, or a roof replacement in Queens, SAS Roofing & Waterproofing provides fast and efficient solutions for all roofing types.",
-      isLink: false,
     },
     {
       title: "Affordable Roofing Solutions",
       desc: "Looking for affordable roofing in Manhattan? SAS Roofing & Waterproofing offers high-quality services that fit your budget, without compromising on durability or performance.",
-      isLink: false,
     },
     {
       title: "Contact SAS Roofing & Waterproofing",
-      isLink: true, // This item points to a contact link, not a description
+      isLink: true,
     },
   ];
   return (
-    <section
-      className="px-6 py-12 md:px-16 bg-white text-[#003269] lg:mx-30"
-      aria-labelledby="roofing-services-heading" // Link section to its main heading
-    >
+    <section className="px-6 py-12 md:px-16 bg-white text-[#003269] lg:mx-30">
       <motion.div
         initial="hidden"
         whileInView="visible"
@@ -53,24 +46,19 @@ export default function RoofingServices() {
       >
         <div>
           <div className="flex items-center justify-center lg:justify-start gap-2 mb-1">
-            <div className="w-6 h-px bg-[#e63a27]" aria-hidden="true" />{" "}
-            {/* Decorative element, hide from screen readers */}
+            <div className="w-6 h-px bg-[#e63a27]" />
             <span className="text-sm font-bold text-[#e63a27] uppercase font-inter">
               Roofing Services
             </span>
           </div>
-          <h2
-            id="roofing-services-heading"
-            className="text-3xl font-bold text-[#003269] leading-snug font-inter"
-          >
+          <h2 className="text-3xl font-bold text-[#003269] leading-snug font-inter">
             Expert Roofing Services in Brooklyn, Queens and Manhattan
           </h2>
         </div>
 
         <Link
           href="/roofing-contractors-brooklyn"
-          className="group border-4 border-[#003269] p-2 inline-block flex-shrink-0 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-[#e63a27]" // Added focus styles
-          aria-label="View all our roofing and waterproofing services" // More descriptive label
+          className="group border-4 border-[#003269] p-2 inline-block flex-shrink-0"
         >
           <div className="border border-[#e63a27] px-5 py-3 text-xs sm:text-sm md:text-base lg:text-lg font-bold text-[#e63a27] uppercase whitespace-nowrap hover-button font-inter">
             All Services
@@ -110,11 +98,7 @@ export default function RoofingServices() {
               <div className="text-sm md:text-base text-gray-700 font-bevietnam">
                 For expert roofing contractors in Queens and beyond, reach out
                 to SAS Roofing & Waterproofing today. Visit{" "}
-                <Link
-                  href="/"
-                  className="text-[#e63a27] hover:text-[#003269] focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-[#e63a27]" // Added focus styles
-                  aria-label="Visit SAS Roofing & Waterproofing homepage to schedule a consultation" // More descriptive label
-                >
+                <Link href="/" className="text-[#e63a27] hover:text-[#003269]">
                   SAS Roofing & Waterproofing
                 </Link>{" "}
                 to schedule a consultation!
