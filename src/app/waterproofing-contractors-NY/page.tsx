@@ -7,7 +7,6 @@ import FooterTopCTA from "@/components/FooterTopCTA";
 import Navbar from "@/components/Navbar/Navbar";
 import ServicesSlider from "@/components/ServicesSlider";
 import StickyNavbar from "@/components/StickyNavbar";
-import WaterpRoofing from "@/components/WaterProofing";
 import { motion } from "framer-motion";
 import React from "react";
 import { useRef } from "react";
@@ -35,7 +34,7 @@ const page = () => {
         pageTitle={"BEST WATERPROOFING SERVICES"}
         imageSrc={"/breadcrumb-19.jpg"}
       />
-      <WaterpRoofing />
+      
       <motion.div
         initial="hidden"
         whileInView="visible"
