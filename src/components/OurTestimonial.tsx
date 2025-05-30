@@ -10,6 +10,7 @@ const TestimonialSkeleton = () => (
     role="status" // Indicates that this section is a status message
     aria-live="polite" // Announces changes politely to screen readers
     aria-atomic="true" // Announces the entire content of the region
+    aria-label="Loading testimonials" // Provides a label for the loading state
   >
     {Array.from({ length: 3 }).map(
       (
@@ -67,8 +68,9 @@ export default function OurTestimonial() {
           whileInView="visible"
           viewport={{ once: true, amount: 0.2 }}
         >
+          {/* Using a heading group for better semantic structure */}
           <h2
-            id="testimonial-heading"
+            id="testimonial-heading" // Main heading for the section
             className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#003269] font-inter"
           >
             <span className="flex items-center justify-center gap-2 mb-2">
@@ -78,10 +80,12 @@ export default function OurTestimonial() {
                 Testimonials
               </span>
             </span>
+            {/* The primary visible heading text */}
             Words From Our Customer
           </h2>
         </motion.div>
 
+        {/* The ReviewSlider component is loaded dynamically */}
         <ReviewSlider />
       </div>
     </section>

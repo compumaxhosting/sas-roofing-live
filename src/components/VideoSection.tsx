@@ -52,7 +52,8 @@ const VideoSection = ({ margin }: Props) => {
     <div>
       <section
         className={`relative w-full flex flex-col md:flex-row overflow-hidden h-[550px] bg-[#f0482f] lg:bg-[#f9f9f9] ${marginBottomClass} shadow-2xl`}
-        aria-labelledby="video-section-heading" // Added ARIA label for the section
+        aria-labelledby="video-section-heading"
+        role="region"
       >
         <Image
           src="/VideoSectionBg.webp"
@@ -95,7 +96,10 @@ const VideoSection = ({ margin }: Props) => {
                 Have a Look <br /> At Our Video
               </h2>
 
-              <ul className="space-y-2" aria-label="Key features">
+              <ul
+                className="space-y-2"
+                aria-label="Key features of the roofing video"
+              >
                 {" "}
                 {/* Added ARIA label for the list */}
                 <li>
@@ -151,7 +155,7 @@ const VideoSection = ({ margin }: Props) => {
             {/* Added flex for centering */}
             <button
               type="button"
-              className="absolute z-30 text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-white rounded-full" // Added focus styles
+              className="absolute z-30 text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-white rounded-full"
               onClick={handleOpenVideo}
               aria-label="Play video: Flat Roof Installation"
             >
@@ -173,7 +177,12 @@ const VideoSection = ({ margin }: Props) => {
 
       {/* Video Modal with accessibility + hydration-safe iframe */}
       <Dialog open={isOpen} onOpenChange={setIsOpen}>
-        <DialogContent className="w-[90vw] md:w-[80vw] lg:w-[70vw] xl:w-[60vw] p-0 rounded-lg border-none bg-transparent shadow-none font-bevietnam">
+        <DialogContent
+          className="w-[90vw] md:w-[80vw] lg:w-[70vw] xl:w-[60vw] p-0 rounded-lg border-none bg-transparent shadow-none font-bevietnam"
+          aria-label="Video modal: Flat Roof Installation"
+          role="dialog"
+          aria-modal="true"
+        >
           <VisuallyHidden>
             <DialogTitle>Flat Roof Installation Video</DialogTitle>
           </VisuallyHidden>
@@ -181,17 +190,16 @@ const VideoSection = ({ margin }: Props) => {
             {isOpen && (
               <VideoIframe
                 videoId="Z4gunD5Wbi8"
-                title="Company Promo Video"
+                title="Flat Roof Installation Video"
                 autoplay={true}
               />
-            )}{" "}
-            {/* Only mount iframe when dialog is open */}
+            )}
             <button
               onClick={handleCloseVideo}
-              className="absolute top-2 right-2 text-white text-3xl bg-black bg-opacity-60 rounded-full p-1 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-white" // Added focus styles
-              aria-label="Close video" // Clear label for close button
+              className="absolute top-2 right-2 text-white text-3xl bg-black bg-opacity-60 rounded-full p-1 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-white"
+              aria-label="Close video"
             >
-              <IoClose aria-hidden="true" /> {/* Icon is decorative */}
+              <IoClose aria-hidden="true" />
             </button>
           </div>
         </DialogContent>

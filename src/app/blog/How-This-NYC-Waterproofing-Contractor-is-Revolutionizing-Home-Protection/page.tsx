@@ -1,5 +1,5 @@
 import BackToTop from "@/components/BackToTop";
-import BlogArticleContent from "@/components/BlogArticleContent";
+import BlogArticleContent from "@/components/BlogArticleContent2";
 import BreadCrum2 from "@/components/BreadCrum2";
 import ContactBar from "@/components/ContactBar";
 import Footer from "@/components/Footer";

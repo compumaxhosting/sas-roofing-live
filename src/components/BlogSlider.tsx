@@ -19,9 +19,17 @@ interface Props {
 const slides = [
   {
     title:
+      "How This NYC Waterproofing Contractor is Revolutionizing Home Protection",
+    description: "Trusted Roofing Expert",
+    date: "29 May",
+    image: "/blogImage.jpg",
+    link: "How-This-NYC-Waterproofing-Contractor-is-Revolutionizing-Home-Protection",
+  },
+  {
+    title:
       "Why SAS Roofing and Waterproofing Is Brooklyn's Most Trusted Roofing Expert?",
     description: "Trusted Roofing Expert",
-    date: "03 JUNE",
+    date: "21 May",
     image: "/roofing.jpg",
     link: "Why-SAS-Roofing-and-Waterproofing-Is-Brooklyns-Most-Trusted-Roofing-Expert",
   },
@@ -88,14 +96,19 @@ export default function BlogSlider({ swiperRef }: Props) {
     }
     autoplayTimeout.current = setTimeout(() => {
       swiper.autoplay?.start();
-    }, 2000);
+    }, 3000);
   };
 
   const navBtnClass =
     "w-10 h-10 rounded-full border-2 border-[#003269] text-[#003269] flex items-center justify-center focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-[#ef4423] transition";
 
   return (
-    <div className="w-full px-4 sm:px-6 max-w-screen-xl mx-auto">
+    <div
+      className="w-full px-4 sm:px-6 max-w-screen-xl mx-auto"
+      role="region"
+      aria-label="Blog post slider"
+      aria-roledescription="carousel"
+    >
       <Swiper
         loop
         speed={1000}
@@ -119,7 +132,13 @@ export default function BlogSlider({ swiperRef }: Props) {
         className="pb-6"
       >
         {Array.from({ length: 6 }).map((_, i) => (
-          <SwiperSlide key={i}>
+          <SwiperSlide
+            key={i}
+            role="group"
+            aria-roledescription="slide"
+            aria-label={`Slide ${i + 1} of 6`}
+            aria-live="off"
+          >
             <BlogSlideCard slide={slides[i % slides.length]} />
           </SwiperSlide>
         ))}
@@ -132,14 +151,14 @@ export default function BlogSlider({ swiperRef }: Props) {
       >
         <button
           onClick={() => handleManualSlide("prev")}
-          aria-label="Previous"
+          aria-label="Go to previous slide"
           className={navBtnClass}
         >
           <FiChevronLeft className="w-5 h-5" aria-hidden />
         </button>
         <button
           onClick={() => handleManualSlide("next")}
-          aria-label="Next"
+          aria-label="Go to next slide"
           className={navBtnClass}
         >
           <FiChevronRight className="w-5 h-5" aria-hidden />

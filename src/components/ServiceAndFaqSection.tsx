@@ -27,17 +27,14 @@ export default function ServiceAndFaqSection() {
 
   const handlePhoneNumberChange = useCallback(
     (e: React.ChangeEvent<HTMLInputElement>) => {
-      // Allow only digits
       const value = e.target.value.replace(/\D/g, "");
-
-      // Limit to a range between 10 and 15 digits
       if (value.length <= 15) {
-        // Max length is 15
         setPhoneNumber(value);
       }
     },
     []
   );
+
   return (
     <section
       className="relative w-full lg:h-[100vh] md:pt-5 pb-24 bg-[#f9f9f9] overflow-hidden md:border-t md:border-black/40 mb-10 md:mb-15 shadow-2xl"
@@ -57,9 +54,10 @@ export default function ServiceAndFaqSection() {
           onSubmit={handleSubmit}
           className="bg-[#f5f5f5] w-full max-w-md p-6 md:p-12 shadow-xl grid gap-4 text-base mb-12 lg:mb-0"
           aria-labelledby="form-heading"
+          role="form"
         >
-          <div className="flex items-center gap-2">
-            <div className="w-6 h-[3px] bg-[#e63a27]" aria-hidden="true" />
+          <div className="flex items-center gap-2" aria-hidden="true">
+            <div className="w-6 h-[3px] bg-[#e63a27]" />
             <p className="uppercase text-[#e63a27] font-semibold tracking-wide">
               Book A Service
             </p>
@@ -70,7 +68,7 @@ export default function ServiceAndFaqSection() {
           >
             Free Estimation
           </h2>
-          <p className="text-gray-500">
+          <p className="text-gray-500" id="form-description">
             Please fill out the form and provide details of your request.
           </p>
 
@@ -86,6 +84,7 @@ export default function ServiceAndFaqSection() {
                 placeholder="Name"
                 required
                 autoComplete="name"
+                aria-label="Name"
                 className="p-3 border border-gray-300 bg-white rounded-md w-full focus:ring-2 focus:ring-[#e63a27] focus:outline-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-[#e63a27]"
               />
             </div>
@@ -101,11 +100,11 @@ export default function ServiceAndFaqSection() {
                 placeholder="Email Address"
                 required
                 autoComplete="email"
+                aria-label="Email Address"
                 className="p-3 border border-gray-300 bg-white rounded-md w-full focus:ring-2 focus:ring-[#e63a27] focus:outline-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-[#e63a27]"
               />
             </div>
 
-            {/* Phone Number Input Field */}
             <div>
               <label htmlFor="phone" className="sr-only">
                 Phone Number
@@ -117,12 +116,12 @@ export default function ServiceAndFaqSection() {
                 placeholder="Phone Number"
                 value={phoneNumber}
                 onChange={handlePhoneNumberChange}
-                maxLength={15} // Max length is 15
-                // The pattern attribute is adjusted for the 10-15 digit range
-                pattern="[0-9]{10,15}" // Requires between 10 and 15 digits
+                maxLength={15}
+                pattern="[0-9]{10,15}"
                 title="Please enter between 10 and 15 digits"
                 required
                 autoComplete="tel-national"
+                aria-label="Phone Number, between 10 and 15 digits"
                 className="p-3 border border-gray-300 bg-white rounded-md w-full focus:ring-2 focus:ring-[#e63a27] focus:outline-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-[#e63a27]"
               />
             </div>
@@ -136,6 +135,7 @@ export default function ServiceAndFaqSection() {
                 name="service"
                 defaultValue=""
                 required
+                aria-label="Select the service you need"
                 className="appearance-none p-3 rounded-md font-semibold text-white bg-[#003269] border border-gray-300 w-full focus:ring-2 focus:ring-[#e63a27] focus:outline-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-[#e63a27]"
               >
                 <option value="" disabled>
@@ -154,9 +154,11 @@ export default function ServiceAndFaqSection() {
               </label>
               <textarea
                 id="message"
+                name="message"
                 placeholder="Your Requirements..."
                 rows={4}
                 required
+                aria-label="Describe your requirements"
                 className="p-3 border border-gray-300 bg-white rounded-md w-full focus:ring-2 focus:ring-[#e63a27] focus:outline-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-[#e63a27]"
               />
             </div>
@@ -165,6 +167,7 @@ export default function ServiceAndFaqSection() {
           <button
             type="submit"
             className="border border-[#e63a27] text-[#e63a27] py-3 px-3 font-semibold rounded-md hover:bg-[#e63a27] hover:text-white transition hover-button focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-[#e63a27]"
+            aria-label="Submit the form and book a consultation"
           >
             Book My Consultation
           </button>
@@ -176,6 +179,7 @@ export default function ServiceAndFaqSection() {
           whileInView="visible"
           viewport={{ once: true, amount: 0.3 }}
           className="w-full max-w-xl"
+          aria-labelledby="faq-heading"
         >
           <FaqSection />
         </motion.div>

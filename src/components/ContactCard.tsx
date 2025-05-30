@@ -46,11 +46,20 @@ const ContactCard: React.FC<ContactCardProps> = ({
       whileInView="visible"
       viewport={{ once: true }}
       variants={fadeUp}
+      // Add a role and aria-labelledby to improve accessibility for screen readers
+      role="region"
+      aria-labelledby={`contact-card-title-${index}`}
     >
-      <div className={iconTab}>{item.icon}</div>
+      {/* Ensure decorative icons are hidden from screen readers */}
+      <div className={iconTab} aria-hidden="true">
+        {item.icon}
+      </div>
 
       <div className="mt-2 space-y-1">
-        <h3 className="text-[#003269] font-semibold text-xl group-hover:text-white font-inter">
+        <h3
+          id={`contact-card-title-${index}`} // Unique ID for aria-labelledby
+          className="text-[#003269] font-semibold text-xl group-hover:text-white font-inter"
+        >
           {item.title}
         </h3>
 

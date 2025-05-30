@@ -1,6 +1,8 @@
 "use client";
+
 import { Mail, MapPin, Phone } from "lucide-react";
 import dynamic from "next/dynamic";
+import React from "react";
 
 const ContactCard = dynamic(() => import("./ContactCard"), { ssr: false });
 
@@ -28,19 +30,19 @@ const Contact = () => {
 
   const contactItems = [
     {
-      icon: <MapPin className="text-white w-6 h-6" />,
+      icon: <MapPin className="text-white w-6 h-6" aria-hidden="true" />,
       title: "Visit Our Office",
       desc: "You are most welcome to visit our office.",
       content: "552 Rugby Rd\nBrooklyn NY 11230",
     },
     {
-      icon: <Phone className="text-white w-6 h-6" />,
+      icon: <Phone className="text-white w-6 h-6" aria-hidden="true" />,
       title: "Make a Call",
       desc: "Keeping you always better connected.",
       content: "OFFICE: (347) 394-9384\nCELL: (347) 221-6549",
     },
     {
-      icon: <Mail className="text-white w-6 h-6" />,
+      icon: <Mail className="text-white w-6 h-6" aria-hidden="true" />,
       title: "Send Email",
       desc: "Drop us a mail we will answer you asap.",
       content: "SUPPORT: sascon09@yahoo.com\nSUPPORT: amzadh78@gmail.com",
@@ -48,7 +50,15 @@ const Contact = () => {
   ];
 
   return (
-    <section className="flex flex-col lg:flex-row justify-center items-start gap-8 px-4 py-10 my-16 bg-white">
+    <section
+      className="flex flex-col lg:flex-row justify-center items-start gap-8 px-4 py-10 my-16 bg-white"
+      aria-labelledby="contact-heading"
+      role="region"
+    >
+      <h2 id="contact-heading" className="sr-only">
+        Contact Information
+      </h2>
+
       {contactItems.map((item, index) => (
         <ContactCard
           key={index}

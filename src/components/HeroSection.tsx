@@ -57,15 +57,20 @@ export default function HeroSection() {
   useEffect(() => {
     let intervalId: NodeJS.Timeout | null = null;
     const startInterval = () => {
+      // Clear any existing interval to prevent multiple intervals running
+      if (intervalId) {
+        clearInterval(intervalId);
+      }
       intervalId = setInterval(() => nextSlide(), 6000);
     };
     startInterval();
+    // Re-start interval on user interaction to reset timer
     return () => {
       if (intervalId) {
         clearInterval(intervalId);
       }
     };
-  }, [nextSlide]);
+  }, [nextSlide]); // Dependency on nextSlide to reset timer on manual navigation
 
   const slide = slides[current];
 
@@ -109,7 +114,16 @@ export default function HeroSection() {
   };
 
   return (
-    <section className="relative w-full min-h-[530px] lg:min-h-[670px] overflow-hidden bg-neutral-800">
+    <section
+      className="relative w-full min-h-[530px] lg:min-h-[670px] overflow-hidden bg-neutral-800"
+      role="region" // Designates a perceivable section of content.
+      aria-roledescription="carousel" // Identifies it as a carousel.
+      aria-label="Roofing Solutions Slider" // Provides a concise, accessible label for the carousel.
+    >
+      <h1 className="sr-only" id="carousel-main-heading">
+        SAS Roofing Hero Slider
+      </h1>{" "}
+      {/* Visually hidden heading for context */}
       <AnimatePresence initial={false} custom={direction} mode="sync">
         <motion.div
           key={current}
@@ -124,20 +138,27 @@ export default function HeroSection() {
           dragElastic={0.15}
           onDragEnd={handleDragEnd}
           className="absolute inset-0 z-0 cursor-grab active:cursor-grabbing font-inter"
+          // Add role and aria-label for improved screen reader experience on draggable area
+          role="group"
+          aria-roledescription="slide"
+          aria-label={`Current slide: ${current + 1} of ${slides.length}, ${
+            slide.title
+          }`}
+          tabIndex={0} // Make the slide content focusable to allow keyboard navigation/interaction
         >
           <Image
             src={slide.image}
-            alt={slide.title}
+            alt={slide.title} // Alt text for the main image, descriptive of the slide's content
             fill
-            priority={current === 0}
+            priority={current === 0} // Priority for the first image for LCP
             className="object-cover select-none"
             draggable="false"
-            unoptimized
+            unoptimized // Consider if unoptimized is needed, can impact performance vs quality
           />
-          <div className="absolute inset-0 bg-black/40" />
+          <div className="absolute inset-0 bg-black/40" aria-hidden="true" />{" "}
+          {/* Decorative overlay */}
         </motion.div>
       </AnimatePresence>
-
       <div className="relative z-10 h-full flex flex-col justify-center items-start px-6 md:px-20 text-white">
         <AnimatePresence mode="wait" initial={false}>
           <motion.div
@@ -148,15 +169,25 @@ export default function HeroSection() {
             transition={textTransition}
             className="max-w-3xl space-y-6 pt-6 md:ml-14 xl:ml-46"
           >
-            <h1 className="text-5xl md:text-6xl lg:text-8xl font-bold leading-tight pointer-events-none font-inter">
+            <h2
+              className="text-5xl md:text-6xl lg:text-8xl font-bold leading-tight pointer-events-none font-inter"
+              id={`slide-title-${current}`} // Unique ID for each slide title
+            >
               {slide.title}
-            </h1>
-            <p className="text-lg font-light tracking-wide pointer-events-none font-bevietnam">
+            </h2>
+            <p
+              className="text-lg font-light tracking-wide pointer-events-none font-bevietnam"
+              id={`slide-description-${current}`} // Unique ID for each slide description
+            >
               {slide.description}
             </p>
             <Link href="/aboutus">
               <div className="inline-block border-4 border-[#003269] p-1">
-                <Button className="Hero_hover-button text-sm sm:text-base lg:text-lg font-inter">
+                <Button
+                  className="Hero_hover-button text-sm sm:text-base lg:text-lg font-inter"
+                  aria-labelledby={`slide-title-${current} slide-description-${current}`} // Associates button with slide content
+                  aria-label={`Learn more about ${slide.title.toLowerCase()}`} // More specific label
+                >
                   {slide.buttonText.toUpperCase()}
                 </Button>
               </div>
@@ -164,39 +195,48 @@ export default function HeroSection() {
           </motion.div>
         </AnimatePresence>
       </div>
-
       <button
         onClick={() => {
           setClickedButton("prev");
           prevSlide();
           setTimeout(() => setClickedButton(null), 200);
         }}
-        aria-label="Previous Slide"
+        aria-controls="carousel-main-heading" // Indicates control over the carousel content
+        aria-label="Previous Slide" // Descriptive label
         className={`hidden md:block absolute left-5 top-1/2 -translate-y-1/2 rounded-full p-4 z-20 transition-all duration-200 transform ${
           clickedButton === "prev" ? "bg-[#e63a27]" : "bg-black/40"
         } hover:bg-[#e63a27] active:scale-95`}
       >
-        <ArrowLeft className="text-white text-2xl" />
+        <ArrowLeft className="text-white text-2xl" aria-hidden="true" />{" "}
+        {/* Decorative icon */}
       </button>
-
       <button
         onClick={() => {
           setClickedButton("next");
           nextSlide();
           setTimeout(() => setClickedButton(null), 200);
         }}
-        aria-label="Next Slide"
+        aria-controls="carousel-main-heading" // Indicates control over the carousel content
+        aria-label="Next Slide" // Descriptive label
         className={`hidden md:block absolute right-5 top-1/2 -translate-y-1/2 rounded-full p-4 z-20 transition-all duration-200 transform ${
           clickedButton === "next" ? "bg-[#e63a27]" : "bg-black/40"
         } hover:bg-[#e63a27] active:scale-95`}
       >
-        <ArrowRight className="text-white text-2xl" />
+        <ArrowRight className="text-white text-2xl" aria-hidden="true" />{" "}
+        {/* Decorative icon */}
       </button>
-
-      <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex gap-4 z-20">
+      <div
+        className="absolute bottom-6 left-1/2 -translate-x-1/2 flex gap-4 z-20"
+        role="tablist" // Designates a set of tab elements.
+        aria-label="Carousel slide controls" // Provides a label for the tablist.
+      >
         {slides.map((_, i) => (
           <button
             key={i}
+            role="tab" // Each button is a tab.
+            aria-selected={i === current} // Indicates if the tab is currently selected.
+            aria-controls={`slide-title-${i}`} // Associates tab with its corresponding slide title.
+            id={`tab-${i}`} // Unique ID for each tab.
             onClick={() => {
               if (i === current) return;
               const newDirection = i > current ? 1 : -1;
@@ -205,8 +245,11 @@ export default function HeroSection() {
             className={`h-2 w-2 rounded-full transition-colors duration-300 ${
               i === current ? "bg-[#e63a27]" : "bg-white/70 hover:bg-white"
             }`}
-            aria-label={`Go to slide ${i + 1}`}
-          />
+            aria-label={`Go to slide ${i + 1} of ${slides.length}`} // More descriptive label
+          >
+            <span className="sr-only">Go to slide {i + 1}</span>{" "}
+            {/* Visually hidden text for redundant label, good fallback */}
+          </button>
         ))}
       </div>
     </section>

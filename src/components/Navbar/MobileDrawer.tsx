@@ -1,13 +1,17 @@
 "use client";
 
-import { KeyboardEvent, Dispatch, SetStateAction, useState } from "react";
+import {
+  KeyboardEvent,
+  Dispatch,
+  SetStateAction,
+  useState,
+  useEffect,
+  useRef,
+} from "react"; // Added useEffect, useRef
 import Image from "next/image";
 import Link from "next/link";
-import { FaFacebookF, FaHome } from "react-icons/fa"; // Assuming FaHome is for Houzz or similar
+import { FaFacebookF, FaHome } from "react-icons/fa";
 import MobileNavItem from "./MobileNavItem"; // Ensure this path is correct
-import { usePathname } from "next/navigation";
-
-//updated for narrator
 
 interface Props {
   isOpen: boolean;
@@ -16,14 +20,15 @@ interface Props {
 
 export default function MobileDrawer({ isOpen, setIsOpen }: Props) {
   const [servicesOpen, setServicesOpen] = useState(false);
-  const pathname = usePathname(); // Get current path for active link styling
+  const drawerRef = useRef<HTMLDivElement>(null); // Ref for the drawer content
+  const closeButtonRef = useRef<HTMLButtonElement>(null); // Ref for the close button
 
   const navItems = [
     { name: "HOME", href: "/" },
     { name: "ABOUT US", href: "/aboutus" },
     {
       name: "SERVICES",
-      href: "/services", // This href is for the main services page, if it exists
+      href: "/services",
       subItems: [
         { name: "Roofing", href: "/roofing-contractors-brooklyn" },
         {
@@ -42,90 +47,142 @@ export default function MobileDrawer({ isOpen, setIsOpen }: Props) {
   const socialLinks = [
     {
       href: "https://www.facebook.com/sasroofingwaterproofing",
-      icon: <FaFacebookF className="text-white text-lg" aria-hidden="true" />, // Added aria-hidden
-      label: "Visit our Facebook page", // More descriptive label
+      icon: <FaFacebookF className="text-white text-lg" aria-hidden="true" />,
+      label: "Visit our Facebook page",
     },
     {
       href: "https://www.houzz.com/professionals/general-contractors/sas-roofing-and-waterproofing-pfvwus-pf~849386886?",
-      icon: <FaHome className="text-white text-lg" aria-hidden="true" />, // Added aria-hidden
-      label: "Visit our Houzz profile", // More descriptive label
+      icon: <FaHome className="text-white text-lg" aria-hidden="true" />,
+      label: "Visit our Houzz profile",
     },
   ];
 
   const handleKeyDown = (e: KeyboardEvent) => {
-    // Allows closing the drawer with the Escape key
+    // Allows closing the drawer with the Escape key when focus is within the drawer or on the overlay
     if (e.key === "Escape") {
       setIsOpen(false);
     }
   };
 
+  // Focus management for modal dialog
+  useEffect(() => {
+    if (isOpen) {
+      // Set initial focus to the close button when the drawer opens
+      closeButtonRef.current?.focus();
+      // Disable scroll on the body when the drawer is open
+      document.body.style.overflow = "hidden";
+
+      const handleTabKey = (e: globalThis.KeyboardEvent) => {
+        if (e.key === "Tab" && drawerRef.current) {
+          const focusableElements = drawerRef.current.querySelectorAll(
+            'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
+          ) as NodeListOf<HTMLElement>;
+          const firstElement = focusableElements[0];
+          const lastElement = focusableElements[focusableElements.length - 1];
+
+          if (e.shiftKey) {
+            // Shift + Tab
+            if (document.activeElement === firstElement) {
+              lastElement?.focus();
+              e.preventDefault();
+            }
+          } else {
+            // Tab
+            if (document.activeElement === lastElement) {
+              firstElement?.focus();
+              e.preventDefault();
+            }
+          }
+        }
+      };
+
+      document.addEventListener("keydown", handleTabKey);
+
+      return () => {
+        // Re-enable scroll when the drawer closes
+        document.body.style.overflow = "";
+        document.removeEventListener("keydown", handleTabKey);
+      };
+    } else {
+      // Ensure body scroll is re-enabled if component unmounts or drawer closes unexpectedly
+      document.body.style.overflow = "";
+    }
+  }, [isOpen]);
+
   return (
-    // Outer overlay for the drawer. Handles click outside to close and Escape key.
+    // Outer container for the drawer and its backdrop
     <div
       className={`fixed inset-0 z-60 flex justify-end transition-opacity duration-300 ${
         isOpen ? "opacity-100 visible" : "opacity-0 invisible"
       }`}
       onKeyDown={handleKeyDown}
-      tabIndex={-1} // Makes the div focusable for keyboard events
-      role="presentation" // Indicates it's a structural element, not interactive itself
+      // No tabIndex needed on this outer div if focus is managed within the dialog
+      role="presentation" // Indicates it's a structural element for styling/positioning
     >
       {/* Clickable backdrop to close the drawer */}
       <div
         className="w-[40%] bg-black/30 backdrop-blur-sm"
         onClick={() => setIsOpen(false)}
-        role="button" // Indicates it's a clickable element
-        tabIndex={0} // Makes it keyboard focusable
-        aria-label="Close mobile menu" // Explicit label for screen readers
+        role="button"
+        tabIndex={0}
+        aria-label="Close mobile menu by clicking outside" // More specific label
       />
       {/* The actual drawer content */}
       <div
+        ref={drawerRef} // Attach ref for focus management
         className={`relative w-[60%] h-full bg-[#003269] text-white flex flex-col overflow-y-auto transform transition-transform duration-300 ease-in-out ${
           isOpen ? "translate-x-0" : "translate-x-full"
         }`}
-        role="dialog" // Identifies this as a dialog (modal)
-        aria-modal="true" // Indicates that content outside the dialog is inert
+        role="dialog"
+        aria-modal="true"
         aria-labelledby="mobile-menu-header" // Links to the header of the menu
-        tabIndex={-1} // Allows programmatic focus, but not naturally tabbable
+        // Initial focus handled by useEffect, no tabIndex needed here
       >
         {/* Close button for the drawer */}
         <button
+          ref={closeButtonRef} // Attach ref for initial focus
           onClick={() => setIsOpen(false)}
-          aria-label="Close menu" // Clear label for screen readers
+          aria-label="Close menu"
           className="absolute top-3 right-3 bg-[#e63a27] text-white w-6 h-6 rounded-full flex items-center justify-center"
         >
-          {/* Using a character for the close icon, ensure it's accessible */}
-          <span aria-hidden="true">✕</span> {/* Hide character from screen readers, label on button */}
+          <span aria-hidden="true">✕</span>
         </button>
 
         {/* Company Logo Link */}
-        <Link href="/" className="flex justify-center p-4" aria-label="Go to home page">
+        <Link
+          href="/"
+          className="flex justify-center p-4"
+          aria-label="Go to home page"
+        >
           <Image
             src="/Logo.png"
-            alt="Company_Logo"
+            alt="Company Logo, click to navigate to home page" // More descriptive alt text
             width={260}
             height={130}
             className="object-contain cursor-pointer"
-            priority // Indicate high priority for loading
+            priority
           />
         </Link>
 
         {/* Navigation Links */}
-        <nav className="mt-4 font-inter" aria-label="Mobile Navigation"> {/* Added ARIA label for nav */}
+        <nav className="mt-4 font-inter" aria-label="Mobile Navigation">
           {navItems.map((item) => (
             <MobileNavItem
               key={item.name}
               item={item}
-              isOpen={isOpen} // Passed for potential active states or drawer closing logic within MobileNavItem
-              setIsOpen={setIsOpen} // Passed for closing the drawer from MobileNavItem
+              setIsOpen={setIsOpen}
               servicesOpen={servicesOpen}
               setServicesOpen={setServicesOpen}
-              pathname={pathname} // Pass current path for active link styling
+              // The pathname is already available via usePathname in MobileNavItem, no need to pass it here
             />
           ))}
         </nav>
 
         {/* Social Media Links */}
-        <div className="mt-auto flex justify-center gap-4 py-6" role="contentinfo"> {/* role="contentinfo" for footer-like content */}
+        <div
+          className="mt-auto flex justify-center gap-4 py-6"
+          role="contentinfo"
+        >
           {socialLinks.map(({ href, icon, label }, i) => (
             <Link
               key={i}
@@ -133,7 +190,7 @@ export default function MobileDrawer({ isOpen, setIsOpen }: Props) {
               target="_blank"
               rel="noopener noreferrer"
               className="bg-[#e63a27] rounded-full w-10 h-10 flex items-center justify-center"
-              aria-label={label} // Use the more descriptive label
+              aria-label={label}
             >
               {icon}
             </Link>

@@ -6,7 +6,6 @@ import { FiHeart, FiShare2 } from "react-icons/fi";
 import { AiFillHeart } from "react-icons/ai";
 import { motion } from "framer-motion";
 
-
 interface Slide {
   shortTitle: string;
   link: string;
@@ -18,7 +17,7 @@ interface Slide {
 
 export default function BlogSlideNew({ slide }: { slide: Slide }) {
   const [liked, setLiked] = useState(false);
-  const [likes, setLikes] = useState(10);
+  const [likes, setLikes] = useState(10); // Initial likes, consider making this dynamic from props
 
   const handleLike = () => {
     setLiked(!liked);
@@ -41,6 +40,8 @@ export default function BlogSlideNew({ slide }: { slide: Slide }) {
         })
         .catch((error) => console.error("Error sharing", error));
     } else {
+      // Fallback for browsers that don't support Web Share API
+      // You could implement a custom share dialog or copy to clipboard here.
       alert("Sharing is not supported in this browser.");
     }
   };
@@ -54,18 +55,23 @@ export default function BlogSlideNew({ slide }: { slide: Slide }) {
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6, ease: "easeOut" }}
       viewport={{ once: true, amount: 0.2 }}
+      // Added aria-labelledby to associate the section with its main heading
+      aria-labelledby={`blog-post-title-${slide.link}`}
     >
       <div className="h-[515px] flex flex-col justify-between rounded-md shadow-2xl overflow-hidden font-inter border border-blue-300 bg-white mt-3">
         {/* Image Section */}
         <div className="relative w-full h-60">
           <Image
             src={slide.image}
-            alt={slide.title}
+            alt={slide.title} // `alt` attribute is crucial for accessibility
             layout="fill"
             objectFit="cover"
             className="rounded-t-md"
           />
-          <div className="absolute top-2 left-2 bg-[#e63a27] text-white text-xs px-2 py-1 rounded">
+          <div
+            className="absolute top-2 left-2 bg-[#e63a27] text-white text-xs px-2 py-1 rounded"
+            aria-label={`Category: ${slide.shortTitle}`}
+          >
             {slide.shortTitle}
           </div>
         </div>
@@ -75,26 +81,36 @@ export default function BlogSlideNew({ slide }: { slide: Slide }) {
           <button
             onClick={handleLike}
             className="flex items-center gap-1 text-[#e63a27]"
+            aria-label={liked ? "Unlike this post" : "Like this post"}
           >
             {liked ? (
-              <AiFillHeart className="w-5 h-5" />
+              <AiFillHeart className="w-5 h-5" aria-hidden="true" />
             ) : (
-              <FiHeart className="w-5 h-5 hover:text-[#e63a27]" />
+              <FiHeart
+                className="w-5 h-5 hover:text-[#e63a27]"
+                aria-hidden="true"
+              />
             )}
-            <span>{likes}</span>
+            <span aria-live="polite" aria-atomic="true">
+              {likes} {likes === 1 ? "like" : "likes"}
+            </span>
           </button>
           <button
             onClick={handleShare}
             className="hover:text-[#e63a27] transition-colors"
+            aria-label={`Share "${slide.title}"`}
           >
-            <FiShare2 className="w-5 h-5" />
+            <FiShare2 className="w-5 h-5" aria-hidden="true" />
           </button>
         </div>
 
         {/* Content + Button Container */}
         <div className="flex flex-col justify-between flex-grow px-4 py-2">
           <div>
-            <h2 className="text-md font-semibold text-gray-800 mb-4">
+            <h2
+              id={`blog-post-title-${slide.link}`}
+              className="text-md font-semibold text-gray-800 mb-4"
+            >
               {slide.title}
             </h2>
             <p className="text-sm text-gray-600 font-bevietnam">
@@ -105,6 +121,7 @@ export default function BlogSlideNew({ slide }: { slide: Slide }) {
             <Link
               href={href}
               className="inline-block bg-[#003269] text-white text-sm font-semibold px-4 py-2 rounded hover:bg-[#00254c] transition-colors"
+              aria-label={`Read more about ${slide.title}`}
             >
               Read More
             </Link>

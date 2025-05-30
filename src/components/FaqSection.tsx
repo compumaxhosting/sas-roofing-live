@@ -48,12 +48,11 @@ const accordionVariants = {
 export default function FaqSection() {
   const [openIndex, setOpenIndex] = useState<number>(0);
 
- const toggleOpen = (index: number) => {
-   
-   if (openIndex !== index) {
-     setOpenIndex(index);
-   }
- };
+  const toggleOpen = (index: number) => {
+    if (openIndex !== index) {
+      setOpenIndex(index);
+    }
+  };
 
   const handleKeyDown = (
     e: KeyboardEvent<HTMLButtonElement>,
@@ -66,18 +65,30 @@ export default function FaqSection() {
   };
 
   return (
-    <div className="pt-8 pb-4 text-left bg-[#f9f9f9] md:px-5 md:ml-5">
-      <div className="flex items-center gap-2 mb-2">
-        <div className="w-6 h-[2px] bg-[#e63a27]" />
-        <p className="text-base uppercase text-[#e63a27] font-semibold tracking-wide font-inter">
-          Common Questions & Answers
-        </p>
-      </div>
-      <h2 className="text-4xl lg:text-5xl font-bold text-[#003269] mb-8 font-inter">
-        Get Detailed Answers
-      </h2>
+    <section
+      className="pt-8 pb-4 text-left bg-[#f9f9f9] md:px-5 md:ml-5"
+      aria-labelledby="faq-heading"
+    >
+      <header className="flex flex-col mb-8">
+        <div className="flex items-center gap-2 mb-2">
+          <div className="w-6 h-[2px] bg-[#e63a27]" />
+          <p className="text-base uppercase text-[#e63a27] font-semibold tracking-wide font-inter">
+            Common Questions & Answers
+          </p>
+        </div>
+        <h2
+          id="faq-heading"
+          className="text-4xl lg:text-5xl font-bold text-[#003269] font-inter"
+        >
+          Get Detailed Answers
+        </h2>
+      </header>
 
-      <div className="space-y-4 text-base">
+      <div
+        className="space-y-4 text-base"
+        role="list"
+        aria-label="Frequently Asked Questions"
+      >
         {faqs.map((faq, index) => {
           const isOpen = openIndex === index;
 
@@ -85,12 +96,14 @@ export default function FaqSection() {
             <div
               key={index}
               className="border border-gray-200 rounded-md overflow-hidden"
+              role="listitem"
             >
               <button
                 onClick={() => toggleOpen(index)}
                 onKeyDown={(e) => handleKeyDown(e, index)}
                 aria-expanded={isOpen}
-                aria-controls={`faq-${index}`}
+                aria-controls={`faq-panel-${index}`}
+                id={`faq-button-${index}`}
                 className={`w-full flex justify-between items-center px-6 py-5 text-left transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-[#e63a27] ${
                   isOpen ? "bg-[#003269] text-white" : "bg-white text-[#003269]"
                 }`}
@@ -104,6 +117,7 @@ export default function FaqSection() {
                   animate={{ rotate: isOpen ? 180 : 0 }}
                   transition={{ duration: 0.3 }}
                   className="ml-4"
+                  aria-hidden="true"
                 >
                   <FiChevronDown size={22} />
                 </motion.span>
@@ -112,7 +126,9 @@ export default function FaqSection() {
               <AnimatePresence initial={false}>
                 {isOpen && (
                   <motion.div
-                    id={`faq-${index}`}
+                    id={`faq-panel-${index}`}
+                    role="region"
+                    aria-labelledby={`faq-button-${index}`}
                     key="content"
                     variants={accordionVariants}
                     initial="collapsed"
@@ -128,6 +144,6 @@ export default function FaqSection() {
           );
         })}
       </div>
-    </div>
+    </section>
   );
 }

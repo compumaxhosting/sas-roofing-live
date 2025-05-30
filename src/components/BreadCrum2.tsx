@@ -19,21 +19,28 @@ const BreadCrum2: React.FC<BreadCrumProps> = ({
   imageSrc,
 }) => {
   return (
-    <div className="relative h-60 md:h-85 w-full text-white text-center">
+    <header
+      className="relative h-60 md:h-85 w-full text-white text-center"
+      role="banner"
+    >
+      {/* Background Image */}
       <Image
         src={imageSrc}
-        alt="Breadcrumb Background"
+        alt=""
         fill
         loading="lazy"
         className="object-cover object-top brightness-60"
         quality={100}
         priority={false}
+        aria-hidden="true"
       />
 
+      {/* Overlay content */}
       <div className="absolute inset-0 flex flex-col justify-center items-center font-inter">
+        {/* Breadcrumb Navigation */}
         <nav
-          aria-label="breadcrumb"
-          className="mb-2 flex flex-wrap justify-center text-sm gap-2 font-inter"
+          aria-label="Breadcrumb"
+          className="mb-2 flex flex-wrap justify-center text-sm gap-2"
         >
           {breadcrumbItems.map((item, index) => (
             <React.Fragment key={item.href}>
@@ -41,20 +48,31 @@ const BreadCrum2: React.FC<BreadCrumProps> = ({
                 href={item.href}
                 className={
                   index === breadcrumbItems.length - 1
-                    ? "font-semibold"
-                    : "hover:underline"
+                    ? "font-semibold text-white pointer-events-none"
+                    : "hover:underline text-white"
+                }
+                aria-current={
+                  index === breadcrumbItems.length - 1 ? "page" : undefined
                 }
               >
                 {item.label}
               </Link>
-              {index < breadcrumbItems.length - 1 && <span>›</span>}
+              {index < breadcrumbItems.length - 1 && (
+                <span aria-hidden="true">›</span>
+              )}
             </React.Fragment>
           ))}
         </nav>
 
-        <h1 className="text-4xl lg:text-6xl font-bold">{pageTitle}</h1>
+        {/* Page Title */}
+        <h1
+          className="text-4xl lg:text-6xl font-bold"
+          aria-label={`Page title: ${pageTitle}`}
+        >
+          {pageTitle}
+        </h1>
       </div>
-    </div>
+    </header>
   );
 };
 

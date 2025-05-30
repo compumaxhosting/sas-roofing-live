@@ -18,7 +18,6 @@ const fadeUp = {
   transition: { duration: 0.6, ease: "easeOut" },
 };
 
-
 function GalleryItem({
   src,
   width,
@@ -36,7 +35,6 @@ function GalleryItem({
   onZoom: (idx: number) => void;
   title?: string;
 }) {
-  //updated for narrator
   return (
     <motion.div
       className={`w-[${width}px] h-[${height}px] shadow-md overflow-hidden relative group`}
@@ -44,6 +42,8 @@ function GalleryItem({
       whileInView={fadeUp.animate}
       transition={fadeUp.transition}
       viewport={{ once: true }}
+      role="listitem"
+      aria-label={`Gallery image: ${title}`}
     >
       <Image
         src={src}
@@ -52,13 +52,23 @@ function GalleryItem({
         height={height}
         className="object-cover w-full h-full"
       />
-      <div className="absolute inset-0 bg-[#003269]/60 opacity-0 group-hover:opacity-100 transition duration-500 flex flex-col items-center justify-center text-white">
+      <div
+        className="absolute inset-0 bg-[#003269]/60 opacity-0 group-hover:opacity-100 transition duration-500 flex flex-col items-center justify-center text-white"
+        aria-hidden="true"
+      >
         <span className="text-lg sm:text-xl font-semibold mb-2">{title}</span>
         <button
           onClick={() => onZoom(index)}
           className="w-10 h-10 bg-transparent border border-white flex items-center justify-center hover:bg-[#e63a27] hover:border-[#e63a27] transition-colors"
+          aria-label={`Zoom in on ${title}`}
         >
-          <Image src="/search.png" alt="Zoom" width={20} height={20} />
+          <Image
+            src="/search.png"
+            alt=""
+            width={20}
+            height={20}
+            aria-hidden="true"
+          />
         </button>
       </div>
     </motion.div>
@@ -86,18 +96,23 @@ function Modal({
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
+          role="dialog"
+          aria-modal="true"
+          aria-labelledby="modal-title"
+          aria-describedby="modal-description"
         >
           <button
             className="absolute top-4 right-4 text-white text-3xl z-10"
             onClick={onClose}
+            aria-label="Close zoomed image"
           >
             &times;
           </button>
 
-          {/* Hide arrows on small screens */}
           <button
             className="absolute left-4 text-white text-4xl hidden md:block z-10"
             onClick={onPrev}
+            aria-label="Previous image"
           >
             &#8592;
           </button>
@@ -116,16 +131,21 @@ function Modal({
           >
             <Image
               src={images[index]}
-              alt={`Zoomed ${index}`}
+              alt={`Zoomed image ${index + 1}`}
               width={1200}
               height={1200}
               className="object-contain max-h-[80vh]"
+              id="modal-description"
             />
+            <span id="modal-title" className="sr-only">
+              Zoomed gallery image
+            </span>
           </motion.div>
 
           <button
             className="absolute right-4 text-white text-4xl hidden md:block z-10"
             onClick={onNext}
+            aria-label="Next image"
           >
             &#8594;
           </button>
@@ -135,18 +155,16 @@ function Modal({
   );
 }
 
-
 export default function GallerySection() {
   const [modalOpen, setModalOpen] = useState(false);
   const [currentIndex, setCurrentIndex] = useState(0);
-  
+
   useEffect(() => {
     if (modalOpen) {
       document.body.style.overflow = "hidden";
     } else {
       document.body.style.overflow = "";
     }
-
     return () => {
       document.body.style.overflow = "";
     };
@@ -178,7 +196,7 @@ export default function GallerySection() {
   }, [modalOpen, handleNext, handlePrev]);
 
   return (
-    <section className="py-10 px-4 sm:px-6 lg:px-12 w-full">
+    <section className="py-10 px-4 sm:px-6 lg:px-12 w-full" role="list">
       {/* Desktop Layout */}
       <div className="hidden xl:flex flex-col items-center gap-8 w-full">
         <div className="flex justify-center gap-6 w-full">
@@ -219,6 +237,8 @@ export default function GallerySection() {
             whileInView={fadeUp.animate}
             transition={fadeUp.transition}
             viewport={{ once: true }}
+            role="listitem"
+            aria-label={`Gallery image ${idx + 1}`}
           >
             <Image
               src={img}
@@ -226,15 +246,25 @@ export default function GallerySection() {
               fill
               className="object-cover w-full h-full"
             />
-            <div className="absolute inset-0 bg-[#003269]/60 opacity-0 group-hover:opacity-100 transition duration-500 flex flex-col items-center justify-center text-white">
+            <div
+              className="absolute inset-0 bg-[#003269]/60 opacity-0 group-hover:opacity-100 transition duration-500 flex flex-col items-center justify-center text-white"
+              aria-hidden="true"
+            >
               <span className="text-lg sm:text-xl font-semibold mb-2 font-inter">
                 SAS Roofing
               </span>
               <button
                 onClick={() => handleZoom(idx)}
                 className="w-10 h-10 bg-transparent border border-white flex items-center justify-center hover:bg-[#e63a27] hover:border-[#e63a27] transition-colors"
+                aria-label={`Zoom in on SAS Roofing image ${idx + 1}`}
               >
-                <Image src="/search.png" alt="Zoom" width={20} height={20} />
+                <Image
+                  src="/search.png"
+                  alt=""
+                  width={20}
+                  height={20}
+                  aria-hidden="true"
+                />
               </button>
             </div>
           </motion.div>

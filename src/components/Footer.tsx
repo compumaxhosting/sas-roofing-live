@@ -20,12 +20,12 @@ export default function Footer() {
     "check",
   ];
   const navLinks = [
-    { label: "HOME", path: "/" },
-    { label: "ABOUT US", path: "/aboutus" },
-    { label: "PROJECTS", path: "/projects" },
-    { label: "REVIEWS", path: "/reviews" },
-    { label: "SERVICES", path: "/services" },
-    { label: "CONTACT", path: "/contact-us" },
+    { label: "Home", path: "/" }, // Capitalized for display, but keep original for internal paths if needed
+    { label: "About Us", path: "/aboutus" },
+    { label: "Projects", path: "/projects" },
+    { label: "Reviews", path: "/reviews" },
+    { label: "Services", path: "/services" },
+    { label: "Contact", path: "/contact-us" },
   ];
   const socialIcons = [
     {
@@ -58,7 +58,11 @@ export default function Footer() {
       path: "https://www.yelp.com/biz/sas-roofing-and-waterproofing-brooklyn-8",
       label: "Yelp",
     },
-    { src: "x", path: "https://x.com/sasroofing91254", label: "X (Twitter)" },
+    {
+      src: "x",
+      path: "https://x.com/sasroofing91254",
+      label: "X (formerly Twitter)",
+    }, // Added "(formerly Twitter)" for clarity
     {
       src: "bbb",
       path: "https://www.bbb.org/us/ny/brooklyn/profile/roofing-contractors/sas-contracting-co-inc-0121-161078/#sealclick",
@@ -66,14 +70,18 @@ export default function Footer() {
     },
     {
       src: "google_my_business",
-      path: "https://www.google.com/maps/place/SAS+Roofing+&+Waterproofing",
-      label: "Google Maps",
+      path: "https://www.google.com/maps/place/SAS+Roofing+&+Waterproofing", // Placeholder
+      label: "Google My Business", // More accurate label
     },
   ];
 
   return (
-    <footer className="bg-[#003269] text-white text-sm sm:text-[15px]">
+    <footer
+      className="bg-[#003269] text-white text-sm sm:text-[15px]"
+      aria-labelledby="footer-heading"
+    >
       <motion.h2
+        id="footer-heading" // Added ID for aria-labelledby on footer
         className="px-4 sm:px-6 md:px-12 pt-12 text-center text-xl sm:text-2xl md:text-3xl font-bold text-gray-100 mb-12 max-w-4xl mx-auto font-inter"
         {...fadeUp(0)}
       >
@@ -82,9 +90,19 @@ export default function Footer() {
 
       <div className="px-4 sm:px-6 md:px-12 pb-12 max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-12">
         {/* About Section */}
-        <motion.div {...fadeUp(0.1)}>
-          <h4 className="text-xl font-bold mb-2 font-inter">About Service</h4>
-          <div className="w-12 h-[2px] bg-[#e63a27] mb-3" />
+        <motion.div {...fadeUp(0.1)} aria-labelledby="about-service-heading">
+          <h3
+            id="about-service-heading"
+            className="text-xl font-bold mb-2 font-inter"
+          >
+            About Service
+          </h3>{" "}
+          {/* Changed to h3 */}
+          <div
+            className="w-12 h-[2px] bg-[#e63a27] mb-3"
+            aria-hidden="true"
+          />{" "}
+          {/* Decorative line */}
           <p className="text-white/90 leading-relaxed md:mt-10 text-sm font-bevietnam">
             “SAS Roofing & Waterproofing is a family-owned and operated business
             serving the greater Brooklyn, New York area since 2000.“
@@ -93,20 +111,24 @@ export default function Footer() {
           <p className="text-white/80 font-bevietnam text-sm">
             Mon–Sat: 09.00 am to 6.30 pm
           </p>
-
           <Link
-            href="/"
+            href="/services"
             className="inline-block mt-6 bg-[#e53935] text-white px-6 py-3 font-semibold hover:bg-[#e63a27] transition text-sm md:text-base More-hover-button font-inter"
+            aria-label="Find out more details about SAS Roofing & Waterproofing"
           >
             MORE DETAILS
           </Link>
-
-          <div className="flex gap-2 flex-wrap mt-4 items-center">
+          <div
+            className="flex gap-2 flex-wrap mt-4 items-center"
+            aria-label="Accepted payment methods"
+          >
+            {" "}
+            {/* Added aria-label for context */}
             {paymentIcons.map((icon) => (
               <Image
                 key={icon}
                 src={`/${icon}_logo.png`}
-                alt={`${icon} accepted`}
+                alt={`${icon} accepted`} // Clear alt text for payment icons
                 width={50}
                 height={32}
                 className="object-contain h-[35px] w-auto"
@@ -117,15 +139,31 @@ export default function Footer() {
         </motion.div>
 
         {/* Useful Links */}
-        <motion.div {...fadeUp(0.2)}>
-          <h4 className="text-xl font-bold mb-2 font-inter">Useful Links</h4>
-          <div className="w-12 h-[2px] bg-[#e63a27] mb-3" />
-          <ul className="space-y-3 mt-4 md:mt-10">
+        <motion.div {...fadeUp(0.2)} aria-labelledby="useful-links-heading">
+          <h3
+            id="useful-links-heading"
+            className="text-xl font-bold mb-2 font-inter"
+          >
+            Useful Links
+          </h3>{" "}
+          {/* Changed to h3 */}
+          <div
+            className="w-12 h-[2px] bg-[#e63a27] mb-3"
+            aria-hidden="true"
+          />{" "}
+          {/* Decorative line */}
+          <ul
+            className="space-y-3 mt-4 md:mt-10"
+            aria-label="Quick navigation links"
+          >
+            {" "}
+            {/* Added aria-label for context */}
             {navLinks.map(({ label, path }) => (
               <li key={label}>
                 <Link
                   href={path}
                   className="hover:text-[#e63a27] text-sm font-bevietnam"
+                  aria-label={`Maps to ${label} page`} // Added specific aria-label for navigation links
                 >
                   {label}
                 </Link>
@@ -135,39 +173,99 @@ export default function Footer() {
         </motion.div>
 
         {/* Make Contact */}
-        <motion.div {...fadeUp(0.3)}>
-          <h4 className="text-xl font-bold mb-2 font-inter">Make Contact</h4>
-          <div className="w-12 h-[2px] bg-[#e63a27] mb-3" />
-
-          <div className="space-y-2 text-sm md:mt-5">
+        <motion.div {...fadeUp(0.3)} aria-labelledby="make-contact-heading">
+          <h3
+            id="make-contact-heading"
+            className="text-xl font-bold mb-2 font-inter"
+          >
+            Make Contact
+          </h3>{" "}
+          {/* Changed to h3 */}
+          <div
+            className="w-12 h-[2px] bg-[#e63a27] mb-3"
+            aria-hidden="true"
+          />{" "}
+          {/* Decorative line */}
+          <div
+            className="space-y-2 text-sm md:mt-5"
+            aria-label="General inquiries contact information"
+          >
+            {" "}
+            {/* Added aria-label for context */}
             <p className="font-bold font-inter">GENERAL INQUIRIES</p>
-            <p className="font-bevietnam">Office: (347) 221–6549</p>
-            <p className="font-bevietnam">Cell: (347) 394–9384</p>
-            <p className="font-bevietnam">Email: sascon09@yahoo.com</p>
-            <p className="font-bevietnam">Email: amzadh78@gmail.com</p>
-          </div>
-
-          <div className="space-y-2 mt-6 text-sm">
-            <p className="font-bold font-inter">OFFICE LOCATION</p>
             <p className="font-bevietnam">
+              Office:{" "}
+              <a
+                href="tel:3472216549"
+                className="hover:underline text-white/90"
+                aria-label="Call office at 3 4 7. 2 2 1. 6 5 4 9"
+              >
+                (347) 221–6549
+              </a>
+            </p>
+            <p className="font-bevietnam">
+              Cell:{" "}
+              <a
+                href="tel:3473949384"
+                className="hover:underline text-white/90"
+                aria-label="Call cell at 3 4 7. 3 9 4. 9 3 8 4"
+              >
+                (347) 394–9384
+              </a>
+            </p>
+            <p className="font-bevietnam">
+              Email:{" "}
+              <a
+                href="mailto:sascon09@yahoo.com"
+                className="hover:underline text-white/90"
+                aria-label="Send email to sascon09@yahoo.com"
+              >
+                sascon09@yahoo.com
+              </a>
+            </p>
+            <p className="font-bevietnam">
+              Email:{" "}
+              <a
+                href="mailto:amzadh78@gmail.com"
+                className="hover:underline text-white/90"
+                aria-label="Send email to amzadh78@gmail.com"
+              >
+                amzadh78@gmail.com
+              </a>
+            </p>
+          </div>
+          <div
+            className="space-y-2 mt-6 text-sm"
+            aria-label="Office location information"
+          >
+            {" "}
+            {/* Added aria-label for context */}
+            <p className="font-bold font-inter">OFFICE LOCATION</p>
+            <address className="font-bevietnam" aria-label="Our office address">
+              {" "}
+              {/* Use address tag */}
               552 Rugby Rd, Brooklyn
               <br />
               New York 11230
-            </p>
+            </address>
           </div>
-
-          <div className="flex gap-2 flex-wrap mt-6 items-center">
+          <div
+            className="flex gap-2 flex-wrap mt-6 items-center"
+            aria-label="Social media links"
+          >
+            {" "}
+            {/* Added aria-label for context */}
             {socialIcons.map(({ src, path, label }) => (
               <a
                 key={src}
                 href={path}
                 target="_blank"
                 rel="noopener noreferrer"
-                aria-label={label}
+                aria-label={`Visit our ${label} page (opens in new tab)`} // More descriptive label
               >
                 <Image
                   src={`/${src}_logo.png`}
-                  alt={label}
+                  alt={label} // Alt text is already good, matches label
                   width={35}
                   height={35}
                   className="object-contain h-[28px] w-auto"
@@ -183,13 +281,18 @@ export default function Footer() {
       <div className="bg-[#00254c]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-12 py-4 flex flex-col md:flex-row items-center justify-between gap-2 text-xs sm:text-sm md:text-[15px]">
           <p className="text-center md:text-left fontfont-bevietnam">
-            © 2025{" "}
+            © {new Date().getFullYear()} {/* Dynamically get current year */}
             <span className="text-[#e63144] font-bevietnam">
               SAS Roofing & Waterproofing
             </span>{" "}
             All Rights Reserved.
           </p>
-          <div className="flex gap-x-6 flex-wrap justify-center md:justify-end font-bevietnam">
+          <div
+            className="flex gap-x-6 flex-wrap justify-center md:justify-end font-bevietnam"
+            aria-label="Legal links"
+          >
+            {" "}
+            {/* Added aria-label for context */}
             {["Terms of Service", "Privacy Policy"].map((text) => (
               <Link key={text} href="/" className="hover:underline">
                 {text}

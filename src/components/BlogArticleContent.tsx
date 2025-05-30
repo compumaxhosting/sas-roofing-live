@@ -12,13 +12,12 @@ const fadeUp = {
   },
 };
 
-//updated for narrator
 export default function BlogPage() {
   return (
-    // Main section for the blog content, identified by aria-labelledby for screen readers.
     <section
       className="px-6 py-12 md:px-16 bg-white text-[#003269] flex flex-col items-center"
       aria-labelledby="main-blog-post-heading"
+      role="region"
     >
       <div className="w-full xl:max-w-7xl xl:px-0">
         <motion.div
@@ -28,15 +27,23 @@ export default function BlogPage() {
           variants={fadeUp}
           className="mb-5"
         >
-          <h4 className="text-3xl md:text-4xl font-bold font-inter mb-7">
+          <h1
+            id="main-blog-post-heading"
+            className="text-3xl md:text-4xl font-bold font-inter mb-7"
+          >
             Why SAS Roofing & Waterproofing Is Brooklyn’s Most Trusted Roofing
-            Expert ?
-          </h4>
-          {/* Subheading */}
-          <h4 className="text-xl md:text-3xl font-semibold font-inter mb-2">
+            Expert?
+          </h1>
+          <h2
+            className="text-xl md:text-3xl font-semibold font-inter mb-2"
+            id="subtitle-heading"
+          >
             SAS Roofing & Waterproofing: Brooklyn’s Trusted Roofing Experts
-          </h4>
-          <p className="text-sm md:text-base text-gray-700 font-bevietnam">
+          </h2>
+          <p
+            className="text-sm md:text-base text-gray-700 font-bevietnam"
+            aria-describedby="subtitle-heading"
+          >
             With over 30+ years of dedicated service in Brooklyn, Manhattan,
             Queens, and The Bronx, SAS Roofing & Waterproofing has become
             synonymous with quality, reliability, and excellence in roofing,
@@ -44,7 +51,6 @@ export default function BlogPage() {
           </p>
         </motion.div>
 
-        {/* Core Services Section */}
         <motion.div
           initial="hidden"
           whileInView="visible"
@@ -52,12 +58,19 @@ export default function BlogPage() {
           variants={fadeUp}
           className="space-y-2"
         >
-          <h3 className="text-3xl md:text-4xl font-bold mb-5">
+          <h2
+            className="text-3xl md:text-4xl font-bold mb-5"
+            id="core-services-heading"
+          >
             Our Core Services
-          </h3>
+          </h2>
         </motion.div>
 
-        <div className="grid gap-12">
+        <div
+          className="grid gap-12"
+          aria-labelledby="core-services-heading"
+          role="list"
+        >
           {/* Roofing Solutions */}
           <motion.div
             initial="hidden"
@@ -65,11 +78,10 @@ export default function BlogPage() {
             viewport={{ once: true, amount: 0.1 }}
             variants={fadeUp}
             className="space-y-3"
+            role="listitem"
           >
             <Link
-              href={
-                "https://www.sasroofingwaterproofing.com/roofing-contractors-brooklyn"
-              }
+              href="https://www.sasroofingwaterproofing.com/roofing-contractors-brooklyn"
               className="text-xl md:text-2xl font-bold"
               aria-label="Learn more about our Roofing Solutions"
             >
@@ -81,7 +93,7 @@ export default function BlogPage() {
             </p>
             <ul
               className="list-disc pl-5 text-gray-700"
-              aria-label="Types of roofing projects"
+              aria-label="Types of roofing services we provide"
             >
               <li>Flat and pitched roofs</li>
               <li>Shingle and metal roofing</li>
@@ -96,13 +108,12 @@ export default function BlogPage() {
             viewport={{ once: true, amount: 0.1 }}
             variants={fadeUp}
             className="space-y-3"
+            role="listitem"
           >
             <Link
-              href={
-                "https://www.sasroofingwaterproofing.com/waterproofing-contractors-NY"
-              }
+              href="https://www.sasroofingwaterproofing.com/waterproofing-contractors-NY"
               className="text-xl md:text-2xl font-bold"
-              aria-label="Learn more about our Advanced Waterproofing services"
+              aria-label="Learn more about our Waterproofing Services"
             >
               Advanced Waterproofing
             </Link>
@@ -112,7 +123,7 @@ export default function BlogPage() {
             </p>
             <ul
               className="list-disc pl-5 text-gray-700"
-              aria-label="Types of waterproofing services"
+              aria-label="Types of waterproofing services we provide"
             >
               <li>Basement and foundation sealing</li>
               <li>Roof and terrace waterproofing</li>
@@ -127,13 +138,12 @@ export default function BlogPage() {
             viewport={{ once: true, amount: 0.1 }}
             variants={fadeUp}
             className="space-y-3"
+            role="listitem"
           >
             <Link
-              href={
-                "https://www.sasroofingwaterproofing.com/masonry-services-brooklyn-ny"
-              }
+              href="https://www.sasroofingwaterproofing.com/masonry-services-brooklyn-ny"
               className="text-xl md:text-2xl font-bold"
-              aria-label="Learn more about our Expert Masonry Work"
+              aria-label="Learn more about our Masonry Services"
             >
               Expert Masonry Work
             </Link>
@@ -142,7 +152,7 @@ export default function BlogPage() {
             </p>
             <ul
               className="list-disc pl-5 text-gray-700"
-              aria-label="Types of masonry services"
+              aria-label="Types of masonry services we offer"
             >
               <li>Brickwork and stonework</li>
               <li>Paving and cement work</li>
@@ -157,13 +167,14 @@ export default function BlogPage() {
             viewport={{ once: true, amount: 0.1 }}
             variants={fadeUp}
             className="space-y-3"
+            role="listitem"
           >
             <h3 className="text-xl md:text-2xl font-bold">
               Why Choose SAS Roofing & Waterproofing?
             </h3>
             <ul
               className="list-disc pl-5 text-gray-700"
-              aria-label="Reasons to choose SAS Roofing & Waterproofing"
+              aria-label="Key reasons to choose our services"
             >
               <li>Certified Excellence: Licensed under #2050416-DCA</li>
               <li>
@@ -184,8 +195,13 @@ export default function BlogPage() {
             viewport={{ once: true, amount: 0.1 }}
             variants={fadeUp}
             className="space-y-3"
+            role="listitem"
+            aria-labelledby="cta-heading"
           >
-            <h3 className="text-2xl md:text-3xl font-bold text-[#e63a27]">
+            <h3
+              className="text-2xl md:text-3xl font-bold text-[#e63a27]"
+              id="cta-heading"
+            >
               Get a Free Estimate Today
             </h3>
             <p className="text-gray-700 text-base font-bevietnam">
@@ -193,12 +209,13 @@ export default function BlogPage() {
               services. Contact us for a free consultation and tailored
               solutions.
             </p>
-            <ul className="text-gray-700" aria-label="Contact information">
+            <ul className="text-gray-700" aria-label="Our contact information">
               <li>
                 <strong>Phone:</strong>{" "}
                 <a
                   href="tel:3472216549"
                   className="text-[#003269] hover:underline"
+                  aria-label="Call us at 347 221 6549"
                 >
                   (347) 221-6549
                 </a>
@@ -208,17 +225,22 @@ export default function BlogPage() {
                 <a
                   href="mailto:sascon09@yahoo.com"
                   className="text-[#003269] hover:underline"
+                  aria-label="Email us at sascon09 at yahoo dot com"
                 >
                   sascon09@yahoo.com
                 </a>
               </li>
               <li>
-                <strong>Address:</strong> 552 Rugby Rd, Brooklyn, NY 11230
+                <strong>Address:</strong>{" "}
+                <span aria-label="Our office location">
+                  552 Rugby Rd, Brooklyn, NY 11230
+                </span>
               </li>
             </ul>
             <Link
-              href="/"//goes to home page 
+              href="/"
               className="inline-block mt-4 bg-[#e63a27] text-white px-5 py-2 rounded hover:bg-[#c72d1d] transition"
+              aria-label="Visit the SAS Roofing and Waterproofing homepage"
             >
               Visit SAS Roofing & Waterproofing
             </Link>

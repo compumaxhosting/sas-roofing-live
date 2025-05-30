@@ -6,7 +6,8 @@ import { FaCertificate, FaLightbulb, FaHome } from "react-icons/fa";
 import { motion } from "framer-motion";
 import Link from "next/link";
 
-const FeatureItem = ({
+// Renamed for clarity: IconWithLabel, as it takes an icon component and a label.
+const IconWithLabel = ({
   icon: Icon,
   label,
   color,
@@ -15,18 +16,22 @@ const FeatureItem = ({
   label: string;
   color: string;
 }) => (
+  // Using a span and visually hiding the icon for screen readers
+  // since the label text provides the full context.
   <div className="flex items-center gap-1.5">
-    <Icon className={color} aria-label={label} size="1.1em" />
+    <Icon className={color} aria-hidden="true" focusable="false" size="1.1em" />
     <span className="font-bold uppercase">{label}</span>
   </div>
 );
 
-//updated for narrator
 export default function AboutCompany() {
   return (
     <div className="m-2 mb-5 md:m-0 md:mb-10 shadow-xl">
       <div className="py-12 sm:py-16 lg:py-20 bg-[#f5f5f5] relative">
-        <section className="flex flex-col xl:flex-row px-6 sm:px-8 lg:px-12 xl:px-16 2xl:px-20 gap-10 lg:gap-16 max-w-7xl mx-auto">
+        <section
+          className="flex flex-col xl:flex-row px-6 sm:px-8 lg:px-12 xl:px-16 2xl:px-20 gap-10 lg:gap-16 max-w-7xl mx-auto"
+          aria-labelledby="about-company-heading" // Associate the section with its main heading
+        >
           {/* Image Block */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
@@ -38,11 +43,15 @@ export default function AboutCompany() {
             <div className="relative w-full h-full border-2 border-[#e63a27] overflow-hidden shadow-lg">
               <Image
                 src="/aboutimg.jpg"
-                alt="SAS Roofing & Waterproofing team working"
+                alt="SAS Roofing & Waterproofing team working on a roof, demonstrating expertise and quality." // More detailed alt text
                 fill
                 className="object-cover"
+                sizes="(max-width: 640px) 100vw, (max-width: 768px) 70vw, (max-width: 1200px) 50vw, 33vw" // Add sizes for responsive image loading
               />
-              <div className="absolute top-4 right-10 bg-white bg-opacity-90 px-4 py-3 rounded-md text-[#003269] shadow-md flex items-center gap-2">
+              <div
+                className="absolute top-4 right-10 bg-white bg-opacity-90 px-4 py-3 rounded-md text-[#003269] shadow-md flex items-center gap-2"
+                aria-label="Over 30 years of experience in roofing and waterproofing" // Describe the overlaid text for screen readers
+              >
                 <span className="text-3xl sm:text-4xl md:text-7xl font-extrabold font-inter">
                   30+
                 </span>
@@ -65,8 +74,12 @@ export default function AboutCompany() {
             <div>
               {/* Section Header */}
               <div className="flex items-center gap-3 mb-2">
-                <div className="w-6 h-[1px] bg-[#e63a27]" />
-                <h4 className="text-sm sm:text-base uppercase text-[#e63a27] font-semibold tracking-wider font-inter">
+                <div className="w-6 h-[1px] bg-[#e63a27]" aria-hidden="true" />{" "}
+                {/* Decorative line */}
+                <h4
+                  id="about-company-heading" // Add ID to link with section
+                  className="text-sm sm:text-base uppercase text-[#e63a27] font-semibold tracking-wider font-inter"
+                >
                   About Company
                 </h4>
               </div>
@@ -77,18 +90,22 @@ export default function AboutCompany() {
               </h1>
 
               {/* Features */}
-              <div className="flex flex-wrap items-center gap-x-6 gap-y-3 text-sm font-semibold text-[#003269] mb-6">
-                <FeatureItem
+              <div
+                className="flex flex-wrap items-center gap-x-6 gap-y-3 text-sm font-semibold text-[#003269] mb-6"
+                role="list" // Explicitly mark as a list if desired, though flex containers are often announced as groups
+                aria-label="Company features"
+              >
+                <IconWithLabel
                   icon={FaCertificate}
                   label="Certified"
                   color="text-[#e63a27]"
                 />
-                <FeatureItem
+                <IconWithLabel
                   icon={FaLightbulb}
                   label="Innovative"
                   color="text-yellow-500"
                 />
-                <FeatureItem
+                <IconWithLabel
                   icon={FaHome}
                   label="Experienced"
                   color="text-[#e63a27]"
@@ -103,6 +120,7 @@ export default function AboutCompany() {
                   href="https://www.wikidata.org/wiki/Q18419"
                   target="_blank"
                   rel="noopener noreferrer"
+                  aria-label="Brooklyn (opens in new tab)" // Inform about new tab
                 >
                   Brooklyn
                 </Link>
@@ -111,6 +129,7 @@ export default function AboutCompany() {
                   href="https://www.wikidata.org/wiki/Q11299"
                   target="_blank"
                   rel="noopener noreferrer"
+                  aria-label="Manhattan (opens in new tab)"
                 >
                   Manhattan
                 </Link>
@@ -119,6 +138,7 @@ export default function AboutCompany() {
                   href="https://www.wikidata.org/wiki/Q18424"
                   target="_blank"
                   rel="noopener noreferrer"
+                  aria-label="Queens (opens in new tab)"
                 >
                   Queens
                 </Link>{" "}
@@ -127,6 +147,7 @@ export default function AboutCompany() {
                   href="https://www.wikidata.org/wiki/Q18426"
                   target="_blank"
                   rel="noopener noreferrer"
+                  aria-label="The Bronx (opens in new tab)"
                 >
                   The Bronx
                 </Link>{" "}
@@ -136,17 +157,23 @@ export default function AboutCompany() {
                 unwavering commitment to quality and craftsmanship.
               </p>
 
-              {/* ✅ Certified Company Block */}
-              <div className="flex items-center gap-4 mt-0 mb-6">
+              {/* Certified Company Block */}
+              <div
+                className="flex items-center gap-4 mt-0 mb-6"
+                aria-labelledby="certified-company-title" // Link to the heading
+              >
                 <Image
                   src="/certified-badge.jpg"
-                  alt="Certified Company Badge"
+                  alt="Certified Company Badge showing official certification" // More detailed alt text
                   width={50}
                   height={50}
                   className="flex-shrink-0"
                 />
                 <div className="text-[#003269] text-base font-sm font-inter">
-                  <h4 className="font-bold mb-1">Certified Company</h4>
+                  <h4 id="certified-company-title" className="font-bold mb-1">
+                    Certified Company
+                  </h4>{" "}
+                  {/* Add ID */}
                   <p className="text-[#e63a27]">#2050416-DCA</p>
                 </div>
               </div>
@@ -156,6 +183,7 @@ export default function AboutCompany() {
             <Link
               href="/aboutus"
               className="inline-block border-4 border-[#003269] p-1 self-start group mt-auto"
+              aria-label="Read more about SAS Roofing and Waterproofing company" // More specific label
             >
               <span className="block border-2 border-[#e63a27] text-[#e63a27] px-6 py-3 font-bold uppercase tracking-wide hover:bg-[#e63a27] hover:text-white transition text-sm lg:text-base hover-button font-inter">
                 Read More
