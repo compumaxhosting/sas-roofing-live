@@ -19,9 +19,17 @@ interface Props {
 const slides = [
   {
     title:
+      "How This NYC Waterproofing Contractor is Revolutionizing Home Protection",
+    description: "Trusted Roofing Expert",
+    date: "29 May",
+    image: "/blogImage.jpg",
+    link: "How-This-NYC-Waterproofing-Contractor-is-Revolutionizing-Home-Protection",
+  },
+  {
+    title:
       "Why SAS Roofing and Waterproofing Is Brooklyn's Most Trusted Roofing Expert?",
     description: "Trusted Roofing Expert",
-    date: "03 JUNE",
+    date: "21 May",
     image: "/roofing.jpg",
     link: "Why-SAS-Roofing-and-Waterproofing-Is-Brooklyns-Most-Trusted-Roofing-Expert",
   },
