@@ -23,7 +23,7 @@ const slides = [
     description: "Trusted Roofing Expert",
     date: "29 May",
     image: "/blogImage.jpg",
-    link: "how-this-nyc-waterproofing-contractor-is-revolutionizing-home-protection",
+    link: "How-This-NYC-Waterproofing-Contractor-is-Revolutionizing-Home-Protection",
   },
   {
     title:
@@ -31,7 +31,7 @@ const slides = [
     description: "Trusted Roofing Expert",
     date: "21 May",
     image: "/roofing.jpg",
-    link: "why-sas-roofing-and-waterproofing-is-brooklyns-most-trusted-roofing-expert",
+    link: "Why-SAS-Roofing-and-Waterproofing-Is-Brooklyns-Most-Trusted-Roofing-Expert",
   },
   {
     title: "Replacing Shingle Roof And Installing Skylight",

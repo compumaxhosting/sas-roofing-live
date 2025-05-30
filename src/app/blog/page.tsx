@@ -16,7 +16,7 @@ const slides = [
     description: `Discover how a leading NYC waterproofing contractor is transforming home protection with innovative techniques and comprehensive services, ensuring long-lasting safety and dryness for properties across the city...`,
     date: "29 May",
     image: "/blogImage.jpg",
-    link: "how-this-nyc-waterproofing-contractor-is-revolutionizing-home-protection",
+    link: "How-This-NYC-Waterproofing-Contractor-is-Revolutionizing-Home-Protection",
   },
   {
     title:
@@ -27,7 +27,7 @@ const slides = [
     expertise, and lasting results...`,
     date: "13 JUNE",
     image: "/roofing.jpg",
-    link: "why-sas-roofing-and-waterproofing-is-brooklyns-most-trusted-roofing-expert",
+    link: "Why-SAS-Roofing-and-Waterproofing-Is-Brooklyns-Most-Trusted-Roofing-Expert",
   },
   {
     title: "Replacing Shingle Roof And Installing Skylight",
