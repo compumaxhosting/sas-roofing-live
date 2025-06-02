@@ -19,7 +19,7 @@ const page = () => {
       <BreadCrum2
         breadcrumbItems={[]}
         pageTitle={"TESTIMONIALS"}
-        imageSrc={"/breadcrumb-19.jpg"}
+        imageSrc={"/breadcrumb-20.png"}
       />
       <OurTestimonial />
       <ServiceAndFaqSection />

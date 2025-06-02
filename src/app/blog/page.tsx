@@ -81,7 +81,7 @@ const page = () => {
       <BreadCrum2
         breadcrumbItems={[]}
         pageTitle={"BLOGS"}
-        imageSrc={"/breadcrumb-19.jpg"}
+        imageSrc={"/breadcrumb-20.jpg"}
       />
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-3 px-5 py-5 lg:max-w-4xl xl:max-w-7xl xl:gap-8 mx-auto">

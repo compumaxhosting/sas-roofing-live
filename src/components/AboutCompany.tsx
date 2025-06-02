@@ -36,13 +36,13 @@ export default function AboutCompany() {
           >
             <div className="relative w-full h-full border-2 border-[#e63a27] overflow-hidden shadow-lg">
               <Image
-                src="/aboutimg.jpg"
+                src="/aboutimag.png"
                 alt="SAS Roofing & Waterproofing team working"
                 fill
-                className="object-cover"
+                className="object-contain mt-24"
               />
               <div className="absolute top-4 right-10 bg-white bg-opacity-90 px-4 py-3 rounded-md text-[#003269] shadow-md flex items-center gap-2">
-                <span className="text-3xl sm:text-4xl md:text-7xl font-extrabold font-inter">
+                <span className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold font-inter">
                   30+
                 </span>
                 <div className="leading-tight text-left text-base sm:text-xl font-extrabold uppercase font-inter">

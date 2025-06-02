@@ -113,10 +113,10 @@ const VideoSection = ({ margin }: Props) => {
           <div className="relative w-full h-full ">
             <div className="absolute inset-0 flex flex-col items-center justify-center z-30">
               <GoVideo
-                className="text-white text-4xl sm:text-6xl md:text-7xl lg:text-8xl mr-16 md:mr-24 lg:mr-48 cursor-pointer"
+                className="text-white text-4xl sm:text-6xl md:text-7xl lg:text-8xl mr-16 cursor-pointer"
                 onClick={() => setIsOpen(true)}
               />
-              <div className="hidden md:block mt-1 text-white font-semibold text-lg tracking-wide mr-16 md:mr-24 lg:mr-48 font-inter">
+              <div className="hidden md:block mt-1 text-white font-semibold text-lg tracking-wide mr-16 font-inter">
                 FLAT ROOF INSTALLATION
               </div>
             </div>

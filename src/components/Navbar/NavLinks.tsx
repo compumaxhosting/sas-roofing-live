@@ -1,12 +1,11 @@
 "use client";
 
 import { useState, useRef } from "react";
-import { usePathname } from "next/navigation"; // ✅ add this
+import { usePathname } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
 import { FaFacebookF, FaHome } from "react-icons/fa";
 import { Inter } from "next/font/google";
-
 
 const navItems = [
   { label: "HOME", path: "/" },
@@ -16,10 +15,7 @@ const navItems = [
     path: "/services",
     subItems: [
       { label: "Roofing", path: "/roofing-contractors-brooklyn" },
-      {
-        label: "Waterproofing",
-        path: "/waterproofing-contractors-NY",
-      },
+      { label: "Waterproofing", path: "/waterproofing-contractors-NY" },
       { label: "Masonry", path: "/masonry-services-brooklyn-ny" },
     ],
   },
@@ -34,7 +30,6 @@ const inter = Inter({
   weight: ["400", "500", "600", "700"],
 });
 
-
 export default function NavLinks({
   setSidebarOpen,
 }: {
@@ -42,9 +37,9 @@ export default function NavLinks({
 }) {
   const [isOpen, setIsOpen] = useState(false);
   const [sidebarServicesOpen, setSidebarServicesOpen] = useState(false);
-
   const [isServicesOpen, setIsServicesOpen] = useState(false);
   const timeoutId = useRef<NodeJS.Timeout | null>(null);
+  const pathname = usePathname();
 
   const handleMouseEnter = () => {
     if (timeoutId.current) clearTimeout(timeoutId.current);
@@ -54,138 +49,134 @@ export default function NavLinks({
   const handleMouseLeave = () => {
     timeoutId.current = setTimeout(() => {
       setIsServicesOpen(false);
-    }, 300); // delay in ms before hiding
+    }, 300);
   };
 
-  const pathname = usePathname(); // ✅ get current path
-
   return (
-    <ul
-      className={`flex gap-4 text-sm font-semibold text-[#003269] items-stretch h-full w-full justify-end ${inter.className}`}
-    >
-      {/* Desktop Links */}
-      <div className="hidden xl:flex gap-6 items-center ">
-        {navItems.map(({ label, path, subItems }) => {
-          const isActive =
-            pathname === path ||
-            pathname.startsWith(path + "/") ||
-            (subItems && subItems.some((sub) => pathname === sub.path));
+    <>
+      <nav className="flex items-center h-full w-full justify-end">
+        <ul
+          className={`flex gap-4 text-sm font-semibold text-[#003269] items-stretch h-full w-full justify-end ${inter.className}`}
+        >
+          {/* Desktop Links */}
+          {navItems.map(({ label, path, subItems }) => {
+            const isActive =
+              pathname === path ||
+              pathname.startsWith(path + "/") ||
+              (subItems && subItems.some((sub) => pathname === sub.path));
 
-          return subItems ? (
-            <div
-              key={label}
-              className="relative"
-              onMouseEnter={handleMouseEnter}
-              onMouseLeave={handleMouseLeave}
-            >
-              <Link
-                href={path}
-                className={`px-2 flex items-center gap-1 hover:text-[#e63a27] ${
-                  isActive ? "text-[#e63a27]" : ""
-                }`}
+            return (
+              <li
+                key={label}
+                className="hidden desktop-nav-item items-center relative h-full"
+                onMouseEnter={subItems ? handleMouseEnter : undefined}
+                onMouseLeave={subItems ? handleMouseLeave : undefined}
               >
-                {label}
-                <span
-                  className={`text-[#e63a27] transition-transform duration-200 ${
-                    isServicesOpen ? "rotate-180" : ""
+                <Link
+                  href={path}
+                  className={`px-2 flex items-center gap-1 hover:text-[#e63a27] ${
+                    isActive ? "text-[#e63a27]" : ""
                   }`}
                 >
-                  ▼
-                </span>
-              </Link>
-              <div
-                className={`absolute left-0 top-full mt-1 bg-white border-t-4 border-[#e63a27] shadow-lg rounded-sm z-20 min-w-[180px] overflow-hidden transition-all duration-300 ease-in-out ${
-                  isServicesOpen
-                    ? "opacity-100 translate-y-0 pointer-events-auto"
-                    : "opacity-0 translate-y-2 pointer-events-none"
-                }`}
-              >
-                {subItems.map(({ label: subLabel, path: subPath }) => (
-                  <Link
-                    key={subLabel}
-                    href={subPath}
-                    className={`block px-5 py-4 text-[#003269] hover:bg-[#e63a27] hover:text-white text-sm ${
-                      pathname === subPath ? "bg-[#e63a27] text-white" : ""
+                  {label}
+                  {subItems && (
+                    <span
+                      className={`text-[#e63a27] transition-transform duration-200 ${
+                        isServicesOpen ? "rotate-180" : ""
+                      }`}
+                    >
+                      ▼
+                    </span>
+                  )}
+                </Link>
+
+                {subItems && (
+                  <div
+                    className={`absolute left-0 top-full mt-1 bg-white border-t-4 border-[#e63a27] shadow-lg rounded-sm z-20 min-w-[180px] overflow-hidden transition-all duration-300 ease-in-out ${
+                      isServicesOpen
+                        ? "opacity-100 translate-y-0 pointer-events-auto"
+                        : "opacity-0 translate-y-2 pointer-events-none"
                     }`}
                   >
-                    {subLabel}
-                  </Link>
-                ))}
-              </div>
-            </div>
-          ) : (
-            <Link
-              key={label}
-              href={path}
-              className={`px-2 hover:text-[#e63a27] ${
-                pathname === path || pathname.startsWith(path + "/")
-                  ? "text-[#e63a27]"
-                  : ""
-              }`}
+                    {subItems.map(({ label: subLabel, path: subPath }) => (
+                      <Link
+                        key={subLabel}
+                        href={subPath}
+                        className={`block px-5 py-4 text-[#003269] hover:bg-[#e63a27] hover:text-white text-sm ${
+                          pathname === subPath ? "bg-[#e63a27] text-white" : ""
+                        }`}
+                      >
+                        {subLabel}
+                      </Link>
+                    ))}
+                  </div>
+                )}
+              </li>
+            );
+          })}
+
+          {/* Mobile Menu Toggle */}
+          <li className="flex mobile-nav-item items-center gap-2">
+            <button
+              onClick={() => setIsOpen(true)}
+              aria-label="Open menu"
+              className="md:hidden border-2 border-white p-2"
             >
-              {label}
+              <Image
+                src="/menu4.png"
+                alt=""
+                width={28}
+                height={28}
+                className="object-contain"
+              />
+            </button>
+            <button
+              onClick={() => setIsOpen(true)}
+              aria-label="Open menu"
+              className="hidden md:block border-2 border-[#e63a27] p-2"
+            >
+              <Image
+                src="/menu3.png"
+                alt=""
+                width={28}
+                height={28}
+                className="object-contain"
+              />
+            </button>
+          </li>
+
+          {/* Quote Button */}
+          <li>
+            <Link
+              href="/"
+              className="bg-[#e5392c] hover:bg-[#e63a27] transition-colors text-white font-semibold px-6 flex items-center get-hover-button h-full"
+            >
+              GET A QUOTE
             </Link>
-          );
-        })}
-      </div>
+          </li>
 
-      {/* Mobile Menu Toggle */}
-      <div className="flex xl:hidden items-center gap-2">
-        <button
-          onClick={() => setIsOpen(true)}
-          aria-label="Open menu"
-          className="md:hidden border-2 border-white p-2"
-        >
-          <Image
-            src="/menu4.png"
-            alt=""
-            width={28}
-            height={28}
-            className="object-contain"
-          />
-        </button>
-        <button
-          onClick={() => setIsOpen(true)}
-          aria-label="Open menu"
-          className="hidden md:block border-2 border-[#e63a27] p-2"
-        >
-          <Image
-            src="/menu3.png"
-            alt=""
-            width={28}
-            height={28}
-            className="object-contain"
-          />
-        </button>
-      </div>
-
-      {/* Quote Button */}
-      <Link
-        href="/"
-        className="bg-[#e5392c] hover:bg-[#e63a27] transition-colors text-white font-semibold px-6 flex items-center get-hover-button"
-      >
-        GET A QUOTE
-      </Link>
-
-      {/* Sidebar Trigger (hover effect) */}
-      <div
-        className="hidden md:flex items-center w-8 h-8 cursor-pointer relative mt-6"
-        onClick={() => setSidebarOpen(true)}
-      >
-        <Image
-          src="/menu.png"
-          alt=""
-          fill
-          className="object-contain opacity-100 hover:opacity-0 transition-opacity duration-200"
-        />
-        <Image
-          src="/menu-hover.png"
-          alt=""
-          fill
-          className="object-contain opacity-0 hover:opacity-100 transition-opacity duration-200 absolute top-0 left-0"
-        />
-      </div>
-
+          {/* Sidebar Trigger */}
+          <li className="hidden md:flex items-center w-8 h-8 cursor-pointer relative mt-6">
+            <div
+              onClick={() => setSidebarOpen(true)}
+              className="w-full h-full relative"
+            >
+              <Image
+                src="/menu.png"
+                alt=""
+                fill
+                className="object-contain opacity-100 hover:opacity-0 transition-opacity duration-200"
+              />
+              <Image
+                src="/menu-hover.png"
+                alt=""
+                fill
+                className="object-contain opacity-0 hover:opacity-100 transition-opacity duration-200 absolute top-0 left-0"
+              />
+            </div>
+          </li>
+        </ul>
+      </nav>
       {/* Sidebar Panel */}
       <div className="fixed inset-0 z-50 flex justify-end pointer-events-none">
         <div
@@ -305,6 +296,6 @@ export default function NavLinks({
           </div>
         </div>
       </div>
-    </ul>
+    </>
   );
 }

@@ -335,3 +335,12 @@ body {
     left: 18% ;
   }
 }
+
+@media (min-width: 1440px) {
+  .desktop-nav-item {
+    display: flex;
+  }
+  .mobile-nav-item{
+    display: none;
+  }
+}

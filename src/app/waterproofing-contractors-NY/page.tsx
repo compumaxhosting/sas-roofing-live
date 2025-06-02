@@ -33,7 +33,7 @@ const page = () => {
       <BreadCrum2
         breadcrumbItems={[]}
         pageTitle={"BEST WATERPROOFING SERVICES"}
-        imageSrc={"/breadcrumb-19.jpg"}
+        imageSrc={"/breadcrumb-20.png"}
       />
       <WaterpRoofing />
       <motion.div
@@ -43,7 +43,7 @@ const page = () => {
         variants={fadeUp}
         className="" // No specific class needed here usually
       >
-      <ServicesSlider swiperRef={swiperRef} />
+        <ServicesSlider swiperRef={swiperRef} />
       </motion.div>
       <FooterTopCTA />
       <Footer />
