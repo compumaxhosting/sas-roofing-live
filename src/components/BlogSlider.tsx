@@ -37,21 +37,21 @@ const slides = [
     title: "Replacing Shingle Roof And Installing Skylight",
     description: "ROOF LEAKS",
     date: "10 JUNE",
-    image: "/services1.jpg",
+    image: "/services4.jpg",
     link: "/",
   },
   {
     title: "Foundation Wall Repair And Waterproofing",
     description: "MAINTENANCE",
     date: "17 JUNE",
-    image: "/services2.jpg",
+    image: "/services1.png",
     link: "/",
   },
   {
     title: "How To Weather Proof Your Roof This Winter?",
     description: "TIPS & TRICKS",
     date: "30 JUNE",
-    image: "/services3.jpg",
+    image: "/services1.jpg",
     link: "/",
   },
   {
@@ -59,7 +59,7 @@ const slides = [
       "Expert Masonry Services Across Brooklyn, Manhattan & Queens: Quality You Can Trust",
     description: "THE MASON’S MARK",
     date: "07 JULY",
-    image: "/masonry.jpg",
+    image: "/masonry_services.png",
     link: "/",
   },
   {

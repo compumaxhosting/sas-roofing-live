@@ -13,20 +13,20 @@ const slides = [
     description:
       "SAS Roofing is your source for high-quality roofing of any type",
     buttonText: "Read More",
-    image: "/slider1.jpg",
+    image: "/slider-6.png",
   },
   {
     title: "Quality Roofing Solutions for Every Home",
     description:
       "We provide expert roofing installations, repairs, and inspections",
     buttonText: "Read More",
-    image: "/slider-2.jpg",
+    image: "/slider-7.png",
   },
   {
     title: "Your Roofing Needs For A Great Repair Job",
     description: "Reliable, professional, and affordable roofing services",
     buttonText: "Read More",
-    image: "/slider-3.jpg",
+    image: "/slider-4.jpg",
   },
 ];
 

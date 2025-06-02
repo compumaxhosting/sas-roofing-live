@@ -34,11 +34,11 @@ const VideoSection = ({ margin }: Props) => {
         className={`relative w-full flex flex-col md:flex-row overflow-hidden h-[550px] bg-[#f0482f] lg:bg-[#f9f9f9] mb-${margin[1]} md:mb-${margin[1]} shadow-2xl`}
       >
         <Image
-          src="/VideoSectionBg.webp"
+          src="/slider-7.png"
           alt="Video background"
           fill
           priority
-          sizes="100vw"
+          sizes="80vw"
           className="object-cover z-0"
         />
 
@@ -70,11 +70,11 @@ const VideoSection = ({ margin }: Props) => {
 
               <ul className="space-y-2">
                 <li>
-                  <SiTicktick className="inline mr-2 font-bevietnam"/> Roof of
+                  <SiTicktick className="inline mr-2 font-bevietnam" /> Roof of
                   the Year
                 </li>
                 <li>
-                  <SiTicktick className="inline mr-2 font-bevietnam"/> Fully
+                  <SiTicktick className="inline mr-2 font-bevietnam" /> Fully
                   supported metal
                 </li>
                 <li>

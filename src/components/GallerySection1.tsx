@@ -6,8 +6,8 @@ import { useEffect, useState, useCallback } from "react";
 const images = [
   "/gallery1.jpg",
   "/gallery2.jpg",
-  "/gallery3.jpg",
-  "/gallery4.jpg",
+  "/slider-6.png",
+  "/slider-7.png",
   "/gallery5.jpg",
   "/gallery6.jpg",
 ];
