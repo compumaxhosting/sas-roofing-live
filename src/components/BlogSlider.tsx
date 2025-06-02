@@ -37,7 +37,7 @@ const slides = [
     title: "Replacing Shingle Roof And Installing Skylight",
     description: "ROOF LEAKS",
     date: "10 JUNE",
-    image: "/services4.jpg",
+    image: "/leakage_roof.jpg",
     link: "/",
   },
   {

@@ -42,7 +42,7 @@ const slides = [
     shortTitle: "MAINTENANCE",
     description: `Protect your property from water damage and structural issues. Discover how professional foundation wall repair and waterproofing solutions can strengthen your home’s base and prevent costly future repairs...`,
     date: "13 JUNE",
-    image: "/services2.jpg",
+    image: "/waterproofing.png",
     link: "/",
   },
   {
@@ -50,7 +50,7 @@ const slides = [
     shortTitle: "TIPS & TRICKS",
     description: `Prepare your roof for harsh winter conditions with essential weatherproofing tips. Learn how to prevent leaks, ice dams, and damage to keep your home warm, dry, and protected all season long...`,
     date: "11 JUNE",
-    image: "/services3.jpg",
+    image: "/services1.jpg",
     link: "/",
   },
   {
@@ -59,7 +59,7 @@ const slides = [
     shortTitle: "THE MASON’S MARK",
     description: `Discover top-tier masonry services tailored to the unique architecture of Brooklyn, Manhattan, and Queens. From brickwork and stone facades to brownstone restoration, our skilled masons deliver durable, elegant results for every project....`,
     date: "11 JUNE",
-    image: "/masonry.jpg",
+    image: "/masonry_services.png",
     link: "/",
   },
   {
@@ -81,7 +81,7 @@ const page = () => {
       <BreadCrum2
         breadcrumbItems={[]}
         pageTitle={"BLOGS"}
-        imageSrc={"/breadcrumb-20.jpg"}
+        imageSrc={"/breadcrumb-20.png"}
       />
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-3 px-5 py-5 lg:max-w-4xl xl:max-w-7xl xl:gap-8 mx-auto">
