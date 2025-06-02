@@ -34,7 +34,7 @@ export default function AboutCompany() {
               src="/aboutimag.png"
               alt="SAS Roofing & Waterproofing team working"
               fill
-              className="object-contain mt-20"
+              className="object-contain mt:17 sm:mt-18 md:mt-20"
               sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 33vw"
             />
             <div className="absolute top-4 right-10 bg-white bg-opacity-90 px-4 py-3 rounded-md text-[#003269] shadow-md flex items-center gap-2">
