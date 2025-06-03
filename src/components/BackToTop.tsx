@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, KeyboardEvent } from "react";
 import { GoArrowUp } from "react-icons/go";
 import { AnimatePresence, motion } from "framer-motion";
 
@@ -20,12 +20,22 @@ const BackToTop = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
+  const handleKeyDown = (event: KeyboardEvent<HTMLButtonElement>) => {
+    if (event.key === "Enter" || event.key === " ") {
+      event.preventDefault();
+      scrollToTop();
+    }
+  };
+
   return (
     <AnimatePresence>
       {isVisible && (
         <motion.button
           onClick={scrollToTop}
+          onKeyDown={handleKeyDown}
           aria-label="Back to Top"
+          role="button"
+          tabIndex={0}
           initial={{ opacity: 0, scale: 0.75 }}
           animate={{ opacity: 1, scale: 1 }}
           exit={{ opacity: 0, scale: 0.75 }}

@@ -36,7 +36,7 @@ export default function AboutCompany() {
           >
             <div className="relative w-full h-full border-2 border-[#e63a27] overflow-hidden shadow-lg">
               <Image
-                src="/aboutimag.png"
+                src="/aboutusimage.png"
                 alt="SAS Roofing & Waterproofing team working"
                 fill
                 className="object-contain mt:18 sm:mt-18 md:mt-20"

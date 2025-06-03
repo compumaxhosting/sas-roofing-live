@@ -62,10 +62,9 @@ const HeroSection: React.FC = () => {
     if (!emblaApi) return;
     emblaApi.on("select", onSelect);
     emblaApi.on("reInit", onSelect);
-    onSelect(); // Initial state
+    onSelect();
   }, [emblaApi, onSelect]);
 
-  // Autoplay functionality
   useEffect(() => {
     if (!emblaApi) return;
 
@@ -102,39 +101,46 @@ const HeroSection: React.FC = () => {
   };
 
   return (
-    <div className="relative w-full overflow-hidden bg-black">
-      {/* Carousel Viewport */}
+    <div
+      className="relative w-full overflow-hidden bg-black"
+      role="region"
+      aria-label="Image carousel of roofing services"
+    >
       <motion.div
         className="embla"
         ref={emblaRef}
         drag="x"
-        // dragConstraints={{ left: 0, right: 0, top: 0, bottom: 0 }}
         dragElastic={0.15}
         onDragEnd={handleDragEnd}
         style={{ cursor: "grab" }}
         whileTap={{ cursor: "grabbing" }}
       >
-        <div className="flex">
+        <div className="flex" aria-live="polite" aria-atomic="true">
           {slides.map((slide, index) => (
             <div
               key={slide.id}
+              role="group"
+              aria-roledescription="slide"
+              aria-label={`Slide ${index + 1} of ${slides.length}`}
               className="relative flex-[0_0_100%] w-full h-[488px] sm:h-screen overflow-hidden"
             >
               <Image
                 src={slide.image}
-                alt={`Slide ${slide.id}`}
+                alt={slide.title}
                 fill
                 loading={index === selectedIndex ? "eager" : "lazy"}
                 priority={index === selectedIndex}
                 className="object-cover"
               />
-              <div className="absolute bg-black/40 sm:bg-black/30 z-10 h-full w-full"></div>
+              <div
+                className="absolute bg-black/40 sm:bg-black/30 z-10 h-full w-full"
+                aria-hidden="true"
+              />
             </div>
           ))}
         </div>
       </motion.div>
 
-      {/* Content Overlay */}
       <div className="absolute inset-0 z-20 flex flex-col justify-center items-start px-6 md:px-20 text-white pointer-events-none">
         <AnimatePresence mode="wait" initial={false}>
           <motion.div
@@ -145,6 +151,7 @@ const HeroSection: React.FC = () => {
             exit="exit"
             transition={{ duration: 0.6, ease: "easeOut" }}
             className="max-w-3xl space-y-6 pt-6 md:ml-14 xl:ml-46 pointer-events-auto"
+            aria-live="polite"
           >
             <h1 className="text-5xl md:text-6xl lg:text-8xl font-bold leading-tight font-inter">
               {currentSlideData.title}
@@ -154,7 +161,10 @@ const HeroSection: React.FC = () => {
             </p>
             <Link href="/aboutus">
               <div className="inline-block border-4 border-[#003269] p-1">
-                <Button className="Hero_hover-button text-sm sm:text-base lg:text-lg font-inter">
+                <Button
+                  className="Hero_hover-button text-sm sm:text-base lg:text-lg font-inter"
+                  aria-label={`Read more about ${currentSlideData.title}`}
+                >
                   {currentSlideData.buttonText.toUpperCase()}
                 </Button>
               </div>
@@ -163,14 +173,13 @@ const HeroSection: React.FC = () => {
         </AnimatePresence>
       </div>
 
-      {/* Previous Button */}
+      {/* Prev Button */}
       <button
         onClick={() => {
           setClickedButton("prev");
           scrollPrev();
           setTimeout(() => setClickedButton(null), 200);
         }}
-        // Re-added the disabled prop
         disabled={!canScrollPrev}
         aria-label="Previous Slide"
         className={`hidden md:block absolute left-5 top-1/2 -translate-y-1/2 rounded-full p-4 z-30 transition-all duration-200 transform ${
@@ -187,7 +196,6 @@ const HeroSection: React.FC = () => {
           scrollNext();
           setTimeout(() => setClickedButton(null), 200);
         }}
-        // Re-added the disabled prop
         disabled={!canScrollNext}
         aria-label="Next Slide"
         className={`hidden md:block absolute right-5 top-1/2 -translate-y-1/2 rounded-full p-4 z-30 transition-all duration-200 transform ${
@@ -202,10 +210,7 @@ const HeroSection: React.FC = () => {
         {slides.map((_, i) => (
           <button
             key={i}
-            onClick={() => {
-              if (!emblaApi) return;
-              emblaApi.scrollTo(i);
-            }}
+            onClick={() => emblaApi?.scrollTo(i)}
             className={`h-2 w-2 rounded-full transition-colors duration-300 ${
               i === selectedIndex
                 ? "bg-[#e63a27]"
