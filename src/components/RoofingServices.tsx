@@ -36,9 +36,11 @@ export default function RoofingServices() {
     },
   ];
 
-
   return (
-    <section className="px-6 py-12 md:px-16 bg-white text-[#003269] lg:mx-30">
+    <section
+      className="px-6 py-12 md:px-16 bg-white text-[#003269] lg:mx-30"
+      aria-labelledby="roofing-services-heading"
+    >
       <motion.div
         initial="hidden"
         whileInView="visible"
@@ -53,14 +55,18 @@ export default function RoofingServices() {
               Roofing Services
             </span>
           </div>
-          <h2 className="text-3xl font-bold text-[#003269] leading-snug font-inter">
+          <h2
+            id="roofing-services-heading"
+            className="text-3xl font-bold text-[#003269] leading-snug font-inter"
+          >
             Expert Roofing Services in Brooklyn, Queens and Manhattan
           </h2>
         </div>
 
         <Link
           href="/roofing-contractors-brooklyn"
-          className="group border-4 border-[#003269] p-2 inline-block flex-shrink-0"
+          className="group border-4 border-[#003269] p-2 inline-block flex-shrink-0 focus:outline focus:outline-[#003269]"
+          aria-label="View all roofing services offered by SAS Roofing & Waterproofing"
         >
           <div className="border border-[#e63a27] px-5 py-3 text-xs sm:text-sm md:text-base lg:text-lg font-bold text-[#e63a27] uppercase whitespace-nowrap hover-button font-inter">
             All Services
@@ -68,7 +74,6 @@ export default function RoofingServices() {
         </Link>
       </motion.div>
 
-      {/* Description Paragraph */}
       <motion.p
         initial="hidden"
         whileInView="visible"
@@ -97,14 +102,18 @@ export default function RoofingServices() {
               {title}
             </h3>
             {isLink ? (
-              <div className="text-sm md:text-base text-gray-700 font-bevietnam">
+              <p className="text-sm md:text-base text-gray-700 font-bevietnam">
                 For expert roofing contractors in Queens and beyond, reach out
-                to SAS Roofing & Waterproofing today. Visit{" "}
-                <Link href="/" className="text-[#e63a27] hover:text-[#003269]">
+                to{" "}
+                <Link
+                  href="/"
+                  className="text-[#e63a27] hover:text-[#003269] focus:outline focus:outline-[#003269]"
+                  aria-label="Visit SAS Roofing & Waterproofing homepage"
+                >
                   SAS Roofing & Waterproofing
                 </Link>{" "}
                 to schedule a consultation!
-              </div>
+              </p>
             ) : (
               <p className="text-sm md:text-base text-gray-700 font-bevietnam">
                 {desc}

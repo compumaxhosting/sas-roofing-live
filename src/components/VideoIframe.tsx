@@ -7,7 +7,9 @@ const VideoIframe = () => {
   return (
     <iframe
       src={videoUrl}
-      title="Video"
+      title="Flat Roof Installation Video"
+      aria-label="Flat Roof Installation Video from YouTube"
+      role="document"
       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
       allowFullScreen
       className="w-full h-full border-none rounded-lg"

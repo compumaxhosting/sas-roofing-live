@@ -66,8 +66,15 @@ function Modal({
   if (!open) return null;
 
   return (
-    <div className="fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center z-60">
+    <div
+      role="dialog"
+      aria-modal="true"
+      aria-label="Image zoom modal"
+      tabIndex={-1}
+      className="fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center z-60"
+    >
       <button
+        aria-label="Close modal"
         className="absolute top-4 right-4 text-white text-3xl z-10"
         onClick={onClose}
       >
@@ -76,6 +83,7 @@ function Modal({
 
       {/* Arrows hidden on small screens */}
       <button
+        aria-label="Previous image"
         className="absolute left-4 text-white text-4xl hidden md:block z-10"
         onClick={onPrev}
       >
@@ -93,7 +101,7 @@ function Modal({
       >
         <Image
           src={images[index]}
-          alt={`Zoomed ${index}`}
+          alt={`Zoomed gallery image ${index + 1}`}
           width={1200}
           height={1200}
           className="object-contain max-h-[80vh]"
@@ -101,6 +109,7 @@ function Modal({
       </motion.div>
 
       <button
+        aria-label="Next image"
         className="absolute right-4 text-white text-4xl hidden md:block z-10"
         onClick={onNext}
       >
@@ -130,6 +139,7 @@ const GalleryCard = ({
       whileInView={fadeIn.whileInView}
       transition={{ ...fadeIn.transition, delay }}
       viewport={{ once: true }}
+      role="listitem"
     >
       <div className={`relative ${aspectClass}`}>
         <Image
@@ -140,15 +150,20 @@ const GalleryCard = ({
           className="object-cover"
         />
       </div>
-      <div className="absolute inset-0 bg-[#003269]/50 flex flex-col items-center justify-center text-white opacity-0 group-hover:opacity-100 transform scale-90 group-hover:scale-100 transition duration-700">
+      <div
+        className="absolute inset-0 bg-[#003269]/50 flex flex-col items-center justify-center text-white opacity-0 group-hover:opacity-100 transform scale-90 group-hover:scale-100 transition duration-700"
+        aria-hidden="true"
+      >
         <span className="text-lg sm:text-xl font-semibold mb-4 font-inter">
           SAS Roofing
         </span>
         <button
           className="w-10 h-10 bg-transparent border border-white flex items-center justify-center hover:bg-[#e63a27] hover:border-[#e63a27] transition-colors"
           onClick={onZoom}
+          aria-label={`Zoom in on ${alt}`}
+          type="button"
         >
-          <Image src="/search.png" alt="Zoom" width={20} height={20} />
+          <Image src="/search.png" alt="Zoom icon" width={20} height={20} />
         </button>
       </div>
     </motion.div>
@@ -191,8 +206,16 @@ export default function GallerySection2() {
   }, []);
 
   return (
-    <section className="px-4 sm:px-6 lg:px-12 py-12 w-full">
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+    <section
+      className="px-4 sm:px-6 lg:px-12 py-12 w-full"
+      aria-label="Gallery section"
+      role="region"
+    >
+      <div
+        className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6"
+        role="list"
+        aria-label="Gallery images"
+      >
         {images.map((src, idx) => (
           <GalleryCard
             key={idx}

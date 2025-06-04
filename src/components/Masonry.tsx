@@ -12,7 +12,7 @@ const fadeUp = {
   },
 };
 
-export default function RoofingServices() {
+export default function MasonryServices() {
   const services = [
     {
       title: "Masonry Services in Brooklyn",

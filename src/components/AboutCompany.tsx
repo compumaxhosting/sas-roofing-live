@@ -15,33 +15,45 @@ const FeatureItem = ({
   label: string;
   color: string;
 }) => (
-  <div className="flex items-center gap-1.5">
-    <Icon className={color} aria-label={label} size="1.1em" />
+  <div className="flex items-center gap-1.5" role="group" aria-label={label}>
+    <Icon className={color} aria-hidden="true" focusable="false" />
     <span className="font-bold uppercase">{label}</span>
   </div>
 );
 
 export default function AboutCompany() {
   return (
-    <div className="m-2 mb-5 md:m-0 md:mb-10 shadow-xl">
+    <div
+      className="m-2 mb-5 md:m-0 md:mb-10 shadow-xl"
+      role="region"
+      aria-label="About SAS Roofing Company"
+    >
       <div className="py-12 sm:py-16 lg:py-20 bg-[#f5f5f5] relative">
         <section className="flex flex-col xl:flex-row px-6 sm:px-8 lg:px-12 xl:px-16 2xl:px-20 gap-10 lg:gap-16 max-w-7xl mx-auto">
           {/* Image Block */}
-          <motion.div
+          <motion.figure
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6, ease: "easeOut" }}
             viewport={{ once: true }}
             className="relative w-full max-w-sm mx-auto xl:mx-0 md:max-w-md lg:max-w-lg xl:max-w-xl flex-shrink-0 xl:self-start aspect-[5/5] shadow-lg"
+            role="img"
+            aria-label="Team members working on roofing"
           >
             <div className="relative w-full h-full border-2 border-[#e63a27] overflow-hidden shadow-lg">
               <Image
                 src="/aboutusimage.png"
-                alt="SAS Roofing & Waterproofing team working"
+                alt="SAS Roofing & Waterproofing team working on a project"
                 fill
                 className="object-contain mt:18 sm:mt-18 md:mt-20"
               />
-              <div className="absolute top-4 right-10 bg-white bg-opacity-90 px-4 py-3 rounded-md text-[#003269] shadow-md flex items-center gap-2">
+              <figcaption className="sr-only">
+                SAS team with over 30 years of experience
+              </figcaption>
+              <div
+                className="absolute top-4 right-10 bg-white bg-opacity-90 px-4 py-3 rounded-md text-[#003269] shadow-md flex items-center gap-2"
+                aria-label="30 years of experience"
+              >
                 <span className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold font-inter">
                   30+
                 </span>
@@ -51,7 +63,7 @@ export default function AboutCompany() {
                 </div>
               </div>
             </div>
-          </motion.div>
+          </motion.figure>
 
           {/* Text Content Block */}
           <motion.article
@@ -62,21 +74,22 @@ export default function AboutCompany() {
             className="w-full flex flex-col justify-center"
           >
             <div>
-              {/* Section Header */}
-              <div className="flex items-center gap-3 mb-2">
+              <header className="flex items-center gap-3 mb-2">
                 <div className="w-6 h-[1px] bg-[#e63a27]" />
                 <h4 className="text-sm sm:text-base uppercase text-[#e63a27] font-semibold tracking-wider font-inter">
                   About Company
                 </h4>
-              </div>
+              </header>
 
-              {/* Main Heading */}
               <h1 className="text-3xl sm:text-4xl lg:text-5xl font-semibold text-[#003269] leading-tight mb-4 font-inter">
                 Roofing Is Our Heritage & Quality Is Our Tradition
               </h1>
 
               {/* Features */}
-              <div className="flex flex-wrap items-center gap-x-6 gap-y-3 text-sm font-semibold text-[#003269] mb-6">
+              <div
+                className="flex flex-wrap items-center gap-x-6 gap-y-3 text-sm font-semibold text-[#003269] mb-6"
+                aria-label="Company values"
+              >
                 <FeatureItem
                   icon={FaCertificate}
                   label="Certified"
@@ -102,6 +115,7 @@ export default function AboutCompany() {
                   href="https://www.wikidata.org/wiki/Q18419"
                   target="_blank"
                   rel="noopener noreferrer"
+                  aria-label="Learn more about Brooklyn"
                 >
                   Brooklyn
                 </Link>
@@ -110,6 +124,7 @@ export default function AboutCompany() {
                   href="https://www.wikidata.org/wiki/Q11299"
                   target="_blank"
                   rel="noopener noreferrer"
+                  aria-label="Learn more about Manhattan"
                 >
                   Manhattan
                 </Link>
@@ -118,6 +133,7 @@ export default function AboutCompany() {
                   href="https://www.wikidata.org/wiki/Q18424"
                   target="_blank"
                   rel="noopener noreferrer"
+                  aria-label="Learn more about Queens"
                 >
                   Queens
                 </Link>{" "}
@@ -126,6 +142,7 @@ export default function AboutCompany() {
                   href="https://www.wikidata.org/wiki/Q18426"
                   target="_blank"
                   rel="noopener noreferrer"
+                  aria-label="Learn more about The Bronx"
                 >
                   The Bronx
                 </Link>{" "}
@@ -135,8 +152,12 @@ export default function AboutCompany() {
                 unwavering commitment to quality and craftsmanship.
               </p>
 
-              {/* ✅ Certified Company Block */}
-              <div className="flex items-center gap-4 mt-0 mb-6">
+              {/* Certified Company Info */}
+              <div
+                className="flex items-center gap-4 mt-0 mb-6"
+                role="group"
+                aria-label="Certified Company #2050416-DCA"
+              >
                 <Image
                   src="/certified-badge.jpg"
                   alt="Certified Company Badge"
@@ -155,6 +176,7 @@ export default function AboutCompany() {
             <Link
               href="/aboutus"
               className="inline-block border-4 border-[#003269] p-1 self-start group mt-auto"
+              aria-label="Read more about SAS Roofing"
             >
               <span className="block border-2 border-[#e63a27] text-[#e63a27] px-6 py-3 font-bold uppercase tracking-wide hover:bg-[#e63a27] hover:text-white transition text-sm lg:text-base hover-button font-inter">
                 Read More

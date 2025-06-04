@@ -18,7 +18,6 @@ const fadeUp = {
   transition: { duration: 0.6, ease: "easeOut" },
 };
 
-
 function GalleryItem({
   src,
   width,
@@ -43,6 +42,8 @@ function GalleryItem({
       whileInView={fadeUp.animate}
       transition={fadeUp.transition}
       viewport={{ once: true }}
+      // Hide from screen readers since image has alt and the button gives control
+      aria-hidden="true"
     >
       <Image
         src={src}
@@ -56,8 +57,10 @@ function GalleryItem({
         <button
           onClick={() => onZoom(index)}
           className="w-10 h-10 bg-transparent border border-white flex items-center justify-center hover:bg-[#e63a27] hover:border-[#e63a27] transition-colors"
+          aria-label={`Zoom in on image ${index + 1}: ${alt}`}
+          type="button"
         >
-          <Image src="/search.png" alt="Zoom" width={20} height={20} />
+          <Image src="/search.png" alt="Zoom icon" width={20} height={20} />
         </button>
       </div>
     </motion.div>
@@ -77,6 +80,8 @@ function Modal({
   onNext: () => void;
   onPrev: () => void;
 }) {
+  if (!open) return null;
+
   return (
     <AnimatePresence>
       {open && (
@@ -85,10 +90,17 @@ function Modal({
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
+          role="dialog"
+          aria-modal="true"
+          aria-labelledby="modalTitle"
+          aria-describedby="modalDescription"
+          tabIndex={-1}
         >
           <button
             className="absolute top-4 right-4 text-white text-3xl z-10"
             onClick={onClose}
+            aria-label="Close image modal"
+            type="button"
           >
             &times;
           </button>
@@ -97,6 +109,8 @@ function Modal({
           <button
             className="absolute left-4 text-white text-4xl hidden md:block z-10"
             onClick={onPrev}
+            aria-label="Previous image"
+            type="button"
           >
             &#8592;
           </button>
@@ -115,16 +129,19 @@ function Modal({
           >
             <Image
               src={images[index]}
-              alt={`Zoomed ${index}`}
+              alt={`Zoomed view of gallery image ${index + 1}`}
               width={1200}
               height={1200}
               className="object-contain max-h-[80vh]"
+              id="modalDescription"
             />
           </motion.div>
 
           <button
             className="absolute right-4 text-white text-4xl hidden md:block z-10"
             onClick={onNext}
+            aria-label="Next image"
+            type="button"
           >
             &#8594;
           </button>
@@ -134,11 +151,10 @@ function Modal({
   );
 }
 
-
 export default function GallerySection() {
   const [modalOpen, setModalOpen] = useState(false);
   const [currentIndex, setCurrentIndex] = useState(0);
-  
+
   useEffect(() => {
     if (modalOpen) {
       document.body.style.overflow = "hidden";
@@ -177,7 +193,11 @@ export default function GallerySection() {
   }, [modalOpen, handleNext, handlePrev]);
 
   return (
-    <section className="py-10 px-4 sm:px-6 lg:px-12 w-full">
+    <section
+      className="py-10 px-4 sm:px-6 lg:px-12 w-full"
+      // Mark main gallery content as hidden from screen readers when modal is open
+      aria-hidden={modalOpen ? "true" : "false"}
+    >
       {/* Desktop Layout */}
       <div className="hidden xl:flex flex-col items-center gap-8 w-full">
         <div className="flex justify-center gap-6 w-full">
@@ -218,6 +238,7 @@ export default function GallerySection() {
             whileInView={fadeUp.animate}
             transition={fadeUp.transition}
             viewport={{ once: true }}
+            aria-hidden="true"
           >
             <Image
               src={img}
@@ -232,8 +253,15 @@ export default function GallerySection() {
               <button
                 onClick={() => handleZoom(idx)}
                 className="w-10 h-10 bg-transparent border border-white flex items-center justify-center hover:bg-[#e63a27] hover:border-[#e63a27] transition-colors"
+                aria-label={`Zoom in on image ${idx + 1}`}
+                type="button"
               >
-                <Image src="/search.png" alt="Zoom" width={20} height={20} />
+                <Image
+                  src="/search.png"
+                  alt="Zoom icon"
+                  width={20}
+                  height={20}
+                />
               </button>
             </div>
           </motion.div>

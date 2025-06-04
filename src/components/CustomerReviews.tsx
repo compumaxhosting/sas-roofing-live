@@ -27,7 +27,7 @@ const reviewLogos = [
   {
     alt: "Google",
     src: "/reviews/google.png",
-    href: "https://www.google.com/maps/place/SAS+Roofing+&+Waterproofing/@40.6359752,-73.9646363,17z/data=!3m1!4b1!4m8!3m7!1s0x89c25b2dd928663d:0x5527086c2d45f8d8!8m2!3d40.6359752!4d-73.9646363!9m1!1b1!16s/g/11bbw_w0v0?entry=ttu",
+    href: "https://www.google.com/maps/place/SAS+Roofing+&+Waterproofing/@40.6359752,-73.9646363,17z",
   },
   {
     alt: "X",
@@ -48,15 +48,25 @@ const reviewLogos = [
 
 export default function CustomerReviews() {
   return (
-    <section className="bg-[#f9f9f9] py-10 px-4">
+    <section
+      className="bg-[#f9f9f9] py-10 px-4"
+      aria-label="Customer review platforms"
+      role="region"
+    >
       <div className="text-center mb-6">
-        <h2 className="text-2xl sm:text-3xl font-bold text-[#003269] font-inter">
+        <h2
+          className="text-2xl sm:text-3xl font-bold text-[#003269] font-inter"
+          id="customer-reviews-heading"
+        >
           Customer Reviews
         </h2>
         <div className="mt-1 h-1 w-12 mx-auto bg-[#003269]" />
       </div>
 
-      <div className="flex flex-wrap justify-center gap-6 sm:gap-8">
+      <div
+        className="flex flex-wrap justify-center gap-6 sm:gap-8"
+        aria-labelledby="customer-reviews-heading"
+      >
         {reviewLogos.map(({ alt, src, href }, index) => (
           <motion.a
             key={alt}
@@ -64,7 +74,7 @@ export default function CustomerReviews() {
             target="_blank"
             rel="noopener noreferrer"
             aria-label={`Visit our reviews on ${alt}`}
-            className="border rounded-md p-3 shadow-sm hover:shadow-md transition bg-white w-[70px] h-[70px]  lg:w-[100px] lg:h-[100px] flex items-center justify-center"
+            className="border rounded-md p-3 shadow-sm hover:shadow-md transition bg-white w-[70px] h-[70px] lg:w-[100px] lg:h-[100px] flex items-center justify-center"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -72,7 +82,7 @@ export default function CustomerReviews() {
           >
             <Image
               src={src}
-              alt={alt}
+              alt={`Logo of ${alt}`}
               width={72}
               height={72}
               loading="lazy"

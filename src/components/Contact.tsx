@@ -21,6 +21,7 @@ const Contact = () => {
 
   const shadowStyle = {
     boxShadow: "0 0 15px 5px rgba(0, 0, 0, 0.1)",
+    // RE-ADDING THE BACKGROUND IMAGE AS REQUESTED
     backgroundImage: "url(thm-pattern-5.png)",
     backgroundRepeat: "repeat",
     backgroundPosition: "center",
@@ -28,34 +29,48 @@ const Contact = () => {
 
   const contactItems = [
     {
-      icon: <MapPin className="text-white w-6 h-6" />,
+      icon: <MapPin className="text-white w-6 h-6" aria-hidden="true" />,
       title: "Visit Our Office",
       desc: "You are most welcome to visit our office.",
       content: "552 Rugby Rd\nBrooklyn NY 11230",
+      type: "address" as const,
+      link: "https://www.google.com/maps/search/552+Rugby+Rd+Brooklyn+NY+11230", // Example link for location
+      ariaLabel:
+        "Get directions to our office at 552 Rugby Road, Brooklyn NY 11230",
     },
     {
-      icon: <Phone className="text-white w-6 h-6" />,
+      icon: <Phone className="text-white w-6 h-6" aria-hidden="true" />,
       title: "Make a Call",
       desc: "Keeping you always better connected.",
       content: "OFFICE: (347) 394-9384\nCELL: (347) 221-6549",
+      type: "phone" as const,
+      ariaLabel: "Our office and cell phone numbers for calls",
     },
     {
-      icon: <Mail className="text-white w-6 h-6" />,
+      icon: <Mail className="text-white w-6 h-6" aria-hidden="true" />,
       title: "Send Email",
       desc: "Drop us a mail we will answer you asap.",
       content: "SUPPORT: sascon09@yahoo.com\nSUPPORT: amzadh78@gmail.com",
+      type: "email" as const,
+      ariaLabel: "Our support email addresses for inquiries",
     },
   ];
 
   return (
-    <section className="flex flex-col lg:flex-row justify-center items-start gap-8 px-4 py-10 my-16 bg-white">
+    <section
+      aria-labelledby="contact-section-heading"
+      className="flex flex-col lg:flex-row justify-center items-start gap-8 px-4 py-10 my-16 bg-white"
+    >
+      <h2 id="contact-section-heading" className="sr-only">
+        Contact Information
+      </h2>
       {contactItems.map((item, index) => (
         <ContactCard
           key={index}
           item={item}
           index={index}
           cardStyle={baseClass}
-          cardShadowStyle={shadowStyle}
+          cardShadowStyle={shadowStyle} // This style now includes the background image
           iconTab={iconTab}
         />
       ))}

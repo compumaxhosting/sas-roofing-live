@@ -1,16 +1,15 @@
 "use client";
 
+import { useEffect, useRef } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/autoplay";
 
-import { useEffect, useRef } from "react";
-import type { Swiper as SwiperType } from "swiper";
-import type { RefObject } from "react";
-
 import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
 import BlogSlideCard from "./BlogSlideCard";
+import type { Swiper as SwiperType } from "swiper";
+import type { RefObject } from "react";
 
 interface Props {
   swiperRef?: RefObject<SwiperType | null>;
@@ -79,6 +78,7 @@ export default function BlogSlider({ swiperRef }: Props) {
     if (swiperRef) {
       swiperRef.current = swiperInstanceRef.current;
     }
+
     return () => {
       if (autoplayTimeout.current) clearTimeout(autoplayTimeout.current);
     };
@@ -86,6 +86,7 @@ export default function BlogSlider({ swiperRef }: Props) {
 
   const handleManualSlide = (direction: "prev" | "next") => {
     if (!swiperInstanceRef.current) return;
+
     const swiper = swiperInstanceRef.current;
     swiper.autoplay?.stop();
 
@@ -94,16 +95,20 @@ export default function BlogSlider({ swiperRef }: Props) {
     } else {
       swiper.slidePrev();
     }
+        
     autoplayTimeout.current = setTimeout(() => {
       swiper.autoplay?.start();
     }, 2000);
   };
 
   const navBtnClass =
-    "w-10 h-10 rounded-full border-2 border-[#003269] text-[#003269] flex items-center justify-center focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-[#ef4423] transition";
+    "w-10 h-10 rounded-full border-2 border-[#003269] text-[#003269] flex items-center justify-center transition hover:bg-[#003269] hover:text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-[#ef4423]";
 
   return (
-    <div className="w-full px-4 sm:px-6 max-w-screen-xl mx-auto">
+    <section
+      aria-label="Blog posts slider"
+      className="w-full px-4 sm:px-6 max-w-screen-xl mx-auto"
+    >
       <Swiper
         loop
         speed={1000}
@@ -126,33 +131,33 @@ export default function BlogSlider({ swiperRef }: Props) {
         }}
         className="pb-6"
       >
-        {Array.from({ length: 6 }).map((_, i) => (
+        {slides.slice(0, 6).map((slide, i) => (
           <SwiperSlide key={i}>
-            <BlogSlideCard slide={slides[i % slides.length]} />
+            <BlogSlideCard slide={slide} />
           </SwiperSlide>
         ))}
       </Swiper>
 
-      {/* Navigation Buttons */}
+      {/* Slider Navigation */}
       <div
         className="flex justify-center gap-4 pt-6"
-        aria-label="Slider navigation"
+        aria-label="Slider navigation controls"
       >
         <button
           onClick={() => handleManualSlide("prev")}
-          aria-label="Previous"
+          aria-label="Slide to previous"
           className={navBtnClass}
         >
-          <FiChevronLeft className="w-5 h-5" aria-hidden />
+          <FiChevronLeft className="w-5 h-5" aria-hidden="true" />
         </button>
         <button
           onClick={() => handleManualSlide("next")}
-          aria-label="Next"
+          aria-label="Slide to next"
           className={navBtnClass}
         >
-          <FiChevronRight className="w-5 h-5" aria-hidden />
+          <FiChevronRight className="w-5 h-5" aria-hidden="true" />
         </button>
       </div>
-    </div>
+    </section>
   );
 }

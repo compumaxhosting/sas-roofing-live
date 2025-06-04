@@ -93,6 +93,7 @@ const VideoSection = ({ margin }: Props) => {
                   size={60}
                   className="text-white text-4xl sm:text-6xl cursor-pointer"
                   onClick={() => setIsOpen(true)}
+                  aria-label="Play flat roof installation video"
                 />
               </div>
               <div className="text-white md:hidden font-inter text-sm">
@@ -115,6 +116,7 @@ const VideoSection = ({ margin }: Props) => {
               <GoVideo
                 className="text-white text-4xl sm:text-6xl md:text-7xl lg:text-8xl mr-16 cursor-pointer"
                 onClick={() => setIsOpen(true)}
+                aria-label="Play video of flat roof installation"
               />
               <div className="hidden md:block mt-1 text-white font-semibold text-lg tracking-wide mr-16 font-inter">
                 FLAT ROOF INSTALLATION
@@ -129,7 +131,9 @@ const VideoSection = ({ margin }: Props) => {
 
       {/* Video Modal with accessibility + hydration-safe iframe */}
       <Dialog open={isOpen} onOpenChange={setIsOpen}>
-        <DialogContent className="w-[90vw] md:w-[80vw] lg:w-[70vw] xl:w-[60vw] p-0 rounded-lg border-none bg-transparent shadow-none font-bevietnam">
+        <DialogContent
+          className="w-[90vw] md:w-[80vw] lg:w-[70vw] xl:w-[60vw] p-0 rounded-lg border-none shadow-lg backdrop-blur-xl bg-black/40"
+        >
           <VisuallyHidden>
             <DialogTitle>Flat Roof Installation Video</DialogTitle>
           </VisuallyHidden>

@@ -27,6 +27,9 @@ export default function BlogPage() {
     <section
       className="px-6 py-12 md:px-16 bg-white text-[#003269] flex flex-col items-center"
       aria-labelledby="main-blog-post-heading"
+      // Added role="document" for the main content area, which is equivalent to the body of a web page
+      // It implies a logical grouping of content that comprises a document.
+      role="document"
     >
       <div className="w-full xl:max-w-7xl xl:px-0">
         <motion.div
@@ -35,12 +38,16 @@ export default function BlogPage() {
           viewport={{ once: true, amount: 0.2 }}
           variants={fadeUp}
           className="mb-12 w-full flex flex-col lg:flex-row items-center gap-8"
+          // Added role="article" to explicitly mark this as the primary article content.
+          role="article"
+          aria-labelledby="main-blog-post-heading"
         >
           {/* Image on the left */}
           <div className="w-full lg:w-1/2">
             <Image
               src="/blogImage.jpg"
-              alt="Waterproofing Contractor NYC"
+              // Enhanced alt text to be more descriptive for screen reader users
+              alt="Close-up of a building wall undergoing waterproofing treatment, showing a professional applying a sealant."
               width={600}
               height={400}
               className="rounded-xl shadow-lg"
@@ -50,7 +57,7 @@ export default function BlogPage() {
           {/* Text on the right */}
           <div className="w-full lg:w-1/2">
             <h1
-              id="main-blog-post-heading"
+              id="main-blog-post-heading" // ID for aria-labelledby
               className="text-3xl md:text-4xl font-bold font-inter mb-7"
             >
               How This NYC Waterproofing Contractor is Revolutionizing Home
@@ -67,7 +74,7 @@ export default function BlogPage() {
               <Link
                 href="https://www.sasroofingwaterproofing.com/waterproofing-contractors-NY"
                 className="text-[#003269] hover:underline"
-                aria-label="Learn more about expert waterproofing contractors in NYC"
+                aria-label="Learn more about expert waterproofing contractors in New York City" // Improved aria-label
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -114,9 +121,9 @@ export default function BlogPage() {
             <p className="text-gray-700 text-base font-bevietnam mt-4">
               Many homes in Brooklyn suffer from aging infrastructure and
               inadequate drainage. That’s why{" "}
-              <b>basement waterproofing Brooklyn</b> is crucial. Proper sealing
-              not only prevents flooding but also controls moisture that leads
-              to mold growth and structural damage.
+              <b aria-hidden="true">basement waterproofing Brooklyn</b> is
+              crucial. Proper sealing not only prevents flooding but also
+              controls moisture that leads to mold growth and structural damage.
             </p>
           </motion.div>
 
@@ -137,10 +144,10 @@ export default function BlogPage() {
             </h3>
             <p className="text-gray-700 text-base font-bevietnam mt-4">
               Flat rooftops are common in Manhattan. Unfortunately, so are
-              leaks. <b>Roof leak repair Manhattan</b> services are in high
-              demand as building owners seek fast, lasting solutions. Advanced
-              technologies and materials ensure these leaks don’t become
-              disasters.
+              leaks. <b aria-hidden="true">Roof leak repair Manhattan</b>{" "}
+              services are in high demand as building owners seek fast, lasting
+              solutions. Advanced technologies and materials ensure these leaks
+              don’t become disasters.
             </p>
           </motion.div>
 
@@ -161,9 +168,10 @@ export default function BlogPage() {
             </h3>
             <p className="text-gray-700 text-base font-bevietnam mt-4">
               A compromised foundation leads to cracks, moisture intrusion, and
-              expensive repairs. With expert <b>foundation sealing Queens</b>,
-              properties gain the long-term stability they need to withstand New
-              York’s harsh seasons and shifting soil.
+              expensive repairs. With expert{" "}
+              <b aria-hidden="true">foundation sealing Queens</b>, properties
+              gain the long-term stability they need to withstand New York’s
+              harsh seasons and shifting soil.
             </p>
           </motion.div>
 
@@ -184,10 +192,10 @@ export default function BlogPage() {
             </h3>
             <p className="text-gray-700 text-base font-bevietnam mt-4">
               For Brooklyn brownstones and townhomes,{" "}
-              <b>exterior waterproofing Brooklyn</b> offers a durable shield
-              against rain, snow, and humidity. From wall crack repair to
-              applying a waterproof coating, this method extends the life of
-              your building&apos;s exterior.
+              <b aria-hidden="true">exterior waterproofing Brooklyn</b> offers a
+              durable shield against rain, snow, and humidity. From wall crack
+              repair to applying a waterproof coating, this method extends the
+              life of your building&apos;s exterior.
             </p>
           </motion.div>
 
@@ -208,9 +216,10 @@ export default function BlogPage() {
             </h3>
             <p className="text-gray-700 text-base font-bevietnam mt-4">
               When moisture seeps in from the inside,{" "}
-              <b>interior waterproofing Manhattan</b> tackles it head-on. This
-              method includes sump pumps, drainage systems, and barrier
-              installations that ensure dry, livable spaces all year round.
+              <b aria-hidden="true">interior waterproofing Manhattan</b> tackles
+              it head-on. This method includes sump pumps, drainage systems, and
+              barrier installations that ensure dry, livable spaces all year
+              round.
             </p>
           </motion.div>
 
@@ -231,9 +240,9 @@ export default function BlogPage() {
             </h3>
             <p className="text-gray-700 text-base font-bevietnam mt-4">
               Ignoring crawl spaces can be a costly mistake.{" "}
-              <b>Crawl space waterproofing Queens</b> involves sealing and
-              moisture control to prevent wood rot, pest infestation, and poor
-              air quality within the home.
+              <b aria-hidden="true">Crawl space waterproofing Queens</b>{" "}
+              involves sealing and moisture control to prevent wood rot, pest
+              infestation, and poor air quality within the home.
             </p>
           </motion.div>
 
@@ -254,7 +263,8 @@ export default function BlogPage() {
             </h3>
             <p className="text-gray-700 text-base font-bevietnam mt-4">
               Older buildings with brick facades often absorb water, leading to
-              cracks and damage. <b>Brick waterproofing Queens</b> involves
+              cracks and damage.{" "}
+              <b aria-hidden="true">Brick waterproofing Queens</b> involves
               sealing porous brick and mortar to prevent long-term degradation.
             </p>
           </motion.div>
@@ -276,9 +286,9 @@ export default function BlogPage() {
             </h3>
             <p className="text-gray-700 text-base font-bevietnam mt-4">
               One of the best advancements in flat roof waterproofing is{" "}
-              <b>roof membrane installation</b>. It provides superior protection
-              and longevity, especially for commercial buildings dealing with
-              heavy foot traffic and variable weather.
+              <b aria-hidden="true">roof membrane installation</b>. It provides
+              superior protection and longevity, especially for commercial
+              buildings dealing with heavy foot traffic and variable weather.
             </p>
           </motion.div>
 
@@ -298,9 +308,10 @@ export default function BlogPage() {
               Waterproof Coating Services: Stronger, Safer Surfaces
             </h3>
             <p className="text-gray-700 text-base font-bevietnam mt-4">
-              From decks to foundations, <b>waterproof coating services</b>{" "}
-              offer a seamless barrier against moisture. These coatings are
-              versatile, durable, and ideal for a wide range of surfaces.
+              From decks to foundations,{" "}
+              <b aria-hidden="true">waterproof coating services</b> offer a
+              seamless barrier against moisture. These coatings are versatile,
+              durable, and ideal for a wide range of surfaces.
             </p>
           </motion.div>
 
@@ -321,9 +332,9 @@ export default function BlogPage() {
             </h3>
             <p className="text-gray-700 text-base font-bevietnam mt-4">
               Many problems go undetected until it’s too late. A detailed{" "}
-              <b>waterproofing inspection NYC</b> can uncover risks early. This
-              allows homeowners to address minor issues before they become
-              emergencies.
+              <b aria-hidden="true">waterproofing inspection NYC</b> can uncover
+              risks early. This allows homeowners to address minor issues before
+              they become emergencies.
             </p>
           </motion.div>
 
@@ -344,8 +355,9 @@ export default function BlogPage() {
             </h3>
             <p className="text-gray-700 text-base font-bevietnam mt-4">
               With modern thermal imaging and sensor tech,{" "}
-              <b>leak detection Brooklyn</b> services pinpoint problems
-              instantly. This reduces repair time and limits costly damage.
+              <b aria-hidden="true">leak detection Brooklyn</b> services
+              pinpoint problems instantly. This reduces repair time and limits
+              costly damage.
             </p>
           </motion.div>
 
@@ -365,8 +377,9 @@ export default function BlogPage() {
               Waterproofing Maintenance Queens: Stay Ahead of Damage
             </h3>
             <p className="text-gray-700 text-base font-bevietnam mt-4">
-              Prevention is key. Routine <b>waterproofing maintenance Queens</b>{" "}
-              helps ensure your home or commercial building remains safe and
+              Prevention is key. Routine{" "}
+              <b aria-hidden="true">waterproofing maintenance Queens</b> helps
+              ensure your home or commercial building remains safe and
               structurally sound no matter the season.
             </p>
           </motion.div>
@@ -388,8 +401,8 @@ export default function BlogPage() {
             </h3>
             <p className="text-gray-700 text-base font-bevietnam mt-4">
               Damp areas lead to mold, and mold leads to health issues.{" "}
-              <b>Mold prevention waterproofing</b> stops spores at the source
-              with smart sealing and ventilation.
+              <b aria-hidden="true">Mold prevention waterproofing</b> stops
+              spores at the source with smart sealing and ventilation.
             </p>
           </motion.div>
 
@@ -410,9 +423,9 @@ export default function BlogPage() {
             </h3>
             <p className="text-gray-700 text-base font-bevietnam mt-4">
               For aging or damaged buildings,{" "}
-              <b>waterproofing restoration services</b> offer a second chance.
-              Restoration involves fixing past issues and strengthening the
-              structure for the future.
+              <b aria-hidden="true">waterproofing restoration services</b> offer
+              a second chance. Restoration involves fixing past issues and
+              strengthening the structure for the future.
             </p>
           </motion.div>
 
@@ -432,10 +445,10 @@ export default function BlogPage() {
               Basement Moisture Control: Dry Spaces Matter
             </h3>
             <p className="text-gray-700 text-base font-bevietnam mt-4">
-              Without proper <b>basement moisture control</b>, basements can
-              become breeding grounds for bacteria and structural problems. Dry,
-              insulated, and ventilated basements are essential for livable,
-              healthy homes.
+              Without proper <b aria-hidden="true">basement moisture control</b>
+              , basements can become breeding grounds for bacteria and
+              structural problems. Dry, insulated, and ventilated basements are
+              essential for livable, healthy homes.
             </p>
           </motion.div>
 
@@ -456,9 +469,9 @@ export default function BlogPage() {
             </h3>
             <p className="text-gray-700 text-base font-bevietnam mt-4">
               Floods and leaks don’t wait. 24/7{" "}
-              <b>emergency waterproofing NYC</b> services provide immediate
-              relief and repair. Fast response reduces damage and gives
-              homeowners peace of mind.
+              <b aria-hidden="true">emergency waterproofing NYC</b> services
+              provide immediate relief and repair. Fast response reduces damage
+              and gives homeowners peace of mind.
             </p>
           </motion.div>
 
@@ -479,9 +492,9 @@ export default function BlogPage() {
             </h3>
             <p className="text-gray-700 text-base font-bevietnam mt-4">
               Large-scale facilities demand high-performance waterproofing.{" "}
-              <b>Industrial waterproofing services</b> provide advanced sealing
-              methods tailored to warehouses, factories, and other industrial
-              spaces.
+              <b aria-hidden="true">Industrial waterproofing services</b>{" "}
+              provide advanced sealing methods tailored to warehouses,
+              factories, and other industrial spaces.
             </p>
           </motion.div>
 
@@ -502,8 +515,9 @@ export default function BlogPage() {
             </h3>
             <p className="text-gray-700 text-base font-bevietnam mt-4">
               Decks take a beating from the elements.{" "}
-              <b>Deck waterproofing contractors</b> apply coatings and sealants
-              that make outdoor spaces usable and safe year-round.
+              <b aria-hidden="true">Deck waterproofing contractors</b> apply
+              coatings and sealants that make outdoor spaces usable and safe
+              year-round.
             </p>
           </motion.div>
 
@@ -525,9 +539,9 @@ export default function BlogPage() {
             </h3>
             <p className="text-gray-700 text-base font-bevietnam mt-4">
               Concrete is durable, but not invincible.{" "}
-              <b>Concrete waterproofing Manhattan</b> adds an impermeable layer
-              that extends the lifespan of sidewalks, foundations, and parking
-              structures.
+              <b aria-hidden="true">Concrete waterproofing Manhattan</b> adds an
+              impermeable layer that extends the lifespan of sidewalks,
+              foundations, and parking structures.
             </p>
           </motion.div>
 
@@ -553,7 +567,7 @@ export default function BlogPage() {
                   "https://www.sasroofingwaterproofing.com/waterproofing-contractors-NY"
                 }
                 className="text-[#003269] hover:underline"
-                aria-label="Find waterproofing contractors in NYC for the future" // Improved aria-label
+                aria-label="Find top waterproofing contractors in New York City for advanced solutions" // Improved aria-label
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -590,27 +604,31 @@ export default function BlogPage() {
               services. Contact us for a free consultation and tailored
               solutions.
             </p>
-            <ul className="text-gray-700" aria-label="Contact information">
+            <ul
+              className="text-gray-700"
+              aria-label="Contact information for a free estimate"
+            >
               <li>
-                <strong>Phone:</strong>{" "}
+                <strong aria-hidden="true">Phone:</strong>{" "}
                 <Link
                   href="tel:3472216549"
                   className="text-[#003269] hover:underline"
-                  aria-label="Call SAS Roofing and Waterproofing at 3 4 7. 2 2 1. 6 5 4 9" // Spelling out numbers for better screen reader pronunciation
+                  aria-label="Call SAS Roofing and Waterproofing at 3 4 7, 2 2 1, 6 5 4 9 for a free estimate" // Spelling out numbers for better screen reader pronunciation
                 >
                   (347) 221-6549
                 </Link>
               </li>
               <li>
-                <address aria-label="Our address">
-                  <strong>Address:</strong> 552 Rugby Rd, Brooklyn, NY 11230
+                <address aria-label="Our office address">
+                  <strong aria-hidden="true">Address:</strong> 552 Rugby Rd,
+                  Brooklyn, NY 11230
                 </address>
               </li>
             </ul>
             <Link
               href="/" //goes to home page
               className="inline-block mt-4 bg-[#e63a27] text-white px-5 py-2 rounded hover:bg-[#c72d1d] transition"
-              aria-label="Visit SAS Roofing & Waterproofing homepage for more information" // Improved aria-label
+              aria-label="Visit SAS Roofing & Waterproofing homepage for more information and services" // Improved aria-label
             >
               Visit SAS Roofing & Waterproofing
             </Link>

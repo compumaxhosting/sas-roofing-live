@@ -1,11 +1,11 @@
-"use client"; 
+"use client";
 
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/autoplay";
 
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import type { Swiper as SwiperType } from "swiper";
 import type { RefObject } from "react";
 import Image from "next/image";
@@ -43,10 +43,10 @@ const slides = [
   },
 ];
 
-
 export default function ServicesSlider({ swiperRef }: Props) {
   const swiperInstanceRef = useRef<SwiperType | null>(null);
   const autoplayTimeout = useRef<NodeJS.Timeout | null>(null);
+  const [currentSlideTitle, setCurrentSlideTitle] = useState(slides[0].title);
 
   useEffect(() => {
     if (swiperRef) {
@@ -86,18 +86,30 @@ export default function ServicesSlider({ swiperRef }: Props) {
             swiperInstanceRef.current = swiper;
             if (swiperRef) swiperRef.current = swiper;
           }}
+          onSlideChange={(swiper) => {
+            // Announce current slide for screen readers
+            const idx = swiper.realIndex % slides.length;
+            setCurrentSlideTitle(slides[idx].title);
+          }}
           className="!overflow-visible"
+          aria-roledescription="carousel"
+          aria-label="Services slider"
         >
           {Array.from({ length: 12 }).map((_, i) => {
             const { title, description, image, icon, link } =
               slides[i % slides.length];
             return (
               <SwiperSlide key={i}>
-                <div
-                  className="relative h-[380px] flex items-end bg-cover bg-center bg-no-repeat"
-                  style={{ backgroundImage: `url(${image})` }}
-                >
-                  <div className="flex w-full items-end">
+                <div className="group relative h-[380px] flex items-end overflow-hidden rounded-md">
+                  {/* Background image that zooms on hover */}
+                  <div
+                    className="absolute inset-0 bg-cover bg-center bg-no-repeat transition-transform duration-700 ease-out group-hover:scale-110"
+                    style={{ backgroundImage: `url(${image})` }}
+                    aria-hidden="true"
+                  />
+
+                  {/* Foreground content */}
+                  <div className="relative z-10 flex w-full items-end">
                     <div className="w-[70%] bg-[#f5f5f5] shadow-md p-4 min-h-[120px] sm:min-h-[140px] md:min-h-[150px] flex flex-col">
                       <Link href={link}>
                         <h3 className="text-[#003269] text-sm md:text-base lg:text-lg font-bold tracking-wide font-inter hover:underline">
@@ -115,7 +127,7 @@ export default function ServicesSlider({ swiperRef }: Props) {
                       className="w-[30%] bg-gray-100 relative group overflow-hidden border border-gray-300 flex items-center justify-center"
                       style={{ height: "50%" }}
                     >
-                      {/* Icon (default state) */}
+                      {/* Icon */}
                       <div className="relative w-12 sm:w-14 aspect-square transition-all duration-500 group-hover:opacity-0 group-hover:translate-y-2">
                         <Image
                           src={icon}
@@ -124,8 +136,7 @@ export default function ServicesSlider({ swiperRef }: Props) {
                           className="object-center"
                         />
                       </div>
-
-                      {/* Hover state: Red background with arrow */}
+                      {/* Hover arrow */}
                       <div className="absolute inset-0 bg-[#e63a27] flex items-center justify-center opacity-0 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500">
                         <FiChevronRight className="w-6 h-6 text-white" />
                       </div>
@@ -136,6 +147,16 @@ export default function ServicesSlider({ swiperRef }: Props) {
             );
           })}
         </Swiper>
+      </div>
+
+      {/* Live region to announce current slide for screen readers */}
+      <div
+        className="sr-only"
+        aria-live="polite"
+        aria-atomic="true"
+        aria-relevant="additions"
+      >
+        {`Current slide: ${currentSlideTitle}`}
       </div>
 
       <nav

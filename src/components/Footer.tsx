@@ -279,26 +279,12 @@ export default function Footer() {
 
       {/* Bottom Bar */}
       <div className="bg-[#00254c]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-12 py-4 flex flex-col md:flex-row items-center justify-between gap-2 text-xs sm:text-sm md:text-[15px]">
-          <p className="text-center md:text-left fontfont-bevietnam">
-            © {new Date().getFullYear()} {/* Dynamically get current year */}
-            <span className="text-[#e63144] font-bevietnam">
-              SAS Roofing & Waterproofing
-            </span>{" "}
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-12 py-4 flex justify-center text-center text-xs sm:text-sm md:text-[15px]">
+          <p className="font-bevietnam text-white">
+            © {new Date().getFullYear()}{" "}
+            <span className="text-[#e63144]">SAS Roofing & Waterproofing</span>{" "}
             All Rights Reserved.
           </p>
-          <div
-            className="flex gap-x-6 flex-wrap justify-center md:justify-end font-bevietnam"
-            aria-label="Legal links"
-          >
-            {" "}
-            {/* Added aria-label for context */}
-            {["Terms of Service", "Privacy Policy"].map((text) => (
-              <Link key={text} href="/" className="hover:underline">
-                {text}
-              </Link>
-            ))}
-          </div>
         </div>
       </div>
     </footer>
