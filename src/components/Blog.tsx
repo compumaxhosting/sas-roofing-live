@@ -36,6 +36,7 @@ export default function Blog() {
               >
                 News & Updates
               </span>
+              <div className="w-6 h-[1px] bg-[#e63a27]" aria-hidden="true" />
             </div>
             <h2
               id="blog-section-title"

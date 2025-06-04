@@ -44,6 +44,7 @@ export default function OurTestimonial() {
               <span className="text-xs sm:text-sm md:text-base lg:text-lg font-bold text-[#e63a27] uppercase font-inter">
                 Testimonials
               </span>
+              <span className="w-6 h-px bg-[#e63a27]" />
             </span>
             Words From Our Customer
           </h2>

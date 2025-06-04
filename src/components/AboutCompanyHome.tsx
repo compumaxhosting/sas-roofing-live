@@ -30,14 +30,26 @@ export default function AboutCompany() {
       role="region"
       aria-label="About Company Section"
     >
-      <section className="flex flex-col xl:flex-row gap-10 lg:gap-16 max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 xl:px-16 2xl:px-20 bg-[#f9f9f9]">
+      <section
+        className="
+          flex flex-col items-center                          /* Default: column layout, centered items */
+          xl:flex-row xl:items-start                          /* XL+: row layout, items aligned to start (top) */
+          gap-10 lg:gap-16
+          max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 xl:px-16 2xl:px-20
+          bg-[#f9f9f9]
+        "
+      >
         {/* Image Block */}
         <motion.div
           initial={{ opacity: 0, x: -50 }}
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.6, ease: "easeOut" }}
           viewport={{ once: true }}
-          className="relative w-full max-w-sm mx-auto xl:mx-0 md:max-w-md lg:max-w-lg xl:max-w-xl flex-shrink-0 bg-[#f9f9f9]"
+          className="
+            relative w-full max-w-sm mx-auto                  /* Default: centered, limited width */
+            md:max-w-md lg:max-w-lg xl:max-w-xl                /* MD/LG/XL: adjust max-width */
+            flex-shrink-0 bg-[#f9f9f9]
+          "
           aria-label="Company Experience Image"
         >
           <div className="relative w-full h-[300px] sm:h-[400px] md:h-[450px] lg:h-[500px] xl:h-[550px] border-2 border-[#e63a27] rounded-sm overflow-hidden">
@@ -69,10 +81,14 @@ export default function AboutCompany() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, ease: "easeOut", delay: 0.2 }}
           viewport={{ once: true }}
-          className="w-full flex flex-col justify-between"
+          className="
+            w-full flex flex-col justify-between
+            text-left mx-auto max-w-lg
+            xl:text-left xl:max-w-full xl:mx-0
+          "
         >
           <div>
-            <div className="flex items-center gap-3 mb-2">
+            <div className="flex items-center justify-center xl:justify-start gap-3 mb-2">
               <div className="w-6 h-[1px] bg-[#e63a27]" aria-hidden="true" />
               <h2
                 className="text-sm sm:text-base uppercase text-[#e63a27] font-semibold tracking-wider font-inter"
@@ -80,6 +96,7 @@ export default function AboutCompany() {
               >
                 About Company
               </h2>
+              <div className="w-6 h-[1px] bg-[#e63a27]" aria-hidden="true" />
             </div>
 
             <h1
@@ -89,7 +106,7 @@ export default function AboutCompany() {
               Roofing Is Our Heritage & Quality Is Our Tradition
             </h1>
 
-            <div className="flex flex-wrap items-center gap-x-4 gap-y-2 text-sm font-semibold text-[#003269] mb-6">
+            <div className="flex flex-wrap justify-start xl:justify-start items-center gap-x-4 gap-y-2 text-sm font-semibold text-[#003269] mb-6">
               {features.map(({ icon, label }) => (
                 <div
                   key={label}
@@ -103,10 +120,10 @@ export default function AboutCompany() {
             </div>
 
             <div
-              className="text-sm max-w-none text-gray-700 mb-4 font-bevietnam"
+              className="text-sm text-gray-700 mb-4 font-bevietnam"
               aria-label="Company Introduction Text"
             >
-              <p>
+              <p className="text-justify xl:text-left mb-2">
                 For over twelve years, SAS Roofing & Waterproofing has proudly
                 served{" "}
                 <Link
@@ -149,16 +166,16 @@ export default function AboutCompany() {
 
               {showMore && (
                 <div className="space-y-4 font-bevietnam" aria-live="polite">
-                  <p>
+                  <p className="text-justify xl:text-left">
                     As a trusted roofing contractor in Brooklyn, we specialize
                     in everything from residential roof repairs to complete
                     commercial roof installations.
                   </p>
-                  <p>
+                  <p className="text-justify xl:text-left">
                     Our skilled masonry team handles everything from brick
                     restoration to sidewalk repair with care.
                   </p>
-                  <p>
+                  <p className="text-justify xl:text-left">
                     Choose SAS Roofing & Waterproofing—where dedication meets
                     experience, and every project is built on a foundation of
                     trust and excellence.
@@ -167,9 +184,25 @@ export default function AboutCompany() {
               )}
             </div>
 
+            {/* Added id for aria-controls */}
+            <div
+              id="company-details"
+              className="text-sm text-gray-700 mb-4 font-bevietnam"
+            >
+              {showMore && (
+                <div className="space-y-4 font-bevietnam" aria-live="polite">
+                  {/* Content for showMore */}
+                </div>
+              )}
+            </div>
+
             <button
               onClick={() => setShowMore((prev) => !prev)}
-              className="text-[#e63a27] font-semibold text-sm underline mb-6 hover:text-[#003269] transition-colors font-bevietnam"
+              className="
+                text-[#e63a27] font-semibold text-sm underline mb-6
+                hover:text-[#003269] transition-colors font-bevietnam
+                block mx-0 xl:mx-0
+              "
               aria-expanded={showMore}
               aria-controls="company-details"
               aria-label={
@@ -182,7 +215,7 @@ export default function AboutCompany() {
             </button>
 
             <div
-              className="flex items-center gap-4 mb-2"
+              className="flex items-start justify-start xl:justify-start gap-2 mb-2"
               aria-label="Certification Badge"
             >
               <Image
@@ -201,7 +234,10 @@ export default function AboutCompany() {
 
           <Link
             href="/aboutus"
-            className="inline-block border-4 border-[#003269] p-2 self-start group mt-4"
+            className="
+              inline-block border-4 border-[#003269] p-2 self-start group mt-4
+              mx-0 xl:mx-0
+            "
             aria-label="Go to About Us page"
           >
             <span className="block border-2 border-[#e63a27] text-[#e63a27] px-6 py-3 font-bold uppercase tracking-wide text-sm lg:text-base hover-button font-inter">

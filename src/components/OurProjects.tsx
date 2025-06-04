@@ -3,6 +3,7 @@
 import React, { useEffect, useState, Suspense } from "react";
 import { motion } from "framer-motion";
 import { Loader2 } from "lucide-react";
+import Link from "next/link";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 40 },
@@ -53,11 +54,12 @@ const OurProjects: React.FC<OurProjectsProps> = ({ gallery }) => {
       >
         {/* Heading & Subtitle */}
         <div>
-          <div className="flex items-center gap-2 mb-1">
+          <div className="flex items-center gap-2 mb-1 justify-center md:justify-start">
             <div className="w-6 h-px bg-[#e63a27]" aria-hidden="true" />
             <span className="text-sm sm:text-md lg:text-base font-bold text-[#e63a27] uppercase whitespace-nowrap font-inter">
               Our Projects
             </span>
+            <div className="block md:hidden w-6 h-px bg-[#e63a27]" aria-hidden="true" />
           </div>
           <h1
             id="our-projects-heading"
@@ -68,28 +70,28 @@ const OurProjects: React.FC<OurProjectsProps> = ({ gallery }) => {
         </div>
 
         {/* Button - REVISED FIX HERE */}
-          {/* passHref is still needed if you render a custom component as child */}
-          <motion.div // Use motion.div as the direct child of Link
-            className="group relative self-start md:self-auto" // Apply flex/layout classes here
-            variants={fadeUp}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.2 }}
-            custom={0.5} // Example custom delay
+        {/* passHref is still needed if you render a custom component as child */}
+        <motion.div // Use motion.div as the direct child of Link
+          className="group relative self-center md:self-auto" // Apply flex/layout classes here
+          variants={fadeUp}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.2 }}
+          custom={0.5} // Example custom delay
+        >
+          {/* The actual anchor tag for accessibility and navigation */}
+          <Link
+            href="/projects" // Redundant but good for static analysis, Next/Link will handle it
+            className="block w-full h-full focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-[#e63a27]"
+            aria-label="View all our completed projects"
           >
-            {/* The actual anchor tag for accessibility and navigation */}
-            <a
-              href="/projects" // Redundant but good for static analysis, Next/Link will handle it
-              className="block w-full h-full focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-[#e63a27]"
-              aria-label="View all our completed projects"
-            >
-              <div className="border-4 border-[#003269] px-2 py-2">
-                <div className="border border-[#e63a27] px-5 py-3 text-xs sm:text-sm md:text-base lg:text-lg font-bold text-[#e63a27] uppercase whitespace-nowrap hover-button font-inter">
-                  All Projects
-                </div>
+            <div className="border-4 border-[#003269] px-2 py-2">
+              <div className="border border-[#e63a27] px-5 py-3 text-xs sm:text-sm md:text-base lg:text-lg font-bold text-[#e63a27] uppercase whitespace-nowrap hover-button font-inter">
+                All Projects
               </div>
-            </a>
-          </motion.div>
+            </div>
+          </Link>
+        </motion.div>
       </motion.section>
 
       {/* Gallery (client-only) */}

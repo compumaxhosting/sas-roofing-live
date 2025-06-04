@@ -7,53 +7,68 @@ export default function TopBar() {
   return (
     <div className="bg-[#003269] text-white px-6 text-[15px] h-[52px] font-bevietnam">
       <div className="flex justify-between items-center h-full">
-        <div className="w-[436px] h-full bg-[#00254c] [clip-path:polygon(0_0,90%_0,100%_100%,0%_100%)]" />
+        {/* Decorative background element, hide from screen readers */}
+        <div
+          className="w-[436px] h-full bg-[#00254c] [clip-path:polygon(0_0,90%_0,100%_100%,0%_100%)]"
+          aria-hidden="true"
+        />
 
         <div className="flex items-center h-full">
           <div className="hidden xl:flex items-center pr-4 divide-x divide-white/30">
             <Link
               href="tel:+13472216549"
               className="flex items-center text-base gap-2 pr-4 hover:text-[#e63a27] transition-colors"
+              aria-label="Call us at (347) 221-6549" // Added aria-label
             >
-              <FaPhoneAlt className="text-[#e63a27]" />
+              <FaPhoneAlt className="text-[#e63a27]" aria-hidden="true" />{" "}
+              {/* Icon is decorative here */}
               (347) 221-6549
             </Link>
             <Link
               href="mailto:sascon09@yahoo.com"
               className="flex items-center text-base gap-2 px-4 hover:text-[#e63a27] transition-colors"
+              aria-label="Email us at sascon09@yahoo.com" // Added aria-label
             >
-              <FaEnvelope className="text-[#e63a27]" />
+              <FaEnvelope className="text-[#e63a27]" aria-hidden="true" />{" "}
+              {/* Icon is decorative here */}
               sascon09@yahoo.com
             </Link>
             <Link
               href="mailto:amzadh78@gmail.com"
               className="flex items-center text-base gap-2 pl-4 hover:text-[#e63a27] transition-colors"
+              aria-label="Email us at amzadh78@gmail.com" // Added aria-label
             >
-              <FaEnvelope className="text-[#e63a27]" />
+              <FaEnvelope className="text-[#e63a27]" aria-hidden="true" />{" "}
+              {/* Icon is decorative here */}
               amzadh78@gmail.com
             </Link>
           </div>
 
           <div className="flex items-center pl-4 text-white text-base">
-            <span className="mr-3">Follow On:</span>
+            <span className="mr-3" aria-hidden="true">
+              Follow On:
+            </span>{" "}
+            {/* Text is for visual users, context from links */}
             <div className="flex items-center divide-x divide-white/30">
               <Link
                 href="https://www.facebook.com/sasroofingwaterproofing"
                 target="_blank"
                 rel="noopener noreferrer"
-                aria-label="Visit our Facebook page"
+                aria-label="Visit our Facebook page (opens in new tab)" // Slightly more descriptive
                 className="pr-3 text-[#e63a27] transition-colors"
               >
-                <FaFacebookF />
+                <FaFacebookF aria-hidden="true" />{" "}
+                {/* Icon is decorative as aria-label is on the link */}
               </Link>
               <Link
                 href="https://www.houzz.com/professionals/general-contractors/sas-roofing-and-waterproofing-pfvwus-pf~849386886?"
                 target="_blank"
                 rel="noopener noreferrer"
-                aria-label="Visit Houzz page"
+                aria-label="Visit our Houzz page (opens in new tab)" // Slightly more descriptive
                 className="pl-3 text-[#e63a27] transition-colors"
               >
-                <FaHome />
+                <FaHome aria-hidden="true" />{" "}
+                {/* Icon is decorative as aria-label is on the link */}
               </Link>
             </div>
           </div>

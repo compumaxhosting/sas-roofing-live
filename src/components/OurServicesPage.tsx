@@ -51,6 +51,7 @@ export default function OurServicesPage({ margin }: Props) {
               <span className="text-xs sm:text-sm md:text-base font-bold text-[#e63a27] uppercase font-inter">
                 Our Services
               </span>
+              <div className="block md:hidden w-6 h-px bg-[#e63a27]" />
             </div>
             <h1
               id="services-heading"
@@ -60,15 +61,15 @@ export default function OurServicesPage({ margin }: Props) {
             </h1>
           </div>
 
-            <Link
-              className="group border-4 border-[#003269] p-2 inline-block flex-shrink-0"
-              aria-label="View all services offered by SAS Roofing & Waterproofing"
-              href="/services"
-            >
-              <div className="border border-[#e63a27] px-5 py-3 text-xs sm:text-sm md:text-base lg:text-lg font-bold text-[#e63a27] uppercase whitespace-nowrap hover-button font-inter">
-                All Services
-              </div>
-            </Link>
+          <Link
+            className="group border-4 border-[#003269] p-2 inline-block flex-shrink-0"
+            aria-label="View all services offered by SAS Roofing & Waterproofing"
+            href="/services"
+          >
+            <div className="border border-[#e63a27] px-5 py-3 text-xs sm:text-sm md:text-base lg:text-lg font-bold text-[#e63a27] uppercase whitespace-nowrap hover-button font-inter">
+              All Services
+            </div>
+          </Link>
         </motion.section>
 
         <motion.div
