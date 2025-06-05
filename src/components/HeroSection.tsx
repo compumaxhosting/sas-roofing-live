@@ -15,7 +15,7 @@ const slides = [
     description:
       "SAS Roofing is your source for high-quality roofing of any type",
     buttonText: "Read More",
-    image: "/slider-6.png",
+    image: "/slider-6.jpg",
   },
   {
     id: 2,
