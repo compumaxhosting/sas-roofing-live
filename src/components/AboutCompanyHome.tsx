@@ -6,23 +6,14 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import { FaCertificate, FaLightbulb, FaHome } from "react-icons/fa";
 
+const features = [
+  { icon: FaCertificate, label: "Certified", color: "text-[#e63a27]" },
+  { icon: FaLightbulb, label: "Innovative Work", color: "text-yellow-400" },
+  { icon: FaHome, label: "Experienced", color: "text-[#e63a27]" },
+];
+
 export default function AboutCompany() {
   const [showMore, setShowMore] = useState(false);
-
-  const features = [
-    {
-      icon: <FaCertificate className="text-[#e63a27]" aria-hidden="true" />,
-      label: "Certified",
-    },
-    {
-      icon: <FaLightbulb className="text-yellow-400" aria-hidden="true" />,
-      label: "Innovative Work",
-    },
-    {
-      icon: <FaHome className="text-[#e63a27]" aria-hidden="true" />,
-      label: "Experienced",
-    },
-  ];
 
   return (
     <div
@@ -30,221 +21,178 @@ export default function AboutCompany() {
       role="region"
       aria-label="About Company Section"
     >
-      <section
-        className="
-          flex flex-col items-center                          /* Default: column layout, centered items */
-          xl:flex-row xl:items-start                          /* XL+: row layout, items aligned to start (top) */
-          gap-10 lg:gap-16
-          max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 xl:px-16 2xl:px-20
-          bg-[#f9f9f9]
-        "
-      >
+      <section className="flex flex-col items-center xl:flex-row xl:items-start gap-10 lg:gap-16 max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 xl:px-16 2xl:px-20">
         {/* Image Block */}
-        <motion.div
+        <motion.figure
           initial={{ opacity: 0, x: -50 }}
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.6, ease: "easeOut" }}
           viewport={{ once: true }}
-          className="
-            relative w-full max-w-sm mx-auto                  /* Default: centered, limited width */
-            md:max-w-md lg:max-w-lg xl:max-w-xl                /* MD/LG/XL: adjust max-width */
-            flex-shrink-0 bg-[#f9f9f9]
-          "
-          aria-label="Company Experience Image"
+          className="relative w-full max-w-sm md:max-w-md lg:max-w-lg xl:max-w-xl flex-shrink-0 aspect-[5/5]"
+          aria-label="30+ years experience"
         >
-          <div className="relative w-full h-[300px] sm:h-[400px] md:h-[450px] lg:h-[500px] xl:h-[550px] border-2 border-[#e63a27] rounded-sm overflow-hidden">
+          <div className="relative w-full h-[300px] sm:h-[400px] md:h-[450px] lg:h-[500px] xl:h-[550px] border-2 border-[#e63a27] overflow-hidden">
             <Image
               src="/aboutusimage.png"
-              alt="Team at work from SAS Roofing & Waterproofing"
+              alt="Team working on site"
               fill
               className="object-contain"
               sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 33vw"
             />
-            <div
-              className="absolute top-4 right-10 bg-white bg-opacity-90 px-4 py-3 rounded-md text-[#003269] shadow-md flex items-center gap-2"
-              aria-label="30+ Years of Experience"
-            >
-              <span className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-[#003269] font-inter">
+            <figcaption className="sr-only">
+              Over 30 years of roofing and waterproofing experience
+            </figcaption>
+            <div className="absolute top-4 right-10 bg-white bg-opacity-90 px-4 py-3 rounded-md text-[#003269] shadow-md flex items-center gap-2">
+              <span className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold font-inter">
                 30+
               </span>
-              <div className="leading-tight text-left text-base sm:text-xl font-extrabold uppercase font-inter">
+              <div className="leading-tight text-base sm:text-xl font-extrabold uppercase font-inter">
                 <div>Years</div>
                 <div>of Experience</div>
               </div>
             </div>
           </div>
-        </motion.div>
+        </motion.figure>
 
         {/* Text Content */}
-        <motion.div
+        <motion.article
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, ease: "easeOut", delay: 0.2 }}
           viewport={{ once: true }}
-          className="
-            w-full flex flex-col justify-between
-            text-left mx-auto max-w-lg
-            xl:text-left xl:max-w-full xl:mx-0
-          "
+          className="w-full max-w-lg xl:max-w-full text-left"
         >
-          <div>
-            <div className="flex items-center justify-center xl:justify-start gap-3 mb-2">
-              <div className="w-6 h-[1px] bg-[#e63a27]" aria-hidden="true" />
-              <h2
-                className="text-sm sm:text-base uppercase text-[#e63a27] font-semibold tracking-wider font-inter"
-                aria-label="About Company"
+          <header className="flex items-center justify-center xl:justify-start gap-3 mb-2">
+            <div className="w-6 h-[1px] bg-[#e63a27]" />
+            <h2 className="text-sm sm:text-base uppercase text-[#e63a27] font-semibold tracking-wider font-inter">
+              About Company
+            </h2>
+            <div className="w-6 h-[1px] bg-[#e63a27]" />
+          </header>
+
+          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-semibold text-[#003269] leading-tight mb-4 font-inter">
+            Roofing Is Our Heritage & Quality Is Our Tradition
+          </h1>
+
+          <div
+            className="flex flex-wrap items-center gap-x-4 gap-y-2 text-sm font-semibold text-[#003269] mb-6"
+            aria-label="Company Features"
+          >
+            {features.map(({ icon: Icon, label, color }) => (
+              <div
+                key={label}
+                className="flex items-center gap-1.5 font-bold uppercase"
+                aria-label={label}
               >
-                About Company
-              </h2>
-              <div className="w-6 h-[1px] bg-[#e63a27]" aria-hidden="true" />
-            </div>
-
-            <h1
-              className="text-3xl sm:text-4xl lg:text-5xl font-semibold text-[#003269] leading-tight mb-4 font-inter"
-              aria-label="Roofing Is Our Heritage and Quality Is Our Tradition"
-            >
-              Roofing Is Our Heritage & Quality Is Our Tradition
-            </h1>
-
-            <div className="flex flex-wrap justify-start xl:justify-start items-center gap-x-4 gap-y-2 text-sm font-semibold text-[#003269] mb-6">
-              {features.map(({ icon, label }) => (
-                <div
-                  key={label}
-                  className="flex items-center gap-1.5 uppercase font-bold"
-                  aria-label={label}
-                >
-                  {icon}
-                  <span>{label}</span>
-                </div>
-              ))}
-            </div>
-
-            <div
-              className="text-sm text-gray-700 mb-4 font-bevietnam"
-              aria-label="Company Introduction Text"
-            >
-              <p className="text-justify xl:text-left mb-2">
-                For over twelve years, SAS Roofing & Waterproofing has proudly
-                served{" "}
-                <Link
-                  href="https://www.wikidata.org/wiki/Q18419"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="Learn more about Brooklyn on Wikidata"
-                >
-                  Brooklyn
-                </Link>
-                ,{" "}
-                <Link
-                  href="https://www.wikidata.org/wiki/Q11299"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="Learn more about Manhattan on Wikidata"
-                >
-                  Manhattan
-                </Link>
-                ,{" "}
-                <Link
-                  href="https://www.wikidata.org/wiki/Q18424"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="Learn more about Queens on Wikidata"
-                >
-                  Queens
-                </Link>{" "}
-                and{" "}
-                <Link
-                  href="https://www.wikidata.org/wiki/Q18426"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="Learn more about The Bronx on Wikidata"
-                >
-                  The Bronx
-                </Link>{" "}
-                with top-tier roofing, waterproofing, and masonry solutions.
-              </p>
-
-              {showMore && (
-                <div className="space-y-4 font-bevietnam" aria-live="polite">
-                  <p className="text-justify xl:text-left">
-                    As a trusted roofing contractor in Brooklyn, we specialize
-                    in everything from residential roof repairs to complete
-                    commercial roof installations.
-                  </p>
-                  <p className="text-justify xl:text-left">
-                    Our skilled masonry team handles everything from brick
-                    restoration to sidewalk repair with care.
-                  </p>
-                  <p className="text-justify xl:text-left">
-                    Choose SAS Roofing & Waterproofing—where dedication meets
-                    experience, and every project is built on a foundation of
-                    trust and excellence.
-                  </p>
-                </div>
-              )}
-            </div>
-
-            {/* Added id for aria-controls */}
-            <div
-              id="company-details"
-              className="text-sm text-gray-700 mb-4 font-bevietnam"
-            >
-              {showMore && (
-                <div className="space-y-4 font-bevietnam" aria-live="polite">
-                  {/* Content for showMore */}
-                </div>
-              )}
-            </div>
-
-            <button
-              onClick={() => setShowMore((prev) => !prev)}
-              className="
-                text-[#e63a27] font-semibold text-sm underline mb-6
-                hover:text-[#003269] transition-colors font-bevietnam
-                block mx-0 xl:mx-0
-              "
-              aria-expanded={showMore}
-              aria-controls="company-details"
-              aria-label={
-                showMore
-                  ? "Show less about the company"
-                  : "Read more about the company"
-              }
-            >
-              {showMore ? "Read Less" : "Read More"}
-            </button>
-
-            <div
-              className="flex items-start justify-start xl:justify-start gap-2 mb-2"
-              aria-label="Certification Badge"
-            >
-              <Image
-                src="/certified-badge.jpg"
-                alt="Certified Company Badge"
-                width={50}
-                height={50}
-                className="flex-shrink-0"
-              />
-              <div className="text-[#003269] text-base font-sm font-inter">
-                <h4 className="font-bold mb-1">Certified Company</h4>
-                <p className="text-[#e63a27]">#2050416-DCA</p>
+                <Icon className={color} aria-hidden="true" />
+                <span>{label}</span>
               </div>
+            ))}
+          </div>
+
+          <div className="text-sm text-gray-700 font-bevietnam text-justify mb-4">
+            <p>
+              For over twelve years, SAS Roofing & Waterproofing has proudly
+              served{" "}
+              <Link
+                href="https://www.wikidata.org/wiki/Q18419"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Brooklyn"
+              >
+                Brooklyn
+              </Link>
+              ,{" "}
+              <Link
+                href="https://www.wikidata.org/wiki/Q11299"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Manhattan"
+              >
+                Manhattan
+              </Link>
+              ,{" "}
+              <Link
+                href="https://www.wikidata.org/wiki/Q18424"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Queens"
+              >
+                Queens
+              </Link>{" "}
+              and{" "}
+              <Link
+                href="https://www.wikidata.org/wiki/Q18426"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="The Bronx"
+              >
+                The Bronx
+              </Link>{" "}
+              with top-tier roofing, waterproofing, and masonry solutions.
+            </p>
+
+            {showMore && (
+              <div className="space-y-4 mt-4" aria-live="polite">
+                <p>
+                  As a trusted roofing contractor in Brooklyn, we specialize in
+                  everything from residential roof repairs to complete
+                  commercial roof installations.
+                </p>
+                <p>
+                  Our skilled masonry team handles everything from brick
+                  restoration to sidewalk repair with care.
+                </p>
+                <p>
+                  Choose SAS Roofing & Waterproofing—where dedication meets
+                  experience, and every project is built on a foundation of
+                  trust and excellence.
+                </p>
+              </div>
+            )}
+          </div>
+
+          <button
+            onClick={() => setShowMore((prev) => !prev)}
+            className="text-[#e63a27] font-semibold text-sm underline mb-6 hover:text-[#003269] transition-colors font-bevietnam"
+            aria-expanded={showMore}
+            aria-controls="company-details"
+            aria-label={
+              showMore
+                ? "Show less company details"
+                : "Show more company details"
+            }
+          >
+            {showMore ? "Read Less" : "Read More"}
+          </button>
+
+          <div
+            className="flex items-start gap-2 mb-6"
+            aria-label="Certification Badge"
+          >
+            <Image
+              src="/certified-badge.jpg"
+              alt="Certified Company Badge"
+              width={50}
+              height={50}
+              className="flex-shrink-0"
+            />
+            <div className="text-[#003269] text-base font-inter">
+              <h4 className="font-bold mb-1">Certified Company</h4>
+              <p className="text-[#e63a27]">#2050416-DCA</p>
             </div>
           </div>
 
           <Link
             href="/aboutus"
-            className="
-              inline-block border-4 border-[#003269] p-2 self-start group mt-4
-              mx-0 xl:mx-0
-            "
-            aria-label="Go to About Us page"
+            className="inline-block border-4 border-[#003269] p-2 group self-start mt-4"
+            aria-label="Read more on About Us page"
           >
-            <span className="block border-2 border-[#e63a27] text-[#e63a27] px-6 py-3 font-bold uppercase tracking-wide text-sm lg:text-base hover-button font-inter">
+            <span className="block border-2 border-[#e63a27] text-[#e63a27] px-6 py-3 font-bold uppercase tracking-wide text-sm lg:text-base group-hover:bg-[#e63a27] group-hover:text-white transition font-inter">
               Read More
             </span>
           </Link>
-        </motion.div>
+        </motion.article>
       </section>
     </div>
   );

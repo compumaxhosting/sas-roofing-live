@@ -123,7 +123,7 @@ const VideoSection = ({ margin }: Props) => {
               </div>
             </div>
             <div className="absolute inset-0 bg-[#e63a27] red-left-shape-1 z-20 translate-y-20">
-              <div className="w-full h-full bg-[url('/thm-pattern-5.webp')] bg-repeat" />
+              <div className="w-full h-full bg-[url('/thm-pattern-5.png')] bg-repeat" />
             </div>
           </div>
         </motion.div>

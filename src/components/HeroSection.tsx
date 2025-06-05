@@ -4,9 +4,9 @@ import React, { useCallback, useEffect, useState } from "react";
 import useEmblaCarousel from "embla-carousel-react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import Image from "next/image";
-import { motion, AnimatePresence, PanInfo } from "framer-motion";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
+import { PanInfo, motion } from "framer-motion";
 
 const slides = [
   {
@@ -35,23 +35,15 @@ const slides = [
 ];
 
 const swipeConfidenceThreshold = 5000;
-const swipePower = (offset: number, velocity: number): number => {
-  return Math.abs(offset) * velocity;
-};
+const swipePower = (offset: number, velocity: number): number =>
+  Math.abs(offset) * velocity;
 
-const HeroSection: React.FC = () => {
+export default function HeroSection() {
   const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true });
-  const [canScrollPrev, setCanScrollPrev] = useState(false);
-  const [canScrollNext, setCanScrollNext] = useState(false);
   const [selectedIndex, setSelectedIndex] = useState(0);
-  const [clickedButton, setClickedButton] = useState<"prev" | "next" | null>(
-    null
-  );
 
   const onSelect = useCallback(() => {
     if (!emblaApi) return;
-    setCanScrollPrev(emblaApi.canScrollPrev());
-    setCanScrollNext(emblaApi.canScrollNext());
     setSelectedIndex(emblaApi.selectedScrollSnap());
   }, [emblaApi]);
 
@@ -67,41 +59,25 @@ const HeroSection: React.FC = () => {
 
   useEffect(() => {
     if (!emblaApi) return;
-
-    const autoplay = setInterval(() => {
-      emblaApi.scrollNext();
-    }, 5000);
-
+    const autoplay = setInterval(() => emblaApi.scrollNext(), 5000);
     return () => clearInterval(autoplay);
   }, [emblaApi]);
-
-  const textContentVariants = {
-    enter: { opacity: 0, y: 40 },
-    center: { opacity: 1, y: 0 },
-    exit: { opacity: 0, y: -40 },
-  };
-
-  const currentSlideData = slides[selectedIndex];
 
   const handleDragEnd = (
     e: MouseEvent | TouchEvent | PointerEvent,
     info: PanInfo
   ) => {
     if (!emblaApi) return;
-
     const power = swipePower(info.offset.x, info.velocity.x);
-
-    if (power < -swipeConfidenceThreshold) {
-      emblaApi.scrollNext();
-    } else if (power > swipeConfidenceThreshold) {
-      emblaApi.scrollPrev();
-    } else {
-      emblaApi.scrollTo(selectedIndex);
-    }
+    if (power < -swipeConfidenceThreshold) emblaApi.scrollNext();
+    else if (power > swipeConfidenceThreshold) emblaApi.scrollPrev();
+    else emblaApi.scrollTo(selectedIndex);
   };
 
+  const currentSlide = slides[selectedIndex];
+
   return (
-    <div
+    <section
       className="relative w-full overflow-hidden bg-black"
       role="region"
       aria-label="Image carousel of roofing services"
@@ -115,9 +91,9 @@ const HeroSection: React.FC = () => {
         style={{ cursor: "grab" }}
         whileTap={{ cursor: "grabbing" }}
       >
-        <div className="flex" aria-live="polite" aria-atomic="true">
+        <ul className="flex" aria-live="polite" aria-atomic="true">
           {slides.map((slide, index) => (
-            <div
+            <li
               key={slide.id}
               role="group"
               aria-roledescription="slide"
@@ -133,74 +109,48 @@ const HeroSection: React.FC = () => {
                 className="object-cover"
               />
               <div
-                className="absolute bg-black/40 sm:bg-black/30 z-10 h-full w-full"
+                className="absolute inset-0 bg-black/40 sm:bg-black/30 z-10"
                 aria-hidden="true"
               />
-            </div>
+            </li>
           ))}
-        </div>
+        </ul>
       </motion.div>
 
       <div className="absolute inset-0 z-20 flex flex-col justify-center items-start px-6 md:px-20 text-white pointer-events-none">
-        <AnimatePresence mode="wait" initial={false}>
-          <motion.div
-            key={currentSlideData.title}
-            variants={textContentVariants}
-            initial="enter"
-            animate="center"
-            exit="exit"
-            transition={{ duration: 0.6, ease: "easeOut" }}
-            className="max-w-3xl space-y-6 pt-6 md:ml-14 xl:ml-46 pointer-events-auto"
-            aria-live="polite"
+        <div className="max-w-3xl space-y-6 pt-6 md:ml-14 xl:ml-46 pointer-events-auto">
+          <h1 className="text-5xl md:text-6xl lg:text-8xl font-bold leading-tight font-inter">
+            {currentSlide.title}
+          </h1>
+          <p className="text-lg font-light tracking-wide font-bevietnam">
+            {currentSlide.description}
+          </p>
+          <Link
+            href="/aboutus"
+            className="inline-block border-4 border-[#003269] p-1"
+            aria-label={`Read more about ${currentSlide.title}`}
           >
-            <h1 className="text-5xl md:text-6xl lg:text-8xl font-bold leading-tight font-inter">
-              {currentSlideData.title}
-            </h1>
-            <p className="text-lg font-light tracking-wide font-bevietnam">
-              {currentSlideData.description}
-            </p>
-            <Link href="/aboutus">
-              <div className="inline-block border-4 border-[#003269] p-1">
-                <Button
-                  className="Hero_hover-button text-sm sm:text-base lg:text-lg font-inter"
-                  aria-label={`Read more about ${currentSlideData.title}`}
-                >
-                  {currentSlideData.buttonText.toUpperCase()}
-                </Button>
-              </div>
-            </Link>
-          </motion.div>
-        </AnimatePresence>
+            <Button className="Hero_hover-button text-sm sm:text-base lg:text-lg font-inter">
+              {currentSlide.buttonText.toUpperCase()}
+            </Button>
+          </Link>
+        </div>
       </div>
 
       {/* Prev Button */}
       <button
-        onClick={() => {
-          setClickedButton("prev");
-          scrollPrev();
-          setTimeout(() => setClickedButton(null), 200);
-        }}
-        disabled={!canScrollPrev}
+        onClick={scrollPrev}
         aria-label="Previous Slide"
-        className={`hidden md:block absolute left-5 top-1/2 -translate-y-1/2 rounded-full p-4 z-30 transition-all duration-200 transform ${
-          clickedButton === "prev" ? "bg-[#e63a27]" : "bg-black/40"
-        } hover:bg-[#e63a27] active:scale-95`}
+        className="hidden md:block absolute left-5 top-1/2 -translate-y-1/2 rounded-full p-4 z-30 bg-black/40 hover:bg-[#e63a27] active:scale-95 transition-all"
       >
         <ChevronLeft className="text-white text-2xl" />
       </button>
 
       {/* Next Button */}
       <button
-        onClick={() => {
-          setClickedButton("next");
-          scrollNext();
-          setTimeout(() => setClickedButton(null), 200);
-        }}
-        disabled={!canScrollNext}
+        onClick={scrollNext}
         aria-label="Next Slide"
-        className={`hidden md:block absolute right-5 top-1/2 -translate-y-1/2 rounded-full p-4 z-30 transition-all duration-200 transform ${
-          clickedButton === "next" ? "bg-[#e63a27]" : "bg-black/40"
-        } hover:bg-[#e63a27] active:scale-95`}
+        className="hidden md:block absolute right-5 top-1/2 -translate-y-1/2 rounded-full p-4 z-30 bg-black/40 hover:bg-[#e63a27] active:scale-95 transition-all"
       >
         <ChevronRight className="text-white text-2xl" />
       </button>
@@ -220,8 +170,6 @@ const HeroSection: React.FC = () => {
           />
         ))}
       </div>
-    </div>
+    </section>
   );
-};
-
-export default HeroSection;
+}
