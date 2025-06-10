@@ -11,11 +11,15 @@ interface Slide {
   description: string;
   date: string;
   image: string;
+  // Add initialLikeCount to the Slide interface
+  initialLikeCount: number;
 }
 
+// Update the component's props to include initialLikeCount
 export default function BlogSlideCard({ slide }: { slide: Slide }) {
   const [liked, setLiked] = useState(false);
-  const [likeCount, setLikeCount] = useState(10);
+  // Initialize likeCount state with the prop value
+  const [likeCount, setLikeCount] = useState(slide.initialLikeCount);
   const [isSharing, setIsSharing] = useState(false);
 
   const handleLike = () => {

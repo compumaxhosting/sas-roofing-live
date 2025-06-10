@@ -11,12 +11,23 @@ import React from "react";
 const slides = [
   {
     title:
+      "The Satisfaction Factor: Why Certified Roofing Contractors in Brooklyn Are a Smart Choice",
+    shortTitle: "Certified Roofing Contractors You Can Trust",
+    description: `Hiring certified roofing contractors in Brooklyn ensures quality, safety, and long-lasting protection for your property, making it a truly smart investment...`,
+    date: "10 JUN",
+    image: "/roofing-contractors.jpg",
+    link: "the-satisfaction-factor-why-certified-roofing-contractors-in-brooklyn-are-a-smart-choice",
+    initialLikes: 100,
+  },
+  {
+    title:
       "How This NYC Waterproofing Contractor is Revolutionizing Home Protection",
     shortTitle: "NYC Waterproofing Innovator",
     description: `Discover how a leading NYC waterproofing contractor is transforming home protection with innovative techniques and comprehensive services, ensuring long-lasting safety and dryness for properties across the city...`,
     date: "29 May",
     image: "/blogImage.jpg",
     link: "How-This-NYC-Waterproofing-Contractor-is-Revolutionizing-Home-Protection",
+    initialLikes: 140,
   },
   {
     title:
@@ -28,6 +39,7 @@ const slides = [
     date: "13 JUNE",
     image: "/roofing.jpg",
     link: "Why-SAS-Roofing-and-Waterproofing-Is-Brooklyns-Most-Trusted-Roofing-Expert",
+    initialLikes: 120,
   },
   {
     title: "Replacing Shingle Roof And Installing Skylight",
@@ -36,6 +48,7 @@ const slides = [
     date: "13 JUNE",
     image: "/leakage_roof.jpg",
     link: "/", // This should redirect to home
+    initialLikes: 106,
   },
   {
     title: "Foundation Wall Repair And Waterproofing",
@@ -44,6 +57,7 @@ const slides = [
     date: "13 JUNE",
     image: "/waterproofing.png",
     link: "/",
+    initialLikes: 170,
   },
   {
     title: "How To Weather Proof Your Roof This Winter?",
@@ -52,6 +66,7 @@ const slides = [
     date: "11 JUNE",
     image: "/services1.jpg",
     link: "/",
+    initialLikes: 180,
   },
   {
     title:
@@ -61,6 +76,7 @@ const slides = [
     date: "11 JUNE",
     image: "/masonry_services.png",
     link: "/",
+    initialLikes: 111,
   },
   {
     title: "Roofing Excellence Across New York’s Core Boroughs",
@@ -69,6 +85,7 @@ const slides = [
     date: "11 JUNE",
     image: "/roofing1.jpg",
     link: "/",
+    initialLikes: 122,
   },
 ];
 
@@ -89,7 +106,6 @@ const page = () => {
           <BlogSlideNew key={index} slide={slide} />
         ))}
       </div>
-
       <FooterTopCTA />
       <Footer />
       <BackToTop />

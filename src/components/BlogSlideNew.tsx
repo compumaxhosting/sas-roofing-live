@@ -13,23 +13,27 @@ interface Slide {
   description: string;
   date: string;
   image: string;
+  // Add initialLikes to the Slide interface
+  initialLikes: number;
 }
 
+// Update the component's props to include initialLikes
 export default function BlogSlideNew({ slide }: { slide: Slide }) {
   const [liked, setLiked] = useState(false);
-  const [likes, setLikes] = useState(10); // Initial likes, consider fetching from a data source
+  // Initialize 'likes' state with the 'initialLikes' prop value
+  const [likes, setLikes] = useState(slide.initialLikes);
   const router = useRouter();
 
   const href = slide.link === "/" ? "/" : `/blog/${slide.link}`;
 
   const handleLike = (e: React.MouseEvent) => {
-    e.stopPropagation();
+    e.stopPropagation(); // Prevents the card click handler from firing
     setLiked(!liked);
     setLikes(liked ? likes - 1 : likes + 1);
   };
 
   const handleShare = (e: React.MouseEvent) => {
-    e.stopPropagation();
+    e.stopPropagation(); // Prevents the card click handler from firing
     if (navigator.share) {
       const shareUrl =
         slide.link === "/"
@@ -45,7 +49,6 @@ export default function BlogSlideNew({ slide }: { slide: Slide }) {
         .catch((error) => console.error("Error sharing", error));
     } else {
       // Fallback for browsers that don't support Web Share API
-      // You could implement a custom share modal here.
       alert("Sharing is not supported in this browser.");
     }
   };

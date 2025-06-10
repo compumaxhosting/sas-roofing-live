@@ -18,11 +18,21 @@ interface Props {
 const slides = [
   {
     title:
+      "The Satisfaction Factor: Why Certified Roofing Contractors in Brooklyn Are a Smart Choice",
+    description: "Certified Roofing Contractors You Can Trust.",
+    date: "10 June",
+    image: "/roofing-contractors.jpg",
+    link: "the-satisfaction-factor-why-certified-roofing-contractors-in-brooklyn-are-a-smart-choice",
+    initialLikeCount: 100,
+  },
+  {
+    title:
       "How This NYC Waterproofing Contractor is Revolutionizing Home Protection",
     description: "Trusted Roofing Expert",
     date: "29 May",
     image: "/blogImage.jpg",
     link: "How-This-NYC-Waterproofing-Contractor-is-Revolutionizing-Home-Protection",
+    initialLikeCount: 140,
   },
   {
     title:
@@ -31,42 +41,48 @@ const slides = [
     date: "21 May",
     image: "/roofing.jpg",
     link: "Why-SAS-Roofing-and-Waterproofing-Is-Brooklyns-Most-Trusted-Roofing-Expert",
+    initialLikeCount: 120,
   },
   {
     title: "Replacing Shingle Roof And Installing Skylight",
     description: "ROOF LEAKS",
-    date: "10 JUNE",
+    date: "10 APR",
     image: "/leakage_roof.jpg",
     link: "/",
+    initialLikeCount: 106,
   },
   {
     title: "Foundation Wall Repair And Waterproofing",
     description: "MAINTENANCE",
-    date: "17 JUNE",
+    date: "17 APR",
     image: "/services1.png",
     link: "/",
+    initialLikeCount: 170,
   },
   {
     title: "How To Weather Proof Your Roof This Winter?",
     description: "TIPS & TRICKS",
-    date: "30 JUNE",
+    date: "30 APR",
     image: "/services1.jpg",
     link: "/",
+    initialLikeCount: 180,
   },
   {
     title:
       "Expert Masonry Services Across Brooklyn, Manhattan & Queens: Quality You Can Trust",
     description: "THE MASON’S MARK",
-    date: "07 JULY",
+    date: "07 MAR",
     image: "/masonry_services.png",
     link: "/",
+    initialLikeCount: 111,
   },
   {
     title: "Roofing Excellence Across New York’s Core Boroughs",
     description: "ROOFTOP RELIABILITY",
-    date: "16 JULY",
+    date: "16 MAR",
     image: "/roofing1.jpg",
     link: "/",
+    initialLikeCount: 122,
   },
 ];
 
