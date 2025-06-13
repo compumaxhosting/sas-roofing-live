@@ -21,6 +21,9 @@ export const metadata: Metadata = {
     "SAS Roofing & Waterproofing offers expert roofing, waterproofing, and masonry services in Brooklyn, Manhattan, and Queens. Call for quality construction solutions today!",
   keywords:
     "roofing contractor Brooklyn, waterproofing service Brooklyn, masonry contractor Brooklyn, roofing contractor Manhattan, waterproofing service Manhattan, masonry contractor Manhattan, roofing contractor Queens, waterproofing service Queens, masonry contractor Queens, construction company Brooklyn",
+  verification: {
+    google: "Fd3NvvOxAmVcovcANMYGMoxYh8BbQ9p1rRjKdc_fDFo",
+  },
   openGraph: {
     title:
       "Trusted Roofing, Waterproofing & Masonry Services in Brooklyn,New York",

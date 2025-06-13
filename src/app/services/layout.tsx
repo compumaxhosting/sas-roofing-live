@@ -3,17 +3,17 @@ import { ReactNode } from "react";
 // Metadata for SEO
 export const metadata = {
   title:
-    "The Satisfaction Factor: Why Certified Roofing Contractors in Brooklyn Are a Smart Choice",
+    "Top Roofing & Waterproofing Services in NYC | SAS Roofing & Waterproofing",
   description:
-    "SAS Certified roofing contractors in Brooklyn, Manhattan, Queens, and The Bronx deliver expert service, lasting results, and peace of mind for every roofing project.",
+    "Explore expert roofing and waterproofing services in NYC by SAS Roofing. Trusted solutions for residential and commercial properties across all boroughs.",
   keywords:
-    "Certified roofing contractors, Brooklyn roofing experts, trusted roofers NYC, professional roofing services, waterproofing solutions NYC, roofing peace of mind, reliable roof repair, licensed roofers Brooklyn, NYC roofing satisfaction, expert roof installation",
+    "roofing services NYC, waterproofing contractors NYC, flat roof repair, commercial roofing NYC, residential waterproofing, roof replacement NYC, roof leak repair, basement waterproofing NYC, roof inspection NYC, local roofing experts",
   openGraph: {
     title:
-      "The Satisfaction Factor: Why Certified Roofing Contractors in Brooklyn Are a Smart Choice",
+      "Top Roofing & Waterproofing Services in NYC | SAS Roofing & Waterproofing",
     description:
-      "SAS Certified roofing contractors in Brooklyn, Manhattan, Queens, and The Bronx deliver expert service, lasting results, and peace of mind for every roofing project.",
-    url: "https://www.sasroofingwaterproofing.com/blog.html",
+      "Explore expert roofing and waterproofing services in NYC by SAS Roofing. Trusted solutions for residential and commercial properties across all boroughs.",
+    url: "https://www.sasroofingwaterproofing.com/projects.html",
     images: [
       {
         url: "https://www.sasroofingwaterproofing.com/assets/images/resources/Logo-SAS.png",
