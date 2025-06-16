@@ -12,7 +12,7 @@ export default function Footer() {
   });
 
   const paymentIcons = [
-    "visa_logo",
+    "visa",
     "mastercard",
     "amex",
     "discover",
