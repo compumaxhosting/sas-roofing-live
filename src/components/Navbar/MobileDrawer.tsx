@@ -159,7 +159,7 @@ export default function MobileDrawer({ isOpen, setIsOpen }: Props) {
           aria-label="Home page link"
         >
           <Image
-            src="/Logo.png"
+            src="/Navbar/Logo.png"
             alt="SAS Roofing & Waterproofing Company Logo" // Descriptive alt text
             width={260}
             height={130}

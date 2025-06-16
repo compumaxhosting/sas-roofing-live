@@ -22,7 +22,7 @@ const Contact = () => {
   const shadowStyle = {
     boxShadow: "0 0 15px 5px rgba(0, 0, 0, 0.1)",
     // RE-ADDING THE BACKGROUND IMAGE AS REQUESTED
-    backgroundImage: "url(thm-pattern-5.png)",
+    backgroundImage: "url(/VideoSec/thm-pattern-5.png)",
     backgroundRepeat: "repeat",
     backgroundPosition: "center",
   };

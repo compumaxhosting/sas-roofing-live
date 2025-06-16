@@ -4,12 +4,12 @@ import { motion, AnimatePresence } from "framer-motion";
 import { useEffect, useState, useCallback } from "react";
 
 const images = [
-  "/gallery1.jpg",
-  "/gallery2.jpg",
-  "/slider-6.jpg",
-  "/slider-7.png",
-  "/gallery5.jpg",
-  "/gallery6.jpg",
+  "/Gallery/gallery1.jpg",
+  "/Gallery/gallery2.jpg",
+  "/Hero-Sec/slider-6.jpg",
+  "/Hero-Sec/slider-7.png",
+  "/Gallery/gallery5.jpg",
+  "/Gallery/gallery6.jpg",
 ];
 
 const fadeUp = {
@@ -60,7 +60,12 @@ function GalleryItem({
           aria-label={`Zoom in on image ${index + 1}: ${alt}`}
           type="button"
         >
-          <Image src="/search.png" alt="Zoom icon" width={20} height={20} />
+          <Image
+            src="/Gallery/search.png"
+            alt="Zoom icon"
+            width={20}
+            height={20}
+          />
         </button>
       </div>
     </motion.div>
@@ -257,7 +262,7 @@ export default function GallerySection() {
                 type="button"
               >
                 <Image
-                  src="/search.png"
+                  src="/Gallery/search.png"
                   alt="Zoom icon"
                   width={20}
                   height={20}

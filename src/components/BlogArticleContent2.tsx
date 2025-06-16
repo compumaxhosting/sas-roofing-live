@@ -45,7 +45,7 @@ export default function BlogPage() {
           {/* Image on the left */}
           <div className="w-full lg:w-1/2">
             <Image
-              src="/blogImage.jpg"
+              src="/blog/blogImage.jpg"
               // Enhanced alt text to be more descriptive for screen reader users
               alt="Close-up of a building wall undergoing waterproofing treatment, showing a professional applying a sealant."
               width={600}

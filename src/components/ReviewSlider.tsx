@@ -26,7 +26,7 @@ const reviews: Review[] = [
     text: "SAS construction company is best construction company",
     detailText:
       "SAS construction company is best construction company I’ve worked with. They were punctual, professional, and their work was top-notch. I’d highly recommend them for any building project.",
-    image: "/avatar.png",
+    image: "/reviews/avatar.png",
   },
   {
     name: "Bklyn English",
@@ -35,7 +35,7 @@ const reviews: Review[] = [
     text: "I had a great experience working with this construction company. Fro...",
     detailText:
       "I had a great experience working with this construction company. From the initial consultation to project completion, everything was handled with care. Their attention to detail was impressive.",
-    image: "/avatar.png",
+    image: "/reviews/avatar.png",
   },
   {
     name: "Scholar Chem",
@@ -44,7 +44,7 @@ const reviews: Review[] = [
     text: "SAS Roofing exceeded my expectations! Their team was professional, efficient, and...",
     detailText:
       "SAS Roofing exceeded my expectations! Their team was professional, efficient, and respectful of my property. They completed the job faster than expected and the results are excellent.",
-    image: "/avatar.png",
+    image: "/reviews/avatar.png",
   },
   {
     name: "Abm Hossain",
@@ -53,7 +53,7 @@ const reviews: Review[] = [
     text: "I highly recommend SAS Roofing & Waterproofing to anyone in need of roofing...",
     detailText:
       "I highly recommend SAS Roofing & Waterproofing to anyone in need of roofing services. They used high-quality materials and provided a detailed breakdown of all costs upfront. The service was transparent and trustworthy.",
-    image: "/avatar.png",
+    image: "/reviews/avatar.png",
   },
   {
     name: "Alo Nazrul",
@@ -62,7 +62,7 @@ const reviews: Review[] = [
     text: "I highly recommend SAS Roofing & Waterproofing to anyone in need of roofing...",
     detailText:
       "This company stands out for its commitment to customer satisfaction. They answered all my questions and ensured the work site was clean after completion. Excellent service!",
-    image: "/avatar.png",
+    image: "/reviews/avatar.png",
   },
 ];
 
@@ -234,7 +234,7 @@ const ReviewSlider = () => {
                 </button>
                 <div className="flex items-center gap-2 text-xs text-gray-300 mt-3">
                   <Image
-                    src="/google.png"
+                    src="/reviews/Google_logo.png"
                     alt="Google Logo" // More specific alt text
                     width={16}
                     height={16}
@@ -312,7 +312,7 @@ const ReviewSlider = () => {
               </p>
               <div className="flex items-center gap-2 mt-4 text-sm text-gray-500">
                 <Image
-                  src="/google.png"
+                  src="/reviews/Google_logo.png"
                   alt="Google Logo" // Specific alt text
                   width={16}
                   height={16}

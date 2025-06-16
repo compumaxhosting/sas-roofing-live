@@ -17,7 +17,7 @@ const page = () => {
       <BreadCrum2
         breadcrumbItems={[]}
         pageTitle={"Contact"}
-        imageSrc={"/breadcrumb-20.png"}
+        imageSrc={"/page-bgImage/breadcrumb-20.png"}
       />
       <Contact />
       <FooterTopCTA />

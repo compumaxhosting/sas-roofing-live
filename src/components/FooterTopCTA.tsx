@@ -25,7 +25,7 @@ export default function FooterTopCTA() {
         >
           <Link href="/" className="block" aria-label="Go to homepage">
             <Image
-              src="/Logo.png"
+              src="/Navbar/Logo.png"
               alt="SAS Roofing and Waterproofing company logo" // More descriptive alt text
               width={200}
               height={200}

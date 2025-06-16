@@ -29,7 +29,7 @@ export default function BlogPage() {
           {/* Image on the left */}
           <div className="w-full lg:w-1/2">
             <Image
-              src="/roofing.jpg"
+              src="/blog/roofing.jpg"
               alt="Close-up of a well-maintained roof with new shingles, representing roofing expertise" // Improved alt text for better context
               width={600}
               height={400}

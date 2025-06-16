@@ -19,7 +19,7 @@ export default function DesktopHeader({
         aria-label="Home link with company logo" // Added for screen readers
       >
         <Image
-          src="/Logo-SAS.png"
+          src="/Navbar/Logo-SAS.png"
           alt="Company Logo" // Already good!
           width={326}
           height={154}

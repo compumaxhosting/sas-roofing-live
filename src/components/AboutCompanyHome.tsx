@@ -33,7 +33,7 @@ export default function AboutCompany() {
         >
           <div className="relative w-full h-[300px] sm:h-[400px] md:h-[450px] lg:h-[500px] xl:h-[550px] border-2 border-[#e63a27] overflow-hidden">
             <Image
-              src="/aboutusimage.png"
+              src="/about-us/aboutusimage.png"
               alt="Team working on site"
               fill
               className="object-contain"
@@ -171,7 +171,7 @@ export default function AboutCompany() {
             aria-label="Certification Badge"
           >
             <Image
-              src="/certified-badge.jpg"
+              src="/about-us/certified-badge.jpg"
               alt="Certified Company Badge"
               width={50}
               height={50}

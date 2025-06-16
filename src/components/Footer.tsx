@@ -12,7 +12,7 @@ export default function Footer() {
   });
 
   const paymentIcons = [
-    "visa",
+    "visa_logo",
     "mastercard",
     "amex",
     "discover",
@@ -26,6 +26,7 @@ export default function Footer() {
     { label: "Reviews", path: "/reviews" },
     { label: "Services", path: "/services" },
     { label: "Contact", path: "/contact-us" },
+    { label: "Blog", path: "/blog" },
   ];
   const socialIcons = [
     {
@@ -127,7 +128,7 @@ export default function Footer() {
             {paymentIcons.map((icon) => (
               <Image
                 key={icon}
-                src={`/${icon}_logo.png`}
+                src={`/Footer/${icon}.png`}
                 alt={`${icon} accepted`} // Clear alt text for payment icons
                 width={50}
                 height={32}
@@ -264,7 +265,7 @@ export default function Footer() {
                 aria-label={`Visit our ${label} page (opens in new tab)`} // More descriptive label
               >
                 <Image
-                  src={`/${src}_logo.png`}
+                  src={`/Footer/${src}_logo.png`}
                   alt={label} // Alt text is already good, matches label
                   width={35}
                   height={35}

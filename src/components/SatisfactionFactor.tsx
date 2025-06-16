@@ -45,7 +45,7 @@ export default function BlogPage() {
           {/* Image on the left */}
           <div className="w-full lg:w-1/2">
             <Image
-              src="/roofing-contractors.jpg"
+              src="/blog/roofing-contractors.jpg"
               // Enhanced alt text to be more descriptive for screen reader users
               alt="Close-up of a building wall undergoing waterproofing treatment, showing a professional applying a sealant."
               width={600}
@@ -91,7 +91,7 @@ export default function BlogPage() {
               id="basement-waterproofing-heading"
               className="text-xl md:text-2xl font-bold"
             >
-              Certified Roofing Contractors: What Sets Them Apart 
+              Certified Roofing Contractors: What Sets Them Apart
             </h3>
             <p className="text-gray-700 text-base font-bevietnam mt-4">
               Certified contractors have specialized training and use
@@ -265,7 +265,7 @@ export default function BlogPage() {
               and Manhattan. They keep your home or business safe, reliable, and
               worry-free.{"  "} <br></br>
               <br></br>
-              For trusted roofing services, visit {" "}
+              For trusted roofing services, visit{" "}
               <Link
                 href={
                   "https://www.sasroofingwaterproofing.com/waterproofing-contractors-NY"

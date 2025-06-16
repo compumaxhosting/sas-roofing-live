@@ -34,7 +34,7 @@ const VideoSection = ({ margin }: Props) => {
         className={`relative w-full flex flex-col md:flex-row overflow-hidden h-[550px] bg-[#f0482f] lg:bg-[#f9f9f9] mb-${margin[1]} md:mb-${margin[1]} shadow-2xl`}
       >
         <Image
-          src="/slider-7.png"
+          src="/Hero-Sec/slider-7.png"
           alt="Video background"
           fill
           priority
@@ -45,10 +45,10 @@ const VideoSection = ({ margin }: Props) => {
         {/* Left Section */}
         <div className="relative md:w-[60%] w-full h-[500px] md:h-auto">
           <div className="absolute inset-0 bg-[#c72f1c] red-left-shape-2 z-20 translate-x-6 translate-y-16">
-            <div className="w-full h-full bg-[url('/thm-pattern-5.png')] bg-repeat left" />
+            <div className="w-full h-full bg-[url('/VideoSec/thm-pattern-5.png')] bg-repeat left" />
           </div>
           <div className="absolute inset-0 bg-[#e63a27] red-left-shape-2 z-20">
-            <div className="w-full h-full bg-[url('/thm-pattern-5.png')] bg-repeat" />
+            <div className="w-full h-full bg-[url('/VideoSec/thm-pattern-5.png')] bg-repeat" />
           </div>
 
           <div className="flex justify-center items-center">
@@ -123,7 +123,7 @@ const VideoSection = ({ margin }: Props) => {
               </div>
             </div>
             <div className="absolute inset-0 bg-[#e63a27] red-left-shape-1 z-20 translate-y-20">
-              <div className="w-full h-full bg-[url('/thm-pattern-5.png')] bg-repeat" />
+              <div className="w-full h-full bg-[url('/VideoSec/thm-pattern-5.png')] bg-repeat" />
             </div>
           </div>
         </motion.div>
@@ -131,9 +131,7 @@ const VideoSection = ({ margin }: Props) => {
 
       {/* Video Modal with accessibility + hydration-safe iframe */}
       <Dialog open={isOpen} onOpenChange={setIsOpen}>
-        <DialogContent
-          className="w-[90vw] md:w-[80vw] lg:w-[70vw] xl:w-[60vw] p-0 rounded-lg border-none shadow-lg backdrop-blur-xl bg-black/40"
-        >
+        <DialogContent className="w-[90vw] md:w-[80vw] lg:w-[70vw] xl:w-[60vw] p-0 rounded-lg border-none shadow-lg backdrop-blur-xl bg-black/40">
           <VisuallyHidden>
             <DialogTitle>Flat Roof Installation Video</DialogTitle>
           </VisuallyHidden>

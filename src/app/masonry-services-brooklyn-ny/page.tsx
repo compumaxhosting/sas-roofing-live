@@ -33,7 +33,7 @@ const page = () => {
       <BreadCrum2
         breadcrumbItems={[]}
         pageTitle={"Masonry Services"}
-        imageSrc={"/masonry_services.jpg"}
+        imageSrc={"/page-bgImage/masonry_services.jpg"}
       />
       <Masonry />
       <motion.div

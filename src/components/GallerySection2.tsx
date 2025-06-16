@@ -5,24 +5,24 @@ import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 
 const images = [
-  "/gallery1.jpg",
-  "/gallery2.jpg",
-  "/gallery5.jpg",
-  "/gallery6.jpg",
-  "/gallery7.jpg",
-  "/gallery1.jpg",
-  "/gallery10.jpg",
-  "/gallery11.jpg",
-  "/gallery12.jpg",
-  "/gallery13.jpg",
-  "/gallery14.jpg",
-  "/gallery15.jpg",
-  "/gallery16.jpg",
-  "/gallery17.jpg",
-  "/gallery18.jpg",
-  "/gallery19.jpg",
-  "/gallery20.jpg",
-  "/gallery21.jpg",
+  "/Gallery/gallery1.jpg",
+  "/Gallery/gallery2.jpg",
+  "/Gallery/gallery5.jpg",
+  "/Gallery/gallery6.jpg",
+  "/Gallery/gallery7.jpg",
+  "/Gallery/gallery1.jpg",
+  "/Gallery/gallery10.jpg",
+  "/Gallery/gallery11.jpg",
+  "/Gallery/gallery12.jpg",
+  "/Gallery/gallery13.jpg",
+  "/Gallery/gallery14.jpg",
+  "/Gallery/gallery15.jpg",
+  "/Gallery/gallery16.jpg",
+  "/Gallery/gallery17.jpg",
+  "/Gallery/gallery18.jpg",
+  "/Gallery/gallery19.jpg",
+  "/Gallery/gallery20.jpg",
+  "/Gallery/gallery21.jpg",
 ];
 
 const getAspectClass = (src: string) => {
@@ -163,7 +163,12 @@ const GalleryCard = ({
           aria-label={`Zoom in on ${alt}`}
           type="button"
         >
-          <Image src="/search.png" alt="Zoom icon" width={20} height={20} />
+          <Image
+            src="/Gallery/search.png"
+            alt="Zoom icon"
+            width={20}
+            height={20}
+          />
         </button>
       </div>
     </motion.div>

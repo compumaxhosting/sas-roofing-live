@@ -163,7 +163,7 @@ export default function NavLinks({
               className="md:hidden border-2 border-white p-2"
             >
               <Image
-                src="/menu4.png"
+                src="/Navbar/menu4.png"
                 alt="Open menu icon" // Descriptive alt text
                 width={28}
                 height={28}
@@ -177,7 +177,7 @@ export default function NavLinks({
               className="hidden md:block border-2 border-[#e63a27] p-2"
             >
               <Image
-                src="/menu3.png"
+                src="/Navbar/menu3.png"
                 alt="Open menu icon" // Descriptive alt text
                 width={28}
                 height={28}
@@ -222,7 +222,7 @@ export default function NavLinks({
               className="w-full h-full relative cursor-pointer"
             >
               <Image
-                src="/menu.png"
+                src="/Navbar/menu.png"
                 alt=""
                 fill
                 className="object-contain opacity-100 hover:opacity-0 transition-opacity duration-200"

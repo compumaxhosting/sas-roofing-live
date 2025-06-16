@@ -125,7 +125,7 @@ export default function SidebarOverlay({ onClose }: { onClose: () => void }) {
       role="dialog"
       aria-modal="true"
       aria-label="Sidebar Menu" // Label for the modal overlay itself
-      className="fixed inset-0 z-[999] bg-black/70 flex justify-start cursor-[url('/white_cursor.png')_0_0,auto] font-inter"
+      className="fixed inset-0 z-[999] bg-black/70 flex justify-start cursor-[url('/Navbar/white_cursor.png')_0_0,auto] font-inter"
       // Added aria-hidden and tabIndex for the overlay, which serves as a clickable backdrop
       aria-hidden={false} // This div is always visible when the component is mounted
       tabIndex={0} // Make the overlay focusable for click-to-close behavior with keyboard
@@ -161,7 +161,7 @@ export default function SidebarOverlay({ onClose }: { onClose: () => void }) {
             onClick={onClose} // Close sidebar when logo is clicked
           >
             <Image
-              src="/Logo.png"
+              src="/Navbar/Logo.png"
               alt="SAS Roofing Company Logo"
               width={240}
               height={240}

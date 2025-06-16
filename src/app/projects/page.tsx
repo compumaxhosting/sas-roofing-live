@@ -20,7 +20,7 @@ const page = () => {
       <BreadCrum2
         breadcrumbItems={[]}
         pageTitle={"Gallery"}
-        imageSrc={"/breadcrumb-20.png"}
+        imageSrc={"/page-bgImage/breadcrumb-20.png"}
       />
       <OurProjects gallery={number} />
       <VideoSection margin={mvalue} />

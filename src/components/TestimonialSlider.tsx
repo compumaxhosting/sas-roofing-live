@@ -17,7 +17,7 @@ const testimonials = [
     roof from some leaking we had during a bad storm . Mohamad was kind and
     flexible with us.`,
     rating: 5,
-    avatar: "/user.png",
+    avatar: "/Navbar/user.png",
   },
   {
     name: "Master Showan",
@@ -26,7 +26,7 @@ const testimonials = [
     review because I have had different companies worked on my roof and
     after a heavy rain, water leaked inside.`,
     rating: 5,
-    avatar: "/user.png",
+    avatar: "/Navbar/user.png",
   },
   {
     name: "Nicole Brier",
@@ -35,7 +35,7 @@ const testimonials = [
     inside from moisture. They were professional, prompt, worked quick and
     clean and did a wonderful job. Well priced also. Highly recommend.`,
     rating: 5,
-    avatar: "/user.png",
+    avatar: "/Navbar/user.png",
   },
   {
     name: "David Packer",
@@ -44,7 +44,7 @@ const testimonials = [
     promptly and did a great job on repainting sand waterproofing some of my
     outside walls. The communication was excellent.`,
     rating: 5,
-    avatar: "/user.png",
+    avatar: "/Navbar/user.png",
   },
   {
     name: "T Brown",
@@ -53,7 +53,7 @@ const testimonials = [
     to our request for estimate moved things around to meet with us even
     though his schedule was extremely busy and gave us fair price.`,
     rating: 5,
-    avatar: "/user.png",
+    avatar: "/Navbar/user.png",
   },
   {
     name: "Sean McBRIDE",
@@ -62,7 +62,7 @@ const testimonials = [
     our roof that we’d been having for 9 months. Mohammad was incredibly
     responsive during the process and very reasonably priced.`,
     rating: 5,
-    avatar: "/user.png",
+    avatar: "/Navbar/user.png",
   },
 ];
 
@@ -113,7 +113,7 @@ export default function TestimonialSlider() {
                 <div className="w-[65%] p-6 text-left">
                   <div className="flex items-start gap-3 mb-2">
                     <Image
-                      src="/quote.png"
+                      src="/Navbar/quote.png"
                       alt="Quote"
                       width={40}
                       height={40}

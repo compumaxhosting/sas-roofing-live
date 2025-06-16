@@ -47,7 +47,7 @@ export default function AboutCompany() {
           >
             <div className="relative w-full h-full border-2 border-[#e63a27] overflow-hidden shadow-lg">
               <Image
-                src="/aboutusimage.png"
+                src="/about-us/aboutusimage.png"
                 alt="SAS Roofing & Waterproofing team working on a project"
                 fill
                 className="object-contain mt:18 sm:mt-18 md:mt-20"
@@ -150,7 +150,7 @@ export default function AboutCompany() {
               aria-label="Certified Company #2050416-DCA"
             >
               <Image
-                src="/certified-badge.jpg"
+                src="/about-us/certified-badge.jpg"
                 alt="Certified Company Badge"
                 width={50}
                 height={50}

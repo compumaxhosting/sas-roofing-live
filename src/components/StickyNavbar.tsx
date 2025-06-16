@@ -86,7 +86,12 @@ export default function StickyNavbar() {
   return (
     <div className="hidden desktop-nav-item fixed top-0 left-0 right-0 items-center justify-between bg-white z-50 shadow-md transition-all">
       <Link href="/" className="bg-[#003269] px-8" aria-label="Go to Home Page">
-        <Image src="/Logo.png" alt="Company Logo" width={210} height={160} />
+        <Image
+          src="/Navbar/Logo.png"
+          alt="Company Logo"
+          width={210}
+          height={160}
+        />
       </Link>
 
       <nav

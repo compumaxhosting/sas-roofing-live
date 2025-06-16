@@ -44,7 +44,7 @@ export default function MobileHeaderNew() {
           role="link" // Explicitly defines the element's role for assistive technologies
         >
           <Image
-            src="/Logo.png"
+            src="/Navbar/Logo.png"
             fill
             alt="SAS Roofing & Waterproofing Company Logo" // More descriptive alt text for the logo
             className="object-contain drop-shadow-md"
@@ -61,7 +61,7 @@ export default function MobileHeaderNew() {
           className="absolute top-1/2 right-4 transform -translate-y-1/2 z-10 w-12 h-12 flex items-center justify-center"
         >
           <Image
-            src="/menu4.webp"
+            src="/Navbar/menu4.webp"
             alt="Menu icon" // Concise and descriptive alt text for the icon
             width={28}
             height={28}
