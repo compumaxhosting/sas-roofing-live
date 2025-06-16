@@ -22,7 +22,7 @@ const BreadCrum2: React.FC<BreadCrumProps> = ({
     <div className="relative h-60 md:h-85 w-full text-white text-center">
       <Image
         src={imageSrc}
-        alt="" // Set alt to empty string if the image is purely decorative background
+        alt="bg-Image" // Set alt to empty string if the image is purely decorative background
         fill
         loading="lazy"
         className="object-cover object-top brightness-60"

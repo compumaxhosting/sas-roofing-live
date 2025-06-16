@@ -17,7 +17,7 @@ const page = () => {
       <BreadCrum2
         breadcrumbItems={[]}
         pageTitle={"BLOGS"}
-        imageSrc={"/page-bgImage/breadcrumb-20.png"}
+        imageSrc={"/page-bgImage/roofing-service.jpg"}
       />
       <SatisfactionFactor />
       <FooterTopCTA />

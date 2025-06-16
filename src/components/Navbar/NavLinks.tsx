@@ -272,7 +272,7 @@ export default function NavLinks({
             aria-label="Company logo, navigates to home page"
           >
             <Image
-              src="/Logo.png"
+              src="/Navbar/Logo.png"
               alt="Company Logo" // Alt text is good
               width={260}
               height={130}
