@@ -229,7 +229,7 @@ export default function NavLinks({
                 aria-hidden="true" // Decorative image for the button
               />
               <Image
-                src="/menu-hover.png"
+                src="/Navbar/menu-hover.png"
                 alt=""
                 fill
                 className="object-contain opacity-0 hover:opacity-100 transition-opacity duration-200 absolute top-0 left-0"
