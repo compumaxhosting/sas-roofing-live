@@ -30,7 +30,7 @@ const reviewLogos = [
     href: "https://www.google.com/maps/place/SAS+Roofing+&+Waterproofing/@40.6359752,-73.9646363,17z",
   },
   {
-    alt: "X",
+    alt: "X (formerly Twitter)",
     src: "/reviews/x.png",
     href: "https://x.com/sasroofing91254",
   },
@@ -40,7 +40,7 @@ const reviewLogos = [
     href: "https://www.angi.com/companylist/us/ny/brooklyn/",
   },
   {
-    alt: "BBB",
+    alt: "Better Business Bureau",
     src: "/reviews/bbb.png",
     href: "https://www.bbb.org/us/ny/brooklyn/profile/roofing-contractors/sas-contracting-co-inc-0121-161078/#sealclick",
   },
@@ -49,40 +49,39 @@ const reviewLogos = [
 export default function CustomerReviews() {
   return (
     <section
+      aria-labelledby="customer-reviews-heading"
       className="bg-[#f9f9f9] py-10 px-4"
-      aria-label="Customer review platforms"
-      role="region"
     >
       <div className="text-center mb-6">
-        <h2
-          className="text-2xl sm:text-3xl font-bold text-[#003269] font-inter"
+        <h1
           id="customer-reviews-heading"
+          className="text-2xl sm:text-3xl font-bold text-[#003269] font-inter"
         >
           Customer Reviews
-        </h2>
-        <div className="mt-1 h-1 w-12 mx-auto bg-[#003269]" />
+        </h1>
+        <div
+          className="mt-1 h-1 w-12 mx-auto bg-[#003269]"
+          aria-hidden="true"
+        />
       </div>
 
-      <div
-        className="flex flex-wrap justify-center gap-6 sm:gap-8"
-        aria-labelledby="customer-reviews-heading"
-      >
+      <div className="flex flex-wrap justify-center gap-6 sm:gap-8">
         {reviewLogos.map(({ alt, src, href }, index) => (
           <motion.a
-            key={alt}
+            key={href}
             href={href}
             target="_blank"
             rel="noopener noreferrer"
-            aria-label={`Visit our reviews on ${alt}`}
+            aria-label={`View SAS Roofing's reviews on ${alt}`}
             className="border rounded-md p-3 shadow-sm hover:shadow-md transition bg-white w-[70px] h-[70px] lg:w-[100px] lg:h-[100px] flex items-center justify-center"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.4, delay: index * 0.08 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.5, ease: "easeOut", delay: index * 0.1 }}
           >
             <Image
               src={src}
-              alt={`Logo of ${alt}`}
+              alt={`${alt} logo`}
               width={72}
               height={72}
               loading="lazy"

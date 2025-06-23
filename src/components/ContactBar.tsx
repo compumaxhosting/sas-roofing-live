@@ -6,42 +6,41 @@ import Link from "next/link";
 const contactItems = [
   {
     href: "tel:13472216549",
-    label: "Call SAS Roofing at 1-347-221-6549", // More specific label
-    icon: <Phone size={24} aria-hidden="true" />, // Hide icon from screen readers
-    text: "Call Us", // More action-oriented text
+    ariaLabel: "Call SAS Roofing at 1-347-221-6549",
+    Icon: Phone,
+    text: "Call Us",
   },
   {
     href: "https://maps.google.com/?cid=6135882278024640728&entry=gps&g_st=aw",
-    label: "View SAS Roofing's location on Google Maps (opens in new tab)", // Clarify new tab
-    icon: <MapPin size={24} aria-hidden="true" />, // Hide icon from screen readers
-    text: "Our Location", // More descriptive text
+    ariaLabel: "View SAS Roofing's location on Google Maps (opens in new tab)",
+    Icon: MapPin,
+    text: "Our Location",
     external: true,
   },
   {
     href: "mailto:sascon09@yahoo.com?subject=Inquiry&body=Hi%20SAS%20Team%2C%0A%0AI%20would%20like%20to%20know%20more%20about...",
-    label: "Email SAS Roofing at sascon09@yahoo.com", // More specific label
-    icon: <Mail size={24} aria-hidden="true" />, // Hide icon from screen readers
-    text: "Email Us", // More action-oriented text
+    ariaLabel: "Email SAS Roofing at sascon09@yahoo.com",
+    Icon: Mail,
+    text: "Email Us",
   },
 ];
 
 const ContactBar: React.FC = () => (
   <nav
     role="navigation"
-    aria-label="Mobile contact navigation bar" // Slightly more descriptive label
+    aria-label="Mobile contact navigation"
     className="fixed bottom-0 left-0 right-0 z-50 md:hidden grid grid-cols-3 divide-x divide-white bg-[#e63a27] text-white text-center shadow-[0_-2px_10px_rgba(0,0,0,0.2)]"
   >
-    {contactItems.map(({ href, label, icon, text, external }, index) => (
+    {contactItems.map(({ href, ariaLabel, Icon, text, external }, index) => (
       <Link
-        key={index} // Using index as key is acceptable here as the list is static
+        key={index}
         href={href}
-        aria-label={label}
-        {...(external && { target: "_blank", rel: "noopener noreferrer" })}
-        className="flex flex-col items-center justify-center py-3 hover:bg-[#e63a27] transition-colors font-inter"
+        aria-label={ariaLabel}
+        target={external ? "_blank" : undefined}
+        rel={external ? "noopener noreferrer" : undefined}
+        className="flex flex-col items-center justify-center py-3 hover:bg-[#cc2a18] transition-colors font-inter"
       >
-        {icon}
-        {/* The span content is visible, so the aria-label on the Link is the primary announcement. */}
-        {/* This text is a visual label that supports the icon for sighted users. */}
+        <Icon size={24} aria-hidden="true" />
         <span className="text-xs font-semibold mt-1">{text}</span>
       </Link>
     ))}

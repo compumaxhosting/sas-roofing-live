@@ -16,12 +16,12 @@ export default function AboutCompany() {
   const [showMore, setShowMore] = useState(false);
 
   return (
-    <div
+    <section
       className="mb-5 md:mb-10 shadow-xl py-10 sm:py-16 lg:py-20 bg-[#f9f9f9]"
       role="region"
       aria-label="About Company Section"
     >
-      <section className="flex flex-col items-center xl:flex-row xl:items-start gap-10 lg:gap-16 max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 xl:px-16 2xl:px-20">
+      <div className="flex flex-col items-center xl:flex-row xl:items-start gap-10 lg:gap-16 max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 xl:px-16 2xl:px-20">
         {/* Image Block */}
         <motion.figure
           initial={{ opacity: 0, x: -50 }}
@@ -42,19 +42,21 @@ export default function AboutCompany() {
             <figcaption className="sr-only">
               Over 30 years of roofing and waterproofing experience
             </figcaption>
+
             <div className="absolute top-4 right-10 bg-white bg-opacity-90 px-4 py-3 rounded-md text-[#003269] shadow-md flex items-center gap-2">
               <span className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold font-inter">
                 30+
               </span>
-              <div className="leading-tight text-base sm:text-xl font-extrabold uppercase font-inter">
-                <div>Years</div>
-                <div>of Experience</div>
-              </div>
+              <span className="leading-tight text-base sm:text-xl font-extrabold uppercase font-inter">
+                Years
+                <br />
+                of Experience
+              </span>
             </div>
           </div>
         </motion.figure>
 
-        {/* Text Content */}
+        {/* Text Block */}
         <motion.article
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -63,11 +65,11 @@ export default function AboutCompany() {
           className="w-full max-w-lg xl:max-w-full text-left"
         >
           <header className="flex items-center justify-center xl:justify-start gap-3 mb-2">
-            <div className="w-6 h-[1px] bg-[#e63a27]" />
+            <hr className="w-6 h-[1px] bg-[#e63a27]" />
             <h2 className="text-sm sm:text-base uppercase text-[#e63a27] font-semibold tracking-wider font-inter">
               About Company
             </h2>
-            <div className="w-6 h-[1px] bg-[#e63a27]" />
+            <hr className="w-6 h-[1px] bg-[#e63a27]" />
           </header>
 
           <h1 className="text-3xl sm:text-4xl lg:text-5xl font-semibold text-[#003269] leading-tight mb-4 font-inter">
@@ -79,14 +81,14 @@ export default function AboutCompany() {
             aria-label="Company Features"
           >
             {features.map(({ icon: Icon, label, color }) => (
-              <div
+              <span
                 key={label}
                 className="flex items-center gap-1.5 font-bold uppercase"
                 aria-label={label}
               >
                 <Icon className={color} aria-hidden="true" />
-                <span>{label}</span>
-              </div>
+                {label}
+              </span>
             ))}
           </div>
 
@@ -133,7 +135,11 @@ export default function AboutCompany() {
             </p>
 
             {showMore && (
-              <div className="space-y-4 mt-4" aria-live="polite">
+              <div
+                className="space-y-4 mt-4"
+                aria-live="polite"
+                id="company-details"
+              >
                 <p>
                   As a trusted roofing contractor in Brooklyn, we specialize in
                   everything from residential roof repairs to complete
@@ -168,7 +174,7 @@ export default function AboutCompany() {
 
           <div
             className="flex items-start gap-2 mb-6"
-            aria-label="Certification Badge"
+            aria-label="Certified Company Badge"
           >
             <Image
               src="/about-us/certified-badge.jpg"
@@ -177,10 +183,10 @@ export default function AboutCompany() {
               height={50}
               className="flex-shrink-0"
             />
-            <div className="text-[#003269] text-base font-inter">
-              <h4 className="font-bold mb-1">Certified Company</h4>
-              <p className="text-[#e63a27]">#2050416-DCA</p>
-            </div>
+            <span className="text-[#003269] text-base font-inter">
+              <strong className="block mb-1">Certified Company</strong>
+              <span className="text-[#e63a27]">#2050416-DCA</span>
+            </span>
           </div>
 
           <Link
@@ -188,12 +194,12 @@ export default function AboutCompany() {
             className="inline-block border-4 border-[#003269] p-2 group self-start mt-4"
             aria-label="Read more on About Us page"
           >
-            <span className="block border-2 border-[#e63a27] text-[#e63a27] px-6 py-3 font-bold uppercase tracking-wide text-sm lg:text-base group-hover:bg-[#e63a27] group-hover:text-white transition font-inter">
+            <span className="block border-2 border-[#e63a27] text-[#e63a27] px-6 py-3 font-bold uppercase tracking-wide text-sm lg:text-base group-hover:bg-[#e63a27] group-hover:text-white transition font-inter hover-button">
               Read More
             </span>
           </Link>
         </motion.article>
-      </section>
-    </div>
+      </div>
+    </section>
   );
 }

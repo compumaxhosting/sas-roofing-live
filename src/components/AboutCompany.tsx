@@ -21,49 +21,48 @@ const FeatureItem = ({
   label: string;
   color: string;
 }) => (
-  <div className="flex items-center gap-1.5" aria-label={label}>
+  <span className="flex items-center gap-1.5" aria-label={label}>
     <Icon className={color} aria-hidden="true" focusable="false" />
     <span className="font-bold uppercase">{label}</span>
-  </div>
+  </span>
 );
 
 export default function AboutCompany() {
   return (
-    <div
+    <section
       className="m-2 mb-5 md:m-0 md:mb-10 shadow-xl"
       role="region"
       aria-label="About SAS Roofing Company"
     >
-      <div className="py-12 sm:py-16 lg:py-20 bg-[#f5f5f5] relative">
-        <section className="flex flex-col xl:flex-row items-center xl:items-start px-6 sm:px-8 lg:px-12 xl:px-16 2xl:px-20 gap-10 lg:gap-16 max-w-7xl mx-auto">
+      <div className="py-12 sm:py-16 lg:py-20 bg-[#f5f5f5]">
+        <div className="flex flex-col xl:flex-row items-center xl:items-start px-6 sm:px-8 lg:px-12 xl:px-16 2xl:px-20 gap-10 lg:gap-16 max-w-7xl mx-auto">
           {/* Image Block */}
           <motion.figure
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6, ease: "easeOut" }}
             viewport={{ once: true }}
-            className="relative w-full max-w-sm md:max-w-md lg:max-w-lg xl:max-w-xl flex-shrink-0 aspect-[5/5] shadow-lg"
+            className="relative w-full max-w-sm md:max-w-md lg:max-w-lg xl:max-w-xl flex-shrink-0 aspect-[5/5] shadow-lg border-2 border-[#e63a27] overflow-hidden"
             aria-label="Team members working on roofing"
           >
-            <div className="relative w-full h-full border-2 border-[#e63a27] overflow-hidden shadow-lg">
-              <Image
-                src="/about-us/aboutusimage.png"
-                alt="SAS Roofing & Waterproofing team working on a project"
-                fill
-                className="object-contain mt:18 sm:mt-18 md:mt-20"
-              />
-              <figcaption className="sr-only">
-                SAS team with over 30 years of experience
-              </figcaption>
-              <div className="absolute top-4 right-10 bg-white bg-opacity-90 px-4 py-3 rounded-md text-[#003269] shadow-md flex items-center gap-2">
-                <span className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold font-inter">
-                  30+
-                </span>
-                <div className="leading-tight text-left text-base sm:text-xl font-extrabold uppercase font-inter">
-                  <div>Years</div>
-                  <div>of Experience</div>
-                </div>
-              </div>
+            <Image
+              src="/about-us/aboutusimage.png"
+              alt="SAS Roofing & Waterproofing team working on a project"
+              fill
+              className="object-contain mt:18 sm:mt-18 md:mt-20"
+            />
+            <figcaption className="sr-only">
+              SAS team with over 30 years of experience
+            </figcaption>
+            <div className="absolute top-4 right-10 bg-white bg-opacity-90 px-4 py-3 rounded-md text-[#003269] shadow-md flex items-center gap-2">
+              <span className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold font-inter">
+                30+
+              </span>
+              <span className="leading-tight text-left text-base sm:text-xl font-extrabold uppercase font-inter">
+                <span>Years</span>
+                <br />
+                <span>of Experience</span>
+              </span>
             </div>
           </motion.figure>
 
@@ -76,11 +75,11 @@ export default function AboutCompany() {
             className="w-full max-w-lg xl:max-w-full text-left"
           >
             <header className="flex items-center justify-center xl:justify-start gap-3 mb-2">
-              <div className="w-6 h-[1px] bg-[#e63a27]" />
+              <hr className="w-6 h-[1px] bg-[#e63a27]" />
               <h4 className="text-sm sm:text-base uppercase text-[#e63a27] font-semibold tracking-wider font-inter">
                 About Company
               </h4>
-              <div className="w-6 h-[1px] bg-[#e63a27]" />
+              <hr className="w-6 h-[1px] bg-[#e63a27]" />
             </header>
 
             <h1 className="text-3xl sm:text-4xl lg:text-5xl font-semibold text-[#003269] leading-tight mb-4 font-inter">
@@ -91,13 +90,8 @@ export default function AboutCompany() {
               className="flex flex-wrap gap-x-6 gap-y-3 text-sm font-semibold text-[#003269] mb-6"
               aria-label="Company values"
             >
-              {features.map(({ icon, label, color }) => (
-                <FeatureItem
-                  key={label}
-                  icon={icon}
-                  label={label}
-                  color={color}
-                />
+              {features.map((item) => (
+                <FeatureItem key={item.label} {...item} />
               ))}
             </div>
 
@@ -155,10 +149,10 @@ export default function AboutCompany() {
                 width={50}
                 height={50}
               />
-              <div className="text-[#003269] text-base font-inter">
-                <h4 className="font-bold mb-1">Certified Company</h4>
-                <p className="text-[#e63a27]">#2050416-DCA</p>
-              </div>
+              <span className="text-[#003269] text-base font-inter">
+                <strong className="block mb-1">Certified Company</strong>
+                <span className="text-[#e63a27]">#2050416-DCA</span>
+              </span>
             </div>
 
             <Link
@@ -166,13 +160,13 @@ export default function AboutCompany() {
               className="inline-block border-4 border-[#003269] p-1 group mt-auto"
               aria-label="Read more about SAS Roofing"
             >
-              <span className="block border-2 border-[#e63a27] text-[#e63a27] px-6 py-3 font-bold uppercase tracking-wide hover:bg-[#e63a27] hover:text-white transition text-sm lg:text-base font-inter">
+              <span className="block border-2 border-[#e63a27] text-[#e63a27] px-6 py-3 font-bold uppercase tracking-wide hover:bg-[#e63a27] hover:text-white transition text-sm lg:text-base font-inter hover-button">
                 Read More
               </span>
             </Link>
           </motion.article>
-        </section>
+        </div>
       </div>
-    </div>
+    </section>
   );
 }

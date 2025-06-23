@@ -9,9 +9,9 @@ const VideoIframe = () => {
       src={videoUrl}
       title="Flat Roof Installation Video"
       aria-label="Flat Roof Installation Video from YouTube"
-      role="document"
       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
       allowFullScreen
+      loading="lazy"
       className="w-full h-full border-none rounded-lg"
     />
   );

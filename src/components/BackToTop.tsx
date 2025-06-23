@@ -9,10 +9,12 @@ const BackToTop = () => {
 
   useEffect(() => {
     const checkScroll = () => {
-      setIsVisible(window.scrollY > 300);
+      requestAnimationFrame(() => {
+        setIsVisible(window.scrollY > 300);
+      });
     };
 
-    window.addEventListener("scroll", checkScroll);
+    window.addEventListener("scroll", checkScroll, { passive: true });
     return () => window.removeEventListener("scroll", checkScroll);
   }, []);
 
@@ -31,18 +33,17 @@ const BackToTop = () => {
     <AnimatePresence>
       {isVisible && (
         <motion.button
+          type="button"
           onClick={scrollToTop}
           onKeyDown={handleKeyDown}
           aria-label="Back to Top"
-          role="button"
-          tabIndex={0}
           initial={{ opacity: 0, scale: 0.75 }}
           animate={{ opacity: 1, scale: 1 }}
           exit={{ opacity: 0, scale: 0.75 }}
           transition={{ duration: 0.3 }}
-          className="hidden xl:block fixed bottom-4 right-4 p-4 bg-white hover:bg-[#003269] z-50 text-white shadow-lg"
+          className="hidden xl:flex items-center justify-center fixed bottom-4 right-4 p-3 rounded-full bg-white text-[#e63a27] hover:bg-[#003269] hover:text-white transition-colors z-50 shadow-lg focus:outline-none focus:ring-2 focus:ring-[#003269]"
         >
-          <GoArrowUp size={30} className="text-[#e63a27]" />
+          <GoArrowUp size={24} />
         </motion.button>
       )}
     </AnimatePresence>

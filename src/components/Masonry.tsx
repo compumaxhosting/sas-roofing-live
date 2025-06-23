@@ -5,11 +5,11 @@ import Link from "next/link";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 40 },
-  visible: {
+  visible: (i: number) => ({
     opacity: 1,
     y: 0,
-    transition: { duration: 0.6, ease: "easeOut" },
-  },
+    transition: { duration: 0.6, ease: "easeOut", delay: i * 0.15 },
+  }),
 };
 
 export default function MasonryServices() {
@@ -33,7 +33,8 @@ export default function MasonryServices() {
   ];
 
   return (
-    <section className="px-6 py-12 md:px-16 bg-white text-[#003269] lg:mx-30">
+    <section className="px-6 py-12 md:px-16 bg-white text-[#003269]">
+      {/* Header Section */}
       <motion.div
         initial="hidden"
         whileInView="visible"
@@ -48,28 +49,30 @@ export default function MasonryServices() {
               Top Masonry Contractors NYC
             </span>
           </div>
-          <h2 className="text-3xl font-bold text-[#003269] leading-snug font-inter">
+          <h1 className="text-3xl font-bold text-[#003269] leading-snug font-inter">
             Expert Masonry Services in Brooklyn, Manhattan and Queens
-          </h2>
+          </h1>
         </div>
 
+        {/* CTA Button */}
         <Link
-          href="/masonry-services-brooklyn-ny"
-          className="group border-4 border-[#003269] p-2 inline-block flex-shrink-0"
+          href="/services"
+          className="group border-4 border-[#003269] p-2 inline-block"
+          aria-label="See all masonry services"
         >
-          <div className="border border-[#e63a27] px-5 py-3 text-xs sm:text-sm md:text-base lg:text-lg font-bold text-[#e63a27] uppercase whitespace-nowrap hover-button font-inter">
+          <div className="border border-[#e63a27] px-5 py-3 text-xs sm:text-sm md:text-base lg:text-lg font-bold text-[#e63a27] uppercase hover-button font-inter">
             All Services
           </div>
         </Link>
       </motion.div>
 
-      {/* Description Paragraph */}
+      {/* Intro Paragraph */}
       <motion.p
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, amount: 0.1 }}
         variants={fadeUp}
-        className="text-sm md:text-base text-gray-700 mb-6 font-bevietnam"
+        className="text-sm md:text-base text-gray-700 mb-6 font-bevietnam max-w-5xl"
       >
         SAS Roofing & Waterproofing provides top-tier masonry services across
         Brooklyn, Manhattan, and Queens. Whether you need brickwork contractors
@@ -77,26 +80,31 @@ export default function MasonryServices() {
         tailored to your needs.
       </motion.p>
 
-      <div className="grid gap-8">
+      {/* Services List */}
+      <div className="grid gap-10">
         {services.map(({ title, desc, isLink }, idx) => (
           <motion.div
             key={idx}
+            custom={idx}
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.1 }}
             variants={fadeUp}
-            className="space-y-2"
+            className="space-y-3"
           >
-            <h3 className="text-xl md:text-2xl font-bold text-[#003269]">
+            <h2 className="text-xl md:text-2xl font-bold text-[#003269] font-inter">
               {title}
-            </h3>
+            </h2>
             {isLink ? (
               <div className="text-sm md:text-base text-gray-700 font-bevietnam">
                 At SAS Roofing & Waterproofing, we are committed to delivering
                 exceptional masonry solutions. Our team provides reliable,
                 long-lasting masonry construction and repair across Brooklyn,
                 Manhattan, and Queens. Visit{" "}
-                <Link href="/" className="text-[#e63a27] hover:text-[#003269]">
+                <Link
+                  href="/"
+                  className="text-[#e63a27] hover:text-[#003269] underline"
+                >
                   SAS Roofing & Waterproofing
                 </Link>{" "}
                 to learn more.

@@ -67,23 +67,6 @@ const slides = [
     link: "/",
     initialLikeCount: 180,
   },
-  {
-    title:
-      "Expert Masonry Services Across Brooklyn, Manhattan & Queens: Quality You Can Trust",
-    description: "THE MASON’S MARK",
-    date: "07 MAR",
-    image: "/blog/masonry_services.png",
-    link: "/",
-    initialLikeCount: 111,
-  },
-  {
-    title: "Roofing Excellence Across New York’s Core Boroughs",
-    description: "ROOFTOP RELIABILITY",
-    date: "16 MAR",
-    image: "/blog/roofing1.jpg",
-    link: "/",
-    initialLikeCount: 122,
-  },
 ];
 
 export default function BlogSlider({ swiperRef }: Props) {
@@ -94,24 +77,21 @@ export default function BlogSlider({ swiperRef }: Props) {
     if (swiperRef) {
       swiperRef.current = swiperInstanceRef.current;
     }
-
     return () => {
       if (autoplayTimeout.current) clearTimeout(autoplayTimeout.current);
     };
   }, [swiperRef]);
 
   const handleManualSlide = (direction: "prev" | "next") => {
-    if (!swiperInstanceRef.current) return;
-
     const swiper = swiperInstanceRef.current;
-    swiper.autoplay?.stop();
+    if (!swiper) return;
 
+    swiper.autoplay?.stop();
     if (direction === "next") {
       swiper.slideNext();
     } else {
       swiper.slidePrev();
     }
-        
     autoplayTimeout.current = setTimeout(() => {
       swiper.autoplay?.start();
     }, 2000);
@@ -122,8 +102,8 @@ export default function BlogSlider({ swiperRef }: Props) {
 
   return (
     <section
-      aria-label="Blog posts slider"
       className="w-full px-4 sm:px-6 max-w-screen-xl mx-auto"
+      aria-label="Blog posts carousel"
     >
       <Swiper
         loop
@@ -146,29 +126,35 @@ export default function BlogSlider({ swiperRef }: Props) {
           if (swiperRef) swiperRef.current = swiper;
         }}
         className="pb-6"
+        aria-roledescription="carousel"
+        aria-label="Latest blog posts"
       >
-        {slides.slice(0, 6).map((slide, i) => (
-          <SwiperSlide key={i}>
+        {slides.map((slide, i) => (
+          <SwiperSlide
+            key={i}
+            aria-label={`Slide ${i + 1} of ${slides.length}`}
+          >
             <BlogSlideCard slide={slide} />
           </SwiperSlide>
         ))}
       </Swiper>
 
-      {/* Slider Navigation */}
       <div
         className="flex justify-center gap-4 pt-6"
         aria-label="Slider navigation controls"
       >
         <button
+          type="button"
           onClick={() => handleManualSlide("prev")}
-          aria-label="Slide to previous"
+          aria-label="Previous Slide"
           className={navBtnClass}
         >
           <FiChevronLeft className="w-5 h-5" aria-hidden="true" />
         </button>
         <button
+          type="button"
           onClick={() => handleManualSlide("next")}
-          aria-label="Slide to next"
+          aria-label="Next Slide"
           className={navBtnClass}
         >
           <FiChevronRight className="w-5 h-5" aria-hidden="true" />

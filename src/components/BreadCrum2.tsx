@@ -20,24 +20,26 @@ const BreadCrum2: React.FC<BreadCrumProps> = ({
 }) => {
   return (
     <div className="relative h-60 md:h-85 w-full text-white text-center">
+      {/* Decorative background image */}
       <Image
         src={imageSrc}
-        alt="bg-Image" // Set alt to empty string if the image is purely decorative background
+        alt="" // Decorative image, alt="" ensures screen readers skip it
         fill
         loading="lazy"
+        decoding="async"
+        sizes="100vw"
         className="object-cover object-top brightness-60"
         quality={100}
-        priority={false}
       />
 
+      {/* Overlay Content */}
       <div className="absolute inset-0 flex flex-col justify-center items-center font-inter">
         <nav
-          aria-label="Breadcrumb navigation" // More descriptive aria-label for the navigation region
-          className="mb-2 flex flex-wrap justify-center text-sm gap-2 font-inter"
+          aria-label="Breadcrumb navigation"
+          className="mb-2 flex flex-wrap justify-center text-sm gap-2"
         >
-          {/* Use an ordered list for semantic breadcrumb structure */}
           <ol
-            className="flex p-0 m-0 list-none"
+            className="flex m-0 p-0 list-none"
             vocab="https://schema.org/"
             typeof="BreadcrumbList"
           >
@@ -55,7 +57,6 @@ const BreadCrum2: React.FC<BreadCrumProps> = ({
                       ? "font-semibold"
                       : "hover:underline"
                   }
-                  // aria-current="page" indicates the current location in the breadcrumb trail
                   aria-current={
                     index === breadcrumbItems.length - 1 ? "page" : undefined
                   }
@@ -64,9 +65,8 @@ const BreadCrum2: React.FC<BreadCrumProps> = ({
                 >
                   <span property="name">{item.label}</span>
                 </Link>
-                {/* Visual separator, hidden from screen readers */}
                 {index < breadcrumbItems.length - 1 && (
-                  <span className="ml-2 mr-2" aria-hidden="true">
+                  <span className="mx-2" aria-hidden="true">
                     ›
                   </span>
                 )}

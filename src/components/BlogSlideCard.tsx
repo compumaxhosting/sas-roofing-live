@@ -73,9 +73,9 @@ export default function BlogSlideCard({ slide }: { slide: Slide }) {
             <FiFolder className="w-4 h-4" aria-hidden="true" />
             <span>{slide.description}</span>
           </div>
-          <h3 className="font-bold text-base sm:text-lg md:text-xl leading-tight">
+          <h1 className="font-bold text-base sm:text-lg md:text-xl leading-tight">
             {slide.title}
-          </h3>
+          </h1>
         </div>
       </Link>
 

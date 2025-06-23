@@ -121,7 +121,7 @@ const ReviewSlider = () => {
           className="text-4xl font-bold text-gray-900 flex items-center justify-center font-inter"
         >
           4.7
-          <span className="ml-2 text-[#e63a27]" aria-hidden="true">
+          <span className="ml-2 text-[#FFBB29]" aria-hidden="true">
             ★★★★★
           </span>{" "}
           {/* Decorative stars, hidden from screen readers */}
@@ -209,7 +209,7 @@ const ReviewSlider = () => {
                   </div>
                 </div>
                 <div
-                  className="text-[#e63a27] text-3xl mt-2"
+                  className="text-[#FFBB29] text-3xl mt-2"
                   aria-hidden="true"
                 >
                   {"★".repeat(review.rating)}

@@ -31,7 +31,8 @@ const VideoSection = ({ margin }: Props) => {
   return (
     <div>
       <section
-        className={`relative w-full flex flex-col md:flex-row overflow-hidden h-[550px] bg-[#f0482f] lg:bg-[#f9f9f9] mb-${margin[1]} md:mb-${margin[1]} shadow-2xl`}
+        className="relative w-full flex flex-col md:flex-row overflow-hidden h-[550px] bg-[#f0482f] lg:bg-[#f9f9f9] shadow-2xl"
+        style={{ marginBottom: `${margin[1]}px` }}
       >
         <Image
           src="/Hero-Sec/slider-7.png"
@@ -64,9 +65,9 @@ const VideoSection = ({ margin }: Props) => {
                 <h5 className="text-sm uppercase font-semibold">Video Proof</h5>
               </div>
 
-              <h2 className="text-3xl lg:text-5xl font-medium leading-tight mb-4 font-inter">
+              <h1 className="text-3xl lg:text-5xl font-medium leading-tight mb-4 font-inter">
                 Have a Look <br /> At Our Video
-              </h2>
+              </h1>
 
               <ul className="space-y-2">
                 <li>

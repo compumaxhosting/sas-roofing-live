@@ -81,23 +81,23 @@ export default function Footer() {
       className="bg-[#003269] text-white text-sm sm:text-[15px]"
       aria-labelledby="footer-heading"
     >
-      <motion.h2
+      <motion.h1
         id="footer-heading" // Added ID for aria-labelledby on footer
         className="px-4 sm:px-6 md:px-12 pt-12 text-center text-xl sm:text-2xl md:text-3xl font-bold text-gray-100 mb-12 max-w-4xl mx-auto font-inter"
         {...fadeUp(0)}
       >
         QUALITY ROOFING IN BROOKLYN, NEW YORK & QUEENS
-      </motion.h2>
+      </motion.h1>
 
       <div className="px-4 sm:px-6 md:px-12 pb-12 max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-12">
         {/* About Section */}
         <motion.div {...fadeUp(0.1)} aria-labelledby="about-service-heading">
-          <h3
+          <h2
             id="about-service-heading"
             className="text-xl font-bold mb-2 font-inter"
           >
             About Service
-          </h3>{" "}
+          </h2>{" "}
           {/* Changed to h3 */}
           <div
             className="w-12 h-[2px] bg-[#e63a27] mb-3"
@@ -141,12 +141,12 @@ export default function Footer() {
 
         {/* Useful Links */}
         <motion.div {...fadeUp(0.2)} aria-labelledby="useful-links-heading">
-          <h3
+          <h2
             id="useful-links-heading"
             className="text-xl font-bold mb-2 font-inter"
           >
             Useful Links
-          </h3>{" "}
+          </h2>{" "}
           {/* Changed to h3 */}
           <div
             className="w-12 h-[2px] bg-[#e63a27] mb-3"
@@ -175,12 +175,12 @@ export default function Footer() {
 
         {/* Make Contact */}
         <motion.div {...fadeUp(0.3)} aria-labelledby="make-contact-heading">
-          <h3
+          <h2
             id="make-contact-heading"
             className="text-xl font-bold mb-2 font-inter"
           >
             Make Contact
-          </h3>{" "}
+          </h2>{" "}
           {/* Changed to h3 */}
           <div
             className="w-12 h-[2px] bg-[#e63a27] mb-3"

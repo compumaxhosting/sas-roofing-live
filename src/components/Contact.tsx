@@ -21,7 +21,6 @@ const Contact = () => {
 
   const shadowStyle = {
     boxShadow: "0 0 15px 5px rgba(0, 0, 0, 0.1)",
-    // RE-ADDING THE BACKGROUND IMAGE AS REQUESTED
     backgroundImage: "url(/VideoSec/thm-pattern-5.png)",
     backgroundRepeat: "repeat",
     backgroundPosition: "center",
@@ -32,9 +31,15 @@ const Contact = () => {
       icon: <MapPin className="text-white w-6 h-6" aria-hidden="true" />,
       title: "Visit Our Office",
       desc: "You are most welcome to visit our office.",
-      content: "552 Rugby Rd\nBrooklyn NY 11230",
+      content: (
+        <>
+          552 Rugby Rd
+          <br />
+          Brooklyn NY 11230
+        </>
+      ),
       type: "address" as const,
-      link: "https://www.google.com/maps/search/552+Rugby+Rd+Brooklyn+NY+11230", // Example link for location
+      link: "https://www.google.com/maps/search/552+Rugby+Rd+Brooklyn+NY+11230",
       ariaLabel:
         "Get directions to our office at 552 Rugby Road, Brooklyn NY 11230",
     },
@@ -61,16 +66,17 @@ const Contact = () => {
       aria-labelledby="contact-section-heading"
       className="flex flex-col lg:flex-row justify-center items-start gap-8 px-4 py-10 my-16 bg-white"
     >
-      <h2 id="contact-section-heading" className="sr-only">
+      <h1 id="contact-section-heading" className="sr-only">
         Contact Information
-      </h2>
+      </h1>
+
       {contactItems.map((item, index) => (
         <ContactCard
           key={index}
           item={item}
           index={index}
           cardStyle={baseClass}
-          cardShadowStyle={shadowStyle} // This style now includes the background image
+          cardShadowStyle={shadowStyle}
           iconTab={iconTab}
         />
       ))}

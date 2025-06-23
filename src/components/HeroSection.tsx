@@ -6,7 +6,7 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import { PanInfo, motion } from "framer-motion";
+import { AnimatePresence, PanInfo, motion } from "framer-motion";
 
 const slides = [
   {
@@ -34,13 +34,14 @@ const slides = [
   },
 ];
 
-const swipeConfidenceThreshold = 5000;
-const swipePower = (offset: number, velocity: number): number =>
+const swipeConfidenceThreshold = 300; // lowered from 5000
+const swipePower = (offset: number, velocity: number) =>
   Math.abs(offset) * velocity;
 
 export default function HeroSection() {
   const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true });
   const [selectedIndex, setSelectedIndex] = useState(0);
+  const [isHovered, setIsHovered] = useState(false);
 
   const onSelect = useCallback(() => {
     if (!emblaApi) return;
@@ -58,10 +59,10 @@ export default function HeroSection() {
   }, [emblaApi, onSelect]);
 
   useEffect(() => {
-    if (!emblaApi) return;
+    if (!emblaApi || isHovered) return;
     const autoplay = setInterval(() => emblaApi.scrollNext(), 5000);
     return () => clearInterval(autoplay);
-  }, [emblaApi]);
+  }, [emblaApi, isHovered]);
 
   const handleDragEnd = (
     e: MouseEvent | TouchEvent | PointerEvent,
@@ -81,6 +82,8 @@ export default function HeroSection() {
       className="relative w-full overflow-hidden bg-black"
       role="region"
       aria-label="Image carousel of roofing services"
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
     >
       <motion.div
         className="embla"
@@ -118,44 +121,52 @@ export default function HeroSection() {
       </motion.div>
 
       <div className="absolute inset-0 z-20 flex flex-col justify-center items-start px-6 md:px-20 text-white pointer-events-none">
-        <div className="max-w-3xl space-y-6 pt-6 md:ml-14 xl:ml-46 pointer-events-auto">
-          <h1 className="text-5xl md:text-6xl lg:text-8xl font-bold leading-tight font-inter">
-            {currentSlide.title}
-          </h1>
-          <p className="text-lg font-light tracking-wide font-bevietnam">
-            {currentSlide.description}
-          </p>
-          <Link
-            href="/aboutus"
-            className="inline-block border-4 border-[#003269] p-1"
-            aria-label={`Read more about ${currentSlide.title}`}
+        <AnimatePresence mode="wait">
+          <motion.div
+            key={selectedIndex}
+            className="max-w-3xl space-y-6 pt-6 md:ml-14 xl:ml-46 pointer-events-auto"
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
+            transition={{ duration: 0.5 }}
           >
-            <Button className="Hero_hover-button text-sm sm:text-base lg:text-lg font-inter">
-              {currentSlide.buttonText.toUpperCase()}
-            </Button>
-          </Link>
-        </div>
+            <h1 className="text-5xl md:text-6xl lg:text-8xl font-bold leading-tight font-inter">
+              {currentSlide.title}
+            </h1>
+            <p className="text-lg font-light tracking-wide font-bevietnam">
+              {currentSlide.description}
+            </p>
+            <Link
+              href="/aboutus"
+              className="inline-block border-4 border-[#003269] p-1"
+              aria-label={`Read more about ${currentSlide.title}`}
+            >
+              <Button className="Hero_hover-button text-sm sm:text-base lg:text-lg font-inter">
+                {currentSlide.buttonText.toUpperCase()}
+              </Button>
+            </Link>
+          </motion.div>
+        </AnimatePresence>
       </div>
 
-      {/* Prev Button */}
       <button
         onClick={scrollPrev}
         aria-label="Previous Slide"
-        className="hidden md:block absolute left-5 top-1/2 -translate-y-1/2 rounded-full p-4 z-30 bg-black/40 hover:bg-[#e63a27] active:scale-95 transition-all"
+        tabIndex={0}
+        className="hidden md:block absolute left-5 top-1/2 -translate-y-1/2 rounded-full p-4 z-30 bg-black/40 hover:bg-[#e63a27] focus:outline-2 focus:outline-[#e63a27] transition-all"
       >
         <ChevronLeft className="text-white text-2xl" />
       </button>
 
-      {/* Next Button */}
       <button
         onClick={scrollNext}
         aria-label="Next Slide"
-        className="hidden md:block absolute right-5 top-1/2 -translate-y-1/2 rounded-full p-4 z-30 bg-black/40 hover:bg-[#e63a27] active:scale-95 transition-all"
+        tabIndex={0}
+        className="hidden md:block absolute right-5 top-1/2 -translate-y-1/2 rounded-full p-4 z-30 bg-black/40 hover:bg-[#e63a27] focus:outline-2 focus:outline-[#e63a27] transition-all"
       >
         <ChevronRight className="text-white text-2xl" />
       </button>
 
-      {/* Dot Indicators */}
       <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex gap-4 z-30">
         {slides.map((_, i) => (
           <button

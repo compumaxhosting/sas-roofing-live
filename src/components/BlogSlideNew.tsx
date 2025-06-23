@@ -5,6 +5,7 @@ import Image from "next/image";
 import { FiHeart, FiShare2 } from "react-icons/fi";
 import { AiFillHeart } from "react-icons/ai";
 import { motion } from "framer-motion";
+import Link from "next/link";
 
 interface Slide {
   shortTitle: string;
@@ -97,12 +98,9 @@ export default function BlogSlideNew({ slide }: { slide: Slide }) {
         >
           <button
             onClick={handleLike}
-            aria-label={
-              liked
-                ? `Unlike this post. Current likes: ${likes}`
-                : `Like this post. Current likes: ${likes}`
-            }
             className="flex items-center gap-1 text-[#e63a27]"
+            aria-label={liked ? "Unlike this post" : "Like this post"}
+            aria-pressed={liked}
           >
             {liked ? (
               <AiFillHeart className="w-5 h-5" aria-hidden="true" />
@@ -131,22 +129,22 @@ export default function BlogSlideNew({ slide }: { slide: Slide }) {
         {/* Content + Button Container */}
         <div className="flex flex-col justify-between flex-grow px-4 py-2">
           <div>
-            <h2 className="text-md font-semibold text-gray-800 mb-4">
+            <h1 className="text-md font-semibold text-gray-800 mb-4">
               {slide.title}
-            </h2>
+            </h1>
             <p className="text-sm text-gray-600 font-bevietnam">
               {slide.description}
             </p>
           </div>
           <div className="mt-4 text-center">
             {/* This span acts as a button, it's better to make it a real button or an anchor tag */}
-            <a
+            <Link
               href={href}
               className="inline-block bg-[#003269] text-white text-sm font-semibold px-4 py-2 rounded hover:bg-[#00254c] transition-colors"
               aria-label={`Read more about ${slide.title}`}
             >
               Read More
-            </a>
+            </Link>
           </div>
         </div>
       </div>

@@ -55,13 +55,13 @@ export default function WaterproofingServices() {
               Waterproofing Services
             </span>
           </div>
-          <h2
+          <h1
             id="waterproofing-heading" // Added an ID for aria-labelledby
             className="text-3xl font-bold text-[#003269] leading-snug font-inter"
           >
             Professional Waterproofing Services in Brooklyn, Manhattan and
             Queens
-          </h2>
+          </h1>
         </div>
 
         <Link
@@ -102,22 +102,17 @@ export default function WaterproofingServices() {
             // you might consider role="region" or role="article" and aria-labelledby="title-id"
             // However, given it's a list, the h3 is often sufficient.
           >
-            <h3 className="text-xl md:text-3xl font-bold text-[#003269]">
+            <h2 className="text-xl md:text-3xl font-bold text-[#003269]">
               {title}
-            </h3>
+            </h2>
             {/* Conditional rendering for the last item (the link) */}
             {idx === services.length - 1 ? (
               <div className="text-sm md:text-base text-gray-700 font-bevietnam">
                 At SAS Roofing & Waterproofing, we provide top-quality, durable
                 waterproofing services in Brooklyn, Manhattan, and Queens.
-                Protect your property today by Visit{" "}
-                <Link
-                  href="/"
-                  className="text-[#e63a27] hover:text-[#003269]"
-                  // Add aria-label if the link text alone isn't clear enough out of context,
-                  // but "SAS Roofing & Waterproofing" is quite clear here.
-                  // For internal links, target="_blank" and rel="noopener noreferrer" are not typically needed.
-                >
+                Protect your property today by Visit Protect your property today
+                by visiting{" "}
+                <Link href="/" className="text-[#e63a27] hover:text-[#003269]">
                   SAS Roofing & Waterproofing
                 </Link>
               </div>

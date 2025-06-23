@@ -67,12 +67,12 @@ export default function BlogPage() {
           className="space-y-2"
           aria-labelledby="core-services-heading" // Added aria-labelledby
         >
-          <h3
+          <h2
             id="core-services-heading"
             className="text-3xl md:text-4xl font-bold mb-5"
           >
             Our Core Services
-          </h3>
+          </h2>
         </motion.div>
 
         <div className="grid gap-12">

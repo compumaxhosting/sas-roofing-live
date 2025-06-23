@@ -120,9 +120,9 @@ export default function TestimonialSlider() {
                       className="mt-1"
                     />
                     <div>
-                      <h3 className="font-bold text-[#003269] text-lg leading-tight">
+                      <h1 className="font-bold text-[#003269] text-lg leading-tight">
                         {name}
-                      </h3>
+                      </h1>
                       <p className="text-[#e63a27] text-sm uppercase font-semibold">
                         {location}
                       </p>

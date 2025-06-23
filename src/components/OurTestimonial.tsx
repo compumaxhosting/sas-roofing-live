@@ -19,7 +19,7 @@ const fadeUp = {
 export default function OurTestimonial() {
   return (
     <section
-      className="pt-8 pb-4 px-4 sm:px-6 bg-[#f9f9f9] mb-10 md:mb-15 shadow-xl"
+      className="pt-8 pb-4 px-4 sm:px-6 bg-[#f9f9f9] mb-16 shadow-xl"
       aria-labelledby="testimonial-heading"
       role="region"
       tabIndex={-1}

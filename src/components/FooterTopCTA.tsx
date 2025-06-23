@@ -44,12 +44,12 @@ export default function FooterTopCTA() {
 
         {/* Text Content */}
         <motion.div className="max-w-md px-2" {...fadeUp(0.2)}>
-          <h3
+          <h1
             id="footer-cta-heading"
             className="text-lg md:text-xl font-bold mb-1 font-inter"
           >
             Roof Problems can’t wait?
-          </h3>
+          </h1>
           <p className="text-sm text-white/80 leading-snug font-inter">
             Protect your home from leaks and roof repairs — contact us today.
           </p>

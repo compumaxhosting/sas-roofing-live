@@ -5,6 +5,8 @@ import { useRef } from "react";
 import type { Swiper as SwiperType } from "swiper";
 import { motion } from "framer-motion";
 import Link from "next/link";
+import { clsx } from "clsx";
+
 
 type Props = {
   margin: number[];
@@ -24,9 +26,10 @@ export default function OurServicesPage({ margin }: Props) {
 
   return (
     <main
-      className={`
-        mb-${margin[1]} md:mb-${margin[1]} shadow-2xl
-        px-4 sm:px-6 lg:px-12 pt-10 pb-12 sm:pb-16 lg:pb-20 bg-[#f9f9f9] relative`}
+      className={clsx(
+        "shadow-2xl px-4 sm:px-6 lg:px-12 pt-10 pb-12 sm:pb-16 lg:pb-20 bg-[#f9f9f9] relative",
+        `mb-[${margin[1]}px]`
+      )}
       role="main"
       tabIndex={-1}
       aria-label="Overview of SAS Roofing & Waterproofing services"

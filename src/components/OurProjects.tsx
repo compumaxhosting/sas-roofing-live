@@ -45,6 +45,7 @@ const OurProjects: React.FC<OurProjectsProps> = ({ gallery }) => {
       role="region"
       aria-labelledby="our-projects-heading"
     >
+      {/* Header Section */}
       <motion.section
         className="max-w-5xl mx-auto flex flex-col md:flex-row justify-between items-center text-center md:text-left gap-6"
         variants={fadeUp}
@@ -52,14 +53,16 @@ const OurProjects: React.FC<OurProjectsProps> = ({ gallery }) => {
         whileInView="visible"
         viewport={{ once: true, amount: 0.2 }}
       >
-        {/* Heading & Subtitle */}
         <div>
           <div className="flex items-center gap-2 mb-1 justify-center md:justify-start">
             <div className="w-6 h-px bg-[#e63a27]" aria-hidden="true" />
-            <span className="text-sm sm:text-md lg:text-base font-bold text-[#e63a27] uppercase whitespace-nowrap font-inter">
+            <span className="text-sm sm:text-md lg:text-base font-bold text-[#e63a27] uppercase font-inter">
               Our Projects
             </span>
-            <div className="block md:hidden w-6 h-px bg-[#e63a27]" aria-hidden="true" />
+            <div
+              className="block md:hidden w-6 h-px bg-[#e63a27]"
+              aria-hidden="true"
+            />
           </div>
           <h1
             id="our-projects-heading"
@@ -69,19 +72,17 @@ const OurProjects: React.FC<OurProjectsProps> = ({ gallery }) => {
           </h1>
         </div>
 
-        {/* Button - REVISED FIX HERE */}
-        {/* passHref is still needed if you render a custom component as child */}
-        <motion.div // Use motion.div as the direct child of Link
-          className="group relative self-center md:self-auto" // Apply flex/layout classes here
+        {/* CTA Button */}
+        <motion.div
+          className="group relative self-center md:self-auto"
           variants={fadeUp}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.2 }}
-          custom={0.5} // Example custom delay
+          custom={0.5}
         >
-          {/* The actual anchor tag for accessibility and navigation */}
           <Link
-            href="/projects" // Redundant but good for static analysis, Next/Link will handle it
+            href="/projects"
             className="block w-full h-full focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-[#e63a27]"
             aria-label="View all our completed projects"
           >
@@ -94,7 +95,7 @@ const OurProjects: React.FC<OurProjectsProps> = ({ gallery }) => {
         </motion.div>
       </motion.section>
 
-      {/* Gallery (client-only) */}
+      {/* Gallery Section */}
       <div className="mt-10">
         {isLoadingGallery ? (
           <div
@@ -111,7 +112,7 @@ const OurProjects: React.FC<OurProjectsProps> = ({ gallery }) => {
             <GallerySection />
           </Suspense>
         ) : (
-          <div className="text-center text-red-500">
+          <div className="text-center text-red-500 font-medium">
             Failed to load gallery. Please try again.
           </div>
         )}
