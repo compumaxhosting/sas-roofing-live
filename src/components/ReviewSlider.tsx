@@ -299,7 +299,7 @@ const ReviewSlider = () => {
                   <p className="text-sm text-gray-500">{selectedReview.date}</p>
                 </div>
               </div>
-              <div className="text-[#e63a27] text-2xl" aria-hidden="true">
+              <div className="text-[#ffbb29] text-2xl" aria-hidden="true">
                 {"★".repeat(selectedReview.rating)}
               </div>
               <p className="sr-only">{selectedReview.rating} out of 5 stars</p>{" "}
