@@ -15,7 +15,7 @@ const slides = [
     description:
       "SAS Roofing is your source for high-quality roofing of any type",
     buttonText: "Read More",
-    image: "/Hero-Sec/slider-6.jpg",
+    image: "/Hero-Sec/slider-6.webp", // Converted to WebP
   },
   {
     id: 2,
@@ -23,18 +23,18 @@ const slides = [
     description:
       "We provide expert roofing installations, repairs, and inspections",
     buttonText: "Read More",
-    image: "/Hero-Sec/slider-7.png",
+    image: "/Hero-Sec/slider-7.webp", // Converted to WebP
   },
   {
     id: 3,
     title: "Your Roofing Needs For A Great Repair Job",
     description: "Reliable, professional, and affordable roofing services",
     buttonText: "Read More",
-    image: "/Hero-Sec/slider-4.jpg",
+    image: "/Hero-Sec/slider-4.webp", // Converted to WebP
   },
 ];
 
-const swipeConfidenceThreshold = 300; // lowered from 5000
+const swipeConfidenceThreshold = 300;
 const swipePower = (offset: number, velocity: number) =>
   Math.abs(offset) * velocity;
 
@@ -107,8 +107,9 @@ export default function HeroSection() {
                 src={slide.image}
                 alt={slide.title}
                 fill
-                loading={index === selectedIndex ? "eager" : "lazy"}
-                priority={index === selectedIndex}
+                sizes="100vw"
+                loading={index === 0 ? "eager" : "lazy"}
+                priority={index === 0}
                 className="object-cover"
               />
               <div

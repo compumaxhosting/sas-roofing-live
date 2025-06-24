@@ -33,11 +33,11 @@ export default function AboutCompany() {
         >
           <div className="relative w-full h-[300px] sm:h-[400px] md:h-[450px] lg:h-[500px] xl:h-[550px] border-2 border-[#e63a27] overflow-hidden">
             <Image
-              src="/about-us/aboutusimage.png"
+              src="/about-us/aboutusimage.jpg"
               alt="Team working on site"
               fill
               className="object-contain"
-              sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 33vw"
+              sizes="(max-width: 768px) 100vw, (max-width: 1024px) 60vw, 500px"
             />
             <figcaption className="sr-only">
               Over 30 years of roofing and waterproofing experience

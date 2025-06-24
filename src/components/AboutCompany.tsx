@@ -46,10 +46,11 @@ export default function AboutCompany() {
             aria-label="Team members working on roofing"
           >
             <Image
-              src="/about-us/aboutusimage.png"
+              src="/about-us/aboutusimage.jpg"
               alt="SAS Roofing & Waterproofing team working on a project"
               fill
               className="object-contain mt:18 sm:mt-18 md:mt-20"
+              sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 400px"
             />
             <figcaption className="sr-only">
               SAS team with over 30 years of experience
