@@ -18,6 +18,15 @@ interface Props {
 const slides = [
   {
     title:
+      "Trusted Roofing Contractors Serving Brooklyn, Manhattan, Queens & The Bronx",
+    description: "Licensed Roofers Proudly Serving Brooklyn to The Bronx",
+    date: "25 June",
+    image: "/blog/roofing_blog.jpg",
+    link: "top-roofing-contractors-brooklyn-manhattan-queens-bronx-sas-roofing-nyc",
+    initialLikeCount: 50,
+  },
+  {
+    title:
       "The Satisfaction Factor: Why Certified Roofing Contractors in Brooklyn Are a Smart Choice",
     description: "Certified Roofing Contractors You Can Trust.",
     date: "10 June",
@@ -55,7 +64,7 @@ const slides = [
     title: "Foundation Wall Repair And Waterproofing",
     description: "MAINTENANCE",
     date: "17 APR",
-    image: "/blog/services1.png",
+    image: "/blog/services2.jpg",
     link: "/",
     initialLikeCount: 170,
   },
@@ -63,7 +72,7 @@ const slides = [
     title: "How To Weather Proof Your Roof This Winter?",
     description: "TIPS & TRICKS",
     date: "30 APR",
-    image: "/blog/services1.jpg",
+    image: "/blog/services1.png",
     link: "/",
     initialLikeCount: 180,
   },

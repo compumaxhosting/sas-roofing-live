@@ -11,6 +11,16 @@ import React from "react";
 const slides = [
   {
     title:
+      "Trusted Roofing Contractors Serving Brooklyn, Manhattan, Queens & The Bronx",
+    shortTitle: "Licensed Roofers Proudly Serving Brooklyn to The Bronx",
+    description: `Dependable roofing experts providing quality installations, repairs, and waterproofing solutions across Brooklyn, Manhattan, Queens, and The Bronx...`,
+    date: "25 JUN",
+    image: "/blog/roofing_blog.jpg",
+    link: "top-roofing-contractors-brooklyn-manhattan-queens-bronx-sas-roofing-nyc",
+    initialLikes: 50,
+  },
+  {
+    title:
       "The Satisfaction Factor: Why Certified Roofing Contractors in Brooklyn Are a Smart Choice",
     shortTitle: "Certified Roofing Contractors You Can Trust",
     description: `Hiring certified roofing contractors in Brooklyn ensures quality, safety, and long-lasting protection for your property, making it a truly smart investment...`,
