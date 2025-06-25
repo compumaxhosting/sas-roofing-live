@@ -74,7 +74,7 @@ const slides = [
     shortTitle: "TIPS & TRICKS",
     description: `Prepare your roof for harsh winter conditions with essential weatherproofing tips. Learn how to prevent leaks, ice dams, and damage to keep your home warm, dry, and protected all season long...`,
     date: "11 JUNE",
-    image: "/blog/services1.jpg",
+    image: "/blog/services1.png",
     link: "/",
     initialLikes: 180,
   },
