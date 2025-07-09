@@ -3,10 +3,10 @@ import BreadCrum2 from "@/components/BreadCrum2";
 import Footer from "@/components/Footer";
 import FooterTopCTA from "@/components/FooterTopCTA";
 import Navbar from "@/components/Navbar/Navbar";
-import Contact from "@/components/Contact";
 import React from "react";
 import StickyNavbar from "@/components/StickyNavbar";
 import ContactBar from "@/components/ContactBar";
+import ContactPage from "@/components/ContactPage";
 
 const page = () => {
   return (
@@ -19,8 +19,8 @@ const page = () => {
         pageTitle={"Contact"}
         imageSrc={"/page-bgImage/roofing-service.jpg"}
       />
-      <Contact />
-      <FooterTopCTA />
+     <ContactPage />
+     <FooterTopCTA />
       <Footer />
       <BackToTop />
     </>

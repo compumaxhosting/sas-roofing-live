@@ -173,12 +173,12 @@ export default function SidebarOverlay({ onClose }: { onClose: () => void }) {
 
         {/* About Section */}
         <section aria-labelledby="about-us-heading" className="mb-6">
-          <h2
+          <h1
             id="about-us-heading"
             className="text-base md:text-lg font-bold mb-1 font-inter"
           >
             ABOUT US
-          </h2>
+          </h1>
           <div className="w-8 h-[2px] bg-[#e63a27] mb-3" aria-hidden="true" />{" "}
           {/* Decorative */}
           <p className="text-sm md:text-sm leading-relaxed tracking-wide font-bevietnam">

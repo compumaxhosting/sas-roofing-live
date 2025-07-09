@@ -139,9 +139,9 @@ export default function MobileDrawer({ isOpen, setIsOpen }: Props) {
         tabIndex={-1} // Makes the drawer focusable programmatically, but not via Tab key initially
       >
         {/* Header for the dialog, to be referenced by aria-labelledby */}
-        <h2 id="mobile-menu-header" className="sr-only">
+        <h1 id="mobile-menu-header" className="sr-only">
           Mobile Navigation
-        </h2>{" "}
+        </h1>{" "}
         {/* Hidden but announced as the dialog title */}
         {/* Close Button */}
         <button

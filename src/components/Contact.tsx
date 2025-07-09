@@ -6,7 +6,7 @@ const ContactCard = dynamic(() => import("./ContactCard"), { ssr: false });
 
 const Contact = () => {
   const baseClass = `
-    group bg-white p-6 pt-10 text-sm w-full lg:w-1/4
+    group bg-white p-6 pt-10 text-sm w-full
     flex flex-col gap-2 relative border border-gray-100
     hover:bg-black transition-colors duration-1000 ease-in-out
   `;
@@ -64,22 +64,24 @@ const Contact = () => {
   return (
     <section
       aria-labelledby="contact-section-heading"
-      className="flex flex-col lg:flex-row justify-center items-start gap-8 px-4 py-10 my-16 bg-white"
+      className="w-full flex flex-col items-center px-4 py-10 bg-white"
     >
       <h1 id="contact-section-heading" className="sr-only">
         Contact Information
       </h1>
 
-      {contactItems.map((item, index) => (
-        <ContactCard
-          key={index}
-          item={item}
-          index={index}
-          cardStyle={baseClass}
-          cardShadowStyle={shadowStyle}
-          iconTab={iconTab}
-        />
-      ))}
+      <div className="w-full max-w-3xl flex flex-col gap-6">
+        {contactItems.map((item, index) => (
+          <ContactCard
+            key={index}
+            item={item}
+            index={index}
+            cardStyle={baseClass}
+            cardShadowStyle={shadowStyle}
+            iconTab={iconTab}
+          />
+        ))}
+      </div>
     </section>
   );
 };

@@ -77,15 +77,15 @@ export default function AboutCompany() {
           >
             <header className="flex items-center justify-center xl:justify-start gap-3 mb-2">
               <hr className="w-6 h-[1px] bg-[#e63a27]" />
-              <h4 className="text-sm sm:text-base uppercase text-[#e63a27] font-semibold tracking-wider font-inter">
+              <h1 className="text-sm sm:text-base uppercase text-[#e63a27] font-semibold tracking-wider font-inter">
                 About Company
-              </h4>
+              </h1>
               <hr className="w-6 h-[1px] bg-[#e63a27]" />
             </header>
 
-            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-semibold text-[#003269] leading-tight mb-4 font-inter">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-semibold text-[#003269] leading-tight mb-4 font-inter">
               Roofing Is Our Heritage & Quality Is Our Tradition
-            </h1>
+            </h2>
 
             <div
               className="flex flex-wrap gap-x-6 gap-y-3 text-sm font-semibold text-[#003269] mb-6"
