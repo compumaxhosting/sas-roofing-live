@@ -123,9 +123,9 @@ const ContactCard: React.FC<ContactCardProps> = ({
       </div>{" "}
       {/* Hide icon from screen readers */}
       <div className="mt-2 space-y-1">
-        <h3 className="text-[#003269] font-semibold text-xl group-hover:text-white font-inter">
+        <h1 className="text-[#003269] font-semibold text-xl group-hover:text-white font-inter">
           {item.title}
-        </h3>
+        </h1>
 
         <p className="italic text-gray-600 group-hover:text-gray-300 font-bevietnam">
           {item.desc}

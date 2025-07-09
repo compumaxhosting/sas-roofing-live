@@ -35,12 +35,12 @@ export default function FAQSection() {
       className="max-w-4xl mx-auto px-4 py-12 font-inter"
       aria-labelledby="faq-heading"
     >
-      <h2
+      <h1
         id="faq-heading"
         className="text-3xl font-bold text-center mb-8 text-[#e63a27]"
       >
         Frequently Asked Questions
-      </h2>
+      </h1>
 
       <div className="space-y-4">
         {faqs.map((faq, index) => {

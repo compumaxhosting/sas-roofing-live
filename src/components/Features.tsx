@@ -83,18 +83,18 @@ const Features = ({ margin }: Props) => (
               {id}
             </div>
 
-            <h1
+            <h2
               id={`feature-title-${id}`}
               className="pt-20 pb-6 text-base md:text-lg font-semibold font-inter"
             >
               {title}
-            </h1>
-            <h2
+            </h2>
+            <h3
               id={`feature-description-${id}`}
               className="text-sm md:text-base text-gray-300 font-bevietnam"
             >
               {description}
-            </h2>
+            </h3>
 
             <Link
               href={link}

@@ -70,16 +70,16 @@ export default function FaqSection() {
       <header className="mb-8">
         <div className="flex items-center gap-2 mb-2">
           <div className="w-6 h-[2px] bg-[#e63a27]" aria-hidden="true" />
-          <h2 className="text-base uppercase text-[#e63a27] font-semibold tracking-wide font-inter">
+          <h1 className="text-base uppercase text-[#e63a27] font-semibold tracking-wide font-inter">
             Common Questions & Answers
-          </h2>
+          </h1>
         </div>
-        <h1
+        <h2
           id="faq-main-heading"
           className="text-4xl lg:text-5xl font-bold text-[#003269] font-inter"
         >
           Frequently Asked Questions
-        </h1>
+        </h2>
       </header>
 
       <dl className="space-y-4 text-base">

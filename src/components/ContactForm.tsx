@@ -1,5 +1,7 @@
 "use client";
+
 import { useState, useRef, useCallback } from "react";
+import Swal from "sweetalert2";
 
 const ContactForm = () => {
   const [form, setForm] = useState({
@@ -7,7 +9,10 @@ const ContactForm = () => {
     email: "",
     phoneNumber: "",
     message: "",
+    service: "",
+    otherService: "",
   });
+
   const phoneNumberErrorRef = useRef<HTMLSpanElement>(null);
 
   const handleSubmit = (e: React.FormEvent) => {
@@ -25,9 +30,30 @@ const ContactForm = () => {
       }
     }
 
-    console.log("Form submitted:", form);
-    setForm({ name: "", email: "", phoneNumber: "", message: "" });
-    alert("Thank you for your message! We will get back to you shortly.");
+    const submittedService =
+      form.service === "other" ? form.otherService : form.service;
+
+    console.log("Form submitted:", {
+      ...form,
+      service: submittedService,
+    });
+
+    Swal.fire({
+      icon: "success",
+      title: "Message Sent!",
+      text: "Thank you for your message. We will get back to you shortly.",
+      confirmButtonColor: "#e63a27",
+      background: "#fff",
+    });
+
+    setForm({
+      name: "",
+      email: "",
+      phoneNumber: "",
+      message: "",
+      service: "",
+      otherService: "",
+    });
   };
 
   const handlePhoneNumberChange = useCallback(
@@ -79,6 +105,43 @@ const ContactForm = () => {
             id="phone-number-error-message"
             className="text-red-500 text-sm"
           />
+
+          {/* Service Select Dropdown */}
+          <label htmlFor="service" className="sr-only">
+            Service You Need
+          </label>
+          <select
+            id="service"
+            name="service"
+            value={form.service}
+            onChange={(e) => setForm({ ...form, service: e.target.value })}
+            required
+            className="appearance-none p-3 rounded-md font-semibold text-[#e63a27] border border-gray-300 w-full focus:ring-2 focus:ring-[#e63a27] focus:outline-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-[#e63a27]"
+          >
+            <option value="" disabled>
+              Service You Need
+            </option>
+            <option value="roofing">Roofing</option>
+            <option value="waterproofing">Waterproofing</option>
+            <option value="masonry">Masonry</option>
+            <option value="general-contractors">General Contractors</option>
+            <option value="other">Others</option>
+          </select>
+
+          {/* Show input for 'Other' service */}
+          {form.service === "other" && (
+            <input
+              type="text"
+              placeholder="Please specify other service"
+              value={form.otherService}
+              onChange={(e) =>
+                setForm({ ...form, otherService: e.target.value })
+              }
+              required
+              className="p-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-[#e63a27] outline-none"
+            />
+          )}
+
           <textarea
             rows={4}
             placeholder="Message"
