@@ -195,7 +195,7 @@ export default function AboutCompany() {
             aria-label="Read more on About Us page"
           >
             <span className="block border-2 border-[#e63a27] text-[#e63a27] px-6 py-3 font-bold uppercase tracking-wide text-sm lg:text-base group-hover:bg-[#e63a27] group-hover:text-white transition font-inter hover-button">
-              Read More
+              Know More
             </span>
           </Link>
         </motion.article>

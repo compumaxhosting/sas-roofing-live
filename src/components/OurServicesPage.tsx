@@ -7,7 +7,6 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 import { clsx } from "clsx";
 
-
 type Props = {
   margin: number[];
 };
@@ -34,7 +33,7 @@ export default function OurServicesPage({ margin }: Props) {
       tabIndex={-1}
       aria-label="Overview of SAS Roofing & Waterproofing services"
     >
-      <div className="mx-auto space-y-12">
+      <div className="mx-auto space-y-12 max-w-7xl">
         <motion.section
           initial="hidden"
           whileInView="visible"
@@ -49,7 +48,6 @@ export default function OurServicesPage({ margin }: Props) {
               className="flex items-center justify-center md:justify-start gap-2 mb-1"
               aria-hidden="true"
             >
-              {/* Decorative underline, hidden from screen readers */}
               <div className="w-6 h-px bg-[#e63a27]" />
               <span className="text-xs sm:text-sm md:text-base font-bold text-[#e63a27] uppercase font-inter">
                 Our Services
@@ -75,6 +73,45 @@ export default function OurServicesPage({ margin }: Props) {
           </Link>
         </motion.section>
 
+        {/* ➤ New Content Section */}
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.2 }}
+          variants={fadeUp}
+          className="px-6 sm:px-8 text-center sm:text-left"
+        >
+          <h2 className="text-xl sm:text-2xl font-bold text-[#003269] mb-4">
+            Need Reliable Roofing, Waterproofing, or Masonry Services in
+            Brooklyn or Manhattan?
+          </h2>
+          <p className="text-sm sm:text-base text-gray-700 leading-relaxed">
+            SAS Roofing & Waterproofing proudly serves Brooklyn zip codes{" "}
+            <strong>
+              11201, 11205, 11206, 11215, 11216, 11217, 11218, 11221, 11231,
+              11233, 11238
+            </strong>
+            , and Manhattan zip codes{" "}
+            <strong>
+              10004, 10005, 10006, 10007, 10012, 10013, 10014, 10038, 10280
+            </strong>
+            .
+            <br />
+            <br />
+            Whether you’re searching for a <strong>roof repair near me</strong>,
+            a trusted <strong>waterproofing contractor in Brooklyn</strong>, or{" "}
+            <strong>masonry services in Manhattan</strong>, our local team is
+            ready to help. We’re trusted by your neighbors for{" "}
+            <strong>fast, affordable, and quality service</strong>.
+            <br />
+            <br />
+            <span className="text-[#e63a27] font-semibold">
+              Contact us today for a free estimate!
+            </span>
+          </p>
+        </motion.div>
+
+        {/* ➤ Slider Section */}
         <motion.div
           initial="hidden"
           whileInView="visible"

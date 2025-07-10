@@ -162,7 +162,7 @@ export default function AboutCompany() {
               aria-label="Read more about SAS Roofing"
             >
               <span className="block border-2 border-[#e63a27] text-[#e63a27] px-6 py-3 font-bold uppercase tracking-wide hover:bg-[#e63a27] hover:text-white transition text-sm lg:text-base font-inter hover-button">
-                Read More
+                Know More
               </span>
             </Link>
           </motion.article>
