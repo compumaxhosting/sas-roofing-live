@@ -42,11 +42,11 @@ export default function OurTestimonial() {
             >
               <span className="w-6 h-px bg-[#e63a27]" />
               <span className="text-xs sm:text-sm md:text-base lg:text-lg font-bold text-[#e63a27] uppercase font-inter">
-                Testimonials
+                SAS Roofing & Waterproofing
               </span>
               <span className="w-6 h-px bg-[#e63a27]" />
             </span>
-            Words From Our Customer
+            Our Google Reviews
           </h2>
         </motion.div>
 

@@ -81,7 +81,6 @@ function Modal({
         &times;
       </button>
 
-      {/* Arrows hidden on small screens */}
       <button
         aria-label="Previous image"
         className="absolute left-4 text-white text-4xl hidden md:block z-10"
@@ -104,6 +103,7 @@ function Modal({
           alt={`Zoomed gallery image ${index + 1}`}
           width={1200}
           height={1200}
+          loading="lazy"
           className="object-contain max-h-[80vh]"
         />
       </motion.div>
@@ -115,6 +115,10 @@ function Modal({
       >
         &#8594;
       </button>
+
+      <div className="absolute bottom-6 text-white text-sm hidden md:block animate-bounce opacity-70">
+        Swipe or use arrows
+      </div>
     </div>
   );
 }
@@ -148,6 +152,7 @@ const GalleryCard = ({
           fill
           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
           className="object-cover"
+          loading="lazy"
         />
       </div>
       <div
@@ -177,6 +182,38 @@ const GalleryCard = ({
 
 export default function GallerySection2() {
   const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
+  const [visibleCount, setVisibleCount] = useState(9);
+
+  const trackImageView = (index: number) => {
+    console.log(`Viewed image: ${index + 1} (${images[index]})`);
+  };
+
+  const closeModal = () => setSelectedIndex(null);
+
+  const showNext = () =>
+    setSelectedIndex((prev) => {
+      const nextIndex = prev === null ? 0 : (prev + 1) % images.length;
+      trackImageView(nextIndex);
+      return nextIndex;
+    });
+
+  const showPrev = () =>
+    setSelectedIndex((prev) => {
+      const prevIndex =
+        prev === null ? 0 : (prev - 1 + images.length) % images.length;
+      trackImageView(prevIndex);
+      return prevIndex;
+    });
+
+  useEffect(() => {
+    const handleKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") closeModal();
+      if (e.key === "ArrowRight") showNext();
+      if (e.key === "ArrowLeft") showPrev();
+    };
+    window.addEventListener("keydown", handleKey);
+    return () => window.removeEventListener("keydown", handleKey);
+  }, []);
 
   useEffect(() => {
     if (selectedIndex !== null) {
@@ -190,25 +227,18 @@ export default function GallerySection2() {
     };
   }, [selectedIndex]);
 
-  const closeModal = () => setSelectedIndex(null);
-  const showNext = () =>
-    setSelectedIndex((prev) =>
-      prev === null ? 0 : (prev + 1) % images.length
-    );
-  const showPrev = () =>
-    setSelectedIndex((prev) =>
-      prev === null ? 0 : (prev - 1 + images.length) % images.length
-    );
-
   useEffect(() => {
-    const handleKey = (e: KeyboardEvent) => {
-      if (e.key === "Escape") closeModal();
-      if (e.key === "ArrowRight") showNext();
-      if (e.key === "ArrowLeft") showPrev();
-    };
-    window.addEventListener("keydown", handleKey);
-    return () => window.removeEventListener("keydown", handleKey);
-  }, []);
+    if (selectedIndex === null) return;
+    const interval = setInterval(() => {
+      showNext();
+    }, 5000);
+    return () => clearInterval(interval);
+  }, [selectedIndex]);
+
+  const handleZoom = (idx: number) => {
+    trackImageView(idx);
+    setSelectedIndex(idx);
+  };
 
   return (
     <section
@@ -221,16 +251,27 @@ export default function GallerySection2() {
         role="list"
         aria-label="Gallery images"
       >
-        {images.map((src, idx) => (
+        {images.slice(0, visibleCount).map((src, idx) => (
           <GalleryCard
             key={idx}
             src={src}
             alt={`Gallery image ${idx + 1}`}
             delay={idx * 0.05}
-            onZoom={() => setSelectedIndex(idx)}
+            onZoom={() => handleZoom(idx)}
           />
         ))}
       </div>
+
+      {visibleCount < images.length && (
+        <div className="text-center mt-10">
+          <button
+            className="bg-[#003269] text-white px-6 py-2 rounded-md hover:bg-[#e63a27] transition-colors text-sm font-semibold"
+            onClick={() => setVisibleCount((prev) => prev + 6)}
+          >
+            Load More
+          </button>
+        </div>
+      )}
 
       <Modal
         open={selectedIndex !== null}

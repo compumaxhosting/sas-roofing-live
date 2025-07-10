@@ -8,6 +8,9 @@ import "swiper/css/pagination";
 import Image from "next/image";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
+// import { FaStar } from "react-icons/fa6";
+import { MdOutlineStar } from "react-icons/md";
+
 
 type Review = {
   name: string;
@@ -116,21 +119,29 @@ const ReviewSlider = () => {
         viewport={{ once: true, amount: 0.3 }}
         transition={{ duration: 0.6, ease: "easeOut" }}
       >
-        <h2
+        <h1
           id="overall-rating-heading" // ID for the main heading of this section
-          className="text-4xl font-bold text-gray-900 flex items-center justify-center font-inter"
+          className="text-3xl font-bold text-[#e63a27] flex items-center justify-center font-inter"
         >
-          4.7
-          <span className="ml-2 text-[#FFBB29]" aria-hidden="true">
-            ★★★★★
-          </span>{" "}
-          {/* Decorative stars, hidden from screen readers */}
-          <span className="sr-only">out of 5 stars</span>{" "}
-          {/* Screen reader only text for rating */}
-        </h2>
+          EXCELLENT
+        </h1>
+        <span
+          className="text-5xl ml-2 flex justify-center text-[#f6bb06]"
+          aria-hidden="true"
+        >
+          {/* ★★★★★ */}
+          <MdOutlineStar />
+          <MdOutlineStar />
+          <MdOutlineStar />
+          <MdOutlineStar />
+          <MdOutlineStar />
+        </span>{" "}
+        {/* Decorative stars, hidden from screen readers */}
+        <span className="sr-only">out of 5 stars</span>{" "}
+        {/* Screen reader only text for rating */}
         <p className="text-gray-600 text-sm font-inter">
           <span aria-hidden="true">(</span>
-          134 Google Reviews
+          Based on 34 Google Reviews
           <span aria-hidden="true">)</span>
         </p>
         <Link
@@ -209,10 +220,12 @@ const ReviewSlider = () => {
                   </div>
                 </div>
                 <div
-                  className="text-[#FFBB29] text-3xl mt-2"
+                  className="text-[#f6bb06] text-3xl mt-2 flex"
                   aria-hidden="true"
                 >
-                  {"★".repeat(review.rating)}
+                  {Array.from({ length: review.rating }, (_, i) => (
+                    <MdOutlineStar key={i} />
+                  ))}
                 </div>
                 <p className="sr-only">{review.rating} out of 5 stars</p>{" "}
                 {/* Screen reader only for rating */}
@@ -299,8 +312,11 @@ const ReviewSlider = () => {
                   <p className="text-sm text-gray-500">{selectedReview.date}</p>
                 </div>
               </div>
-              <div className="text-[#ffbb29] text-2xl" aria-hidden="true">
-                {"★".repeat(selectedReview.rating)}
+              <div className="text-[#f6bb06] text-2xl flex" aria-hidden="true">
+                {/* CORRECT way to repeat stars based on selectedReview.rating */}
+                {Array.from({ length: selectedReview.rating }, (_, i) => (
+                  <MdOutlineStar key={i} />
+                ))}
               </div>
               <p className="sr-only">{selectedReview.rating} out of 5 stars</p>{" "}
               {/* Screen reader only for rating */}

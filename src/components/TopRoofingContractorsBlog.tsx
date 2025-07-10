@@ -28,7 +28,6 @@ export default function TopRoofingContractorsBlog() {
             role="article"
             aria-labelledby="main-blog-post-heading"
           >
-            {/* Image on the left */}
             <div className="w-full lg:w-1/2">
               <Image
                 src="/blog/roofing_blog.jpg"
@@ -39,34 +38,43 @@ export default function TopRoofingContractorsBlog() {
               />
             </div>
 
-            {/* Text on the right */}
             <div className="w-full lg:w-1/2">
               <h1
                 id="main-blog-post-heading"
                 className="text-3xl md:text-4xl font-bold font-inter mb-7"
               >
-                Trusted Roofing Contractors Serving Brooklyn, Manhattan, Queens
-                & The Bronx
+                <span className="font-bold">Trusted Roofing Contractors</span>{" "}
+                Serving <span className="font-bold">Brooklyn</span>,{" "}
+                <span className="font-bold">Manhattan</span>,{" "}
+                <span className="font-bold">Queens</span> & The Bronx
               </h1>
               <p className="text-sm md:text-base text-gray-700 font-bevietnam">
                 When it comes to protecting your home or commercial property in
                 New York City, your roof is your first line of defense. Choosing
                 a roofing contractor isn’t just about patching a leak—it’s about
-                hiring local professionals who understand the unique roofing
-                needs of each borough, from Brooklyn brownstones to high-rise
-                buildings in Manhattan.
+                hiring local professionals who understand the unique{" "}
+                <span className="font-bold">roofing</span> needs of each
+                borough, from <span className="font-bold">Brooklyn</span>{" "}
+                brownstones to high-rise buildings in{" "}
+                <span className="font-bold">Manhattan</span>.
               </p>
               <br />
               <p className="text-sm md:text-base text-gray-700 font-bevietnam">
-                That’s where SAS Roofing & Waterproofing comes in. We proudly
-                serve Brooklyn, Manhattan, Queens, and The Bronx, offering
-                expert roofing and waterproofing services tailored to NYC
-                buildings.
+                That’s where{" "}
+                <span className="font-bold">SAS Roofing & Waterproofing</span>{" "}
+                comes in. We proudly serve{" "}
+                <span className="font-bold">Brooklyn</span>,{" "}
+                <span className="font-bold">Manhattan</span>,{" "}
+                <span className="font-bold">Queens</span>, and The Bronx,
+                offering expert{" "}
+                <span className="font-bold">
+                  roofing and waterproofing services
+                </span>{" "}
+                tailored to NYC buildings.
               </p>
             </div>
           </motion.div>
 
-          {/* Core Services */}
           <motion.div
             initial="hidden"
             whileInView="visible"
@@ -79,12 +87,12 @@ export default function TopRoofingContractorsBlog() {
               id="core-services-heading"
               className="text-3xl md:text-4xl font-bold mb-5"
             >
-              Why Choose SAS Roofing & Waterproofing?
+              Why Choose{" "}
+              <span className="font-bold">SAS Roofing & Waterproofing</span>?
             </h2>
           </motion.div>
 
           <div className="grid gap-12">
-            {/* Roofing Solutions */}
             <motion.div
               initial="hidden"
               whileInView="visible"
@@ -99,17 +107,22 @@ export default function TopRoofingContractorsBlog() {
                 id="roofing-solutions-link"
                 aria-label="Learn more about our borough-wide NYC roofing expertise"
               >
-                Borough-Wide NYC Roofing Experts
+                <span className="font-bold">
+                  Borough-Wide NYC Roofing Experts
+                </span>
               </Link>
               <p className="text-gray-700 text-base font-bevietnam mt-4">
                 Our crews are experienced in serving a wide range of properties
-                across Brooklyn, Manhattan, Queens, and The Bronx. Whether it’s
-                a residential home in Park Slope or a retail space in Harlem, we
+                across <span className="font-bold">Brooklyn</span>,{" "}
+                <span className="font-bold">Manhattan</span>,{" "}
+                <span className="font-bold">Queens</span>, and The Bronx.
+                Whether it’s a <span className="font-bold">residential</span>{" "}
+                home in Park Slope or a{" "}
+                <span className="font-bold">retail</span> space in Harlem, we
                 handle it all with precision.
               </p>
             </motion.div>
 
-            {/* Waterproofing */}
             <motion.div
               initial="hidden"
               whileInView="visible"
@@ -124,16 +137,17 @@ export default function TopRoofingContractorsBlog() {
                 id="waterproofing-link"
                 aria-label="Learn more about our licensed and insured waterproofing services in NYC"
               >
-                Licensed, Insured & Certified in NYC
+                <span className="font-bold">
+                  Licensed, Insured & Certified in NYC
+                </span>
               </Link>
               <p className="text-gray-700 text-base font-bevietnam mt-4">
                 SAS Roofing is fully licensed and insured in New York City. We
                 follow DOB regulations and use only OSHA-compliant practices for
-                safety and reliability.
+                <span className="font-bold"> safety and reliability</span>.
               </p>
             </motion.div>
 
-            {/* Full-Service Roofing Solutions */}
             <motion.div
               initial="hidden"
               whileInView="visible"
@@ -153,13 +167,15 @@ export default function TopRoofingContractorsBlog() {
                 aria-label="Full list of our roofing services"
               >
                 <li>
-                  <strong aria-hidden="true">Roof Installations –</strong> Flat
-                  roofs (TPO, EPDM, Modified Bitumen), asphalt shingles, metal,
-                  and more.
+                  <strong aria-hidden="true">Roof Installations –</strong>{" "}
+                  <span className="font-bold">Flat roofs</span> (TPO, EPDM,
+                  Modified Bitumen), asphalt shingles, metal, and more.
                 </li>
                 <li>
                   <strong aria-hidden="true">Roof Repairs –</strong> Leak
-                  detection, storm damage repair, flashing, and emergency fixes.
+                  detection,{" "}
+                  <span className="font-bold">storm damage repair</span>,
+                  flashing, and emergency fixes.
                 </li>
                 <li>
                   <strong aria-hidden="true">Waterproofing Services –</strong>{" "}
@@ -169,12 +185,12 @@ export default function TopRoofingContractorsBlog() {
                   <strong aria-hidden="true">
                     Preventive Maintenance & Inspections –
                   </strong>{" "}
-                  Ideal for property managers and homeowners alike.
+                  Ideal for <span className="font-bold">property managers</span>{" "}
+                  and homeowners alike.
                 </li>
               </ul>
             </motion.div>
 
-            {/* Service Areas */}
             <motion.div
               initial="hidden"
               whileInView="visible"
@@ -212,7 +228,6 @@ export default function TopRoofingContractorsBlog() {
               </ul>
             </motion.div>
 
-            {/* What Makes SAS Different */}
             <motion.div
               initial="hidden"
               whileInView="visible"
@@ -238,29 +253,53 @@ export default function TopRoofingContractorsBlog() {
                 <li>Eco-Friendly Roofing Options Available.</li>
               </ul>
               <p className="text-gray-700 text-base font-bevietnam mt-4">
-                At SAS Roofing & Waterproofing, we handle everything from flat
-                roof installation, asphalt shingle roofing, and tile roofing
-                installation to green roof systems and EPDM rubber roofing.
-                <br /> <br />
-                Whether you need roof leak repair, skylight roof installation,
-                roof flashing repair, or a full slate roof replacement, our
-                licensed roofing company in NYC is equipped for both residential
-                roofing services and commercial roofers in the Bronx. <br />{" "}
+                At{" "}
+                <span className="font-bold">SAS Roofing & Waterproofing</span>,
+                we handle everything from{" "}
+                <span className="font-bold">flat roof installation</span>,
+                asphalt shingles, tile roofs to green systems and EPDM rubber
+                roofing.
                 <br />
-                We also offer expert TPO roofing, roof waterproofing in
-                Manhattan, and metal roof contractor solutions. <br /> <br />
-                Our team specializes in roof storm damage, emergency roof
-                repair, chimney flashing in Brooklyn, and roof ventilation
-                upgrades. <br /> <br />
-                We proudly serve as local roofing contractors offering accurate
-                roofing estimates in Queens, along with preventive gutter and
-                roof maintenance, full roof inspections in NYC, new roof
-                construction, and high-performance roof coating services to
-                protect your investment.
+                <br />
+                Whether you need{" "}
+                <span className="font-bold">roof leak repair</span>,{" "}
+                <span className="font-bold">skylight installation</span>,{" "}
+                <span className="font-bold">chimney flashing in Brooklyn</span>,
+                or full <span className="font-bold">roof replacement</span>, our{" "}
+                <span className="font-bold">licensed roofing company</span> is
+                equipped for both{" "}
+                <span className="font-bold">residential roofing</span> and{" "}
+                <span className="font-bold">
+                  commercial roofers in the Bronx
+                </span>
+                .
+                <br />
+                <br />
+                We also offer <span className="font-bold">
+                  TPO roofing
+                </span>,{" "}
+                <span className="font-bold">
+                  roof waterproofing in Manhattan
+                </span>
+                , and <span className="font-bold">metal roof contractor</span>{" "}
+                solutions.
+                <br />
+                <br />
+                Our team specializes in{" "}
+                <span className="font-bold">emergency roof repair</span>, roof
+                ventilation upgrades, and{" "}
+                <span className="font-bold">roof coating services</span>.
+                <br />
+                <br />
+                Get accurate{" "}
+                <span className="font-bold">
+                  roofing estimates in Queens
+                </span>{" "}
+                and protect your investment with our full roof inspections and
+                preventative maintenance.
               </p>
             </motion.div>
 
-            {/* Call to Action */}
             <motion.div
               initial="hidden"
               whileInView="visible"
@@ -281,7 +320,9 @@ export default function TopRoofingContractorsBlog() {
               >
                 <li>
                   <strong aria-hidden="true">Serving All 5 NYC Boroughs</strong>{" "}
-                  including Brooklyn, Manhattan, Queens & The Bronx
+                  including <span className="font-bold">Brooklyn</span>,{" "}
+                  <span className="font-bold">Manhattan</span>,{" "}
+                  <span className="font-bold">Queens</span> & The Bronx
                 </li>
                 <li>
                   <strong aria-hidden="true">Phone:</strong>{" "}

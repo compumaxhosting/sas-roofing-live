@@ -15,19 +15,47 @@ const fadeUp = {
 const services = [
   {
     title: "Top Roofing Services in Brooklyn",
-    desc: "We offer comprehensive roofing services in Brooklyn, including roof repair and roof installation. Our team specializes in flat roofs in Brooklyn, ensuring durability and protection against harsh weather.",
+    desc: (
+      <>
+        We offer comprehensive <strong>roofing services in Brooklyn</strong>,
+        including <strong>roof repair</strong> and{" "}
+        <strong>roof installation</strong>. Our team specializes in{" "}
+        <strong>flat roofs in Brooklyn</strong>, ensuring durability and
+        protection against harsh weather.
+      </>
+    ),
   },
   {
     title: "Residential & Commercial Roofing Brooklyn",
-    desc: "From residential roofing to commercial roofing in Brooklyn, we handle everything from minor repairs to large installations, ensuring your property stays safe and secure.",
+    desc: (
+      <>
+        From <strong>residential roofing</strong> to{" "}
+        <strong>commercial roofing in Brooklyn</strong>, we handle everything
+        from minor repairs to large installations, ensuring your property stays
+        safe and secure.
+      </>
+    ),
   },
   {
     title: "Roof Repair and Replacement Across NYC",
-    desc: "Whether you need roof repair in Manhattan, roof repair in Queens, or a roof replacement in Queens, SAS Roofing & Waterproofing provides fast and efficient solutions for all roofing types.",
+    desc: (
+      <>
+        Whether you need <strong>roof repair in Manhattan</strong>,{" "}
+        <strong>roof repair in Queens</strong>, or a{" "}
+        <strong>roof replacement in Queens</strong>, SAS Roofing & Waterproofing
+        provides fast and efficient solutions for all roofing types.
+      </>
+    ),
   },
   {
     title: "Affordable Roofing Solutions",
-    desc: "Looking for affordable roofing in Manhattan? SAS Roofing & Waterproofing offers high-quality services that fit your budget, without compromising on durability or performance.",
+    desc: (
+      <>
+        Looking for <strong>affordable roofing in Manhattan</strong>? SAS
+        Roofing & Waterproofing offers high-quality services that fit your
+        budget, without compromising on durability or performance.
+      </>
+    ),
   },
   {
     title: "Contact SAS Roofing & Waterproofing",
@@ -38,11 +66,10 @@ const services = [
 export default function RoofingServices() {
   return (
     <section
-      className="px-6 py-12 md:px-16 bg-white text-[#003269]"
+      className="px-6 py-12 md:px-16 bg-white text-[#003269] max-w-7xl mx-auto"
       aria-labelledby="roofing-services-heading"
     >
-      {/* Section Heading */}
-      <motion.div
+      <motion.header
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, amount: 0.2 }}
@@ -51,16 +78,17 @@ export default function RoofingServices() {
       >
         <div>
           <div className="flex items-center justify-center lg:justify-start gap-2 mb-1">
-            <div className="w-6 h-px bg-[#e63a27]" />
+            <div className="w-6 h-px bg-[#e63a27]" aria-hidden="true" />
             <span className="text-sm font-bold text-[#e63a27] uppercase font-inter">
               Roofing Services
             </span>
           </div>
           <h1
             id="roofing-services-heading"
-            className="text-3xl font-bold text-[#003269] leading-snug font-inter"
+            className="text-3xl font-bold leading-snug font-inter"
           >
-            Expert Roofing Services in Brooklyn, Queens and Manhattan
+            Expert <strong>Roofing Services in Brooklyn, Queens</strong> and{" "}
+            <strong>Manhattan</strong>
           </h1>
         </div>
 
@@ -73,9 +101,8 @@ export default function RoofingServices() {
             All Services
           </div>
         </Link>
-      </motion.div>
+      </motion.header>
 
-      {/* Intro Paragraph */}
       <motion.p
         initial="hidden"
         whileInView="visible"
@@ -83,17 +110,20 @@ export default function RoofingServices() {
         variants={fadeUp}
         className="text-sm md:text-base text-gray-700 mb-6 font-bevietnam"
       >
-        SAS Roofing & Waterproofing is your trusted roofing partner for both
-        residential and commercial roofing across Brooklyn, Queens, and
-        Manhattan. Whether you&apos;re in need of roof repair in Brooklyn, roof
-        installation in Manhattan, or affordable roofing in Queens, we provide
-        reliable and high-quality solutions tailored to your needs.
+        <strong>SAS Roofing & Waterproofing</strong> is your trusted{" "}
+        <strong>roofing</strong> partner for both{" "}
+        <strong>residential roofing</strong> and{" "}
+        <strong>commercial roofing</strong> across <strong>Brooklyn</strong>,{" "}
+        <strong>Queens</strong>, and <strong>Manhattan</strong>. Whether you
+        need <strong>roof repair in Brooklyn</strong>,{" "}
+        <strong>roof installation in Manhattan</strong>, or{" "}
+        <strong>affordable roofing in Queens</strong>, we provide reliable and
+        high-quality solutions tailored to your needs.
       </motion.p>
 
-      {/* Service Items */}
-      <div className="grid gap-6">
+      <div className="grid gap-10">
         {services.map(({ title, desc, isLink }, idx) => (
-          <motion.div
+          <motion.article
             key={idx}
             initial="hidden"
             whileInView="visible"
@@ -104,13 +134,15 @@ export default function RoofingServices() {
             <h2 className="text-xl md:text-2xl font-bold text-[#003269] font-inter">
               {title}
             </h2>
+
             {isLink ? (
               <p className="text-sm md:text-base text-gray-700 font-bevietnam">
-                For expert roofing contractors in Queens and beyond, reach out
-                to{" "}
+                For expert <strong>roofing contractors in Queens</strong> and
+                beyond, reach out to{" "}
                 <Link
                   href="/"
-                  className="text-[#e63a27] hover:text-[#003269] focus:outline focus:outline-[#003269]"
+                  className="text-[#e63a27] hover:underline font-bold"
+                  aria-label="Visit SAS Roofing & Waterproofing homepage"
                 >
                   SAS Roofing & Waterproofing
                 </Link>{" "}
@@ -121,7 +153,7 @@ export default function RoofingServices() {
                 {desc}
               </p>
             )}
-          </motion.div>
+          </motion.article>
         ))}
       </div>
     </section>

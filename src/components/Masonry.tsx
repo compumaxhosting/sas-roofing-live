@@ -16,15 +16,40 @@ export default function MasonryServices() {
   const services = [
     {
       title: "Masonry Services in Brooklyn",
-      desc: "We specialize in brick masonry, stone masonry, and concrete masonry in Brooklyn, delivering high-quality results for both residential and commercial projects. From masonry repair in Queens to custom masonry in Queens, our experienced team ensures durability and beauty for your property.",
+      desc: (
+        <>
+          We specialize in <strong>brick masonry</strong>,{" "}
+          <strong>stone masonry</strong>, and{" "}
+          <strong>concrete masonry in Brooklyn</strong>, delivering high-quality
+          results for both residential and commercial projects. From{" "}
+          <strong>masonry repair in Queens</strong> to custom masonry, our
+          experienced team ensures durability and beauty for your property.
+        </>
+      ),
     },
     {
       title: "Masonry Construction in Manhattan",
-      desc: "Our team offers expert masonry construction in Manhattan, handling everything from new builds to repairs. We are among the best masonry contractors in Brooklyn, providing services that last.",
+      desc: (
+        <>
+          Our team offers expert{" "}
+          <strong>masonry construction in Manhattan</strong>, handling
+          everything from new builds to repairs. We are among the{" "}
+          <strong>best masonry contractors in Brooklyn</strong>, providing
+          services that last.
+        </>
+      ),
     },
     {
       title: "Residential and Commercial Masonry Services in Manhattan",
-      desc: "For homeowners in Manhattan, our residential and commercial masonry services include everything from brickwork to stone and concrete masonry, creating lasting, beautiful structures.",
+      desc: (
+        <>
+          For homeowners in Manhattan, our{" "}
+          <strong>residential and commercial masonry services</strong> include
+          everything from <strong>brickwork</strong> to{" "}
+          <strong>stone masonry</strong> and <strong>concrete masonry</strong>,
+          creating lasting, beautiful structures.
+        </>
+      ),
     },
     {
       title: "Why Choose SAS Roofing & Waterproofing?",
@@ -33,9 +58,12 @@ export default function MasonryServices() {
   ];
 
   return (
-    <section className="px-6 py-12 md:px-16 bg-white text-[#003269]">
+    <section
+      className="px-6 py-12 md:px-16 bg-white text-[#003269] max-w-7xl mx-auto"
+      aria-labelledby="masonry-heading"
+    >
       {/* Header Section */}
-      <motion.div
+      <motion.header
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, amount: 0.2 }}
@@ -44,27 +72,33 @@ export default function MasonryServices() {
       >
         <div>
           <div className="flex items-center justify-center lg:justify-start gap-2 mb-1">
-            <div className="w-6 h-px bg-[#e63a27]" />
-            <span className="text-sm font-bold text-[#e63a27] uppercase font-inter">
+            <div className="w-6 h-px bg-[#e63a27]" aria-hidden="true" />
+            <span
+              className="text-sm font-bold text-[#e63a27] uppercase font-inter"
+              aria-hidden="true"
+            >
               Top Masonry Contractors NYC
             </span>
           </div>
-          <h1 className="text-3xl font-bold text-[#003269] leading-snug font-inter">
-            Expert Masonry Services in Brooklyn, Manhattan and Queens
+          <h1
+            id="masonry-heading"
+            className="text-3xl font-bold text-[#003269] leading-snug font-inter"
+          >
+            Expert <strong>Masonry Services in Brooklyn</strong>,{" "}
+            <strong>Manhattan</strong> and <strong>Queens</strong>
           </h1>
         </div>
 
-        {/* CTA Button */}
         <Link
           href="/services"
-          className="group border-4 border-[#003269] p-2 inline-block"
-          aria-label="See all masonry services"
+          className="group border-4 border-[#003269] p-2 inline-block focus:outline focus:outline-[#003269]"
+          aria-label="View all roofing services offered by SAS Roofing & Waterproofing"
         >
-          <div className="border border-[#e63a27] px-5 py-3 text-xs sm:text-sm md:text-base lg:text-lg font-bold text-[#e63a27] uppercase hover-button font-inter">
+          <div className="border border-[#e63a27] px-5 py-3 text-xs sm:text-sm md:text-base lg:text-lg font-bold text-[#e63a27] uppercase whitespace-nowrap hover-button font-inter">
             All Services
           </div>
         </Link>
-      </motion.div>
+      </motion.header>
 
       {/* Intro Paragraph */}
       <motion.p
@@ -74,16 +108,18 @@ export default function MasonryServices() {
         variants={fadeUp}
         className="text-sm md:text-base text-gray-700 mb-6 font-bevietnam max-w-5xl"
       >
-        SAS Roofing & Waterproofing provides top-tier masonry services across
-        Brooklyn, Manhattan, and Queens. Whether you need brickwork contractors
-        in Brooklyn or stone masonry in Brooklyn, we offer expert solutions
+        <strong>SAS Roofing & Waterproofing</strong> provides top-tier{" "}
+        <strong>masonry services</strong> across <strong>Brooklyn</strong>,{" "}
+        <strong>Manhattan</strong>, and <strong>Queens</strong>. Whether you
+        need <strong>brickwork contractors in Brooklyn</strong> or{" "}
+        <strong>stone masonry in Brooklyn</strong>, we offer expert solutions
         tailored to your needs.
       </motion.p>
 
-      {/* Services List */}
+      {/* Services */}
       <div className="grid gap-10">
         {services.map(({ title, desc, isLink }, idx) => (
-          <motion.div
+          <motion.article
             key={idx}
             custom={idx}
             initial="hidden"
@@ -96,25 +132,28 @@ export default function MasonryServices() {
               {title}
             </h2>
             {isLink ? (
-              <div className="text-sm md:text-base text-gray-700 font-bevietnam">
-                At SAS Roofing & Waterproofing, we are committed to delivering
-                exceptional masonry solutions. Our team provides reliable,
-                long-lasting masonry construction and repair across Brooklyn,
-                Manhattan, and Queens. Visit{" "}
+              <p className="text-sm md:text-base text-gray-700 font-bevietnam">
+                At <strong>SAS Roofing & Waterproofing</strong>, we are
+                committed to delivering exceptional masonry solutions. Our team
+                provides reliable, long-lasting{" "}
+                <strong>masonry construction</strong> and repair across{" "}
+                <strong>Brooklyn</strong>, <strong>Manhattan</strong>, and{" "}
+                <strong>Queens</strong>. Visit{" "}
                 <Link
                   href="/"
-                  className="text-[#e63a27] hover:text-[#003269] underline"
+                  className="text-[#e63a27] hover:underline font-bold"
+                  aria-label="Visit SAS Roofing & Waterproofing homepage"
                 >
                   SAS Roofing & Waterproofing
                 </Link>{" "}
                 to learn more.
-              </div>
+              </p>
             ) : (
               <p className="text-sm md:text-base text-gray-700 font-bevietnam">
                 {desc}
               </p>
             )}
-          </motion.div>
+          </motion.article>
         ))}
       </div>
     </section>

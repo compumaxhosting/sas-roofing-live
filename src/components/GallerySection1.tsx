@@ -42,7 +42,6 @@ function GalleryItem({
       whileInView={fadeUp.animate}
       transition={fadeUp.transition}
       viewport={{ once: true }}
-      // Hide from screen readers since image has alt and the button gives control
       aria-hidden="true"
     >
       <Image
@@ -51,6 +50,7 @@ function GalleryItem({
         width={width}
         height={height}
         className="object-cover w-full h-full"
+        loading="lazy"
       />
       <div className="absolute inset-0 bg-[#003269]/60 opacity-0 group-hover:opacity-100 transition duration-500 flex flex-col items-center justify-center text-white">
         <span className="text-lg sm:text-xl font-semibold mb-2">{title}</span>
@@ -110,7 +110,6 @@ function Modal({
             &times;
           </button>
 
-          {/* Hide arrows on small screens */}
           <button
             className="absolute left-4 text-white text-4xl hidden md:block z-10"
             onClick={onPrev}
@@ -150,6 +149,11 @@ function Modal({
           >
             &#8594;
           </button>
+
+          {/* Swipe hint for larger screens */}
+          <div className="absolute bottom-6 text-white text-sm hidden md:block animate-bounce opacity-70">
+            Swipe left or right
+          </div>
         </motion.div>
       )}
     </AnimatePresence>
@@ -160,31 +164,50 @@ export default function GallerySection() {
   const [modalOpen, setModalOpen] = useState(false);
   const [currentIndex, setCurrentIndex] = useState(0);
 
+  // ⏱ Autoplay slideshow in modal
   useEffect(() => {
-    if (modalOpen) {
-      document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "";
-    }
+    if (!modalOpen) return;
+    const timer = setInterval(() => {
+      handleNext();
+    }, 5000);
+    return () => clearInterval(timer);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [modalOpen]);
 
+  // Disable scroll when modal is open
+  useEffect(() => {
+    document.body.style.overflow = modalOpen ? "hidden" : "";
     return () => {
       document.body.style.overflow = "";
     };
   }, [modalOpen]);
 
+  const trackImageView = (idx: number) => {
+    console.log(`Viewing gallery image #${idx + 1}`);
+    // Replace with analytics.track if needed
+  };
+
   const handleZoom = (idx: number) => {
     setCurrentIndex(idx);
     setModalOpen(true);
+    trackImageView(idx);
   };
 
-  const handleNext = useCallback(
-    () => setCurrentIndex((prev) => (prev + 1) % images.length),
-    []
-  );
-  const handlePrev = useCallback(
-    () => setCurrentIndex((prev) => (prev - 1 + images.length) % images.length),
-    []
-  );
+  const handleNext = useCallback(() => {
+    setCurrentIndex((prev) => {
+      const next = (prev + 1) % images.length;
+      trackImageView(next);
+      return next;
+    });
+  }, []);
+
+  const handlePrev = useCallback(() => {
+    setCurrentIndex((prev) => {
+      const next = (prev - 1 + images.length) % images.length;
+      trackImageView(next);
+      return next;
+    });
+  }, []);
 
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
@@ -200,7 +223,6 @@ export default function GallerySection() {
   return (
     <section
       className="py-10 px-4 sm:px-6 lg:px-12 w-full"
-      // Mark main gallery content as hidden from screen readers when modal is open
       aria-hidden={modalOpen ? "true" : "false"}
     >
       {/* Desktop Layout */}
@@ -249,6 +271,7 @@ export default function GallerySection() {
               src={img}
               alt={`Gallery image ${idx + 1}`}
               fill
+              loading="lazy"
               className="object-cover w-full h-full"
             />
             <div className="absolute inset-0 bg-[#003269]/60 opacity-0 group-hover:opacity-100 transition duration-500 flex flex-col items-center justify-center text-white">

@@ -15,7 +15,7 @@ const slides = [
     description:
       "SAS Roofing is your source for high-quality roofing of any type",
     buttonText: "Read More",
-    image: "/Hero-Sec/slider-6.webp", // Converted to WebP
+    image: "/Hero-Sec/slider-6.webp",
   },
   {
     id: 2,
@@ -23,14 +23,14 @@ const slides = [
     description:
       "We provide expert roofing installations, repairs, and inspections",
     buttonText: "Read More",
-    image: "/Hero-Sec/slider-7.webp", // Converted to WebP
+    image: "/Hero-Sec/slider-7.webp",
   },
   {
     id: 3,
     title: "Your Roofing Needs For A Great Repair Job",
     description: "Reliable, professional, and affordable roofing services",
     buttonText: "Read More",
-    image: "/Hero-Sec/slider-4.webp", // Converted to WebP
+    image: "/Hero-Sec/slider-4.webp",
   },
 ];
 
@@ -80,8 +80,7 @@ export default function HeroSection() {
   return (
     <section
       className="relative w-full overflow-hidden bg-black"
-      role="region"
-      aria-label="Image carousel of roofing services"
+      aria-label="Roofing services carousel"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
@@ -94,13 +93,12 @@ export default function HeroSection() {
         style={{ cursor: "grab" }}
         whileTap={{ cursor: "grabbing" }}
       >
-        <ul className="flex" aria-live="polite" aria-atomic="true">
+        <ul className="flex" aria-live="polite">
           {slides.map((slide, index) => (
             <li
               key={slide.id}
-              role="group"
-              aria-roledescription="slide"
               aria-label={`Slide ${index + 1} of ${slides.length}`}
+              aria-hidden={index !== selectedIndex}
               className="relative flex-[0_0_100%] w-full h-[488px] sm:h-screen overflow-hidden"
             >
               <Image
@@ -123,7 +121,7 @@ export default function HeroSection() {
 
       <div className="absolute inset-0 z-20 flex flex-col justify-center items-start px-6 md:px-20 text-white pointer-events-none">
         <AnimatePresence mode="wait">
-          <motion.div
+          <motion.article
             key={selectedIndex}
             className="max-w-3xl space-y-6 pt-6 md:ml-14 xl:ml-46 pointer-events-auto"
             initial={{ opacity: 0, y: 30 }}
@@ -132,7 +130,7 @@ export default function HeroSection() {
             transition={{ duration: 0.5 }}
           >
             <h1 className="text-5xl md:text-6xl lg:text-8xl font-bold leading-tight font-inter">
-              {currentSlide.title}
+              <strong>{currentSlide.title}</strong>
             </h1>
             <p className="text-lg font-light tracking-wide font-bevietnam">
               {currentSlide.description}
@@ -140,20 +138,22 @@ export default function HeroSection() {
             <Link
               href="/aboutus"
               className="inline-block border-4 border-[#003269] p-1"
-              aria-label={`Read more about ${currentSlide.title}`}
             >
-              <Button className="Hero_hover-button text-sm sm:text-base lg:text-lg font-inter">
+              <Button
+                type="button"
+                className="Hero_hover-button text-sm sm:text-base lg:text-lg font-inter"
+              >
                 {currentSlide.buttonText.toUpperCase()}
               </Button>
             </Link>
-          </motion.div>
+          </motion.article>
         </AnimatePresence>
       </div>
 
       <button
         onClick={scrollPrev}
-        aria-label="Previous Slide"
-        tabIndex={0}
+        type="button"
+        aria-label="Previous slide"
         className="hidden md:block absolute left-5 top-1/2 -translate-y-1/2 rounded-full p-4 z-30 bg-black/40 hover:bg-[#e63a27] focus:outline-2 focus:outline-[#e63a27] transition-all"
       >
         <ChevronLeft className="text-white text-2xl" />
@@ -161,8 +161,8 @@ export default function HeroSection() {
 
       <button
         onClick={scrollNext}
-        aria-label="Next Slide"
-        tabIndex={0}
+        type="button"
+        aria-label="Next slide"
         className="hidden md:block absolute right-5 top-1/2 -translate-y-1/2 rounded-full p-4 z-30 bg-black/40 hover:bg-[#e63a27] focus:outline-2 focus:outline-[#e63a27] transition-all"
       >
         <ChevronRight className="text-white text-2xl" />
@@ -172,13 +172,15 @@ export default function HeroSection() {
         {slides.map((_, i) => (
           <button
             key={i}
+            type="button"
             onClick={() => emblaApi?.scrollTo(i)}
+            aria-label={`Go to slide ${i + 1}`}
+            aria-current={i === selectedIndex ? "true" : undefined}
             className={`h-2 w-2 rounded-full transition-colors duration-300 ${
               i === selectedIndex
                 ? "bg-[#e63a27]"
                 : "bg-white/70 hover:bg-white"
             }`}
-            aria-label={`Go to slide ${i + 1}`}
           />
         ))}
       </div>

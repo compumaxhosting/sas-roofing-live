@@ -18,49 +18,45 @@ export default function AboutCompany() {
   return (
     <section
       className="mb-5 md:mb-10 shadow-xl py-10 sm:py-16 lg:py-20 bg-[#f9f9f9]"
-      role="region"
       aria-label="About Company Section"
     >
       <div className="flex flex-col items-center xl:flex-row xl:items-start gap-10 lg:gap-16 max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 xl:px-16 2xl:px-20">
-        {/* Image Block */}
+        {/* Optimized Image */}
         <motion.figure
-          initial={{ opacity: 0, x: -50 }}
+          initial={{ opacity: 0, x: -30 }}
           whileInView={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.6, ease: "easeOut" }}
+          transition={{ duration: 0.5 }}
           viewport={{ once: true }}
-          className="relative w-full max-w-sm md:max-w-md lg:max-w-lg xl:max-w-xl flex-shrink-0 aspect-[5/5]"
-          aria-label="30+ years experience"
+          className="relative w-full max-w-md lg:max-w-lg"
         >
-          <div className="relative w-full h-[300px] sm:h-[400px] md:h-[450px] lg:h-[500px] xl:h-[550px] border-2 border-[#e63a27] overflow-hidden">
+          <div className="relative w-full aspect-[4/5] border-2 border-[#e63a27] overflow-hidden">
             <Image
               src="/about-us/aboutusimage.jpg"
               alt="Team working on site"
               fill
-              className="object-contain"
+              className="object-cover"
+              priority={false}
               sizes="(max-width: 768px) 100vw, (max-width: 1024px) 60vw, 500px"
             />
             <figcaption className="sr-only">
               Over 30 years of roofing and waterproofing experience
             </figcaption>
-
-            <div className="absolute top-4 right-10 bg-white bg-opacity-90 px-4 py-3 rounded-md text-[#003269] shadow-md flex items-center gap-2">
-              <span className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold font-inter">
+            <div className="absolute top-4 right-4 bg-white/90 px-4 py-2 rounded-md text-[#003269] shadow-md text-center">
+              <span className="block text-3xl font-extrabold font-inter">
                 30+
               </span>
-              <span className="leading-tight text-base sm:text-xl font-extrabold uppercase font-inter">
-                Years
-                <br />
-                of Experience
+              <span className="block text-xs font-inter uppercase">
+                Years of Experience
               </span>
             </div>
           </div>
         </motion.figure>
 
-        {/* Text Block */}
+        {/* Optimized Text */}
         <motion.article
-          initial={{ opacity: 0, y: 50 }}
+          initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, ease: "easeOut", delay: 0.2 }}
+          transition={{ duration: 0.6 }}
           viewport={{ once: true }}
           className="w-full max-w-lg xl:max-w-full text-left"
         >
@@ -76,15 +72,11 @@ export default function AboutCompany() {
             Roofing Is Our Heritage & Quality Is Our Tradition
           </h2>
 
-          <div
-            className="flex flex-wrap items-center gap-x-4 gap-y-2 text-sm font-semibold text-[#003269] mb-6"
-            aria-label="Company Features"
-          >
+          <div className="flex flex-wrap items-center gap-x-4 gap-y-2 text-sm font-semibold text-[#003269] mb-6">
             {features.map(({ icon: Icon, label, color }) => (
               <span
                 key={label}
                 className="flex items-center gap-1.5 font-bold uppercase"
-                aria-label={label}
               >
                 <Icon className={color} aria-hidden="true" />
                 {label}
@@ -94,13 +86,12 @@ export default function AboutCompany() {
 
           <div className="text-sm text-gray-700 font-bevietnam text-justify mb-4">
             <p>
-              For over twelve years, SAS Roofing & Waterproofing has proudly
-              served{" "}
+              For over thirty years,{" "}
+              <strong>SAS Roofing & Waterproofing</strong> has proudly served{" "}
               <Link
                 href="https://www.wikidata.org/wiki/Q18419"
                 target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Brooklyn"
+                className="font-bold"
               >
                 Brooklyn
               </Link>
@@ -108,8 +99,7 @@ export default function AboutCompany() {
               <Link
                 href="https://www.wikidata.org/wiki/Q11299"
                 target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Manhattan"
+                className="font-bold"
               >
                 Manhattan
               </Link>
@@ -117,8 +107,7 @@ export default function AboutCompany() {
               <Link
                 href="https://www.wikidata.org/wiki/Q18424"
                 target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Queens"
+                className="font-bold"
               >
                 Queens
               </Link>{" "}
@@ -126,62 +115,51 @@ export default function AboutCompany() {
               <Link
                 href="https://www.wikidata.org/wiki/Q18426"
                 target="_blank"
-                rel="noopener noreferrer"
-                aria-label="The Bronx"
+                className="font-bold"
               >
                 The Bronx
               </Link>{" "}
-              with top-tier roofing, waterproofing, and masonry solutions.
+              with top-tier <strong>roofing</strong>,{" "}
+              <strong>waterproofing</strong>, and <strong>masonry</strong>{" "}
+              solutions.
             </p>
 
             {showMore && (
-              <div
-                className="space-y-4 mt-4"
-                aria-live="polite"
-                id="company-details"
-              >
+              <div className="space-y-4 mt-4" id="company-details">
                 <p>
-                  As a trusted roofing contractor in Brooklyn, we specialize in
-                  everything from residential roof repairs to complete
-                  commercial roof installations.
+                  We specialize in everything from{" "}
+                  <strong>residential roof repairs</strong> to full{" "}
+                  <strong>commercial roof installations</strong>.
                 </p>
                 <p>
-                  Our skilled masonry team handles everything from brick
-                  restoration to sidewalk repair with care.
+                  Our masonry experts handle <strong>brick restoration</strong>,{" "}
+                  <strong>sidewalk repair</strong>, and more.
                 </p>
                 <p>
-                  Choose SAS Roofing & Waterproofing—where dedication meets
-                  experience, and every project is built on a foundation of
-                  trust and excellence.
+                  With <strong>dedication</strong>, <strong>experience</strong>,
+                  and <strong>trust</strong>— SAS Roofing & Waterproofing is the
+                  team you can rely on.
                 </p>
               </div>
             )}
           </div>
 
           <button
-            onClick={() => setShowMore((prev) => !prev)}
+            onClick={() => setShowMore(!showMore)}
             className="text-[#e63a27] font-semibold text-sm underline mb-6 hover:text-[#003269] transition-colors font-bevietnam"
             aria-expanded={showMore}
             aria-controls="company-details"
-            aria-label={
-              showMore
-                ? "Show less company details"
-                : "Show more company details"
-            }
           >
             {showMore ? "Read Less" : "Read More"}
           </button>
 
-          <div
-            className="flex items-start gap-2 mb-6"
-            aria-label="Certified Company Badge"
-          >
+          <div className="flex items-start gap-2 mb-6">
             <Image
               src="/about-us/certified-badge.jpg"
               alt="Certified Company Badge"
               width={50}
               height={50}
-              className="flex-shrink-0"
+              loading="lazy"
             />
             <span className="text-[#003269] text-base font-inter">
               <strong className="block mb-1">Certified Company</strong>
@@ -191,10 +169,10 @@ export default function AboutCompany() {
 
           <Link
             href="/aboutus"
-            className="inline-block border-4 border-[#003269] p-2 group self-start mt-4"
-            aria-label="Read more on About Us page"
+            className="inline-block border-4 border-[#003269] p-1 group"
+            aria-label="Read more about SAS Roofing"
           >
-            <span className="block border-2 border-[#e63a27] text-[#e63a27] px-6 py-3 font-bold uppercase tracking-wide text-sm lg:text-base group-hover:bg-[#e63a27] group-hover:text-white transition font-inter hover-button">
+            <span className="block border-2 border-[#e63a27] text-[#e63a27] px-6 py-3 font-bold uppercase tracking-wide hover:bg-[#e63a27] hover:text-white transition text-sm lg:text-base font-inter">
               Know More
             </span>
           </Link>
