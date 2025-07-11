@@ -3,6 +3,9 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
+import { FaFacebookF } from "react-icons/fa";
+import { FaXTwitter } from "react-icons/fa6";
+import { SiHouzz, SiYelp } from "react-icons/si";
 
 export default function Footer() {
   const fadeUp = (delay = 0) => ({
@@ -28,51 +31,91 @@ export default function Footer() {
     { label: "Contact", path: "/contact-us" },
     { label: "Blog", path: "/blog" },
   ];
-  const socialIcons = [
+  const socialItems = [
     {
-      src: "facebook",
-      path: "https://www.facebook.com/sasroofingwaterproofing",
+      icon: <FaFacebookF />,
       label: "Facebook",
+      link: "https://www.facebook.com/sasroofingwaterproofing",
     },
     {
-      src: "houzz",
-      path: "https://www.houzz.com/professionals/general-contractors/sas-roofing-and-waterproofing-pfvwus-pf~849386886?",
+      icon: <SiHouzz />,
       label: "Houzz",
+      link: "https://www.houzz.com/professionals/general-contractors/sas-roofing-and-waterproofing-pfvwus-pf~849386886?",
     },
     {
-      src: "angi",
-      path: "https://www.angi.com/companylist/us/ny/brooklyn/",
-      label: "Angi",
-    },
-    {
-      src: "manta",
-      path: "https://www.manta.com/c/mx7pcrf/sas-roofing-waterproofing",
-      label: "Manta",
-    },
-    {
-      src: "yellowpages",
-      path: "https://www.yellowpages.com/brooklyn-ny/mip/sas-roofing-waterproofing-465411323",
-      label: "Yellow Pages",
-    },
-    {
-      src: "yelp",
-      path: "https://www.yelp.com/biz/sas-roofing-and-waterproofing-brooklyn-8",
+      icon: <SiYelp />,
       label: "Yelp",
+      link: "https://www.yelp.com/biz/sas-roofing-and-waterproofing-brooklyn-8",
     },
     {
-      src: "x",
-      path: "https://x.com/sasroofing91254",
-      label: "X (formerly Twitter)",
-    }, // Added "(formerly Twitter)" for clarity
+      icon: <FaXTwitter />,
+      label: "X (Twitter)",
+      link: "https://x.com/sasroofing91254",
+    },
     {
-      src: "bbb",
-      path: "https://www.bbb.org/us/ny/brooklyn/profile/roofing-contractors/sas-contracting-co-inc-0121-161078/#sealclick",
+      icon: (
+        <Image
+          src="/Footer/angi_logo.png"
+          alt="Angi"
+          width={28}
+          height={28}
+          className="object-contain"
+        />
+      ),
+      label: "Angi",
+      link: "https://www.angi.com/companylist/us/ny/brooklyn/",
+    },
+    {
+      icon: (
+        <Image
+          src="/Footer/manta_logo.png"
+          alt="Manta"
+          width={28}
+          height={28}
+          className="object-contain"
+        />
+      ),
+      label: "Manta",
+      link: "https://www.manta.com/c/mx7pcrf/sas-roofing-waterproofing",
+    },
+    {
+      icon: (
+        <Image
+          src="/Footer/yellowpages_logo.png"
+          alt="Yellow Pages"
+          width={28}
+          height={28}
+          className="object-contain"
+        />
+      ),
+      label: "Yellow Pages",
+      link: "https://www.yellowpages.com/brooklyn-ny/mip/sas-roofing-waterproofing-465411323",
+    },
+    {
+      icon: (
+        <Image
+          src="/Footer/bbb_logo.png"
+          alt="BBB"
+          width={28}
+          height={28}
+          className="object-contain"
+        />
+      ),
       label: "BBB",
+      link: "https://www.bbb.org/us/ny/brooklyn/profile/roofing-contractors/sas-contracting-co-inc-0121-161078/#sealclick",
     },
     {
-      src: "google_my_business",
-      path: "https://www.google.com/maps/place/SAS+Roofing+&+Waterproofing", // Placeholder
-      label: "Google My Business", // More accurate label
+      icon: (
+        <Image
+          src="/Footer/review-us-on-google.jpg"
+          alt="review-us-on-google"
+          width={28}
+          height={28}
+          className="object-contain"
+        />
+      ),
+      label: "Review Us On Google",
+      link: "https://g.page/r/Cdj4RS1sCCdVEBM/review",
     },
   ];
 
@@ -250,28 +293,17 @@ export default function Footer() {
               New York 11230
             </address>
           </div>
-          <div
-            className="flex gap-2 flex-wrap mt-6 items-center"
-            aria-label="Social media links"
-          >
-            {" "}
-            {/* Added aria-label for context */}
-            {socialIcons.map(({ src, path, label }) => (
+          <div className="flex gap-3 flex-wrap items-center mt-6">
+            {socialItems.map(({ icon, label, link }, i) => (
               <a
-                key={src}
-                href={path}
+                key={i}
+                href={link}
                 target="_blank"
                 rel="noopener noreferrer"
-                aria-label={`Visit our ${label} page (opens in new tab)`} // More descriptive label
+                aria-label={`Visit our ${label} page`}
+                className="text-white hover:text-[#e63a27] transition duration-300 text-xl"
               >
-                <Image
-                  src={`/Footer/${src}_logo.png`}
-                  alt={label} // Alt text is already good, matches label
-                  width={35}
-                  height={35}
-                  className="object-contain h-[28px] w-auto"
-                  loading="lazy"
-                />
+                {icon}
               </a>
             ))}
           </div>

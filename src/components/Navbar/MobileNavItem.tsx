@@ -1,7 +1,6 @@
 "use client";
 
 import Link from "next/link";
-import { usePathname } from "next/navigation";
 import { Dispatch, SetStateAction } from "react";
 
 interface NavItem {
@@ -12,22 +11,20 @@ interface NavItem {
 
 interface Props {
   item: NavItem;
-  isOpen: boolean; // Not directly used in this component, but passed down, so kept for type safety
+  isOpen: boolean;
   setIsOpen: Dispatch<SetStateAction<boolean>>;
-  servicesOpen: boolean;
-  setServicesOpen: Dispatch<SetStateAction<boolean>>;
-  pathname: string; // Removed this prop as usePathname is called directly
+  openDropdown: string | null;
+  setOpenDropdown: Dispatch<SetStateAction<string | null>>;
+  pathname: string;
 }
 
 export default function MobileNavItem({
   item,
   setIsOpen,
-  servicesOpen,
-  setServicesOpen,
+  openDropdown,
+  setOpenDropdown,
+  pathname,
 }: Props) {
-  const pathname = usePathname();
-
-  // Determine if the current item or any of its sub-items are active
   const isSubItemActive = item.subItems?.some(
     (sub) => pathname === sub.href || pathname.startsWith(sub.href + "/")
   );
@@ -36,27 +33,28 @@ export default function MobileNavItem({
     pathname.startsWith(item.href + "/") ||
     isSubItemActive;
 
-  const toggleSubmenu = () => setServicesOpen((prev) => !prev);
+  const isOpenDropdown = openDropdown === item.name;
+  const toggleSubmenu = () => {
+    setOpenDropdown(isOpenDropdown ? null : item.name);
+  };
 
   if (item.subItems) {
     return (
       <div
         className="border-t border-white/20 last:border-b font-inter"
-        role="none" // Indicate that this div is purely for styling and does not have a semantic role
+        role="none"
       >
         <div className="flex items-center">
-          {" "}
-          {/* New wrapper for link and button */}
           <Link
             href={item.href}
-            onClick={() => setIsOpen(false)} // Close drawer when main link is clicked
+            onClick={() => setIsOpen(false)}
             className={`flex-1 px-6 py-4 text-left font-semibold transition-colors font-inter ${
               isActive
                 ? "bg-white text-[#e63a27]"
                 : "hover:bg-white hover:text-black"
             }`}
-            aria-current={isActive ? "page" : undefined} // Indicate current page for active link
-            aria-label={`${item.name} page link`} // Explicit label for the link
+            aria-current={isActive ? "page" : undefined}
+            aria-label={`${item.name} page link`}
           >
             {item.name}
           </Link>
@@ -67,35 +65,35 @@ export default function MobileNavItem({
                 ? "bg-white text-[#e63a27]"
                 : "hover:bg-white hover:text-black"
             }`}
-            aria-expanded={servicesOpen} // Communicates if the submenu is expanded or collapsed
+            aria-expanded={isOpenDropdown}
             aria-controls={`submenu-${item.name
               .toLowerCase()
-              .replace(/\s/g, "-")}`} // Link to the submenu div via its ID
-            aria-label={`Toggle ${item.name} submenu`} // Explicit label for the toggle button
+              .replace(/\s/g, "-")}`}
+            aria-label={`Toggle ${item.name} submenu`}
           >
             <span
               className={`transform transition-transform duration-200 ${
-                servicesOpen ? "rotate-180" : ""
+                isOpenDropdown ? "rotate-180" : ""
               }`}
-              aria-hidden="true" // Decorative arrow, hidden from screen readers as button has label
+              aria-hidden="true"
             >
               ▼
             </span>
           </button>
         </div>
         <div
-          id={`submenu-${item.name.toLowerCase().replace(/\s/g, "-")}`} // Unique ID for the submenu div
+          id={`submenu-${item.name.toLowerCase().replace(/\s/g, "-")}`}
           className={`bg-[#00244d] text-sm overflow-hidden transition-all duration-300 ease-in-out font-inter ${
-            servicesOpen ? "max-h-96" : "max-h-0"
+            isOpenDropdown ? "max-h-96" : "max-h-0"
           }`}
-          role="menu" // Indicates this is a menu for screen readers
-          aria-hidden={!servicesOpen} // Hides the submenu from screen readers when collapsed
+          role="menu"
+          aria-hidden={!isOpenDropdown}
         >
           {item.subItems.map(({ name, href }) => (
             <Link
               key={name}
               href={href}
-              onClick={() => setIsOpen(false)} // Close drawer when a sub-item is clicked
+              onClick={() => setIsOpen(false)}
               className={`block px-8 py-3 transition-colors font-inter ${
                 pathname === href || pathname.startsWith(href + "/")
                   ? "bg-white text-[#e63a27]"
@@ -105,9 +103,9 @@ export default function MobileNavItem({
                 pathname === href || pathname.startsWith(href + "/")
                   ? "page"
                   : undefined
-              } // Indicate active sub-link
-              aria-label={`${name} page link`} // Explicit label for each sub-link
-              role="menuitem" // Indicates this is an item within the menu
+              }
+              aria-label={`${name} page link`}
+              role="menuitem"
             >
               {name}
             </Link>
@@ -117,22 +115,21 @@ export default function MobileNavItem({
     );
   }
 
-  // Regular nav item (no sub-items)
   return (
     <Link
       href={item.href}
-      onClick={() => setIsOpen(false)} // Close drawer when a regular link is clicked
+      onClick={() => setIsOpen(false)}
       className={`block px-6 py-4 border-t border-white/20 last:border-b transition-colors font-inter ${
         pathname === item.href || pathname.startsWith(item.href + "/")
-          ? "bg-white text-[#e63a27]" // Adjusted active style for consistency
+          ? "bg-white text-[#e63a27]"
           : "hover:bg-white hover:text-black"
       }`}
       aria-current={
         pathname === item.href || pathname.startsWith(item.href + "/")
           ? "page"
           : undefined
-      } // Indicate current page for active link
-      aria-label={`${item.name} page link`} // Explicit label for the link
+      }
+      aria-label={`${item.name} page link`}
     >
       {item.name}
     </Link>

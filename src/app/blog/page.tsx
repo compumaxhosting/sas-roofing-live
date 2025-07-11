@@ -10,6 +10,15 @@ import React from "react";
 
 const slides = [
   {
+    title: "How Waterproofing Can Save Your NYC Property from Costly Damage",
+    shortTitle: "Shield your NYC property from costly water damage.",
+    description: `Reliable waterproofing specialists protecting NYC properties from leaks, mold, and structural damage across Brooklyn, Manhattan, Queens, and The Bronx...`,
+    date: "11 JULY",
+    image: "/blog/waterproofing.webp",
+    link: "how-waterproofing-can-save-your-nyc-property-from-costly-damage",
+    initialLikes: 70,
+  },
+  {
     title:
       "Trusted Roofing Contractors Serving Brooklyn, Manhattan, Queens & The Bronx",
     shortTitle: "Licensed Roofers Proudly Serving Brooklyn to The Bronx",
@@ -17,7 +26,7 @@ const slides = [
     date: "25 JUN",
     image: "/blog/roofing_blog.jpg",
     link: "top-roofing-contractors-brooklyn-manhattan-queens-bronx-sas-roofing-nyc",
-    initialLikes: 50,
+    initialLikes: 150,
   },
   {
     title:
@@ -27,7 +36,7 @@ const slides = [
     date: "10 JUN",
     image: "/blog/roofing-contractors.jpg",
     link: "the-satisfaction-factor-why-certified-roofing-contractors-in-brooklyn-are-a-smart-choice",
-    initialLikes: 100,
+    initialLikes: 200,
   },
   {
     title:
@@ -37,7 +46,7 @@ const slides = [
     date: "29 May",
     image: "/blog/blogImage.jpg",
     link: "How-This-NYC-Waterproofing-Contractor-is-Revolutionizing-Home-Protection",
-    initialLikes: 140,
+    initialLikes: 260,
   },
   {
     title:
@@ -49,7 +58,7 @@ const slides = [
     date: "13 JUNE",
     image: "/blog/roofing.jpg",
     link: "Why-SAS-Roofing-and-Waterproofing-Is-Brooklyns-Most-Trusted-Roofing-Expert",
-    initialLikes: 120,
+    initialLikes: 220,
   },
   {
     title: "Replacing Shingle Roof And Installing Skylight",
@@ -58,7 +67,7 @@ const slides = [
     date: "13 JUNE",
     image: "/blog/leakage_roof.jpg",
     link: "/", // This should redirect to home
-    initialLikes: 106,
+    initialLikes: 200,
   },
   {
     title: "Foundation Wall Repair And Waterproofing",
@@ -67,7 +76,7 @@ const slides = [
     date: "13 JUNE",
     image: "/blog/waterproofing.png",
     link: "/",
-    initialLikes: 170,
+    initialLikes: 270,
   },
   {
     title: "How To Weather Proof Your Roof This Winter?",
@@ -76,7 +85,7 @@ const slides = [
     date: "11 JUNE",
     image: "/blog/services1.png",
     link: "/",
-    initialLikes: 180,
+    initialLikes: 280,
   },
   {
     title:
@@ -86,7 +95,7 @@ const slides = [
     date: "11 JUNE",
     image: "/blog/masonry_services.png",
     link: "/",
-    initialLikes: 111,
+    initialLikes: 311,
   },
   {
     title: "Roofing Excellence Across New York’s Core Boroughs",
@@ -95,7 +104,7 @@ const slides = [
     date: "11 JUNE",
     image: "/blog/roofing1.jpg",
     link: "/",
-    initialLikes: 122,
+    initialLikes: 132,
   },
 ];
 

@@ -152,6 +152,7 @@ export default function FAQ() {
       className="px-6 py-12 md:px-16 bg-white text-[#003269] max-w-7xl mx-auto"
       aria-labelledby="faq-heading"
     >
+      {/* Header */}
       <motion.header
         initial="hidden"
         whileInView="visible"
@@ -178,6 +179,7 @@ export default function FAQ() {
         </p>
       </motion.header>
 
+      {/* FAQ List */}
       {faqSections.map((section, idx) => (
         <motion.article
           key={idx}
@@ -186,31 +188,34 @@ export default function FAQ() {
           viewport={{ once: true, amount: 0.1 }}
           variants={fadeUp}
           className="mb-10"
+          aria-labelledby={`faq-section-${idx}`}
         >
-          <h2 className="text-xl md:text-2xl font-bold mb-4 font-inter">
+          <h2
+            id={`faq-section-${idx}`}
+            className="text-xl md:text-2xl font-bold mb-4 font-inter"
+          >
             {section.title}
           </h2>
-          <div className="space-y-6">
+
+          <dl className="space-y-6">
             {section.faqs.map((faq, i) => (
               <div key={i}>
-                <h3 className="text-lg md:text-xl font-semibold mb-1 font-inter">
+                <dt className="text-lg md:text-xl font-semibold font-inter">
                   Q: {faq.q}
-                </h3>
-                {typeof faq.a === "string" ? (
-                  <p className="text-sm md:text-base text-gray-700 font-bevietnam">
-                    {faq.a}
-                  </p>
-                ) : (
-                  <div className="text-sm md:text-base text-gray-700 font-bevietnam">
-                    {faq.a}
-                  </div>
-                )}
+                </dt>
+                <dd
+                  className="text-sm md:text-base text-gray-700 mt-1 font-bevietnam"
+                  aria-live="polite"
+                >
+                  {typeof faq.a === "string" ? <p>{faq.a}</p> : faq.a}
+                </dd>
               </div>
             ))}
-          </div>
+          </dl>
         </motion.article>
       ))}
 
+      {/* Footer CTA */}
       <motion.div
         initial="hidden"
         whileInView="visible"

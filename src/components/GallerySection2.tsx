@@ -3,6 +3,11 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation, Autoplay } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/autoplay";
 
 const images = [
   "/Gallery/gallery1.jpg",
@@ -64,31 +69,26 @@ function Modal({
   onPrev: () => void;
 }) {
   if (!open) return null;
-
   return (
     <div
       role="dialog"
       aria-modal="true"
-      aria-label="Image zoom modal"
-      tabIndex={-1}
       className="fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center z-60"
     >
       <button
-        aria-label="Close modal"
         className="absolute top-4 right-4 text-white text-3xl z-10"
         onClick={onClose}
+        aria-label="Close modal"
       >
         &times;
       </button>
-
       <button
-        aria-label="Previous image"
         className="absolute left-4 text-white text-4xl hidden md:block z-10"
         onClick={onPrev}
+        aria-label="Previous image"
       >
         &#8592;
       </button>
-
       <motion.div
         className="max-w-[90%] max-h-[80vh]"
         drag="x"
@@ -107,18 +107,13 @@ function Modal({
           className="object-contain max-h-[80vh]"
         />
       </motion.div>
-
       <button
-        aria-label="Next image"
         className="absolute right-4 text-white text-4xl hidden md:block z-10"
         onClick={onNext}
+        aria-label="Next image"
       >
         &#8594;
       </button>
-
-      <div className="absolute bottom-6 text-white text-sm hidden md:block animate-bounce opacity-70">
-        Swipe or use arrows
-      </div>
     </div>
   );
 }
@@ -135,7 +130,6 @@ const GalleryCard = ({
   onZoom: () => void;
 }) => {
   const aspectClass = getAspectClass(src);
-
   return (
     <motion.div
       className="relative group overflow-hidden shadow-lg"
@@ -150,15 +144,11 @@ const GalleryCard = ({
           src={src}
           alt={alt}
           fill
-          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
           className="object-cover"
           loading="lazy"
         />
       </div>
-      <div
-        className="absolute inset-0 bg-[#003269]/50 flex flex-col items-center justify-center text-white opacity-0 group-hover:opacity-100 transform scale-90 group-hover:scale-100 transition duration-700"
-        aria-hidden="true"
-      >
+      <div className="absolute inset-0 bg-[#003269]/50 flex flex-col items-center justify-center text-white opacity-0 group-hover:opacity-100 transform scale-90 group-hover:scale-100 transition duration-700">
         <span className="text-lg sm:text-xl font-semibold mb-4 font-inter">
           SAS Roofing
         </span>
@@ -166,7 +156,6 @@ const GalleryCard = ({
           className="w-10 h-10 bg-transparent border border-white flex items-center justify-center hover:bg-[#e63a27] hover:border-[#e63a27] transition-colors"
           onClick={onZoom}
           aria-label={`Zoom in on ${alt}`}
-          type="button"
         >
           <Image
             src="/Gallery/search.png"
@@ -184,26 +173,22 @@ export default function GallerySection2() {
   const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
   const [visibleCount, setVisibleCount] = useState(9);
 
-  const trackImageView = (index: number) => {
-    console.log(`Viewed image: ${index + 1} (${images[index]})`);
+  const handleZoom = (idx: number) => {
+    console.log(`Zoomed: ${idx + 1}`);
+    setSelectedIndex(idx);
   };
 
   const closeModal = () => setSelectedIndex(null);
 
   const showNext = () =>
-    setSelectedIndex((prev) => {
-      const nextIndex = prev === null ? 0 : (prev + 1) % images.length;
-      trackImageView(nextIndex);
-      return nextIndex;
-    });
+    setSelectedIndex((prev) =>
+      prev !== null ? (prev + 1) % images.length : 0
+    );
 
   const showPrev = () =>
-    setSelectedIndex((prev) => {
-      const prevIndex =
-        prev === null ? 0 : (prev - 1 + images.length) % images.length;
-      trackImageView(prevIndex);
-      return prevIndex;
-    });
+    setSelectedIndex((prev) =>
+      prev !== null ? (prev - 1 + images.length) % images.length : 0
+    );
 
   useEffect(() => {
     const handleKey = (e: KeyboardEvent) => {
@@ -218,39 +203,20 @@ export default function GallerySection2() {
   useEffect(() => {
     if (selectedIndex !== null) {
       document.body.style.overflow = "hidden";
+      const interval = setInterval(() => showNext(), 5000);
+      return () => {
+        clearInterval(interval);
+        document.body.style.overflow = "";
+      };
     } else {
       document.body.style.overflow = "";
     }
-
-    return () => {
-      document.body.style.overflow = "";
-    };
   }, [selectedIndex]);
-
-  useEffect(() => {
-    if (selectedIndex === null) return;
-    const interval = setInterval(() => {
-      showNext();
-    }, 5000);
-    return () => clearInterval(interval);
-  }, [selectedIndex]);
-
-  const handleZoom = (idx: number) => {
-    trackImageView(idx);
-    setSelectedIndex(idx);
-  };
 
   return (
-    <section
-      className="px-4 sm:px-6 lg:px-12 py-12 w-full"
-      aria-label="Gallery section"
-      role="region"
-    >
-      <div
-        className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6"
-        role="list"
-        aria-label="Gallery images"
-      >
+    <section className="px-4 sm:px-6 lg:px-12 py-12 w-full">
+      {/* Desktop layout */}
+      <div className="hidden xl:grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
         {images.slice(0, visibleCount).map((src, idx) => (
           <GalleryCard
             key={idx}
@@ -262,8 +228,34 @@ export default function GallerySection2() {
         ))}
       </div>
 
+      {/* Swiper for below 1080px */}
+      <div className="xl:hidden">
+        <Swiper
+          modules={[Navigation, Autoplay]}
+          autoplay={{ delay: 2000, disableOnInteraction: false }}
+          navigation
+          spaceBetween={20}
+          slidesPerView={1}
+          breakpoints={{
+            640: { slidesPerView: 1.2 },
+            768: { slidesPerView: 2 },
+          }}
+        >
+          {images.map((src, idx) => (
+            <SwiperSlide key={idx}>
+              <GalleryCard
+                src={src}
+                alt={`Gallery image ${idx + 1}`}
+                delay={0}
+                onZoom={() => handleZoom(idx)}
+              />
+            </SwiperSlide>
+          ))}
+        </Swiper>
+      </div>
+
       {visibleCount < images.length && (
-        <div className="text-center mt-10">
+        <div className="text-center mt-10 xl:block hidden">
           <button
             className="bg-[#003269] text-white px-6 py-2 rounded-md hover:bg-[#e63a27] transition-colors text-sm font-semibold"
             onClick={() => setVisibleCount((prev) => prev + 6)}

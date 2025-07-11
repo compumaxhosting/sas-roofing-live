@@ -20,9 +20,16 @@ const navItems = [
     ],
   },
   { label: "PROJECTS", path: "/projects" },
-  { label: "TESTIMONIALS", path: "/reviews" },
-  { label: "CONTACT US", path: "/contact-us" },
+  {
+    label: "TESTIMONIALS",
+    path: "/reviews",
+    subItems: [
+      { label: "Customer Reviews", path: "/reviews" },
+      { label: "FAQ", path: "/faq" },
+    ],
+  },
   { label: "BLOG", path: "/blog" },
+  { label: "CONTACT US", path: "/contact-us" },
 ];
 
 const inter = Inter({
@@ -35,45 +42,46 @@ export default function NavLinks({
 }: {
   setSidebarOpen: (val: boolean) => void;
 }) {
-  const [isOpen, setIsOpen] = useState(false); // Controls mobile sidebar visibility
-  const [sidebarServicesOpen, setSidebarServicesOpen] = useState(false); // Controls services submenu in mobile sidebar
-  const [isServicesOpen, setIsServicesOpen] = useState(false); // Controls services dropdown on desktop
+  const [isOpen, setIsOpen] = useState(false);
+  const [openSidebarDropdown, setOpenSidebarDropdown] = useState<string | null>(
+    null
+  );
+  const [openDropdown, setOpenDropdown] = useState<string | null>(null);
   const timeoutId = useRef<NodeJS.Timeout | null>(null);
   const pathname = usePathname();
 
-  const handleMouseEnter = () => {
+  const handleMouseEnter = (label: string) => {
     if (timeoutId.current) clearTimeout(timeoutId.current);
-    setIsServicesOpen(true);
+    setOpenDropdown(label);
   };
 
   const handleMouseLeave = () => {
     timeoutId.current = setTimeout(() => {
-      setIsServicesOpen(false);
+      setOpenDropdown(null);
     }, 300);
   };
 
-  // Keyboard handler for the desktop services dropdown
-  const handleDesktopServicesKeyDown = (
-    e: KeyboardEvent<HTMLAnchorElement>
+  const handleDesktopDropdownKeyDown = (
+    e: KeyboardEvent<HTMLAnchorElement>,
+    label: string
   ) => {
     if (e.key === "Enter" || e.key === " ") {
       e.preventDefault();
-      setIsServicesOpen((prev) => !prev);
+      setOpenDropdown((prev) => (prev === label ? null : label));
     } else if (e.key === "Escape") {
-      setIsServicesOpen(false);
-      // Optionally focus back on the main Services link
+      setOpenDropdown(null);
     }
   };
 
-  // Keyboard handler for the sidebar services toggle button
   const handleSidebarServicesKeyDown = (
-    e: KeyboardEvent<HTMLButtonElement>
+    e: KeyboardEvent<HTMLButtonElement>,
+    label: string
   ) => {
     if (e.key === "Enter" || e.key === " ") {
       e.preventDefault();
-      setSidebarServicesOpen((prev) => !prev);
+      setOpenSidebarDropdown((prev) => (prev === label ? null : label));
     } else if (e.key === "Escape") {
-      setSidebarServicesOpen(false);
+      setOpenSidebarDropdown(null);
     }
   };
 
@@ -82,9 +90,8 @@ export default function NavLinks({
       <nav className="flex items-center h-full w-full justify-end">
         <ul
           className={`flex gap-4 text-sm font-semibold text-[#003269] items-stretch h-full w-full justify-end ${inter.className}`}
-          role="menubar" // Indicates this is a menu bar
+          role="menubar"
         >
-          {/* Desktop Links */}
           {navItems.map(({ label, path, subItems }) => {
             const isActive =
               pathname === path ||
@@ -95,45 +102,45 @@ export default function NavLinks({
               <li
                 key={label}
                 className="hidden desktop-nav-item items-center relative h-full"
-                onMouseEnter={subItems ? handleMouseEnter : undefined}
+                onMouseEnter={
+                  subItems ? () => handleMouseEnter(label) : undefined
+                }
                 onMouseLeave={subItems ? handleMouseLeave : undefined}
-                role="none" // Presentational list item within menubar
+                role="none"
               >
                 <Link
                   href={path}
                   className={`px-2 flex items-center gap-1 hover:text-[#e63a27] ${
                     isActive ? "text-[#e63a27]" : ""
                   }`}
-                  aria-haspopup={subItems ? "menu" : undefined} // Indicates a submenu
-                  aria-expanded={subItems ? isServicesOpen : undefined} // Indicates if submenu is open
+                  aria-haspopup={subItems ? "menu" : undefined}
+                  aria-expanded={subItems ? openDropdown === label : undefined}
                   onKeyDown={
-                    subItems ? handleDesktopServicesKeyDown : undefined
-                  } // Keyboard navigation for dropdown
-                  role={subItems ? "menuitem" : "link"} // Role for direct links vs. menu item that opens a submenu
-                  aria-label={subItems ? `${label} menu link` : undefined} // More descriptive label for "SERVICES" link
+                    subItems
+                      ? (e) => handleDesktopDropdownKeyDown(e, label)
+                      : undefined
+                  }
+                  role={subItems ? "menuitem" : "link"}
+                  aria-label={subItems ? `${label} menu link` : undefined}
                 >
                   {label}
                   {subItems && (
                     <span
                       className={`text-[#e63a27] transition-transform duration-200 ${
-                        isServicesOpen ? "rotate-180" : ""
+                        openDropdown === label ? "rotate-180" : ""
                       }`}
-                      aria-hidden="true" // Hide decorative arrow from screen readers
+                      aria-hidden="true"
                     >
                       ▼
                     </span>
                   )}
                 </Link>
 
-                {subItems && (
+                {subItems && openDropdown === label && (
                   <div
-                    className={`absolute left-0 top-full mt-1 bg-white border-t-4 border-[#e63a27] shadow-lg rounded-sm z-20 min-w-[180px] overflow-hidden transition-all duration-300 ease-in-out ${
-                      isServicesOpen
-                        ? "opacity-100 translate-y-0 pointer-events-auto"
-                        : "opacity-0 translate-y-2 pointer-events-none"
-                    }`}
-                    role="menu" // Identifies this as a submenu
-                    aria-orientation="vertical" // Indicates vertical menu orientation
+                    className={`absolute left-0 top-full mt-1 bg-white border-t-4 border-[#e63a27] shadow-lg rounded-sm z-20 min-w-[180px] overflow-hidden transition-all duration-300 ease-in-out opacity-100 translate-y-0 pointer-events-auto`}
+                    role="menu"
+                    aria-orientation="vertical"
                   >
                     {subItems.map(({ label: subLabel, path: subPath }) => (
                       <Link
@@ -142,7 +149,7 @@ export default function NavLinks({
                         className={`block px-5 py-4 text-[#003269] hover:bg-[#e63a27] hover:text-white text-sm ${
                           pathname === subPath ? "bg-[#e63a27] text-white" : ""
                         }`}
-                        role="menuitem" // Identifies as an item within the submenu
+                        role="menuitem"
                       >
                         {subLabel}
                       </Link>
@@ -153,72 +160,65 @@ export default function NavLinks({
             );
           })}
 
-          {/* Mobile Menu Toggle (Button to open sidebar) */}
+          {/* Mobile menu button */}
           <li className="flex mobile-nav-item items-center gap-2" role="none">
-            {" "}
-            {/* Role none as it's a list item for a button */}
             <button
               onClick={() => setIsOpen(true)}
-              aria-label="Open mobile navigation menu" // More specific label
+              aria-label="Open mobile navigation menu"
               className="md:hidden border-2 border-white p-2"
             >
               <Image
                 src="/Navbar/menu4.png"
-                alt="Open menu icon" // Descriptive alt text
+                alt="Open menu icon"
                 width={28}
                 height={28}
                 className="object-contain"
-                aria-hidden="true" // Icon is decorative, label is on button
+                aria-hidden="true"
               />
             </button>
             <button
               onClick={() => setIsOpen(true)}
-              aria-label="Open mobile navigation menu" // More specific label
+              aria-label="Open mobile navigation menu"
               className="hidden md:block border-2 border-[#e63a27] p-2"
             >
               <Image
                 src="/Navbar/menu3.png"
-                alt="Open menu icon" // Descriptive alt text
+                alt="Open menu icon"
                 width={28}
                 height={28}
                 className="object-contain"
-                aria-hidden="true" // Icon is decorative, label is on button
+                aria-hidden="true"
               />
             </button>
           </li>
 
-          {/* Quote Button */}
+          {/* Get a Quote Button */}
           <li role="none">
-            {" "}
-            {/* Presentational list item */}
             <Link
-              href="/contact-us" // Assuming GET A QUOTE links to contact us
+              href="/contact-us"
               className="bg-[#e5392c] hover:bg-[#e63a27] transition-colors text-white font-semibold px-6 flex items-center get-hover-button h-full"
-              aria-label="Get a free quote" // Clearer label for the action
+              aria-label="Get a free quote"
             >
               GET A QUOTE
             </Link>
           </li>
 
-          {/* Sidebar Trigger (Desktop) - Alternative way to open sidebar */}
+          {/* Sidebar Trigger */}
           <li
             className="hidden md:flex items-center w-8 h-8 relative mt-6"
             role="none"
           >
-            {" "}
-            {/* Presentational list item */}
             <div
               onClick={() => setSidebarOpen(true)}
               onKeyPress={(e: KeyboardEvent<HTMLDivElement>) => {
-                // Add keyboard support for div acting as button
                 if (e.key === "Enter" || e.key === " ") {
                   e.preventDefault();
                   setSidebarOpen(true);
                 }
               }}
-              role="button" // Indicate that this div acts as a button
-              tabIndex={0} // Make it keyboard focusable
-              aria-label="Open sidebar menu with additional information" // Specific label
+              role="button"
+              tabIndex={0}
+              aria-label="Open sidebar menu with additional information"
               className="w-full h-full relative cursor-pointer"
             >
               <Image
@@ -226,14 +226,14 @@ export default function NavLinks({
                 alt=""
                 fill
                 className="object-contain opacity-100 hover:opacity-0 transition-opacity duration-200"
-                aria-hidden="true" // Decorative image for the button
+                aria-hidden="true"
               />
               <Image
                 src="/Navbar/menu-hover.png"
                 alt=""
                 fill
                 className="object-contain opacity-0 hover:opacity-100 transition-opacity duration-200 absolute top-0 left-0"
-                aria-hidden="true" // Decorative image for the button
+                aria-hidden="true"
               />
             </div>
           </li>
@@ -247,13 +247,13 @@ export default function NavLinks({
             isOpen ? "opacity-100 pointer-events-auto" : "opacity-0"
           }`}
           onClick={() => setIsOpen(false)}
-          aria-hidden={!isOpen} // Hide from screen readers when closed
-          tabIndex={isOpen ? 0 : -1} // Make focusable only when open
+          aria-hidden={!isOpen}
+          tabIndex={isOpen ? 0 : -1}
         />
         <div
           role="dialog"
           aria-modal="true"
-          aria-label="Main sidebar navigation" // Label for the entire sidebar dialog
+          aria-label="Main sidebar navigation"
           className={`w-[40%] h-full bg-[#003269] text-white relative flex flex-col transition-transform duration-300 ease-in-out transform ${
             isOpen ? "translate-x-0 pointer-events-auto" : "translate-x-full"
           }`}
@@ -261,7 +261,7 @@ export default function NavLinks({
           <button
             className="absolute top-3 right-3 bg-[#e63a27] text-white w-8 h-8 rounded-full flex items-center justify-center"
             onClick={() => setIsOpen(false)}
-            aria-label="Close sidebar menu" // Clear label for close button
+            aria-label="Close sidebar menu"
           >
             ✕
           </button>
@@ -273,7 +273,7 @@ export default function NavLinks({
           >
             <Image
               src="/Navbar/Logo.png"
-              alt="Company Logo" // Alt text is good
+              alt="Company Logo"
               width={260}
               height={130}
               className="object-contain cursor-pointer"
@@ -294,7 +294,7 @@ export default function NavLinks({
                 <div
                   key={label}
                   className="border-t border-white/20 last:border-b"
-                  role="none" // Presentational container
+                  role="none"
                 >
                   <button
                     className={`w-full px-6 py-4 text-left flex justify-between items-center font-semibold transition-colors ${
@@ -302,44 +302,37 @@ export default function NavLinks({
                         ? "text-[#e63a27]"
                         : "hover:bg-white hover:text-black"
                     }`}
-                    onClick={() => setSidebarServicesOpen((prev) => !prev)}
-                    onKeyDown={handleSidebarServicesKeyDown} // Keyboard handler for toggle
-                    aria-expanded={sidebarServicesOpen}
-                    aria-controls="sidebar-services-submenu" // Link to submenu ID
-                    aria-haspopup="true" // Indicate that it has a popup
+                    onClick={() =>
+                      setOpenSidebarDropdown((prev) =>
+                        prev === label ? null : label
+                      )
+                    }
+                    onKeyDown={(e) => handleSidebarServicesKeyDown(e, label)}
+                    aria-expanded={openSidebarDropdown === label}
+                    aria-controls={`sidebar-${label}-submenu`}
+                    aria-haspopup="true"
                   >
-                    {/* The nested Link within a button is generally an anti-pattern.
-                        Consider having the button toggle the submenu, and if the parent
-                        "SERVICES" link is also clickable, make it a separate item or handle via JS.
-                        For accessibility, it's safer to have the button only toggle the submenu.
-                        If "SERVICES" itself is a page, perhaps the button should wrap the text,
-                        and the whole thing is inside a list item.
-                        For now, I've left it, but noted the pattern.
-                    */}
                     <Link
-                      href="/services"
+                      href={path}
                       tabIndex={-1}
                       aria-label={`Go to ${label} page and toggle submenu`}
                     >
-                      {" "}
-                      {/* tabIndex -1 to make link not focusable, button is focusable */}
                       {label}
                     </Link>
                     <span
                       className={`transform transition-transform duration-200 ${
-                        sidebarServicesOpen ? "rotate-180" : ""
+                        openSidebarDropdown === label ? "rotate-180" : ""
                       }`}
-                      aria-hidden="true" // Hide decorative arrow
+                      aria-hidden="true"
                     >
                       ▼
                     </span>
                   </button>
                   <div
-                    id="sidebar-services-submenu" // ID for aria-controls
-                    role="group" // Indicates a navigable group of items
-                    aria-labelledby={`sidebar-services-button-${label}`} // Link back to the button that controls it (if the button had an ID)
+                    id={`sidebar-${label}-submenu`}
+                    role="group"
                     className={`bg-[#00244d] text-sm overflow-hidden transition-all duration-300 ease-in-out ${
-                      sidebarServicesOpen ? "max-h-96" : "max-h-0"
+                      openSidebarDropdown === label ? "max-h-96" : "max-h-0"
                     }`}
                   >
                     {subItems.map(({ label: subLabel, path: subPath }) => (
@@ -352,7 +345,7 @@ export default function NavLinks({
                             : "hover:bg-white hover:text-black"
                         }`}
                         onClick={() => setIsOpen(false)}
-                        role="link" // Role for individual sub-links
+                        role="link"
                       >
                         {subLabel}
                       </Link>
@@ -369,7 +362,7 @@ export default function NavLinks({
                       : "hover:bg-white hover:text-black"
                   }`}
                   onClick={() => setIsOpen(false)}
-                  role="link" // Explicit role for direct links
+                  role="link"
                 >
                   {label}
                 </Link>
@@ -383,20 +376,18 @@ export default function NavLinks({
               target="_blank"
               rel="noopener noreferrer"
               className="bg-[#e63a27] rounded-full w-10 h-10 flex items-center justify-center"
-              aria-label="Visit our Facebook page (opens in new tab)" // Clearer label
+              aria-label="Visit our Facebook page (opens in new tab)"
             >
-              <FaFacebookF className="text-white text-lg" aria-hidden="true" />{" "}
-              {/* Icon is decorative */}
+              <FaFacebookF className="text-white text-lg" aria-hidden="true" />
             </a>
             <a
               href="https://www.houzz.com/professionals/general-contractors/sas-roofing-and-waterproofing-pfvwus-pf~849386886?"
               target="_blank"
               rel="noopener noreferrer"
               className="bg-[#e63a27] rounded-full w-10 h-10 flex items-center justify-center"
-              aria-label="Visit our Houzz profile (opens in new tab)" // Clearer label
+              aria-label="Visit our Houzz profile (opens in new tab)"
             >
-              <FaHome className="text-white text-lg" aria-hidden="true" />{" "}
-              {/* Icon is decorative */}
+              <FaHome className="text-white text-lg" aria-hidden="true" />
             </a>
           </div>
         </div>

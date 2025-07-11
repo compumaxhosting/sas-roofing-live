@@ -1,7 +1,8 @@
 "use client";
+
 import { motion } from "framer-motion";
 import { ReactNode, CSSProperties, JSX } from "react";
-import Link from "next/link"; // Import Link for Next.js routing or external links
+import Link from "next/link";
 import React from "react";
 
 const fadeUp = {
@@ -21,12 +22,11 @@ interface ContactItem {
   icon: ReactNode;
   title: string;
   desc: string;
-  content: string | JSX.Element; // <-- Updated here
+  content: string | JSX.Element;
   type: "address" | "phone" | "email";
   link?: string;
   ariaLabel?: string;
 }
-
 
 interface ContactCardProps {
   item: ContactItem;
@@ -43,7 +43,6 @@ const ContactCard: React.FC<ContactCardProps> = ({
   cardShadowStyle,
   iconTab,
 }) => {
-  // Function to render content with active links based on type
   const renderContentWithLinks = (
     content: string | JSX.Element,
     type: ContactItem["type"]
@@ -51,61 +50,70 @@ const ContactCard: React.FC<ContactCardProps> = ({
     if (typeof content !== "string") return content;
 
     return content.split("\n").map((line, i) => {
-      let linkedContent: ReactNode = line;
+      const trimmedLine = line.trim();
+      if (!trimmedLine) return null;
 
       if (type === "phone" && line.includes(":")) {
         const [label, number] = line.split(":", 2);
-        const cleanedNumber = number.replace(/\D/g, "");
-        linkedContent = (
-          <Link
-            href={`tel:+1${cleanedNumber}`}
-            className="hover:underline text-[#003269] group-hover:text-white transition-colors"
-            aria-label={`${label.trim()} phone number: ${number.trim()}`}
-          >
-            {line}
-          </Link>
+        const telLink = number.replace(/\D/g, "");
+        return (
+          <React.Fragment key={i}>
+            <Link
+              href={`tel:+1${telLink}`}
+              className="hover:underline text-[#003269] group-hover:text-white transition-colors"
+              aria-label={`${label.trim()} phone number: ${number.trim()}`}
+            >
+              {line}
+            </Link>
+            <br />
+          </React.Fragment>
         );
-      } else if (type === "email" && line.includes(":")) {
+      }
+
+      if (type === "email" && line.includes(":")) {
         const [label, email] = line.split(":", 2);
-        linkedContent = (
-          <Link
-            href={`mailto:${email.trim()}?subject=Website Inquiry from ${label.trim()}`}
-            className="hover:underline text-[#003269] group-hover:text-white transition-colors"
-            aria-label={`${label.trim()} email address: ${email.trim()}`}
-          >
-            {line}
-          </Link>
+        return (
+          <React.Fragment key={i}>
+            <Link
+              href={`mailto:${email.trim()}?subject=Website Inquiry from ${label.trim()}`}
+              className="hover:underline text-[#003269] group-hover:text-white transition-colors"
+              aria-label={`${label.trim()} email address: ${email.trim()}`}
+            >
+              {line}
+            </Link>
+            <br />
+          </React.Fragment>
         );
-      } else if (
-        type === "address" &&
-        typeof content === "string" &&
-        item.link
-      ) {
-        linkedContent = (
-          <Link
-            href={item.link}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="hover:underline text-[#003269] group-hover:text-white transition-colors"
-            aria-label={item.ariaLabel || `Get directions to ${item.content}`}
-          >
-            {line}
-          </Link>
+      }
+
+      if (type === "address" && item.link) {
+        return (
+          <React.Fragment key={i}>
+            <Link
+              href={item.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:underline text-[#003269] group-hover:text-white transition-colors"
+              aria-label={item.ariaLabel || `Get directions to ${line}`}
+            >
+              {line}
+            </Link>
+            <br />
+          </React.Fragment>
         );
       }
 
       return (
         <React.Fragment key={i}>
-          {linkedContent}
+          {line}
           <br />
         </React.Fragment>
       );
     });
   };
-  
 
   return (
-    <motion.div
+    <motion.article
       className={cardStyle}
       style={cardShadowStyle}
       custom={index}
@@ -113,25 +121,25 @@ const ContactCard: React.FC<ContactCardProps> = ({
       whileInView="visible"
       viewport={{ once: true }}
       variants={fadeUp}
-      // Add aria-label if the entire card is meant to be actionable,
-      // or if it provides a summary for screen readers.
-      // Otherwise, the links within will handle their own labels.
-      aria-label={item.ariaLabel}
+      aria-labelledby={`contact-title-${index}`}
+      role="group"
     >
       <div className={iconTab} aria-hidden="true">
         {item.icon}
-      </div>{" "}
-      {/* Hide icon from screen readers */}
+      </div>
+
       <div className="mt-2 space-y-1">
-        <h1 className="text-[#003269] font-semibold text-xl group-hover:text-white font-inter">
+        <h3
+          id={`contact-title-${index}`}
+          className="text-[#003269] font-semibold text-xl group-hover:text-white font-inter"
+        >
           {item.title}
-        </h1>
+        </h3>
 
         <p className="italic text-gray-600 group-hover:text-gray-300 font-bevietnam">
           {item.desc}
         </p>
 
-        {/* Use <address> only if the content is truly an address */}
         {item.type === "address" ? (
           <address className="not-italic text-gray-500 font-medium whitespace-pre-line group-hover:text-gray-300 font-bevietnam">
             {renderContentWithLinks(item.content, item.type)}
@@ -142,7 +150,7 @@ const ContactCard: React.FC<ContactCardProps> = ({
           </p>
         )}
       </div>
-    </motion.div>
+    </motion.article>
   );
 };
 

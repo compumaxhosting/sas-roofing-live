@@ -17,13 +17,21 @@ interface Props {
 
 const slides = [
   {
+    title: "How Waterproofing Can Save Your NYC Property from Costly Damage",
+    description: "Shield your NYC property from costly water damage",
+    date: "11 July",
+    image: "/blog/waterproofing.webp",
+    link: "how-waterproofing-can-save-your-nyc-property-from-costly-damage",
+    initialLikeCount: 70,
+  },
+  {
     title:
       "Trusted Roofing Contractors Serving Brooklyn, Manhattan, Queens & The Bronx",
     description: "Licensed Roofers Proudly Serving Brooklyn to The Bronx",
     date: "25 June",
     image: "/blog/roofing_blog.jpg",
     link: "top-roofing-contractors-brooklyn-manhattan-queens-bronx-sas-roofing-nyc",
-    initialLikeCount: 50,
+    initialLikeCount: 150,
   },
   {
     title:
@@ -32,7 +40,7 @@ const slides = [
     date: "10 June",
     image: "/blog/roofing-contractors.jpg",
     link: "the-satisfaction-factor-why-certified-roofing-contractors-in-brooklyn-are-a-smart-choice",
-    initialLikeCount: 100,
+    initialLikeCount: 200,
   },
   {
     title:
@@ -41,7 +49,7 @@ const slides = [
     date: "29 May",
     image: "/blog/blogImage.jpg",
     link: "How-This-NYC-Waterproofing-Contractor-is-Revolutionizing-Home-Protection",
-    initialLikeCount: 140,
+    initialLikeCount: 260,
   },
   {
     title:
@@ -50,7 +58,7 @@ const slides = [
     date: "21 May",
     image: "/blog/roofing.jpg",
     link: "Why-SAS-Roofing-and-Waterproofing-Is-Brooklyns-Most-Trusted-Roofing-Expert",
-    initialLikeCount: 120,
+    initialLikeCount: 220,
   },
   {
     title: "Replacing Shingle Roof And Installing Skylight",
@@ -58,7 +66,7 @@ const slides = [
     date: "10 APR",
     image: "/blog/leakage_roof.jpg",
     link: "/",
-    initialLikeCount: 106,
+    initialLikeCount: 200,
   },
   {
     title: "Foundation Wall Repair And Waterproofing",
@@ -66,7 +74,7 @@ const slides = [
     date: "17 APR",
     image: "/blog/services2.jpg",
     link: "/",
-    initialLikeCount: 170,
+    initialLikeCount: 270,
   },
   {
     title: "How To Weather Proof Your Roof This Winter?",
@@ -74,7 +82,7 @@ const slides = [
     date: "30 APR",
     image: "/blog/services1.png",
     link: "/",
-    initialLikeCount: 180,
+    initialLikeCount: 280,
   },
 ];
 

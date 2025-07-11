@@ -1,7 +1,13 @@
 "use client";
+
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import { useEffect, useState, useCallback } from "react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation, Autoplay } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/autoplay";
 
 const images = [
   "/Gallery/gallery1.jpg",
@@ -124,11 +130,8 @@ function Modal({
             drag="x"
             dragConstraints={{ left: 0, right: 0 }}
             onDragEnd={(e, info) => {
-              if (info.offset.x < -100) {
-                onNext();
-              } else if (info.offset.x > 100) {
-                onPrev();
-              }
+              if (info.offset.x < -100) onNext();
+              else if (info.offset.x > 100) onPrev();
             }}
           >
             <Image
@@ -150,7 +153,6 @@ function Modal({
             &#8594;
           </button>
 
-          {/* Swipe hint for larger screens */}
           <div className="absolute bottom-6 text-white text-sm hidden md:block animate-bounce opacity-70">
             Swipe left or right
           </div>
@@ -164,17 +166,14 @@ export default function GallerySection() {
   const [modalOpen, setModalOpen] = useState(false);
   const [currentIndex, setCurrentIndex] = useState(0);
 
-  // ⏱ Autoplay slideshow in modal
   useEffect(() => {
     if (!modalOpen) return;
     const timer = setInterval(() => {
       handleNext();
     }, 5000);
     return () => clearInterval(timer);
-  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [modalOpen]);
 
-  // Disable scroll when modal is open
   useEffect(() => {
     document.body.style.overflow = modalOpen ? "hidden" : "";
     return () => {
@@ -184,7 +183,6 @@ export default function GallerySection() {
 
   const trackImageView = (idx: number) => {
     console.log(`Viewing gallery image #${idx + 1}`);
-    // Replace with analytics.track if needed
   };
 
   const handleZoom = (idx: number) => {
@@ -225,7 +223,7 @@ export default function GallerySection() {
       className="py-10 px-4 sm:px-6 lg:px-12 w-full"
       aria-hidden={modalOpen ? "true" : "false"}
     >
-      {/* Desktop Layout */}
+      {/* Desktop Layout (Above 1080px) */}
       <div className="hidden xl:flex flex-col items-center gap-8 w-full">
         <div className="flex justify-center gap-6 w-full">
           {images.slice(0, 3).map((src, i) => (
@@ -255,45 +253,59 @@ export default function GallerySection() {
         </div>
       </div>
 
-      {/* Mobile Layout */}
-      <div className="flex xl:hidden flex-wrap justify-center gap-4">
-        {images.map((img, idx) => (
-          <motion.div
-            key={idx}
-            className="w-full sm:w-[48%] md:w-[45%] max-w-[440px] aspect-[1/1] sm:aspect-[4/3] shadow-md overflow-hidden relative group"
-            initial={fadeUp.initial}
-            whileInView={fadeUp.animate}
-            transition={fadeUp.transition}
-            viewport={{ once: true }}
-            aria-hidden="true"
-          >
-            <Image
-              src={img}
-              alt={`Gallery image ${idx + 1}`}
-              fill
-              loading="lazy"
-              className="object-cover w-full h-full"
-            />
-            <div className="absolute inset-0 bg-[#003269]/60 opacity-0 group-hover:opacity-100 transition duration-500 flex flex-col items-center justify-center text-white">
-              <span className="text-lg sm:text-xl font-semibold mb-2 font-inter">
-                SAS Roofing
-              </span>
-              <button
-                onClick={() => handleZoom(idx)}
-                className="w-10 h-10 bg-transparent border border-white flex items-center justify-center hover:bg-[#e63a27] hover:border-[#e63a27] transition-colors"
-                aria-label={`Zoom in on image ${idx + 1}`}
-                type="button"
+      {/* Mobile Swiper Slider (Below 1080px) */}
+      <div className="xl:hidden w-full">
+        <Swiper
+          modules={[Navigation, Autoplay]}
+          navigation
+          autoplay={{ delay: 2000, disableOnInteraction: false }}
+          spaceBetween={20}
+          slidesPerView={1}
+          breakpoints={{
+            640: { slidesPerView: 1.2 },
+            768: { slidesPerView: 2 },
+          }}
+          className="!pb-6"
+        >
+          {images.map((img, idx) => (
+            <SwiperSlide key={idx}>
+              <motion.div
+                className="w-full aspect-[4/3] shadow-md overflow-hidden relative group max-w-[440px] mx-auto"
+                initial={fadeUp.initial}
+                whileInView={fadeUp.animate}
+                transition={fadeUp.transition}
+                viewport={{ once: true }}
+                aria-hidden="true"
               >
                 <Image
-                  src="/Gallery/search.png"
-                  alt="Zoom icon"
-                  width={20}
-                  height={20}
+                  src={img}
+                  alt={`Gallery image ${idx + 1}`}
+                  fill
+                  loading="lazy"
+                  className="object-cover w-full h-full"
                 />
-              </button>
-            </div>
-          </motion.div>
-        ))}
+                <div className="absolute inset-0 bg-[#003269]/60 opacity-0 group-hover:opacity-100 transition duration-500 flex flex-col items-center justify-center text-white">
+                  <span className="text-lg sm:text-xl font-semibold mb-2 font-inter">
+                    SAS Roofing
+                  </span>
+                  <button
+                    onClick={() => handleZoom(idx)}
+                    className="w-10 h-10 bg-transparent border border-white flex items-center justify-center hover:bg-[#e63a27] hover:border-[#e63a27] transition-colors"
+                    aria-label={`Zoom in on image ${idx + 1}`}
+                    type="button"
+                  >
+                    <Image
+                      src="/Gallery/search.png"
+                      alt="Zoom icon"
+                      width={20}
+                      height={20}
+                    />
+                  </button>
+                </div>
+              </motion.div>
+            </SwiperSlide>
+          ))}
+        </Swiper>
       </div>
 
       <Modal

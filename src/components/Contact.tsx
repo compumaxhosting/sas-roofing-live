@@ -1,4 +1,5 @@
 "use client";
+
 import { Mail, MapPin, Phone } from "lucide-react";
 import dynamic from "next/dynamic";
 
@@ -30,34 +31,69 @@ const Contact = () => {
     {
       icon: <MapPin className="text-white w-6 h-6" aria-hidden="true" />,
       title: "Visit Our Office",
-      desc: "You are most welcome to visit our office.",
+      desc: "You're always welcome to stop by.",
       content: (
-        <>
-          552 Rugby Rd
-          <br />
-          Brooklyn NY 11230
-        </>
+        <address>
+          <a
+            href="https://www.google.com/maps/search/552+Rugby+Rd+Brooklyn+NY+11230"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="not-italic text-blue-900 hover:underline"
+          >
+            552 Rugby Rd
+            <br />
+            Brooklyn, NY 11230
+          </a>
+        </address>
       ),
       type: "address" as const,
-      link: "https://www.google.com/maps/search/552+Rugby+Rd+Brooklyn+NY+11230",
-      ariaLabel:
-        "Get directions to our office at 552 Rugby Road, Brooklyn NY 11230",
+      ariaLabel: "Get directions to our Brooklyn office",
     },
     {
       icon: <Phone className="text-white w-6 h-6" aria-hidden="true" />,
       title: "Make a Call",
-      desc: "Keeping you always better connected.",
-      content: "OFFICE: (347) 394-9384\nCELL: (347) 221-6549",
+      desc: "We’re just a call away.",
+      content: (
+        <>
+          <a
+            href="tel:13473949384"
+            className="block text-blue-900 hover:underline"
+          >
+            OFFICE: (347) 394-9384
+          </a>
+          <a
+            href="tel:13472216549"
+            className="block text-blue-900 hover:underline"
+          >
+            CELL: (347) 221-6549
+          </a>
+        </>
+      ),
       type: "phone" as const,
-      ariaLabel: "Our office and cell phone numbers for calls",
+      ariaLabel: "Call our office or mobile number",
     },
     {
       icon: <Mail className="text-white w-6 h-6" aria-hidden="true" />,
       title: "Send Email",
-      desc: "Drop us a mail we will answer you asap.",
-      content: "SUPPORT: sascon09@yahoo.com\nSUPPORT: amzadh78@gmail.com",
+      desc: "Drop us a message anytime.",
+      content: (
+        <>
+          <a
+            href="mailto:sascon09@yahoo.com"
+            className="block text-blue-900 hover:underline"
+          >
+            SUPPORT: sascon09@yahoo.com
+          </a>
+          <a
+            href="mailto:amzadh78@gmail.com"
+            className="block text-blue-900 hover:underline"
+          >
+            SUPPORT: amzadh78@gmail.com
+          </a>
+        </>
+      ),
       type: "email" as const,
-      ariaLabel: "Our support email addresses for inquiries",
+      ariaLabel: "Email our support team",
     },
   ];
 
@@ -66,9 +102,9 @@ const Contact = () => {
       aria-labelledby="contact-section-heading"
       className="w-full flex flex-col items-center px-4 py-10 bg-white"
     >
-      <h1 id="contact-section-heading" className="sr-only">
+      <h2 id="contact-section-heading" className="sr-only">
         Contact Information
-      </h1>
+      </h2>
 
       <div className="w-full max-w-3xl flex flex-col gap-6">
         {contactItems.map((item, index) => (

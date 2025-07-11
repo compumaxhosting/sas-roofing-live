@@ -53,12 +53,12 @@ export default function CustomerReviews() {
       className="bg-[#f9f9f9] py-10 px-4"
     >
       <div className="text-center mb-6">
-        <h1
+        <h2
           id="customer-reviews-heading"
           className="text-2xl sm:text-3xl font-bold text-[#003269] font-inter"
         >
           Customer Reviews
-        </h1>
+        </h2>
         <div
           className="mt-1 h-1 w-12 mx-auto bg-[#003269]"
           aria-hidden="true"
@@ -72,8 +72,8 @@ export default function CustomerReviews() {
             href={href}
             target="_blank"
             rel="noopener noreferrer"
-            aria-label={`View SAS Roofing's reviews on ${alt}`}
-            className="border rounded-md p-3 shadow-sm hover:shadow-md transition bg-white w-[70px] h-[70px] lg:w-[100px] lg:h-[100px] flex items-center justify-center"
+            aria-label={`Read SAS Roofing reviews on ${alt}`}
+            className="border rounded-md p-3 shadow-sm hover:shadow-md transition bg-white w-[70px] h-[70px] lg:w-[100px] lg:h-[100px] flex items-center justify-center focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-[#003269]"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.4, delay: index * 0.08 }}
