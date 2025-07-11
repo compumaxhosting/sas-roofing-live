@@ -141,11 +141,11 @@ const ReviewSlider = () => {
         {/* Screen reader only text for rating */}
         <p className="text-gray-600 text-sm font-inter">
           <span aria-hidden="true">(</span>
-          Based on 34 Google Reviews
+          Based on 126 Google Reviews
           <span aria-hidden="true">)</span>
         </p>
         <Link
-          href="https://www.google.com/search?sca_esv=44785faec4b38403&hl=en-IN&gl=in&sxsrf=AHTn8zqibJ4bTPvhVHIjXbIiCuri3N9dNg:1746640776320&si=APYL9bs7Hg2KMLB-4tSoTdxuOx8BdRvHbByC_AuVpNyh0x2KzRXdA7aRSP0fPCbY4r-w7Xlc_H5K-rMs-6p7czYZpZV5g8XT02WLATrugqbv9Pt2j-UXbKSxafnerU2YrHvGVWSwXaAj2lXaOtGbFRPxdNviohP_bg%3D%3D&q=SAS+Roofing+%26+Waterproofing+Reviews&sa=X&ved=2ahUKEwjZjZf495GNAxUbrVYBHaK-BfUQ0bkNegQIMxAE&biw=1600&bih=773&dpr=1#lrd=0x89c25b2dd928663d:0x5527086c2d45f8d8,3,,,,,"
+          href="https://g.page/r/Cdj4RS1sCCdVEBM/review"
           target="_blank"
           rel="noopener noreferrer" // Essential for security with target="_blank"
           aria-label="Review us on Google. Opens in a new tab." // More descriptive label

@@ -2,15 +2,15 @@ import { ReactNode } from "react";
 
 // Metadata for SEO
 export const metadata = {
-  title: "NYC Waterproofing Contractor Protecting Your Home",
+  title: "Roofing & Waterproofing Tips | SAS Roofing Blog",
   description:
-    "Discover how this NYC waterproofing contractor revolutionizes home protection with advanced solutions for lasting defense against water damage.",
+    "Explore expert tips, guides, and updates on roofing, waterproofing, and masonry services in NYC from SAS Roofing & Waterproofing professionals.",
   keywords:
-    "NYC waterproofing contractor, home waterproofing NYC, waterproofing services NYC, basement waterproofing NYC, roof waterproofing NYC, exterior waterproofing NYC, waterproofing company NYC, professional waterproofing NYC, water damage prevention NYC, NYC home protection services",
+    "roofing tips NYC, waterproofing blog, masonry repair guide, NYC roofing blog, roof maintenance tips, leak prevention NYC, roof repair advice, waterproofing solutions, SAS Roofing updates, roofing contractors NYC",
   openGraph: {
     title: "NYC Waterproofing Contractor Protecting Your Home",
     description:
-      "Discover how this NYC waterproofing contractor revolutionizes home protection with advanced solutions for lasting defense against water damage.",
+      "Explore expert tips, guides, and updates on roofing, waterproofing, and masonry services in NYC from SAS Roofing & Waterproofing professionals.",
     url: "https://www.sasroofingwaterproofing.com/blog.html",
     images: [
       {

@@ -51,6 +51,7 @@ export default function BlogPage() {
                 alt="Close-up of a building wall undergoing waterproofing treatment, showing a professional applying a sealant."
                 width={600}
                 height={400}
+                loading="lazy" // Add this
                 className="rounded-xl shadow-lg"
               />
             </div>

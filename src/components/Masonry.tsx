@@ -92,7 +92,6 @@ export default function MasonryServices() {
         <Link
           href="/services"
           className="group border-4 border-[#003269] p-2 inline-block focus:outline focus:outline-[#003269]"
-          aria-label="View all roofing services offered by SAS Roofing & Waterproofing"
         >
           <div className="border border-[#e63a27] px-5 py-3 text-xs sm:text-sm md:text-base lg:text-lg font-bold text-[#e63a27] uppercase whitespace-nowrap hover-button font-inter">
             All Services
@@ -116,10 +115,10 @@ export default function MasonryServices() {
         tailored to your needs.
       </motion.p>
 
-      {/* Services */}
-      <div className="grid gap-10">
+      {/* Services List */}
+      <ul className="grid gap-10 list-none p-0 m-0">
         {services.map(({ title, desc, isLink }, idx) => (
-          <motion.article
+          <motion.li
             key={idx}
             custom={idx}
             initial="hidden"
@@ -128,34 +127,35 @@ export default function MasonryServices() {
             variants={fadeUp}
             className="space-y-3"
           >
-            <h2 className="text-xl md:text-2xl font-bold text-[#003269] font-inter">
-              {title}
-            </h2>
-            {isLink ? (
-              <p className="text-sm md:text-base text-gray-700 font-bevietnam">
-                At <strong>SAS Roofing & Waterproofing</strong>, we are
-                committed to delivering exceptional masonry solutions. Our team
-                provides reliable, long-lasting{" "}
-                <strong>masonry construction</strong> and repair across{" "}
-                <strong>Brooklyn</strong>, <strong>Manhattan</strong>, and{" "}
-                <strong>Queens</strong>. Visit{" "}
-                <Link
-                  href="/"
-                  className="text-[#e63a27] hover:underline font-bold"
-                  aria-label="Visit SAS Roofing & Waterproofing homepage"
-                >
-                  SAS Roofing & Waterproofing
-                </Link>{" "}
-                to learn more.
-              </p>
-            ) : (
-              <p className="text-sm md:text-base text-gray-700 font-bevietnam">
-                {desc}
-              </p>
-            )}
-          </motion.article>
+            <article>
+              <h2 className="text-xl md:text-2xl font-bold text-[#003269] font-inter">
+                {title}
+              </h2>
+              {isLink ? (
+                <p className="text-sm md:text-base text-gray-700 font-bevietnam">
+                  At <strong>SAS Roofing & Waterproofing</strong>, we are
+                  committed to delivering exceptional masonry solutions. Our
+                  team provides reliable, long-lasting{" "}
+                  <strong>masonry construction</strong> and repair across{" "}
+                  <strong>Brooklyn</strong>, <strong>Manhattan</strong>, and{" "}
+                  <strong>Queens</strong>. Visit{" "}
+                  <Link
+                    href="/"
+                    className="text-[#e63a27] hover:underline font-bold"
+                  >
+                    SAS Roofing & Waterproofing
+                  </Link>{" "}
+                  to learn more.
+                </p>
+              ) : (
+                <p className="text-sm md:text-base text-gray-700 font-bevietnam">
+                  {desc}
+                </p>
+              )}
+            </article>
+          </motion.li>
         ))}
-      </div>
+      </ul>
     </section>
   );
 }

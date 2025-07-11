@@ -5,11 +5,11 @@ import Link from "next/link";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 40 },
-  visible: {
+  visible: (i: number) => ({
     opacity: 1,
     y: 0,
-    transition: { duration: 0.6, ease: "easeOut" },
-  },
+    transition: { duration: 0.6, ease: "easeOut", delay: i * 0.15 },
+  }),
 };
 
 const services = [
@@ -69,6 +69,7 @@ export default function RoofingServices() {
       className="px-6 py-12 md:px-16 bg-white text-[#003269] max-w-7xl mx-auto"
       aria-labelledby="roofing-services-heading"
     >
+      {/* Header */}
       <motion.header
         initial="hidden"
         whileInView="visible"
@@ -79,7 +80,10 @@ export default function RoofingServices() {
         <div>
           <div className="flex items-center justify-center lg:justify-start gap-2 mb-1">
             <div className="w-6 h-px bg-[#e63a27]" aria-hidden="true" />
-            <span className="text-sm font-bold text-[#e63a27] uppercase font-inter">
+            <span
+              className="text-sm font-bold text-[#e63a27] uppercase font-inter"
+              aria-hidden="true"
+            >
               Roofing Services
             </span>
           </div>
@@ -95,7 +99,6 @@ export default function RoofingServices() {
         <Link
           href="/services"
           className="group border-4 border-[#003269] p-2 inline-block focus:outline focus:outline-[#003269]"
-          aria-label="View all roofing services offered by SAS Roofing & Waterproofing"
         >
           <div className="border border-[#e63a27] px-5 py-3 text-xs sm:text-sm md:text-base lg:text-lg font-bold text-[#e63a27] uppercase whitespace-nowrap hover-button font-inter">
             All Services
@@ -103,6 +106,7 @@ export default function RoofingServices() {
         </Link>
       </motion.header>
 
+      {/* Intro */}
       <motion.p
         initial="hidden"
         whileInView="visible"
@@ -121,41 +125,44 @@ export default function RoofingServices() {
         high-quality solutions tailored to your needs.
       </motion.p>
 
-      <div className="grid gap-10">
+      {/* Services */}
+      <ul className="grid gap-10 list-none p-0 m-0">
         {services.map(({ title, desc, isLink }, idx) => (
-          <motion.article
+          <motion.li
             key={idx}
+            custom={idx}
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.1 }}
             variants={fadeUp}
             className="space-y-2"
           >
-            <h2 className="text-xl md:text-2xl font-bold text-[#003269] font-inter">
-              {title}
-            </h2>
+            <article>
+              <h2 className="text-xl md:text-2xl font-bold text-[#003269] font-inter">
+                {title}
+              </h2>
 
-            {isLink ? (
-              <p className="text-sm md:text-base text-gray-700 font-bevietnam">
-                For expert <strong>roofing contractors in Queens</strong> and
-                beyond, reach out to{" "}
-                <Link
-                  href="/"
-                  className="text-[#e63a27] hover:underline font-bold"
-                  aria-label="Visit SAS Roofing & Waterproofing homepage"
-                >
-                  SAS Roofing & Waterproofing
-                </Link>{" "}
-                to schedule a consultation!
-              </p>
-            ) : (
-              <p className="text-sm md:text-base text-gray-700 font-bevietnam">
-                {desc}
-              </p>
-            )}
-          </motion.article>
+              {isLink ? (
+                <p className="text-sm md:text-base text-gray-700 font-bevietnam">
+                  For expert <strong>roofing contractors in Queens</strong> and
+                  beyond, reach out to{" "}
+                  <Link
+                    href="/"
+                    className="text-[#e63a27] hover:underline font-bold"
+                  >
+                    SAS Roofing & Waterproofing
+                  </Link>{" "}
+                  to schedule a consultation!
+                </p>
+              ) : (
+                <p className="text-sm md:text-base text-gray-700 font-bevietnam">
+                  {desc}
+                </p>
+              )}
+            </article>
+          </motion.li>
         ))}
-      </div>
+      </ul>
     </section>
   );
 }

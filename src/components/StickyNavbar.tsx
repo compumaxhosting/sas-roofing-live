@@ -13,26 +13,28 @@ const navItems = [
     path: "/services",
     subItems: [
       { label: "Roofing", path: "/roofing-contractors-brooklyn" },
-      {
-        label: "Waterproofing",
-        path: "/waterproofing-contractors-NY",
-      },
+      { label: "Waterproofing", path: "/waterproofing-contractors-NY" },
       { label: "Masonry", path: "/masonry-services-brooklyn-ny" },
     ],
   },
   { label: "PROJECTS", path: "/projects" },
-  { label: "TESTIMONIALS", path: "/reviews" },
-  { label: "CONTACT US", path: "/contact-us" },
+  {
+    label: "TESTIMONIALS",
+    path: "/reviews",
+    subItems: [
+      { label: "Customer Reviews", path: "/reviews" },
+      { label: "FAQ", path: "/faq" },
+    ],
+  },
   { label: "BLOG", path: "/blog" },
+  { label: "CONTACT US", path: "/contact-us" },
 ];
 
 export default function StickyNavbar() {
   const [showSticky, setShowSticky] = useState(false);
-  const [isServicesOpen, setIsServicesOpen] = useState(false);
-  const timeoutId = useRef<NodeJS.Timeout | null>(null);
-  const servicesRef = useRef<HTMLDivElement>(null); // Ref for the services dropdown container
-
-  const currentPath = usePathname();
+  const [openDropdown, setOpenDropdown] = useState<string | null>(null);
+  const dropdownRefs = useRef<Record<string, HTMLDivElement | null>>({});
+  const pathname = usePathname();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -42,42 +44,33 @@ export default function StickyNavbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const handleMouseEnter = () => {
-    if (timeoutId.current) clearTimeout(timeoutId.current);
-    setIsServicesOpen(true);
+  useEffect(() => {
+    const handleClickOutside = (e: MouseEvent) => {
+      const isOutside = Object.entries(dropdownRefs.current).every(
+        ([, ref]) => ref && !ref.contains(e.target as Node)
+      );
+      if (isOutside) setOpenDropdown(null);
+    };
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
+
+  const handleMouseEnter = (label: string) => {
+    setOpenDropdown(label);
   };
 
   const handleMouseLeave = () => {
-    timeoutId.current = setTimeout(() => {
-      setIsServicesOpen(false);
-    }, 300);
+    setTimeout(() => {
+      setOpenDropdown(null);
+    }, 200);
   };
 
-  // Close dropdown if user clicks outside
-  useEffect(() => {
-    const handleClickOutside = (event: MouseEvent) => {
-      if (
-        servicesRef.current &&
-        !servicesRef.current.contains(event.target as Node)
-      ) {
-        setIsServicesOpen(false);
-      }
-    };
-    document.addEventListener("mousedown", handleClickOutside);
-    return () => {
-      document.removeEventListener("mousedown", handleClickOutside);
-    };
-  }, []);
-
-  // Handle keyboard navigation for the Services dropdown
-  const handleServicesKeyDown = (event: React.KeyboardEvent) => {
+  const handleDropdownKeyDown = (event: React.KeyboardEvent, label: string) => {
     if (event.key === "Enter" || event.key === " ") {
-      event.preventDefault(); // Prevent scrolling on space
-      setIsServicesOpen((prev) => !prev);
+      event.preventDefault();
+      setOpenDropdown((prev) => (prev === label ? null : label));
     } else if (event.key === "Escape") {
-      setIsServicesOpen(false);
-      // Optionally focus back on the services link after closing
-      (event.target as HTMLElement).focus();
+      setOpenDropdown(null);
     }
   };
 
@@ -99,74 +92,65 @@ export default function StickyNavbar() {
         aria-label="Main navigation"
       >
         {navItems.map(({ label, path, subItems }) => {
-          let isActive = false;
-          if (subItems) {
-            isActive =
-              currentPath === path ||
-              subItems.some((subItem) => currentPath === subItem.path);
-          } else if (path === "/") {
-            isActive = currentPath === path;
-          } else {
-            isActive = currentPath.startsWith(path);
-            if (path.length > 1 && currentPath === "/") {
-              isActive = false;
-            }
-          }
+          const isActive =
+            pathname === path ||
+            (subItems && subItems.some((sub) => pathname === sub.path));
 
           return subItems ? (
             <div
               key={label}
+              ref={(el) => {
+                dropdownRefs.current[label] = el;
+              }}
               className="relative"
-              ref={servicesRef} // Attach ref here
-              onMouseEnter={handleMouseEnter}
+              onMouseEnter={() => handleMouseEnter(label)}
               onMouseLeave={handleMouseLeave}
-              // Accessibility for dropdown trigger
+              tabIndex={0}
               role="button"
-              tabIndex={0} // Make the div focusable
-              aria-haspopup="menu" // Indicates it triggers a menu
-              aria-expanded={isServicesOpen} // Reflects current expanded state
-              aria-label={`Toggle Services dropdown menu`} // More descriptive label
-              onKeyDown={handleServicesKeyDown}
+              aria-haspopup="menu"
+              aria-expanded={openDropdown === label}
+              aria-label={`Toggle ${label} dropdown menu`}
+              onKeyDown={(e) => handleDropdownKeyDown(e, label)}
             >
               <Link
                 href={path}
                 className={`px-2 flex items-center gap-1 ${
                   isActive ? "text-[#e63a27]" : "hover:text-[#e63a27]"
                 }`}
-                aria-current={isActive ? "page" : undefined} // Indicate current page
               >
                 {label}
                 <span
                   className={`text-[#e63a27] transition-transform duration-200 ${
-                    isServicesOpen ? "rotate-180" : ""
+                    openDropdown === label ? "rotate-180" : ""
                   }`}
-                  aria-hidden="true" // Hide decorative arrow from screen readers
+                  aria-hidden="true"
                 >
                   ▼
                 </span>
               </Link>
+
               <div
                 className={`absolute left-0 top-full mt-1 bg-white border-t-4 border-[#e63a27] shadow-lg rounded-sm z-50 min-w-[180px] overflow-hidden transition-all duration-300 ease-in-out ${
-                  isServicesOpen
+                  openDropdown === label
                     ? "opacity-100 translate-y-0 pointer-events-auto"
                     : "opacity-0 translate-y-2 pointer-events-none"
                 }`}
-                role="menu" // Indicates this div is a menu
-                aria-hidden={!isServicesOpen} // Hide from screen readers when closed
+                role="menu"
+                aria-hidden={openDropdown !== label}
               >
-                {subItems.map(({ label: subLabel, path: subPath }) => (
+                {subItems.map((sub) => (
                   <Link
-                    key={subLabel}
-                    href={subPath}
+                    key={sub.label}
+                    href={sub.path}
                     className={`block px-5 py-4 text-sm font-inter ${
-                      currentPath === subPath
+                      pathname === sub.path
                         ? "bg-[#e63a27] text-white"
                         : "text-[#003269] hover:bg-[#e63a27] hover:text-white"
                     }`}
-                    role="menuitem" // Indicates this is a menu item
-                    aria-current={currentPath === subPath ? "page" : undefined} // Indicate current page
+                    role="menuitem"
+                    aria-current={pathname === sub.path ? "page" : undefined}
                   >
-                    {subLabel}
+                    {sub.label}
                   </Link>
                 ))}
               </div>
@@ -178,10 +162,8 @@ export default function StickyNavbar() {
               className={`px-2 ${
                 isActive ? "text-[#e63a27]" : "hover:text-[#e63a27]"
               }`}
-              aria-current={isActive ? "page" : undefined} // Indicate current page
-              aria-label={
-                label === "HOME" ? "Go to Home page" : `Go to ${label} page`
-              } // Specific aria-label for HOME
+              aria-current={isActive ? "page" : undefined}
+              aria-label={`Go to ${label} page`}
             >
               {label}
             </Link>

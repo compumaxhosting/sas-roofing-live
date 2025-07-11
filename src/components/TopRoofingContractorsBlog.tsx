@@ -34,6 +34,7 @@ export default function TopRoofingContractorsBlog() {
                 alt="Newly installed shingles on a residential roof"
                 width={600}
                 height={400}
+                loading="lazy" // Add this
                 className="rounded-xl shadow-lg mb-6 w-full h-auto"
               />
             </div>

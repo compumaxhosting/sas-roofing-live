@@ -5,11 +5,11 @@ import Link from "next/link";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 40 },
-  visible: {
+  visible: (i: number) => ({
     opacity: 1,
     y: 0,
-    transition: { duration: 0.6, ease: "easeOut" },
-  },
+    transition: { duration: 0.6, ease: "easeOut", delay: i * 0.15 },
+  }),
 };
 
 const services = [
@@ -59,6 +59,7 @@ const services = [
   },
   {
     title: "Why Choose SAS Roofing & Waterproofing?",
+    isLink: true,
   },
 ];
 
@@ -68,7 +69,7 @@ export default function WaterproofingServices() {
       className="px-6 py-12 md:px-16 bg-white text-[#003269] max-w-7xl mx-auto"
       aria-labelledby="waterproofing-heading"
     >
-      {/* Heading Section */}
+      {/* Header Section */}
       <motion.header
         initial="hidden"
         whileInView="visible"
@@ -99,7 +100,6 @@ export default function WaterproofingServices() {
         <Link
           href="/services"
           className="group border-4 border-[#003269] p-2 inline-block focus:outline focus:outline-[#003269]"
-          aria-label="View all roofing services offered by SAS Roofing & Waterproofing"
         >
           <div className="border border-[#e63a27] px-5 py-3 text-xs sm:text-sm md:text-base lg:text-lg font-bold text-[#e63a27] uppercase whitespace-nowrap hover-button font-inter">
             All Services
@@ -124,43 +124,45 @@ export default function WaterproofingServices() {
       </motion.p>
 
       {/* Services List */}
-      <div className="grid gap-10">
-        {services.map(({ title, desc }, idx) => (
-          <motion.article
+      <ul className="grid gap-10 list-none p-0 m-0">
+        {services.map(({ title, desc, isLink }, idx) => (
+          <motion.li
             key={idx}
+            custom={idx}
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.1 }}
             variants={fadeUp}
             className="space-y-2"
           >
-            <h2 className="text-xl md:text-2xl font-bold text-[#003269]">
-              {title}
-            </h2>
-            {idx === services.length - 1 ? (
-              <p className="text-sm md:text-base text-gray-700 font-bevietnam">
-                At <strong>SAS Roofing & Waterproofing</strong>, we provide
-                top-quality, durable{" "}
-                <strong>waterproofing services in Brooklyn</strong>,{" "}
-                <strong>Manhattan</strong>, and <strong>Queens</strong>. Protect
-                your property today by visiting{" "}
-                <Link
-                  href="/"
-                  className="text-[#e63a27] hover:underline font-bold"
-                  aria-label="Visit SAS Roofing & Waterproofing homepage"
-                >
-                  SAS Roofing & Waterproofing
-                </Link>
-                .
-              </p>
-            ) : (
-              <p className="text-sm md:text-base text-gray-700 font-bevietnam">
-                {desc}
-              </p>
-            )}
-          </motion.article>
+            <article>
+              <h2 className="text-xl md:text-2xl font-bold text-[#003269]">
+                {title}
+              </h2>
+              {isLink ? (
+                <p className="text-sm md:text-base text-gray-700 font-bevietnam">
+                  At <strong>SAS Roofing & Waterproofing</strong>, we provide
+                  top-quality, durable{" "}
+                  <strong>waterproofing services in Brooklyn</strong>,{" "}
+                  <strong>Manhattan</strong>, and <strong>Queens</strong>.
+                  Protect your property today by visiting{" "}
+                  <Link
+                    href="/"
+                    className="text-[#e63a27] hover:underline font-bold"
+                  >
+                    SAS Roofing & Waterproofing
+                  </Link>
+                  .
+                </p>
+              ) : (
+                <p className="text-sm md:text-base text-gray-700 font-bevietnam">
+                  {desc}
+                </p>
+              )}
+            </article>
+          </motion.li>
         ))}
-      </div>
+      </ul>
     </section>
   );
 }

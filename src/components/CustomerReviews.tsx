@@ -25,9 +25,9 @@ const reviewLogos = [
     href: "https://www.yelp.com/biz/sas-roofing-and-waterproofing-brooklyn-8",
   },
   {
-    alt: "Google",
-    src: "/reviews/google.png",
-    href: "https://www.google.com/maps/place/SAS+Roofing+&+Waterproofing/@40.6359752,-73.9646363,17z",
+    alt: "Review us on Google",
+    src: "/footer/review-us-on-google.jpg",
+    href: "https://g.page/r/Cdj4RS1sCCdVEBM/review",
   },
   {
     alt: "X (formerly Twitter)",
