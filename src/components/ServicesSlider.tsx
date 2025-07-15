@@ -21,7 +21,7 @@ const slides = [
     title: "WATERPROOFING",
     description:
       "Highest quality single-ply membrane systems keeps us at the forefront of the business...",
-    image: "/Services-Slider/services1.png",
+    image: "/Services-Slider/services1.jpg",
     icon: "/Services-Slider/pattern-1.png",
     link: "/waterproofing-contractors-NY",
   },

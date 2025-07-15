@@ -58,10 +58,24 @@ const services = [
     ),
   },
   {
+    title: "Exterior Walls Waterproofing",
+    desc: (
+      <>
+        Protect your property with our specialized{" "}
+        <strong>exterior walls waterproofing services</strong>. We prevent water
+        infiltration through brick, stone, stucco, and concrete walls—keeping
+        your building dry, insulated, and mold-free. Whether it’s a brownstone
+        in Brooklyn or a high-rise in Manhattan, our team ensures long-lasting
+        protection against moisture damage.
+      </>
+    ),
+  },
+  {
     title: "Why Choose SAS Roofing & Waterproofing?",
     isLink: true,
   },
 ];
+
 
 export default function WaterproofingServices() {
   return (

@@ -312,11 +312,25 @@ export default function Footer() {
 
       {/* Bottom Bar */}
       <div className="bg-[#00254c]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-12 py-4 flex justify-center text-center text-xs sm:text-sm md:text-[15px]">
-          <p className="font-bevietnam text-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-12 py-4 text-center">
+          <p className="font-bevietnam text-white text-xs sm:text-sm md:text-[15px]">
             © {new Date().getFullYear()}{" "}
-            <span className="text-[#e63144]">SAS Roofing & Waterproofing</span>{" "}
+            <span className="text-[#e63144] font-semibold">
+              SAS Roofing & Waterproofing
+            </span>{" "}
             All Rights Reserved.
+          </p>
+          <p className="font-bevietnam text-white text-xs sm:text-sm mt-1">
+            Some images sourced from{" "}
+            <a
+              href="https://www.freepik.com"
+              target="_blank"
+              rel="noopener noreferrer nofollow"
+              className="text-white/70 hover:text-white underline transition"
+            >
+              Freepik
+            </a>
+            .
           </p>
         </div>
       </div>
