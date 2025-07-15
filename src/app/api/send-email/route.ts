@@ -3,25 +3,18 @@ import { NextRequest } from "next/server";
 
 export async function POST(req: NextRequest) {
   try {
+    console.log("🔄 Received a POST request to /api/send-email");
+
+    console.log("🧪 RESEND_API_KEY:", process.env.RESEND_API_KEY);
+    console.log("📤 EMAIL_FROM:", process.env.EMAIL_FROM);
+    console.log("📥 EMAIL_TO:", process.env.EMAIL_TO);
+
     const body = await req.json();
-    console.log("Received request body:", body);
+    console.log("📝 Request Body:", body);
 
     const { name, email, phone, message, service } = body;
 
     const resend = new Resend(process.env.RESEND_API_KEY);
-
-    if (!process.env.EMAIL_TO || !process.env.EMAIL_FROM) {
-      console.error("Missing EMAIL_FROM or EMAIL_TO environment variables.");
-      return new Response(
-        JSON.stringify({
-          success: false,
-          error: "Missing email environment variables",
-        }),
-        { status: 500 }
-      );
-    }
-
-    const recipients = process.env.EMAIL_TO.split(",").map((e) => e.trim());
 
     const html = `
       <h2>New Service Inquiry</h2>
@@ -34,24 +27,25 @@ export async function POST(req: NextRequest) {
 
     const { data, error } = await resend.emails.send({
       from: process.env.EMAIL_FROM!,
-      to: recipients,
+      to: process.env.EMAIL_TO!.split(",").map((e) => e.trim()),
       subject: "New Quote Request from Website",
       html,
     });
 
     if (error) {
-      console.error("Resend API error:", error);
+      console.error("❌ Resend API Error:", error);
       return new Response(
         JSON.stringify({ success: false, error: error.message }),
         { status: 500 }
       );
     }
 
+    console.log("✅ Email sent successfully");
     return new Response(JSON.stringify({ success: true, data }), {
       status: 200,
     });
-  } catch (err: unknown) {
-    console.error("Unexpected error in send-email route:", err);
+  } catch (err) {
+    console.error("❗ Unexpected error:", err);
     return new Response(
       JSON.stringify({ success: false, error: "Server error" }),
       { status: 500 }
