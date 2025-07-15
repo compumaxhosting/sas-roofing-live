@@ -61,12 +61,13 @@ const services = [
     title: "Exterior Walls Waterproofing",
     desc: (
       <>
-        Protect your property with our specialized{" "}
-        <strong>exterior walls waterproofing services</strong>. We prevent water
+        Protect your property with our specialized {" "}
+        <strong>exterior walls waterproofing services.</strong> We prevent water
         infiltration through brick, stone, stucco, and concrete walls—keeping
-        your building dry, insulated, and mold-free. Whether it’s a brownstone
-        in Brooklyn or a high-rise in Manhattan, our team ensures long-lasting
-        protection against moisture damage.
+        your building dry, insulated, and mold-free. Whether it’s a high-rise in
+        Manhattan, a townhouse in Queens, or a commercial building in The Bronx
+        or Brooklyn, our team ensures long-lasting protection against moisture
+        damage. We proudly serve Brooklyn, Manhattan, Queens, and The Bronx.
       </>
     ),
   },
@@ -150,7 +151,7 @@ export default function WaterproofingServices() {
             className="space-y-2"
           >
             <article>
-              <h2 className="text-xl md:text-2xl font-bold text-[#003269]">
+              <h2 className="text-xl md:text-2xl mb-3 font-bold text-[#003269]">
                 {title}
               </h2>
               {isLink ? (
