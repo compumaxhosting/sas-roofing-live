@@ -15,13 +15,13 @@ const ContactForm = () => {
 
   const phoneNumberErrorRef = useRef<HTMLSpanElement>(null);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+
     if (form.phoneNumber.length < 10 || form.phoneNumber.length > 15) {
       if (phoneNumberErrorRef.current) {
         phoneNumberErrorRef.current.textContent =
           "Please enter a phone number between 10 and 15 digits.";
-        phoneNumberErrorRef.current.focus();
       }
       return;
     } else {
@@ -33,27 +33,52 @@ const ContactForm = () => {
     const submittedService =
       form.service === "other" ? form.otherService : form.service;
 
-    console.log("Form submitted:", {
-      ...form,
+    const payload = {
+      name: form.name,
+      email: form.email,
+      phone: form.phoneNumber,
+      message: form.message,
       service: submittedService,
-    });
+    };
 
-    Swal.fire({
-      icon: "success",
-      title: "Message Sent!",
-      text: "Thank you for your message. We will get back to you shortly.",
-      confirmButtonColor: "#e63a27",
-      background: "#fff",
-    });
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
+      });
 
-    setForm({
-      name: "",
-      email: "",
-      phoneNumber: "",
-      message: "",
-      service: "",
-      otherService: "",
-    });
+      const result = await response.json();
+
+      if (result.success) {
+        Swal.fire({
+          icon: "success",
+          title: "Message Sent!",
+          text: "Thank you for your message. We will get back to you shortly.",
+          confirmButtonColor: "#e63a27",
+          background: "#fff",
+        });
+
+        setForm({
+          name: "",
+          email: "",
+          phoneNumber: "",
+          message: "",
+          service: "",
+          otherService: "",
+        });
+      } else {
+        throw new Error(result.error || "Failed to send");
+      }
+    } catch{
+      Swal.fire({
+        icon: "error",
+        title: "Oops!",
+        text: "Something went wrong. Please try again.",
+        confirmButtonColor: "#e63a27",
+        background: "#fff",
+      });
+    }
   };
 
   const handlePhoneNumberChange = useCallback(
@@ -79,7 +104,7 @@ const ContactForm = () => {
             value={form.name}
             onChange={(e) => setForm({ ...form, name: e.target.value })}
             required
-            className="p-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-[#e63a27] outline-none"
+            className="p-3 border border-gray-300 rounded-md"
           />
           <input
             type="email"
@@ -87,7 +112,7 @@ const ContactForm = () => {
             value={form.email}
             onChange={(e) => setForm({ ...form, email: e.target.value })}
             required
-            className="p-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-[#e63a27] outline-none"
+            className="p-3 border border-gray-300 rounded-md"
           />
           <input
             type="tel"
@@ -95,9 +120,8 @@ const ContactForm = () => {
             value={form.phoneNumber}
             onChange={handlePhoneNumberChange}
             maxLength={15}
-            pattern="[0-9]{10,15}"
             required
-            className="p-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-[#e63a27] outline-none"
+            className="p-3 border border-gray-300 rounded-md"
             aria-describedby="phone-number-error-message"
           />
           <span
@@ -106,17 +130,11 @@ const ContactForm = () => {
             className="text-red-500 text-sm"
           />
 
-          {/* Service Select Dropdown */}
-          <label htmlFor="service" className="sr-only">
-            Service You Need
-          </label>
           <select
-            id="service"
-            name="service"
             value={form.service}
             onChange={(e) => setForm({ ...form, service: e.target.value })}
             required
-            className="appearance-none p-3 rounded-md font-semibold text-[#e63a27] border border-gray-300 w-full focus:ring-2 focus:ring-[#e63a27] focus:outline-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-[#e63a27]"
+            className="p-3 border border-gray-300 rounded-md"
           >
             <option value="" disabled>
               Service You Need
@@ -128,7 +146,6 @@ const ContactForm = () => {
             <option value="other">Others</option>
           </select>
 
-          {/* Show input for 'Other' service */}
           {form.service === "other" && (
             <input
               type="text"
@@ -138,7 +155,7 @@ const ContactForm = () => {
                 setForm({ ...form, otherService: e.target.value })
               }
               required
-              className="p-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-[#e63a27] outline-none"
+              className="p-3 border border-gray-300 rounded-md"
             />
           )}
 
@@ -148,7 +165,7 @@ const ContactForm = () => {
             value={form.message}
             onChange={(e) => setForm({ ...form, message: e.target.value })}
             required
-            className="p-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-[#e63a27] outline-none"
+            className="p-3 border border-gray-300 rounded-md"
           />
           <button
             type="submit"
