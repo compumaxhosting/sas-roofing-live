@@ -30,6 +30,7 @@ export default function Footer() {
     { label: "Services", path: "/services" },
     { label: "Contact", path: "/contact-us" },
     { label: "Blog", path: "/blog" },
+    { label: "FAQs", path: "/faq" },
   ];
   const socialItems = [
     {
