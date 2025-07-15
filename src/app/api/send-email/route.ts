@@ -44,10 +44,13 @@ export async function POST(req: NextRequest) {
     return new Response(JSON.stringify({ success: true, data }), {
       status: 200,
     });
-  } catch {
+  } catch (err: unknown) {
+    console.error("Server Error:", err);
+
     return new Response(
       JSON.stringify({ success: false, error: "Unknown server error" }),
       { status: 500 }
     );
   }
+
 }

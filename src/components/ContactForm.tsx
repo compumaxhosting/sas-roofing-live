@@ -42,7 +42,7 @@ const ContactForm = () => {
     };
 
     try {
-      const response = await fetch("/api/contact", {
+      const response = await fetch("/api/send-email", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(payload),
@@ -70,7 +70,7 @@ const ContactForm = () => {
       } else {
         throw new Error(result.error || "Failed to send");
       }
-    } catch{
+    } catch {
       Swal.fire({
         icon: "error",
         title: "Oops!",
