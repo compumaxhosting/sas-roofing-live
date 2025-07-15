@@ -60,7 +60,7 @@ export default function Footer() {
           alt="Angi"
           width={28}
           height={28}
-          className="object-contain"
+          className="object-contain transition-transform duration-300 hover:scale-90"
         />
       ),
       label: "Angi",
@@ -73,7 +73,7 @@ export default function Footer() {
           alt="Manta"
           width={28}
           height={28}
-          className="object-contain"
+          className="object-contain transition-transform duration-300 hover:scale-90"
         />
       ),
       label: "Manta",
@@ -86,7 +86,7 @@ export default function Footer() {
           alt="Yellow Pages"
           width={28}
           height={28}
-          className="object-contain"
+          className="object-contain transition-transform duration-300 hover:scale-90"
         />
       ),
       label: "Yellow Pages",
@@ -99,7 +99,7 @@ export default function Footer() {
           alt="BBB"
           width={28}
           height={28}
-          className="object-contain"
+          className="object-contain transition-transform duration-300 hover:scale-90"
         />
       ),
       label: "BBB",
@@ -112,7 +112,7 @@ export default function Footer() {
           alt="review-us-on-google"
           width={28}
           height={28}
-          className="object-contain"
+          className="object-contain transition-transform duration-300 hover:scale-90"
         />
       ),
       label: "Review Us On Google",
@@ -176,7 +176,7 @@ export default function Footer() {
                 alt={`${icon} accepted`} // Clear alt text for payment icons
                 width={50}
                 height={32}
-                className="object-contain h-[35px] w-auto"
+                className="object-contain h-[35px] w-auto transition-transform duration-300 hover:scale-90"
                 loading="lazy"
               />
             ))}

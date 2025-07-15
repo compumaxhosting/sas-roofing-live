@@ -85,7 +85,7 @@ export default function CustomerReviews() {
               width={72}
               height={72}
               loading="lazy"
-              className="object-contain"
+              className="object-contain transition-transform duration-300 hover:scale-90"
             />
           </motion.a>
         ))}

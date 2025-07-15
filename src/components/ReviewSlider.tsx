@@ -23,30 +23,57 @@ type Review = {
 
 const reviews: Review[] = [
   {
-    name: "MD Abdul Kader",
-    date: "2 days ago",
+    name: "Casey L English",
+    date: "a month ago",
     rating: 5,
-    text: "SAS construction company is best construction company",
+    text: "I highly recommend SAS Roofing & Waterproofing to anyone in need of roofing...",
     detailText:
-      "SAS construction company is best construction company I’ve worked with. They were punctual, professional, and their work was top-notch. I’d highly recommend them for any building project.",
+      "Mohammed and Riyad did a great job at my home.  My original contractor left us with roof, facade, and window leaks.  Mohammed was quick to identify all of the issues and give us a fair quote... and was able to start working very quickly.  They were courteous, clean, and best of all fast!  Thank you for helping us resolve our water issues.  I would definitely recommend them.",
     image: "/reviews/avatar.png",
   },
   {
-    name: "Bklyn English",
-    date: "1 week ago",
+    name: "Uzair Mughal",
+    date: "a month ago",
     rating: 5,
-    text: "I had a great experience working with this construction company. Fro...",
+    text: "I highly recommend SAS Roofing & Waterproofing to anyone in need of roofing...",
     detailText:
-      "I had a great experience working with this construction company. From the initial consultation to project completion, everything was handled with care. Their attention to detail was impressive.",
+      "We hired Mohammed and his team to remove and replace the flat roof on our newly purchased townhouse. They completed the worked in three days, were communicative throughout the entire process providing us with updates and photos, were affordable, and did a great job. His team also installed 2 brand new skylights, rebuilt the skylight frame that had rotted away, and replaced our old gutter. Throughout the job, his team was friendly, efficient and always cleaned up after themselves.",
     image: "/reviews/avatar.png",
   },
   {
-    name: "Scholar Chem",
-    date: "3 months ago",
+    name: "Ms. Leslie Dixon",
+    date: "a month ago",
     rating: 5,
-    text: "SAS Roofing exceeded my expectations! Their team was professional, efficient, and...",
+    text: "I highly recommend SAS Roofing & Waterproofing to anyone in need of roofing...",
     detailText:
-      "SAS Roofing exceeded my expectations! Their team was professional, efficient, and respectful of my property. They completed the job faster than expected and the results are excellent.",
+      "Mohammad is great and reliable. He is very knowledgeable on roofing issues.  A pleasure to work with and listens carefully to your concerns about your roof.  I would recommend SAS roofing and waterproofing.",
+    image: "/reviews/avatar.png",
+  },
+  {
+    name: "Boktier Uddin",
+    date: "a month ago",
+    rating: 5,
+    text: "I highly recommend SAS Roofing & Waterproofing to anyone in need of roofing...",
+    detailText:
+      "SAS Roofing is hands down the best decision I made for my home renovation! Their team was communicative, responsive, and delivered exceptional results. The roof looks stunning, and I feel confident in its durability. Their professionalism and expertise are unmatched. I highly recommend SAS Roofing to anyone seeking top-quality roofing services – they truly deliver!",
+    image: "/reviews/avatar.png",
+  },
+  {
+    name: "Juan E Avendano",
+    date: "1 month ago",
+    rating: 5,
+    text: "I highly recommend SAS Roofing & Waterproofing to anyone in need of roofing...",
+    detailText:
+      "I've been working with Mohammad for over 7 years, and they’ve consistently delivered great service. From installations to repairs, his team is always prompt, professional, and thorough. I trust them completely with all my roofing needs, and they’ve earned my loyalty. Highly recommend SAS Roofing & Waterproofing!",
+    image: "/reviews/avatar.png",
+  },
+  {
+    name: "faisal khan",
+    date: "1 month ago",
+    rating: 5,
+    text: "I highly recommend SAS Roofing & Waterproofing to anyone in need of roofing...",
+    detailText:
+      "SAS Roofing & Waterproofing delivered outstanding results on my roofing project! Their team was responsive, reliable, and communicated clearly throughout the entire process. The work was completed on time, and the final product looks fantastic. I've already referred them to friends and family - their expertise and customer service are truly exceptional. If you're looking for a trustworthy and skilled roofing company, look no further than SAS Roofing & Waterproofing!",
     image: "/reviews/avatar.png",
   },
   {
@@ -59,12 +86,48 @@ const reviews: Review[] = [
     image: "/reviews/avatar.png",
   },
   {
+    name: "giorgimdzeluri giorgimdzeluri",
+    date: "1 month ago",
+    rating: 5,
+    text: "I highly recommend SAS Roofing & Waterproofing to anyone in need of roofing...",
+    detailText:
+      "I recently hired SAS Roofing & Waterproofing to fix some leaks and repair my roof, and I'm blown away by the results! Their team was prompt, efficient, and communicated clearly throughout the entire process. The price was competitive, and the quality of work was exceptional. My roof is now leak-free and looks fantastic. I appreciate the professionalism and expertise of the SAS team and would highly recommend them to friends, family, and neighbors. Five stars isn't enough – I'd give them ten stars if I could!",
+    image: "/reviews/avatar.png",
+  },
+  {
+    name: "MD Abdul Kader",
+    date: "2 months ago",
+    rating: 5,
+    text: "SAS construction company is best construction company",
+    detailText:
+      "SAS construction company is best construction company I’ve worked with. They were punctual, professional, and their work was top-notch. I’d highly recommend them for any building project.",
+    image: "/reviews/avatar.png",
+  },
+  {
+    name: "Bklyn English",
+    date: "2 months ago",
+    rating: 5,
+    text: "I had a great experience working with this construction company. Fro...",
+    detailText:
+      "I had a great experience working with this construction company. From the initial consultation to project completion, everything was handled with care. Their attention to detail was impressive.",
+    image: "/reviews/avatar.png",
+  },
+  {
     name: "Alo Nazrul",
-    date: "10 days ago",
+    date: "3 months ago",
     rating: 5,
     text: "I highly recommend SAS Roofing & Waterproofing to anyone in need of roofing...",
     detailText:
       "This company stands out for its commitment to customer satisfaction. They answered all my questions and ensured the work site was clean after completion. Excellent service!",
+    image: "/reviews/avatar.png",
+  },
+  {
+    name: "Scholar Chem",
+    date: "3 months ago",
+    rating: 5,
+    text: "SAS Roofing exceeded my expectations! Their team was professional, efficient, and...",
+    detailText:
+      "SAS Roofing exceeded my expectations! Their team was professional, efficient, and respectful of my property. They completed the job faster than expected and the results are excellent.",
     image: "/reviews/avatar.png",
   },
 ];
