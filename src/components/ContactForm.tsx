@@ -68,7 +68,7 @@ const ContactForm = () => {
           otherService: "",
         });
       } else {
-        throw new Error(result.error || "Failed to send");
+        throw new Error(result.error || "Failed to send email.");
       }
     } catch {
       Swal.fire({
@@ -129,7 +129,6 @@ const ContactForm = () => {
             id="phone-number-error-message"
             className="text-red-500 text-sm"
           />
-
           <select
             value={form.service}
             onChange={(e) => setForm({ ...form, service: e.target.value })}
@@ -167,6 +166,7 @@ const ContactForm = () => {
             required
             className="p-3 border border-gray-300 rounded-md"
           />
+
           <button
             type="submit"
             className="bg-[#e63a27] text-white font-semibold py-3 rounded-md hover:bg-red-700 transition"
