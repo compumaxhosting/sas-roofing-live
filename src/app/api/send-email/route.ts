@@ -2,6 +2,7 @@ import { NextResponse } from "next/server";
 import { Resend } from "resend";
 import { z } from "zod";
 
+// Accepts all fields from the ContactForm payload
 const contactSchema = z.object({
   name: z.string(),
   email: z.string().email(),
@@ -10,7 +11,7 @@ const contactSchema = z.object({
   service: z.string().optional(),
 });
 
-const resend = new Resend(process.env.RESEND_API_KEY!);
+const resend = new Resend("re_S3QztK3z_M8GCkKrwAoQ1zAC51gPrj2ba");
 
 export async function POST(req: Request) {
   const body = await req.json();
@@ -27,8 +28,8 @@ export async function POST(req: Request) {
 
   try {
     await resend.emails.send({
-      from: process.env.EMAIL_FROM!,
-      to: process.env.EMAIL_TO!,
+      from: "onboarding@resend.dev",
+      to: "mohdabrar41111@gmail.com",
       replyTo: email,
       subject: `Contact Form: ${service || "General Inquiry"}`,
       html: `
