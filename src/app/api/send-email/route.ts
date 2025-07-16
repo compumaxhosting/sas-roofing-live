@@ -1,53 +1,51 @@
+import { NextResponse } from "next/server";
 import { Resend } from "resend";
-import { NextRequest } from "next/server";
+import { z } from "zod";
 
-export async function POST(req: NextRequest) {
+const contactSchema = z.object({
+  name: z.string(),
+  email: z.string().email(),
+  message: z.string(),
+  phone: z.string().optional(),
+  service: z.string().optional(),
+});
+
+const resend = new Resend(process.env.RESEND_API_KEY!);
+
+export async function POST(req: Request) {
+  const body = await req.json();
+  const result = contactSchema.safeParse(body);
+
+  if (!result.success) {
+    return NextResponse.json(
+      { errors: result.error.flatten() },
+      { status: 400 }
+    );
+  }
+
+  const { name, email, message, phone, service } = result.data;
+
   try {
-    console.log("🔄 Received a POST request to /api/send-email");
-
-    console.log("🧪 RESEND_API_KEY:", process.env.RESEND_API_KEY);
-    console.log("📤 EMAIL_FROM:", process.env.EMAIL_FROM);
-    console.log("📥 EMAIL_TO:", process.env.EMAIL_TO);
-
-    const body = await req.json();
-    console.log("📝 Request Body:", body);
-
-    const { name, email, phone, message, service } = body;
-
-    const resend = new Resend(process.env.RESEND_API_KEY);
-
-    const html = `
-      <h2>New Service Inquiry</h2>
-      <p><strong>Name:</strong> ${name}</p>
-      <p><strong>Email:</strong> ${email}</p>
-      <p><strong>Phone:</strong> ${phone}</p>
-      <p><strong>Service:</strong> ${service}</p>
-      <p><strong>Message:</strong><br />${message}</p>
-    `;
-
-    const { data, error } = await resend.emails.send({
+    await resend.emails.send({
       from: process.env.EMAIL_FROM!,
-      to: process.env.EMAIL_TO!.split(",").map((e) => e.trim()),
-      subject: "New Quote Request from Website",
-      html,
+      to: process.env.EMAIL_TO!,
+      replyTo: email,
+      subject: `Contact Form: ${service || "General Inquiry"}`,
+      html: `
+        <p><strong>Name:</strong> ${name}</p>
+        <p><strong>Email:</strong> ${email}</p>
+        <p><strong>Phone:</strong> ${phone || "N/A"}</p>
+        <p><strong>Service:</strong> ${service || "N/A"}</p>
+        <p><strong>Message:</strong></p>
+        <p>${message}</p>
+      `,
     });
 
-    if (error) {
-      console.error("❌ Resend API Error:", error);
-      return new Response(
-        JSON.stringify({ success: false, error: error.message }),
-        { status: 500 }
-      );
-    }
-
-    console.log("✅ Email sent successfully");
-    return new Response(JSON.stringify({ success: true, data }), {
-      status: 200,
-    });
-  } catch (err) {
-    console.error("❗ Unexpected error:", err);
-    return new Response(
-      JSON.stringify({ success: false, error: "Server error" }),
+    return NextResponse.json({ success: true });
+  } catch (error) {
+    console.error(error);
+    return NextResponse.json(
+      { error: "Failed to send email" },
       { status: 500 }
     );
   }
