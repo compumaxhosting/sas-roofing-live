@@ -34,7 +34,7 @@ export async function POST(req: Request) {
     // Send email with Resend
     await resend.emails.send({
       from: "onboarding@resend.dev",
-      to: "raiyancmax@gmail.com", // Replace with your email
+      to: "wassay@compumaxllc.com", // Replace with your email
       replyTo: email,
       subject: `New Quote Request: ${service}`,
       html: `
