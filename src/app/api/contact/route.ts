@@ -8,6 +8,23 @@ export async function POST(req: Request) {
     const body = await req.json();
     const { name, email, phone, service, message } = body;
 
+    // Validate required fields
+    if (!name || !email || !phone || !service || !message) {
+      return NextResponse.json(
+        { success: false, error: "All fields are required" },
+        { status: 400 }
+      );
+    }
+
+    // Basic email validation
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+      return NextResponse.json(
+        { success: false, error: "Invalid email format" },
+        { status: 400 }
+      );
+    }
+
     const data = await resend.emails.send({
       from: process.env.FROM_EMAIL as string,
       to: process.env.TO_EMAIL as string,
@@ -25,7 +42,13 @@ export async function POST(req: Request) {
     return NextResponse.json({ success: true, data });
   } catch (error) {
     console.error("❌ Error sending email:", error);
-    return NextResponse.json({ success: false, error });
+    return NextResponse.json(
+      {
+        success: false,
+        error: "Failed to send email. Please try again later.",
+      },
+      { status: 500 }
+    );
   }
 }
 
