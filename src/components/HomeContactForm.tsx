@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { motion } from "framer-motion";
+import Swal from "sweetalert2";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 50 },
@@ -13,7 +14,6 @@ export default function ContactForm() {
   const [service, setService] = useState("");
   const [otherService, setOtherService] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [statusMessage, setStatusMessage] = useState("");
 
   const handlePhoneNumberChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const value = e.target.value.replace(/\D/g, "");
@@ -23,7 +23,6 @@ export default function ContactForm() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    setStatusMessage("");
 
     const form = e.target as HTMLFormElement;
     const formData = new FormData(form);
@@ -36,8 +35,6 @@ export default function ContactForm() {
       message: formData.get("message"),
     };
 
-    console.log("Form submitted with data:", data);
-
     try {
       const response = await fetch("/api/contact", {
         method: "POST",
@@ -48,18 +45,32 @@ export default function ContactForm() {
       const result = await response.json();
 
       if (response.ok) {
-        setStatusMessage("✅ Message sent successfully!");
+        Swal.fire({
+          icon: "success",
+          title: "Message Sent!",
+          text: "Your request has been sent successfully. We'll get back to you soon!",
+          confirmButtonColor: "#e63a27",
+        });
+
         form.reset();
         setPhoneNumber("");
         setService("");
         setOtherService("");
       } else {
-        setStatusMessage(
-          `❌ Failed: ${result.error || "Something went wrong"}`
-        );
+        Swal.fire({
+          icon: "error",
+          title: "Failed to Send",
+          text: result.error || "Something went wrong. Please try again.",
+          confirmButtonColor: "#e63a27",
+        });
       }
     } catch (error) {
-      setStatusMessage("❌ Error: Unable to send message");
+      Swal.fire({
+        icon: "error",
+        title: "Error",
+        text: "Unable to send your message. Please try again later.",
+        confirmButtonColor: "#e63a27",
+      });
       console.error(error);
     } finally {
       setIsSubmitting(false);
@@ -177,11 +188,6 @@ export default function ContactForm() {
       >
         {isSubmitting ? "Sending..." : "Book My Consultation"}
       </button>
-
-      {/* Status Message */}
-      {statusMessage && (
-        <p className="text-center text-sm mt-2">{statusMessage}</p>
-      )}
     </motion.form>
   );
 }
