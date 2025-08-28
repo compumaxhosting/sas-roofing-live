@@ -22,8 +22,6 @@ export default function ContactForm() {
       service: data.service === "other" ? data.otherService : data.service,
     };
 
-    console.log("📤 Sending data:", payload);
-
     try {
       const res = await fetch("/api/contact", {
         method: "POST",
@@ -48,8 +46,7 @@ export default function ContactForm() {
           confirmButtonColor: "#d33",
         });
       }
-    } catch (error) {
-      console.error("Fetch error:", error);
+    } catch {
       Swal.fire({
         icon: "error",
         title: "Network Error",
