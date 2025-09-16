@@ -62,12 +62,12 @@ const VideoSection = ({ margin }: Props) => {
             >
               <div className="flex items-center gap-3 mb-2">
                 <div className="w-6 h-px bg-white" />
-                <h2 className="text-sm uppercase font-semibold">Video Proof</h2>
+                <h1 className="text-sm uppercase font-semibold">Video Proof</h1>
               </div>
 
-              <h1 className="text-3xl lg:text-5xl font-medium leading-tight mb-4 font-inter">
+              <h2 className="text-3xl lg:text-5xl font-medium leading-tight mb-4 font-inter">
                 Have a Look <br /> At Our Video
-              </h1>
+              </h2>
 
               <ul className="space-y-2">
                 <li>

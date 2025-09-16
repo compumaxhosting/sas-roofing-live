@@ -136,12 +136,12 @@ export default function Footer() {
       <div className="px-4 sm:px-6 md:px-12 pb-12 max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-12">
         {/* About Section */}
         <motion.div {...fadeUp(0.1)} aria-labelledby="about-service-heading">
-          <h2
+          <h1
             id="about-service-heading"
             className="text-xl font-bold mb-2 font-inter"
           >
             About Service
-          </h2>{" "}
+          </h1>{" "}
           {/* Changed to h3 */}
           <div
             className="w-12 h-[2px] bg-[#e63a27] mb-3"
@@ -219,12 +219,12 @@ export default function Footer() {
 
         {/* Make Contact */}
         <motion.div {...fadeUp(0.3)} aria-labelledby="make-contact-heading">
-          <h2
+          <h3
             id="make-contact-heading"
             className="text-xl font-bold mb-2 font-inter"
           >
             Make Contact
-          </h2>{" "}
+          </h3>{" "}
           {/* Changed to h3 */}
           <div
             className="w-12 h-[2px] bg-[#e63a27] mb-3"

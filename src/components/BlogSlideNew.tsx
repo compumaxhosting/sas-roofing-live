@@ -123,14 +123,14 @@ export default function BlogSlideNew({ slide }: { slide: Slide }) {
         {/* Content Section */}
         <div className="flex flex-col justify-between flex-grow px-4 py-2">
           <div>
-            <h2
+            <h1
               className="text-md font-semibold text-gray-800 mb-4"
               id={`blog-title-${slide.title
                 .replace(/\s+/g, "-")
                 .toLowerCase()}`}
             >
               {slide.title}
-            </h2>
+            </h1>
             <p className="text-sm text-gray-600 font-bevietnam">
               {slide.description}
             </p>

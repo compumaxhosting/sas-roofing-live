@@ -61,9 +61,9 @@ export default function Features({ margin }: Props) {
         aria-hidden="true"
       />
 
-      <h2 id="features-heading" className="sr-only">
+      <h1 id="features-heading" className="sr-only">
         Core Features of SAS Roofing
-      </h2>
+      </h1>
 
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 px-6 sm:px-10 lg:px-12 py-16">
         {features.map(({ id, title, description, link }, i) => (
@@ -88,12 +88,12 @@ export default function Features({ margin }: Props) {
 
             {/* Content */}
             <div className="pt-20 pb-6">
-              <h3
+              <h2
                 id={`feature-${id}`}
                 className="text-base md:text-lg font-semibold font-inter mb-2"
               >
                 {title}
-              </h3>
+              </h2>
               <p className="text-sm md:text-base text-gray-300 font-bevietnam">
                 {description}
               </p>

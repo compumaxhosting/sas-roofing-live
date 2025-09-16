@@ -200,12 +200,12 @@ export default function TopRoofingContractorsBlog() {
               className="space-y-3"
               aria-labelledby="service-areas-heading"
             >
-              <h3
+              <h4
                 id="service-areas-heading"
                 className="text-xl md:text-2xl font-bold"
               >
                 Service Areas Across NYC
-              </h3>
+              </h4>
               <ul
                 className="list-disc pl-5 text-gray-700"
                 aria-label="Our NYC service areas"
@@ -237,12 +237,12 @@ export default function TopRoofingContractorsBlog() {
               className="space-y-3"
               aria-labelledby="difference-heading"
             >
-              <h3
+              <h5
                 id="difference-heading"
                 className="text-xl md:text-2xl font-bold"
               >
                 What Makes SAS Different?
-              </h3>
+              </h5>
               <ul
                 className="list-disc pl-5 text-gray-700"
                 aria-label="What sets us apart from other contractors"
@@ -309,12 +309,12 @@ export default function TopRoofingContractorsBlog() {
               className="space-y-3"
               aria-labelledby="cta-heading"
             >
-              <h3
+              <h6
                 id="cta-heading"
                 className="text-2xl md:text-3xl font-bold text-[#e63a27]"
               >
                 Get a Free Estimate Today
-              </h3>
+              </h6>
               <ul
                 className="text-gray-700"
                 aria-label="Contact information for free estimate"

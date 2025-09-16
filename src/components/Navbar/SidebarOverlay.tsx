@@ -267,7 +267,7 @@ export default function SidebarOverlay({ onClose }: { onClose: () => void }) {
 
         {/* Contact Info */}
         <section>
-          <h2 className="text-lg font-bold mb-1">CONTACT INFO</h2>
+          <h3 className="text-lg font-bold mb-1">CONTACT INFO</h3>
           <div className="w-8 h-[2px] bg-[#e63a27] mb-4" />
           <ul className="text-sm space-y-3">
             <li className="flex gap-3 items-start">

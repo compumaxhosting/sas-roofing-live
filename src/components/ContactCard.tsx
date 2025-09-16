@@ -129,12 +129,12 @@ const ContactCard: React.FC<ContactCardProps> = ({
       </div>
 
       <div className="mt-2 space-y-1">
-        <h3
+        <h1
           id={`contact-title-${index}`}
           className="text-[#003269] font-semibold text-xl group-hover:text-white font-inter"
         >
           {item.title}
-        </h3>
+        </h1>
 
         <p className="italic text-gray-600 group-hover:text-gray-300 font-bevietnam">
           {item.desc}

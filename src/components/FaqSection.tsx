@@ -74,12 +74,12 @@ export default function FaqSection() {
             Common Questions & Answers
           </span>
         </div>
-        <h2
+        <h1
           id="faq-section-title"
           className="text-3xl md:text-4xl font-bold text-[#003269] font-inter"
         >
           Frequently Asked Questions
-        </h2>
+        </h1>
       </header>
 
       <dl className="space-y-4" role="list">

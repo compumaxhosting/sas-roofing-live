@@ -46,9 +46,9 @@ export default function FAQSection() {
       aria-labelledby="faq-heading"
     >
       <header className="text-center mb-8">
-        <h2 id="faq-heading" className="text-3xl font-bold text-[#e63a27]">
+        <h1 id="faq-heading" className="text-3xl font-bold text-[#e63a27]">
           Frequently Asked Questions
-        </h2>
+        </h1>
       </header>
 
       <dl className="space-y-4" role="list">

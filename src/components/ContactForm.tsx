@@ -59,9 +59,9 @@ export default function ContactForm() {
   return (
     <section className="px-4 py-10 bg-white text-black">
       <div className="max-w-xl mx-auto p-6 md:p-10 border border-[#e63a27] rounded-xl shadow-md bg-white">
-        <h2 className="text-2xl text-center font-bold text-[#e63a27] mb-6">
+        <h1 className="text-2xl text-center font-bold text-[#e63a27] mb-6">
           GET A QUOTE
-        </h2>
+        </h1>
         <form className="flex flex-col gap-4" onSubmit={handleSubmit(onSubmit)}>
           <input
             {...register("name")}

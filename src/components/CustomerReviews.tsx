@@ -53,12 +53,12 @@ export default function CustomerReviews() {
       className="bg-[#f9f9f9] py-10 px-4"
     >
       <div className="text-center mb-6">
-        <h2
+        <h1
           id="customer-reviews-heading"
           className="text-2xl sm:text-3xl font-bold text-[#003269] font-inter"
         >
           Customer Reviews
-        </h2>
+        </h1>
         <div
           className="mt-1 h-1 w-12 mx-auto bg-[#003269]"
           aria-hidden="true"

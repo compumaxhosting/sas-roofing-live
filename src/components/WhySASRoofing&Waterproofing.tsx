@@ -77,12 +77,12 @@ export default function BlogPage() {
             className="space-y-2"
             aria-labelledby="core-services-heading"
           >
-            <h2
+            <h3
               id="core-services-heading"
               className="text-3xl md:text-4xl font-bold mb-5"
             >
               Our Core Services
-            </h2>
+            </h3>
           </motion.div>
 
           <div className="grid gap-12">
@@ -197,13 +197,13 @@ export default function BlogPage() {
               className="space-y-3"
               aria-labelledby="why-choose-us-heading"
             >
-              <h3
+              <h4
                 id="why-choose-us-heading"
                 className="text-xl md:text-2xl font-bold"
               >
                 Why Choose SAS <strong>Roofing</strong> &{" "}
                 <strong>Waterproofing</strong>?
-              </h3>
+              </h4>
               <ul
                 className="list-disc pl-5 text-gray-700"
                 aria-label="Reasons to choose SAS Roofing and Waterproofing"
@@ -236,12 +236,12 @@ export default function BlogPage() {
               className="space-y-3"
               aria-labelledby="get-estimate-heading"
             >
-              <h3
+              <h5
                 id="get-estimate-heading"
                 className="text-2xl md:text-3xl font-bold text-[#e63a27]"
               >
                 Get a Free Estimate Today
-              </h3>
+              </h5>
               <p className="text-gray-700 text-base font-bevietnam">
                 Protect your home with SAS <strong>Roofing</strong> &{" "}
                 <strong>Waterproofing</strong>&apos;s expert services. Contact
