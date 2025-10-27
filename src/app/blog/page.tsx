@@ -10,6 +10,15 @@ import React from "react";
 
 const slides = [
   {
+    title: "How to Choose the Best Roofing Contractor in Brooklyn",
+    shortTitle: "Protect your NYC property with expert roofing solutions.",
+    description: `A complete guide on finding the best roofing contractor in Brooklyn. Learn what to look for, the right questions to ask, red flags to avoid, and why SAS Roofing & Waterproofing is NYC’s trusted choice for roofing, waterproofing, and masonry services.`,
+    date: "27 OCT",
+    image: "/blog/roofing-contractors.jpg",
+    link: "how-to-choose-the-best-roofing-contractor-in-brooklyn",
+    initialLikes: 70,
+  },
+  {
     title: "How Waterproofing Can Save Your NYC Property from Costly Damage",
     shortTitle: "Shield your NYC property from costly water damage.",
     description: `Reliable waterproofing specialists protecting NYC properties from leaks, mold, and structural damage across Brooklyn, Manhattan, Queens, and The Bronx...`,
