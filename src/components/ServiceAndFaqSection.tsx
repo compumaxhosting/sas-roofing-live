@@ -13,7 +13,7 @@ const fadeUp = {
 export default function ServiceAndFaqSection() {
   return (
     <section
-      className="relative w-full lg:h-[100vh] md:pt-5 pb-24 bg-[#f9f9f9] overflow-hidden md:border-t md:border-black/40 mb-10 md:mb-15 shadow-2xl"
+      className="relative w-full md:pt-5 pb-24 bg-[#f9f9f9] overflow-hidden md:border-t md:border-black/40 mb-10 md:mb-15 shadow-2xl"
       aria-labelledby="main-section-heading"
     >
       <div className="absolute inset-0 hidden lg:flex z-0" aria-hidden="true">

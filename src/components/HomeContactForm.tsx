@@ -10,12 +10,14 @@ const fadeUp = {
   visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
 };
 
+// Generate random number string for captcha
 function generateRandomNumber(len = 6) {
   let s = "";
   for (let i = 0; i < len; i++) s += Math.floor(Math.random() * 10);
   return s;
 }
 
+// Create simple numeric captcha as base64 image
 function createCaptchaDataUrl(text: string) {
   const canvas = document.createElement("canvas");
   canvas.width = 180;
@@ -27,7 +29,7 @@ function createCaptchaDataUrl(text: string) {
   ctx.fillStyle = "#f5f5f5";
   ctx.fillRect(0, 0, canvas.width, canvas.height);
 
-  // Add some random rotated characters for extra difficulty
+  // Add numbers with slight random rotation
   const charSpacing = 24;
   for (let i = 0; i < text.length; i++) {
     const ch = text[i];
@@ -44,7 +46,7 @@ function createCaptchaDataUrl(text: string) {
     ctx.restore();
   }
 
-  // Noise lines
+  // Add some noise lines
   for (let i = 0; i < 4; i++) {
     ctx.beginPath();
     ctx.moveTo(Math.random() * canvas.width, Math.random() * canvas.height);
@@ -54,7 +56,7 @@ function createCaptchaDataUrl(text: string) {
     ctx.stroke();
   }
 
-  // Dots
+  // Random dots
   for (let i = 0; i < 30; i++) {
     ctx.beginPath();
     ctx.arc(
@@ -82,11 +84,9 @@ export default function ContactForm() {
   const [captchaImage, setCaptchaImage] = useState("");
   const [captchaInput, setCaptchaInput] = useState("");
   const captchaLen = 6;
-
   const mountedRef = useRef(false);
 
   useEffect(() => {
-    // generate on mount
     regenerateCaptcha();
     mountedRef.current = true;
   }, []);
@@ -107,7 +107,6 @@ export default function ContactForm() {
     e.preventDefault();
     setIsSubmitting(true);
 
-    // Validate captcha first (client-side)
     if (captchaInput.trim() !== captchaValue) {
       setIsSubmitting(false);
       Swal.fire({
@@ -116,7 +115,6 @@ export default function ContactForm() {
         text: "Please enter the numbers shown in the captcha.",
         confirmButtonColor: "#e63a27",
       });
-      // regenerate to avoid brute-force attempts
       setTimeout(() => regenerateCaptcha(), 300);
       return;
     }
@@ -154,7 +152,6 @@ export default function ContactForm() {
         setService("");
         setOtherService("");
         setCaptchaInput("");
-        // regenerate captcha after successful submit
         regenerateCaptcha();
       } else {
         Swal.fire({
@@ -186,13 +183,8 @@ export default function ContactForm() {
       whileInView="visible"
       viewport={{ once: true, amount: 0.3 }}
       onSubmit={handleSubmit}
-      className="bg-[#f5f5f5] w-full max-w-md p-6 md:p-12 shadow-xl grid gap-4 text-base mb-12 lg:mb-0"
+      className="bg-[#f5f5f5] w-full max-w-md p-6 md:p-12 shadow-xl flex flex-col gap-4 text-base mb-12 lg:mb-0"
       aria-labelledby="form-heading"
-      // prevent copying from the form (extra measure)
-      onCopy={(e) => {
-        // only block copy when it's coming from the captcha area
-        e.preventDefault();
-      }}
     >
       {/* Heading */}
       <div className="flex items-center gap-2">
@@ -212,134 +204,130 @@ export default function ContactForm() {
       </p>
 
       {/* Inputs */}
-      <div className="space-y-4">
+      <input
+        id="name"
+        type="text"
+        name="name"
+        placeholder="Name"
+        required
+        autoComplete="name"
+        className="p-3 border border-gray-300 bg-white rounded-md w-full focus:ring-2 focus:ring-[#e63a27] focus:outline-none"
+      />
+
+      <input
+        id="email"
+        type="email"
+        name="email"
+        placeholder="Email Address"
+        required
+        autoComplete="email"
+        className="p-3 border border-gray-300 bg-white rounded-md w-full focus:ring-2 focus:ring-[#e63a27] focus:outline-none"
+      />
+
+      <input
+        id="phone"
+        type="tel"
+        name="phoneNumber"
+        placeholder="Phone Number"
+        value={phoneNumber}
+        onChange={handlePhoneNumberChange}
+        maxLength={15}
+        pattern="[0-9]{10,15}"
+        title="Please enter between 10 and 15 digits"
+        required
+        autoComplete="tel-national"
+        className="p-3 border border-gray-300 bg-white rounded-md w-full focus:ring-2 focus:ring-[#e63a27] focus:outline-none"
+      />
+
+      <select
+        id="service"
+        name="service"
+        value={service}
+        onChange={(e) => setService(e.target.value)}
+        required
+        className="appearance-none p-3 rounded-md font-semibold text-white bg-[#003269] border border-gray-300 w-full focus:ring-2 focus:ring-[#e63a27] focus:outline-none"
+      >
+        <option value="" disabled>
+          Service You Need
+        </option>
+        <option value="roofing">Roofing</option>
+        <option value="waterproofing">Waterproofing</option>
+        <option value="masonry">Masonry</option>
+        <option value="general-contractors">General Contractors</option>
+        <option value="other">Others</option>
+      </select>
+
+      {service === "other" && (
         <input
-          id="name"
           type="text"
-          name="name"
-          placeholder="Name"
-          required
-          autoComplete="name"
+          placeholder="Please specify other service"
+          value={otherService}
+          onChange={(e) => setOtherService(e.target.value)}
           className="p-3 border border-gray-300 bg-white rounded-md w-full focus:ring-2 focus:ring-[#e63a27] focus:outline-none"
-        />
-
-        <input
-          id="email"
-          type="email"
-          name="email"
-          placeholder="Email Address"
           required
-          autoComplete="email"
-          className="p-3 border border-gray-300 bg-white rounded-md w-full focus:ring-2 focus:ring-[#e63a27] focus:outline-none"
         />
+      )}
 
-        <input
-          id="phone"
-          type="tel"
-          name="phoneNumber"
-          placeholder="Phone Number"
-          value={phoneNumber}
-          onChange={handlePhoneNumberChange}
-          maxLength={15}
-          pattern="[0-9]{10,15}"
-          title="Please enter between 10 and 15 digits"
-          required
-          autoComplete="tel-national"
-          className="p-3 border border-gray-300 bg-white rounded-md w-full focus:ring-2 focus:ring-[#e63a27] focus:outline-none"
-        />
+      <textarea
+        id="message"
+        name="message"
+        placeholder="Your Requirements..."
+        rows={4}
+        required
+        className="p-3 border border-gray-300 bg-white rounded-md w-full focus:ring-2 focus:ring-[#e63a27] focus:outline-none"
+      />
 
-        <select
-          id="service"
-          name="service"
-          value={service}
-          onChange={(e) => setService(e.target.value)}
-          required
-          className="appearance-none p-3 rounded-md font-semibold text-white bg-[#003269] border border-gray-300 w-full focus:ring-2 focus:ring-[#e63a27] focus:outline-none"
+      {/* Captcha Section */}
+      <div className="flex flex-col gap-3">
+        <div
+          className="flex items-center justify-between bg-white p-3 rounded-md border border-gray-300 w-full flex-wrap gap-3"
+          style={{ userSelect: "none" }}
+          aria-hidden
         >
-          <option value="" disabled>
-            Service You Need
-          </option>
-          <option value="roofing">Roofing</option>
-          <option value="waterproofing">Waterproofing</option>
-          <option value="masonry">Masonry</option>
-          <option value="general-contractors">General Contractors</option>
-          <option value="other">Others</option>
-        </select>
+          {captchaImage ? (
+            <Image
+              src={captchaImage}
+              alt="CAPTCHA"
+              width={128}
+              height={48}
+              className="select-none border border-gray-300 rounded-md object-cover"
+            />
+          ) : (
+            <div className="w-40 h-12 flex items-center justify-center text-gray-500">
+              Loading...
+            </div>
+          )}
 
-        {service === "other" && (
-          <input
-            type="text"
-            placeholder="Please specify other service"
-            value={otherService}
-            onChange={(e) => setOtherService(e.target.value)}
-            className="p-3 border border-gray-300 bg-white rounded-md w-full focus:ring-2 focus:ring-[#e63a27] focus:outline-none"
-            required
-          />
-        )}
+          <button
+            type="button"
+            onClick={regenerateCaptcha}
+            aria-label="Refresh Captcha"
+            className="px-3 py-1 text-sm font-semibold text-[#e63a27] border border-[#e63a27] rounded-md hover:bg-[#e63a27] hover:text-white transition whitespace-nowrap"
+          >
+            Refresh Captcha
+          </button>
+        </div>
 
-        <textarea
-          id="message"
-          name="message"
-          placeholder="Your Requirements..."
-          rows={4}
+        <input
+          id="captchaInput"
+          name="captchaInput"
+          value={captchaInput}
+          onChange={(e) => setCaptchaInput(e.target.value.replace(/\D/g, ""))}
+          placeholder="Enter numbers"
           required
+          maxLength={captchaLen}
+          inputMode="numeric"
+          pattern={`\\d{${captchaLen}}`}
+          title={`Enter the ${captchaLen} digits shown`}
           className="p-3 border border-gray-300 bg-white rounded-md w-full focus:ring-2 focus:ring-[#e63a27] focus:outline-none"
         />
-
-        {/* Captcha block */}
-        <div className="grid gap-3">
-          {/* Captcha image + refresh */}
-          <div
-            className="flex flex-col items-start gap-2 bg-white p-3 rounded-md border border-gray-300 w-full"
-            style={{ userSelect: "none" }}
-            aria-hidden
-          >
-            {captchaImage ? (
-              <Image
-                src={captchaImage}
-                alt="CAPTCHA"
-                width={128}
-                height={48}
-                className="select-none border border-gray-300 rounded-md object-cover"
-              />
-            ) : (
-              <div className="w-40 h-12 flex items-center justify-center">
-                Loading...
-              </div>
-            )}
-
-            <button
-              type="button"
-              onClick={regenerateCaptcha}
-              aria-label="Refresh Captcha"
-              className="px-3 py-1 text-sm font-semibold text-[#e63a27] border border-[#e63a27] rounded-md hover:bg-[#e63a27] hover:text-white transition"
-            >
-              Refresh Captcha
-            </button>
-          </div>
-
-          {/* Captcha input */}
-          <input
-            id="captchaInput"
-            name="captchaInput"
-            value={captchaInput}
-            onChange={(e) => setCaptchaInput(e.target.value.replace(/\D/g, ""))}
-            placeholder="Enter numbers"
-            required
-            maxLength={captchaLen}
-            inputMode="numeric"
-            pattern={`\\d{${captchaLen}}`}
-            title={`Enter the ${captchaLen} digits shown`}
-            className="p-3 border border-gray-300 bg-white rounded-md w-full focus:ring-2 focus:ring-[#e63a27] focus:outline-none"
-          />
-        </div>
       </div>
 
       {/* Submit Button */}
       <button
         type="submit"
         disabled={isSubmitting}
-        className="border border-[#e63a27] text-[#e63a27] py-3 px-3 font-semibold rounded-md hover:bg-[#e63a27] hover:text-white transition focus:outline-none disabled:opacity-50"
+        className="border border-[#e63a27] text-[#e63a27] py-3 px-3 font-semibold rounded-md hover:bg-[#e63a27] hover:text-white transition focus:outline-none disabled:opacity-50 mt-2"
       >
         {isSubmitting ? "Sending..." : "Book My Consultation"}
       </button>
