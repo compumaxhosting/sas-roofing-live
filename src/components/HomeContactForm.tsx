@@ -1,19 +1,102 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 import Swal from "sweetalert2";
+import Image from "next/image";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 50 },
   visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
 };
 
+function generateRandomNumber(len = 6) {
+  let s = "";
+  for (let i = 0; i < len; i++) s += Math.floor(Math.random() * 10);
+  return s;
+}
+
+function createCaptchaDataUrl(text: string) {
+  const canvas = document.createElement("canvas");
+  canvas.width = 180;
+  canvas.height = 56;
+  const ctx = canvas.getContext("2d");
+  if (!ctx) return "";
+
+  // Background
+  ctx.fillStyle = "#f5f5f5";
+  ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+  // Add some random rotated characters for extra difficulty
+  const charSpacing = 24;
+  for (let i = 0; i < text.length; i++) {
+    const ch = text[i];
+    const x = 12 + i * charSpacing + Math.random() * 4 - 2;
+    const y = canvas.height / 2 + (Math.random() * 6 - 3);
+    const angle = (Math.random() * 8 - 4) * (Math.PI / 180);
+    ctx.save();
+    ctx.translate(x, y);
+    ctx.rotate(angle);
+    ctx.font = `${26 + Math.floor(Math.random() * 4)}px Arial`;
+    ctx.fillStyle = "#003269";
+    ctx.textBaseline = "middle";
+    ctx.fillText(ch, 0, 0);
+    ctx.restore();
+  }
+
+  // Noise lines
+  for (let i = 0; i < 4; i++) {
+    ctx.beginPath();
+    ctx.moveTo(Math.random() * canvas.width, Math.random() * canvas.height);
+    ctx.lineTo(Math.random() * canvas.width, Math.random() * canvas.height);
+    ctx.strokeStyle = `rgba(0,0,0,${0.08 + Math.random() * 0.12})`;
+    ctx.lineWidth = 1 + Math.random() * 1.2;
+    ctx.stroke();
+  }
+
+  // Dots
+  for (let i = 0; i < 30; i++) {
+    ctx.beginPath();
+    ctx.arc(
+      Math.random() * canvas.width,
+      Math.random() * canvas.height,
+      0.9,
+      0,
+      Math.PI * 2
+    );
+    ctx.fillStyle = `rgba(0,0,0,${0.06 + Math.random() * 0.12})`;
+    ctx.fill();
+  }
+
+  return canvas.toDataURL("image/png");
+}
+
 export default function ContactForm() {
   const [phoneNumber, setPhoneNumber] = useState("");
   const [service, setService] = useState("");
   const [otherService, setOtherService] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
+
+  // Captcha states
+  const [captchaValue, setCaptchaValue] = useState("");
+  const [captchaImage, setCaptchaImage] = useState("");
+  const [captchaInput, setCaptchaInput] = useState("");
+  const captchaLen = 6;
+
+  const mountedRef = useRef(false);
+
+  useEffect(() => {
+    // generate on mount
+    regenerateCaptcha();
+    mountedRef.current = true;
+  }, []);
+
+  const regenerateCaptcha = () => {
+    const num = generateRandomNumber(captchaLen);
+    setCaptchaValue(num);
+    setCaptchaImage(createCaptchaDataUrl(num));
+    setCaptchaInput("");
+  };
 
   const handlePhoneNumberChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const value = e.target.value.replace(/\D/g, "");
@@ -23,6 +106,20 @@ export default function ContactForm() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
+
+    // Validate captcha first (client-side)
+    if (captchaInput.trim() !== captchaValue) {
+      setIsSubmitting(false);
+      Swal.fire({
+        icon: "error",
+        title: "Captcha Incorrect",
+        text: "Please enter the numbers shown in the captcha.",
+        confirmButtonColor: "#e63a27",
+      });
+      // regenerate to avoid brute-force attempts
+      setTimeout(() => regenerateCaptcha(), 300);
+      return;
+    }
 
     const form = e.target as HTMLFormElement;
     const formData = new FormData(form);
@@ -56,6 +153,9 @@ export default function ContactForm() {
         setPhoneNumber("");
         setService("");
         setOtherService("");
+        setCaptchaInput("");
+        // regenerate captcha after successful submit
+        regenerateCaptcha();
       } else {
         Swal.fire({
           icon: "error",
@@ -63,6 +163,7 @@ export default function ContactForm() {
           text: result.error || "Something went wrong. Please try again.",
           confirmButtonColor: "#e63a27",
         });
+        regenerateCaptcha();
       }
     } catch (error) {
       Swal.fire({
@@ -72,6 +173,7 @@ export default function ContactForm() {
         confirmButtonColor: "#e63a27",
       });
       console.error(error);
+      regenerateCaptcha();
     } finally {
       setIsSubmitting(false);
     }
@@ -86,6 +188,11 @@ export default function ContactForm() {
       onSubmit={handleSubmit}
       className="bg-[#f5f5f5] w-full max-w-md p-6 md:p-12 shadow-xl grid gap-4 text-base mb-12 lg:mb-0"
       aria-labelledby="form-heading"
+      // prevent copying from the form (extra measure)
+      onCopy={(e) => {
+        // only block copy when it's coming from the captcha area
+        e.preventDefault();
+      }}
     >
       {/* Heading */}
       <div className="flex items-center gap-2">
@@ -178,6 +285,54 @@ export default function ContactForm() {
           required
           className="p-3 border border-gray-300 bg-white rounded-md w-full focus:ring-2 focus:ring-[#e63a27] focus:outline-none"
         />
+
+        {/* Captcha block */}
+        <div className="grid gap-3">
+          {/* Captcha image + refresh */}
+          <div
+            className="flex flex-col items-start gap-2 bg-white p-3 rounded-md border border-gray-300 w-full"
+            style={{ userSelect: "none" }}
+            aria-hidden
+          >
+            {captchaImage ? (
+              <Image
+                src={captchaImage}
+                alt="CAPTCHA"
+                width={128}
+                height={48}
+                className="select-none border border-gray-300 rounded-md object-cover"
+              />
+            ) : (
+              <div className="w-40 h-12 flex items-center justify-center">
+                Loading...
+              </div>
+            )}
+
+            <button
+              type="button"
+              onClick={regenerateCaptcha}
+              aria-label="Refresh Captcha"
+              className="px-3 py-1 text-sm font-semibold text-[#e63a27] border border-[#e63a27] rounded-md hover:bg-[#e63a27] hover:text-white transition"
+            >
+              Refresh Captcha
+            </button>
+          </div>
+
+          {/* Captcha input */}
+          <input
+            id="captchaInput"
+            name="captchaInput"
+            value={captchaInput}
+            onChange={(e) => setCaptchaInput(e.target.value.replace(/\D/g, ""))}
+            placeholder="Enter numbers"
+            required
+            maxLength={captchaLen}
+            inputMode="numeric"
+            pattern={`\\d{${captchaLen}}`}
+            title={`Enter the ${captchaLen} digits shown`}
+            className="p-3 border border-gray-300 bg-white rounded-md w-full focus:ring-2 focus:ring-[#e63a27] focus:outline-none"
+          />
+        </div>
       </div>
 
       {/* Submit Button */}
