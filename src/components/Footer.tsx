@@ -321,13 +321,13 @@ export default function Footer() {
             </span>{" "}
             All Rights Reserved.
           </p>
-          <p className="font-bevietnam text-white text-xs sm:text-sm mt-1">
+          <p className="font-bevietnam text-[#023266] text-xs sm:text-sm mt-1">
             Some images sourced from{" "}
             <a
               href="https://www.freepik.com"
               target="_blank"
               rel="noopener noreferrer nofollow"
-              className="text-white/70 hover:text-white underline transition"
+              className="underline transition"
             >
               Freepik
             </a>
