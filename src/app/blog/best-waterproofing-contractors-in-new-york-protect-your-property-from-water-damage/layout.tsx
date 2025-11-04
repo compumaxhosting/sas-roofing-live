@@ -13,7 +13,7 @@ export const metadata = {
       "Best Waterproofing Contractors in New York | SAS Roofing & Waterproofing",
     description:
       "Trusted waterproofing contractors in Brooklyn, Manhattan & Queens. Basement, foundation, and roof waterproofing. Call SAS Roofing for a free estimate!",
-    url: "https://www.sasroofingwaterproofing.com/blog.html",
+    url: "https://www.sasroofingwaterproofing.com/blog/best-waterproofing-contractors-in-new-york-protect-your-property-from-water-damage",
     images: [
       {
         url: "https://www.sasroofingwaterproofing.com/assets/images/resources/Logo-SAS.png",

@@ -13,7 +13,7 @@ export const metadata = {
       "Top Roofing Contractors Brooklyn, Manhattan, Queens & Bronx | SAS Roofing NYC",
     description:
       "Looking for trusted roofing contractors in Brooklyn, Manhattan, Queens, or The Bronx? SAS Roofing offers expert repair, installation & waterproofing across NYC. Call today!",
-    url: "https://www.sasroofingwaterproofing.com/blog.html",
+    url: "https://www.sasroofingwaterproofing.com/blog/top-roofing-contractors-brooklyn-manhattan-queens-bronx-sas-roofing-nyc",
     images: [
       {
         url: "https://www.sasroofingwaterproofing.com/assets/images/resources/Logo-SAS.png",

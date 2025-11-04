@@ -11,7 +11,7 @@ export const metadata = {
     title: "NYC Waterproofing Contractor Protecting Your Home",
     description:
       "Explore expert tips, guides, and updates on roofing, waterproofing, and masonry services in NYC from SAS Roofing & Waterproofing professionals.",
-    url: "https://www.sasroofingwaterproofing.com/blog.html",
+    url: "https://www.sasroofingwaterproofing.com/blog/how-waterproofing-can-save-your-nyc-property-from-costly-damage",
     images: [
       {
         url: "https://www.sasroofingwaterproofing.com/assets/images/resources/Logo-SAS.png",

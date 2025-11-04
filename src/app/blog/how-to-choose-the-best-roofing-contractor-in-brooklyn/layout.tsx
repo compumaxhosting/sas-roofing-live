@@ -11,7 +11,7 @@ export const metadata = {
     title: "Best Roofing Contractor in Brooklyn | SAS Roofing & Waterproofing",
     description:
       "Looking for the best roofing contractor in Brooklyn? SAS Roofing & Waterproofing offers expert roofing, waterproofing & masonry services across Brooklyn, Manhattan, Queens & The Bronx. 30+ years of trusted experience.",
-    url: "https://www.sasroofingwaterproofing.com/blog.html",
+    url: "https://www.sasroofingwaterproofing.com/blog/how-to-choose-the-best-roofing-contractor-in-brooklyn",
     images: [
       {
         url: "https://www.sasroofingwaterproofing.com/assets/images/resources/Logo-SAS.png",

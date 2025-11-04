@@ -13,7 +13,7 @@ export const metadata = {
       "Why SAS Roofing & Waterproofing Is Brooklyn’s Most Trusted Roofing Expert",
     description:
       "Discover why SAS Roofing & Waterproofing is the go-to expert for reliable roofing services in Brooklyn. Quality craftsmanship, affordable pricing, and local trust.",
-    url: "https://www.sasroofingwaterproofing.com/blog.html",
+    url: "https://www.sasroofingwaterproofing.com/blog/Why-SAS-Roofing-and-Waterproofing-Is-Brooklyns-Most-Trusted-Roofing-Expert",
     images: [
       {
         url: "https://www.sasroofingwaterproofing.com/assets/images/resources/Logo-SAS.png",

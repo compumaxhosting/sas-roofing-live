@@ -13,7 +13,7 @@ export const metadata = {
       "The Satisfaction Factor: Why Certified Roofing Contractors in Brooklyn Are a Smart Choice",
     description:
       "SAS Certified roofing contractors in Brooklyn, Manhattan, Queens, and The Bronx deliver expert service, lasting results, and peace of mind for every roofing project.",
-    url: "https://www.sasroofingwaterproofing.com/blog.html",
+    url: "https://www.sasroofingwaterproofing.com/blog/the-satisfaction-factor-why-certified-roofing-contractors-in-brooklyn-are-a-smart-choice",
     images: [
       {
         url: "https://www.sasroofingwaterproofing.com/assets/images/resources/Logo-SAS.png",

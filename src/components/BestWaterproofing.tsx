@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import FAQSection from "./FAQSectionBlog";
+import Link from "next/link";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 40 },
@@ -69,12 +70,15 @@ export default function BestWaterproofing() {
                 Water damage is one of the most common and costly problems New
                 Yorkers face. From basement seepage to exterior wall leaks,
                 moisture can harm building structure, promote mold, and lower
-                property value. SAS Roofing & Waterproofing provides proven
-                waterproofing solutions across Brooklyn, Manhattan, Queens, and
-                The Bronx. With decades of local experience, they specialize in
-                basement waterproofing, foundation sealing, exterior wall
-                protection, and commercial systems designed for New York’s
-                climate and construction style.
+                property value.{" "}
+                <Link href="/" >
+                  SAS Roofing & Waterproofing
+                </Link>{" "}
+                provides proven waterproofing solutions across Brooklyn,
+                Manhattan, Queens, and The Bronx. With decades of local
+                experience, they specialize in basement waterproofing,
+                foundation sealing, exterior wall protection, and commercial
+                systems designed for New York’s climate and construction style.
               </p>
               <h2 className="text-2xl font-bold mb-3">
                 Why Waterproofing Matters in NYC
@@ -293,10 +297,13 @@ export default function BestWaterproofing() {
                 Waterproofing is one of the smartest ways to protect your home
                 or business from long-term damage. Whether it’s a basement leak,
                 wall seepage, or a roof issue, hiring experienced professionals
-                makes all the difference. SAS Roofing & Waterproofing combines
-                experience, skill, and local knowledge to deliver reliable,
-                lasting results throughout Brooklyn, Manhattan, Queens, and The
-                Bronx.
+                makes all the difference.{" "}
+                <Link href="/" >
+                  SAS Roofing & Waterproofing
+                </Link>{" "}
+                combines experience, skill, and local knowledge to deliver
+                reliable, lasting results throughout Brooklyn, Manhattan,
+                Queens, and The Bronx.
               </p>
               <p className="mt-2">
                 Call today for a free estimate and keep your property safe, dry,

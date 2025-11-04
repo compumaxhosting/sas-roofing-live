@@ -11,7 +11,7 @@ export const metadata = {
     title: "NYC Waterproofing Contractor Protecting Your Home",
     description:
       "Discover how this NYC waterproofing contractor revolutionizes home protection with advanced solutions for lasting defense against water damage.",
-    url: "https://www.sasroofingwaterproofing.com/blog.html",
+    url: "https://www.sasroofingwaterproofing.com/blog/How-This-NYC-Waterproofing-Contractor-is-Revolutionizing-Home-Protection",
     images: [
       {
         url: "https://www.sasroofingwaterproofing.com/assets/images/resources/Logo-SAS.png",
