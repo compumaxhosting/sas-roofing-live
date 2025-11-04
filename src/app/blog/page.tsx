@@ -10,6 +10,17 @@ import React from "react";
 
 const slides = [
   {
+    title:
+      "Best Waterproofing Contractors in New York — Protect Your Property from Water Damage",
+    shortTitle:
+      "Trusted waterproofing contractors across NYC — Brooklyn, Manhattan, Queens, and The Bronx.",
+    description: `Water damage is a costly issue for New Yorkers. Learn how SAS Roofing & Waterproofing protects homes and buildings with expert basement, foundation, wall, and roof waterproofing solutions across NYC.`,
+    date: "04 NOV",
+    image: "/blog/blogImage.jpg",
+    link: "best-waterproofing-contractors-in-new-york-protect-your-property-from-water-damage",
+    initialLikes: 70,
+  },
+  {
     title: "How to Choose the Best Roofing Contractor in Brooklyn",
     shortTitle: "Protect your NYC property with expert roofing solutions.",
     description: `A complete guide on finding the best roofing contractor in Brooklyn. Learn what to look for, the right questions to ask, red flags to avoid, and why SAS Roofing & Waterproofing is NYC’s trusted choice for roofing, waterproofing, and masonry services.`,
