@@ -80,52 +80,6 @@ const slides = [
     link: "Why-SAS-Roofing-and-Waterproofing-Is-Brooklyns-Most-Trusted-Roofing-Expert",
     initialLikes: 220,
   },
-  {
-    title: "Replacing Shingle Roof And Installing Skylight",
-    shortTitle: "ROOF LEAKS",
-    description: `Upgrade your home with a new shingle roof and natural light! Learn how replacing worn shingles and adding a skylight can improve energy efficiency, enhance interior brightness, and boost curb appeal...`,
-    date: "13 JUNE",
-    image: "/blog/leakage_roof.jpg",
-    link: "/", // This should redirect to home
-    initialLikes: 200,
-  },
-  {
-    title: "Foundation Wall Repair And Waterproofing",
-    shortTitle: "MAINTENANCE",
-    description: `Protect your property from water damage and structural issues. Discover how professional foundation wall repair and waterproofing solutions can strengthen your home’s base and prevent costly future repairs...`,
-    date: "13 JUNE",
-    image: "/blog/waterproofing.png",
-    link: "/",
-    initialLikes: 270,
-  },
-  {
-    title: "How To Weather Proof Your Roof This Winter?",
-    shortTitle: "TIPS & TRICKS",
-    description: `Prepare your roof for harsh winter conditions with essential weatherproofing tips. Learn how to prevent leaks, ice dams, and damage to keep your home warm, dry, and protected all season long...`,
-    date: "11 JUNE",
-    image: "/blog/services1.png",
-    link: "/",
-    initialLikes: 280,
-  },
-  {
-    title:
-      "Expert Masonry Services Across Brooklyn, Manhattan & Queens: Quality You Can Trust",
-    shortTitle: "THE MASON’S MARK",
-    description: `Discover top-tier masonry services tailored to the unique architecture of Brooklyn, Manhattan, and Queens. From brickwork and stone facades to brownstone restoration, our skilled masons deliver durable, elegant results for every project....`,
-    date: "11 JUNE",
-    image: "/blog/masonry_services.png",
-    link: "/",
-    initialLikes: 311,
-  },
-  {
-    title: "Roofing Excellence Across New York’s Core Boroughs",
-    shortTitle: "ROOFTOP RELIABILITY",
-    description: `Protect your home with trusted roofing solutions tailored for New York City's unique climate. From repairs to full replacements, our expert team delivers durability, precision, and peace of mind in every project....`,
-    date: "11 JUNE",
-    image: "/blog/roofing1.jpg",
-    link: "/",
-    initialLikes: 132,
-  },
 ];
 
 const page = () => {
