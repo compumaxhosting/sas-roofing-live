@@ -11,6 +11,16 @@ import React from "react";
 const slides = [
   {
     title:
+      "How to Choose the Best Roofing Company in Brooklyn Without Overpaying",
+    shortTitle: "Find Trusted Brooklyn Roofers Without Overpaying.",
+    description: `When it comes to protecting your home or business, your roof plays the most important role. It shields everything beneath it from harsh weather, enhances curb appeal, and adds long-term value to your property.`,
+    date: "27 OCT",
+    image: "/blog/roofing-blog.jpeg",
+    link: "best-roofing-company-in-brooklyn",
+    initialLikes: 70,
+  },
+  {
+    title:
       "Best Waterproofing Contractors in New York — Protect Your Property from Water Damage",
     shortTitle:
       "Trusted waterproofing contractors across NYC — Brooklyn, Manhattan, Queens, and The Bronx.",
