@@ -60,8 +60,7 @@ export default function BestWaterproofing() {
 
             <div className="w-full lg:w-1/2">
               <h1
-                id="main-blog-heading"
-                className="text-3xl md:text-4xl font-bold font-inter mb-6"
+                id="main-blog-heading" className="text-2xl md:text-4xl font-bold font-inter mb-6"
               >
                 Best Waterproofing Contractors in New York — Protect Your
                 Property from Water Damage

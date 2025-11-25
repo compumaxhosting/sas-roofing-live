@@ -61,7 +61,7 @@ export default function BestRoofing() {
             <div className="w-full lg:w-1/2">
               <h1
                 id="main-blog-heading"
-                className="text-3xl md:text-4xl font-bold font-inter mb-6"
+                className="text-2xl md:text-4xl font-bold font-inter mb-6"
               >
                 How to Choose the Best Roofing Contractor in Brooklyn
               </h1>

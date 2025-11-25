@@ -1,12 +1,11 @@
 import BackToTop from "@/components/BackToTop";
-import BestRoofing from "@/components/BestRoofing";
-import { BlogsOverview } from "@/components/BlogOverview";
 import BreadCrum2 from "@/components/BreadCrum2";
 import ContactBar from "@/components/ContactBar";
 import Footer from "@/components/Footer";
 import FooterTopCTA from "@/components/FooterTopCTA";
 import Navbar from "@/components/Navbar/Navbar";
 import StickyNavbar from "@/components/StickyNavbar";
+import WaterProofingChallenges from "@/components/WaterproofingChallenges";
 import React from "react";
 
 const page = () => {
@@ -20,8 +19,7 @@ const page = () => {
         pageTitle={"BLOGS"}
         imageSrc={"/page-bgImage/roofing-service.jpg"}
       />
-      <BlogsOverview />
-      <BestRoofing />
+      <WaterProofingChallenges />
       <FooterTopCTA />
       <Footer />
       <BackToTop />

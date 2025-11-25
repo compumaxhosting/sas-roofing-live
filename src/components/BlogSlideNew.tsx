@@ -1,10 +1,7 @@
 "use client";
 
-import { useState } from "react";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
-import { FiHeart, FiShare2 } from "react-icons/fi";
-import { AiFillHeart } from "react-icons/ai";
 import { motion } from "framer-motion";
 import Link from "next/link";
 
@@ -19,36 +16,10 @@ interface Slide {
 }
 
 export default function BlogSlideNew({ slide }: { slide: Slide }) {
-  const [liked, setLiked] = useState(false);
-  const [likes, setLikes] = useState(slide.initialLikes);
   const router = useRouter();
 
   const href = slide.link === "/" ? "/" : `/blog/${slide.link}`;
 
-  const handleLike = (e: React.MouseEvent) => {
-    e.stopPropagation();
-    setLiked((prev) => !prev);
-    setLikes((prev) => (liked ? prev - 1 : prev + 1));
-  };
-
-  const handleShare = (e: React.MouseEvent) => {
-    e.stopPropagation();
-    const shareUrl =
-      slide.link === "/"
-        ? window.location.origin
-        : `${window.location.origin}/blog/${slide.link}`;
-    if (navigator.share) {
-      navigator
-        .share({
-          title: slide.title,
-          text: slide.shortTitle,
-          url: shareUrl,
-        })
-        .catch((error) => console.error("Error sharing", error));
-    } else {
-      alert("Sharing is not supported in this browser.");
-    }
-  };
 
   const handleCardClick = () => {
     router.push(href);
@@ -73,7 +44,7 @@ export default function BlogSlideNew({ slide }: { slide: Slide }) {
           (e.key === "Enter" || e.key === " ") && handleCardClick()
         }
         aria-label={`Read full article: ${slide.title}`}
-        className="cursor-pointer h-[515px] flex flex-col justify-between rounded-md shadow-2xl overflow-hidden font-inter border border-blue-300 bg-white mt-3"
+        className="cursor-pointer h-[515px] flex flex-col justify-between rounded-md shadow-2xl overflow-hidden font-inter border border-blue-300 bg-white mt-3 pb-4"
       >
         {/* Image Section */}
         <div className="relative w-full h-60">
@@ -92,33 +63,7 @@ export default function BlogSlideNew({ slide }: { slide: Slide }) {
           </div>
         </div>
 
-        {/* Like & Share */}
-        <div className="flex justify-between items-center px-4 py-2 text-gray-600">
-          <button
-            onClick={handleLike}
-            className="flex items-center gap-1 text-[#e63a27]"
-            aria-label={liked ? "Unlike this post" : "Like this post"}
-            aria-pressed={liked}
-          >
-            {liked ? (
-              <AiFillHeart className="w-5 h-5" aria-hidden="true" />
-            ) : (
-              <FiHeart className="w-5 h-5" aria-hidden="true" />
-            )}
-            <span aria-live="polite" aria-atomic="true">
-              {likes}
-            </span>
-          </button>
-
-          <button
-            onClick={handleShare}
-            className="hover:text-[#e63a27] transition-colors"
-            aria-label={`Share blog post: ${slide.title}`}
-          >
-            <FiShare2 className="w-5 h-5" aria-hidden="true" />
-            <span className="sr-only">Share</span>
-          </button>
-        </div>
+      
 
         {/* Content Section */}
         <div className="flex flex-col justify-between flex-grow px-4 py-2">

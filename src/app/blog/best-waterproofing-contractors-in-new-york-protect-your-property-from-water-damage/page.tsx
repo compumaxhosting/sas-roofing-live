@@ -7,6 +7,7 @@ import Navbar from "@/components/Navbar/Navbar";
 import StickyNavbar from "@/components/StickyNavbar";
 import React from "react";
 import BestWaterproofing from "@/components/BestWaterproofing";
+import { BlogsOverview } from "@/components/BlogOverview";
 
 const page = () => {
   return (
@@ -19,6 +20,7 @@ const page = () => {
         pageTitle={"BLOGS"}
         imageSrc={"/page-bgImage/roofing-service.jpg"}
       />
+      <BlogsOverview />
       <BestWaterproofing />
       <FooterTopCTA />
       <Footer />

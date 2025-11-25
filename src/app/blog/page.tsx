@@ -1,4 +1,5 @@
 import BackToTop from "@/components/BackToTop";
+import { BlogsOverview } from "@/components/BlogOverview";
 import BlogSlideNew from "@/components/BlogSlideNew";
 import BreadCrum2 from "@/components/BreadCrum2";
 import ContactBar from "@/components/ContactBar";
@@ -9,6 +10,16 @@ import StickyNavbar from "@/components/StickyNavbar";
 import React from "react";
 
 const slides = [
+  {
+  title: "Top Waterproofing Challenges in Brooklyn, Manhattan & Queens (Expert Solutions for NYC Homeowners)",
+  shortTitle: "Most common waterproofing challenges NYC homeowners face — and how to fix them.",
+  description:
+    "Discover the most common waterproofing problems faced by Brooklyn, Manhattan, and Queens homeowners. Learn expert solutions for foundation cracks, roof leaks...",
+  date: "27 OCT",
+  image: "/blog/waterproofing.webp",
+  link: "nyc-waterproofing-challenges-and-solutions",
+  initialLikes: 70,
+},
   {
     title:
       "How to Choose the Best Roofing Company in Brooklyn Without Overpaying",
@@ -103,6 +114,7 @@ const page = () => {
         pageTitle={"BLOGS"}
         imageSrc={"/page-bgImage/roofing-service.jpg"}
       />
+      <BlogsOverview />
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-3 px-5 py-5 lg:max-w-4xl xl:max-w-7xl xl:gap-8 mx-auto">
         {slides.map((slide, index) => (
