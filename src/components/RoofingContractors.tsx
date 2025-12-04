@@ -368,6 +368,12 @@ export default function BlogPage() {
                   Trusted NYC Roofing Contractors
                 </Link>
               </p>
+              <Link
+                href="tel:3472216549"
+                className="inline-block mt-4 bg-[#e63a27] text-white px-5 py-2 rounded hover:bg-[#c72d1d] transition"
+              >
+                Call Us at (347) 221-6549
+              </Link>
             </motion.div>
 
             {/* CONTACT SECTION */}
@@ -378,7 +384,12 @@ export default function BlogPage() {
               variants={fadeUp}
             >
               <h2 className="text-2xl md:text-3xl font-bold text-[#e63a27]">
-                Get a Free Estimate Today
+                <Link
+                  href="https://www.sasroofingwaterproofing.com/contact-us"
+                  className="text-[#e63a27]"
+                >
+                  Get a Free Estimate Today
+                </Link>
               </h2>
 
               <p className="text-gray-700 text-base mt-2">
