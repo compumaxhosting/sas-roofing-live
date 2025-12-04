@@ -7,6 +7,7 @@ import Navbar from "@/components/Navbar/Navbar";
 import TopRoofingContractorsBlog from "@/components/TopRoofingContractorsBlog";
 import StickyNavbar from "@/components/StickyNavbar";
 import React from "react";
+import { BlogsOverview } from "@/components/BlogOverview";
 
 const page = () => {
   return (
@@ -19,6 +20,7 @@ const page = () => {
         pageTitle={"BLOGS"}
         imageSrc={"/page-bgImage/roofing-service.jpg"}
       />
+      <BlogsOverview />
       <TopRoofingContractorsBlog />
       <FooterTopCTA />
       <Footer />

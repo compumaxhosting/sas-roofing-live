@@ -13,6 +13,10 @@ export function BlogsOverview() {
 
   const plans = [
     {
+      name: "What Makes a Roofing Contractor Trustworthy in NYC?",
+      path: "/blog/roofing-contractors-brooklyn-queens-manhattan",
+    },
+    {
       name: "Top Waterproofing Challenges Faced by Brooklyn, Manhattan & Queens Homeowners",
       path: "/blog/nyc-waterproofing-challenges-and-solutions",
     },

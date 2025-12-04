@@ -76,7 +76,7 @@ export default function BlogSlideNew({ slide }: { slide: Slide }) {
             >
               {slide.title}
             </h1>
-            <p className="text-sm text-gray-600 font-bevietnam">
+            <p className="text-sm text-gray-600 font-bevietnam text-justify">
               {slide.description}
             </p>
           </div>

@@ -1,4 +1,5 @@
 import BackToTop from "@/components/BackToTop";
+import { BlogsOverview } from "@/components/BlogOverview";
 import BreadCrum2 from "@/components/BreadCrum2";
 import ContactBar from "@/components/ContactBar";
 import Footer from "@/components/Footer";
@@ -19,6 +20,7 @@ const page = () => {
         pageTitle={"BLOGS"}
         imageSrc={"/page-bgImage/roofing-service.jpg"}
       />
+      <BlogsOverview />
       <SatisfactionFactor />
       <FooterTopCTA />
       <Footer />

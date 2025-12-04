@@ -11,15 +11,27 @@ import React from "react";
 
 const slides = [
   {
-  title: "Top Waterproofing Challenges in Brooklyn, Manhattan & Queens (Expert Solutions for NYC Homeowners)",
-  shortTitle: "Most common waterproofing challenges NYC homeowners face — and how to fix them.",
-  description:
-    "Discover the most common waterproofing problems faced by Brooklyn, Manhattan, and Queens homeowners. Learn expert solutions for foundation cracks, roof leaks...",
-  date: "27 OCT",
-  image: "/blog/waterproofing.webp",
-  link: "nyc-waterproofing-challenges-and-solutions",
-  initialLikes: 70,
-},
+    title: "What Makes a Roofing Contractor Trustworthy in NYC?",
+    shortTitle: "Best Waterproofing Contractors in New York ",
+    description:
+      "The best roofing contractors in Brooklyn are those who understand local building codes, typical weather damage, and the unique roofing styles found in brownstones and mixed-use buildings.",
+    date: "4 DEC",
+    image: "/blog/roofing-new-blog.jpg",
+    link: "roofing-contractors-brooklyn-queens-manhattan",
+    initialLikes: 70,
+  },
+  {
+    title:
+      "Top Waterproofing Challenges in Brooklyn, Manhattan & Queens (Expert Solutions for NYC Homeowners)",
+    shortTitle:
+      "Most common waterproofing challenges NYC homeowners face — and how to fix them.",
+    description:
+      "Discover the most common waterproofing problems faced by Brooklyn, Manhattan, and Queens homeowners. Learn expert solutions for foundation cracks, roof leaks...",
+    date: "27 OCT",
+    image: "/blog/waterproofing.webp",
+    link: "nyc-waterproofing-challenges-and-solutions",
+    initialLikes: 70,
+  },
   {
     title:
       "How to Choose the Best Roofing Company in Brooklyn Without Overpaying",
