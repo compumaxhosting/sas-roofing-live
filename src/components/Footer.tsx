@@ -31,6 +31,7 @@ export default function Footer() {
     { label: "Contact", path: "/contact-us" },
     { label: "Blog", path: "/blog" },
     { label: "FAQs", path: "/faq" },
+    { label: "Site Map", path: "/site-map" },
   ];
   const socialItems = [
     {
