@@ -82,7 +82,7 @@ const SiteMap = () => {
 
   return (
     <div className="max-w-[900px] mx-auto px-6 py-8">
-      <h1 className="text-3xl md:text-4xl font-semibold mb-6 text-[#003269]">Site Map</h1>
+      <h1 className="text-3xl md:text-4xl font-semibold mb-6 text-[#003269]">Sitemap</h1>
       <h2 className="text-2xl md:text-3xl font-semibold mb-6 text-[#003269]">Pages</h2>
 
       <ul className="space-y-4">

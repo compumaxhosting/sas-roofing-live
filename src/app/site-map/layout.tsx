@@ -2,15 +2,15 @@ import { ReactNode } from "react";
 
 // Metadata for SEO
 export const metadata = {
-  title: "Emergency Roofing Contractor Available 24/7 in Brooklyn, NY",
+  title: "SAS Roofing & Waterproofing – Complete Site Map",
   description:
-    "SAS Roofing & Waterproofing – Your 24/7 roofing and waterproofing contractor serving Brooklyn, Manhattan, and Queens. We offer emergency roof repair, leak repair, and flat roof services anytime.",
+    "Explore the full sitemap of SAS Roofing & Waterproofing — browse roofing, waterproofing, masonry services, projects, blogs, FAQs & contact pages.",
   keywords:
-    "24/7 roofing contractor Brooklyn, emergency roof repair Manhattan, waterproofing services Queens NY, licensed roofer Brooklyn NY, flat roof waterproofing Manhattan, roof leak repair Queens, commercial roofing contractor NYC, residential roof repair Brooklyn, basement waterproofing Queens, 24/7 emergency roofing NYC",
+    "SAS Roofing, waterproofing services, masonry services, roofing contractors NYC, Brooklyn roofers, waterproofing NYC, roofing waterproofing company, site map page, roofing blog, contact SAS Roofing",
   openGraph: {
-    title: "Emergency Roofing Contractor Available 24/7 in Brooklyn, NY",
+    title: "SAS Roofing & Waterproofing – Complete Site Map",
     description:
-      "SAS Roofing & Waterproofing – Your 24/7 roofing and waterproofing contractor serving Brooklyn, Manhattan, and Queens. We offer emergency roof repair, leak repair, and flat roof services anytime.",
+      "Explore the full sitemap of SAS Roofing & Waterproofing — browse roofing, waterproofing, masonry services, projects, blogs, FAQs & contact pages.",
     url: "https://www.sasroofingwaterproofing.com/aboutus.html",
     images: [
       {
