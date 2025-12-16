@@ -13,6 +13,10 @@ export function BlogsOverview() {
 
   const plans = [
     {
+      name: "10 Signs You Need Roofing Services Immediately",
+      path: "/blog/signs-you-need-roofing-services-right-now",
+    },
+    {
       name: "What Makes a Roofing Contractor Trustworthy in NYC?",
       path: "/blog/roofing-contractors-brooklyn-queens-manhattan",
     },

@@ -19,7 +19,7 @@ const BreadCrum2: React.FC<BreadCrumProps> = ({
   imageSrc,
 }) => {
   return (
-    <div className="relative h-60 md:h-85 w-full text-white text-center">
+    <div className="relative h-36 md:h-56 w-full text-white text-center">
       {/* Decorative Background Image */}
       <Image
         src={imageSrc}

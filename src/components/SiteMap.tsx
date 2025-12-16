@@ -78,6 +78,10 @@ const SiteMap = () => {
       name: "Blog - Roofing Contractors in Brooklyn, Queens & Manhattan",
       url: "https://www.sasroofingwaterproofing.com/blog/roofing-contractors-brooklyn-queens-manhattan",
     },
+    {
+      name: "Blog - 10 Signs You Need Roofing Services Immediately",
+      url: "https://www.sasroofingwaterproofing.com/blog/signs-you-need-roofing-services-right-now",
+    },
   ];
 
   return (
