@@ -11,6 +11,16 @@ import React from "react";
 
 const slides = [
   {
+    title: "10 Signs You Need Roofing Services Immediately",
+    shortTitle: "Signs You Need Roofing",
+    description:
+      "If you live in Brooklyn (11201, 11205, 11206, 11215, 11216, 11217, 11218, 11221, 11231, 11233, 11238) or Manhattan (10004, 10005, 10006, 10007, 10012, 10013, 10014, 10038, 10280)....",
+    date: "16 DEC",
+    image: "/blog/signs-roofing.jpeg",
+    link: "signs-you-need-roofing-services-right-now",
+    initialLikes: 70,
+  },
+  {
     title: "What Makes a Roofing Contractor Trustworthy in NYC?",
     shortTitle: "Best Waterproofing Contractors in New York ",
     description:
