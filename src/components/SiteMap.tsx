@@ -82,6 +82,10 @@ const SiteMap = () => {
       name: "Blog - 10 Signs You Need Roofing Services Immediately",
       url: "https://www.sasroofingwaterproofing.com/blog/signs-you-need-roofing-services-right-now",
     },
+    {
+      name: "Blog - Full-Spectrum Waterproofing Services in NYC",
+      url: "https://www.sasroofingwaterproofing.com/blog/residential-commercial-waterproofing-nyc",
+    },
   ];
 
   return (

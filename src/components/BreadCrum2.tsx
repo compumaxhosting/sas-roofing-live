@@ -23,7 +23,7 @@ const BreadCrum2: React.FC<BreadCrumProps> = ({
       {/* Decorative Background Image */}
       <Image
         src={imageSrc}
-        alt="" // Decorative, so skipped by screen readers
+        alt=""
         fill
         loading="lazy"
         decoding="async"
@@ -45,15 +45,16 @@ const BreadCrum2: React.FC<BreadCrumProps> = ({
         >
           <ol
             className="flex flex-wrap items-center m-0 p-0 list-none"
-            vocab="https://schema.org/"
-            typeof="BreadcrumbList"
+            itemScope
+            itemType="https://schema.org/BreadcrumbList"
           >
             {breadcrumbItems.map((item, index) => (
               <li
                 key={item.href}
                 className="flex items-center"
-                property="itemListElement"
-                typeof="ListItem"
+                itemScope
+                itemProp="itemListElement"
+                itemType="https://schema.org/ListItem"
               >
                 <Link
                   href={item.href}
@@ -65,12 +66,13 @@ const BreadCrum2: React.FC<BreadCrumProps> = ({
                   aria-current={
                     index === breadcrumbItems.length - 1 ? "page" : undefined
                   }
-                  property="item"
-                  typeof="WebPage"
+                  itemProp="item"
                 >
-                  <span property="name">{item.label}</span>
+                  <span itemProp="name">{item.label}</span>
                 </Link>
-                <meta property="position" content={(index + 1).toString()} />
+
+                <meta itemProp="position" content={(index + 1).toString()} />
+
                 {index < breadcrumbItems.length - 1 && (
                   <span className="mx-2 text-white/50" aria-hidden="true">
                     &rsaquo;

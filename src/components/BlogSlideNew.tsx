@@ -12,7 +12,6 @@ interface Slide {
   description: string;
   date: string;
   image: string;
-  initialLikes: number;
 }
 
 export default function BlogSlideNew({ slide }: { slide: Slide }) {
@@ -66,7 +65,7 @@ export default function BlogSlideNew({ slide }: { slide: Slide }) {
       
 
         {/* Content Section */}
-        <div className="flex flex-col justify-between flex-grow px-4 py-2">
+        <div className="flex flex-col justify-evenly flex-grow px-4 py-2">
           <div>
             <h1
               className="text-md font-semibold text-gray-800 mb-4"

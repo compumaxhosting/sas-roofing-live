@@ -13,6 +13,10 @@ export function BlogsOverview() {
 
   const plans = [
     {
+      name: "Say Goodbye to Leaks with Full-Spectrum Waterproofing in NYC",
+      path: "/blog/residential-commercial-waterproofing-nyc",
+    },
+    {
       name: "10 Signs You Need Roofing Services Immediately",
       path: "/blog/signs-you-need-roofing-services-right-now",
     },

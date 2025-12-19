@@ -11,6 +11,16 @@ import React from "react";
 
 const slides = [
   {
+    title:
+      "Full-Spectrum Waterproofing Services in NYC | Residential & Commercial Solutions",
+    shortTitle: "Waterproofing Services NYC",
+    description:
+      "Water damage can quickly compromise the safety and value of your property. From Brooklyn brownstones to Manhattan high-rises....",
+    date: "19 DEC",
+    image: "/blog/residential-blog.jpg",
+    link: "residential-commercial-waterproofing-nyc",
+  },
+  {
     title: "10 Signs You Need Roofing Services Immediately",
     shortTitle: "Signs You Need Roofing",
     description:
@@ -18,7 +28,6 @@ const slides = [
     date: "16 DEC",
     image: "/blog/signs-roofing.jpeg",
     link: "signs-you-need-roofing-services-right-now",
-    initialLikes: 70,
   },
   {
     title: "What Makes a Roofing Contractor Trustworthy in NYC?",
@@ -28,7 +37,6 @@ const slides = [
     date: "4 DEC",
     image: "/blog/roofing-new-blog.jpg",
     link: "roofing-contractors-brooklyn-queens-manhattan",
-    initialLikes: 70,
   },
   {
     title:
@@ -40,7 +48,6 @@ const slides = [
     date: "27 OCT",
     image: "/blog/waterproofing.webp",
     link: "nyc-waterproofing-challenges-and-solutions",
-    initialLikes: 70,
   },
   {
     title:
@@ -50,7 +57,6 @@ const slides = [
     date: "27 OCT",
     image: "/blog/roofing-blog.jpeg",
     link: "best-roofing-company-in-brooklyn",
-    initialLikes: 70,
   },
   {
     title:
@@ -61,7 +67,6 @@ const slides = [
     date: "04 NOV",
     image: "/blog/blogImage.jpg",
     link: "best-waterproofing-contractors-in-new-york-protect-your-property-from-water-damage",
-    initialLikes: 70,
   },
   {
     title: "How to Choose the Best Roofing Contractor in Brooklyn",
@@ -70,7 +75,6 @@ const slides = [
     date: "27 OCT",
     image: "/blog/roofing-contractors.jpg",
     link: "how-to-choose-the-best-roofing-contractor-in-brooklyn",
-    initialLikes: 70,
   },
   {
     title: "How Waterproofing Can Save Your NYC Property from Costly Damage",
@@ -79,7 +83,6 @@ const slides = [
     date: "11 JULY",
     image: "/blog/waterproofing.webp",
     link: "how-waterproofing-can-save-your-nyc-property-from-costly-damage",
-    initialLikes: 70,
   },
   {
     title:
