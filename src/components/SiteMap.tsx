@@ -6,85 +6,89 @@ import { FaLink } from "react-icons/fa";
 
 const SiteMap = () => {
   const links = [
-    { name: "Home", url: "https://www.sasroofingwaterproofing.com/" },
+    { name: "Home", url: "/" },
     {
       name: "About Us",
-      url: "https://www.sasroofingwaterproofing.com/aboutus",
+      url: "/aboutus",
     },
     {
       name: "Roofing",
-      url: "https://www.sasroofingwaterproofing.com/roofing-contractors-brooklyn",
+      url: "/roofing-contractors-brooklyn",
     },
     {
       name: "Waterproofing",
-      url: "https://www.sasroofingwaterproofing.com/waterproofing-contractors-NY",
+      url: "/waterproofing-contractors-NY",
     },
     {
       name: "Masonry",
-      url: "https://www.sasroofingwaterproofing.com/masonry-services-brooklyn-ny",
+      url: "/masonry-services-brooklyn-ny",
     },
     {
       name: "Projects",
-      url: "https://www.sasroofingwaterproofing.com/projects",
+      url: "/projects",
     },
     {
       name: "Testimonials",
-      url: "https://www.sasroofingwaterproofing.com/reviews",
+      url: "/reviews",
     },
     {
       name: "Contact Us",
-      url: "https://www.sasroofingwaterproofing.com/contact-us",
+      url: "/contact-us",
     },
-    { name: "FAQs", url: "https://www.sasroofingwaterproofing.com/faq" },
-    { name: "Blog", url: "https://www.sasroofingwaterproofing.com/blog" },
+    { name: "FAQs", url: "/faq" },
+    { name: "Blog", url: "/blog" },
     // Blog Posts
     {
       name: "Blog - Why Certified Roofing Contractors Are a Smart Choice",
-      url: "https://www.sasroofingwaterproofing.com/blog/the-satisfaction-factor-why-certified-roofing-contractors-in-brooklyn-are-a-smart-choice",
+      url: "/blog/the-satisfaction-factor-why-certified-roofing-contractors-in-brooklyn-are-a-smart-choice",
     },
     {
       name: "Blog - Top Roofing Contractors in NYC",
-      url: "https://www.sasroofingwaterproofing.com/blog/top-roofing-contractors-brooklyn-manhattan-queens-bronx-sas-roofing-nyc",
+      url: "/blog/top-roofing-contractors-brooklyn-manhattan-queens-bronx-sas-roofing-nyc",
     },
     {
       name: "Blog - How Our NYC Waterproofing Contractor Is Revolutionizing Protection",
-      url: "https://www.sasroofingwaterproofing.com/blog/How-This-NYC-Waterproofing-Contractor-is-Revolutionizing-Home-Protection",
+      url: "/blog/How-This-NYC-Waterproofing-Contractor-is-Revolutionizing-Home-Protection",
     },
     {
       name: "Blog - Why SAS Roofing Is Brooklyn’s Most Trusted Expert",
-      url: "https://www.sasroofingwaterproofing.com/blog/Why-SAS-Roofing-and-Waterproofing-Is-Brooklyns-Most-Trusted-Roofing-Expert",
+      url: "/blog/Why-SAS-Roofing-and-Waterproofing-Is-Brooklyns-Most-Trusted-Roofing-Expert",
     },
     {
       name: "Blog - How Waterproofing Saves NYC Properties From Damage",
-      url: "https://www.sasroofingwaterproofing.com/blog/how-waterproofing-can-save-your-nyc-property-from-costly-damage",
+      url: "/blog/how-waterproofing-can-save-your-nyc-property-from-costly-damage",
     },
     {
       name: "Blog - How to Choose the Best Roofing Contractor in Brooklyn",
-      url: "https://www.sasroofingwaterproofing.com/blog/how-to-choose-the-best-roofing-contractor-in-brooklyn",
+      url: "/blog/how-to-choose-the-best-roofing-contractor-in-brooklyn",
     },
     {
       name: "Blog - Best Waterproofing Contractors in NYC",
-      url: "https://www.sasroofingwaterproofing.com/blog/best-waterproofing-contractors-in-new-york-protect-your-property-from-water-damage",
+      url: "/blog/best-waterproofing-contractors-in-new-york-protect-your-property-from-water-damage",
     },
     {
       name: "Blog - Best Roofing Company in Brooklyn",
-      url: "https://www.sasroofingwaterproofing.com/blog/best-roofing-company-in-brooklyn",
+      url: "/blog/best-roofing-company-in-brooklyn",
     },
     {
       name: "Blog - NYC Waterproofing Challenges & Solutions",
-      url: "https://www.sasroofingwaterproofing.com/blog/nyc-waterproofing-challenges-and-solutions",
+      url: "/blog/nyc-waterproofing-challenges-and-solutions",
     },
     {
       name: "Blog - Roofing Contractors in Brooklyn, Queens & Manhattan",
-      url: "https://www.sasroofingwaterproofing.com/blog/roofing-contractors-brooklyn-queens-manhattan",
+      url: "/blog/roofing-contractors-brooklyn-queens-manhattan",
     },
     {
       name: "Blog - 10 Signs You Need Roofing Services Immediately",
-      url: "https://www.sasroofingwaterproofing.com/blog/signs-you-need-roofing-services-right-now",
+      url: "/blog/signs-you-need-roofing-services-right-now",
     },
     {
       name: "Blog - Full-Spectrum Waterproofing Services in NYC",
-      url: "https://www.sasroofingwaterproofing.com/blog/residential-commercial-waterproofing-nyc",
+      url: "/blog/residential-commercial-waterproofing-nyc",
+    },
+    {
+      name: "Blog - How Brooklyn Weather Impacts Your Roof ",
+      url: "/blog/brooklyn-weather-roof-damage-guide",
     },
   ];
 

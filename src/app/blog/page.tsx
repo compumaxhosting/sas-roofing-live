@@ -11,6 +11,15 @@ import React from "react";
 
 const slides = [
   {
+    title: "Winter Roof Challenges in Brooklyn | SAS Roofing & Waterproofing",
+    shortTitle: "Brooklyn Winter Roof Guide",
+    description:
+      "Discover how snow, ice, and freeze-thaw cycles affect Brooklyn roofs. Learn winter roof problems, safety tips, and when to call a roofing professional.",
+    date: "30 DEC",
+    image: "/blog/blog-damage.png",
+    link: "brooklyn-weather-roof-damage-guide",
+  },
+  {
     title:
       "Full-Spectrum Waterproofing Services in NYC | Residential & Commercial Solutions",
     shortTitle: "Waterproofing Services NYC",

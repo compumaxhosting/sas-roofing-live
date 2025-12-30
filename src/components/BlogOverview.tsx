@@ -13,6 +13,10 @@ export function BlogsOverview() {
 
   const plans = [
     {
+      name: "How Brooklyn Weather Impacts Your Roof Throughout the Year",
+      path: "/blog/brooklyn-weather-roof-damage-guide",
+    },
+    {
       name: "Say Goodbye to Leaks with Full-Spectrum Waterproofing in NYC",
       path: "/blog/residential-commercial-waterproofing-nyc",
     },
