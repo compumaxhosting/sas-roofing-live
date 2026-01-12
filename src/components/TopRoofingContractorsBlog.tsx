@@ -103,7 +103,7 @@ export default function TopRoofingContractorsBlog() {
               aria-labelledby="roofing-solutions-link"
             >
               <Link
-                href="https://www.sasroofingwaterproofing.com/roofing-contractors-brooklyn"
+                href="/roofing-contractors-brooklyn"
                 className="text-xl md:text-2xl font-bold"
                 id="roofing-solutions-link"
                 aria-label="Learn more about our borough-wide NYC roofing expertise"
@@ -133,7 +133,7 @@ export default function TopRoofingContractorsBlog() {
               aria-labelledby="waterproofing-link"
             >
               <Link
-                href="https://www.sasroofingwaterproofing.com/waterproofing-contractors-NY"
+                href="/waterproofing-contractors-NY"
                 className="text-xl md:text-2xl font-bold"
                 id="waterproofing-link"
                 aria-label="Learn more about our licensed and insured waterproofing services in NYC"

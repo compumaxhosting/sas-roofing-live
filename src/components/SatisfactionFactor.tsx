@@ -280,7 +280,7 @@ export default function BlogPage() {
               <br />
               For trusted roofing services, visit{" "}
               <Link
-                href="https://www.sasroofingwaterproofing.com/waterproofing-contractors-NY"
+                href="/waterproofing-contractors-NY"
                 className="text-[#003269] hover:underline"
                 aria-label="Find top waterproofing contractors in New York City for advanced solutions"
                 target="_blank"

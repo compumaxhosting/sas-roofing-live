@@ -222,9 +222,8 @@ export default function BlogPage() {
               <p className="text-gray-700 text-base font-bevietnam">
                 By hiring {""}
                 <Link
-                  href={
-                    "https://www.sasroofingwaterproofing.com/waterproofing-contractors-NY"
-                  }
+                  href={"/waterproofing-contractors-NY"}
+                  target="_blank"
                   className="text-[#003269] hover:underline"
                 >
                   waterproofing experts
@@ -318,9 +317,7 @@ export default function BlogPage() {
                 safeguarding your health, waterproofing offers significant
                 benefits. By working with trusted{" "}
                 <Link
-                  href={
-                    "https://www.sasroofingwaterproofing.com/waterproofing-contractors-NY"
-                  }
+                  href={"/waterproofing-contractors-NY"}
                   className="text-[#003269] hover:underline"
                 >
                   waterproofing contractors
@@ -332,7 +329,7 @@ export default function BlogPage() {
                 For more details about professional waterproofing services,
                 check out this{" "}
                 <Link
-                  href="https://www.sasroofingwaterproofing.com/waterproofing-contractors-NY"
+                  href="/waterproofing-contractors-NY"
                   className="text-[#003269] hover:underline"
                   target="_blank"
                   rel="noopener noreferrer"

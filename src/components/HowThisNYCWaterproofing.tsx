@@ -74,7 +74,7 @@ export default function BlogPage() {
                 property is more than a necessity—it’s a priority. Homeowners
                 and business owners alike are turning to expert{" "}
                 <Link
-                  href="https://www.sasroofingwaterproofing.com/waterproofing-contractors-NY"
+                  href="/waterproofing-contractors-NY"
                   className="text-[#003269] hover:underline"
                   aria-label="Learn more about expert waterproofing contractors in New York City" // Improved aria-label
                   target="_blank"
@@ -570,7 +570,7 @@ export default function BlogPage() {
                 As building codes evolve and weather patterns shift,{" "}
                 <Link
                   href={
-                    "https://www.sasroofingwaterproofing.com/waterproofing-contractors-NY"
+                    "/waterproofing-contractors-NY"
                   }
                   className="text-[#003269] hover:underline"
                   aria-label="Find top waterproofing contractors in New York City for advanced solutions" // Improved aria-label

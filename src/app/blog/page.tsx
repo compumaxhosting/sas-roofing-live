@@ -11,6 +11,16 @@ import React from "react";
 
 const slides = [
   {
+    title:
+      "How to Choose the Right Waterproofing Contractor in NYC | SAS Roofing & Waterproofing",
+    shortTitle: "NYC Waterproofing Contractor Guide",
+    description:
+      "Learn how to choose the best waterproofing contractor in NYC. Understand services, warranties, red flags, and expert tips to protect your property long-term.",
+    date: "30 DEC",
+    image: "/blog/water-proofing.png",
+    link: "how-to-choose-right-waterproofing-contractor",
+  },
+  {
     title: "Winter Roof Challenges in Brooklyn | SAS Roofing & Waterproofing",
     shortTitle: "Brooklyn Winter Roof Guide",
     description:

@@ -96,7 +96,7 @@ export default function BlogPage() {
               aria-labelledby="roofing-solutions-link"
             >
               <Link
-                href="https://www.sasroofingwaterproofing.com/roofing-contractors-brooklyn"
+                href="/roofing-contractors-brooklyn"
                 className="text-xl md:text-2xl font-bold"
                 id="roofing-solutions-link"
                 aria-label="Learn more about our Roofing Solutions"
@@ -134,7 +134,7 @@ export default function BlogPage() {
               aria-labelledby="waterproofing-link"
             >
               <Link
-                href="https://www.sasroofingwaterproofing.com/waterproofing-contractors-NY"
+                href="/waterproofing-contractors-NY"
                 className="text-xl md:text-2xl font-bold"
                 id="waterproofing-link"
                 aria-label="Learn more about our Advanced Waterproofing services"
@@ -168,7 +168,7 @@ export default function BlogPage() {
               aria-labelledby="masonry-link"
             >
               <Link
-                href="https://www.sasroofingwaterproofing.com/masonry-services-brooklyn-ny"
+                href="/masonry-services-brooklyn-ny"
                 className="text-xl md:text-2xl font-bold"
                 id="masonry-link"
                 aria-label="Learn more about our Expert Masonry Work"

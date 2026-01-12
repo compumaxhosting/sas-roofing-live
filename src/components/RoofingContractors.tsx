@@ -385,7 +385,7 @@ export default function BlogPage() {
             >
               <h2 className="text-2xl md:text-3xl font-bold text-[#e63a27]">
                 <Link
-                  href="https://www.sasroofingwaterproofing.com/contact-us"
+                  href="/contact-us"
                   className="text-[#e63a27]"
                 >
                   Get a Free Estimate Today

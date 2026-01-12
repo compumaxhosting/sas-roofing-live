@@ -13,6 +13,10 @@ export function BlogsOverview() {
 
   const plans = [
     {
+      name: "How to Choose the Right Waterproofing Contractor: A Complete Homeowner’s Guide",
+      path: "/blog/how-to-choose-right-waterproofing-contractor",
+    },
+    {
       name: "How Brooklyn Weather Impacts Your Roof Throughout the Year",
       path: "/blog/brooklyn-weather-roof-damage-guide",
     },

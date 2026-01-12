@@ -87,8 +87,12 @@ const SiteMap = () => {
       url: "/blog/residential-commercial-waterproofing-nyc",
     },
     {
-      name: "Blog - How Brooklyn Weather Impacts Your Roof ",
+      name: "Blog - How Brooklyn Weather Impacts Your Roof",
       url: "/blog/brooklyn-weather-roof-damage-guide",
+    },
+    {
+      name: "Blog - How to Choose the Right Waterproofing Contractor",
+      url: "/blog/how-to-choose-right-waterproofing-contractor",
     },
   ];
 

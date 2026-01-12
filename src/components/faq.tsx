@@ -227,7 +227,7 @@ export default function FAQ() {
           Have more questions? Reach out to our friendly team today. Call now or
           visit{" "}
           <Link
-            href="https://www.sasroofingwaterproofing.com"
+            href="/"
             className="text-[#e63a27] underline font-semibold"
             target="_blank"
             rel="noopener noreferrer"
