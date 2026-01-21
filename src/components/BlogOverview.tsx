@@ -13,6 +13,10 @@ export function BlogsOverview() {
 
   const plans = [
     {
+      name: "How Long Does a Roof Last in NYC Weather Conditions",
+      path: "/blog/professional-roof-inspections",
+    },
+    {
       name: "How to Choose the Right Waterproofing Contractor: A Complete Homeowner’s Guide",
       path: "/blog/how-to-choose-right-waterproofing-contractor",
     },

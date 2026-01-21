@@ -10,13 +10,23 @@ import StickyNavbar from "@/components/StickyNavbar";
 import React from "react";
 
 const slides = [
+ {
+  title: "How Long Does a Roof Last in NYC Weather Conditions?",
+  shortTitle: "Roof Lifespan in NYC Weather",
+  description:
+    "Learn how long roofs last in NYC weather, signs of damage, and when to call local roofing experts in Brooklyn, Queens, and Manhattan.",
+  date: "21 Jan",
+  image: "/blog/blog-roof-last.png",
+  link: "/professional-roof-inspections",
+}
+,
   {
     title:
       "How to Choose the Right Waterproofing Contractor in NYC | SAS Roofing & Waterproofing",
     shortTitle: "NYC Waterproofing Contractor Guide",
     description:
       "Learn how to choose the best waterproofing contractor in NYC. Understand services, warranties, red flags, and expert tips to protect your property long-term.",
-    date: "30 DEC",
+    date: "30 DEC 2025",
     image: "/blog/water-proofing.png",
     link: "how-to-choose-right-waterproofing-contractor",
   },
@@ -25,7 +35,7 @@ const slides = [
     shortTitle: "Brooklyn Winter Roof Guide",
     description:
       "Discover how snow, ice, and freeze-thaw cycles affect Brooklyn roofs. Learn winter roof problems, safety tips, and when to call a roofing professional.",
-    date: "30 DEC",
+    date: "30 DEC 2025",
     image: "/blog/blog-damage.png",
     link: "brooklyn-weather-roof-damage-guide",
   },
@@ -35,7 +45,7 @@ const slides = [
     shortTitle: "Waterproofing Services NYC",
     description:
       "Water damage can quickly compromise the safety and value of your property. From Brooklyn brownstones to Manhattan high-rises....",
-    date: "19 DEC",
+    date: "19 DEC 2025",
     image: "/blog/residential-blog.jpg",
     link: "residential-commercial-waterproofing-nyc",
   },
@@ -44,7 +54,7 @@ const slides = [
     shortTitle: "Signs You Need Roofing",
     description:
       "If you live in Brooklyn (11201, 11205, 11206, 11215, 11216, 11217, 11218, 11221, 11231, 11233, 11238) or Manhattan (10004, 10005, 10006, 10007, 10012, 10013, 10014, 10038, 10280)....",
-    date: "16 DEC",
+    date: "16 DEC 2025",
     image: "/blog/signs-roofing.jpeg",
     link: "signs-you-need-roofing-services-right-now",
   },
@@ -53,7 +63,7 @@ const slides = [
     shortTitle: "Best Waterproofing Contractors in New York ",
     description:
       "The best roofing contractors in Brooklyn are those who understand local building codes, typical weather damage, and the unique roofing styles found in brownstones and mixed-use buildings.",
-    date: "4 DEC",
+    date: "4 DEC 2025",
     image: "/blog/roofing-new-blog.jpg",
     link: "roofing-contractors-brooklyn-queens-manhattan",
   },
@@ -64,7 +74,7 @@ const slides = [
       "Most common waterproofing challenges NYC homeowners face — and how to fix them.",
     description:
       "Discover the most common waterproofing problems faced by Brooklyn, Manhattan, and Queens homeowners. Learn expert solutions for foundation cracks, roof leaks...",
-    date: "27 OCT",
+    date: "27 OCT 2025",
     image: "/blog/waterproofing.webp",
     link: "nyc-waterproofing-challenges-and-solutions",
   },
@@ -73,7 +83,7 @@ const slides = [
       "How to Choose the Best Roofing Company in Brooklyn Without Overpaying",
     shortTitle: "Find Trusted Brooklyn Roofers Without Overpaying.",
     description: `When it comes to protecting your home or business, your roof plays the most important role. It shields everything beneath it from harsh weather, enhances curb appeal, and adds long-term value to your property.`,
-    date: "27 OCT",
+    date: "27 OCT 2025",
     image: "/blog/roofing-blog.jpeg",
     link: "best-roofing-company-in-brooklyn",
   },
@@ -83,7 +93,7 @@ const slides = [
     shortTitle:
       "Trusted waterproofing contractors across NYC — Brooklyn, Manhattan, Queens, and The Bronx.",
     description: `Water damage is a costly issue for New Yorkers. Learn how SAS Roofing & Waterproofing protects homes and buildings with expert basement, foundation, wall, and roof waterproofing solutions across NYC.`,
-    date: "04 NOV",
+    date: "04 NOV 2025",
     image: "/blog/blogImage.jpg",
     link: "best-waterproofing-contractors-in-new-york-protect-your-property-from-water-damage",
   },
@@ -91,7 +101,7 @@ const slides = [
     title: "How to Choose the Best Roofing Contractor in Brooklyn",
     shortTitle: "Protect your NYC property with expert roofing solutions.",
     description: `A complete guide on finding the best roofing contractor in Brooklyn. Learn what to look for, the right questions to ask, red flags to avoid, and why SAS Roofing & Waterproofing is NYC’s trusted choice for roofing, waterproofing, and masonry services.`,
-    date: "27 OCT",
+    date: "27 OCT 2025",
     image: "/blog/roofing-contractors.jpg",
     link: "how-to-choose-the-best-roofing-contractor-in-brooklyn",
   },
@@ -99,7 +109,7 @@ const slides = [
     title: "How Waterproofing Can Save Your NYC Property from Costly Damage",
     shortTitle: "Shield your NYC property from costly water damage.",
     description: `Reliable waterproofing specialists protecting NYC properties from leaks, mold, and structural damage across Brooklyn, Manhattan, Queens, and The Bronx...`,
-    date: "11 JULY",
+    date: "11 JULY 2025",
     image: "/blog/waterproofing.webp",
     link: "how-waterproofing-can-save-your-nyc-property-from-costly-damage",
   },
@@ -108,7 +118,7 @@ const slides = [
       "Trusted Roofing Contractors Serving Brooklyn, Manhattan, Queens & The Bronx",
     shortTitle: "Licensed Roofers Proudly Serving Brooklyn to The Bronx",
     description: `Dependable roofing experts providing quality installations, repairs, and waterproofing solutions across Brooklyn, Manhattan, Queens, and The Bronx...`,
-    date: "25 JUN",
+    date: "25 JUN 2025",
     image: "/blog/roofing_blog.jpg",
     link: "top-roofing-contractors-brooklyn-manhattan-queens-bronx-sas-roofing-nyc",
     initialLikes: 150,
@@ -118,7 +128,7 @@ const slides = [
       "The Satisfaction Factor: Why Certified Roofing Contractors in Brooklyn Are a Smart Choice",
     shortTitle: "Certified Roofing Contractors You Can Trust",
     description: `Hiring certified roofing contractors in Brooklyn ensures quality, safety, and long-lasting protection for your property, making it a truly smart investment...`,
-    date: "10 JUN",
+    date: "10 JUN 2025",
     image: "/blog/roofing-contractors.jpg",
     link: "the-satisfaction-factor-why-certified-roofing-contractors-in-brooklyn-are-a-smart-choice",
     initialLikes: 200,
@@ -128,7 +138,7 @@ const slides = [
       "How This NYC Waterproofing Contractor is Revolutionizing Home Protection",
     shortTitle: "NYC Waterproofing Innovator",
     description: `Discover how a leading NYC waterproofing contractor is transforming home protection with innovative techniques and comprehensive services, ensuring long-lasting safety and dryness for properties across the city...`,
-    date: "29 May",
+    date: "29 May 2025",
     image: "/blog/blogImage.jpg",
     link: "How-This-NYC-Waterproofing-Contractor-is-Revolutionizing-Home-Protection",
     initialLikes: 260,
@@ -140,7 +150,7 @@ const slides = [
     description: `Trusted by New Yorkers for over 30 years, SAS Roofing &
     Waterproofing is known for dependable service, certified
     expertise, and lasting results...`,
-    date: "13 JUNE",
+    date: "13 JUNE 2025",
     image: "/blog/roofing.jpg",
     link: "Why-SAS-Roofing-and-Waterproofing-Is-Brooklyns-Most-Trusted-Roofing-Expert",
     initialLikes: 220,

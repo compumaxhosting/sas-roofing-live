@@ -94,6 +94,10 @@ const SiteMap = () => {
       name: "Blog - How to Choose the Right Waterproofing Contractor",
       url: "/blog/how-to-choose-right-waterproofing-contractor",
     },
+    {
+      name: "Blog - How Long Does a Roof Last in NYC Weather Conditions",
+      url: "/blog/professional-roof-inspections",
+    },
   ];
 
   return (
