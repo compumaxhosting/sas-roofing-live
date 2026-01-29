@@ -98,6 +98,10 @@ const SiteMap = () => {
       name: "Blog - How Long Does a Roof Last in NYC Weather Conditions",
       url: "/blog/professional-roof-inspections",
     },
+    {
+      name: "Blog - Terrace Waterproofing vs Roof Waterproofing",
+      url: "/blog/terrace-waterproofing-vs-roof-waterproofing-difference",
+    },
   ];
 
   return (

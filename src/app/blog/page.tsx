@@ -10,16 +10,25 @@ import StickyNavbar from "@/components/StickyNavbar";
 import React from "react";
 
 const slides = [
- {
-  title: "How Long Does a Roof Last in NYC Weather Conditions?",
-  shortTitle: "Roof Lifespan in NYC Weather",
-  description:
-    "Learn how long roofs last in NYC weather, signs of damage, and when to call local roofing experts in Brooklyn, Queens, and Manhattan.",
-  date: "21 Jan",
-  image: "/blog/blog-roof-last.png",
-  link: "/professional-roof-inspections",
-}
-,
+  {
+    title:
+      "Terrace Waterproofing vs Roof Waterproofing – What’s the Difference?",
+    shortTitle: "Terrace vs Roof Waterproofing",
+    description:
+      "Understand the difference between terrace waterproofing and roof waterproofing, their uses, materials, and which solution is right for your property.",
+    date: "21 Jan",
+    image: "/blog/terrace.png",
+    link: "/terrace-waterproofing-vs-roof-waterproofing-difference",
+  },
+  {
+    title: "How Long Does a Roof Last in NYC Weather Conditions?",
+    shortTitle: "Roof Lifespan in NYC Weather",
+    description:
+      "Learn how long roofs last in NYC weather, signs of damage, and when to call local roofing experts in Brooklyn, Queens, and Manhattan.",
+    date: "21 Jan",
+    image: "/blog/blog-roof-last.png",
+    link: "/professional-roof-inspections",
+  },
   {
     title:
       "How to Choose the Right Waterproofing Contractor in NYC | SAS Roofing & Waterproofing",

@@ -13,6 +13,10 @@ export function BlogsOverview() {
 
   const plans = [
     {
+      name: "Terrace Waterproofing vs Roof Waterproofing",
+      path: "/blog/terrace-waterproofing-vs-roof-waterproofing-difference",
+    },
+    {
       name: "How Long Does a Roof Last in NYC Weather Conditions",
       path: "/blog/professional-roof-inspections",
     },
