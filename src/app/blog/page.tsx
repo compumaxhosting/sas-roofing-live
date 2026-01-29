@@ -16,7 +16,7 @@ const slides = [
     shortTitle: "Terrace vs Roof Waterproofing",
     description:
       "Understand the difference between terrace waterproofing and roof waterproofing, their uses, materials, and which solution is right for your property.",
-    date: "21 Jan",
+    date: "29 Jan",
     image: "/blog/terrace.png",
     link: "/terrace-waterproofing-vs-roof-waterproofing-difference",
   },
