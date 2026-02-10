@@ -4,16 +4,22 @@ import Image from "next/image";
 import { FaHeadphonesAlt, FaMapMarkerAlt } from "react-icons/fa";
 import { motion } from "framer-motion";
 import Link from "next/link";
+import type { Transition } from "framer-motion";
 
 const fadeUp = (delay = 0) => ({
   initial: { opacity: 0, y: 30 },
   animate: { opacity: 1, y: 0 },
-  transition: { duration: 0.6, ease: "easeOut", delay },
+  transition: {
+    duration: 0.6,
+    ease: "easeOut" as Transition["ease"],
+    delay,
+  },
 });
+
 
 export default function FooterTopCTA() {
   return (
-    <div
+     <div
       className="bg-[#00254c] text-white px-4 py-10 sm:px-6 md:px-12"
       role="complementary"
       aria-labelledby="footer-cta-heading"
@@ -45,12 +51,12 @@ export default function FooterTopCTA() {
 
         {/* Main CTA Text */}
         <motion.div className="max-w-md px-2" {...fadeUp(0.2)}>
-          <h1
+          <h2
             id="footer-cta-heading"
             className="text-lg md:text-xl font-bold mb-1 font-inter"
           >
             Roof Problems Can’t Wait?
-          </h1>
+          </h2>
           <p className="text-sm text-white/80 leading-snug font-inter">
             Protect your home from leaks and damage — get in touch today.
           </p>

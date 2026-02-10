@@ -5,7 +5,19 @@ import { useRef } from "react";
 import type { Swiper as SwiperType } from "swiper";
 import { motion } from "framer-motion";
 import Link from "next/link";
+import { type Variants } from "framer-motion";
 
+const fadeUp: Variants = {
+  hidden: { opacity: 0, y: 40 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.6,
+      ease: [0.25, 0.1, 0.25, 1], // valid easing type
+    },
+  },
+};
 type Props = {
   margin: number[];
 };
@@ -13,14 +25,7 @@ type Props = {
 export default function OurServicesPage({ margin }: Props) {
   const swiperRef = useRef<SwiperType | null>(null);
 
-  const fadeUp = {
-    hidden: { opacity: 0, y: 40 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.6, ease: "easeOut" },
-    },
-  };
+
 
   return (
     <main
@@ -52,12 +57,12 @@ export default function OurServicesPage({ margin }: Props) {
               <div className="md:hidden w-6 h-px bg-[#e63a27]" />
             </div>
 
-            <h1
+            <h2
               id="services-heading"
               className="text-2xl sm:text-3xl md:text-4xl xl:text-5xl font-bold text-[#003269] leading-snug font-inter"
             >
               SAS Roofing & Waterproofing
-            </h1>
+            </h2>
           </header>
 
           <Link

@@ -9,17 +9,21 @@ import { VisuallyHidden } from "@radix-ui/react-visually-hidden";
 import { motion } from "framer-motion";
 import dynamic from "next/dynamic";
 import Image from "next/image";
+import { type Variants } from "framer-motion";
 
-const VideoIframe = dynamic(() => import("./VideoIframe"), { ssr: false });
-
-const fadeUp = {
+const fadeUp: Variants = {
   hidden: { opacity: 0, y: 40 },
   visible: {
     opacity: 1,
     y: 0,
-    transition: { duration: 0.6, ease: "easeOut" },
+    transition: {
+      duration: 0.6,
+      ease: [0.25, 0.1, 0.25, 1], // valid easing type
+    },
   },
 };
+const VideoIframe = dynamic(() => import("./VideoIframe"), { ssr: false });
+
 
 type Props = {
   margin: number[];
@@ -62,7 +66,7 @@ const VideoSection = ({ margin }: Props) => {
             >
               <div className="flex items-center gap-3 mb-2">
                 <div className="w-6 h-px bg-white" />
-                <h1 className="text-sm uppercase font-semibold">Video Proof</h1>
+                <h2 className="text-sm uppercase font-semibold">Video Proof</h2>
               </div>
 
               <h2 className="text-3xl lg:text-5xl font-medium leading-tight mb-4 font-inter">

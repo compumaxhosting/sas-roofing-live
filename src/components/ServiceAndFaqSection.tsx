@@ -4,12 +4,19 @@ import React from "react";
 import FaqSection from "@/components/FaqSection";
 import { motion } from "framer-motion";
 import HomeContactForm from "./HomeContactForm";
+import { type Variants } from "framer-motion";
 
-const fadeUp = {
+const fadeUp: Variants = {
   hidden: { opacity: 0, y: 40 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.6,
+      ease: [0.25, 0.1, 0.25, 1], // valid easing type
+    },
+  },
 };
-
 export default function ServiceAndFaqSection() {
   return (
     <section

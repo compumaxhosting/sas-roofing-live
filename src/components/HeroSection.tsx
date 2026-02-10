@@ -129,9 +129,9 @@ export default function HeroSection() {
             exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.5 }}
           >
-            <h1 className="text-5xl md:text-6xl lg:text-8xl font-bold leading-tight font-inter">
+            <h2 className="text-5xl md:text-6xl lg:text-8xl font-bold leading-tight font-inter">
               <strong>{currentSlide.title}</strong>
-            </h1>
+            </h2>
             <p className="text-lg font-light tracking-wide font-bevietnam">
               {currentSlide.description}
             </p>

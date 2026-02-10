@@ -6,13 +6,20 @@ import { motion } from "framer-motion";
 import { FaFacebookF } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 import { SiHouzz, SiYelp } from "react-icons/si";
+import type { Transition } from "framer-motion";
+
+const fadeUp = (delay = 0) => ({
+  initial: { opacity: 0, y: 30 },
+  animate: { opacity: 1, y: 0 },
+  transition: {
+    duration: 0.6,
+    ease: "easeOut" as Transition["ease"],
+    delay,
+  },
+});
 
 export default function Footer() {
-  const fadeUp = (delay = 0) => ({
-    initial: { opacity: 0, y: 30 },
-    animate: { opacity: 1, y: 0 },
-    transition: { duration: 0.6, ease: "easeOut", delay },
-  });
+  
 
   const paymentIcons = [
     "visa",
@@ -122,27 +129,27 @@ export default function Footer() {
   ];
 
   return (
-    <footer
+     <footer
       className="bg-[#003269] text-white text-sm sm:text-[15px]"
       aria-labelledby="footer-heading"
     >
-      <motion.h1
+      <motion.h2
         id="footer-heading" // Added ID for aria-labelledby on footer
         className="px-4 sm:px-6 md:px-12 pt-12 text-center text-xl sm:text-2xl md:text-3xl font-bold text-gray-100 mb-12 max-w-4xl mx-auto font-inter"
         {...fadeUp(0)}
       >
         QUALITY ROOFING IN BROOKLYN, NEW YORK & QUEENS
-      </motion.h1>
+      </motion.h2>
 
       <div className="px-4 sm:px-6 md:px-12 pb-12 max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-12">
         {/* About Section */}
         <motion.div {...fadeUp(0.1)} aria-labelledby="about-service-heading">
-          <h1
+          <h2
             id="about-service-heading"
             className="text-xl font-bold mb-2 font-inter"
           >
             About Service
-          </h1>{" "}
+          </h2>{" "}
           {/* Changed to h3 */}
           <div
             className="w-12 h-[2px] bg-[#e63a27] mb-3"

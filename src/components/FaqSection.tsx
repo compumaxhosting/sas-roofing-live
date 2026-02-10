@@ -3,7 +3,27 @@
 import React, { useState, KeyboardEvent } from "react";
 import { FiChevronDown } from "react-icons/fi";
 import { AnimatePresence, motion } from "framer-motion";
+import type { Variants, Transition } from "framer-motion";
 
+const accordionVariants: Variants = {
+  open: {
+    opacity: 1,
+    height: "auto",
+    transition: {
+      duration: 0.4,
+      ease: "easeOut" as Transition["ease"],
+      when: "beforeChildren" as Transition["when"],
+    },
+  },
+  collapsed: {
+    opacity: 0,
+    height: 0,
+    transition: {
+      duration: 0.3,
+      ease: "easeIn" as Transition["ease"],
+    },
+  },
+};
 const faqs = [
   {
     question: "What is waterproofing, and why is it important?",
@@ -31,19 +51,6 @@ const faqs = [
       "Most residential roof installs are completed in 1–3 days. Timelines vary based on size, complexity, and material.",
   },
 ];
-
-const accordionVariants = {
-  open: {
-    opacity: 1,
-    height: "auto",
-    transition: { duration: 0.4, ease: "easeOut", when: "beforeChildren" },
-  },
-  collapsed: {
-    opacity: 0,
-    height: 0,
-    transition: { duration: 0.3, ease: "easeIn" },
-  },
-};
 
 export default function FaqSection() {
   const [openIndex, setOpenIndex] = useState<number>(-1);
@@ -74,12 +81,12 @@ export default function FaqSection() {
             Common Questions & Answers
           </span>
         </div>
-        <h1
+        <h2
           id="faq-section-title"
           className="text-3xl md:text-4xl font-bold text-[#003269] font-inter"
         >
           Frequently Asked Questions
-        </h1>
+        </h2>
       </header>
 
       <dl className="space-y-4" role="list">

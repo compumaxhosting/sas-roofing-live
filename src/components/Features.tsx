@@ -4,7 +4,19 @@ import React from "react";
 import { motion } from "framer-motion";
 import { FaArrowRight } from "react-icons/fa6";
 import Link from "next/link";
+import { type Variants } from "framer-motion";
 
+const fadeUp: Variants = {
+  hidden: { opacity: 0, y: 40 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.6,
+      ease: [0.25, 0.1, 0.25, 1], // valid easing type
+    },
+  },
+};
 type Props = {
   margin: number[];
 };
@@ -40,14 +52,6 @@ const features = [
   },
 ];
 
-const fadeUpVariant = {
-  hidden: { opacity: 0, y: 20 },
-  visible: (i: number) => ({
-    opacity: 1,
-    y: 0,
-    transition: { delay: i * 0.15, duration: 0.5, ease: "easeOut" },
-  }),
-};
 
 export default function Features({ margin }: Props) {
   return (
@@ -61,16 +65,16 @@ export default function Features({ margin }: Props) {
         aria-hidden="true"
       />
 
-      <h1 id="features-heading" className="sr-only">
+      <h2 id="features-heading" className="sr-only">
         Core Features of SAS Roofing
-      </h1>
+      </h2>
 
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 px-6 sm:px-10 lg:px-12 py-16">
         {features.map(({ id, title, description, link }, i) => (
           <motion.article
             key={id}
             className="relative bg-[#003269] text-white text-center h-[370px] p-6 overflow-hidden rounded-md"
-            variants={fadeUpVariant}
+            variants={fadeUp}
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.2 }}

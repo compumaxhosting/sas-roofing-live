@@ -2,19 +2,23 @@
 
 import dynamic from "next/dynamic";
 import { motion } from "framer-motion";
+import { type Variants } from "framer-motion";
 
-const ReviewSlider = dynamic(() => import("./ReviewSlider"), {
-  ssr: false,
-});
-
-const fadeUp = {
+const fadeUp: Variants = {
   hidden: { opacity: 0, y: 40 },
   visible: {
     opacity: 1,
     y: 0,
-    transition: { duration: 0.6, ease: "easeOut" },
+    transition: {
+      duration: 0.6,
+      ease: [0.25, 0.1, 0.25, 1], // valid easing type
+    },
   },
 };
+const ReviewSlider = dynamic(() => import("./ReviewSlider"), {
+  ssr: false,
+});
+
 
 export default function OurTestimonial() {
   return (

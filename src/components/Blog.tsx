@@ -33,12 +33,12 @@ export default function Blog() {
             </span>
             <div className="w-6 h-[1px] bg-[#e63a27]" aria-hidden="true" />
           </div>
-          <h1
+          <h2
             id="blog-section-title"
             className="text-4xl lg:text-5xl font-bold text-[#003269]"
           >
             Latest Roofing & Waterproofing News & Tips
-          </h1>
+          </h2>
         </header>
 
         {/* Blog Slider Section */}

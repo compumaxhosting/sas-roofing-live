@@ -2,14 +2,18 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
+import { type Variants } from "framer-motion";
 
-const fadeUp = {
+const fadeUp: Variants = {
   hidden: { opacity: 0, y: 40 },
-  visible: (i: number) => ({
+  visible: {
     opacity: 1,
     y: 0,
-    transition: { duration: 0.6, ease: "easeOut", delay: i * 0.15 },
-  }),
+    transition: {
+      duration: 0.6,
+      ease: [0.25, 0.1, 0.25, 1], // valid easing type
+    },
+  },
 };
 
 const services = [

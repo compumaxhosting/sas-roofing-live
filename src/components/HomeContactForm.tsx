@@ -193,12 +193,12 @@ export default function ContactForm() {
           Book A Service
         </p>
       </div>
-      <h1
+      <h2
         id="form-heading"
         className="text-4xl lg:text-5xl font-bold text-[#003269]"
       >
         Free Estimation
-      </h1>
+      </h2>
       <p className="text-gray-500">
         Please fill out the form and provide details of your request.
       </p>

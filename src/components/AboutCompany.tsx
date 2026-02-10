@@ -80,15 +80,15 @@ export default function AboutCompany() {
           >
             <header className="flex items-center justify-center xl:justify-start gap-3 mb-3">
               <hr className="w-6 h-[1px] bg-[#e63a27]" />
-              <h1 className="text-sm sm:text-base uppercase text-[#e63a27] font-semibold tracking-wider font-inter">
+              <h2 className="text-sm sm:text-base uppercase text-[#e63a27] font-semibold tracking-wider font-inter">
                 About Company
-              </h1>
+              </h2>
               <hr className="w-6 h-[1px] bg-[#e63a27]" />
             </header>
 
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-semibold text-[#003269] leading-tight mb-4 font-inter">
+            <h3 className="text-3xl sm:text-4xl lg:text-5xl font-semibold text-[#003269] leading-tight mb-4 font-inter">
               Roofing Is Our Heritage & Quality Is Our Tradition
-            </h2>
+            </h3>
 
             <div className="flex flex-wrap gap-x-6 gap-y-3 mb-6 text-[#003269]">
               {features.map((feature) => (
@@ -96,7 +96,7 @@ export default function AboutCompany() {
               ))}
             </div>
 
-            <div className="text-gray-700 text-sm font-bevietnam text-justify leading-relaxed mb-8">
+            <div className="text-gray-700 text-sm font-bevietnam text-left leading-relaxed mb-8">
               <p>
                 For over thirty years,{" "}
                 <strong>SAS Roofing & Waterproofing</strong> has proudly served{" "}

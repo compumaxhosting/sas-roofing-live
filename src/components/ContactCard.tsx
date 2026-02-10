@@ -5,17 +5,18 @@ import { ReactNode, CSSProperties, JSX } from "react";
 import Link from "next/link";
 import React from "react";
 
-const fadeUp = {
-  hidden: { opacity: 0, y: 30 },
-  visible: (i = 1) => ({
+import { type Variants } from "framer-motion";
+
+const fadeUp: Variants = {
+  hidden: { opacity: 0, y: 40 },
+  visible: {
     opacity: 1,
     y: 0,
     transition: {
-      delay: i * 0.2,
       duration: 0.6,
-      ease: "easeOut",
+      ease: [0.25, 0.1, 0.25, 1], // valid easing type
     },
-  }),
+  },
 };
 
 interface ContactItem {

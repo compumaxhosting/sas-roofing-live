@@ -4,13 +4,17 @@ import React, { useEffect, useState, Suspense } from "react";
 import { motion } from "framer-motion";
 import { Loader2 } from "lucide-react";
 import Link from "next/link";
+import { type Variants } from "framer-motion";
 
-const fadeUp = {
+const fadeUp: Variants = {
   hidden: { opacity: 0, y: 40 },
   visible: {
     opacity: 1,
     y: 0,
-    transition: { duration: 0.6, ease: "easeOut" },
+    transition: {
+      duration: 0.6,
+      ease: [0.25, 0.1, 0.25, 1], // valid easing type
+    },
   },
 };
 
@@ -64,12 +68,12 @@ const OurProjects: React.FC<OurProjectsProps> = ({ gallery }) => {
               aria-hidden="true"
             />
           </div>
-          <h1
+          <h2
             id="our-projects-heading"
             className="text-2xl sm:text-3xl md:text-4xl xl:text-5xl font-bold text-[#003269] leading-snug font-inter"
           >
             Recently Completed Works
-          </h1>
+          </h2>
         </div>
 
         {/* CTA Button */}
