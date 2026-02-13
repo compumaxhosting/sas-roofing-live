@@ -87,6 +87,10 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${inter.variable} ${bevietnam.variable}`}>
       <head>
+        <meta
+          name="p:domain_verify"
+          content="8321458292959651201367517103a30e"
+        />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }}
