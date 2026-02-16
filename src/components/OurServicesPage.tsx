@@ -4,7 +4,6 @@ import ServicesSlider from "@/components/ServicesSlider";
 import { useRef } from "react";
 import type { Swiper as SwiperType } from "swiper";
 import { motion } from "framer-motion";
-import Link from "next/link";
 import { type Variants } from "framer-motion";
 
 const fadeUp: Variants = {
@@ -65,7 +64,7 @@ export default function OurServicesPage({ margin }: Props) {
             </h2>
           </header>
 
-          <Link
+          {/* <Link
             href="/services"
             aria-label="View all services offered by SAS Roofing & Waterproofing"
             className="group border-4 border-[#003269] p-1"
@@ -73,7 +72,7 @@ export default function OurServicesPage({ margin }: Props) {
             <span className="block border-2 border-[#e63a27] px-5 py-2.5 text-sm sm:text-base lg:text-lg font-bold text-[#e63a27] uppercase font-inter group-hover:bg-[#e63a27] group-hover:text-white transition hover-button">
               All Services
             </span>
-          </Link>
+          </Link> */}
         </motion.section>
 
         {/* Services Slider */}

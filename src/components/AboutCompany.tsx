@@ -45,7 +45,7 @@ export default function AboutCompany() {
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5 }}
             viewport={{ once: true }}
-            className="relative w-full max-w-lg flex-shrink-0 aspect-[5/5] border-2 border-[#e63a27] shadow-lg overflow-hidden"
+            className="relative w-full max-w-lg shrink-0 aspect-5/5 border-2 border-[#e63a27] shadow-lg overflow-hidden"
           >
             <Image
               src="/about-us/aboutusimage.jpg"
@@ -79,11 +79,11 @@ export default function AboutCompany() {
             className="w-full max-w-lg xl:max-w-full text-left"
           >
             <header className="flex items-center justify-center xl:justify-start gap-3 mb-3">
-              <hr className="w-6 h-[1px] bg-[#e63a27]" />
+              <hr className="w-6 h-px bg-[#e63a27]" />
               <h2 className="text-sm sm:text-base uppercase text-[#e63a27] font-semibold tracking-wider font-inter">
                 About Company
               </h2>
-              <hr className="w-6 h-[1px] bg-[#e63a27]" />
+              <hr className="w-6 `h-px bg-[#e63a27]" />
             </header>
 
             <h3 className="text-3xl sm:text-4xl lg:text-5xl font-semibold text-[#003269] leading-tight mb-4 font-inter">
@@ -207,7 +207,7 @@ export default function AboutCompany() {
               </div>
             </div>
 
-            <Link
+            {/* <Link
               href="/aboutus"
               className="inline-block border-4 border-[#003269] p-2 group self-start mt-4"
               aria-label="Read more on About Us page"
@@ -215,7 +215,7 @@ export default function AboutCompany() {
               <span className="block border-2 border-[#e63a27] text-[#e63a27] px-6 py-3 font-bold uppercase tracking-wide text-sm lg:text-base group-hover:bg-[#e63a27] group-hover:text-white transition font-inter hover-button">
                 Know More
               </span>
-            </Link>
+            </Link> */}
           </motion.article>
         </div>
       </div>

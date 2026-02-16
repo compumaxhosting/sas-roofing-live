@@ -3,7 +3,6 @@
 import React, { useEffect, useState, Suspense } from "react";
 import { motion } from "framer-motion";
 import { Loader2 } from "lucide-react";
-import Link from "next/link";
 import { type Variants } from "framer-motion";
 
 const fadeUp: Variants = {
@@ -85,7 +84,7 @@ const OurProjects: React.FC<OurProjectsProps> = ({ gallery }) => {
           viewport={{ once: true, amount: 0.2 }}
           custom={0.5}
         >
-          <Link
+          {/* <Link
             href="/projects"
             className="block w-full h-full focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-[#e63a27]"
             aria-label="View all our completed projects"
@@ -95,7 +94,7 @@ const OurProjects: React.FC<OurProjectsProps> = ({ gallery }) => {
                 All Projects
               </div>
             </div>
-          </Link>
+          </Link> */}
         </motion.div>
       </motion.section>
 
