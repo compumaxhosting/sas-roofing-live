@@ -1,6 +1,6 @@
 "use client";
 
-import dynamic from "next/dynamic";
+import Script from "next/script";
 import { motion } from "framer-motion";
 import { type Variants } from "framer-motion";
 
@@ -11,14 +11,10 @@ const fadeUp: Variants = {
     y: 0,
     transition: {
       duration: 0.6,
-      ease: [0.25, 0.1, 0.25, 1], // valid easing type
+      ease: [0.25, 0.1, 0.25, 1],
     },
   },
 };
-const ReviewSlider = dynamic(() => import("./ReviewSlider"), {
-  ssr: false,
-});
-
 
 export default function OurTestimonial() {
   return (
@@ -28,13 +24,15 @@ export default function OurTestimonial() {
       role="region"
       tabIndex={-1}
     >
-      <div className="max-w-screen-xl mx-auto text-center">
+      {/* Elfsight script */}
+      <Script src="https://elfsightcdn.com/platform.js" strategy="lazyOnload" />
+
+      <div className="max-w-7xl mx-auto text-center">
         <motion.div
           variants={fadeUp}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.2 }}
-          className=""
         >
           <h2
             id="testimonial-heading"
@@ -54,9 +52,12 @@ export default function OurTestimonial() {
           </h2>
         </motion.div>
 
-        {/* Wrap the slider with a landmark or region and describe for screen readers */}
-        <div aria-live="polite" aria-atomic="true" aria-relevant="additions">
-          <ReviewSlider />
+        {/* Elfsight widget container */}
+        <div className="mt-8">
+          <div
+            className="elfsight-app-59e1a999-b7f1-4576-afe1-04909c583f24"
+            data-elfsight-app-lazy
+          ></div>
         </div>
       </div>
     </section>
