@@ -1,4 +1,8 @@
-"use client";
+
+  /* SEO update: Page content refreshed on February 17, 2026 (updated after 4 months) */
+
+  "use client";
+
 
 import { motion } from "framer-motion";
 import Image from "next/image";
@@ -86,7 +90,7 @@ export default function BlogPage() {
               id="core-services-heading"
               className="text-3xl md:text-4xl font-bold mb-5"
             >
-              Our Core Services
+              Our Core Roofing, Waterproofing, and Masonry Services
             </h3>
           </motion.div>
 
@@ -106,25 +110,33 @@ export default function BlogPage() {
                 id="roofing-solutions-link"
                 aria-label="Learn more about our Roofing Solutions"
               >
-                <strong>Roofing</strong> Solutions
+                <strong>Professional Roofing Solutions</strong>
               </Link>
               <p className="text-gray-700 text-base font-bevietnam mt-4">
-                From minor repairs to complete installations, we handle all
-                types of <strong>roofing</strong> projects with precision and
-                care. Our expertise covers:
+                We specialize in complete roofing services, including roof
+                repair, roof installation, and roof replacement. Whether your
+                property has minor damage or needs a full roofing system
+                upgrade, our skilled <strong> roofing </strong> contractors
+                ensure precision and long-term protection.
               </p>
               <ul
                 className="list-disc pl-5 text-gray-700"
                 aria-label="Types of roofing projects handled"
               >
                 <li>
-                  Flat and pitched <strong>roofs</strong>
+                  Flat roof <strong>repair and installation</strong>
                 </li>
                 <li>
-                  Shingle and metal <strong>roofing</strong>
+                  Pitched roof <strong>repair and replacement</strong>
                 </li>
                 <li>
-                  Emergency leak <strong>repairs</strong>
+                  Shingle roofing <strong>installation and repair</strong>
+                </li>
+                <li>
+                  Metal roofing systems <strong>and maintenance</strong>
+                </li>
+                <li>
+                  Emergency roof leak <strong>and storm damage repair</strong>
                 </li>
               </ul>
             </motion.div>
@@ -146,21 +158,40 @@ export default function BlogPage() {
               >
                 Advanced <strong>Waterproofing</strong>
               </Link>
+
               <p className="text-gray-700 text-base font-bevietnam mt-4">
-                Utilizing high-quality single-ply membrane systems, we protect
-                your property from water damage, mold, and structural issues.
+                Our professional waterproofing solutions protect your property
+                from water damage, leaks, mold growth, and structural
+                deterioration. We use advanced single-ply membrane systems and
+                industry-leading materials to ensure long-lasting protection and
+                performance.
               </p>
+
               <ul
                 className="list-disc pl-5 text-gray-700"
                 aria-label="Types of waterproofing services"
               >
-                <li>Basement and foundation sealing</li>
                 <li>
-                  <strong>Roof</strong> and terrace{" "}
-                  <strong>waterproofing</strong>
+                  Basement <strong>waterproofing</strong> and foundation sealing
                 </li>
-                <li>Bathroom and kitchen leak prevention</li>
+                <li>
+                  Roof and terrace <strong>waterproofing systems</strong>
+                </li>
+                <li>
+                  Bathroom <strong>waterproofing</strong> and kitchen leak
+                  prevention
+                </li>
+                <li>
+                  Structural <strong>waterproofing</strong> to prevent moisture
+                  intrusion
+                </li>
               </ul>
+
+              <p className="text-gray-700 text-base font-bevietnam">
+                These solutions help extend the lifespan of your property,
+                prevent costly repairs, and keep your building protected
+                year-round from water and moisture damage.
+              </p>
             </motion.div>
 
             {/* Masonry */}
@@ -176,21 +207,34 @@ export default function BlogPage() {
                 href="/masonry-services-brooklyn-ny"
                 className="text-xl md:text-2xl font-bold"
                 id="masonry-link"
-                aria-label="Learn more about our Expert Masonry Work"
+                aria-label="Learn more about our Expert Masonry Services and Structural Repairs"
               >
-                Expert <strong>Masonry</strong> Work
+                Expert <strong>Masonry</strong> Services
               </Link>
+
               <p className="text-gray-700 text-base font-bevietnam mt-4">
-                Our skilled masons deliver exceptional craftsmanship in:
+                Our experienced masonry team provides high-quality masonry
+                services, brickwork, and structural repair solutions that
+                enhance both the strength and appearance of your property. We
+                focus on durability, structural integrity, and long-lasting
+                results in every project.
               </p>
+
               <ul
                 className="list-disc pl-5 text-gray-700"
-                aria-label="Types of masonry work"
+                aria-label="Types of masonry services"
               >
-                <li>Brickwork and stonework</li>
-                <li>Paving and cement work</li>
-                <li>Structural repairs and restorations</li>
+                <li>Professional brickwork and stonework</li>
+                <li>Concrete paving and cement work</li>
+                <li>Structural masonry repair and restoration</li>
+                <li>Foundation and exterior masonry maintenance</li>
               </ul>
+
+              <p className="text-gray-700 text-base font-bevietnam">
+                Our masonry solutions are designed to strengthen structures,
+                improve curb appeal, and ensure your property remains safe,
+                stable, and visually appealing for years to come.
+              </p>
             </motion.div>
 
             {/* Why Choose Us */}
@@ -209,25 +253,38 @@ export default function BlogPage() {
                 Why Choose SAS <strong>Roofing</strong> &{" "}
                 <strong>Waterproofing</strong>?
               </h4>
+
               <ul
-                className="list-disc pl-5 text-gray-700"
+                className="list-disc pl-5 text-gray-700 space-y-2"
                 aria-label="Reasons to choose SAS Roofing and Waterproofing"
               >
                 <li>
-                  <strong>Certified</strong> Excellence: Licensed under
-                  #2050416-DCA
+                  <strong>Certified and Licensed Contractors:</strong> We are
+                  fully licensed under #2050416-DCA, ensuring compliance with
+                  industry standards and regulations.
                 </li>
+
                 <li>
-                  <strong>Experienced Professionals:</strong> 30+ years of
-                  hands-on experience
+                  <strong>
+                    30+ Years of Roofing and Waterproofing Experience:
+                  </strong>{" "}
+                  Our decades of hands-on experience allow us to deliver
+                  reliable, efficient, and professional services.
                 </li>
+
                 <li>
-                  <strong>Quality Materials:</strong> We use premium, durable
-                  materials
+                  <strong>Premium Roofing and Waterproofing Materials:</strong>{" "}
+                  We use high-quality, durable materials for long-lasting
+                  protection and performance.
                 </li>
+
                 <li>
-                  <strong>Customer Satisfaction:</strong> Proven track record
-                  with stellar testimonials
+                  <strong>
+                    Proven Customer Satisfaction and Trusted Reputation:
+                  </strong>{" "}
+                  Our strong track record, positive customer reviews, and
+                  successful projects make us a trusted roofing and
+                  waterproofing company.
                 </li>
               </ul>
             </motion.div>
