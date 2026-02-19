@@ -39,11 +39,11 @@ export default function AboutCompany() {
               sizes="(max-width: 768px) 100vw, (max-width: 1024px) 60vw, 500px"
             />
             <figcaption className="sr-only">
-              Over 30 years of roofing and waterproofing experience
+              Over 25+ years of roofing and waterproofing experience
             </figcaption>
             <div className="absolute top-4 right-4 bg-white/90 px-4 py-2 rounded-md text-[#003269] shadow-md text-center">
               <span className="block text-3xl font-extrabold font-inter">
-                30+
+                25+
               </span>
               <span className="block text-xs font-inter uppercase">
                 Years of Experience
