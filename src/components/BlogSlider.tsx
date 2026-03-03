@@ -119,7 +119,7 @@ export default function BlogSlider({ swiperRef }: Props) {
 
   return (
     <section
-      className="w-full px-4 sm:px-6 max-w-screen-xl mx-auto"
+      className="w-full px-4 sm:px-6 max-w-7xl mx-auto"
       aria-label="Blog posts carousel"
     >
       <Swiper

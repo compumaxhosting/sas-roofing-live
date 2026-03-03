@@ -23,7 +23,7 @@ export default function MobileHeaderNew() {
   return (
     <>
       <header
-        className="relative flex h-[122px] w-full md:hidden bg-[#e63a27] font-inter overflow-hidden"
+        className="relative flex h-30.5 w-full md:hidden bg-[#e63a27] font-inter overflow-hidden"
         role="banner" // Indicates this is the main header of the page
         aria-label="Mobile Navigation Header" // Provides a descriptive label for the header region
       >

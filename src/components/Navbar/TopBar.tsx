@@ -6,13 +6,13 @@ import { FaPhoneAlt, FaEnvelope, FaFacebookF, FaHome } from "react-icons/fa";
 export default function TopBar() {
   return (
     <div
-      className="bg-[#003269] text-white px-6 text-[15px] h-[52px] font-bevietnam"
+      className="bg-[#003269] text-white px-6 text-[15px] h-13 font-bevietnam"
       role="banner"
     >
       <div className="flex justify-between items-center h-full">
         {/* Decorative shape left side */}
         <div
-          className="w-[436px] h-full bg-[#00254c] [clip-path:polygon(0_0,90%_0,100%_100%,0%_100%)]"
+          className="w-109 h-full bg-[#00254c] [clip-path:polygon(0_0,90%_0,100%_100%,0%_100%)]"
           aria-hidden="true"
         />
 

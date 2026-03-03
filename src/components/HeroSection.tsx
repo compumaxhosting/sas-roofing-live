@@ -99,7 +99,7 @@ export default function HeroSection() {
               key={slide.id}
               aria-label={`Slide ${index + 1} of ${slides.length}`}
               aria-hidden={index !== selectedIndex}
-              className="relative flex-[0_0_100%] w-full h-[488px] sm:h-screen overflow-hidden"
+              className="relative flex-[0_0_100%] w-full h-122 sm:h-screen overflow-hidden"
             >
               <Image
                 src={slide.image}

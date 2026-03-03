@@ -35,7 +35,7 @@ const VideoSection = ({ margin }: Props) => {
   return (
     <div>
       <section
-        className="relative w-full flex flex-col md:flex-row overflow-hidden h-[550px] bg-[#f0482f] lg:bg-[#f9f9f9] shadow-2xl"
+        className="relative w-full flex flex-col md:flex-row overflow-hidden h-137.5 bg-[#f0482f] lg:bg-[#f9f9f9] shadow-2xl"
         style={{ marginBottom: `${margin[1]}px` }}
       >
         <Image
@@ -48,7 +48,7 @@ const VideoSection = ({ margin }: Props) => {
         />
 
         {/* Left Section */}
-        <div className="relative md:w-[60%] w-full h-[500px] md:h-auto">
+        <div className="relative md:w-[60%] w-full h-125 md:h-auto">
           <div className="absolute inset-0 bg-[#c72f1c] red-left-shape-2 z-20 translate-x-6 translate-y-16">
             <div className="w-full h-full bg-[url('/VideoSec/thm-pattern-5.png')] bg-repeat left" />
           </div>

@@ -51,7 +51,7 @@ export default function BlogSlideCard({ slide }: { slide: Slide }) {
     <article
       role="article"
       aria-label={`Blog post: ${slide.title}`}
-      className="relative w-full h-[430px] rounded-sm shadow-md overflow-hidden flex flex-col font-inter"
+      className="relative w-full h-107.5 rounded-sm shadow-md overflow-hidden flex flex-col font-inter"
     >
       {/* Image + Overlay */}
       <Link
@@ -65,7 +65,7 @@ export default function BlogSlideCard({ slide }: { slide: Slide }) {
           role="img"
           aria-label={`Image representing ${slide.title}`}
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/60 to-transparent" />
+        <div className="absolute inset-0 bg-linear-to-t from-black/90 via-black/60 to-transparent" />
 
         {/* Text over image */}
         <div className="absolute bottom-4 left-4 right-4 flex flex-col gap-1 text-left text-white drop-shadow-md">

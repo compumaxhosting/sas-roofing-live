@@ -29,7 +29,7 @@ export default function AboutCompany() {
           viewport={{ once: true }}
           className="relative w-full max-w-md lg:max-w-lg"
         >
-          <div className="relative w-full aspect-[4/5] border-2 border-[#e63a27] overflow-hidden">
+          <div className="relative w-full aspect-4/5 border-2 border-[#e63a27] overflow-hidden">
             <Image
               src="/about-us/aboutusimage.jpg"
               alt="Team working on site"
@@ -61,11 +61,11 @@ export default function AboutCompany() {
           className="w-full max-w-lg xl:max-w-full text-left"
         >
           <header className="flex items-center justify-center xl:justify-start gap-3 mb-2">
-            <hr className="w-6 h-[1px] bg-[#e63a27]" />
+            <hr className="w-6 h-px bg-[#e63a27]" />
             <h2 className="text-sm sm:text-base uppercase text-[#e63a27] font-semibold tracking-wider font-inter">
               About Company
             </h2>
-            <hr className="w-6 h-[1px] bg-[#e63a27]" />
+            <hr className="w-6 h-px bg-[#e63a27]" />
           </header>
 
           <h3 className="text-3xl sm:text-4xl lg:text-5xl font-semibold text-[#003269] leading-tight mb-4 font-inter">

@@ -188,7 +188,7 @@ export default function ContactForm() {
     >
       {/* Heading */}
       <div className="flex items-center gap-2">
-        <div className="w-6 h-[3px] bg-[#e63a27]" aria-hidden="true" />
+        <div className="w-6 h-0.75 bg-[#e63a27]" aria-hidden="true" />
         <p className="uppercase text-[#e63a27] font-semibold tracking-wide">
           Book A Service
         </p>

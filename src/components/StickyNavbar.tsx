@@ -130,7 +130,7 @@ export default function StickyNavbar() {
               </Link>
 
               <div
-                className={`absolute left-0 top-full mt-1 bg-white border-t-4 border-[#e63a27] shadow-lg rounded-sm z-50 min-w-[180px] overflow-hidden transition-all duration-300 ease-in-out ${
+                className={`absolute left-0 top-full mt-1 bg-white border-t-4 border-[#e63a27] shadow-lg rounded-sm z-50 min-w-45 overflow-hidden transition-all duration-300 ease-in-out ${
                   openDropdown === label
                     ? "opacity-100 translate-y-0 pointer-events-auto"
                     : "opacity-0 translate-y-2 pointer-events-none"

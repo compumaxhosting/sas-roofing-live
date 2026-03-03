@@ -132,12 +132,12 @@ export default function SidebarOverlay({ onClose }: { onClose: () => void }) {
       onClick={onClose}
       role="dialog"
       aria-modal="true"
-      className="fixed inset-0 z-[999] bg-black/70 flex justify-start cursor-[url('/Navbar/white_cursor.png')_0_0,auto] font-inter"
+      className="fixed inset-0 z-999 bg-black/70 flex justify-start cursor-[url('/Navbar/white_cursor.png')_0_0,auto] font-inter"
     >
       <motion.aside
         ref={asideRef}
         onClick={(e) => e.stopPropagation()}
-        className="w-[300px] sm:w-[340px] md:w-[360px] lg:w-[400px] xl:w-[420px] bg-[#003269] text-white overflow-y-auto p-4 sm:p-6 lg:p-8 relative"
+        className="w-75 sm:w-85 md:w-90 lg:w-100 xl:w-105 bg-[#003269] text-white overflow-y-auto p-4 sm:p-6 lg:p-8 relative"
         initial={{ opacity: 0, x: -50 }}
         animate={{ opacity: 1, x: 0 }}
         exit={{ opacity: 0, x: -50 }}
@@ -161,7 +161,7 @@ export default function SidebarOverlay({ onClose }: { onClose: () => void }) {
               alt="SAS Roofing Company Logo"
               width={240}
               height={240}
-              className="w-[180px] sm:w-[200px] md:w-[240px]"
+              className="w-45 sm:w-50 md:w-60"
               priority
             />
           </Link>
@@ -170,7 +170,7 @@ export default function SidebarOverlay({ onClose }: { onClose: () => void }) {
         {/* About */}
         <section className="mb-6">
           <h1 className="text-lg font-bold mb-1">ABOUT US</h1>
-          <div className="w-8 h-[2px] bg-[#e63a27] mb-3" />
+          <div className="w-8 h-0.5 bg-[#e63a27] mb-3" />
           <p className="text-sm leading-relaxed">
             With over three decades of proven success in quality Roofing
             services, Waterproofing and General contractors.
@@ -180,7 +180,7 @@ export default function SidebarOverlay({ onClose }: { onClose: () => void }) {
         {/* Free Quote Form */}
         <section className="mb-6">
           <h2 className="text-lg font-bold mb-1">GET A FREE QUOTE</h2>
-          <div className="w-8 h-[2px] bg-[#e63a27] mb-4" />
+          <div className="w-8 h-0.5 bg-[#e63a27] mb-4" />
           <form className="flex flex-col gap-3" onSubmit={handleSubmit}>
             <input
               type="text"
@@ -268,7 +268,7 @@ export default function SidebarOverlay({ onClose }: { onClose: () => void }) {
         {/* Contact Info */}
         <section>
           <h3 className="text-lg font-bold mb-1">CONTACT INFO</h3>
-          <div className="w-8 h-[2px] bg-[#e63a27] mb-4" />
+          <div className="w-8 h-0.5 bg-[#e63a27] mb-4" />
           <ul className="text-sm space-y-3">
             <li className="flex gap-3 items-start">
               <FaMapMarkerAlt className="text-[#e63a27] mt-1 shrink-0" />

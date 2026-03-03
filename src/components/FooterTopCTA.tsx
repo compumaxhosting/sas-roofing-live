@@ -27,7 +27,7 @@ export default function FooterTopCTA() {
       <div className="flex flex-col lg:flex-row items-center justify-center gap-4 lg:gap-8 text-center lg:text-left max-w-7xl mx-auto">
         {/* Logo */}
         <motion.div
-          className="min-w-[100px] sm:min-w-[120px] lg:min-w-[160px]"
+          className="min-w-25 sm:min-w-30 lg:min-w-40"
           {...fadeUp(0)}
         >
           <Link href="/" aria-label="Go to SAS Roofing homepage">
@@ -44,7 +44,7 @@ export default function FooterTopCTA() {
 
         {/* Divider */}
         <motion.span
-          className="hidden lg:inline-block w-px h-[80px] bg-white/30"
+          className="hidden lg:inline-block w-px h-20 bg-white/30"
           {...fadeUp(0.1)}
           aria-hidden="true"
         />

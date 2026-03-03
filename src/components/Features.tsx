@@ -73,7 +73,7 @@ export default function Features({ margin }: Props) {
         {features.map(({ id, title, description, link }, i) => (
           <motion.article
             key={id}
-            className="relative bg-[#003269] text-white text-center h-[370px] p-6 overflow-hidden rounded-md"
+            className="relative bg-[#003269] text-white text-center h-92.5 p-6 overflow-hidden rounded-md"
             variants={fadeUp}
             initial="hidden"
             whileInView="visible"

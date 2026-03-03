@@ -61,7 +61,7 @@ export default function SignsRoofing() {
                 alt="Roofing services warning signs in Brooklyn and Manhattan"
                 width={600}
                 height={300}
-                className="w-full h-full max-h-[320px] object-cover rounded-xl shadow-lg"
+                className="w-full h-full max-h-80 object-cover rounded-xl shadow-lg"
               />
             </div>
 

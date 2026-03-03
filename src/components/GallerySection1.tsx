@@ -271,7 +271,7 @@ export default function GallerySection() {
           {images.map((img, idx) => (
             <SwiperSlide key={idx}>
               <motion.div
-                className="w-full aspect-[4/3] shadow-md overflow-hidden relative group max-w-[440px] mx-auto"
+                className="w-full aspect-4/3 shadow-md overflow-hidden relative group max-w-110 mx-auto"
                 initial={fadeUp.initial}
                 whileInView={fadeUp.animate}
                 transition={fadeUp.transition}

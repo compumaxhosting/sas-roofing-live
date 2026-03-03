@@ -152,7 +152,7 @@ export default function Footer() {
           </h2>{" "}
           {/* Changed to h3 */}
           <div
-            className="w-12 h-[2px] bg-[#e63a27] mb-3"
+            className="w-12 h-0.5 bg-[#e63a27] mb-3"
             aria-hidden="true"
           />{" "}
           {/* Decorative line */}
@@ -184,7 +184,7 @@ export default function Footer() {
                 alt={`${icon} accepted`} // Clear alt text for payment icons
                 width={50}
                 height={32}
-                className="object-contain h-[35px] w-auto transition-transform duration-300 hover:scale-90"
+                className="object-contain h-8.75 w-auto transition-transform duration-300 hover:scale-90"
                 loading="lazy"
               />
             ))}
@@ -201,7 +201,7 @@ export default function Footer() {
           </h2>{" "}
           {/* Changed to h3 */}
           <div
-            className="w-12 h-[2px] bg-[#e63a27] mb-3"
+            className="w-12 h-0.5 bg-[#e63a27] mb-3"
             aria-hidden="true"
           />{" "}
           {/* Decorative line */}
@@ -235,7 +235,7 @@ export default function Footer() {
           </h3>{" "}
           {/* Changed to h3 */}
           <div
-            className="w-12 h-[2px] bg-[#e63a27] mb-3"
+            className="w-12 h-0.5 bg-[#e63a27] mb-3"
             aria-hidden="true"
           />{" "}
           {/* Decorative line */}

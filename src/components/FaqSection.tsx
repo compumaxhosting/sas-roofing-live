@@ -76,7 +76,7 @@ export default function FaqSection() {
     >
       <header className="mb-10 text-center">
         <div className="flex items-center justify-center gap-2 mb-2">
-          <div className="w-6 h-[2px] bg-[#e63a27]" aria-hidden="true" />
+          <div className="w-6 h-0.5 bg-[#e63a27]" aria-hidden="true" />
           <span className="uppercase text-sm font-bold tracking-wider text-[#e63a27] font-inter">
             Common Questions & Answers
           </span>

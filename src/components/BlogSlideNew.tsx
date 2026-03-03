@@ -26,7 +26,7 @@ export default function BlogSlideNew({ slide }: { slide: Slide }) {
 
   return (
     <motion.article
-      className="lg:w-[400px]"
+      className="lg:w-100"
       initial={{ opacity: 0, y: 40 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6, ease: "easeOut" }}
@@ -43,7 +43,7 @@ export default function BlogSlideNew({ slide }: { slide: Slide }) {
           (e.key === "Enter" || e.key === " ") && handleCardClick()
         }
         aria-label={`Read full article: ${slide.title}`}
-        className="cursor-pointer h-[515px] flex flex-col justify-between rounded-md shadow-2xl overflow-hidden font-inter border border-blue-300 bg-white mt-3 pb-4"
+        className="cursor-pointer h-128.75 flex flex-col justify-between rounded-md shadow-2xl overflow-hidden font-inter border border-blue-300 bg-white mt-3 pb-4"
       >
         {/* Image Section */}
         <div className="relative w-full h-60">
@@ -65,7 +65,7 @@ export default function BlogSlideNew({ slide }: { slide: Slide }) {
       
 
         {/* Content Section */}
-        <div className="flex flex-col justify-evenly flex-grow px-4 py-2">
+        <div className="flex flex-col justify-evenly grow px-4 py-2">
           <div>
             <h1
               className="text-md font-semibold text-gray-800 mb-4"

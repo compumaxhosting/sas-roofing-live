@@ -253,7 +253,7 @@ const ReviewSlider = () => {
               aria-label={`Review ${idx + 1} of ${reviews.length}`} // Provides context for screen readers
             >
               <motion.div
-                className="bg-[#002147] text-white rounded-xl p-4 w-[250px] h-[300px] flex flex-col gap-2 items-start mx-auto"
+                className="bg-[#002147] text-white rounded-xl p-4 w-62.5 h-75 flex flex-col gap-2 items-start mx-auto"
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.3 }}

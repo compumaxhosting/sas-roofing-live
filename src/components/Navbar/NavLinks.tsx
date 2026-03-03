@@ -138,7 +138,7 @@ export default function NavLinks({
 
                 {subItems && openDropdown === label && (
                   <div
-                    className={`absolute left-0 top-full mt-1 bg-white border-t-4 border-[#e63a27] shadow-lg rounded-sm z-20 min-w-[180px] overflow-hidden transition-all duration-300 ease-in-out opacity-100 translate-y-0 pointer-events-auto`}
+                    className={`absolute left-0 top-full mt-1 bg-white border-t-4 border-[#e63a27] shadow-lg rounded-sm z-20 min-w-45 overflow-hidden transition-all duration-300 ease-in-out opacity-100 translate-y-0 pointer-events-auto`}
                     role="menu"
                     aria-orientation="vertical"
                   >

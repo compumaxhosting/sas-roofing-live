@@ -15,7 +15,7 @@ export default function DesktopHeader({
       {/* Logo Section with clip-path */}
       <Link
         href="/"
-        className="absolute left-0 top-0 h-full w-[410px] bg-[#003269] z-10 flex items-center justify-center [clip-path:polygon(0_0,100%_0,84%_100%,0%_100%)]"
+        className="absolute left-0 top-0 h-full w-102.5 bg-[#003269] z-10 flex items-center justify-center [clip-path:polygon(0_0,100%_0,84%_100%,0%_100%)]"
         aria-label="Home link with company logo" // Added for screen readers
       >
         <Image

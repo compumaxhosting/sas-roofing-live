@@ -23,15 +23,15 @@ export default function Blog() {
       transition={{ duration: 0.6, ease: "easeOut" }}
       viewport={{ once: true }}
     >
-      <div className="max-w-screen-xl mx-auto text-center font-inter">
+      <div className="max-w-7xl mx-auto text-center font-inter">
         {/* Section Header */}
         <header className="mb-10">
           <div className="inline-flex items-center gap-2 mb-2">
-            <div className="w-6 h-[1px] bg-[#e63a27]" aria-hidden="true" />
+            <div className="w-6 h-px bg-[#e63a27]" aria-hidden="true" />
             <span className="text-sm font-bold text-[#e63a27] uppercase tracking-widest">
               News & Updates
             </span>
-            <div className="w-6 h-[1px] bg-[#e63a27]" aria-hidden="true" />
+            <div className="w-6 h-px bg-[#e63a27]" aria-hidden="true" />
           </div>
           <h2
             id="blog-section-title"

@@ -100,7 +100,7 @@ export default function ServicesSlider({ swiperRef }: Props) {
               slides[i % slides.length];
             return (
               <SwiperSlide key={i}>
-                <div className="group relative h-[380px] flex items-end overflow-hidden rounded-md">
+                <div className="group relative h-95 flex items-end overflow-hidden rounded-md">
                   {/* Background image that zooms on hover */}
                   <div
                     className="absolute inset-0 bg-cover bg-center bg-no-repeat transition-transform duration-700 ease-out group-hover:scale-110"
@@ -110,7 +110,7 @@ export default function ServicesSlider({ swiperRef }: Props) {
 
                   {/* Foreground content */}
                   <div className="relative z-10 flex w-full items-end">
-                    <div className="w-[70%] bg-[#f5f5f5] shadow-md p-4 min-h-[120px] sm:min-h-[140px] md:min-h-[150px] flex flex-col">
+                    <div className="w-[70%] bg-[#f5f5f5] shadow-md p-4 min-h-30 sm:min-h-35 md:min-h-37.5 flex flex-col">
                       <Link href={link}>
                         <h3 className="text-[#003269] text-sm md:text-base lg:text-lg font-bold tracking-wide font-inter hover:underline">
                           {title}

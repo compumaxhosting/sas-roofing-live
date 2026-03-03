@@ -73,7 +73,7 @@ export default function CustomerReviews() {
             target="_blank"
             rel="noopener noreferrer"
             aria-label={`Read SAS Roofing reviews on ${alt}`}
-            className="border rounded-md p-3 shadow-sm hover:shadow-md transition bg-white w-[70px] h-[70px] lg:w-[100px] lg:h-[100px] flex items-center justify-center focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-[#003269]"
+            className="border rounded-md p-3 shadow-sm hover:shadow-md transition bg-white w-17.5 h-17.5 lg:w-25 lg:h-25 flex items-center justify-center focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-[#003269]"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.4, delay: index * 0.08 }}
