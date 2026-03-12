@@ -1,3 +1,4 @@
+/* SEO update: Page content refreshed on march 12, 2026 (updated after 4 months) */
 "use client";
 
 import { motion } from "framer-motion";
@@ -64,30 +65,37 @@ export default function BlogPage() {
             {/* Text on the right */}
             <div className="w-full lg:w-1/2">
               <h1
-                id="main-blog-post-heading" // ID for aria-labelledby
+                id="main-blog-post-heading"
                 className="text-3xl md:text-4xl font-bold font-inter mb-7"
               >
-                How This NYC Waterproofing Contractor is Revolutionizing Home
-                Protection
+                Trusted NYC Waterproofing Contractor Protecting Homes &
+                Buildings
               </h1>
+
               <h2 className="text-xl md:text-3xl font-semibold font-inter mb-2">
-                Leading the Charge in Residential and Commercial Waterproofing
-                Services
+                Professional Waterproofing Services for Residential & Commercial
+                Properties
               </h2>
+
               <p className="text-sm md:text-base text-gray-700 font-bevietnam">
-                In a city where the weather can turn on a dime, protecting your
-                property is more than a necessity—it’s a priority. Homeowners
-                and business owners alike are turning to expert{" "}
+                In a city like <strong>New York</strong>, where heavy rain,
+                snow, and humidity can cause serious structural damage, reliable
+                <strong> waterproofing solutions</strong> are essential.
+                Property owners across the city rely on experienced{" "}
                 <Link
                   href="/waterproofing-contractors-NY"
                   className="text-[#003269] hover:underline"
-                  aria-label="Learn more about expert waterproofing contractors in New York City" // Improved aria-label
+                  aria-label="Learn more about waterproofing contractors in New York City"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  waterproofing contractors NYC
+                  waterproofing contractors in NYC
                 </Link>{" "}
-                to ensure their buildings remain safe, dry, and mold-free.
+                to protect their buildings from leaks, moisture intrusion, mold
+                growth, and long-term foundation damage. From basement
+                waterproofing to roof and structural waterproofing, professional
+                systems ensure buildings stay strong, dry, and protected
+                year-round.
               </p>
             </div>
           </motion.div>
@@ -117,21 +125,25 @@ export default function BlogPage() {
               viewport={{ once: true, amount: 0.1 }}
               variants={fadeUp}
               className="space-y-3"
-              aria-labelledby="basement-waterproofing-heading" // Link to the heading below
+              aria-labelledby="basement-waterproofing-heading"
             >
-              <h4 // Changed to h3 as it's a subheading under "Our Services"
+              <h4
                 id="basement-waterproofing-heading"
                 className="text-xl md:text-2xl font-bold"
               >
-                Basement Waterproofing Brooklyn: The First Line of Defense
+                Basement Waterproofing in Brooklyn: Protecting Your Foundation
               </h4>
+
               <p className="text-gray-700 text-base font-bevietnam mt-4">
-                Many homes in Brooklyn suffer from aging infrastructure and
-                inadequate drainage. That’s why{" "}
-                <b aria-hidden="true">basement waterproofing Brooklyn</b> is
-                crucial. Proper sealing not only prevents flooding but also
-                controls moisture that leads to mold growth and structural
-                damage.
+                Many properties in <strong>Brooklyn</strong> experience basement
+                leaks due to aging foundations, poor drainage systems, and heavy
+                seasonal rainfall. Professional{" "}
+                <b aria-hidden="true">basement waterproofing in Brooklyn</b> is
+                one of the most effective ways to protect your home from water
+                intrusion, mold growth, and structural deterioration. By sealing
+                foundation walls, improving drainage, and installing modern
+                waterproofing systems, homeowners can prevent costly damage
+                while maintaining a dry, safe, and healthy living environment.
               </p>
             </motion.div>
 
@@ -144,18 +156,25 @@ export default function BlogPage() {
               className="space-y-3"
               aria-labelledby="roof-leak-repair-heading" // Link to the heading below
             >
-              <h5 // Changed to h3
+              <h5
                 id="roof-leak-repair-heading"
                 className="text-xl md:text-2xl font-bold"
               >
-                Roof Leak Repair Manhattan: Stop the Drip Before It Destroys
+                Roof Leak Repair in Manhattan: Prevent Costly Roof Damage
               </h5>
+
               <p className="text-gray-700 text-base font-bevietnam mt-4">
-                Flat rooftops are common in Manhattan. Unfortunately, so are
-                leaks. <b aria-hidden="true">Roof leak repair Manhattan</b>{" "}
-                services are in high demand as building owners seek fast,
-                lasting solutions. Advanced technologies and materials ensure
-                these leaks don’t become disasters.
+                Many buildings in <strong>Manhattan</strong> feature flat or
+                low-slope roofing systems that can develop leaks over time due
+                to weather exposure, aging materials, and poor drainage.
+                Professional{" "}
+                <b aria-hidden="true">roof leak repair in Manhattan</b> helps
+                property owners quickly identify problem areas and prevent water
+                intrusion that can damage ceilings, insulation, and structural
+                components. Using advanced roofing materials and proven repair
+                techniques, experienced contractors provide fast, long-lasting
+                solutions to keep residential and commercial properties
+                protected from costly roof damage.
               </p>
             </motion.div>
 
@@ -168,18 +187,24 @@ export default function BlogPage() {
               className="space-y-3"
               aria-labelledby="foundation-sealing-heading" // Link to the heading below
             >
-              <h6 // Changed to h3
+              <h6
                 id="foundation-sealing-heading"
                 className="text-xl md:text-2xl font-bold"
               >
-                Foundation Sealing Queens: Building Strength from Below
+                Foundation Sealing in Queens: Protecting Structural Stability
               </h6>
+
               <p className="text-gray-700 text-base font-bevietnam mt-4">
-                A compromised foundation leads to cracks, moisture intrusion,
-                and expensive repairs. With expert{" "}
-                <b aria-hidden="true">foundation sealing Queens</b>, properties
-                gain the long-term stability they need to withstand New York’s
-                harsh seasons and shifting soil.
+                A damaged foundation can lead to serious issues such as cracks,
+                water intrusion, and long-term structural deterioration.
+                Professional{" "}
+                <b aria-hidden="true">foundation sealing in Queens</b> helps
+                protect homes and commercial buildings by blocking moisture,
+                reinforcing foundation walls, and preventing costly structural
+                repairs. With proper sealing and waterproofing systems, property
+                owners can improve stability, reduce basement moisture problems,
+                and protect their buildings from New York’s changing weather
+                conditions and shifting soil.
               </p>
             </motion.div>
 
@@ -192,18 +217,24 @@ export default function BlogPage() {
               className="space-y-3"
               aria-labelledby="exterior-waterproofing-heading" // Link to the heading below
             >
-              <p // Changed to h3
+              <p
                 id="exterior-waterproofing-heading"
                 className="text-xl md:text-2xl font-bold"
               >
-                Exterior Waterproofing Brooklyn: Guarding Your Outer Walls
+                Exterior Waterproofing in Brooklyn: Protecting Your Building’s
+                Structure
               </p>
+
               <p className="text-gray-700 text-base font-bevietnam mt-4">
-                For Brooklyn brownstones and townhomes,{" "}
-                <b aria-hidden="true">exterior waterproofing Brooklyn</b> offers
-                a durable shield against rain, snow, and humidity. From wall
-                crack repair to applying a waterproof coating, this method
-                extends the life of your building&apos;s exterior.
+                Brooklyn’s brownstones, townhomes, and commercial buildings face
+                constant exposure to rain, snow, humidity, and temperature
+                changes. Professional{" "}
+                <b aria-hidden="true">exterior waterproofing in Brooklyn</b>{" "}
+                creates a protective barrier that prevents water penetration,
+                wall cracks, and long- term structural damage. By sealing
+                exterior walls, repairing masonry cracks, and applying durable
+                waterproof coatings, contractors help extend the life of your
+                building while keeping interiors dry and protected year-round.
               </p>
             </motion.div>
 
@@ -216,18 +247,25 @@ export default function BlogPage() {
               className="space-y-3"
               aria-labelledby="interior-waterproofing-heading" // Link to the heading below
             >
-              <p // Changed to h3
+              <p
                 id="interior-waterproofing-heading"
                 className="text-xl md:text-2xl font-bold"
               >
-                Interior Waterproofing Manhattan: A Smart Indoor Strategy
+                Interior Waterproofing in Manhattan: Smart Protection for Indoor
+                Spaces
               </p>
+
               <p className="text-gray-700 text-base font-bevietnam mt-4">
-                When moisture seeps in from the inside,{" "}
-                <b aria-hidden="true">interior waterproofing Manhattan</b>{" "}
-                tackles it head-on. This method includes sump pumps, drainage
-                systems, and barrier installations that ensure dry, livable
-                spaces all year round.
+                Many buildings in <strong>Manhattan</strong> experience interior
+                moisture problems caused by groundwater pressure, poor drainage,
+                or aging foundations. Professional{" "}
+                <b aria-hidden="true">interior waterproofing in Manhattan</b>{" "}
+                helps control moisture before it damages walls, flooring, or
+                basement areas. Solutions often include sump pump installation,
+                interior drainage systems, vapor barriers, and
+                moisture-resistant sealing techniques that keep homes and
+                commercial properties dry, healthy, and protected throughout the
+                year.
               </p>
             </motion.div>
 
@@ -448,18 +486,23 @@ export default function BlogPage() {
               className="space-y-3"
               aria-labelledby="basement-moisture-control-heading" // Link to the heading below
             >
-              <p // Changed to h3
+              <p
                 id="basement-moisture-control-heading"
                 className="text-xl md:text-2xl font-bold"
               >
-                Basement Moisture Control: Dry Spaces Matter
+                Basement Moisture Control: Keeping Basements Dry and Healthy
               </p>
+
               <p className="text-gray-700 text-base font-bevietnam mt-4">
                 Without proper{" "}
                 <b aria-hidden="true">basement moisture control</b>, basements
-                can become breeding grounds for bacteria and structural
-                problems. Dry, insulated, and ventilated basements are essential
-                for livable, healthy homes.
+                can quickly develop mold growth, unpleasant odors, and long-term
+                structural issues. Effective moisture management solutions such
+                as ventilation improvements, waterproof coatings, drainage
+                systems, and dehumidification help keep basement spaces dry and
+                protected. Maintaining a dry basement not only prevents costly
+                repairs but also creates a healthier living environment for
+                homeowners and occupants.
               </p>
             </motion.div>
 
@@ -541,18 +584,24 @@ export default function BlogPage() {
               className="space-y-3"
               aria-labelledby="concrete-waterproofing-heading" // Link to the heading below
             >
-              <p // Changed to h3
+              <p
                 id="concrete-waterproofing-heading"
                 className="text-xl md:text-2xl font-bold"
               >
-                Concrete Waterproofing Manhattan: Tough Protection for Tough
-                Surfaces
+                Concrete Waterproofing in Manhattan: Durable Protection for
+                Concrete Structures
               </p>
+
               <p className="text-gray-700 text-base font-bevietnam mt-4">
-                Concrete is durable, but not invincible.{" "}
-                <b aria-hidden="true">Concrete waterproofing Manhattan</b> adds
-                an impermeable layer that extends the lifespan of sidewalks,
-                foundations, and parking structures.
+                Concrete surfaces are strong, but constant exposure to moisture,
+                freeze-thaw cycles, and heavy urban traffic can lead to cracks
+                and deterioration. Professional{" "}
+                <b aria-hidden="true">concrete waterproofing in Manhattan</b>{" "}
+                creates a protective barrier that prevents water penetration and
+                structural damage. By sealing sidewalks, foundations, parking
+                garages, and exterior concrete walls, waterproof coatings help
+                extend the lifespan of concrete structures while reducing
+                maintenance and costly repairs.
               </p>
             </motion.div>
 
@@ -572,27 +621,32 @@ export default function BlogPage() {
                 The Future of Waterproofing in NYC
               </p>
               <p className="text-gray-700 text-base font-bevietnam">
-                As building codes evolve and weather patterns shift,{" "}
+                As building codes evolve and extreme weather becomes more
+                common, professional{" "}
                 <Link
-                  href={
-                    "/waterproofing-contractors-NY"
-                  }
+                  href={"/waterproofing-contractors-NY"}
                   className="text-[#003269] hover:underline"
-                  aria-label="Find top waterproofing contractors in New York City for advanced solutions" // Improved aria-label
+                  aria-label="Find top waterproofing contractors in New York City for advanced waterproofing solutions"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  waterproofing contractors NYC
+                  waterproofing contractors in NYC
                 </Link>{" "}
-                continue to innovate. From cutting-edge leak detection to
-                eco-friendly coatings, their services are shaping safer,
-                longer-lasting homes across the city.
+                continue to adopt modern solutions that protect properties from
+                costly water damage. From advanced leak detection systems to
+                high-performance waterproof membranes and eco-friendly coatings,
+                today’s waterproofing technologies help safeguard foundations,
+                roofs, and exterior walls across New York City.
               </p>
+
               <p className="text-gray-700 text-base font-bevietnam">
-                Whether it’s a cozy brownstone or a towering high-rise, NYC
-                residents deserve reliable protection. With the right
-                contractor, waterproofing isn’t just a fix—it’s a
-                transformation.
+                Whether protecting a historic Brooklyn brownstone, a Manhattan
+                apartment building, or a commercial property, reliable
+                waterproofing services are essential for long-term structural
+                protection. With experienced contractors and proven
+                waterproofing systems, property owners can prevent leaks,
+                control moisture, and ensure their buildings remain safe,
+                durable, and comfortable for years to come.
               </p>
             </motion.div>
 
