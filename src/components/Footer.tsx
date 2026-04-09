@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { FaFacebookF } from "react-icons/fa";
-import { FaXTwitter } from "react-icons/fa6";
+import { FaTiktok, FaXTwitter } from "react-icons/fa6";
 import { SiHouzz, SiYelp } from "react-icons/si";
 import type { Transition } from "framer-motion";
 
@@ -60,6 +60,11 @@ export default function Footer() {
       icon: <FaXTwitter />,
       label: "X (Twitter)",
       link: "https://x.com/sasroofing91254",
+    },
+    {
+      icon: <FaTiktok />,
+      label: "TikTok",
+      link: "https://www.tiktok.com/@sasroofingwaterproofing?lang=en",
     },
     {
       icon: (

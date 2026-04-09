@@ -13,6 +13,7 @@ import Link from "next/link";
 import { FaFacebookF, FaHome } from "react-icons/fa";
 import MobileNavItem from "./MobileNavItem";
 import { usePathname } from "next/navigation";
+import { FaTiktok } from "react-icons/fa6";
 
 interface Props {
   isOpen: boolean;
@@ -63,6 +64,11 @@ export default function MobileDrawer({ isOpen, setIsOpen }: Props) {
       href: "https://www.houzz.com/professionals/general-contractors/sas-roofing-and-waterproofing-pfvwus-pf~849386886?",
       icon: <FaHome className="text-white text-lg" />,
       label: "Houzz profile",
+    },
+    {
+      href: "https://www.tiktok.com/@sasroofingwaterproofing?lang=en",
+      icon: <FaTiktok className="text-white text-lg" />,
+      label: "TikTok profile",
     },
   ];
 

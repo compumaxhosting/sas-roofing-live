@@ -15,6 +15,7 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import React from "react";
+import { FaTiktok } from "react-icons/fa6";
 
 export default function SidebarOverlay({ onClose }: { onClose: () => void }) {
   const [form, setForm] = useState({
@@ -298,6 +299,10 @@ export default function SidebarOverlay({ onClose }: { onClose: () => void }) {
               {
                 href: "https://www.houzz.com/professionals/general-contractors/sas-roofing-and-waterproofing-pfvwus-pf~849386886?",
                 icon: <FaHome />,
+              },
+              {
+                href: "https://www.tiktok.com/@sasroofingwaterproofing?lang=en",
+                icon: <FaTiktok />,
               },
             ].map(({ href, icon }, index) => (
               <Link

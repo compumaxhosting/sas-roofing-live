@@ -6,6 +6,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { FaFacebookF, FaHome } from "react-icons/fa";
 import { Inter } from "next/font/google";
+import { FaTiktok } from "react-icons/fa6";
 
 const navItems = [
   { label: "HOME", path: "/" },
@@ -286,7 +287,7 @@ export default function NavLinks({
           >
             {navItems.map(({ label, path, subItems }) => {
               const isSubItemActive = subItems?.some(
-                (sub) => sub.path === pathname
+                (sub) => sub.path === pathname,
               );
               const isActive = pathname === path || isSubItemActive;
 
@@ -304,7 +305,7 @@ export default function NavLinks({
                     }`}
                     onClick={() =>
                       setOpenSidebarDropdown((prev) =>
-                        prev === label ? null : label
+                        prev === label ? null : label,
                       )
                     }
                     onKeyDown={(e) => handleSidebarServicesKeyDown(e, label)}
@@ -388,6 +389,15 @@ export default function NavLinks({
               aria-label="Visit our Houzz profile (opens in new tab)"
             >
               <FaHome className="text-white text-lg" aria-hidden="true" />
+            </a>
+            <a
+              href="https://www.tiktok.com/@sasroofingwaterproofing?lang=en"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-[#e63a27] rounded-full w-10 h-10 flex items-center justify-center"
+              aria-label="Visit our TikTok profile (opens in new tab)"
+            >
+              <FaTiktok className="text-white text-lg" aria-hidden="true" />
             </a>
           </div>
         </div>

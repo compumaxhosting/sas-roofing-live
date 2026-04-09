@@ -22,7 +22,10 @@ export const metadata: Metadata = {
   keywords:
     "roofing contractor Brooklyn, waterproofing service Brooklyn, masonry contractor Brooklyn, roofing contractor Manhattan, waterproofing service Manhattan, masonry contractor Manhattan, roofing contractor Queens, waterproofing service Queens, masonry contractor Queens, construction company Brooklyn",
   verification: {
-    google: "Fd3NvvOxAmVcovcANMYGMoxYh8BbQ9p1rRjKdc_fDFo",
+    google: [
+      "Fd3NvvOxAmVcovcANMYGMoxYh8BbQ9p1rRjKdc_fDFo",
+      "CdldagIRtGy0E9IyR1scrfveSy55UpfyitqyEAu3EOg",
+    ],
   },
   openGraph: {
     title:

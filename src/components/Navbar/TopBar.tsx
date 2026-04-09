@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { FaPhoneAlt, FaEnvelope, FaFacebookF, FaHome } from "react-icons/fa";
+import { FaTiktok } from "react-icons/fa6";
 
 export default function TopBar() {
   return (
@@ -62,7 +63,7 @@ export default function TopBar() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Visit our Facebook page (opens in new tab)"
-                className="pr-3 text-[#e63a27] transition-colors"
+                className="pr-2 text-[#e63a27] transition-colors"
               >
                 <FaFacebookF aria-hidden="true" />
               </Link>
@@ -71,9 +72,18 @@ export default function TopBar() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Visit our Houzz page (opens in new tab)"
-                className="pl-3 text-[#e63a27] transition-colors"
+                className="px-2 text-[#e63a27] transition-colors"
               >
                 <FaHome aria-hidden="true" />
+              </Link>
+              <Link
+                href="https://www.tiktok.com/@sasroofingwaterproofing?lang=en"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Visit our Houzz page (opens in new tab)"
+                className="pl-3 text-[#e63a27] transition-colors"
+              >
+                <FaTiktok aria-hidden="true" />
               </Link>
             </div>
           </div>
