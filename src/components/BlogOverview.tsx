@@ -13,6 +13,10 @@ export function BlogsOverview() {
 
   const plans = [
     {
+      name: "What Makes a Great Roofing Contractor in Brooklyn, Queens & Manhattan",
+      path: "/blog/best-roofing-contractor-nyc",
+    }, 
+    {
       name: "Terrace Waterproofing vs Roof Waterproofing",
       path: "/blog/terrace-waterproofing-vs-roof-waterproofing-difference",
     },

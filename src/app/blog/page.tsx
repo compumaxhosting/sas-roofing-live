@@ -11,23 +11,33 @@ import React from "react";
 
 const slides = [
   {
+  title: "What Makes a Great Roofing Contractor in Brooklyn, Queens & Manhattan in 2026",
+  shortTitle: "NYC Roofing Guide 2026",
+  description:
+    "Discover what separates great roofing contractors in Brooklyn, Queens & Manhattan in 2026—licensing, warranties, local expertise, and red flags to avoid.",
+    date: "01 May 2026",
+  image: "/blog/roofing-contractors.webp",
+  link: "best-roofing-contractor-nyc",
+  initialLikes: 0,
+},
+  {
     title:
       "Terrace Waterproofing vs Roof Waterproofing – What’s the Difference?",
     shortTitle: "Terrace vs Roof Waterproofing",
     description:
       "Understand the difference between terrace waterproofing and roof waterproofing, their uses, materials, and which solution is right for your property.",
-    date: "29 Jan",
+    date: "13 Mar 2026",
     image: "/blog/terrace.png",
-    link: "/terrace-waterproofing-vs-roof-waterproofing-difference",
+    link: "terrace-waterproofing-vs-roof-waterproofing-difference",
   },
   {
     title: "How Long Does a Roof Last in NYC Weather Conditions?",
     shortTitle: "Roof Lifespan in NYC Weather",
     description:
       "Learn how long roofs last in NYC weather, signs of damage, and when to call local roofing experts in Brooklyn, Queens, and Manhattan.",
-    date: "21 Jan",
+    date: "27 Feb 2026",
     image: "/blog/blog-roof-last.png",
-    link: "/professional-roof-inspections",
+    link: "professional-roof-inspections",
   },
   {
     title:
@@ -102,7 +112,7 @@ const slides = [
     shortTitle:
       "Trusted waterproofing contractors across NYC — Brooklyn, Manhattan, Queens, and The Bronx.",
     description: `Water damage is a costly issue for New Yorkers. Learn how SAS Roofing & Waterproofing protects homes and buildings with expert basement, foundation, wall, and roof waterproofing solutions across NYC.`,
-    date: "04 NOV 2025",
+    date: "27 OCT 2025",
     image: "/blog/blogImage.jpg",
     link: "best-waterproofing-contractors-in-new-york-protect-your-property-from-water-damage",
   },
@@ -118,7 +128,7 @@ const slides = [
     title: "How Waterproofing Can Save Your NYC Property from Costly Damage",
     shortTitle: "Shield your NYC property from costly water damage.",
     description: `Reliable waterproofing specialists protecting NYC properties from leaks, mold, and structural damage across Brooklyn, Manhattan, Queens, and The Bronx...`,
-    date: "11 JULY 2025",
+    date: "27 OCT 2025",
     image: "/blog/waterproofing.webp",
     link: "how-waterproofing-can-save-your-nyc-property-from-costly-damage",
   },
@@ -127,7 +137,7 @@ const slides = [
       "Trusted Roofing Contractors Serving Brooklyn, Manhattan, Queens & The Bronx",
     shortTitle: "Licensed Roofers Proudly Serving Brooklyn to The Bronx",
     description: `Dependable roofing experts providing quality installations, repairs, and waterproofing solutions across Brooklyn, Manhattan, Queens, and The Bronx...`,
-    date: "25 JUN 2025",
+    date: "27 OCT 2025",
     image: "/blog/roofing_blog.jpg",
     link: "top-roofing-contractors-brooklyn-manhattan-queens-bronx-sas-roofing-nyc",
     initialLikes: 150,
@@ -137,7 +147,7 @@ const slides = [
       "The Satisfaction Factor: Why Certified Roofing Contractors in Brooklyn Are a Smart Choice",
     shortTitle: "Certified Roofing Contractors You Can Trust",
     description: `Hiring certified roofing contractors in Brooklyn ensures quality, safety, and long-lasting protection for your property, making it a truly smart investment...`,
-    date: "10 JUN 2025",
+    date: "27 OCT 2025",
     image: "/blog/roofing-contractors.jpg",
     link: "the-satisfaction-factor-why-certified-roofing-contractors-in-brooklyn-are-a-smart-choice",
     initialLikes: 200,
@@ -147,7 +157,7 @@ const slides = [
       "How This NYC Waterproofing Contractor is Revolutionizing Home Protection",
     shortTitle: "NYC Waterproofing Innovator",
     description: `Discover how a leading NYC waterproofing contractor is transforming home protection with innovative techniques and comprehensive services, ensuring long-lasting safety and dryness for properties across the city...`,
-    date: "29 May 2025",
+    date: "27 OCT 2025",
     image: "/blog/blogImage.jpg",
     link: "How-This-NYC-Waterproofing-Contractor-is-Revolutionizing-Home-Protection",
     initialLikes: 260,
@@ -159,7 +169,7 @@ const slides = [
     description: `Trusted by New Yorkers for over 30 years, SAS Roofing &
     Waterproofing is known for dependable service, certified
     expertise, and lasting results...`,
-    date: "13 JUNE 2025",
+    date: "27 OCT 2025",
     image: "/blog/roofing.jpg",
     link: "Why-SAS-Roofing-and-Waterproofing-Is-Brooklyns-Most-Trusted-Roofing-Expert",
     initialLikes: 220,

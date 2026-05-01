@@ -102,6 +102,10 @@ const SiteMap = () => {
       name: "Blog - Terrace Waterproofing vs Roof Waterproofing",
       url: "/blog/terrace-waterproofing-vs-roof-waterproofing-difference",
     },
+    {
+      name: "Blog - What Makes a Great Roofing Contractor",
+      url: "/blog/best-roofing-contractor-nyc",
+    },
   ];
 
   return (
