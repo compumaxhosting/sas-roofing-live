@@ -137,7 +137,7 @@ export default function BlogTemplate() {
               <p>
                 <b>Step 1: Verify NYC Licensing</b> — All{" "}
                 <Link
-                  href="/blog/best-roofing-contractor-nyc"
+                  href="/"
                   className="text-[#e63a27] hover:underline"
                 >
                   Roofing Contractors
@@ -563,7 +563,7 @@ export default function BlogTemplate() {
               <p className="mt-2">
                 The{" "}
                 <Link
-                  href="/blog/best-roofing-contractor-nyc"
+                  href="/roofing-contractors-brooklyn"
                   className="text-[#e63a27] hover:underline"
                 >
                   Best Roofing Contractors in NYC
