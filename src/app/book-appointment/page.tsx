@@ -5,7 +5,7 @@ import FooterTopCTA from "@/components/FooterTopCTA";
 import Navbar from "@/components/Navbar/Navbar";
 import StickyNavbar from "@/components/StickyNavbar";
 import ContactBar from "@/components/ContactBar";
-import ContactPage from "@/components/ContactPage";
+import BookAppointmentForm from "@/components/BookAppointmentForm";
 
 const page = () => {
   return (
@@ -15,11 +15,11 @@ const page = () => {
       <ContactBar />
       <BreadCrum2
         breadcrumbItems={[]}
-        pageTitle={"Contact"}
+        pageTitle={"Book Appointment"}
         imageSrc={"/page-bgImage/roofing-service.jpg"}
       />
-     <ContactPage />
-     <FooterTopCTA />
+      <BookAppointmentForm />
+      <FooterTopCTA />
       <Footer />
       <BackToTop />
     </>
