@@ -56,12 +56,12 @@ export default function OurServicesPage({ margin }: Props) {
               <div className="md:hidden w-6 h-px bg-[#e63a27]" />
             </div>
 
-            <h2
+            <h1
               id="services-heading"
               className="text-2xl sm:text-3xl md:text-4xl xl:text-5xl font-bold text-[#003269] leading-snug font-inter"
             >
-              SAS Roofing & Waterproofing
-            </h2>
+              SAS Roofing & Waterproofing Services
+            </h1>
           </header>
 
           {/* <Link

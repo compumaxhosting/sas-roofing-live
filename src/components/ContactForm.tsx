@@ -2,6 +2,7 @@
 
 import { useForm } from "react-hook-form";
 import Swal from "sweetalert2";
+import { useState, useEffect } from "react";
 
 type ContactFormData = {
   name: string;
@@ -10,13 +11,39 @@ type ContactFormData = {
   service: string;
   otherService?: string;
   message: string;
+  captcha: string;
 };
 
 export default function ContactForm() {
   const { register, handleSubmit, watch, reset } = useForm<ContactFormData>();
   const selectedService = watch("service");
+  const [captchaNumber, setCaptchaNumber] = useState<string>("");
+  const [captchaInput, setCaptchaInput] = useState<string>("");
+
+  // Generate random numeric CAPTCHA on component mount
+  useEffect(() => {
+    generateCaptcha();
+  }, []);
+
+  const generateCaptcha = () => {
+    const randomNum = Math.floor(Math.random() * 9000) + 1000; // 4-digit number
+    setCaptchaNumber(randomNum.toString());
+  };
 
   const onSubmit = async (data: ContactFormData) => {
+    // Validate CAPTCHA
+    if (captchaInput !== captchaNumber) {
+      Swal.fire({
+        icon: "error",
+        title: "CAPTCHA Failed!",
+        text: "The CAPTCHA code you entered is incorrect. Please try again.",
+        confirmButtonColor: "#d33",
+      });
+      generateCaptcha();
+      setCaptchaInput("");
+      return;
+    }
+
     const payload = {
       ...data,
       service: data.service === "other" ? data.otherService : data.service,
@@ -38,6 +65,8 @@ export default function ContactForm() {
           background: "#fff",
         });
         reset();
+        generateCaptcha();
+        setCaptchaInput("");
       } else {
         Swal.fire({
           icon: "error",
@@ -123,6 +152,44 @@ export default function ContactForm() {
             required
             className="p-3 border border-gray-300 rounded-md"
           />
+
+          {/* CAPTCHA Section */}
+          <div className="bg-gray-100 p-4 rounded-md border border-gray-300">
+            <div className="mb-3">
+              <label className="block text-sm font-semibold text-gray-700 mb-2">
+                Security Verification (CAPTCHA)
+              </label>
+              <div className="bg-white p-3 border-2 border-gray-400 rounded-md text-center mb-3 select-none cursor-default">
+                <span className="text-2xl font-bold text-gray-800 tracking-widest">
+                  {captchaNumber}
+                </span>
+              </div>
+              <p className="text-xs text-gray-600 mb-2">
+                Enter the numbers above:
+              </p>
+              <input
+                type="text"
+                inputMode="numeric"
+                placeholder="Enter CAPTCHA"
+                value={captchaInput}
+                onChange={(e) =>
+                  setCaptchaInput(e.target.value.replace(/[^0-9]/g, ""))
+                }
+                onCopy={(e) => e.preventDefault()}
+                onPaste={(e) => e.preventDefault()}
+                onContextMenu={(e) => e.preventDefault()}
+                required
+                className="w-full p-3 border border-gray-300 rounded-md text-center text-lg tracking-widest font-semibold focus:outline-none focus:border-[#e63a27]"
+              />
+            </div>
+            <button
+              type="button"
+              onClick={generateCaptcha}
+              className="text-sm text-blue-600 hover:text-blue-800 underline"
+            >
+              Generate New CAPTCHA
+            </button>
+          </div>
 
           <button
             type="submit"

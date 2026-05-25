@@ -92,12 +92,12 @@ export default function Features({ margin }: Props) {
 
             {/* Content */}
             <div className="pt-20 pb-6">
-              <h2
+              <h3
                 id={`feature-${id}`}
                 className="text-base md:text-lg font-semibold font-inter mb-2"
               >
                 {title}
-              </h2>
+              </h3>
               <p className="text-sm md:text-base text-gray-300 font-bevietnam">
                 {description}
               </p>

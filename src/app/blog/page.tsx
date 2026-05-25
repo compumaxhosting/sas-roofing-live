@@ -188,6 +188,11 @@ const page = () => {
         imageSrc={"/page-bgImage/roofing-service.jpg"}
       />
       <BlogsOverview />
+      <div className="text-center px-5 mt-10">
+        <h1 className="text-2xl md:text-4xl font-bold text-[#003269]">
+          Roofing, Waterproofing & Masonry Blogs
+        </h1>
+      </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-3 px-5 py-5 lg:max-w-4xl xl:max-w-7xl xl:gap-8 mx-auto">
         {slides.map((slide, index) => (

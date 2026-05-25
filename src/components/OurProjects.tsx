@@ -67,12 +67,13 @@ const OurProjects: React.FC<OurProjectsProps> = ({ gallery }) => {
               aria-hidden="true"
             />
           </div>
-          <h2
+          <h1
             id="our-projects-heading"
-            className="text-2xl sm:text-3xl md:text-4xl xl:text-5xl font-bold text-[#003269] leading-snug font-inter"
+            className="text-xl sm:text-2xl md:text-3xl xl:text-4xl font-bold text-[#003269] leading-snug font-inter"
           >
-            Recently Completed Works
-          </h2>
+            Roofing, Waterproofing & Masonry Projects in Brooklyn, Manhattan,
+            Queens & The Bronx
+          </h1>
         </div>
 
         {/* CTA Button */}
@@ -99,7 +100,7 @@ const OurProjects: React.FC<OurProjectsProps> = ({ gallery }) => {
       </motion.section>
 
       {/* Gallery Section */}
-      <div className="mt-10">
+      <div>
         {isLoadingGallery ? (
           <div
             role="status"

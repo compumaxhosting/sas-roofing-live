@@ -84,12 +84,12 @@ const BreadCrum2: React.FC<BreadCrumProps> = ({
         </nav>
 
         {/* Page Title */}
-        <h1
+        <h2
           id="breadcrumb-page-title"
           className="text-3xl sm:text-4xl lg:text-6xl font-bold leading-tight"
         >
           {pageTitle}
-        </h1>
+        </h2>
       </div>
     </div>
   );

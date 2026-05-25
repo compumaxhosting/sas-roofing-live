@@ -80,15 +80,15 @@ export default function AboutCompany() {
           >
             <header className="flex items-center justify-center xl:justify-start gap-3 mb-3">
               <hr className="w-6 h-px bg-[#e63a27]" />
-              <h2 className="text-sm sm:text-base uppercase text-[#e63a27] font-semibold tracking-wider font-inter">
-                About Company
-              </h2>
+              <h1 className="text-sm sm:text-base uppercase text-[#e63a27] font-semibold tracking-wider font-inter">
+                About SAS Roofing & Waterproofing
+              </h1>
               <hr className="w-6 `h-px bg-[#e63a27]" />
             </header>
 
-            <h3 className="text-3xl sm:text-4xl lg:text-5xl font-semibold text-[#003269] leading-tight mb-4 font-inter">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-semibold text-[#003269] leading-tight mb-4 font-inter">
               Roofing Is Our Heritage & Quality Is Our Tradition
-            </h3>
+            </h2>
 
             <div className="flex flex-wrap gap-x-6 gap-y-3 mb-6 text-[#003269]">
               {features.map((feature) => (
