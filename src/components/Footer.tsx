@@ -5,7 +5,7 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import { FaFacebookF } from "react-icons/fa";
 import { FaTiktok, FaXTwitter } from "react-icons/fa6";
-import { SiHouzz, SiYelp } from "react-icons/si";
+import {  SiYelp } from "react-icons/si";
 import type { Transition } from "framer-motion";
 
 const fadeUp = (delay = 0) => ({
@@ -45,11 +45,6 @@ export default function Footer() {
       icon: <FaFacebookF />,
       label: "Facebook",
       link: "https://www.facebook.com/sasroofingwaterproofing",
-    },
-    {
-      icon: <SiHouzz />,
-      label: "Houzz",
-      link: "https://www.houzz.com/professionals/general-contractors/sas-roofing-and-waterproofing-pfvwus-pf~849386886?",
     },
     {
       icon: <SiYelp />,

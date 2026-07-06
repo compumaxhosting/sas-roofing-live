@@ -67,15 +67,7 @@ export default function TopBar() {
               >
                 <FaFacebookF aria-hidden="true" />
               </Link>
-              <Link
-                href="https://www.houzz.com/professionals/general-contractors/sas-roofing-and-waterproofing-pfvwus-pf~849386886?"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Visit our Houzz page (opens in new tab)"
-                className="px-2 text-[#e63a27] transition-colors"
-              >
-                <FaHome aria-hidden="true" />
-              </Link>
+              
               <Link
                 href="https://www.tiktok.com/@sasroofingwaterproofing?lang=en"
                 target="_blank"

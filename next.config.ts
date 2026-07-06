@@ -8,6 +8,11 @@ const nextConfig: NextConfig = {
         destination: "/",
         permanent: true,
       },
+       {
+        source: "/index.php",
+        destination: "/",
+        permanent: true,
+      },
       {
         source: "/aboutus.html",
         destination: "/aboutus",
