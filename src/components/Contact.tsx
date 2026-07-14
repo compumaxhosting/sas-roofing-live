@@ -100,13 +100,13 @@ const Contact = () => {
   return (
     <section
       aria-labelledby="contact-section-heading"
-      className="w-full flex flex-col items-center px-4 py-10 bg-white"
+      className="w-full flex flex-col items-center px-2 bg-white"
     >
       <h2 id="contact-section-heading" className="sr-only">
         Contact Information
       </h2>
 
-      <div className="w-full max-w-3xl flex flex-col gap-6">
+      <div className="w-full max-w-3xl flex flex-col gap-4">
         {contactItems.map((item, index) => (
           <ContactCard
             key={index}
