@@ -32,7 +32,7 @@ export default function ContactPage() {
               {/* QR Code Container */}
               <div className="relative mx-auto my-4 aspect-square w-full max-w-[160px] overflow-hidden rounded-xl bg-white p-2">
                 <Image
-                  src="/contactbar/scanner-review.jpg"
+                  src="/scanner-review.jpg"
                   alt="Scan to leave a review"
                   fill
                   className="object-contain"
