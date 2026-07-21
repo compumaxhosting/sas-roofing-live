@@ -11,15 +11,27 @@ import React from "react";
 
 const slides = [
   {
-  title: "What Makes a Great Roofing Contractor in Brooklyn, Queens & Manhattan in 2026",
-  shortTitle: "NYC Roofing Guide 2026",
-  description:
-    "Discover what separates great roofing contractors in Brooklyn, Queens & Manhattan in 2026—licensing, warranties, local expertise, and red flags to avoid.",
+    title:
+      "Basement Waterproofing Brooklyn: 10 Warning Signs Every Homeowner Should Never Ignore",
+    shortTitle: "Basement Waterproofing Brooklyn",
+    description:
+      "Basement Waterproofing Brooklyn: 10 Warning Signs Every Homeowner Should Never Ignore.",
+    date: "21 July 2026",
+    image: "/blog/Basement Waterproofing Brooklyn.jpg",
+    link: "basement-waterproofing-brooklyn-warning-signs",
+    initialLikes: 0,
+  },
+  {
+    title:
+      "What Makes a Great Roofing Contractor in Brooklyn, Queens & Manhattan in 2026",
+    shortTitle: "NYC Roofing Guide 2026",
+    description:
+      "Discover what separates great roofing contractors in Brooklyn, Queens & Manhattan in 2026—licensing, warranties, local expertise, and red flags to avoid.",
     date: "01 May 2026",
-  image: "/blog/roofing-contractors.webp",
-  link: "best-roofing-contractor-nyc",
-  initialLikes: 0,
-},
+    image: "/blog/roofing-contractors.webp",
+    link: "best-roofing-contractor-nyc",
+    initialLikes: 0,
+  },
   {
     title:
       "Terrace Waterproofing vs Roof Waterproofing – What’s the Difference?",
