@@ -10,11 +10,6 @@ const reviewLogos = [
     href: "https://www.facebook.com/kalapania78",
   },
   {
-    alt: "Houzz",
-    src: "/reviews/houzz.png",
-    href: "https://www.houzz.com/professionals/general-contractors/sas-roofing-and-waterproofing-pfvwus-pf~849386886?",
-  },
-  {
     alt: "Yellow Pages",
     src: "/reviews/yp.png",
     href: "https://www.yellowpages.com/brooklyn-ny/mip/sas-roofing-waterproofing-465411323",
@@ -26,7 +21,7 @@ const reviewLogos = [
   },
   {
     alt: "Review us on Google",
-    src: "/footer/review-us-on-google.jpg",
+    src: "/Footer/review-us-on-google.jpg",
     href: "https://g.page/r/Cdj4RS1sCCdVEBM/review",
   },
   {

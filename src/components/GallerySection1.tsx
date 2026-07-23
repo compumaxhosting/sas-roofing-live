@@ -10,6 +10,8 @@ import "swiper/css/navigation";
 import "swiper/css/autoplay";
 
 const images = [
+  "/Gallery/gallery-top-1.jpeg",
+  "/Gallery/gallery1.jpg",
   "/Gallery/gallery1.jpg",
   "/Gallery/gallery2.jpg",
   "/Hero-Sec/slider-6.jpg",
@@ -64,12 +66,12 @@ function GalleryItem({
         <button
           onClick={() => onZoom(index)}
           className="w-10 h-10 bg-transparent border border-white flex items-center justify-center hover:bg-[#e63a27] hover:border-[#e63a27] transition-colors"
-          aria-label={`Zoom in on image ${index + 1}: ${alt}`}
+          aria-label="SAS Roofing project"
           type="button"
         >
           <Image
             src="/Gallery/search.png"
-            alt="Zoom icon"
+            alt="SAS Roofing project"
             width={20}
             height={20}
           />
@@ -233,7 +235,7 @@ export default function GallerySection() {
               src={src}
               width={i === 2 ? 700 : 370}
               height={370}
-              alt={`Gallery image ${i + 1}`}
+              alt="SAS Roofing Project"
               index={i}
               onZoom={handleZoom}
             />
@@ -246,7 +248,7 @@ export default function GallerySection() {
               src={src}
               width={i === 0 ? 700 : 370}
               height={370}
-              alt={`Gallery image ${i + 4}`}
+              alt="SAS Roofing Project"
               index={i + 3}
               onZoom={handleZoom}
             />
@@ -280,7 +282,7 @@ export default function GallerySection() {
               >
                 <Image
                   src={img}
-                  alt={`Gallery image ${idx + 1}`}
+                  alt="SAS Roofing Project"
                   fill
                   loading="lazy"
                   className="object-cover w-full h-full"
@@ -297,7 +299,7 @@ export default function GallerySection() {
                   >
                     <Image
                       src="/Gallery/search.png"
-                      alt="Zoom icon"
+                      alt="SAS Roofing project"
                       width={20}
                       height={20}
                     />
