@@ -106,6 +106,10 @@ const SiteMap = () => {
       name: "Blog - What Makes a Great Roofing Contractor",
       url: "/blog/best-roofing-contractor-nyc",
     },
+    {
+      name: "Blog - Masonry Contractor Brooklyn NY: 10 Expert Services",
+      url: "/blog/masonry-contractor-brooklyn-ny-expert-services",
+    },
   ];
 
   return (

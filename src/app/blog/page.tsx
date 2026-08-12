@@ -12,6 +12,17 @@ import React from "react";
 const slides = [
   {
     title:
+      "Masonry Contractor Brooklyn NY: 10 Expert Services Every Property Owner Should Know",
+    shortTitle: "10 Expert Masonry Services NYC",
+    description:
+      "A comprehensive guide to masonry services in Brooklyn NY, Manhattan, and Queens. Learn about brick repair, repointing, stone masonry, brownstone restoration, facade repair, and chimney work.",
+    date: "12 Aug 2026",
+    image: "/blog/masonry-contractor-brooklyn-ny-expert-services.webp",
+    link: "masonry-contractor-brooklyn-ny-expert-services",
+    initialLikes: 185,
+  },
+  {
+    title:
       "Basement Waterproofing Brooklyn: 10 Warning Signs Every Homeowner Should Never Ignore",
     shortTitle: "Basement Waterproofing Brooklyn",
     description:

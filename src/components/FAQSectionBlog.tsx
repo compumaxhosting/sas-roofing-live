@@ -4,7 +4,17 @@ import { useState, KeyboardEvent } from "react";
 import { ChevronDownIcon } from "@heroicons/react/24/solid";
 import { AnimatePresence, motion } from "framer-motion";
 
-const faqs = [
+export interface FAQItem {
+  question: string;
+  answer: string;
+}
+
+interface FAQSectionProps {
+  faqs?: FAQItem[];
+  title?: string;
+}
+
+const defaultFaqs: FAQItem[] = [
   {
     question: "Do you offer emergency roof repairs in Brooklyn or The Bronx?",
     answer:
@@ -23,7 +33,10 @@ const faqs = [
   },
 ];
 
-export default function FAQSection() {
+export default function FAQSection({
+  faqs = defaultFaqs,
+  title = "Frequently Asked Questions",
+}: FAQSectionProps) {
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
 
   const toggleFAQ = (index: number) => {
@@ -42,12 +55,13 @@ export default function FAQSection() {
 
   return (
     <section
-      className="max-w-4xl mx-auto px-4 py-12 font-inter"
+      id="frequently-asked-questions"
+      className="max-w-4xl mx-auto px-4 py-12 font-inter scroll-mt-20"
       aria-labelledby="faq-heading"
     >
       <header className="text-center mb-8">
         <h1 id="faq-heading" className="text-3xl font-bold text-[#e63a27]">
-          Frequently Asked Questions
+          {title}
         </h1>
       </header>
 

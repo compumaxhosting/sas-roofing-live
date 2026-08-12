@@ -80,6 +80,10 @@ export function BlogsOverview() {
       name: "Why SAS Roofing and Waterproofing Is Brooklyn's Most Trusted Roofing Expert?",
       path: "/blog/Why-SAS-Roofing-and-Waterproofing-Is-Brooklyns-Most-Trusted-Roofing-Expert",
     },
+    {
+      name: "Masonry Contractor Brooklyn NY: 10 Expert Services Every Property Owner Should Know",
+      path: "/blog/masonry-contractor-brooklyn-ny-expert-services",
+    },
   ];
   
   useEffect(() => {
