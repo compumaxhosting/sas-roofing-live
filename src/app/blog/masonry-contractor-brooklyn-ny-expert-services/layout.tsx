@@ -30,7 +30,7 @@ export const metadata: Metadata = {
     siteName: "SAS Roofing & Waterproofing",
     images: [
       {
-        url: "https://www.sasroofingwaterproofing.com/blog/masonry-contractor-brooklyn-ny.webp",
+        url: "https://www.sasroofingwaterproofing.com/blog/masonry-contractor-brooklyn-ny-expert-services.webp",
         width: 1200,
         height: 630,
         alt: "Masonry Contractor Brooklyn NY - SAS Roofing & Waterproofing",
@@ -43,7 +43,7 @@ export const metadata: Metadata = {
     description:
       "Expert masonry services in Brooklyn NY, including brickwork, stonework, concrete, repairs and restoration from SAS Roofing & Waterproofing.",
     images: [
-      "https://www.sasroofingwaterproofing.com/blog/masonry-contractor-brooklyn-ny.webp",
+      "https://www.sasroofingwaterproofing.com/blog/masonry-contractor-brooklyn-ny-expert-services.webp",
     ],
   },
 };
