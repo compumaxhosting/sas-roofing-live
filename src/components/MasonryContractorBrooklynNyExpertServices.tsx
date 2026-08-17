@@ -136,7 +136,7 @@ export default function MasonryContractorBrooklynNyExpertServices() {
                 id="main-blog-heading"
                 className="text-2xl md:text-4xl lg:text-4xl font-extrabold font-inter text-[#003269] leading-tight mb-5"
               >
-                <Link href="https://www.sasroofingwaterproofing.com/" className="hover:text-[#e63a27] transition-colors">Masonry Contractor Brooklyn NY</Link>: 10 Expert Services Every Property Owner Should Know
+                Masonry Contractor Brooklyn NY: 10 Expert Services Every Property Owner Should Know
               </h1>
 
               <p className="text-gray-700 text-sm md:text-base leading-relaxed mb-4">
