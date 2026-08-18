@@ -63,7 +63,14 @@ export default function RoofingServicesBrooklynQueensManhattan() {
                 Roofing Services in Brooklyn, Queens & Manhattan: Complete 2026 Guide to Roof Repair & Replacement
               </h1>
               <p className="text-sm md:text-base text-gray-700 font-bevietnam">
-                Roofing problems in New York City can quickly become expensive when leaks, damaged flashing, worn membranes, or storm damage are ignored. Professional roofing contractors in Brooklyn, Queens, and Manhattan can inspect the roof, identify the cause of the problem, and recommend repair or replacement based on the roof&apos;s actual condition.
+                Roofing problems in New York City can quickly become expensive when leaks, damaged flashing, worn membranes, or storm damage are ignored. Professional{" "}
+                <Link
+                  href="/roofing-contractors-brooklyn"
+                  className="text-[#003269] font-semibold underline hover:text-[#e63a27] transition"
+                >
+                  roofing contractors in Brooklyn, Queens, and Manhattan
+                </Link>{" "}
+                can inspect the roof, identify the cause of the problem, and recommend repair or replacement based on the roof&apos;s actual condition.
               </p>
               <p className="text-sm md:text-base text-gray-700 font-bevietnam mt-4">
                 Whether you need roof repair, roof replacement, emergency roofing, commercial roofing, residential roofing, or a roof inspection, choosing the right roofing professional is essential for protecting your property.
@@ -81,16 +88,16 @@ export default function RoofingServicesBrooklynQueensManhattan() {
             <h3 className="text-xl md:text-2xl font-bold mb-3">
               Table of Contents
             </h3>
-            <ul className="list-disc list-inside text-gray-700 text-base font-bevietnam space-y-1">
-              <li>What Roofing Services Include</li>
-              <li>Roof Repair vs. Roof Replacement</li>
-              <li>Common Roofing Problems in NYC</li>
-              <li>Flat Roof Repair in Brooklyn, Queens & Manhattan</li>
-              <li>How the Roofing Process Works</li>
-              <li>Cost Factors</li>
-              <li>Maintenance Tips</li>
-              <li>Frequently Asked Questions</li>
-              <li>Why Choose a Professional Roofing Contractor</li>
+            <ul className="list-disc list-inside text-[#003269] text-base font-bevietnam space-y-1">
+              <li><a href="#services" className="hover:underline hover:text-[#e63a27] transition">What Roofing Services Include</a></li>
+              <li><a href="#repair-vs-replacement" className="hover:underline hover:text-[#e63a27] transition">Roof Repair vs. Roof Replacement</a></li>
+              <li><a href="#common-problems" className="hover:underline hover:text-[#e63a27] transition">Common Roofing Problems in NYC</a></li>
+              <li><a href="#flat-roof-repair" className="hover:underline hover:text-[#e63a27] transition">Flat Roof Repair in Brooklyn, Queens & Manhattan</a></li>
+              <li><a href="#process" className="hover:underline hover:text-[#e63a27] transition">How the Roofing Process Works</a></li>
+              <li><a href="#cost" className="hover:underline hover:text-[#e63a27] transition">Cost Factors</a></li>
+              <li><a href="#maintenance" className="hover:underline hover:text-[#e63a27] transition">Maintenance Tips</a></li>
+              <li><a href="#faq" className="hover:underline hover:text-[#e63a27] transition">Frequently Asked Questions</a></li>
+              <li><a href="#why-choose" className="hover:underline hover:text-[#e63a27] transition">Why Choose a Professional Roofing Contractor</a></li>
             </ul>
           </motion.div>
 
@@ -102,11 +109,18 @@ export default function RoofingServicesBrooklynQueensManhattan() {
               variants={fadeUp}
               className="space-y-4"
             >
-              <h2 className="text-3xl md:text-4xl font-bold">
+              <h2 id="services" className="text-3xl md:text-4xl font-bold scroll-mt-24">
                 What Roofing Services Include
               </h2>
               <p className="text-gray-700 text-base font-bevietnam mt-4">
-                <b>Quick Answer:</b> Roofing services cover inspection, maintenance, repairs, replacement, waterproofing, flashing work, leak detection, storm-damage repairs, and installation of roofing systems for residential and commercial properties. The appropriate service depends on the roof&apos;s material, age, condition, damage, and building requirements.
+                <b>Quick Answer:</b>{" "}
+                <Link
+                  href="/roofing-contractors-brooklyn"
+                  className="text-[#003269] font-semibold underline hover:text-[#e63a27] transition"
+                >
+                  Roofing services
+                </Link>{" "}
+                cover inspection, maintenance, repairs, replacement, waterproofing, flashing work, leak detection, storm-damage repairs, and installation of roofing systems for residential and commercial properties. The appropriate service depends on the roof&apos;s material, age, condition, damage, and building requirements.
               </p>
               <p className="text-gray-700 text-base font-bevietnam">
                 For homeowners and property managers, common services include:
@@ -116,7 +130,7 @@ export default function RoofingServicesBrooklynQueensManhattan() {
                 <li><b>Roof Repair:</b> Fixing localized leaks, damaged shingles, flashing, penetrations, and other defects.</li>
                 <li><b>Roof Replacement:</b> Removing an aging or severely damaged roof and installing a new roofing system.</li>
                 <li><b>Emergency Roofing:</b> Temporary or permanent solutions for active leaks and sudden storm damage.</li>
-                <li><b>Flat Roof Repair:</b> Addressing membrane damage, ponding water, seams, flashing, and drainage problems.</li>
+                <li id="flat-roof-repair" className="scroll-mt-24"><b>Flat Roof Repair:</b> Addressing membrane damage, ponding water, seams, flashing, and drainage problems.</li>
                 <li><b>Commercial Roofing:</b> Roofing solutions designed for apartment buildings, offices, retail properties, warehouses, and other commercial structures.</li>
               </ul>
               <p className="text-gray-700 text-base font-bevietnam mt-4">
@@ -131,7 +145,7 @@ export default function RoofingServicesBrooklynQueensManhattan() {
               variants={fadeUp}
               className="space-y-3"
             >
-              <h2 className="text-3xl md:text-4xl font-bold mb-5">
+              <h2 id="repair-vs-replacement" className="text-3xl md:text-4xl font-bold mb-5 scroll-mt-24">
                 Roof Repair vs. Roof Replacement: Which Do You Need?
               </h2>
               <p className="text-gray-700 text-base font-bevietnam mt-4">
@@ -168,7 +182,7 @@ export default function RoofingServicesBrooklynQueensManhattan() {
               variants={fadeUp}
               className="space-y-3"
             >
-              <h2 className="text-3xl md:text-4xl font-bold mb-5">
+              <h2 id="common-problems" className="text-3xl md:text-4xl font-bold mb-5 scroll-mt-24">
                 Common Roofing Problems in Brooklyn, Queens & Manhattan
               </h2>
               <p className="text-gray-700 text-base font-bevietnam mt-4">
@@ -203,7 +217,7 @@ export default function RoofingServicesBrooklynQueensManhattan() {
               variants={fadeUp}
               className="space-y-3"
             >
-              <h2 className="text-3xl md:text-4xl font-bold mb-5">
+              <h2 id="process" className="text-3xl md:text-4xl font-bold mb-5 scroll-mt-24">
                 How the Roofing Process Works
               </h2>
               <p className="text-gray-700 text-base font-bevietnam">
@@ -230,7 +244,7 @@ export default function RoofingServicesBrooklynQueensManhattan() {
               variants={fadeUp}
               className="space-y-3"
             >
-              <h2 className="text-3xl md:text-4xl font-bold mb-5">
+              <h2 id="cost" className="text-3xl md:text-4xl font-bold mb-5 scroll-mt-24">
                 What Does Roof Repair or Replacement Cost?
               </h2>
               <p className="text-gray-700 text-base font-bevietnam">
@@ -260,7 +274,7 @@ export default function RoofingServicesBrooklynQueensManhattan() {
               variants={fadeUp}
               className="space-y-3"
             >
-              <h2 className="text-3xl md:text-4xl font-bold mb-5">
+              <h2 id="maintenance" className="text-3xl md:text-4xl font-bold mb-5 scroll-mt-24">
                 Roof Maintenance Tips for NYC Property Owners
               </h2>
               <p className="text-gray-700 text-base font-bevietnam">
@@ -287,7 +301,7 @@ export default function RoofingServicesBrooklynQueensManhattan() {
               variants={fadeUp}
               className="space-y-3"
             >
-              <h2 className="text-3xl md:text-4xl font-bold mb-5">
+              <h2 id="why-choose" className="text-3xl md:text-4xl font-bold mb-5 scroll-mt-24">
                 Why Professional Roofing Services Matter
               </h2>
               <p className="text-gray-700 text-base font-bevietnam">
@@ -299,63 +313,63 @@ export default function RoofingServicesBrooklynQueensManhattan() {
             </motion.div>
 
             <motion.div
-  initial="hidden"
-  whileInView="visible"
-  viewport={{ once: true, amount: 0.1 }}
-  variants={fadeUp}
-  className="space-y-4"
->
-  <h2 className="text-2xl md:text-3xl font-bold text-slate-800 mb-6">
-    FAQ
-  </h2>
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.1 }}
+              variants={fadeUp}
+              className="space-y-4"
+            >
+              <h2 id="faq" className="text-2xl md:text-3xl font-bold text-slate-800 mb-6 scroll-mt-24">
+                FAQ
+              </h2>
 
-  <div className="space-y-3">
-    <details className="group border border-gray-400 rounded-md bg-white overflow-hidden">
-      <summary className="cursor-pointer list-item font-bold text-slate-800 p-4 outline-none hover:bg-gray-50">
-        How do I know if I need roof repair or replacement?
-      </summary>
-      <p className="px-4 pb-4 text-gray-700 text-base font-bevietnam border-t border-gray-100 pt-3 mt-1">
-        A roof inspection is the best starting point. Minor, localized damage can often be repaired, while widespread deterioration, repeated leaks, or extensive material failure may justify replacement. The roof's age, condition, previous repairs, and underlying deck should all be considered before making a decision.
-      </p>
-    </details>
+              <div className="space-y-3">
+                <details className="group border border-gray-400 rounded-md bg-white overflow-hidden">
+                  <summary className="cursor-pointer list-item font-bold text-slate-800 p-4 outline-none hover:bg-gray-50">
+                    How do I know if I need roof repair or replacement?
+                  </summary>
+                  <p className="px-4 pb-4 text-gray-700 text-base font-bevietnam border-t border-gray-100 pt-3 mt-1">
+                    A roof inspection is the best starting point. Minor, localized damage can often be repaired, while widespread deterioration, repeated leaks, or extensive material failure may justify replacement. The roof's age, condition, previous repairs, and underlying deck should all be considered before making a decision.
+                  </p>
+                </details>
 
-    <details className="group border border-gray-400 rounded-md bg-white overflow-hidden">
-      <summary className="cursor-pointer list-item font-bold text-slate-800 p-4 outline-none hover:bg-gray-50">
-        How quickly should I fix a roof leak?
-      </summary>
-      <p className="px-4 pb-4 text-gray-700 text-base font-bevietnam border-t border-gray-100 pt-3 mt-1">
-        As soon as possible. Even a small leak can allow water to reach insulation, ceilings, walls, electrical components, or structural materials. If water is actively entering the building, emergency roofing service can help reduce further damage while a permanent repair is planned.
-      </p>
-    </details>
+                <details className="group border border-gray-400 rounded-md bg-white overflow-hidden">
+                  <summary className="cursor-pointer list-item font-bold text-slate-800 p-4 outline-none hover:bg-gray-50">
+                    How quickly should I fix a roof leak?
+                  </summary>
+                  <p className="px-4 pb-4 text-gray-700 text-base font-bevietnam border-t border-gray-100 pt-3 mt-1">
+                    As soon as possible. Even a small leak can allow water to reach insulation, ceilings, walls, electrical components, or structural materials. If water is actively entering the building, emergency roofing service can help reduce further damage while a permanent repair is planned.
+                  </p>
+                </details>
 
-    <details className="group border border-gray-400 rounded-md bg-white overflow-hidden">
-      <summary className="cursor-pointer list-item font-bold text-slate-800 p-4 outline-none hover:bg-gray-50">
-        Do flat roofs require special maintenance?
-      </summary>
-      <p className="px-4 pb-4 text-gray-700 text-base font-bevietnam border-t border-gray-100 pt-3 mt-1">
-        Yes. Flat and low-slope roofs depend heavily on effective drainage, seams, flashing, membranes, and penetrations. Ponding water, membrane damage, blocked drains, and deteriorated flashing should be addressed promptly. NYC Building Code provisions specifically address low-slope roof systems and their wind-resistance requirements.
-      </p>
-    </details>
+                <details className="group border border-gray-400 rounded-md bg-white overflow-hidden">
+                  <summary className="cursor-pointer list-item font-bold text-slate-800 p-4 outline-none hover:bg-gray-50">
+                    Do flat roofs require special maintenance?
+                  </summary>
+                  <p className="px-4 pb-4 text-gray-700 text-base font-bevietnam border-t border-gray-100 pt-3 mt-1">
+                    Yes. Flat and low-slope roofs depend heavily on effective drainage, seams, flashing, membranes, and penetrations. Ponding water, membrane damage, blocked drains, and deteriorated flashing should be addressed promptly. NYC Building Code provisions specifically address low-slope roof systems and their wind-resistance requirements.
+                  </p>
+                </details>
 
-    <details className="group border border-gray-400 rounded-md bg-white overflow-hidden">
-      <summary className="cursor-pointer list-item font-bold text-slate-800 p-4 outline-none hover:bg-gray-50">
-        What should I do after storm damage?
-      </summary>
-      <p className="px-4 pb-4 text-gray-700 text-base font-bevietnam border-t border-gray-100 pt-3 mt-1">
-        Visually inspect the property from a safe location and look for obvious missing or damaged roofing materials, leaks, or interior water intrusion. Avoid climbing onto a damaged roof. Contact a professional roofing contractor for an inspection and document visible damage for your records.
-      </p>
-    </details>
+                <details className="group border border-gray-400 rounded-md bg-white overflow-hidden">
+                  <summary className="cursor-pointer list-item font-bold text-slate-800 p-4 outline-none hover:bg-gray-50">
+                    What should I do after storm damage?
+                  </summary>
+                  <p className="px-4 pb-4 text-gray-700 text-base font-bevietnam border-t border-gray-100 pt-3 mt-1">
+                    Visually inspect the property from a safe location and look for obvious missing or damaged roofing materials, leaks, or interior water intrusion. Avoid climbing onto a damaged roof. Contact a professional roofing contractor for an inspection and document visible damage for your records.
+                  </p>
+                </details>
 
-    <details className="group border border-gray-400 rounded-md bg-white overflow-hidden">
-      <summary className="cursor-pointer list-item font-bold text-slate-800 p-4 outline-none hover:bg-gray-50">
-        How often should I have my roof inspected?
-      </summary>
-      <p className="px-4 pb-4 text-gray-700 text-base font-bevietnam border-t border-gray-100 pt-3 mt-1">
-        Inspection frequency depends on the roof's age, material, condition, building type, and exposure. Property owners should also consider an inspection after significant weather events or whenever signs of leakage appear. Preventive inspections can identify problems before they become larger repairs.
-      </p>
-    </details>
-  </div>
-</motion.div>
+                <details className="group border border-gray-400 rounded-md bg-white overflow-hidden">
+                  <summary className="cursor-pointer list-item font-bold text-slate-800 p-4 outline-none hover:bg-gray-50">
+                    How often should I have my roof inspected?
+                  </summary>
+                  <p className="px-4 pb-4 text-gray-700 text-base font-bevietnam border-t border-gray-100 pt-3 mt-1">
+                    Inspection frequency depends on the roof's age, material, condition, building type, and exposure. Property owners should also consider an inspection after significant weather events or whenever signs of leakage appear. Preventive inspections can identify problems before they become larger repairs.
+                  </p>
+                </details>
+              </div>
+            </motion.div>
 
             <motion.div
               initial="hidden"
@@ -368,7 +382,13 @@ export default function RoofingServicesBrooklynQueensManhattan() {
                 Roofing Services from SAS Roofing & Waterproofing
               </h2>
               <p className="text-gray-700 text-base font-bevietnam">
-                SAS Roofing & Waterproofing provides roofing solutions for property owners seeking dependable roofing services in Brooklyn, Queens, and Manhattan. From roof inspections and leak repairs to flat roof work, storm-damage repairs, and roof replacement, the goal is to identify the actual problem and recommend an appropriate solution.
+                <Link
+                  href="/"
+                  className="text-[#003269] font-semibold underline hover:text-[#e63a27] transition"
+                >
+                  SAS Roofing & Waterproofing
+                </Link>{" "}
+                provides roofing solutions for property owners seeking dependable roofing services in Brooklyn, Queens, and Manhattan. From roof inspections and leak repairs to flat roof work, storm-damage repairs, and roof replacement, the goal is to identify the actual problem and recommend an appropriate solution.
               </p>
               <p className="text-gray-700 text-base font-bevietnam mt-4">
                 Whether you own a residential property, manage a commercial building, or need urgent assistance with a roof leak, professional evaluation can help you make an informed decision. Contact SAS Roofing & Waterproofing to discuss your roofing needs, schedule an inspection, or request a project estimate.
@@ -437,7 +457,6 @@ export default function RoofingServicesBrooklynQueensManhattan() {
           </div>
         </div>
       </section>
-
     </>
   );
 }
