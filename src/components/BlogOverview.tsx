@@ -12,6 +12,10 @@ export function BlogsOverview() {
   const pathname = usePathname();
 
   const plans = [
+     {
+      name: "Roofing Services in Brooklyn, Queens & Manhattan: Complete 2026 Guide to Roof Repair & Replacement",
+      path: "/blog/roofing-services-brooklyn-queens-manhattan",
+    }, 
     {
       name: "What Makes a Great Roofing Contractor in Brooklyn, Queens & Manhattan",
       path: "/blog/best-roofing-contractor-nyc",

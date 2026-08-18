@@ -12,6 +12,17 @@ import React from "react";
 const slides = [
   {
     title:
+      "Roofing Services in Brooklyn, Queens & Manhattan: Complete 2026 Guide to Roof Repair & Replacement",
+    shortTitle: "NYC Roofing Guide: Repair & Replacement",
+    description:
+      "A comprehensive 2026 guide to roofing services in Brooklyn, Queens, and Manhattan. Learn about roof repair vs. replacement, flat roof solutions, common NYC roofing problems, costs, and maintenance tips.",
+    date: "18 Aug 2026",
+    image: "/blog/roofing-services-brooklyn-queens-manhattan.webp",
+    link: "roofing-services-brooklyn-queens-manhattan",
+    initialLikes: 0,
+  },
+  {
+    title:
       "Masonry Contractor Brooklyn NY: 10 Expert Services Every Property Owner Should Know",
     shortTitle: "10 Expert Masonry Services NYC",
     description:
