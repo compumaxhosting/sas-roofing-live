@@ -12,14 +12,18 @@ export function BlogsOverview() {
   const pathname = usePathname();
 
   const plans = [
-     {
+    {
+      name: "How to Choose the Best Waterproofing Contractor in NYC: 10 Questions to Ask Before Hiring",
+      path: "/blog/how-to-choose-waterproofing-contractor-nyc",
+    },
+    {
       name: "Roofing Services in Brooklyn, Queens & Manhattan: Complete 2026 Guide to Roof Repair & Replacement",
       path: "/blog/roofing-services-brooklyn-queens-manhattan",
-    }, 
+    },
     {
       name: "What Makes a Great Roofing Contractor in Brooklyn, Queens & Manhattan",
       path: "/blog/best-roofing-contractor-nyc",
-    }, 
+    },
     {
       name: "Terrace Waterproofing vs Roof Waterproofing",
       path: "/blog/terrace-waterproofing-vs-roof-waterproofing-difference",
@@ -89,7 +93,7 @@ export function BlogsOverview() {
       path: "/blog/masonry-contractor-brooklyn-ny-expert-services",
     },
   ];
-  
+
   useEffect(() => {
     setIsMounted(true);
   }, []);

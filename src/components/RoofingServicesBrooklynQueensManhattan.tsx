@@ -152,7 +152,7 @@ export default function RoofingServicesBrooklynQueensManhattan() {
                 <b>Quick Answer:</b> Repair is usually appropriate when damage is limited and the underlying roof remains serviceable. Replacement may make more sense when the roof is extensively damaged, repeatedly leaking, nearing the end of its useful life, or has widespread deterioration. A professional inspection is the best way to determine which option is appropriate.
               </p>
               <div className="overflow-x-auto mt-6">
-                <table className="w-full min-w-[500px] border-collapse border border-gray-300 text-left text-sm md:text-base text-gray-700 font-bevietnam">
+                <table className="w-full min-w-125 border-collapse border border-gray-300 text-left text-sm md:text-base text-gray-700 font-bevietnam">
                   <thead className="bg-gray-100 text-[#003269]">
                     <tr>
                       <th className="border border-gray-300 p-3">Situation</th>
@@ -329,7 +329,7 @@ export default function RoofingServicesBrooklynQueensManhattan() {
                     How do I know if I need roof repair or replacement?
                   </summary>
                   <p className="px-4 pb-4 text-gray-700 text-base font-bevietnam border-t border-gray-100 pt-3 mt-1">
-                    A roof inspection is the best starting point. Minor, localized damage can often be repaired, while widespread deterioration, repeated leaks, or extensive material failure may justify replacement. The roof's age, condition, previous repairs, and underlying deck should all be considered before making a decision.
+                    A roof inspection is the best starting point. Minor, localized damage can often be repaired, while widespread deterioration, repeated leaks, or extensive material failure may justify replacement. The roof&apos;s age, condition, previous repairs, and underlying deck should all be considered before making a decision.
                   </p>
                 </details>
 
@@ -365,7 +365,7 @@ export default function RoofingServicesBrooklynQueensManhattan() {
                     How often should I have my roof inspected?
                   </summary>
                   <p className="px-4 pb-4 text-gray-700 text-base font-bevietnam border-t border-gray-100 pt-3 mt-1">
-                    Inspection frequency depends on the roof's age, material, condition, building type, and exposure. Property owners should also consider an inspection after significant weather events or whenever signs of leakage appear. Preventive inspections can identify problems before they become larger repairs.
+                    Inspection frequency depends on the roof&apos;s age, material, condition, building type, and exposure. Property owners should also consider an inspection after significant weather events or whenever signs of leakage appear. Preventive inspections can identify problems before they become larger repairs.
                   </p>
                 </details>
               </div>

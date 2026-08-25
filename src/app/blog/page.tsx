@@ -12,6 +12,17 @@ import React from "react";
 const slides = [
   {
     title:
+      "How to Choose the Best Waterproofing Contractor in NYC: 10 Questions to Ask Before Hiring",
+    shortTitle: "Choosing a Waterproofing Contractor in NYC",
+    description:
+      "Learn how to choose the best waterproofing contractor in NYC. Discover 10 essential questions about experience, leak diagnosis, pricing, warranties, credentials, and waterproofing solutions for Brooklyn, Queens, and Manhattan properties.",
+    date: "25 Aug 2026",
+    image: "/blog/waterproofing-contractor-nyc.jpeg",
+    link: "how-to-choose-waterproofing-contractor-nyc",
+    initialLikes: 0,
+  },
+  {
+    title:
       "Roofing Services in Brooklyn, Queens & Manhattan: Complete 2026 Guide to Roof Repair & Replacement",
     shortTitle: "NYC Roofing Guide: Repair & Replacement",
     description:
