@@ -13,6 +13,10 @@ export function BlogsOverview() {
 
   const plans = [
     {
+      name: "How to Choose a Reliable Masonry Contractor in Brooklyn",
+      path: "/blog/reliable-masonry-contractor-brooklyn-ny",
+    },
+    {
       name: "How to Choose the Best Waterproofing Contractor in NYC: 10 Questions to Ask Before Hiring",
       path: "/blog/how-to-choose-waterproofing-contractor-nyc",
     },

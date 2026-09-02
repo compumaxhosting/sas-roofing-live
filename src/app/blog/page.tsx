@@ -11,6 +11,16 @@ import React from "react";
 
 const slides = [
   {
+    title: "How to Choose a Reliable Masonry Contractor in Brooklyn, New York",
+    shortTitle: "Reliable Brooklyn Masonry Contractor",
+    description:
+      "Learn how to compare masonry contractors in Brooklyn, verify credentials, understand repair costs, identify common brick and mortar problems, and protect your property.",
+    date: "02 Sep 2026",
+    image: "/blog/masonry-services-brooklyn.webp",
+    link: "reliable-masonry-contractor-brooklyn-ny",
+    initialLikes: 0,
+  },
+  {
     title:
       "How to Choose the Best Waterproofing Contractor in NYC: 10 Questions to Ask Before Hiring",
     shortTitle: "Choosing a Waterproofing Contractor in NYC",

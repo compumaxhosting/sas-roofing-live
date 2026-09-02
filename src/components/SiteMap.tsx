@@ -110,6 +110,10 @@ const SiteMap = () => {
       name: "Blog - Masonry Contractor Brooklyn NY: 10 Expert Services",
       url: "/blog/masonry-contractor-brooklyn-ny-expert-services",
     },
+    {
+      name: "Blog - How to Choose a Reliable Masonry Contractor in Brooklyn",
+      url: "/blog/reliable-masonry-contractor-brooklyn-ny",
+    },
   ];
 
   return (
