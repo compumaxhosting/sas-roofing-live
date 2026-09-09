@@ -14,7 +14,20 @@ export default function ReliableMasonryContractorBrooklynPage() {
       <Navbar />
       <StickyNavbar />
       <ContactBar />
-      <BreadCrum2 breadcrumbItems={[]} pageTitle="BLOGS" imageSrc="/page-bgImage/roofing-service.jpg" />
+      <BreadCrum2
+        breadcrumbItems={[
+          {
+            label: "Home",
+            href: "/",
+          },
+          {
+            label: "Blog",
+            href: "/blog",
+          },
+        ]}
+        pageTitle="BLOGS"
+        imageSrc="/page-bgImage/roofing-service.jpg"
+      />
       <BlogsOverview />
       <ReliableMasonryContractorBrooklyn />
       <FooterTopCTA />

@@ -17,21 +17,25 @@ import Link from "next/link";
 import React from "react";
 import { FaTiktok } from "react-icons/fa6";
 
-export default function SidebarOverlay({ onClose }: { onClose: () => void }) {
+export default function SidebarOverlay({
+  onClose,
+}: {
+  onClose: () => void;
+}) {
   const [form, setForm] = useState({
     name: "",
     email: "",
     phoneNumber: "",
     message: "",
     service: "",
-    otherService: "", // ✅ Added
-  });  
+    otherService: "",
+  });
 
   const asideRef = useRef<HTMLElement>(null);
   const initialFocusRef = useRef<HTMLButtonElement>(null);
   const phoneNumberErrorRef = useRef<HTMLSpanElement>(null);
 
-   const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
 
     if (form.phoneNumber.length < 10 || form.phoneNumber.length > 15) {
@@ -41,10 +45,10 @@ export default function SidebarOverlay({ onClose }: { onClose: () => void }) {
         phoneNumberErrorRef.current.focus();
       }
       return;
-    } else {
-      if (phoneNumberErrorRef.current) {
-        phoneNumberErrorRef.current.textContent = "";
-      }
+    }
+
+    if (phoneNumberErrorRef.current) {
+      phoneNumberErrorRef.current.textContent = "";
     }
 
     const submittedService =
@@ -55,7 +59,6 @@ export default function SidebarOverlay({ onClose }: { onClose: () => void }) {
       service: submittedService,
     });
 
-    // ✅ SweetAlert success message
     Swal.fire({
       icon: "success",
       title: "Message Sent!",
@@ -74,13 +77,15 @@ export default function SidebarOverlay({ onClose }: { onClose: () => void }) {
     });
   };
 
-  
-
   const handlePhoneNumberChange = useCallback(
     (e: React.ChangeEvent<HTMLInputElement>) => {
       const value = e.target.value.replace(/\D/g, "");
+
       if (value.length <= 15) {
-        setForm((prevForm) => ({ ...prevForm, phoneNumber: value }));
+        setForm((prevForm) => ({
+          ...prevForm,
+          phoneNumber: value,
+        }));
       }
     },
     []
@@ -88,44 +93,53 @@ export default function SidebarOverlay({ onClose }: { onClose: () => void }) {
 
   useEffect(() => {
     const currentAside = asideRef.current;
-    if (currentAside) {
-      initialFocusRef.current?.focus();
-      const focusableElements = currentAside.querySelectorAll(
-        'button, [href], input:not([type="hidden"]), select, textarea, [tabindex]:not([tabindex="-1"])'
-      );
-      const firstElement = focusableElements[0] as HTMLElement;
-      const lastElement = focusableElements[
-        focusableElements.length - 1
-      ] as HTMLElement;
 
-      const handleTabKey = (e: KeyboardEvent) => {
-        if (e.key === "Tab") {
-          if (e.shiftKey) {
-            if (document.activeElement === firstElement) {
-              lastElement.focus();
-              e.preventDefault();
-            }
-          } else {
-            if (document.activeElement === lastElement) {
-              firstElement.focus();
-              e.preventDefault();
-            }
-          }
-        } else if (e.key === "Escape") {
-          onClose();
+    if (!currentAside) return;
+
+    const previousActiveElement =
+      document.activeElement as HTMLElement | null;
+
+    initialFocusRef.current?.focus();
+
+    const focusableElements = currentAside.querySelectorAll<HTMLElement>(
+      'button, [href], input:not([type="hidden"]), select, textarea, [tabindex]:not([tabindex="-1"])'
+    );
+
+    const firstElement = focusableElements[0];
+    const lastElement = focusableElements[focusableElements.length - 1];
+
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape") {
+        onClose();
+        return;
+      }
+
+      if (e.key !== "Tab" || !firstElement || !lastElement) {
+        return;
+      }
+
+      if (e.shiftKey) {
+        if (document.activeElement === firstElement) {
+          e.preventDefault();
+          lastElement.focus();
         }
-      };
-
-      currentAside.addEventListener("keydown", handleTabKey);
-      const prevActiveElement = document.activeElement as HTMLElement | null;
-
-      return () => {
-        currentAside.removeEventListener("keydown", handleTabKey);
-        if (prevActiveElement) {
-          prevActiveElement.focus();
+      } else {
+        if (document.activeElement === lastElement) {
+          e.preventDefault();
+          firstElement.focus();
         }
-      };
-    }
+      }
+    };
+
+    currentAside.addEventListener("keydown", handleKeyDown);
+
+    return () => {
+      currentAside.removeEventListener("keydown", handleKeyDown);
+
+      if (previousActiveElement) {
+        previousActiveElement.focus();
+      }
+    };
   }, [onClose]);
 
   return (
@@ -133,6 +147,7 @@ export default function SidebarOverlay({ onClose }: { onClose: () => void }) {
       onClick={onClose}
       role="dialog"
       aria-modal="true"
+      aria-labelledby="sidebar-overlay-title"
       className="fixed inset-0 z-999 bg-black/70 flex justify-start cursor-[url('/Navbar/white_cursor.png')_0_0,auto] font-inter"
     >
       <motion.aside
@@ -146,12 +161,13 @@ export default function SidebarOverlay({ onClose }: { onClose: () => void }) {
       >
         {/* Close Button */}
         <button
+          type="button"
           onClick={onClose}
           aria-label="Close sidebar menu"
-          className="absolute top-4 right-4 text-white text-2xl z-20 focus:outline-none"
+          className="absolute top-4 right-4 text-white text-2xl z-20 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#e63a27]"
           ref={initialFocusRef}
         >
-          <IoMdClose />
+          <IoMdClose aria-hidden="true" focusable="false" />
         </button>
 
         {/* Logo */}
@@ -169,9 +185,19 @@ export default function SidebarOverlay({ onClose }: { onClose: () => void }) {
         </div>
 
         {/* About */}
-        <section className="mb-6">
-          <h1 className="text-lg font-bold mb-1">ABOUT US</h1>
-          <div className="w-8 h-0.5 bg-[#e63a27] mb-3" />
+        <section className="mb-6" aria-labelledby="sidebar-about-title">
+          <h2
+            id="sidebar-about-title"
+            className="text-lg font-bold mb-1"
+          >
+            ABOUT US
+          </h2>
+
+          <div
+            className="w-8 h-0.5 bg-[#e63a27] mb-3"
+            aria-hidden="true"
+          />
+
           <p className="text-sm leading-relaxed">
             With over three decades of proven success in quality Roofing
             services, Waterproofing and General contractors.
@@ -179,87 +205,221 @@ export default function SidebarOverlay({ onClose }: { onClose: () => void }) {
         </section>
 
         {/* Free Quote Form */}
-        <section className="mb-6">
-          <h2 className="text-lg font-bold mb-1">GET A FREE QUOTE</h2>
-          <div className="w-8 h-0.5 bg-[#e63a27] mb-4" />
-          <form className="flex flex-col gap-3" onSubmit={handleSubmit}>
-            <input
-              type="text"
-              placeholder="Name"
-              value={form.name}
-              onChange={(e) => setForm({ ...form, name: e.target.value })}
-              required
-              className="p-3 text-black bg-white outline-none focus:ring-2 focus:ring-[#e63a27]"
-            />
-            <input
-              type="email"
-              placeholder="Email"
-              value={form.email}
-              onChange={(e) => setForm({ ...form, email: e.target.value })}
-              required
-              className="p-3 text-black bg-white outline-none focus:ring-2 focus:ring-[#e63a27]"
-            />
-            <input
-              type="tel"
-              placeholder="Phone Number"
-              value={form.phoneNumber}
-              onChange={handlePhoneNumberChange}
-              maxLength={15}
-              pattern="[0-9]{10,15}"
-              required
-              className="p-3 text-black bg-white outline-none focus:ring-2 focus:ring-[#e63a27]"
-            />
-            <span
-              id="phone-number-error-message"
-              ref={phoneNumberErrorRef}
-              role="alert"
-              className="sr-only text-red-400"
-            />
+        <section
+          className="mb-6"
+          aria-labelledby="sidebar-overlay-title"
+        >
+          <h2
+            id="sidebar-overlay-title"
+            className="text-lg font-bold mb-1"
+          >
+            GET A FREE QUOTE
+          </h2>
 
-            {/* ✅ Service Dropdown */}
-            <select
-              id="service"
-              name="service"
-              value={form.service}
-              onChange={(e) =>
-                setForm({ ...form, service: e.target.value, otherService: "" })
-              }
-              required
-              className="appearance-none p-3 font-semibold text-white bg-[#003269] border border-gray-300 w-full focus:ring-2 focus:ring-[#e63a27] focus:outline-none"
-            >
-              <option value="" disabled>
-                Service You Need
-              </option>
-              <option value="roofing">Roofing</option>
-              <option value="waterproofing">Waterproofing</option>
-              <option value="masonry">Masonry</option>
-              <option value="general-contractors">General Contractors</option>
-              <option value="other">Others</option> {/* ✅ Added */}
-            </select>
-            {form.service === "other" && (
+          <div
+            className="w-8 h-0.5 bg-[#e63a27] mb-4"
+            aria-hidden="true"
+          />
+
+          <form
+            className="flex flex-col gap-3"
+            onSubmit={handleSubmit}
+          >
+            {/* Name */}
+            <div>
+              <label
+                htmlFor="sidebar-name"
+                className="sr-only"
+              >
+                Name
+              </label>
+
               <input
+                id="sidebar-name"
                 type="text"
-                placeholder="Please specify other service"
-                value={form.otherService}
+                name="name"
+                placeholder="Name"
+                value={form.name}
                 onChange={(e) =>
-                  setForm({ ...form, otherService: e.target.value })
+                  setForm({
+                    ...form,
+                    name: e.target.value,
+                  })
+                }
+                autoComplete="name"
+                required
+                className="p-3 text-black bg-white outline-none focus:ring-2 focus:ring-[#e63a27] w-full"
+              />
+            </div>
+
+            {/* Email */}
+            <div>
+              <label
+                htmlFor="sidebar-email"
+                className="sr-only"
+              >
+                Email
+              </label>
+
+              <input
+                id="sidebar-email"
+                type="email"
+                name="email"
+                placeholder="Email"
+                value={form.email}
+                onChange={(e) =>
+                  setForm({
+                    ...form,
+                    email: e.target.value,
+                  })
+                }
+                autoComplete="email"
+                required
+                className="p-3 text-black bg-white outline-none focus:ring-2 focus:ring-[#e63a27] w-full"
+              />
+            </div>
+
+            {/* Phone */}
+            <div>
+              <label
+                htmlFor="sidebar-phone"
+                className="sr-only"
+              >
+                Phone Number
+              </label>
+
+              <input
+                id="sidebar-phone"
+                type="tel"
+                name="phoneNumber"
+                placeholder="Phone Number"
+                value={form.phoneNumber}
+                onChange={handlePhoneNumberChange}
+                maxLength={15}
+                pattern="[0-9]{10,15}"
+                title="Please enter between 10 and 15 digits"
+                autoComplete="tel-national"
+                aria-describedby="phone-number-error-message"
+                required
+                className="p-3 text-black bg-white outline-none focus:ring-2 focus:ring-[#e63a27] w-full"
+              />
+
+              <span
+                id="phone-number-error-message"
+                ref={phoneNumberErrorRef}
+                role="alert"
+                tabIndex={-1}
+                className="sr-only"
+              />
+            </div>
+
+            {/* Service Dropdown */}
+            <div>
+              <label
+                htmlFor="sidebar-service"
+                className="sr-only"
+              >
+                Service You Need
+              </label>
+
+              <select
+                id="sidebar-service"
+                name="service"
+                value={form.service}
+                onChange={(e) =>
+                  setForm({
+                    ...form,
+                    service: e.target.value,
+                    otherService: "",
+                  })
                 }
                 required
-                className="p-3 text-black bg-white outline-none focus:ring-2 focus:ring-[#e63a27]"
-              />
+                className="appearance-none p-3 font-semibold text-white bg-[#003269] border border-gray-300 w-full focus:ring-2 focus:ring-[#e63a27] focus:outline-none"
+              >
+                <option value="" disabled>
+                  Service You Need
+                </option>
+
+                <option value="roofing">
+                  Roofing
+                </option>
+
+                <option value="waterproofing">
+                  Waterproofing
+                </option>
+
+                <option value="masonry">
+                  Masonry
+                </option>
+
+                <option value="general-contractors">
+                  General Contractors
+                </option>
+
+                <option value="other">
+                  Others
+                </option>
+              </select>
+            </div>
+
+            {/* Other Service */}
+            {form.service === "other" && (
+              <div>
+                <label
+                  htmlFor="sidebar-other-service"
+                  className="sr-only"
+                >
+                  Please specify other service
+                </label>
+
+                <input
+                  id="sidebar-other-service"
+                  type="text"
+                  name="otherService"
+                  placeholder="Please specify other service"
+                  value={form.otherService}
+                  onChange={(e) =>
+                    setForm({
+                      ...form,
+                      otherService: e.target.value,
+                    })
+                  }
+                  required
+                  className="p-3 text-black bg-white outline-none focus:ring-2 focus:ring-[#e63a27] w-full"
+                />
+              </div>
             )}
 
-            <textarea
-              rows={4}
-              placeholder="Message..."
-              value={form.message}
-              onChange={(e) => setForm({ ...form, message: e.target.value })}
-              required
-              className="p-3 text-black bg-white outline-none focus:ring-2 focus:ring-[#e63a27]"
-            />
+            {/* Message */}
+            <div>
+              <label
+                htmlFor="sidebar-message"
+                className="sr-only"
+              >
+                Message
+              </label>
+
+              <textarea
+                id="sidebar-message"
+                name="message"
+                rows={4}
+                placeholder="Message..."
+                value={form.message}
+                onChange={(e) =>
+                  setForm({
+                    ...form,
+                    message: e.target.value,
+                  })
+                }
+                required
+                className="p-3 text-black bg-white outline-none focus:ring-2 focus:ring-[#e63a27] w-full"
+              />
+            </div>
+
+            {/* Submit Button */}
             <button
               type="submit"
-              className="border border-[#e63a27] text-[#e63a27] font-semibold py-3 hover:bg-[#e63a27] hover:text-white transition"
+              className="border border-[#e63a27] text-[#e63a27] font-semibold py-3 hover:bg-[#e63a27] hover:text-white transition focus:outline-none focus-visible:ring-2 focus-visible:ring-[#e63a27]"
             >
               Book My Consultation
             </button>
@@ -267,25 +427,66 @@ export default function SidebarOverlay({ onClose }: { onClose: () => void }) {
         </section>
 
         {/* Contact Info */}
-        <section>
-          <h3 className="text-lg font-bold mb-1">CONTACT INFO</h3>
-          <div className="w-8 h-0.5 bg-[#e63a27] mb-4" />
+        <section aria-labelledby="sidebar-contact-title">
+          <h2
+            id="sidebar-contact-title"
+            className="text-lg font-bold mb-1"
+          >
+            CONTACT INFO
+          </h2>
+
+          <div
+            className="w-8 h-0.5 bg-[#e63a27] mb-4"
+            aria-hidden="true"
+          />
+
           <ul className="text-sm space-y-3">
             <li className="flex gap-3 items-start">
-              <FaMapMarkerAlt className="text-[#e63a27] mt-1 shrink-0" />
-              <address>552 Rugby Rd, Brooklyn, NY 11230</address>
+              <FaMapMarkerAlt
+                className="text-[#e63a27] mt-1 shrink-0"
+                aria-hidden="true"
+                focusable="false"
+              />
+
+              <address>
+                552 Rugby Rd, Brooklyn, NY 11230
+              </address>
             </li>
+
             <li className="flex gap-3 items-center">
-              <FaPhoneAlt className="text-[#e63a27]" />
-              <Link href="tel:+13472216549">Office: (347) 221-6549</Link>
+              <FaPhoneAlt
+                className="text-[#e63a27]"
+                aria-hidden="true"
+                focusable="false"
+              />
+
+              <Link href="tel:+13472216549">
+                Office: (347) 221-6549
+              </Link>
             </li>
+
             <li className="flex gap-3 items-center">
-              <FaMobileAlt className="text-[#e63a27]" />
-              <Link href="tel:+13473949384">Cell: (347) 394-9384</Link>
+              <FaMobileAlt
+                className="text-[#e63a27]"
+                aria-hidden="true"
+                focusable="false"
+              />
+
+              <Link href="tel:+13473949384">
+                Cell: (347) 394-9384
+              </Link>
             </li>
+
             <li className="flex gap-3 items-center">
-              <FaEnvelope className="text-[#e63a27]" />
-              <Link href="mailto:amzadh78@gmail.com">amzadh78@gmail.com</Link>
+              <FaEnvelope
+                className="text-[#e63a27]"
+                aria-hidden="true"
+                focusable="false"
+              />
+
+              <Link href="mailto:amzadh78@gmail.com">
+                amzadh78@gmail.com
+              </Link>
             </li>
           </ul>
 
@@ -294,23 +495,27 @@ export default function SidebarOverlay({ onClose }: { onClose: () => void }) {
             {[
               {
                 href: "https://www.facebook.com/sasroofingwaterproofing",
+                label: "Facebook",
                 icon: <FaFacebookF />,
               },
               {
                 href: "https://www.houzz.com/professionals/general-contractors/sas-roofing-and-waterproofing-pfvwus-pf~849386886?",
+                label: "Houzz",
                 icon: <FaHome />,
               },
               {
                 href: "https://www.tiktok.com/@sasroofingwaterproofing?lang=en",
+                label: "TikTok",
                 icon: <FaTiktok />,
               },
-            ].map(({ href, icon }, index) => (
+            ].map(({ href, label, icon }) => (
               <Link
-                key={index}
+                key={label}
                 href={href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-[#e63a27] w-8 h-8 flex items-center justify-center rounded-full hover:bg-[#e63a27] transition"
+                aria-label={`Visit our ${label} page`}
+                className="bg-[#e63a27] w-8 h-8 flex items-center justify-center rounded-full hover:bg-[#e63a27] transition focus:outline-none focus-visible:ring-2 focus-visible:ring-white"
               >
                 {React.cloneElement(icon, {
                   "aria-hidden": "true",

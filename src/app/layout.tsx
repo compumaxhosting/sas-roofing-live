@@ -15,6 +15,7 @@ const bevietnam = Be_Vietnam_Pro({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://www.sasroofingwaterproofing.com"),
   title:
     "Trusted Roofing, Waterproofing & Masonry Services in Brooklyn,New York",
   description:
@@ -32,7 +33,7 @@ export const metadata: Metadata = {
     url: "https://www.sasroofingwaterproofing.com/",
     images: [
       {
-        url: "https://www.sasroofingwaterproofing.com/og-image.jpg",
+        url: "https://www.sasroofingwaterproofing.com/Navbar/Logo.webp",
         width: 2500,
         height: 1330,
         alt: "SAS Roofing & Waterproofing",
@@ -46,7 +47,7 @@ export const metadata: Metadata = {
     title: "Expert Roofing, Waterproofing & Masonry in Brooklyn & NYC",
     description:
       "SAS Roofing Waterproofing provides expert roofing, waterproofing, and masonry services in Brooklyn, Manhattan, and Queens.",
-    images: ["https://www.sasroofingwaterproofing.com/og-image.jpg"],
+    images: ["https://www.sasroofingwaterproofing.com/Navbar/Logo.webp"],
   },
 };
 
@@ -54,10 +55,10 @@ const schemaData = {
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
   name: "SAS Roofing & Waterproofing",
-  image: "https://www.sasroofingwaterproofing.com/og-image.jpg",
+  image: "https://www.sasroofingwaterproofing.com/Navbar/Logo.webp",
   "@id": "https://www.sasroofingwaterproofing.com",
   url: "https://www.sasroofingwaterproofing.com",
-  telephone: "+1-718-500-3312",
+  telephone: "+1-347-221-6549",
   address: {
     "@type": "PostalAddress",
     streetAddress: "552 Rugby Rd",
@@ -72,8 +73,8 @@ const schemaData = {
     longitude: -73.9566,
   },
   sameAs: [
-    "https://www.facebook.com/SASRoofingNYC",
-    "https://www.instagram.com/sasroofingnyc",
+    "www.facebook.com/sasroofingwaterproofing",
+    "https://www.instagram.com/SASRoofingWaterproofing",
   ],
   priceRange: "$$",
   openingHours: "Mo,Tu,We,Th,Fr 08:00-18:00",
@@ -96,9 +97,7 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }}
         />
       </head>
-      <body className={`${inter.variable} ${bevietnam.variable}`}>
-        {children}
-      </body>
+      <body>{children}</body>
     </html>
   );
 }

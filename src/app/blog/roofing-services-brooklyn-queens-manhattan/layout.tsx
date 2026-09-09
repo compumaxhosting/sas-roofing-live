@@ -1,5 +1,5 @@
 import { ReactNode } from "react";
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 
 // Metadata for SEO
 export const metadata: Metadata = {
@@ -17,7 +17,6 @@ export const metadata: Metadata = {
     index: true,
     follow: true,
   },
-  themeColor: "#ffffff",
   referrer: "strict-origin-when-cross-origin",
   openGraph: {
     type: "website",
@@ -40,10 +39,11 @@ export const metadata: Metadata = {
     title: "Roofing Services in Brooklyn, Queens & Manhattan | 2026",
     description:
       "Complete guide to roof repair, replacement, inspections, flat roofs and emergency roofing services across NYC.",
-    images: [
-      "/blog/roofing-services-brooklyn-queens-manhattan.webp",
-    ],
+    images: ["/blog/roofing-services-brooklyn-queens-manhattan.webp"],
   },
+};
+export const viewport: Viewport = {
+  themeColor: "#ffffff",
 };
 
 // Schema Markup (JSON-LD)
@@ -52,9 +52,8 @@ const schemaData = {
   "@type": "LocalBusiness",
   name: "SAS Roofing & Waterproofing",
   url: "https://www.sasroofingwaterproofing.com/",
-  logo: "https://www.sasroofingwaterproofing.com/assets/images/resources/Logo-SAS.png",
-  image:
-    "https://www.sasroofingwaterproofing.com/images/roofing-services-brooklyn-queens-manhattan.jpg",
+  logo: "https://www.sasroofingwaterproofing.com/Navbar/Logo.webp",
+  image: "https://www.sasroofingwaterproofing.com/blog/roofing_blog.jpg",
   description:
     "SAS Roofing & Waterproofing provides complete roofing services including roof repair, replacement, flat roof repair, and emergency roofing across Brooklyn, Manhattan, and Queens.",
   address: {
@@ -70,7 +69,7 @@ const schemaData = {
   areaServed: ["Brooklyn", "Queens", "Manhattan"],
   sameAs: [
     "https://www.instagram.com/SASRoofingWaterproofing",
-    "https://www.yelp.com/biz/sas-roofing-waterproofing",
+    "https://www.yelp.com/biz/sas-roofing-and-waterproofing-brooklyn-8",
     "https://www.facebook.com/SASRoofingWaterproofing",
     "https://twitter.com/SASRoofing",
     "https://www.linkedin.com/company/sasroofingwaterproofing",

@@ -16,7 +16,7 @@ export const metadata = {
     url: "https://www.sasroofingwaterproofing.com/reviews.html",
     images: [
       {
-        url: "https://www.sasroofingwaterproofing.com/assets/images/resources/Logo-SAS.png",
+        url: "https://www.sasroofingwaterproofing.com/Navbar/Logo.webp",
         width: 1200,
         height: 630,
         alt: "SAS Roofing & Waterproofing",
@@ -32,9 +32,8 @@ const schemaData = {
   "@type": "LocalBusiness",
   name: "SAS Roofing & Waterproofing",
   url: "https://www.sasroofingwaterproofing.com/",
-  logo: "https://www.sasroofingwaterproofing.com/assets/images/resources/Logo-SAS.png",
-  image:
-    "https://www.sasroofingwaterproofing.com/assets/images/resources/Logo-SAS.png",
+  logo: "https://www.sasroofingwaterproofing.com/Navbar/Logo.webp",
+  image: "https://www.sasroofingwaterproofing.com/Navbar/Logo.webp",
   description:
     "SAS Roofing & Waterproofing is highly rated for trusted roofing and waterproofing services in Brooklyn, Manhattan, and Queens.",
   address: {
@@ -54,7 +53,10 @@ const schemaData = {
   review: [
     {
       "@type": "Review",
-      author: "John D.",
+      author: {
+        "@type": "Person",
+        name: "John D.",
+      },
       reviewRating: {
         "@type": "Rating",
         ratingValue: "5",
@@ -64,7 +66,10 @@ const schemaData = {
     },
     {
       "@type": "Review",
-      author: "Maria S.",
+      author: {
+        "@type": "Person",
+        name: "Maria S.",
+      },
       reviewRating: {
         "@type": "Rating",
         ratingValue: "4.5",
@@ -75,7 +80,7 @@ const schemaData = {
   ],
   sameAs: [
     "https://www.instagram.com/SASRoofingWaterproofing",
-    "https://www.yelp.com/biz/sas-roofing-waterproofing",
+    "https://www.yelp.com/biz/sas-roofing-and-waterproofing-brooklyn-8",
     "https://www.facebook.com/SASRoofingWaterproofing",
     "https://twitter.com/SASRoofing",
     "https://www.linkedin.com/company/sasroofingwaterproofing",

@@ -91,7 +91,6 @@ export default function NavLinks({
       <nav className="flex items-center h-full w-full justify-end">
         <ul
           className={`flex gap-4 text-sm font-semibold text-[#003269] items-stretch h-full w-full justify-end ${inter.className}`}
-          role="menubar"
         >
           {navItems.map(({ label, path, subItems }) => {
             const isActive =
@@ -107,7 +106,6 @@ export default function NavLinks({
                   subItems ? () => handleMouseEnter(label) : undefined
                 }
                 onMouseLeave={subItems ? handleMouseLeave : undefined}
-                role="none"
               >
                 <Link
                   href={path}
@@ -121,7 +119,6 @@ export default function NavLinks({
                       ? (e) => handleDesktopDropdownKeyDown(e, label)
                       : undefined
                   }
-                  role={subItems ? "menuitem" : "link"}
                   aria-label={subItems ? `${label} menu link` : undefined}
                 >
                   {label}
@@ -140,8 +137,6 @@ export default function NavLinks({
                 {subItems && openDropdown === label && (
                   <div
                     className={`absolute left-0 top-full mt-1 bg-white border-t-4 border-[#e63a27] shadow-lg rounded-sm z-20 min-w-45 overflow-hidden transition-all duration-300 ease-in-out opacity-100 translate-y-0 pointer-events-auto`}
-                    role="menu"
-                    aria-orientation="vertical"
                   >
                     {subItems.map(({ label: subLabel, path: subPath }) => (
                       <Link
@@ -150,7 +145,6 @@ export default function NavLinks({
                         className={`block px-5 py-4 text-[#003269] hover:bg-[#e63a27] hover:text-white text-sm ${
                           pathname === subPath ? "bg-[#e63a27] text-white" : ""
                         }`}
-                        role="menuitem"
                       >
                         {subLabel}
                       </Link>
@@ -162,7 +156,7 @@ export default function NavLinks({
           })}
 
           {/* Mobile menu button */}
-          <li className="flex mobile-nav-item items-center gap-2" role="none">
+          <li className="flex mobile-nav-item items-center gap-2">
             <button
               onClick={() => setIsOpen(true)}
               aria-label="Open mobile navigation menu"
@@ -194,7 +188,7 @@ export default function NavLinks({
           </li>
 
           {/* Get a Quote Button */}
-          <li role="none">
+          <li>
             <Link
               href="/contact-us"
               className="bg-[#e5392c] hover:bg-[#e63a27] transition-colors text-white font-semibold px-6 flex items-center get-hover-button h-full"
@@ -205,10 +199,7 @@ export default function NavLinks({
           </li>
 
           {/* Sidebar Trigger */}
-          <li
-            className="hidden md:flex items-center w-8 h-8 relative mt-6"
-            role="none"
-          >
+          <li className="hidden md:flex items-center w-8 h-8 relative mt-6">
             <div
               onClick={() => setSidebarOpen(true)}
               onKeyPress={(e: KeyboardEvent<HTMLDivElement>) => {
@@ -346,7 +337,6 @@ export default function NavLinks({
                             : "hover:bg-white hover:text-black"
                         }`}
                         onClick={() => setIsOpen(false)}
-                        role="link"
                       >
                         {subLabel}
                       </Link>
@@ -363,7 +353,6 @@ export default function NavLinks({
                       : "hover:bg-white hover:text-black"
                   }`}
                   onClick={() => setIsOpen(false)}
-                  role="link"
                 >
                   {label}
                 </Link>

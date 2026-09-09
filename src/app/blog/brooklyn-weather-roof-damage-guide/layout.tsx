@@ -16,7 +16,7 @@ export const metadata = {
     url: "https://www.sasroofingwaterproofing.com/blog/brooklyn-weather-roof-damage-guide",
     images: [
       {
-        url: "https://www.sasroofingwaterproofing.com/assets/images/resources/Logo-SAS.png",
+        url: "https://www.sasroofingwaterproofing.com/Navbar/Logo.webp",
         width: 1200,
         height: 630,
         alt: "SAS Roofing & Waterproofing",
@@ -32,9 +32,9 @@ const schemaData = {
   "@type": "LocalBusiness",
   name: "SAS Roofing & Waterproofing",
   url: "https://www.sasroofingwaterproofing.com/",
-  logo: "https://www.sasroofingwaterproofing.com/assets/images/resources/Logo-SAS.png",
+  logo: "https://www.sasroofingwaterproofing.com/Navbar/Logo.webp",
   image:
-    "https://www.sasroofingwaterproofing.com/assets/images/resources/Logo-SAS.png",
+    "https://www.sasroofingwaterproofing.com/Navbar/Logo.webp",
   description:
     "SAS Roofing & Waterproofing showcases a range of completed roofing and waterproofing projects across Brooklyn, Manhattan, and Queens.",
   address: {
@@ -50,7 +50,7 @@ const schemaData = {
   areaServed: ["Brooklyn", "Queens", "Manhattan"],
   sameAs: [
     "https://www.instagram.com/SASRoofingWaterproofing",
-    "https://www.yelp.com/biz/sas-roofing-waterproofing",
+    "https://www.yelp.com/biz/sas-roofing-and-waterproofing-brooklyn-8",
     "https://www.facebook.com/SASRoofingWaterproofing",
     "https://twitter.com/SASRoofing",
     "https://www.linkedin.com/company/sasroofingwaterproofing",

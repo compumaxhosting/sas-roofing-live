@@ -8,8 +8,8 @@ const jsonLdSchema = {
   "@type": "LocalBusiness",
   name: "SAS Roofing & Waterproofing",
   url: "https://www.sasroofingwaterproofing.com/",
-  logo: "https://www.sasroofingwaterproofing.com/assets/images/resources/Logo-SAS.png",
-  image: "https://www.sasroofingwaterproofing.com/og-image.jpg",
+  logo: "https://www.sasroofingwaterproofing.com/Navbar/Logo.webp",
+  image: "https://www.sasroofingwaterproofing.com/Navbar/Logo.webp",
   description:
     "Expert roofing, waterproofing, and masonry services in Brooklyn, Queens, and Manhattan.",
   address: {

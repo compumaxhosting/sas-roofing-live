@@ -44,7 +44,16 @@ export default function Page() {
       <ContactBar />
 
       <BreadCrum2
-        breadcrumbItems={[]}
+        breadcrumbItems={[
+          {
+            label: "Home",
+            href: "/",
+          },
+          {
+            label: "Blog",
+            href: "/blog",
+          },
+        ]}
         pageTitle="Roofing Services"
         imageSrc="/page-bgImage/roofing-service.jpg"
       />

@@ -13,7 +13,7 @@ export const metadata = {
     url: "https://www.sasroofingwaterproofing.com/blog/professional-roof-inspections",
     images: [
       {
-        url: "https://www.sasroofingwaterproofing.com/assets/images/resources/Logo-SAS.png",
+        url: "https://www.sasroofingwaterproofing.com/Navbar/Logo.webp",
         width: 1200,
         height: 630,
         alt: "SAS Roofing & Waterproofing",
@@ -28,9 +28,9 @@ const schemaData = {
   "@type": "LocalBusiness",
   name: "SAS Roofing & Waterproofing",
   url: "https://www.sasroofingwaterproofing.com/",
-  logo: "https://www.sasroofingwaterproofing.com/assets/images/resources/Logo-SAS.png",
+  logo: "https://www.sasroofingwaterproofing.com/Navbar/Logo.webp",
   image:
-    "https://www.sasroofingwaterproofing.com/assets/images/resources/Logo-SAS.png",
+    "https://www.sasroofingwaterproofing.com/Navbar/Logo.webp",
   description:
     "Learn how long roofs last in NYC weather, signs of damage, and when to call local roofing experts in Brooklyn, Queens, and Manhattan.",
   address: {
@@ -46,7 +46,7 @@ const schemaData = {
   areaServed: ["Brooklyn", "Queens", "Manhattan"],
   sameAs: [
     "https://www.instagram.com/SASRoofingWaterproofing",
-    "https://www.yelp.com/biz/sas-roofing-waterproofing",
+    "https://www.yelp.com/biz/sas-roofing-and-waterproofing-brooklyn-8",
     "https://www.facebook.com/SASRoofingWaterproofing",
     "https://twitter.com/SASRoofing",
     "https://www.linkedin.com/company/sasroofingwaterproofing",

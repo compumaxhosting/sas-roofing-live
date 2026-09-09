@@ -238,7 +238,16 @@ const page = () => {
       <StickyNavbar />
       <ContactBar />
       <BreadCrum2
-        breadcrumbItems={[]}
+        breadcrumbItems={[
+          {
+            label: "Home",
+            href: "/",
+          },
+          {
+            label: "Blog",
+            href: "/blog",
+          },
+        ]}
         pageTitle={"BLOGS"}
         imageSrc={"/page-bgImage/roofing-service.jpg"}
       />

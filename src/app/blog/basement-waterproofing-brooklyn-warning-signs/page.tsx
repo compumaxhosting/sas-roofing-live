@@ -6,7 +6,6 @@ import FooterTopCTA from "@/components/FooterTopCTA";
 import Navbar from "@/components/Navbar/Navbar";
 import StickyNavbar from "@/components/StickyNavbar";
 import React from "react";
-import BestRoofingCo from "@/components/BestRoofingCo";
 import { BlogsOverview } from "@/components/BlogOverview";
 import BasementWaterproofing from "@/components/BasementWaterproofing";
 
@@ -17,13 +16,22 @@ const page = () => {
       <StickyNavbar />
       <ContactBar />
       <BreadCrum2
-        breadcrumbItems={[]}
+        breadcrumbItems={[
+          {
+            label: "Home",
+            href: "/",
+          },
+          {
+            label: "Blog",
+            href: "/blog",
+          },
+        ]}
         pageTitle={"BLOGS"}
         imageSrc={"/page-bgImage/roofing-service.jpg"}
       />
       <BlogsOverview />
-    <BasementWaterproofing />
-   
+      <BasementWaterproofing />
+
       <FooterTopCTA />
       <Footer />
       <BackToTop />

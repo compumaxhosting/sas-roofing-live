@@ -14,7 +14,7 @@ export const metadata = {
     url: "https://www.sasroofingwaterproofing.com/aboutus.html",
     images: [
       {
-        url: "https://www.sasroofingwaterproofing.com/assets/images/resources/Logo-SAS.png",
+        url: "https://www.sasroofingwaterproofing.com/Navbar/Logo.webp",
         width: 1200,
         height: 630,
         alt: "SAS Roofing & Waterproofing",
@@ -30,7 +30,7 @@ const schemaData = {
   "@type": "Organization",
   name: "SAS Roofing and Waterproofing",
   url: "https://www.sasroofingwaterproofing.com/",
-  logo: "https://www.sasroofingwaterproofing.com/Logo-SAS.png",
+  logo: "https://www.sasroofingwaterproofing.com/Navbar/Logo.webp",
   description:
     "SAS Roofing and Waterproofing offers high-quality roofing, waterproofing, and restoration services. Serving residential and commercial clients in City Name and surrounding areas.",
   address: {
@@ -43,7 +43,7 @@ const schemaData = {
   },
   contactPoint: {
     "@type": "ContactPoint",
-    telephone: "+1-123-456-7890",
+    telephone: "+1-347-221-6549",
     contactType: "Customer Service",
     areaServed: "US",
     availableLanguage: "English",
@@ -54,7 +54,7 @@ const schemaData = {
   },
   sameAs: [
     "https://www.instagram.com/SASRoofingWaterproofing",
-    "https://www.yelp.com/biz/sas-roofing-waterproofing",
+    "https://www.yelp.com/biz/sas-roofing-and-waterproofing-brooklyn-8",
     "https://www.facebook.com/SASRoofingWaterproofing",
     "https://twitter.com/SASRoofing",
     "https://www.linkedin.com/company/sasroofingwaterproofing",

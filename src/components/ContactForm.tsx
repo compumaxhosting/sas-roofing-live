@@ -92,22 +92,33 @@ export default function ContactForm() {
           GET A QUOTE
         </h1>
         <form className="flex flex-col gap-4" onSubmit={handleSubmit(onSubmit)}>
+          <label htmlFor="name" className="sr-only">
+            Name
+          </label>
           <input
             {...register("name")}
+            id="name"
             type="text"
             placeholder="Name"
             required
             className="p-3 border border-gray-300 rounded-md"
           />
 
+          <label htmlFor="email" className="sr-only">
+            Email
+          </label>
           <input
             {...register("email")}
+            id="email"
             type="email"
             placeholder="Email"
             required
             className="p-3 border border-gray-300 rounded-md"
           />
 
+          <label htmlFor="phoneNumber" className="sr-only">
+            Phone Number
+          </label>
           <input
             {...register("phoneNumber", {
               required: true,
@@ -115,13 +126,20 @@ export default function ContactForm() {
               maxLength: 15,
               pattern: /^[0-9]+$/,
             })}
+            id="phoneNumber"
             type="tel"
             placeholder="Phone Number"
+            required
             className="p-3 border border-gray-300 rounded-md"
           />
 
+          <label htmlFor="service" className="sr-only">
+            Service You Need
+          </label>
+
           <select
             {...register("service")}
+            id="service"
             required
             className="p-3 border border-gray-300 rounded-md"
           >
@@ -136,23 +154,32 @@ export default function ContactForm() {
           </select>
 
           {selectedService === "other" && (
-            <input
-              {...register("otherService")}
-              type="text"
-              placeholder="Please specify other service"
-              required
-              className="p-3 border border-gray-300 rounded-md"
-            />
+            <>
+              <label htmlFor="otherService" className="sr-only">
+                Please specify other service
+              </label>
+              <input
+                {...register("otherService")}
+                id="otherService"
+                type="text"
+                placeholder="Please specify other service"
+                required
+                className="p-3 border border-gray-300 rounded-md"
+              />
+            </>
           )}
 
+          <label htmlFor="message" className="sr-only">
+            Message
+          </label>
           <textarea
             {...register("message")}
+            id="message"
             rows={4}
             placeholder="Message"
             required
             className="p-3 border border-gray-300 rounded-md"
           />
-
           {/* CAPTCHA Section */}
           <div className="bg-gray-100 p-4 rounded-md border border-gray-300">
             <div className="mb-3">
@@ -167,7 +194,11 @@ export default function ContactForm() {
               <p className="text-xs text-gray-600 mb-2">
                 Enter the numbers above:
               </p>
+              <label htmlFor="captcha" className="sr-only">
+                Enter CAPTCHA
+              </label>
               <input
+                id="captcha"
                 type="text"
                 inputMode="numeric"
                 placeholder="Enter CAPTCHA"

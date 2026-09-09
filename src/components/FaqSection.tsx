@@ -24,6 +24,7 @@ const accordionVariants: Variants = {
     },
   },
 };
+
 const faqs = [
   {
     question: "What is waterproofing, and why is it important?",
@@ -76,78 +77,93 @@ export default function FaqSection() {
     >
       <header className="mb-10 text-center">
         <div className="flex items-center justify-center gap-2 mb-2">
-          <div className="w-6 h-0.5 bg-[#e63a27]" aria-hidden="true" />
+          <div
+            className="w-6 h-0.5 bg-[#e63a27]"
+            aria-hidden="true"
+          />
+
           <span className="uppercase text-sm font-bold tracking-wider text-[#e63a27] font-inter">
             Common Questions & Answers
           </span>
         </div>
+
         <h2
           id="faq-section-title"
-          className="text-3xl md:text-4xl font-bold text-[#003269] font-inter"
+          className="text-2xl md:text-3xl font-bold text-[#003269] font-inter"
         >
           Frequently Asked Questions
         </h2>
       </header>
 
-      <dl className="space-y-4" role="list">
+      <div className="space-y-4">
         {faqs.map((faq, index) => {
           const isOpen = openIndex === index;
+
           return (
             <div
               key={index}
               className="border border-gray-200 rounded-md overflow-hidden bg-white shadow-sm"
             >
-              <dt>
+              <h3 className="m-0">
                 <button
+                  type="button"
                   onClick={() => toggleOpen(index)}
                   onKeyDown={(e) => handleKeyDown(e, index)}
                   aria-expanded={isOpen}
                   aria-controls={`faq-answer-${index}`}
                   id={`faq-question-${index}`}
-                  className={`w-full flex justify-between items-center px-6 py-5 text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-[#e63a27] transition-colors rounded-md ${
+                  className={`w-full flex justify-between items-center gap-4 px-6 py-5 text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-[#e63a27] transition-colors rounded-md ${
                     isOpen
                       ? "bg-[#003269] text-white"
                       : "bg-white text-[#003269]"
                   }`}
                 >
                   <span className="flex gap-3 font-semibold font-inter">
-                    <span className="text-[#e63a27]" aria-hidden="true">
+                    <span
+                      className="text-[#e63a27]"
+                      aria-hidden="true"
+                    >
                       Q{index + 1}.
                     </span>
-                    {faq.question}
+
+                    <span>{faq.question}</span>
                   </span>
+
                   <motion.span
                     initial={false}
                     animate={{ rotate: isOpen ? 180 : 0 }}
                     transition={{ duration: 0.25 }}
                     aria-hidden="true"
+                    className="shrink-0"
                   >
                     <FiChevronDown size={22} />
                   </motion.span>
                 </button>
-              </dt>
+              </h3>
 
               <AnimatePresence initial={false}>
                 {isOpen && (
-                  <motion.dd
+                  <motion.div
                     key="content"
                     id={`faq-answer-${index}`}
                     role="region"
                     aria-labelledby={`faq-question-${index}`}
-                    className="px-6 pb-5 pt-3 text-gray-700 text-sm md:text-base leading-relaxed font-bevietnam"
+                    className="overflow-hidden"
                     initial="collapsed"
                     animate="open"
                     exit="collapsed"
                     variants={accordionVariants}
                   >
-                    {faq.answer}
-                  </motion.dd>
+                    <div className="px-6 pb-5 pt-3 text-lg leading-7 text-gray-700 font-bevietnam">
+                      {faq.answer}
+                    </div>
+                  </motion.div>
                 )}
               </AnimatePresence>
             </div>
           );
         })}
-      </dl>
+      </div>
     </section>
   );
 }

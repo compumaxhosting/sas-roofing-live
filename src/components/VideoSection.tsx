@@ -75,31 +75,61 @@ const VideoSection = ({ margin }: Props) => {
 
               <ul className="space-y-2">
                 <li>
-                  <SiTicktick className="inline mr-2 font-bevietnam" /> Roof of
-                  the Year
+                  <SiTicktick
+                    className="inline mr-2 font-bevietnam"
+                    aria-hidden="true"
+                    role="presentation"
+                    focusable="false"
+                  />
+                  Roof of the Year
                 </li>
+
                 <li>
-                  <SiTicktick className="inline mr-2 font-bevietnam" /> Fully
-                  supported metal
+                  <SiTicktick
+                    className="inline mr-2 font-bevietnam"
+                    aria-hidden="true"
+                    role="presentation"
+                    focusable="false"
+                  />
+                  Fully supported metal
                 </li>
+
                 <li>
-                  <SiTicktick className="inline mr-2 font-bevietnam" /> Reliable
-                  & Trustworthy
+                  <SiTicktick
+                    className="inline mr-2 font-bevietnam"
+                    aria-hidden="true"
+                    role="presentation"
+                    focusable="false"
+                  />
+                  Reliable &amp; Trustworthy
                 </li>
+
                 <li>
-                  <SiTicktick className="inline mr-2 font-bevietnam" />{" "}
+                  <SiTicktick
+                    className="inline mr-2 font-bevietnam"
+                    aria-hidden="true"
+                    role="presentation"
+                    focusable="false"
+                  />
                   Dependable
                 </li>
               </ul>
 
               {/* Mobile Video Icon */}
               <div className="mt-4 ml-6 pr-6 pl-6 flex flex-col md:hidden">
-                <GoVideo
-                  size={60}
-                  className="text-white text-4xl sm:text-6xl cursor-pointer"
+                <button
+                  type="button"
                   onClick={() => setIsOpen(true)}
                   aria-label="Play flat roof installation video"
-                />
+                  className="w-fit cursor-pointer"
+                >
+                  <GoVideo
+                    size={60}
+                    className="text-white text-4xl sm:text-6xl"
+                    aria-hidden="true"
+                    focusable="false"
+                  />
+                </button>
               </div>
               <div className="text-white md:hidden font-inter text-sm">
                 FLAT ROOF INSTALLATION
@@ -118,11 +148,19 @@ const VideoSection = ({ margin }: Props) => {
         >
           <div className="relative w-full h-full ">
             <div className="absolute inset-0 flex flex-col items-center justify-center z-30">
-              <GoVideo
-                className="text-white text-4xl sm:text-6xl md:text-7xl lg:text-8xl mr-16 cursor-pointer"
+              <button
+                type="button"
                 onClick={() => setIsOpen(true)}
                 aria-label="Play video of flat roof installation"
-              />
+                className="mr-16 cursor-pointer"
+              >
+                <GoVideo
+                  className="text-white text-4xl sm:text-6xl md:text-7xl lg:text-8xl"
+                  aria-hidden="true"
+                  focusable="false"
+                />
+              </button>
+
               <div className="hidden md:block mt-1 text-white font-semibold text-lg tracking-wide mr-16 font-inter">
                 FLAT ROOF INSTALLATION
               </div>
@@ -143,10 +181,12 @@ const VideoSection = ({ margin }: Props) => {
           <div className="relative w-full aspect-video rounded-lg overflow-hidden">
             <VideoIframe />
             <button
+              type="button"
               onClick={() => setIsOpen(false)}
-              className="absolute top-2 right-2 text-white text-3xl bg-black bg-opacity-60 rounded-full p-1"
+              aria-label="Close video"
+              className="absolute top-2 right-2 text-white text-3xl bg-black bg-opacity-60 rounded-full p-1 cursor-pointer"
             >
-              <IoClose />
+              <IoClose aria-hidden="true" focusable="false" />
             </button>
           </div>
         </DialogContent>

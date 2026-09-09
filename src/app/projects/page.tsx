@@ -11,14 +11,23 @@ import React from "react";
 
 const page = () => {
   const mvalue = [0, 0, 0];
-  const number = "2"
+  const number = "2";
   return (
     <>
       <Navbar />
       <StickyNavbar />
       <ContactBar />
       <BreadCrum2
-        breadcrumbItems={[]}
+        breadcrumbItems={[
+          {
+            label: "Home",
+            href: "/",
+          },
+          {
+            label: "Blog",
+            href: "/blog",
+          },
+        ]}
         pageTitle={"Gallery"}
         imageSrc={"/page-bgImage/roofing-service.jpg"}
       />

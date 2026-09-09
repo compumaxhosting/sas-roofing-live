@@ -57,8 +57,8 @@ const schemaData = {
       "@id": "https://www.sasroofingwaterproofing.com/#organization",
       name: "SAS Roofing & Waterproofing",
       url: "https://www.sasroofingwaterproofing.com/",
-      logo: "https://www.sasroofingwaterproofing.com/assets/images/resources/Logo-SAS.png",
-      image: "https://www.sasroofingwaterproofing.com/images/masonry-contractor-brooklyn-ny.jpg",
+      logo: "https://www.sasroofingwaterproofing.com/Navbar/Logo.webp",
+      image: "https://www.sasroofingwaterproofing.com/blog/masonry-contractor-brooklyn-ny-expert-services.webp",
       description:
         "SAS Roofing & Waterproofing provides professional masonry, roofing, and waterproofing services across Brooklyn, Manhattan, Queens, and The Bronx.",
       address: {
@@ -74,7 +74,7 @@ const schemaData = {
       areaServed: ["Brooklyn", "Queens", "Manhattan", "The Bronx"],
       sameAs: [
         "https://www.instagram.com/SASRoofingWaterproofing",
-        "https://www.yelp.com/biz/sas-roofing-waterproofing",
+        "https://www.yelp.com/biz/sas-roofing-and-waterproofing-brooklyn-8",
         "https://www.facebook.com/SASRoofingWaterproofing",
         "https://twitter.com/SASRoofing",
         "https://www.linkedin.com/company/sasroofingwaterproofing",
@@ -86,7 +86,7 @@ const schemaData = {
       headline: "Masonry Contractor Brooklyn NY: 10 Expert Services | SAS Roofing",
       description:
         "Need a masonry contractor in Brooklyn NY? Explore expert brickwork, stonework, concrete, repairs and restoration from SAS Roofing & Waterproofing.",
-      image: "https://www.sasroofingwaterproofing.com/images/masonry-contractor-brooklyn-ny.jpg",
+      image: "https://www.sasroofingwaterproofing.com/blog/masonry-contractor-brooklyn-ny-expert-services.webp",
       datePublished: "2026-08-12",
       dateModified: "2026-08-12",
       author: {
@@ -98,7 +98,7 @@ const schemaData = {
         name: "SAS Roofing & Waterproofing",
         logo: {
           "@type": "ImageObject",
-          url: "https://www.sasroofingwaterproofing.com/assets/images/resources/Logo-SAS.png",
+          url: "https://www.sasroofingwaterproofing.com/Navbar/Logo.webp",
         },
       },
       mainEntityOfPage: {

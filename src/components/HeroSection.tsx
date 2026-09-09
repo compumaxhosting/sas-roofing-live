@@ -129,7 +129,7 @@ export default function HeroSection() {
             exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.5 }}
           >
-            <h1 className="text-5xl md:text-6xl lg:text-8xl font-bold leading-tight font-inter">
+            <h1 className="text-4xl md:text-5xl lg:text-7xl font-bold leading-tight font-inter">
               <strong>{currentSlide.title}</strong>
             </h1>
             <p className="text-lg font-light tracking-wide font-bevietnam">
@@ -156,7 +156,7 @@ export default function HeroSection() {
         aria-label="Previous slide"
         className="hidden md:block absolute left-5 top-1/2 -translate-y-1/2 rounded-full p-4 z-30 bg-black/40 hover:bg-[#e63a27] focus:outline-2 focus:outline-[#e63a27] transition-all"
       >
-        <ChevronLeft className="text-white text-2xl" />
+        <ChevronLeft width={24} height={24} className="text-white" />
       </button>
 
       <button
@@ -165,7 +165,7 @@ export default function HeroSection() {
         aria-label="Next slide"
         className="hidden md:block absolute right-5 top-1/2 -translate-y-1/2 rounded-full p-4 z-30 bg-black/40 hover:bg-[#e63a27] focus:outline-2 focus:outline-[#e63a27] transition-all"
       >
-        <ChevronRight className="text-white text-2xl" />
+        <ChevronRight width={24} height={24} className="text-white" />
       </button>
 
       <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex gap-4 z-30">

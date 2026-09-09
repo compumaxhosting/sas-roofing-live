@@ -40,7 +40,16 @@ export default function Page() {
       <ContactBar />
 
       <BreadCrum2
-        breadcrumbItems={[]}
+        breadcrumbItems={[
+          {
+            label: "Home",
+            href: "/",
+          },
+          {
+            label: "Blog",
+            href: "/blog",
+          },
+        ]}
         pageTitle="BEST WATERPROOFING SERVICES"
         imageSrc="/page-bgImage/waterproofing.jpg"
       />

@@ -43,11 +43,10 @@ const OurProjects: React.FC<OurProjectsProps> = ({ gallery }) => {
   }, [gallery]);
 
   return (
-    <main
-      className="px-4 sm:px-6 lg:px-12 py-8 bg-[#f9f9f9] mb-10 md:mb-15 shadow-2xl"
-      role="region"
-      aria-labelledby="our-projects-heading"
-    >
+    <section
+  className="px-4 sm:px-6 lg:px-12 py-8 bg-[#f9f9f9] mb-10 md:mb-15 shadow-2xl"
+  aria-labelledby="our-projects-heading"
+>
       {/* Header Section */}
       <motion.section
         className="max-w-5xl mx-auto flex flex-col md:flex-row justify-between items-center text-center md:text-left gap-6"
@@ -121,7 +120,7 @@ const OurProjects: React.FC<OurProjectsProps> = ({ gallery }) => {
           </div>
         )}
       </div>
-    </main>
+    </section>
   );
 };
 

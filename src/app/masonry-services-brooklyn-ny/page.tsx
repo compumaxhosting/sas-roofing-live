@@ -39,7 +39,16 @@ export default function MasonryServicesPage() {
       <ContactBar />
 
       <BreadCrum2
-        breadcrumbItems={[]}
+        breadcrumbItems={[
+          {
+            label: "Home",
+            href: "/",
+          },
+          {
+            label: "Blog",
+            href: "/blog",
+          },
+        ]}
         pageTitle="Masonry Services"
         imageSrc="/page-bgImage/masonry_services.jpg"
       />

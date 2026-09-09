@@ -7,7 +7,7 @@ const reviewLogos = [
   {
     alt: "Facebook",
     src: "/reviews/facebook.png",
-    href: "https://www.facebook.com/kalapania78",
+    href: "https://www.facebook.com/sasroofingwaterproofing",
   },
   {
     alt: "Yellow Pages",
