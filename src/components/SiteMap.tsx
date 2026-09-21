@@ -37,6 +37,10 @@ const SiteMap = () => {
     },
     { name: "FAQs", url: "/faq" },
     { name: "Blog", url: "/blog" },
+    {
+      name: "Blog - Roof Leak Repair in Manhattan: Common Causes & Prevention Tips",
+      url: "/blog/roof-leak-repair-manhattan",
+    },
     // Blog Posts
     {
       name: "Blog - Why Certified Roofing Contractors Are a Smart Choice",

@@ -11,6 +11,16 @@ import React from "react";
 
 const slides = [
   {
+    title: "Roof Leak Repair in Manhattan: Common Causes & Prevention Tips",
+    shortTitle: "Roof Leak Repair in Manhattan",
+    description:
+      "Learn common causes of roof leaks in Manhattan, warning signs, prevention tips, and professional roofing solutions.",
+    date: "21 Sep 2026",
+    image: "/blog/roof-leak-repair-manhattan.webp",
+    link: "roof-leak-repair-manhattan",
+    initialLikes: 0,
+  },
+  {
     title: "How to Choose a Reliable Masonry Contractor in Brooklyn, New York",
     shortTitle: "Reliable Brooklyn Masonry Contractor",
     description:

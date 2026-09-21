@@ -13,6 +13,10 @@ export function BlogsOverview() {
 
   const plans = [
     {
+      name: "Roof Leak Repair in Manhattan: Common Causes & Prevention Tips",
+      path: "/blog/roof-leak-repair-manhattan",
+    },
+    {
       name: "How to Choose a Reliable Masonry Contractor in Brooklyn",
       path: "/blog/reliable-masonry-contractor-brooklyn-ny",
     },
