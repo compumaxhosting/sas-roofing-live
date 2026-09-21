@@ -18,6 +18,17 @@ const BreadCrum2: React.FC<BreadCrumProps> = ({
   pageTitle,
   imageSrc,
 }) => {
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: breadcrumbItems.map((item, index) => ({
+      "@type": "ListItem",
+      position: index + 1,
+      name: item.label,
+      item: `https://www.sasroofingwaterproofing.com${item.href}`,
+    })),
+  };
+
   return (
     <div className="relative h-36 md:h-56 w-full text-white text-center">
       {/* Decorative Background Image */}
@@ -46,16 +57,11 @@ const BreadCrum2: React.FC<BreadCrumProps> = ({
           >
             <ol
               className="flex flex-wrap items-center m-0 p-0 list-none"
-              itemScope
-              itemType="https://schema.org/BreadcrumbList"
             >
               {breadcrumbItems.map((item, index) => (
                 <li
                   key={item.href}
                   className="flex items-center"
-                  itemScope
-                  itemProp="itemListElement"
-                  itemType="https://schema.org/ListItem"
                 >
                   <Link
                     href={item.href}
@@ -67,12 +73,9 @@ const BreadCrum2: React.FC<BreadCrumProps> = ({
                     aria-current={
                       index === breadcrumbItems.length - 1 ? "page" : undefined
                     }
-                    itemProp="item"
                   >
-                    <span itemProp="name">{item.label}</span>
+                    <span>{item.label}</span>
                   </Link>
-
-                  <meta itemProp="position" content={(index + 1).toString()} />
 
                   {index < breadcrumbItems.length - 1 && (
                     <span className="mx-2 text-white/50" aria-hidden="true">
@@ -83,6 +86,15 @@ const BreadCrum2: React.FC<BreadCrumProps> = ({
               ))}
             </ol>
           </nav>
+        )}
+
+        {breadcrumbItems.length > 0 && (
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{
+              __html: JSON.stringify(breadcrumbSchema),
+            }}
+          />
         )}
 
         {/* Page Title */}
