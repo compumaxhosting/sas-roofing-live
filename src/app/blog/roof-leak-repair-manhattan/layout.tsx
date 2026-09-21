@@ -12,6 +12,9 @@ const description =
 export const metadata: Metadata = {
   title,
   description,
+  alternates: {
+    canonical: articleUrl,
+  },
   keywords:
     "roof leak repair Manhattan, roof repair Manhattan, Manhattan roof leak repair, flat roof leak repair Manhattan, roof leak detection NYC, roof waterproofing Manhattan, NYC roof repair, roof inspection Manhattan, emergency roof leak repair NYC",
   authors: [{ name: "SAS Roofing & Waterproofing" }],
