@@ -11,6 +11,17 @@ import React from "react";
 
 const slides = [
   {
+    title:
+      "Waterproofing Cost in NYC: 2026 Guide for Brooklyn, Manhattan & Queens",
+    shortTitle: "Waterproofing Cost in NYC 2026",
+    description:
+      "Discover waterproofing cost in NYC for 2026, including basement and foundation waterproofing prices in Brooklyn, Manhattan, and Queens.",
+    date: "05 Oct 2026",
+    image: "/blog/waterproofing-cost-nyc-2026.webp",
+    link: "waterproofing-cost-nyc-2026",
+    initialLikes: 0,
+  },
+  {
     title: "Roof Leak Repair in Manhattan: Common Causes & Prevention Tips",
     shortTitle: "Roof Leak Repair in Manhattan",
     description:

@@ -13,6 +13,10 @@ export function BlogsOverview() {
 
   const plans = [
     {
+      name: "Waterproofing Cost in NYC: 2026 Guide for Brooklyn, Manhattan & Queens",
+      path: "/blog/waterproofing-cost-nyc-2026",
+    },
+    {
       name: "Roof Leak Repair in Manhattan: Common Causes & Prevention Tips",
       path: "/blog/roof-leak-repair-manhattan",
     },

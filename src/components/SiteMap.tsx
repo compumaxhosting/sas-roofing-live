@@ -38,6 +38,10 @@ const SiteMap = () => {
     { name: "FAQs", url: "/faq" },
     { name: "Blog", url: "/blog" },
     {
+      name: "Blog - Waterproofing Cost in NYC: 2026 Guide for Brooklyn, Manhattan & Queens",
+      url: "/blog/waterproofing-cost-nyc-2026",
+    },
+    {
       name: "Blog - Roof Leak Repair in Manhattan: Common Causes & Prevention Tips",
       url: "/blog/roof-leak-repair-manhattan",
     },
