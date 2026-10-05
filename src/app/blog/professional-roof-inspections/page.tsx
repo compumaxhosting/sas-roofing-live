@@ -1,6 +1,5 @@
 import BackToTop from "@/components/BackToTop";
 import BlogArticleContent from "@/components/RoofLast";
-import BreadCrum2 from "@/components/BreadCrum2";
 import ContactBar from "@/components/ContactBar";
 import Footer from "@/components/Footer";
 import FooterTopCTA from "@/components/FooterTopCTA";
@@ -15,20 +14,6 @@ const page = () => {
       <Navbar />
       <StickyNavbar />
       <ContactBar />
-      <BreadCrum2
-        breadcrumbItems={[
-          {
-            label: "Home",
-            href: "/",
-          },
-          {
-            label: "Blog",
-            href: "/blog",
-          },
-        ]}
-        pageTitle={"BLOGS"}
-        imageSrc={"/page-bgImage/roofing-service.jpg"}
-      />
       <BlogsOverview />
       <BlogArticleContent />
       <FooterTopCTA />

@@ -1,7 +1,6 @@
 import BackToTop from "@/components/BackToTop";
 import { BlogsOverview } from "@/components/BlogOverview";
 import BlogSlideNew from "@/components/BlogSlideNew";
-import BreadCrum2 from "@/components/BreadCrum2";
 import ContactBar from "@/components/ContactBar";
 import Footer from "@/components/Footer";
 import FooterTopCTA from "@/components/FooterTopCTA";
@@ -258,20 +257,6 @@ const page = () => {
       <Navbar />
       <StickyNavbar />
       <ContactBar />
-      <BreadCrum2
-        breadcrumbItems={[
-          {
-            label: "Home",
-            href: "/",
-          },
-          {
-            label: "Blog",
-            href: "/blog",
-          },
-        ]}
-        pageTitle={"BLOGS"}
-        imageSrc={"/page-bgImage/roofing-service.jpg"}
-      />
       <BlogsOverview />
       <div className="text-center px-5 mt-10">
         <h1 className="text-2xl md:text-4xl font-bold text-[#003269]">

@@ -110,31 +110,6 @@ const schemaData = {
   articleSection: "Roofing",
   inLanguage: "en-US",
 };
-const breadcrumbData = {
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "@id": `${articleUrl}#breadcrumb`,
-  itemListElement: [
-    {
-      "@type": "ListItem",
-      position: 1,
-      name: "Home",
-      item: "https://www.sasroofingwaterproofing.com/",
-    },
-    {
-      "@type": "ListItem",
-      position: 2,
-      name: "Blog",
-      item: "https://www.sasroofingwaterproofing.com/blog/",
-    },
-    {
-      "@type": "ListItem",
-      position: 3,
-      name: "Roof Leak Repair in Manhattan",
-      item: articleUrl,
-    },
-  ],
-};
 const faqData = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
@@ -157,10 +132,6 @@ export default function RoofLeakRepairManhattanLayout({
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbData) }}
       />
       <script
         type="application/ld+json"
