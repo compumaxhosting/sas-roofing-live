@@ -496,17 +496,17 @@ export default function SidebarOverlay({
               {
                 href: "https://www.facebook.com/sasroofingwaterproofing",
                 label: "Facebook",
-                icon: <FaFacebookF />,
+                icon: <FaFacebookF aria-hidden="true" />,
               },
               {
                 href: "https://www.houzz.com/professionals/general-contractors/sas-roofing-and-waterproofing-pfvwus-pf~849386886?",
                 label: "Houzz",
-                icon: <FaHome />,
+                icon: <FaHome aria-hidden="true" />,
               },
               {
                 href: "https://www.tiktok.com/@sasroofingwaterproofing?lang=en",
                 label: "TikTok",
-                icon: <FaTiktok />,
+                icon: <FaTiktok aria-hidden="true" />,
               },
             ].map(({ href, label, icon }) => (
               <Link

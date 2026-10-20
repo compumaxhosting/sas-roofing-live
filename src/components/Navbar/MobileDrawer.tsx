@@ -57,17 +57,17 @@ export default function MobileDrawer({ isOpen, setIsOpen }: Props) {
   const socialLinks = [
     {
       href: "https://www.facebook.com/sasroofingwaterproofing",
-      icon: <FaFacebookF className="text-white text-lg" />,
+      icon: <FaFacebookF className="text-white text-lg" aria-hidden="true" />,
       label: "Facebook page",
     },
     {
       href: "https://www.houzz.com/professionals/general-contractors/sas-roofing-and-waterproofing-pfvwus-pf~849386886?",
-      icon: <FaHome className="text-white text-lg" />,
+      icon: <FaHome className="text-white text-lg" aria-hidden="true" />,
       label: "Houzz profile",
     },
     {
       href: "https://www.tiktok.com/@sasroofingwaterproofing?lang=en",
-      icon: <FaTiktok className="text-white text-lg" />,
+      icon: <FaTiktok className="text-white text-lg" aria-hidden="true" />,
       label: "TikTok profile",
     },
   ];
@@ -118,7 +118,7 @@ export default function MobileDrawer({ isOpen, setIsOpen }: Props) {
       }`}
       onKeyDown={handleKeyDown}
       role="presentation"
-      aria-hidden={!isOpen}
+      hidden={!isOpen}
     >
       <div
         className="w-[40%] bg-black/30 backdrop-blur-sm"

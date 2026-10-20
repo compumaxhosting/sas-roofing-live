@@ -42,22 +42,22 @@ export default function Footer() {
   ];
   const socialItems = [
     {
-      icon: <FaFacebookF />,
+      icon: <FaFacebookF aria-hidden="true" />,
       label: "Facebook",
       link: "https://www.facebook.com/sasroofingwaterproofing",
     },
     {
-      icon: <SiYelp />,
+      icon: <SiYelp aria-hidden="true" />,
       label: "Yelp",
       link: "https://www.yelp.com/biz/sas-roofing-and-waterproofing-brooklyn-8",
     },
     {
-      icon: <FaXTwitter />,
+      icon: <FaXTwitter aria-hidden="true" />,
       label: "X (Twitter)",
       link: "https://x.com/sasroofing91254",
     },
     {
-      icon: <FaTiktok />,
+      icon: <FaTiktok aria-hidden="true" />,
       label: "TikTok",
       link: "https://www.tiktok.com/@sasroofingwaterproofing?lang=en",
     },

@@ -224,7 +224,6 @@ export default function GallerySection() {
   return (
     <section
       className="py-10 px-4 sm:px-6 lg:px-12 w-full"
-      aria-hidden={modalOpen ? "true" : "false"}
     >
       {/* Desktop Layout (Above 1080px) */}
       <div className="hidden xl:flex flex-col items-center gap-8 w-full">
