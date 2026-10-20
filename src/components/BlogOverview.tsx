@@ -13,6 +13,10 @@ export function BlogsOverview() {
 
   const plans = [
     {
+      name: "Expert Masonry Services in Brooklyn, NY: Brick Repair and Restoration",
+      path: "/blog/expert-masonry-services-brooklyn-ny",
+    },
+    {
       name: "Waterproofing Cost in NYC: 2026 Guide for Brooklyn, Manhattan & Queens",
       path: "/blog/waterproofing-cost-nyc-2026",
     },

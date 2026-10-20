@@ -395,39 +395,39 @@ export default function WaterproofingCostNyc2026() {
             </p>
             <ul className="grid grid-cols-1 md:grid-cols-2 gap-3 text-gray-700 text-sm md:text-base font-bevietnam">
               <li className="flex items-center gap-2 bg-gray-50 p-3 rounded-lg border border-gray-200">
-                <span className="w-2.5 h-2.5 rounded-full bg-[#003269] flex-shrink-0"></span>
+                <span className="w-2.5 h-2.5 rounded-full bg-[#003269] shrink-0"></span>
                 Foundation wall cracks
               </li>
               <li className="flex items-center gap-2 bg-gray-50 p-3 rounded-lg border border-gray-200">
-                <span className="w-2.5 h-2.5 rounded-full bg-[#003269] flex-shrink-0"></span>
+                <span className="w-2.5 h-2.5 rounded-full bg-[#003269] shrink-0"></span>
                 Hydrostatic pressure
               </li>
               <li className="flex items-center gap-2 bg-gray-50 p-3 rounded-lg border border-gray-200">
-                <span className="w-2.5 h-2.5 rounded-full bg-[#003269] flex-shrink-0"></span>
+                <span className="w-2.5 h-2.5 rounded-full bg-[#003269] shrink-0"></span>
                 Poor surface drainage
               </li>
               <li className="flex items-center gap-2 bg-gray-50 p-3 rounded-lg border border-gray-200">
-                <span className="w-2.5 h-2.5 rounded-full bg-[#003269] flex-shrink-0"></span>
+                <span className="w-2.5 h-2.5 rounded-full bg-[#003269] shrink-0"></span>
                 Failed or deteriorated waterproofing
               </li>
               <li className="flex items-center gap-2 bg-gray-50 p-3 rounded-lg border border-gray-200">
-                <span className="w-2.5 h-2.5 rounded-full bg-[#003269] flex-shrink-0"></span>
+                <span className="w-2.5 h-2.5 rounded-full bg-[#003269] shrink-0"></span>
                 Leaking basement windows or areaways
               </li>
               <li className="flex items-center gap-2 bg-gray-50 p-3 rounded-lg border border-gray-200">
-                <span className="w-2.5 h-2.5 rounded-full bg-[#003269] flex-shrink-0"></span>
+                <span className="w-2.5 h-2.5 rounded-full bg-[#003269] shrink-0"></span>
                 Groundwater infiltration
               </li>
               <li className="flex items-center gap-2 bg-gray-50 p-3 rounded-lg border border-gray-200">
-                <span className="w-2.5 h-2.5 rounded-full bg-[#003269] flex-shrink-0"></span>
+                <span className="w-2.5 h-2.5 rounded-full bg-[#003269] shrink-0"></span>
                 Sewer backups
               </li>
               <li className="flex items-center gap-2 bg-gray-50 p-3 rounded-lg border border-gray-200">
-                <span className="w-2.5 h-2.5 rounded-full bg-[#003269] flex-shrink-0"></span>
+                <span className="w-2.5 h-2.5 rounded-full bg-[#003269] shrink-0"></span>
                 Heavy rainfall and stormwater
               </li>
               <li className="flex items-center gap-2 bg-gray-50 p-3 rounded-lg border border-gray-200 md:col-span-2">
-                <span className="w-2.5 h-2.5 rounded-full bg-[#003269] flex-shrink-0"></span>
+                <span className="w-2.5 h-2.5 rounded-full bg-[#003269] shrink-0"></span>
                 Deteriorated masonry joints
               </li>
             </ul>
@@ -461,31 +461,31 @@ export default function WaterproofingCostNyc2026() {
 
             <ol className="space-y-3 font-bevietnam">
               <li className="flex gap-4 items-start bg-white p-4 rounded-xl border border-gray-200 shadow-sm">
-                <span className="flex items-center justify-center w-8 h-8 rounded-full bg-[#003269] text-white font-bold text-sm flex-shrink-0">1</span>
+                <span className="flex items-center justify-center w-8 h-8 rounded-full bg-[#003269] text-white font-bold text-sm shrink-0">1</span>
                 <span className="text-gray-700 text-sm md:text-base self-center">Inspect the basement, foundation, walls, drains, and exterior.</span>
               </li>
               <li className="flex gap-4 items-start bg-white p-4 rounded-xl border border-gray-200 shadow-sm">
-                <span className="flex items-center justify-center w-8 h-8 rounded-full bg-[#003269] text-white font-bold text-sm flex-shrink-0">2</span>
+                <span className="flex items-center justify-center w-8 h-8 rounded-full bg-[#003269] text-white font-bold text-sm shrink-0">2</span>
                 <span className="text-gray-700 text-sm md:text-base self-center">Identify the source and pathway of water.</span>
               </li>
               <li className="flex gap-4 items-start bg-white p-4 rounded-xl border border-gray-200 shadow-sm">
-                <span className="flex items-center justify-center w-8 h-8 rounded-full bg-[#003269] text-white font-bold text-sm flex-shrink-0">3</span>
+                <span className="flex items-center justify-center w-8 h-8 rounded-full bg-[#003269] text-white font-bold text-sm shrink-0">3</span>
                 <span className="text-gray-700 text-sm md:text-base self-center">Determine whether interior, exterior, or combined waterproofing is appropriate.</span>
               </li>
               <li className="flex gap-4 items-start bg-white p-4 rounded-xl border border-gray-200 shadow-sm">
-                <span className="flex items-center justify-center w-8 h-8 rounded-full bg-[#003269] text-white font-bold text-sm flex-shrink-0">4</span>
+                <span className="flex items-center justify-center w-8 h-8 rounded-full bg-[#003269] text-white font-bold text-sm shrink-0">4</span>
                 <span className="text-gray-700 text-sm md:text-base self-center">Repair cracks, masonry defects, or other contributing problems.</span>
               </li>
               <li className="flex gap-4 items-start bg-white p-4 rounded-xl border border-gray-200 shadow-sm">
-                <span className="flex items-center justify-center w-8 h-8 rounded-full bg-[#003269] text-white font-bold text-sm flex-shrink-0">5</span>
+                <span className="flex items-center justify-center w-8 h-8 rounded-full bg-[#003269] text-white font-bold text-sm shrink-0">5</span>
                 <span className="text-gray-700 text-sm md:text-base self-center">Install the appropriate waterproofing or drainage system.</span>
               </li>
               <li className="flex gap-4 items-start bg-white p-4 rounded-xl border border-gray-200 shadow-sm">
-                <span className="flex items-center justify-center w-8 h-8 rounded-full bg-[#003269] text-white font-bold text-sm flex-shrink-0">6</span>
+                <span className="flex items-center justify-center w-8 h-8 rounded-full bg-[#003269] text-white font-bold text-sm shrink-0">6</span>
                 <span className="text-gray-700 text-sm md:text-base self-center">Test and inspect the completed work.</span>
               </li>
               <li className="flex gap-4 items-start bg-white p-4 rounded-xl border border-gray-200 shadow-sm">
-                <span className="flex items-center justify-center w-8 h-8 rounded-full bg-[#003269] text-white font-bold text-sm flex-shrink-0">7</span>
+                <span className="flex items-center justify-center w-8 h-8 rounded-full bg-[#003269] text-white font-bold text-sm shrink-0">7</span>
                 <span className="text-gray-700 text-sm md:text-base self-center">Explain maintenance and any applicable warranty requirements.</span>
               </li>
             </ol>
@@ -551,9 +551,8 @@ export default function WaterproofingCostNyc2026() {
                         {faq.question}
                       </h3>
                       <ChevronDown
-                        className={`w-5 h-5 text-[#003269] flex-shrink-0 transition-transform duration-300 ${
-                          isOpen ? "rotate-180" : ""
-                        }`}
+                        className={`w-5 h-5 text-[#003269] shrink-0 transition-transform duration-300 ${isOpen ? "rotate-180" : ""
+                          }`}
                       />
                     </button>
 

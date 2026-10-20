@@ -11,6 +11,17 @@ import React from "react";
 const slides = [
   {
     title:
+      "Expert Masonry Services in Brooklyn, NY: Brick Repair and Restoration",
+    shortTitle: "Expert Masonry Services Brooklyn",
+    description:
+      "Discover expert masonry services in Brooklyn, NY, including brick repair, repointing, brownstone restoration, and professional masonry maintenance.",
+    date: "20 Oct 2026",
+    image: "/blog/expert-masonry-services-brooklyn-ny.webp",
+    link: "expert-masonry-services-brooklyn-ny",
+    initialLikes: 0,
+  },
+  {
+    title:
       "Waterproofing Cost in NYC: 2026 Guide for Brooklyn, Manhattan & Queens",
     shortTitle: "Waterproofing Cost in NYC 2026",
     description:
