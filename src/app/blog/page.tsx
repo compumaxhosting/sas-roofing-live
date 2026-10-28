@@ -11,6 +11,17 @@ import React from "react";
 const slides = [
   {
     title:
+      "How Do I Protect My Property From Damage in Manhattan?",
+    shortTitle: "Protect Your Manhattan Property",
+    description:
+      "Learn how to protect your Manhattan property from roof leaks, water damage, storms, and structural issues with expert roofing and waterproofing tips.",
+    date: "28 Oct 2026",
+    image: "/blog/manhattan-roofing-waterproofing.webp",
+    link: "protect-property-from-damage-manhattan",
+    initialLikes: 0,
+  },
+  {
+    title:
       "Expert Masonry Services in Brooklyn, NY: Brick Repair and Restoration",
     shortTitle: "Expert Masonry Services Brooklyn",
     description:

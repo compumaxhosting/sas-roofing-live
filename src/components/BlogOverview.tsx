@@ -13,6 +13,10 @@ export function BlogsOverview() {
 
   const plans = [
     {
+      name: "How Do I Protect My Property From Damage in Manhattan?",
+      path: "/blog/protect-property-from-damage-manhattan",
+    },
+    {
       name: "Expert Masonry Services in Brooklyn, NY: Brick Repair and Restoration",
       path: "/blog/expert-masonry-services-brooklyn-ny",
     },
