@@ -11,6 +11,17 @@ import React from "react";
 const slides = [
   {
     title:
+      "What Makes a Waterproofing Contractor Reliable? 8 Qualities to Look For",
+    shortTitle: "Reliable Waterproofing Contractor: 8 Qualities",
+    description:
+      "Discover 8 qualities of a reliable waterproofing contractor in Brooklyn, NY. Compare experience, licensing, insurance, warranties, and workmanship.",
+    date: "04 Nov 2026",
+    image: "/blog/reliable-waterproofing-contractor-brooklyn.webp",
+    link: "qualities-of-a-reliable-waterproofing-contractor",
+    initialLikes: 0,
+  },
+  {
+    title:
       "How Do I Protect My Property From Damage in Manhattan?",
     shortTitle: "Protect Your Manhattan Property",
     description:

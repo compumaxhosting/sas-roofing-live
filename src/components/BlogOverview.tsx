@@ -13,6 +13,10 @@ export function BlogsOverview() {
 
   const plans = [
     {
+      name: "What Makes a Waterproofing Contractor Reliable? 8 Qualities to Look For",
+      path: "/blog/qualities-of-a-reliable-waterproofing-contractor",
+    },
+    {
       name: "How Do I Protect My Property From Damage in Manhattan?",
       path: "/blog/protect-property-from-damage-manhattan",
     },
