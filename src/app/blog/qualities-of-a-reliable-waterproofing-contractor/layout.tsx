@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { ReactNode } from "react";
 
 const url =
@@ -9,6 +9,10 @@ const title =
   "Reliable Waterproofing Contractor: 8 Qualities to Look For";
 const description =
   "Discover 8 qualities of a reliable waterproofing contractor in Brooklyn, NY. Compare experience, licensing, insurance, warranties, and workmanship.";
+
+export const viewport: Viewport = {
+  themeColor: "#ffffff",
+};
 
 export const metadata: Metadata = {
   title,
@@ -58,9 +62,6 @@ export const metadata: Metadata = {
     images: [imageUrl],
   },
   referrer: "strict-origin-when-cross-origin",
-  other: {
-    "theme-color": "#ffffff",
-  },
 };
 
 const schemaGraphData = {

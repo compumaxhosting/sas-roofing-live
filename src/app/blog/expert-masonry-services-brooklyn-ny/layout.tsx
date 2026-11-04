@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { ReactNode } from "react";
 
 const url =
@@ -9,6 +9,10 @@ const title =
   "Expert Masonry Services in Brooklyn, NY | SAS Roofing";
 const description =
   "Discover expert masonry services in Brooklyn, NY, including brick repair, repointing, brownstone restoration, and professional masonry maintenance.";
+
+export const viewport: Viewport = {
+  themeColor: "#ffffff",
+};
 
 export const metadata: Metadata = {
   title,
@@ -56,9 +60,6 @@ export const metadata: Metadata = {
     images: [imageUrl],
   },
   referrer: "strict-origin-when-cross-origin",
-  other: {
-    "theme-color": "#ffffff",
-  },
 };
 
 const schemaGraphData = {

@@ -1,5 +1,9 @@
 import { ReactNode } from "react";
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
+
+export const viewport: Viewport = {
+    themeColor: "#ffffff",
+};
 
 // Metadata for SEO
 export const metadata: Metadata = {
@@ -17,7 +21,6 @@ export const metadata: Metadata = {
         index: true,
         follow: true,
     },
-    themeColor: "#ffffff",
     referrer: "strict-origin-when-cross-origin",
     openGraph: {
         type: "website",

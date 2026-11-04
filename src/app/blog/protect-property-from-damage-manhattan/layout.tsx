@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { ReactNode } from "react";
 
 const url =
@@ -9,6 +9,10 @@ const title =
   "How to Protect Your Property From Damage in Manhattan";
 const description =
   "Learn how to protect your Manhattan property from roof leaks, water damage, storms, and structural issues with expert roofing and waterproofing tips.";
+
+export const viewport: Viewport = {
+  themeColor: "#ffffff",
+};
 
 export const metadata: Metadata = {
   title,
@@ -56,9 +60,6 @@ export const metadata: Metadata = {
     images: [imageUrl],
   },
   referrer: "strict-origin-when-cross-origin",
-  other: {
-    "theme-color": "#ffffff",
-  },
 };
 
 const schemaGraphData = {

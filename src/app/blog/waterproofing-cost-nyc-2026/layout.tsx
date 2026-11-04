@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { ReactNode } from "react";
 
 const url =
@@ -9,6 +9,10 @@ const title =
   "Waterproofing Cost NYC: 2026 Guide for Brooklyn, Manhattan & Queens";
 const description =
   "Discover waterproofing cost in NYC for 2026, including basement and foundation waterproofing prices in Brooklyn, Manhattan, and Queens.";
+
+export const viewport: Viewport = {
+  themeColor: "#ffffff",
+};
 
 export const metadata: Metadata = {
   title,
@@ -63,9 +67,6 @@ export const metadata: Metadata = {
     images: [imageUrl],
   },
   referrer: "strict-origin-when-cross-origin",
-  other: {
-    "theme-color": "#ffffff",
-  },
 };
 
 const schemaGraphData = {
