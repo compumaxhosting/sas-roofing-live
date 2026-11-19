@@ -1,8 +1,11 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { ReactNode } from "react";
 
 const articleUrl = "https://www.sasroofingwaterproofing.com/blog/reliable-masonry-contractor-brooklyn-ny";
 const imageUrl = "https://www.sasroofingwaterproofing.com/blog/masonry-services-brooklyn.webp";
+
+export const viewport: Viewport = {
+};
 
 export const metadata: Metadata = {
   title: "How to Choose a Reliable Masonry Contractor in Brooklyn",
@@ -11,7 +14,6 @@ export const metadata: Metadata = {
   authors: [{ name: "SAS Roofing & Waterproofing" }],
   alternates: { canonical: articleUrl },
   robots: { index: true, follow: true },
-  themeColor: "#ffffff",
   referrer: "strict-origin-when-cross-origin",
   openGraph: {
     type: "website",

@@ -239,8 +239,7 @@ export default function NavLinks({
             isOpen ? "opacity-100 pointer-events-auto" : "opacity-0"
           }`}
           onClick={() => setIsOpen(false)}
-          aria-hidden={!isOpen}
-          tabIndex={isOpen ? 0 : -1}
+          tabIndex={-1}
         />
         <div
           role="dialog"

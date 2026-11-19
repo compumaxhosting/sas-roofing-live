@@ -87,7 +87,7 @@ export default function MobileNavItem({
             isOpenDropdown ? "max-h-96" : "max-h-0"
           }`}
           role="menu"
-          aria-hidden={!isOpenDropdown}
+          {...(!isOpenDropdown ? { inert: true } : {})}
         >
           {item.subItems.map(({ name, href }) => (
             <Link

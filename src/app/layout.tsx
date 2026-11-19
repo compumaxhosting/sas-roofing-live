@@ -77,7 +77,7 @@ const schemaData = {
     "https://www.instagram.com/SASRoofingWaterproofing",
   ],
   priceRange: "$$",
-  openingHours: "Mo,Tu,We,Th,Fr 08:00-18:00",
+  openingHours: "Mo,Tu,We,Th,Fr,Sat,Sun 06:00-22:00",
 };
 
 export default function RootLayout({

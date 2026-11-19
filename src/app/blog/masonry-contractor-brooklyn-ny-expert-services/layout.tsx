@@ -1,7 +1,11 @@
 import { ReactNode } from "react";
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 
 // Metadata for SEO
+export const viewport: Viewport = {
+  themeColor: "#ffffff",
+};
+
 export const metadata: Metadata = {
   title: "Masonry Contractor Brooklyn NY: 10 Expert Services | SAS Roofing",
   description:
@@ -16,10 +20,6 @@ export const metadata: Metadata = {
   robots: {
     index: true,
     follow: true,
-  },
-  other: {
-    "theme-color": "#ffffff",
-    referrer: "strict-origin-when-cross-origin",
   },
   openGraph: {
     type: "website",
@@ -70,7 +70,7 @@ const schemaData = {
         addressCountry: "US",
       },
       telephone: "+1-347-221-6549",
-      openingHours: "Mo-Fr 08:00-18:00",
+      openingHours: "Mo-Sat 06:00-22:00",
       areaServed: ["Brooklyn", "Queens", "Manhattan", "The Bronx"],
       sameAs: [
         "https://www.instagram.com/SASRoofingWaterproofing",

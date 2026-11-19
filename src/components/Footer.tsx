@@ -5,7 +5,7 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import { FaFacebookF } from "react-icons/fa";
 import { FaTiktok, FaXTwitter } from "react-icons/fa6";
-import {  SiYelp } from "react-icons/si";
+import { SiYelp } from "react-icons/si";
 import type { Transition } from "framer-motion";
 
 const fadeUp = (delay = 0) => ({
@@ -19,7 +19,7 @@ const fadeUp = (delay = 0) => ({
 });
 
 export default function Footer() {
-  
+
 
   const paymentIcons = [
     "visa",
@@ -42,22 +42,22 @@ export default function Footer() {
   ];
   const socialItems = [
     {
-      icon: <FaFacebookF />,
+      icon: <FaFacebookF aria-hidden="true" />,
       label: "Facebook",
       link: "https://www.facebook.com/sasroofingwaterproofing",
     },
     {
-      icon: <SiYelp />,
+      icon: <SiYelp aria-hidden="true" />,
       label: "Yelp",
       link: "https://www.yelp.com/biz/sas-roofing-and-waterproofing-brooklyn-8",
     },
     {
-      icon: <FaXTwitter />,
+      icon: <FaXTwitter aria-hidden="true" />,
       label: "X (Twitter)",
       link: "https://x.com/sasroofing91254",
     },
     {
-      icon: <FaTiktok />,
+      icon: <FaTiktok aria-hidden="true" />,
       label: "TikTok",
       link: "https://www.tiktok.com/@sasroofingwaterproofing?lang=en",
     },
@@ -129,7 +129,7 @@ export default function Footer() {
   ];
 
   return (
-     <footer
+    <footer
       className="bg-[#003269] text-white text-sm sm:text-[15px]"
       aria-labelledby="footer-heading"
     >
@@ -162,7 +162,7 @@ export default function Footer() {
           </p>
           <p className="font-bold mt-4 font-inter">WE ARE AVAILABLE</p>
           <p className="text-white/80 font-bevietnam text-sm">
-            Mon–Sat: 09.00 am to 6.30 pm
+            Mon-Sun: 06.00am to 10.00pm
           </p>
           <Link
             href="/services"

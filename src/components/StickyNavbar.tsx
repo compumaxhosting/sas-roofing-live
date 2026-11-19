@@ -136,7 +136,7 @@ export default function StickyNavbar() {
                     : "opacity-0 translate-y-2 pointer-events-none"
                 }`}
                 role="menu"
-                aria-hidden={openDropdown !== label}
+                hidden={openDropdown !== label}
               >
                 {subItems.map((sub) => (
                   <Link

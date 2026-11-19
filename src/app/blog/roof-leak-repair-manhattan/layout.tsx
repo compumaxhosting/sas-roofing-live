@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { ReactNode } from "react";
 
 const articleUrl =
@@ -8,6 +8,9 @@ const imageUrl =
 const title = "Roof Leak Repair in Manhattan | Causes & Prevention";
 const description =
   "Need roof leak repair in Manhattan? Learn common causes, warning signs, prevention tips, and professional roofing solutions from SAS Roofing & Waterproofing.";
+
+export const viewport: Viewport = {
+};
 
 export const metadata: Metadata = {
   title,
@@ -19,7 +22,6 @@ export const metadata: Metadata = {
     "roof leak repair Manhattan, roof repair Manhattan, Manhattan roof leak repair, flat roof leak repair Manhattan, roof leak detection NYC, roof waterproofing Manhattan, NYC roof repair, roof inspection Manhattan, emergency roof leak repair NYC",
   authors: [{ name: "SAS Roofing & Waterproofing" }],
   robots: { index: true, follow: true },
-  themeColor: "#ffffff",
   referrer: "strict-origin-when-cross-origin",
   openGraph: {
     type: "website",

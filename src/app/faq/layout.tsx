@@ -44,7 +44,7 @@ const schemaData = {
     addressCountry: "US",
   },
   telephone: "+1-347-221-6549",
-  openingHours: "Mo-Fr 08:00-18:00",
+  openingHours: "Mo-Sat 06:00-22:00",
   sameAs: [
     "https://www.instagram.com/SASRoofingWaterproofing",
     "https://www.yelp.com/biz/sas-roofing-and-waterproofing-brooklyn-8",
