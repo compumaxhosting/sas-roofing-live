@@ -18,7 +18,7 @@ const page = () => {
       <BestRoofing />
       <FooterTopCTA />
       <Footer />
-      <BackToTop />
+      <BackToTop /> 
     </>
   );
 };

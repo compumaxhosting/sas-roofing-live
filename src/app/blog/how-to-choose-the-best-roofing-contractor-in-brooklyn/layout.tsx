@@ -55,6 +55,31 @@ const schemaData = {
   ],
 };
 
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    {
+      "@type": "ListItem",
+      position: 1,
+      name: "Home",
+      item: "https://www.sasroofingwaterproofing.com/",
+    },
+    {
+      "@type": "ListItem",
+      position: 2,
+      name: "Blog",
+      item: "https://www.sasroofingwaterproofing.com/blog",
+    },
+    {
+      "@type": "ListItem",
+      position: 3,
+      name: "How to Choose the Best Roofing Contractor in Brooklyn",
+      item: "https://www.sasroofingwaterproofing.com/blog/how-to-choose-the-best-roofing-contractor-in-brooklyn",
+    },
+  ],
+};
+
 export default function ProjectsLayout({ children }: { children: ReactNode }) {
   return (
     <>
@@ -62,6 +87,10 @@ export default function ProjectsLayout({ children }: { children: ReactNode }) {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
     </>
   );

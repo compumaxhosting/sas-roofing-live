@@ -98,7 +98,7 @@ export default function AboutCompany() {
 
             <div className="text-gray-700 text-sm font-bevietnam text-left leading-relaxed mb-8">
               <p>
-                For over thirty years,{" "}
+                For over twenty five years,{" "}
                 <strong>SAS Roofing & Waterproofing</strong> has proudly served{" "}
                 <Link
                   href="https://www.wikidata.org/wiki/Q18419"

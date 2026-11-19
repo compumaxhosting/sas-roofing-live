@@ -18,7 +18,7 @@ const page = () => {
       <BlogArticleContent />
       <FooterTopCTA />
       <Footer />
-      <BackToTop />
+      <BackToTop /> 
     </>
   );
 };
