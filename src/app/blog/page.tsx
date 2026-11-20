@@ -11,6 +11,18 @@ import React from "react";
 const slides = [
   {
     title:
+      "How Waterproofing Can Save Your NYC PropertyHow to Protect Your Property from Damage in Manhattan: A Complete Guide",
+    shortTitle:
+      "How to Protect Your Property from Damage in Manhattan | SAS Roofing",
+    description:
+      "Learn how to protect your property from damage in Manhattan with expert roofing, waterproofing, masonry repairs, and preventive maintenance tips",
+    date: "20 Nov 2026",
+    image: "/blog/protect-your-property-from-damage-in-manhattan.png",
+    link: "how-to-protect-your-property-from-damage-in-manhattan",
+    initialLikes: 0,
+  },
+  {
+    title:
       "What Makes a Waterproofing Contractor Reliable? 8 Qualities to Look For",
     shortTitle: "Reliable Waterproofing Contractor: 8 Qualities",
     description:
@@ -21,8 +33,7 @@ const slides = [
     initialLikes: 0,
   },
   {
-    title:
-      "How Do I Protect My Property From Damage in Manhattan?",
+    title: "How Do I Protect My Property From Damage in Manhattan?",
     shortTitle: "Protect Your Manhattan Property",
     description:
       "Learn how to protect your Manhattan property from roof leaks, water damage, storms, and structural issues with expert roofing and waterproofing tips.",

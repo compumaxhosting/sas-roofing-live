@@ -13,6 +13,10 @@ export function BlogsOverview() {
 
   const plans = [
     {
+      name: "How to Protect Your Property from Damage in Manhattan: A Complete Guide",
+      path: "/blog/how-to-protect-your-property-from-damage-in-manhattan",
+    },
+    {
       name: "What Makes a Waterproofing Contractor Reliable? 8 Qualities to Look For",
       path: "/blog/qualities-of-a-reliable-waterproofing-contractor",
     },
