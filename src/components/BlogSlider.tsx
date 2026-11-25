@@ -17,6 +17,14 @@ interface Props {
 
 const slides = [
   {
+    title: "How to Choose the Best Waterproofing Company in New York City",
+    description: "Compare experience, credentials, materials, estimates, and local expertise",
+    date: "25 Nov",
+    image: "/blog/basement-waterproofing-work.png",
+    link: "how-to-choose-best-waterproofing-company-new-york-city",
+    initialLikeCount: 0,
+  },
+  {
     title: "How Waterproofing Can Save Your NYC Property from Costly Damage",
     description: "Shield your NYC property from costly water damage",
     date: "11 July",

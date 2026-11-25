@@ -13,6 +13,10 @@ export function BlogsOverview() {
 
   const plans = [
     {
+      name: "How to Choose the Best Waterproofing Company in New York City",
+      path: "/blog/how-to-choose-best-waterproofing-company-new-york-city",
+    },
+    {
       name: "How to Protect Your Property from Damage in Manhattan: A Complete Guide",
       path: "/blog/how-to-protect-your-property-from-damage-in-manhattan",
     },

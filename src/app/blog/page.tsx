@@ -10,6 +10,16 @@ import React from "react";
 
 const slides = [
   {
+    title: "How to Choose the Best Waterproofing Company in New York City",
+    shortTitle: "Best Waterproofing Company in NYC",
+    description:
+      "Learn how to choose a reliable waterproofing company in NYC by comparing experience, licensing, insurance, materials, estimates, and professional services.",
+    date: "25 Nov 2026",
+    image: "/blog/basement-waterproofing-work.png",
+    link: "how-to-choose-best-waterproofing-company-new-york-city",
+    initialLikes: 0,
+  },
+  {
     title:
       "How Waterproofing Can Save Your NYC PropertyHow to Protect Your Property from Damage in Manhattan: A Complete Guide",
     shortTitle:
